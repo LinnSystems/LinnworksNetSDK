@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Authorize";
+}
+
+<div class="row">
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Enter your Linnworks Token</div>
+            <div class="panel-body">
+                <div class="alert alert-warning">
+                    <strong>Invalid Token</strong><br />
+                    The token you provided is invalid. Please provide a valid token.
+                </div>
+                <form method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="eg. 8486a48e-9653-4d64-adb4-6cecc9016fc6" id="token" name="token">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default btn-success btn-block" type="submit" style="margin-bottom: -10px;">Authorize</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

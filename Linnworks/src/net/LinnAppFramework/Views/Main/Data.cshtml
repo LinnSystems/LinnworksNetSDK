@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Data";
+}
+
+
+
+@foreach(var item in ViewBag.Stats)
+{
+    <h2>@item.Key</h2>
+
+    <ul>
+        @foreach (var ii in item.Value)
+        {
+            <li>@Html.Raw(string.Format(ii.Key, "<strong>" + ii.Value + "</strong>"))</li>
+        }
+    </ul>
+}
+
