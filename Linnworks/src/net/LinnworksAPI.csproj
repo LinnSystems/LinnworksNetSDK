@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{121D410C-DB32-4245-996F-3B1134B0F181}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LinnworksAPI</RootNamespace>
+    <AssemblyName>LinnworksAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.8.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="Auth.cs" />
+    <Compile Include="Class_AccountDetails.cs" />
+    <Compile Include="Class_ActionType.cs" />
+    <Compile Include="Class_ActionTypeDescriptor.cs" />
+    <Compile Include="Class_ActionWeb.cs" />
+    <Compile Include="Class_AddData.cs" />
+    <Compile Include="Class_Address.cs" />
+    <Compile Include="Class_AdjustmentOptions.cs" />
+    <Compile Include="Class_AjaxResult.cs" />
+    <Compile Include="Class_AnyConfig.cs" />
+    <Compile Include="Class_ApplicationCategory.cs" />
+    <Compile Include="Class_ApplicationReview.cs" />
+    <Compile Include="Class_ApplicationToken.cs" />
+    <Compile Include="Class_AppSetting.cs" />
+    <Compile Include="Class_AuditEntry.cs" />
+    <Compile Include="Class_AuditType.cs" />
+    <Compile Include="Class_AvailabilityStatus.cs" />
+    <Compile Include="Class_BasePermissionListHeader.cs" />
+    <Compile Include="Class_BaseSession.cs" />
+    <Compile Include="Class_BaseUser.cs" />
+    <Compile Include="Class_BasicStockItem.cs" />
+    <Compile Include="Class_BookedReturnsExchangeItem.cs" />
+    <Compile Include="Class_BookedReturnsExchangeOrder.cs" />
+    <Compile Include="Class_BooleanFieldFilter.cs" />
+    <Compile Include="Class_BooleanFilter.cs" />
+    <Compile Include="Class_Category.cs" />
+    <Compile Include="Class_Channel.cs" />
+    <Compile Include="Class_ChannelDetails.cs" />
+    <Compile Include="Class_ChannelPaymentMethod.cs" />
+    <Compile Include="Class_ChannelPostalService.cs" />
+    <Compile Include="Class_ChannelRefundReason.cs" />
+    <Compile Include="Class_ChannelRefundSubReason.cs" />
+    <Compile Include="Class_ClientEvaluatorGroupType.cs" />
+    <Compile Include="Class_Column.cs" />
+    <Compile Include="Class_ColumnMapping.cs" />
+    <Compile Include="Class_ColumnNameType.cs" />
+    <Compile Include="Class_ConditionHeaderBasic.cs" />
+    <Compile Include="Class_ConditionItemBasic.cs" />
+    <Compile Include="Class_ConditionType.cs" />
+    <Compile Include="Class_ConfigButton.cs" />
+    <Compile Include="Class_ConfigItem.cs" />
+    <Compile Include="Class_ConfigPaymentMethodMapping.cs" />
+    <Compile Include="Class_ConfigPaymentMethodMappingItem.cs" />
+    <Compile Include="Class_ConfigPostalServiceMapping.cs" />
+    <Compile Include="Class_ConfigPostalServiceMappingItem.cs" />
+    <Compile Include="Class_ConfigRule.cs" />
+    <Compile Include="Class_ConfigStockLocation.cs" />
+    <Compile Include="Class_ConfigStockLocationBinding.cs" />
+    <Compile Include="Class_ContactDetails.cs" />
+    <Compile Include="Class_Country.cs" />
+    <Compile Include="Class_CountryRegion.cs" />
+    <Compile Include="Class_CountryRegionReplaceWith.cs" />
+    <Compile Include="Class_CountryVatInfo.cs" />
+    <Compile Include="Class_CouponValidationResult.cs" />
+    <Compile Include="Class_CreatePDFResult.cs" />
+    <Compile Include="Class_customer.cs" />
+    <Compile Include="Class_CustomerAddress.cs" />
+    <Compile Include="Class_customer_field_simple.cs" />
+    <Compile Include="Class_customer_profile.cs" />
+    <Compile Include="Class_DailyFrequencyType.cs" />
+    <Compile Include="Class_DataCache.cs" />
+    <Compile Include="Class_DataTablePreview.cs" />
+    <Compile Include="Class_DateFieldFilter.cs" />
+    <Compile Include="Class_DateRangeFilter.cs" />
+    <Compile Include="Class_DateTimeFieldFilterType.cs" />
+    <Compile Include="Class_DeveloperApplication.cs" />
+    <Compile Include="Class_DirectoryItem.cs" />
+    <Compile Include="Class_DisplayType.cs" />
+    <Compile Include="Class_DropboxAccount.cs" />
+    <Compile Include="Class_EvaluatorDescriptor.cs" />
+    <Compile Include="Class_EvaluatorGroup.cs" />
+    <Compile Include="Class_EvaluatorType.cs" />
+    <Compile Include="Class_ExecutingOrQueuedResult.cs" />
+    <Compile Include="Class_ExistingRefundTotal.cs" />
+    <Compile Include="Class_Export.cs" />
+    <Compile Include="Class_ExportColumn.cs" />
+    <Compile Include="Class_ExportGenericFeed.cs" />
+    <Compile Include="Class_ExportRegister.cs" />
+    <Compile Include="Class_ExportResult.cs" />
+    <Compile Include="Class_ExportResultType.cs" />
+    <Compile Include="Class_ExportSession.cs" />
+    <Compile Include="Class_ExportSpecification.cs" />
+    <Compile Include="Class_ExportType.cs" />
+    <Compile Include="Class_ExtendedProperty.cs" />
+    <Compile Include="Class_FeedType.cs" />
+    <Compile Include="Class_FieldCode.cs" />
+    <Compile Include="Class_FieldDescriptor.cs" />
+    <Compile Include="Class_FieldKeys.cs" />
+    <Compile Include="Class_FieldMap.cs" />
+    <Compile Include="Class_FieldsFilter.cs" />
+    <Compile Include="Class_FieldSorting.cs" />
+    <Compile Include="Class_FieldType.cs" />
+    <Compile Include="Class_FieldTypes.cs" />
+    <Compile Include="Class_FieldVisibility.cs" />
+    <Compile Include="Class_FileExistAction.cs" />
+    <Compile Include="Class_Filter.cs" />
+    <Compile Include="Class_FilteringTypes.cs" />
+    <Compile Include="Class_FilterNameType.cs" />
+    <Compile Include="Class_Filters.cs" />
+    <Compile Include="Class_FlatFileSettings.cs" />
+    <Compile Include="Class_FreeTextResponseType.cs" />
+    <Compile Include="Class_FulfilmentCenterImportExportSettings.cs" />
+    <Compile Include="Class_GenericEnumDescriptor.cs" />
+    <Compile Include="Class_GenericPagedResult.cs" />
+    <Compile Include="Class_GetApplicationResponse.cs" />
+    <Compile Include="Class_Group.cs" />
+    <Compile Include="Class_GroupType.cs" />
+    <Compile Include="Class_GroupUser.cs" />
+    <Compile Include="Class_IDataList.cs" />
+    <Compile Include="Class_IExportType.cs" />
+    <Compile Include="Class_IImportType.cs" />
+    <Compile Include="Class_Import.cs" />
+    <Compile Include="Class_ImportColumn.cs" />
+    <Compile Include="Class_ImportGenericFeed.cs" />
+    <Compile Include="Class_ImportRegister.cs" />
+    <Compile Include="Class_ImportSession.cs" />
+    <Compile Include="Class_ImportType.cs" />
+    <Compile Include="Class_InventoryItem.cs" />
+    <Compile Include="Class_InventoryListingLink.cs" />
+    <Compile Include="Class_InventoryListingTemplate.cs" />
+    <Compile Include="Class_InventoryView.cs" />
+    <Compile Include="Class_IRuleConditionItem.cs" />
+    <Compile Include="Class_jobcode_name_register.cs" />
+    <Compile Include="Class_jobcode_register.cs" />
+    <Compile Include="Class_KeyGuidValue.cs" />
+    <Compile Include="Class_LevelType.cs" />
+    <Compile Include="Class_LinkedItem.cs" />
+    <Compile Include="Class_ListDataTypes.cs" />
+    <Compile Include="Class_ListFieldFilter.cs" />
+    <Compile Include="Class_ListFieldFilterType.cs" />
+    <Compile Include="Class_ListHeaderType.cs" />
+    <Compile Include="Class_ListingType.cs" />
+    <Compile Include="Class_LocalityType.cs" />
+    <Compile Include="Class_Mapping.cs" />
+    <Compile Include="Class_Measures.cs" />
+    <Compile Include="Class_ModeType.cs" />
+    <Compile Include="Class_MoveToFulfilmentCenterResult.cs" />
+    <Compile Include="Class_MultiKeyOptionResponse.cs" />
+    <Compile Include="Class_MultiOptionResponse.cs" />
+    <Compile Include="Class_NotificationSettings.cs" />
+    <Compile Include="Class_NumericFieldFilter.cs" />
+    <Compile Include="Class_NumericFieldFilterType.cs" />
+    <Compile Include="Class_NumericFilter.cs" />
+    <Compile Include="Class_NumericFilterType.cs" />
+    <Compile Include="Class_OpenOrder.cs" />
+    <Compile Include="Class_OrderAuditTrail.cs" />
+    <Compile Include="Class_OrderCustomerInfo.cs" />
+    <Compile Include="Class_OrderExtendedProperty.cs" />
+    <Compile Include="Class_OrderFolder.cs" />
+    <Compile Include="Class_OrderGeneralInfo.cs" />
+    <Compile Include="Class_OrderItem.cs" />
+    <Compile Include="Class_OrderItemOption.cs" />
+    <Compile Include="Class_OrderItemReturnInfo.cs" />
+    <Compile Include="Class_OrderNote.cs" />
+    <Compile Include="Class_OrderPackagingSplit.cs" />
+    <Compile Include="Class_OrderPackagingSplitItem.cs" />
+    <Compile Include="Class_OrderRelation.cs" />
+    <Compile Include="Class_OrderReturnCategory.cs" />
+    <Compile Include="Class_OrdersAppSettings.cs" />
+    <Compile Include="Class_OrderShippingInfo.cs" />
+    <Compile Include="Class_OrderSplit.cs" />
+    <Compile Include="Class_OrderSummary.cs" />
+    <Compile Include="Class_OrderTotalsInfo.cs" />
+    <Compile Include="Class_OrderXML.cs" />
+    <Compile Include="Class_PackageGroup.cs" />
+    <Compile Include="Class_PackageType.cs" />
+    <Compile Include="Class_PaymentMethod.cs" />
+    <Compile Include="Class_PermissionAudit.cs" />
+    <Compile Include="Class_PermissionAuditRows.cs" />
+    <Compile Include="Class_PermissionAuditRowType.cs" />
+    <Compile Include="Class_PermissionAuditRow_Permission.cs" />
+    <Compile Include="Class_PermissionAuditType.cs" />
+    <Compile Include="Class_PermissionGranteeGroup.cs" />
+    <Compile Include="Class_PermissionGranteeResult.cs" />
+    <Compile Include="Class_PermissionGranteeUser.cs" />
+    <Compile Include="Class_PermissionGroupListSource.cs" />
+    <Compile Include="Class_PermissionHeaderType.cs" />
+    <Compile Include="Class_PermissionHierarchy.cs" />
+    <Compile Include="Class_PermissionItem.cs" />
+    <Compile Include="Class_PermissionListGroupSource.cs" />
+    <Compile Include="Class_PermissionListHeader.cs" />
+    <Compile Include="Class_PermissionListItem.cs" />
+    <Compile Include="Class_PermissionListSource.cs" />
+    <Compile Include="Class_PermissionSource.cs" />
+    <Compile Include="Class_PermissionSourceContainer.cs" />
+    <Compile Include="Class_PermissionsUser.cs" />
+    <Compile Include="Class_PictureSource.cs" />
+    <Compile Include="Class_PortionResult.cs" />
+    <Compile Include="Class_PostageService.cs" />
+    <Compile Include="Class_PostalService.cs" />
+    <Compile Include="Class_PostalService_WithChannelAndShippingLinks.cs" />
+    <Compile Include="Class_PostEventType.cs" />
+    <Compile Include="Class_PreExecuteQueriesProcessDelegate.cs" />
+    <Compile Include="Class_PrinterStatus.cs" />
+    <Compile Include="Class_PrintStockLabelConfiguration.cs" />
+    <Compile Include="Class_ProcessedOrderColumn.cs" />
+    <Compile Include="Class_ProcessedOrderColumnCollection.cs" />
+    <Compile Include="Class_ProcessedOrderColumnWithData.cs" />
+    <Compile Include="Class_ProcessedOrderWeb.cs" />
+    <Compile Include="Class_ProcessOrderResult.cs" />
+    <Compile Include="Class_process_error.cs" />
+    <Compile Include="Class_process_history.cs" />
+    <Compile Include="Class_progress_log.cs" />
+    <Compile Include="Class_PropertyRule.cs" />
+    <Compile Include="Class_PropertyRuleType.cs" />
+    <Compile Include="Class_Protocol.cs" />
+    <Compile Include="Class_RefundInfo.cs" />
+    <Compile Include="Class_RefundItem.cs" />
+    <Compile Include="Class_RefundItemType.cs" />
+    <Compile Include="Class_RefundOrder.cs" />
+    <Compile Include="Class_RefundScreenOptions.cs" />
+    <Compile Include="Class_RefundStatus.cs" />
+    <Compile Include="Class_RepetitionType.cs" />
+    <Compile Include="Class_ReturnInfo.cs" />
+    <Compile Include="Class_ReturnOrderHeader.cs" />
+    <Compile Include="Class_ReturnType.cs" />
+    <Compile Include="Class_RowQty.cs" />
+    <Compile Include="Class_RuleAction.cs" />
+    <Compile Include="Class_RuleConditionHeader.cs" />
+    <Compile Include="Class_RuleEvaluationResult.cs" />
+    <Compile Include="Class_RuleHeaderBasic.cs" />
+    <Compile Include="Class_RuleSetType.cs" />
+    <Compile Include="Class_RulesFields.cs" />
+    <Compile Include="Class_Schedule.cs" />
+    <Compile Include="Class_ScheduleConfiguration.cs" />
+    <Compile Include="Class_SearchDateType.cs" />
+    <Compile Include="Class_SearchField.cs" />
+    <Compile Include="Class_SearchType.cs" />
+    <Compile Include="Class_server_register.cs" />
+    <Compile Include="Class_ServiceItem.cs" />
+    <Compile Include="Class_ShippingMethod.cs" />
+    <Compile Include="Class_ShippingService.cs" />
+    <Compile Include="Class_SimpleColumn.cs" />
+    <Compile Include="Class_SortDirectionType.cs" />
+    <Compile Include="Class_Specification.cs" />
+    <Compile Include="Class_SplitPackaging.cs" />
+    <Compile Include="Class_StateType.cs" />
+    <Compile Include="Class_StatusDetails.cs" />
+    <Compile Include="Class_StockAvailability.cs" />
+    <Compile Include="Class_StockConsumption.cs" />
+    <Compile Include="Class_StockItem.cs" />
+    <Compile Include="Class_StockItemAuditTrail.cs" />
+    <Compile Include="Class_StockItemChangeHistory.cs" />
+    <Compile Include="Class_StockItemChannelSKU.cs" />
+    <Compile Include="Class_StockItemComposition.cs" />
+    <Compile Include="Class_StockItemDescription.cs" />
+    <Compile Include="Class_StockItemDuePO.cs" />
+    <Compile Include="Class_StockItemExtendedProperty.cs" />
+    <Compile Include="Class_StockItemImage.cs" />
+    <Compile Include="Class_StockItemInv.cs" />
+    <Compile Include="Class_StockItemLevel.cs" />
+    <Compile Include="Class_StockItemLocation.cs" />
+    <Compile Include="Class_StockItemPrice.cs" />
+    <Compile Include="Class_StockItemReturn.cs" />
+    <Compile Include="Class_StockItemScrap.cs" />
+    <Compile Include="Class_StockItemSold.cs" />
+    <Compile Include="Class_StockItemSoldStat.cs" />
+    <Compile Include="Class_StockItemSoldStatDetail.cs" />
+    <Compile Include="Class_StockItemSoldStatFinalDetail.cs" />
+    <Compile Include="Class_StockItemSupplierStat.cs" />
+    <Compile Include="Class_StockItemTitle.cs" />
+    <Compile Include="Class_StockLocation.cs" />
+    <Compile Include="Class_StringFilter.cs" />
+    <Compile Include="Class_StringFilterType.cs" />
+    <Compile Include="Class_SubQuery.cs" />
+    <Compile Include="Class_SubQueryOutputMappingSelectionField.cs" />
+    <Compile Include="Class_SubQuerySelectionField.cs" />
+    <Compile Include="Class_Supplier.cs" />
+    <Compile Include="Class_System_Channel_Setting_Property.cs" />
+    <Compile Include="Class_TempFile.cs" />
+    <Compile Include="Class_TemplateHeader.cs" />
+    <Compile Include="Class_TestpadValue.cs" />
+    <Compile Include="Class_TextFieldFilter.cs" />
+    <Compile Include="Class_TextFieldFilterType.cs" />
+    <Compile Include="Class_TransferStatus.cs" />
+    <Compile Include="Class_UpdateOrderItemResult.cs" />
+    <Compile Include="Class_UpdateStatus.cs" />
+    <Compile Include="Class_UpdateTotalsResult.cs" />
+    <Compile Include="Class_UserOrderView.cs" />
+    <Compile Include="Class_ValidationResult.cs" />
+    <Compile Include="Class_ValidationResultTypes.cs" />
+    <Compile Include="Class_VariationGroup.cs" />
+    <Compile Include="Class_VariationGroupTemplate.cs" />
+    <Compile Include="Class_VariationItem.cs" />
+    <Compile Include="Class_VariationParentSKUSearchItem.cs" />
+    <Compile Include="Class_VariationParentStatus.cs" />
+    <Compile Include="Class_VariationSearchType.cs" />
+    <Compile Include="Class_VirtualPrinter.cs" />
+    <Compile Include="Class_WarehouseLocation.cs" />
+    <Compile Include="Class_WarehouseTransfer.cs" />
+    <Compile Include="Class_WarehouseTransferAudit.cs" />
+    <Compile Include="Class_WarehouseTransferBin.cs" />
+    <Compile Include="Class_WarehouseTransferBinNote.cs" />
+    <Compile Include="Class_WarehouseTransferItem.cs" />
+    <Compile Include="Class_WarehouseTransferItemNote.cs" />
+    <Compile Include="Class_WarehouseTransferNote.cs" />
+    <Compile Include="Class_WarehouseTransferProperty.cs" />
+    <Compile Include="Class_WeightMeasure.cs" />
+    <Compile Include="ExternalApplications.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="ImportExport.cs" />
+    <Compile Include="Inventory.cs" />
+    <Compile Include="Locations.cs" />
+    <Compile Include="Logs.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Orders.cs" />
+    <Compile Include="Permissions.cs" />
+    <Compile Include="PostalServices.cs" />
+    <Compile Include="PrintService.cs" />
+    <Compile Include="ProcessedOrders.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReturnsRefunds.cs" />
+    <Compile Include="RulesEngine.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Stock.cs" />
+    <Compile Include="WarehouseTransfer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
