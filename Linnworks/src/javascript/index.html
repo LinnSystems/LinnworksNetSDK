@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="Factory.js"></script>
+		<script src="Auth.js"></script>
+		
+		<script>
+			function LoginTest()
+			{
+				var login = Auth.MultiLogin($("#username").val(), $("#password").val());
+								
+				for(var i in login)
+				{
+					var item = login[i];
+					alert(item.Id);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<p>This is a login test for Linnworks.net. Enter your username and password here. If connected succesfully, you should see alert boxes appear with ID's to the accounts you have access to.</p>
+		<input type="text" id="username" name="username" placeholder="Linnworks Username">
+		<input type="password" id="password" name="password" placeholder="Linnworks Password">
+		
+		<button href="#" onclick="LoginTest()">Login</button>
+	</body>
+</html>
