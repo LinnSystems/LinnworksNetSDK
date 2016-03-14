@@ -1,0 +1,60 @@
+<?php
+ class ProcessedOrderWeb
+{ public $pkOrderID;
+public $cShippingAddress;
+public $dReceivedDate;
+public $dProcessedOn;
+public $timeDiff;
+public $fPostageCost;
+public $fTotalCharge;
+public $PostageCostExTax;
+public $Subtotal;
+public $fTax;
+public $TotalDiscount;
+public $ProfitMargin;
+public $CountryTaxRate;
+public $nOrderId;
+public $nStatus;
+public $cCurrency;
+public $PostalTrackingNumber;
+public $cCountry;
+public $Source;
+public $PostalServiceName;
+public $PostalServiceCode;
+public $Vendor;
+public $ReferenceNum;
+public $ExternalReference;
+public $Address1;
+public $Address2;
+public $Address3;
+public $Town;
+public $Region;
+public $BuyerPhoneNumber;
+public $Company;
+public $SubSource;
+public $ChannelBuyerName;
+public $AccountName;
+public $cFullName;
+public $cEmailAddress;
+public $cPostCode;
+public $dPaidOn;
+public $PackageCategory;
+public $PackageTitle;
+public $ItemWeight;
+public $TotalWeight;
+public $FolderCollection;
+public $cBillingAddress;
+public $BillingName;
+public $BillingCompany;
+public $BillingAddress1;
+public $BillingAddress2;
+public $BillingAddress3;
+public $BillingTown;
+public $BillingRegion;
+public $BillingPostCode;
+public $BillingCountryName;
+public $BillingPhoneNumber;
+public $HoldOrCancel;
+ 
+} 
+?>
