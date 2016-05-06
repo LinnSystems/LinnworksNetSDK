@@ -1,15 +1,22 @@
+using System.Text;
 using System;
-
+using System.Collections.Generic;
 namespace LinnworksAPI
-{
-    public class customer_field_simple
-    {
-        public Int32 Length;
-        public Int64 LongLength;
-        public Int32 Rank;
-        public Object SyncRoot;
-        public Boolean IsReadOnly;
-        public Boolean IsFixedSize;
-        public Boolean IsSynchronized;
-    }
+{ public class customer_field_simple
+{ public Int32 pkFieldId;
+public Int32 id;
+public String FieldName;
+public String FieldDescription;
+public String FieldType;
+public String FieldTag;
+public String FieldValue;
+public DateTime ModifiedOn;
+public Boolean IsRequired;
+public String ValidationPattern;
+public Boolean EndUserReadOnly;
+public Boolean EndUserVisible;
+public Int32 SortOrder;
+public Guid pkCustomerFieldId;
+ 
+} 
 }

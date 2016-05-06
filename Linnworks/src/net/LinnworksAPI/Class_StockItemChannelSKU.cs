@@ -1,18 +1,19 @@
+using System.Text;
 using System;
-
+using System.Collections.Generic;
 namespace LinnworksAPI
-{
-    public class StockItemChannelSKU
-    {
-        public Guid ChannelSKURowId;
-        public String SKU;
-        public String Source;
-        public String SubSource;
-        public String UpdateStatus;
-        public String ChannelReferenceId;
-        public DateTime LastUpdate;
-        public Int32 SubmittedQuantity;
-        public Int32 ListedQuantity;
-        public Guid StockItemId;
-    }
+{ public class StockItemChannelSKU
+{ public Guid ChannelSKURowId;
+public String SKU;
+public String Source;
+public String SubSource;
+public String UpdateStatus;
+public String ChannelReferenceId;
+public DateTime LastUpdate;
+public Int32 SubmittedQuantity;
+public Int32 ListedQuantity;
+public Int32 MaxListedQuantity;
+public Guid StockItemId;
+ 
+} 
 }

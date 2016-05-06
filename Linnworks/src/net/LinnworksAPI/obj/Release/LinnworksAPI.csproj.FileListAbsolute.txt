@@ -1,0 +1,6 @@
+C:\work\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\bin\Release\LinnworksAPI.dll
+C:\work\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\bin\Release\LinnworksAPI.pdb
+C:\work\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\bin\Release\Newtonsoft.Json.dll
+C:\work\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\bin\Release\Newtonsoft.Json.xml
+C:\work\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\obj\Release\LinnworksAPI.dll
+C:\work\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\obj\Release\LinnworksAPI.pdb

@@ -1,8 +1,11 @@
+using System.Text;
+using System;
+using System.Collections.Generic;
 namespace LinnworksAPI
-{
-    public enum StateType
-    {
-        AVAILABLE,
-        LOCKED,
-    }
+{ public enum StateType
+{ AVAILABLE,
+LOCKED,
+MAINTENANCE,
+ 
+} 
 }
