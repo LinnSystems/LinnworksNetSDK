@@ -5,7 +5,7 @@ using System;
 using System.IO;
 namespace LinnworksAPI
 {public static class PrintServiceMethods 
-{ public static CreatePDFResult CreatePDFfromJobForceTemplate(String templateType,List<Guid> IDs,Int32 templateID,List<KeyValuePair<String,String>> parameters,String printerName,String ApiToken, String ApiServer)
+{ public static CreatePDFResult CreatePDFfromJobForceTemplate(String templateType,List<Guid> IDs,Int32? templateID,List<KeyValuePair<String,String>> parameters,String printerName,String ApiToken, String ApiServer)
 {
  return Newtonsoft.Json.JsonConvert.DeserializeObject<CreatePDFResult>(Factory.GetResponse("PrintService/CreatePDFfromJobForceTemplate", "templateType=" + templateType + "&IDs=" + Newtonsoft.Json.JsonConvert.SerializeObject(IDs) + "&templateID=" + templateID + "&parameters=" + Newtonsoft.Json.JsonConvert.SerializeObject(parameters) + "&printerName=" + printerName + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }

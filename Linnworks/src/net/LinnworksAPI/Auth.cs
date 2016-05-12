@@ -15,11 +15,6 @@ public static BaseSession AuthorizeByApplication(Guid applicationId,Guid applica
  return Newtonsoft.Json.JsonConvert.DeserializeObject<BaseSession>(Factory.GetResponse("Auth/AuthorizeByApplication", "applicationId=" + applicationId + "&applicationSecret=" + applicationSecret + "&token=" + token + "", "", ""), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
-public static BaseSession GetSession(string token)
-{
-    return Newtonsoft.Json.JsonConvert.DeserializeObject<BaseSession>(Factory.GetResponse("Auth/GetSession", "token=" + token, "", ""), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }); 
-}
-
 public static DateTime GetServerUTCTime()
 {
  return Newtonsoft.Json.JsonConvert.DeserializeObject<DateTime>(Factory.GetResponse("Auth/GetServerUTCTime", "", "", ""), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 

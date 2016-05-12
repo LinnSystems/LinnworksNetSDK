@@ -115,7 +115,7 @@ public static OrderItem GetOrderItemComposition(Guid orderId,Guid stockItemId,Gu
  return Newtonsoft.Json.JsonConvert.DeserializeObject<OrderItem>(Factory.GetResponse("Orders/GetOrderItemComposition", "orderId=" + orderId + "&stockItemId=" + stockItemId + "&fulfilmentCenter=" + fulfilmentCenter + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
-public static List<Guid> ChangeOrderTag(List<Guid> orderIds,Int32 tag,String ApiToken, String ApiServer)
+public static List<Guid> ChangeOrderTag(List<Guid> orderIds,Int32? tag,String ApiToken, String ApiServer)
 {
  return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Guid>>(Factory.GetResponse("Orders/ChangeOrderTag", "orderIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(orderIds) + "&tag=" + tag + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }

@@ -70,7 +70,7 @@ public static void SaveConditionChanges(ConditionHeaderBasic conditionHeader,Str
  Factory.GetResponse("RulesEngine/SaveConditionChanges", "conditionHeader=" + Newtonsoft.Json.JsonConvert.SerializeObject(conditionHeader) + "", ApiToken, ApiServer); 
 }
 
-public static Boolean CheckConditionNameExists(Int32 fkRuleId,Int32 fkConditionId,Int32 excludeConditionId,String conditionName,String ApiToken, String ApiServer)
+public static Boolean CheckConditionNameExists(Int32 fkRuleId,Int32? fkConditionId,Int32? excludeConditionId,String conditionName,String ApiToken, String ApiServer)
 {
  return Newtonsoft.Json.JsonConvert.DeserializeObject<Boolean>(Factory.GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + fkConditionId + "&excludeConditionId=" + excludeConditionId + "&conditionName=" + conditionName + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
@@ -170,7 +170,7 @@ public static void SetConditionEnabled(Int32 pkConditionId,Boolean enabled,Strin
  Factory.GetResponse("RulesEngine/SetConditionEnabled", "pkConditionId=" + pkConditionId + "&enabled=" + enabled + "", ApiToken, ApiServer); 
 }
 
-public static RuleConditionHeader CopyCondition(Int32 pkRuleId,Int32 targetParentConditionId,Int32 pkConditionId,Boolean includeChildren,Boolean includeActions,String ApiToken, String ApiServer)
+public static RuleConditionHeader CopyCondition(Int32 pkRuleId,Int32? targetParentConditionId,Int32 pkConditionId,Boolean includeChildren,Boolean includeActions,String ApiToken, String ApiServer)
 {
  return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleConditionHeader>(Factory.GetResponse("RulesEngine/CopyCondition", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + targetParentConditionId + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }

@@ -22,7 +22,6 @@ ChannelSKU,
 SupplierCode,
 eBayId,
 AmazonASIN,
-Image,
  
 } 
 }

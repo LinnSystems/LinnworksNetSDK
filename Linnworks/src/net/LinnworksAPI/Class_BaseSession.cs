@@ -8,7 +8,7 @@ public DataCache Cache;
 public String Server;
 public StatusDetails Status;
 public String Email;
-public Guid Id;
+public string Id;
 public string Token;
 public String GroupName;
 public LocalityType Locality;

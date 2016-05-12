@@ -110,7 +110,7 @@ public static WarehouseTransferItem ChangeTransferItemSentQuantity(Guid pkTransf
  return Newtonsoft.Json.JsonConvert.DeserializeObject<WarehouseTransferItem>(Factory.GetResponse("WarehouseTransfer/ChangeTransferItemSentQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + Quantity + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
-public static void ChangeTransferItemReceivedQuantity(Guid pkTransferId,Guid pkBinId,Guid pkTransferItemId,Int32 Quantity,String ApiToken, String ApiServer)
+public static void ChangeTransferItemReceivedQuantity(Guid pkTransferId,Guid pkBinId,Guid pkTransferItemId,Int32? Quantity,String ApiToken, String ApiServer)
 {
  Factory.GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + Quantity + "", ApiToken, ApiServer); 
 }

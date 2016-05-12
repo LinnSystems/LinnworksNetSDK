@@ -17,7 +17,6 @@ StockValue,
 Due,
 BinRack,
 Category,
-Image,
  
 } 
 }

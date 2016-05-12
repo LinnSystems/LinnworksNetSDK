@@ -45,7 +45,7 @@ public static List<ServiceItem> GetRefundableServiceItems(Guid pkOrderId,String 
  return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ServiceItem>>(Factory.GetResponse("ProcessedOrders/GetRefundableServiceItems", "pkOrderId=" + pkOrderId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
-public static ExistingRefundTotal GetTotalRefunds(Guid pkOrderId,Boolean includeBookings,String ApiToken, String ApiServer)
+public static ExistingRefundTotal GetTotalRefunds(Guid pkOrderId,Boolean? includeBookings,String ApiToken, String ApiServer)
 {
  return Newtonsoft.Json.JsonConvert.DeserializeObject<ExistingRefundTotal>(Factory.GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + includeBookings + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
@@ -85,12 +85,12 @@ public static ProcessedOrderWeb GetOrderInfo(Guid pkOrderId,String ApiToken, Str
  return Newtonsoft.Json.JsonConvert.DeserializeObject<ProcessedOrderWeb>(Factory.GetResponse("ProcessedOrders/GetOrderInfo", "pkOrderId=" + pkOrderId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
-public static GenericPagedResult<ProcessedOrderWeb> SearchProcessedOrdersPaged(DateTime from,DateTime to,SearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,Int32 pageNum,Int32 numEntriesPerPage,String ApiToken, String ApiServer)
+public static GenericPagedResult<ProcessedOrderWeb> SearchProcessedOrdersPaged(DateTime? from,DateTime? to,SearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,Int32 pageNum,Int32 numEntriesPerPage,String ApiToken, String ApiServer)
 {
  return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<ProcessedOrderWeb>>(Factory.GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", "from=" + Newtonsoft.Json.JsonConvert.SerializeObject(from) + "&to=" + Newtonsoft.Json.JsonConvert.SerializeObject(to) + "&dateType=" + Newtonsoft.Json.JsonConvert.SerializeObject(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
-public static String CreateProcessedOrdersCSV(DateTime from,DateTime to,SearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection,String ApiToken, String ApiServer)
+public static String CreateProcessedOrdersCSV(DateTime? from,DateTime? to,SearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection,String ApiToken, String ApiServer)
 {
  return Newtonsoft.Json.JsonConvert.DeserializeObject<String>(Factory.GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", "from=" + Newtonsoft.Json.JsonConvert.SerializeObject(from) + "&to=" + Newtonsoft.Json.JsonConvert.SerializeObject(to) + "&dateType=" + Newtonsoft.Json.JsonConvert.SerializeObject(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
