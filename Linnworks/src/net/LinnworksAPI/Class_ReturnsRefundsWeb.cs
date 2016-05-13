@@ -63,7 +63,7 @@ public String Category;
 public Int32 ReturnQty;
 public Guid fkReturnLocationId;
 public Boolean Scrapped;
-public Int32 ScrapQty;
+public Int32? ScrapQty;
 public DateTime ReturnDate;
 public String Location;
 public String ItemNumber;

@@ -17,7 +17,7 @@ public Boolean IsCompositeParent;
 public Boolean IsPartialCompositeReturn;
 public Int32 ParentRatio;
 public List<OrderItemReturnInfo> ChildItems;
-public Guid pkStockItemId;
+public Guid? pkStockItemId;
 public Int32 ResentQty;
  
 } 

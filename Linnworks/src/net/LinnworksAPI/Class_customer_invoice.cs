@@ -8,7 +8,7 @@ public Guid pkInvoiceId;
 public Guid sid_registration;
 public DateTime InvoiceDate;
 public DateTime PaidDate;
-public DateTime SendDate;
+public DateTime? SendDate;
 public Boolean Paid;
 public Boolean IsReverseAllowed;
 public Double Subtotal;

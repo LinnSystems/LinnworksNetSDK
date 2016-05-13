@@ -6,7 +6,7 @@ namespace LinnworksAPI
 { public Int32 pkRegionRowId;
 public String RegionCode;
 public String RegionName;
-public Double TaxRate;
+public Double? TaxRate;
 public Guid fkCountryId;
 public CountryRegionReplaceWith ReplaceWith;
  

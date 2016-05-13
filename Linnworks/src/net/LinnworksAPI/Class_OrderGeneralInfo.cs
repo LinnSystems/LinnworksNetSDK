@@ -10,7 +10,7 @@ public Boolean InvoicePrinted;
 public Boolean PickListPrinted;
 public Int32 Notes;
 public Boolean PartShipped;
-public Byte Marker;
+public Byte? Marker;
 public String ReferenceNum;
 public String ExternalReferenceNum;
 public DateTime ReceivedDate;

@@ -15,7 +15,7 @@ public Boolean TrackingNumberRequired;
 public Boolean WeightRequired;
 public Boolean IgnorePackagingGroup;
 public Int32 fkShippingAPIConfigId;
-public Guid IntegratedServiceId;
+public Guid? IntegratedServiceId;
  
 } 
 }

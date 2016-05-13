@@ -10,7 +10,7 @@ public Double TotalWeight;
 public Double ItemWeight;
 public Guid PackageCategoryId;
 public String PackageCategory;
-public Guid PackageTypeId;
+public Guid? PackageTypeId;
 public String PackageType;
 public Double PostageCost;
 public Double PostageCostExTax;

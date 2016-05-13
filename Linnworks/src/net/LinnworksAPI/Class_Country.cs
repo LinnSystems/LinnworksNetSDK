@@ -9,7 +9,7 @@ public String CountryCode;
 public String Continent;
 public String Currency;
 public Boolean CustomsRequired;
-public Double TaxRate;
+public Double? TaxRate;
 public String AddressFormat;
 public List<CountryRegion> Regions;
  

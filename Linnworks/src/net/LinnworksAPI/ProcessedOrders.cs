@@ -47,7 +47,7 @@ public static List<ServiceItem> GetRefundableServiceItems(Guid pkOrderId,String 
 
 public static ExistingRefundTotal GetTotalRefunds(Guid pkOrderId,Boolean? includeBookings,String ApiToken, String ApiServer)
 {
- return Newtonsoft.Json.JsonConvert.DeserializeObject<ExistingRefundTotal>(Factory.GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + includeBookings + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+ return Newtonsoft.Json.JsonConvert.DeserializeObject<ExistingRefundTotal>(Factory.GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + Newtonsoft.Json.JsonConvert.SerializeObject(includeBookings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
 public static ValidationResult IsRefundValid(Guid pkOrderId,List<RefundItem> refundItems,String ApiToken, String ApiServer)

@@ -149,7 +149,7 @@
     <Compile Include="Class_ImportType.cs" />
     <Compile Include="Class_IncludeArchived.cs" />
     <Compile Include="Class_InventoryItem.cs" />
-    <Compile Include="Class_InventoryListingLink.cs" />
+    <Compile Include="Class_InventoryItemSingle.cs" />
     <Compile Include="Class_InventoryListingTemplate.cs" />
     <Compile Include="Class_InventoryView.cs" />
     <Compile Include="Class_IRuleConditionItem.cs" />
@@ -242,8 +242,6 @@
     <Compile Include="Class_StatusDetails.cs" />
     <Compile Include="Class_StockAvailability.cs" />
     <Compile Include="Class_StockConsumption.cs" />
-    <Compile Include="Class_StockInformationDataRequirement.cs" />
-    <Compile Include="Class_StockInformationSearchType.cs" />
     <Compile Include="Class_StockItem.cs" />
     <Compile Include="Class_StockItemAuditTrail.cs" />
     <Compile Include="Class_StockItemChangeHistory.cs" />

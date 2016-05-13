@@ -72,7 +72,7 @@ public static void SaveConditionChanges(ConditionHeaderBasic conditionHeader,Str
 
 public static Boolean CheckConditionNameExists(Int32 fkRuleId,Int32? fkConditionId,Int32? excludeConditionId,String conditionName,String ApiToken, String ApiServer)
 {
- return Newtonsoft.Json.JsonConvert.DeserializeObject<Boolean>(Factory.GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + fkConditionId + "&excludeConditionId=" + excludeConditionId + "&conditionName=" + conditionName + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+ return Newtonsoft.Json.JsonConvert.DeserializeObject<Boolean>(Factory.GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + Newtonsoft.Json.JsonConvert.SerializeObject(fkConditionId) + "&excludeConditionId=" + Newtonsoft.Json.JsonConvert.SerializeObject(excludeConditionId) + "&conditionName=" + conditionName + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
 public static List<String> GetActionOptions(ActionType type,String ApiToken, String ApiServer)
@@ -125,9 +125,9 @@ public static List<TestpadValue> GetValuesFromExisting(Int32 pkRuleId,Object id,
  return Newtonsoft.Json.JsonConvert.DeserializeObject<List<TestpadValue>>(Factory.GetResponse("RulesEngine/GetValuesFromExisting", "pkRuleId=" + pkRuleId + "&id=" + Newtonsoft.Json.JsonConvert.SerializeObject(id) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
-public static Int32 SetDraftLive(Int32 pkRuleId,String ApiToken, String ApiServer)
+public static Int32? SetDraftLive(Int32 pkRuleId,String ApiToken, String ApiServer)
 {
- return Newtonsoft.Json.JsonConvert.DeserializeObject<Int32>(Factory.GetResponse("RulesEngine/SetDraftLive", "pkRuleId=" + pkRuleId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+ return Newtonsoft.Json.JsonConvert.DeserializeObject<Int32?>(Factory.GetResponse("RulesEngine/SetDraftLive", "pkRuleId=" + pkRuleId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
 public static Int32 CreateDraftFromExisting(Int32 pkRuleId,String ApiToken, String ApiServer)
@@ -172,7 +172,7 @@ public static void SetConditionEnabled(Int32 pkConditionId,Boolean enabled,Strin
 
 public static RuleConditionHeader CopyCondition(Int32 pkRuleId,Int32? targetParentConditionId,Int32 pkConditionId,Boolean includeChildren,Boolean includeActions,String ApiToken, String ApiServer)
 {
- return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleConditionHeader>(Factory.GetResponse("RulesEngine/CopyCondition", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + targetParentConditionId + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+ return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleConditionHeader>(Factory.GetResponse("RulesEngine/CopyCondition", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + Newtonsoft.Json.JsonConvert.SerializeObject(targetParentConditionId) + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
 public static RuleAction CopyAction(Int32 pkRuleId,Int32 targetParentConditionId,Int32 pkActionId,String ApiToken, String ApiServer)

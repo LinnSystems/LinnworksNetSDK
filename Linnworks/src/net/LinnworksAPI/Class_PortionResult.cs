@@ -6,6 +6,7 @@ namespace LinnworksAPI
 { public List<InventoryItem> Items;
 public Int32 TotalItems;
 public Int32 StartIndex;
+public Guid Token;
  
 } 
 }

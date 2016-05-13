@@ -6,7 +6,7 @@ namespace LinnworksAPI
 { public Guid OrderId;
 public Int32 NumOrderId;
 public Boolean Processed;
-public DateTime ProcessedDateTime;
+public DateTime? ProcessedDateTime;
 public Guid FulfilmentLocationId;
 public OrderGeneralInfo GeneralInfo;
 public OrderShippingInfo ShippingInfo;

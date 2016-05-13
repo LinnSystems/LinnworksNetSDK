@@ -10,7 +10,7 @@ public String Barcode;
 public String ItemTitle;
 public Int32 RequestedQuantity;
 public Int32 SentQuantity;
-public Int32 ReceivedQuantity;
+public Int32? ReceivedQuantity;
 public Int32 InFromLocationQuantity;
 public Int32 DueFromLocationQuantity;
 public Int32 InToLocationQuantity;

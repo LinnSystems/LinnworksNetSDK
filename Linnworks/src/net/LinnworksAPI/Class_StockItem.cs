@@ -7,7 +7,7 @@ namespace LinnworksAPI
 public String ItemTitle;
 public String BarcodeNumber;
 public Double PurchasePrice;
-public Double RetailPrice;
+public Double? RetailPrice;
 public Int32 Quantity;
 public Double TaxRate;
 public Int32 InOrder;

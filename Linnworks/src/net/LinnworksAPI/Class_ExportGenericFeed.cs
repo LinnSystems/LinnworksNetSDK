@@ -6,7 +6,7 @@ namespace LinnworksAPI
 { public FeedType FeedType;
 public String FileName;
 public String FilePath;
-public FileExistAction IfFileExist;
+public FileExistAction? IfFileExist;
  
 } 
 }

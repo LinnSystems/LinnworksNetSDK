@@ -17,7 +17,7 @@ public String ItemNumber;
 public String ItemTitle;
 public String BarcodeNumber;
 public Double PurchasePrice;
-public Double RetailPrice;
+public Double? RetailPrice;
 public Int32 Quantity;
 public Int32 InOrder;
 public Int32 Due;

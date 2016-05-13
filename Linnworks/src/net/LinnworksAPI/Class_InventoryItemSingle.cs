@@ -2,7 +2,7 @@ using System.Text;
 using System;
 using System.Collections.Generic;
 namespace LinnworksAPI
-{ public class InventoryItem
+{ public class InventoryItemSingle
 { public Dictionary<String,ChannelDetails> Channels;
 public Guid Id;
 public String SKU;

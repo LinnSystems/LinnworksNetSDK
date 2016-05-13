@@ -8,6 +8,7 @@ Double,
 String,
 Boolean,
 Select,
+Other,
  
 } 
 }

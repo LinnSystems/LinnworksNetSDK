@@ -67,7 +67,7 @@ public static Boolean SKUExists(String SKU,String ApiToken, String ApiServer)
 
 public static List<StockConsumption> GetStockConsumption(Guid stockItemId,Guid? locationId,DateTime startDate,DateTime endDate,String ApiToken, String ApiServer)
 {
- return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockConsumption>>(Factory.GetResponse("Stock/GetStockConsumption", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&startDate=" + Newtonsoft.Json.JsonConvert.SerializeObject(startDate) + "&endDate=" + Newtonsoft.Json.JsonConvert.SerializeObject(endDate) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+ return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockConsumption>>(Factory.GetResponse("Stock/GetStockConsumption", "stockItemId=" + stockItemId + "&locationId=" + Newtonsoft.Json.JsonConvert.SerializeObject(locationId) + "&startDate=" + Newtonsoft.Json.JsonConvert.SerializeObject(startDate) + "&endDate=" + Newtonsoft.Json.JsonConvert.SerializeObject(endDate) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
 public static GenericPagedResult<StockItemChangeHistory> GetItemChangesHistory(Guid stockItemId,Guid locationId,Int32 entriesPerPage,Int32 pageNumber,String ApiToken, String ApiServer)
@@ -82,7 +82,7 @@ public static TempFile GetItemChangesHistoryCSV(Guid stockItemId,Guid locationId
 
 public static GenericPagedResult<StockItem> GetStockItems(String keyWord,Guid? locationId,Int32 entriesPerPage,Int32 pageNumber,Boolean excludeComposites,String ApiToken, String ApiServer)
 {
- return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<StockItem>>(Factory.GetResponse("Stock/GetStockItems", "keyWord=" + keyWord + "&locationId=" + locationId + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+ return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<StockItem>>(Factory.GetResponse("Stock/GetStockItems", "keyWord=" + keyWord + "&locationId=" + Newtonsoft.Json.JsonConvert.SerializeObject(locationId) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
 public static List<StockItemLevel> GetStockLevel(Guid stockItemId,String ApiToken, String ApiServer)

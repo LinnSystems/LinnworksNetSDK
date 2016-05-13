@@ -7,7 +7,7 @@ namespace LinnworksAPI
 public Int32 pkViewId;
 public String ViewName;
 public String OwnerName;
-public Boolean AllowModify;
+public Boolean? AllowModify;
 public String JSONDetail;
  
 } 

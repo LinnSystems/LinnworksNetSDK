@@ -30,9 +30,14 @@ public static List<KeyGuidValue> GetPostalServices(String ApiToken, String ApiSe
  return Newtonsoft.Json.JsonConvert.DeserializeObject<List<KeyGuidValue>>(Factory.GetResponse("Inventory/GetPostalServices", "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
-public static PortionResult<InventoryItem> GetInventoryItems(InventoryView view,List<Guid> stockLocationIds,Int32 startIndex,Int32 itemsCount,String ApiToken, String ApiServer)
+public static PortionResult<InventoryItem> GetInventoryItems(InventoryView view,List<Guid> stockLocationIds,Int32 startIndex,Int32 itemsCount,Boolean preloadChilds,String ApiToken, String ApiServer)
 {
- return Newtonsoft.Json.JsonConvert.DeserializeObject<PortionResult<InventoryItem>>(Factory.GetResponse("Inventory/GetInventoryItems", "view=" + Newtonsoft.Json.JsonConvert.SerializeObject(view) + "&stockLocationIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockLocationIds) + "&startIndex=" + startIndex + "&itemsCount=" + itemsCount + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+ return Newtonsoft.Json.JsonConvert.DeserializeObject<PortionResult<InventoryItem>>(Factory.GetResponse("Inventory/GetInventoryItems", "view=" + Newtonsoft.Json.JsonConvert.SerializeObject(view) + "&stockLocationIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockLocationIds) + "&startIndex=" + startIndex + "&itemsCount=" + itemsCount + "&preloadChilds=" + preloadChilds + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+}
+
+public static Dictionary<Guid,List<InventoryItemSingle>> GetInventoryItemsChilds(InventoryView view,List<Guid> stockLocationIds,List<Guid> itemIds,String ApiToken, String ApiServer)
+{
+ return Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<Guid,List<InventoryItemSingle>>>(Factory.GetResponse("Inventory/GetInventoryItemsChilds", "view=" + Newtonsoft.Json.JsonConvert.SerializeObject(view) + "&stockLocationIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockLocationIds) + "&itemIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(itemIds) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 }
 
 public static Dictionary<String,Object> UpdateInventoryItemField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,String ApiToken, String ApiServer)

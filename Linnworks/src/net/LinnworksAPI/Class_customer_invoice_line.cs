@@ -10,7 +10,7 @@ public String Line;
 public Double Subtotal;
 public Double Tax;
 public Double Total;
-public Guid fkProfileId;
+public Guid? fkProfileId;
 public String ProductName;
 public String ReferenceTag;
 public Int32 fkApplicationSubscriptionId;
