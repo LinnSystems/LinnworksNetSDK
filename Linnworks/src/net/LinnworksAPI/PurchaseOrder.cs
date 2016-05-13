@@ -58,6 +58,11 @@ public static PurchaseOrderHeader Change_PurchaseOrderStatus(Change_PurchaseOrde
 public static Update_PurchaseOrderItemResponse Deliver_PurchaseItem(Deliver_PurchaseItemParameter deliverItemParameter,String ApiToken, String ApiServer)
 {
  return Newtonsoft.Json.JsonConvert.DeserializeObject<Update_PurchaseOrderItemResponse>(Factory.GetResponse("PurchaseOrder/Deliver_PurchaseItem", "deliverItemParameter=" + Newtonsoft.Json.JsonConvert.SerializeObject(deliverItemParameter) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+}
+
+public static List<PurchaseOrderStatus> GetPurchaseOrderStatusList(String ApiToken, String ApiServer)
+{
+ return Newtonsoft.Json.JsonConvert.DeserializeObject<List<PurchaseOrderStatus>>(Factory.GetResponse("PurchaseOrder/GetPurchaseOrderStatusList", "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 } 
 }
 }

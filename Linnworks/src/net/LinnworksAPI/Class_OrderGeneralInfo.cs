@@ -18,6 +18,7 @@ public String Source;
 public String SubSource;
 public Boolean HoldOrCancel;
 public DateTime DespatchByDate;
+public Int32 NumItems;
  
 } 
 }

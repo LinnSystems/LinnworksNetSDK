@@ -40,6 +40,7 @@ public Boolean HasImage;
 public Guid ImageId;
 public List<OrderItemOption> AdditionalInfo;
 public Int32 StockLevelIndicator;
+public String BinRack;
  
 } 
 }

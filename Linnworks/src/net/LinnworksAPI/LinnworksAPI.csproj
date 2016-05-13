@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
+    <Compile Include="Billing.cs" />
     <Compile Include="Class_ActionType.cs" />
     <Compile Include="Class_ActionTypeDescriptor.cs" />
     <Compile Include="Class_ActionWeb.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Class_Category.cs" />
     <Compile Include="Class_Change_PurchaseOrderStatusParameter.cs" />
     <Compile Include="Class_Channel.cs" />
+    <Compile Include="Class_ChannelDetails.cs" />
     <Compile Include="Class_ChannelPaymentMethod.cs" />
     <Compile Include="Class_ChannelPostalService.cs" />
     <Compile Include="Class_ChannelRefundReason.cs" />
@@ -94,7 +96,14 @@
     <Compile Include="Class_CouponValidationResult.cs" />
     <Compile Include="Class_CreatePDFResult.cs" />
     <Compile Include="Class_Create_PurchaseOrder_InitialParameter.cs" />
+    <Compile Include="Class_customer.cs" />
     <Compile Include="Class_CustomerAddress.cs" />
+    <Compile Include="Class_customer_field_simple.cs" />
+    <Compile Include="Class_customer_invoice.cs" />
+    <Compile Include="Class_customer_invoice_line.cs" />
+    <Compile Include="Class_customer_invoice_payment.cs" />
+    <Compile Include="Class_customer_invoice_refund.cs" />
+    <Compile Include="Class_customer_profile.cs" />
     <Compile Include="Class_DailyFrequencyType.cs" />
     <Compile Include="Class_DataCache.cs" />
     <Compile Include="Class_DateFieldFilter.cs" />
@@ -139,6 +148,9 @@
     <Compile Include="Class_ImportRegister.cs" />
     <Compile Include="Class_ImportType.cs" />
     <Compile Include="Class_IncludeArchived.cs" />
+    <Compile Include="Class_InventoryItem.cs" />
+    <Compile Include="Class_InventoryListingLink.cs" />
+    <Compile Include="Class_InventoryListingTemplate.cs" />
     <Compile Include="Class_InventoryView.cs" />
     <Compile Include="Class_IRuleConditionItem.cs" />
     <Compile Include="Class_KeyGuidValue.cs" />
@@ -181,6 +193,7 @@
     <Compile Include="Class_PackageType.cs" />
     <Compile Include="Class_PaymentMethod.cs" />
     <Compile Include="Class_PictureSource.cs" />
+    <Compile Include="Class_PortionResult.cs" />
     <Compile Include="Class_PostageService.cs" />
     <Compile Include="Class_PostalService.cs" />
     <Compile Include="Class_PostalService_WithChannelAndShippingLinks.cs" />
@@ -240,6 +253,7 @@
     <Compile Include="Class_StockItemDuePO.cs" />
     <Compile Include="Class_StockItemExtendedProperty.cs" />
     <Compile Include="Class_StockItemImage.cs" />
+    <Compile Include="Class_StockItemInv.cs" />
     <Compile Include="Class_StockItemLevel.cs" />
     <Compile Include="Class_StockItemLocation.cs" />
     <Compile Include="Class_StockItemPrice.cs" />
@@ -255,9 +269,11 @@
     <Compile Include="Class_StringFilter.cs" />
     <Compile Include="Class_StringFilterType.cs" />
     <Compile Include="Class_SubQueryOutputMappingSelectionField.cs" />
+    <Compile Include="Class_Supplier.cs" />
     <Compile Include="Class_System_Channel_Setting_Property.cs" />
     <Compile Include="Class_TempFile.cs" />
     <Compile Include="Class_TemplateHeader.cs" />
+    <Compile Include="Class_term_register.cs" />
     <Compile Include="Class_TestpadValue.cs" />
     <Compile Include="Class_TextFieldFilter.cs" />
     <Compile Include="Class_TextFieldFilterType.cs" />
