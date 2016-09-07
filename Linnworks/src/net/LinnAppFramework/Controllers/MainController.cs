@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LinnAppFramework.Controllers
@@ -47,9 +45,8 @@ namespace LinnAppFramework.Controllers
 
             stats.Add("Your Orders..", ordersStats);
 
-         
             ViewBag.Stats = stats;
             return View();
         }
-	}
+    }
 }

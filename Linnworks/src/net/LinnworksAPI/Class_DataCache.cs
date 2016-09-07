@@ -1,10 +1,11 @@
-using System.Text;
 using System;
 using System.Collections.Generic;
+
 namespace LinnworksAPI
-{ public class DataCache
-{ public List<String> AllKeys;
-public Object Item;
- 
-} 
+{
+    public class DataCache
+    {
+        public List<String> AllKeys;
+        public Object Item;
+    }
 }

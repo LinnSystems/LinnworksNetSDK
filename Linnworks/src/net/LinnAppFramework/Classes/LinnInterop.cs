@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace LinnAppFramework.Classes
 {
@@ -11,7 +8,7 @@ namespace LinnAppFramework.Classes
         {
             LinnworksAPI.BaseSession Session = LinnworksAPI.AuthMethods.AuthorizeByApplication(AppSettings.ApplicationId, AppSettings.ApplicationSecret, Token);
 
-            if(Session == null)
+            if (Session == null)
             {
                 return new Core.GenericTypedResponse<LinnworksAPI.BaseSession>() { IsError = true, Error = "Could not verify session. Check ApplicationId, ApplicationSecret and Token validity" };
             }

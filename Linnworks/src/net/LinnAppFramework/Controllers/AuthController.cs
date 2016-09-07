@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LinnAppFramework.Controllers
@@ -12,22 +9,24 @@ namespace LinnAppFramework.Controllers
         {
             Guid Token = Guid.Empty;
 
-            if(!Guid.TryParse(id, out Token))
+            if (!Guid.TryParse(id, out Token))
             {
-                if(form["token"] != null)
+                if (form["token"] != null)
                 {
-                    if(!Guid.TryParse(form["token"].ToString(), out Token))
+                    if (!Guid.TryParse(form["token"].ToString(), out Token))
                     {
                         return View();
                     }
-                } else {
+                }
+                else
+                {
                     return View();
-                }  
+                }
             }
 
             var s = Classes.SessionHandler.CreateSession(Token);
 
-            if(s.IsError)
+            if (s.IsError)
             {
                 ViewBag.Error = s.Error;
                 return View();
@@ -48,7 +47,7 @@ namespace LinnAppFramework.Controllers
 
             return new RedirectResult("/Main/Index");
         }
-	    
+
         public ActionResult Setup()
         {
             return View();

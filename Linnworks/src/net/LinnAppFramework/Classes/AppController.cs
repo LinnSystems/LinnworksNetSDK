@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LinnAppFramework.Classes
@@ -10,7 +7,7 @@ namespace LinnAppFramework.Classes
     {
         public LinnworksAPI.BaseSession GetLinnworksSesion()
         {
-            if(Session["LinnworksSessionId"] == null)
+            if (Session["LinnworksSessionId"] == null)
             {
                 return null;
             }
@@ -21,5 +18,5 @@ namespace LinnAppFramework.Classes
                 return session;
             }
         }
-	}
+    }
 }
