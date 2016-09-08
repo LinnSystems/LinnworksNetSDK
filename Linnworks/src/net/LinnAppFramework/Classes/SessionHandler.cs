@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace LinnAppFramework.Classes
 {
@@ -18,7 +16,7 @@ namespace LinnAppFramework.Classes
         {
             var session = LinnInterop.GetSession(Token);
 
-            if(session.IsError)
+            if (session.IsError)
             {
                 return new Core.GenericTypedResponse<ClientSession>() { IsError = true, Error = "Couldn't create a session. Check token." };
             }
@@ -38,9 +36,9 @@ namespace LinnAppFramework.Classes
         /// <returns></returns>
         public static LinnworksAPI.BaseSession GetSession(Guid LinnworksSessionId)
         {
-            foreach(var session in Sessions)
+            foreach (var session in Sessions)
             {
-                if(session.LinnworksSessionId == LinnworksSessionId)
+                if (session.LinnworksSessionId == LinnworksSessionId)
                 {
                     return session.Session;
                 }

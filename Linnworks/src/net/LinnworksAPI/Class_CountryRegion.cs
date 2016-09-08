@@ -1,14 +1,14 @@
-using System.Text;
 using System;
-using System.Collections.Generic;
+
 namespace LinnworksAPI
-{ public class CountryRegion
-{ public Int32 pkRegionRowId;
-public String RegionCode;
-public String RegionName;
-public Double? TaxRate;
-public Guid fkCountryId;
-public CountryRegionReplaceWith ReplaceWith;
- 
-} 
+{
+    public class CountryRegion
+    {
+        public Int32 pkRegionRowId;
+        public String RegionCode;
+        public String RegionName;
+        public Double? TaxRate;
+        public Guid fkCountryId;
+        public CountryRegionReplaceWith ReplaceWith;
+    }
 }
