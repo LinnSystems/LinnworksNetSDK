@@ -2,6 +2,7 @@ using System;
 
 namespace LinnworksAPI
 {
+    [Serializable]
     public class OrderGeneralInfo
     {
         public Int32 Status;

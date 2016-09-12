@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace LinnworksAPI
 {
+    [Serializable]
     public class OrderItem
     {
         public Guid OrderId;

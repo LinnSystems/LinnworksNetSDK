@@ -1,0 +1,7 @@
+Z:\Folders\Documents\GIT\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\bin\Debug\LinnworksAPI.dll
+Z:\Folders\Documents\GIT\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\bin\Debug\LinnworksAPI.pdb
+Z:\Folders\Documents\GIT\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\bin\Debug\Newtonsoft.Json.dll
+Z:\Folders\Documents\GIT\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\bin\Debug\Newtonsoft.Json.xml
+Z:\Folders\Documents\GIT\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.csprojResolveAssemblyReference.cache
+Z:\Folders\Documents\GIT\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.dll
+Z:\Folders\Documents\GIT\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.pdb

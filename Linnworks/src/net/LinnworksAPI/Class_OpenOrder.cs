@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace LinnworksAPI
 {
+    [Serializable]
     public class OpenOrder
     {
         public String ORDER_NOT_FOUND_ERROR;

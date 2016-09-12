@@ -2,6 +2,7 @@ using System;
 
 namespace LinnworksAPI
 {
+    [Serializable]
     public class OrderNote
     {
         public Guid OrderNoteId;
