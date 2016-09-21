@@ -6,11 +6,6 @@ namespace LinnworksAPI
 {
     public static class InventoryMethods
     {
-        public static void DeleteInventoryItemDescriptions(List<Guid> inventoryItemDescriptionIds, String ApiToken, String ApiServer)
-        {
-            Factory.GetResponse("Inventory/DeleteInventoryItemDescriptions", "inventoryItemDescriptionIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemDescriptionIds) + "", ApiToken, ApiServer);
-        }
-
         public static List<AnyConfig> GetChannels(String ApiToken, String ApiServer)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<AnyConfig>>(Factory.GetResponse("Inventory/GetChannels", "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
@@ -384,6 +379,11 @@ namespace LinnworksAPI
         public static void UpdateInventoryItemDescriptions(List<StockItemDescription> inventoryItemDescriptions, String ApiToken, String ApiServer)
         {
             Factory.GetResponse("Inventory/UpdateInventoryItemDescriptions", "inventoryItemDescriptions=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemDescriptions) + "", ApiToken, ApiServer);
+        }
+
+        public static void DeleteInventoryItemDescriptions(List<Guid> inventoryItemDescriptionIds, String ApiToken, String ApiServer)
+        {
+            Factory.GetResponse("Inventory/DeleteInventoryItemDescriptions", "inventoryItemDescriptionIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemDescriptionIds) + "", ApiToken, ApiServer);
         }
     }
 }

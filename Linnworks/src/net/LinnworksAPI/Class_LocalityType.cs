@@ -5,7 +5,5 @@ namespace LinnworksAPI
         EU,
         US,
         AS,
-        EU1,
-        US1,
     }
 }

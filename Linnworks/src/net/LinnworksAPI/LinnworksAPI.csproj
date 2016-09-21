@@ -63,6 +63,7 @@
     <Compile Include="Class_BaseSession.cs" />
     <Compile Include="Class_BookedReturnsExchangeItem.cs" />
     <Compile Include="Class_BookedReturnsExchangeOrder.cs" />
+    <Compile Include="Class_BookInStockItem.cs" />
     <Compile Include="Class_BooleanFieldFilter.cs" />
     <Compile Include="Class_BooleanFilter.cs" />
     <Compile Include="Class_Category.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="Class_PackageGroup.cs" />
     <Compile Include="Class_PackageType.cs" />
     <Compile Include="Class_PagedStockCategoryLocationProductResult.cs" />
+    <Compile Include="Class_PartialUpdateParameter.cs" />
     <Compile Include="Class_PaymentMethod.cs" />
     <Compile Include="Class_PaymentRequest.cs" />
     <Compile Include="Class_PaymentResponse.cs" />
@@ -234,6 +236,7 @@
     <Compile Include="Class_PurchaseOrderItem.cs" />
     <Compile Include="Class_PurchaseOrderNote.cs" />
     <Compile Include="Class_PurchaseOrderStatus.cs" />
+    <Compile Include="Class_PurchaseOrderWithStockItem.cs" />
     <Compile Include="Class_RefundInfo.cs" />
     <Compile Include="Class_RefundItem.cs" />
     <Compile Include="Class_RefundItemType.cs" />
@@ -262,6 +265,7 @@
     <Compile Include="Class_Search_PurchaseOrderParameter.cs" />
     <Compile Include="Class_Search_PurchaseOrdersResult.cs" />
     <Compile Include="Class_Search_PurchaseOrder_AuditLog.cs" />
+    <Compile Include="Class_Search_Stock_ByKey.cs" />
     <Compile Include="Class_SelectStringValueOption.cs" />
     <Compile Include="Class_ServiceItem.cs" />
     <Compile Include="Class_ShippingMethod.cs" />
@@ -348,6 +352,7 @@
     <Compile Include="Locations.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Orders.cs" />
+    <Compile Include="Payments.cs" />
     <Compile Include="PostalServices.cs" />
     <Compile Include="PrintService.cs" />
     <Compile Include="ProcessedOrders.cs" />
