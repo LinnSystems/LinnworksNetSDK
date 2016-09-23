@@ -9,12 +9,15 @@ public $Notes;
 public $PartShipped;
 public $Marker;
 public $ReferenceNum;
+public $SecondaryReference;
 public $ExternalReferenceNum;
 public $ReceivedDate;
 public $Source;
 public $SubSource;
 public $HoldOrCancel;
 public $DespatchByDate;
+public $Location;
+public $NumItems;
  
 } 
 ?>

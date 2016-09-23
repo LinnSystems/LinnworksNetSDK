@@ -23,6 +23,7 @@ public $PostalServiceName;
 public $PostalServiceCode;
 public $Vendor;
 public $ReferenceNum;
+public $SecondaryReference;
 public $ExternalReference;
 public $Address1;
 public $Address2;

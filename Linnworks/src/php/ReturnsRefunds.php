@@ -70,24 +70,9 @@ public static function CreateReturnsRefundsCSV($from,$to,$dateType,$searchField,
  return json_decode(Factory::GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", "from=" . json_encode($from) . "&to=" . json_encode($to) . "&dateType=" . json_encode($dateType) . "&searchField=" . $searchField . "&exactMatch=" . $exactMatch . "&searchTerm=" . $searchTerm . "&sortColumn=" . $sortColumn . "&sortDirection=" . $sortDirection . "&historyType=" . json_encode($historyType) . "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetColumns($historyType,$ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("ReturnsRefunds/GetColumns", "historyType=" . json_encode($historyType) . "", $ApiToken, $ApiServer)); 
-}
-
 public static function GetSearchTypes($historyType,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("ReturnsRefunds/GetSearchTypes", "historyType=" . json_encode($historyType) . "", $ApiToken, $ApiServer)); 
-}
-
-public static function SetColumnSortOrder($sortColumn,$sortAsc,$historyType,$ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("ReturnsRefunds/SetColumnSortOrder", "sortColumn=" . $sortColumn . "&sortAsc=" . $sortAsc . "&historyType=" . json_encode($historyType) . "", $ApiToken, $ApiServer)); 
-}
-
-public static function SetColumns($columns,$changeSortColumn,$sortColumn,$sortAsc,$historyType,$ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("ReturnsRefunds/SetColumns", "columns=" . json_encode($columns) . "&changeSortColumn=" . $changeSortColumn . "&sortColumn=" . $sortColumn . "&sortAsc=" . $sortAsc . "&historyType=" . json_encode($historyType) . "", $ApiToken, $ApiServer)); 
 } 
 }
 ?>

@@ -67,7 +67,7 @@ public static function SaveConditionChanges($conditionHeader,$ApiToken, $ApiServ
 
 public static function CheckConditionNameExists($fkRuleId,$fkConditionId,$excludeConditionId,$conditionName,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" . $fkRuleId . "&fkConditionId=" . $fkConditionId . "&excludeConditionId=" . $excludeConditionId . "&conditionName=" . $conditionName . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" . $fkRuleId . "&fkConditionId=" . json_encode($fkConditionId) . "&excludeConditionId=" . json_encode($excludeConditionId) . "&conditionName=" . $conditionName . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetActionOptions($type,$ApiToken, $ApiServer)
@@ -167,7 +167,7 @@ public static function SetConditionEnabled($pkConditionId,$enabled,$ApiToken, $A
 
 public static function CopyCondition($pkRuleId,$targetParentConditionId,$pkConditionId,$includeChildren,$includeActions,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/CopyCondition", "pkRuleId=" . $pkRuleId . "&targetParentConditionId=" . $targetParentConditionId . "&pkConditionId=" . $pkConditionId . "&includeChildren=" . $includeChildren . "&includeActions=" . $includeActions . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/CopyCondition", "pkRuleId=" . $pkRuleId . "&targetParentConditionId=" . json_encode($targetParentConditionId) . "&pkConditionId=" . $pkConditionId . "&includeChildren=" . $includeChildren . "&includeActions=" . $includeActions . "", $ApiToken, $ApiServer)); 
 }
 
 public static function CopyAction($pkRuleId,$targetParentConditionId,$pkActionId,$ApiToken, $ApiServer)

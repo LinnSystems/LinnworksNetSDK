@@ -107,7 +107,7 @@ public static function ChangeTransferItemSentQuantity($pkTransferId,$pkBinId,$pk
 
 public static function ChangeTransferItemReceivedQuantity($pkTransferId,$pkBinId,$pkTransferItemId,$Quantity,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" . $pkTransferId . "&pkBinId=" . $pkBinId . "&pkTransferItemId=" . $pkTransferItemId . "&Quantity=" . $Quantity . "", $ApiToken, $ApiServer); 
+ Factory::GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" . $pkTransferId . "&pkBinId=" . $pkBinId . "&pkTransferItemId=" . $pkTransferItemId . "&Quantity=" . json_encode($Quantity) . "", $ApiToken, $ApiServer); 
 }
 
 public static function GetTransferNotes($pkTransferId,$ApiToken, $ApiServer)

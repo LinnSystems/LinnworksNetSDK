@@ -4,6 +4,7 @@
 public $AVAILABLE;
 public $LOCKED;
 public $MAINTENANCE;
+public $FAILED;
  
 } 
 ?>

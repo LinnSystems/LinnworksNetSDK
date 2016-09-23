@@ -8,6 +8,8 @@ public $Amount;
 public $IssueRefundUrl;
 public $cCurrency;
 public $ReferenceNum;
+public $SecondaryReference;
+public $RefundDate;
  
 } 
 ?>

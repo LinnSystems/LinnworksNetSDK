@@ -1,5 +1,5 @@
 <?php
- class GenericPagedResult<String>
+ class GenericPagedResult<OpenOrder>
 { public $PageNumber;
 public $EntriesPerPage;
 public $TotalEntries;

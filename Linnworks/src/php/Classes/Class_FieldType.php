@@ -4,6 +4,9 @@
 public $Int;
 public $Double;
 public $String;
+public $Boolean;
+public $Select;
+public $Other;
  
 } 
 ?>

@@ -42,7 +42,7 @@ public static function GetRefundableServiceItems($pkOrderId,$ApiToken, $ApiServe
 
 public static function GetTotalRefunds($pkOrderId,$includeBookings,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" . $pkOrderId . "&includeBookings=" . $includeBookings . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" . $pkOrderId . "&includeBookings=" . json_encode($includeBookings) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function IsRefundValid($pkOrderId,$refundItems,$ApiToken, $ApiServer)
@@ -68,26 +68,6 @@ public static function GetReturnsExchanges($pkOrderId,$ApiToken, $ApiServer)
 public static function GetReturnItemsInfo($pkOrderId,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("ProcessedOrders/GetReturnItemsInfo", "pkOrderId=" . $pkOrderId . "", $ApiToken, $ApiServer)); 
-}
-
-public static function GetSearchTypes($ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("ProcessedOrders/GetSearchTypes", "", $ApiToken, $ApiServer)); 
-}
-
-public static function GetColumns($ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("ProcessedOrders/GetColumns", "", $ApiToken, $ApiServer)); 
-}
-
-public static function SetColumnSortOrder($sortColumn,$sortAsc,$ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("ProcessedOrders/SetColumnSortOrder", "sortColumn=" . $sortColumn . "&sortAsc=" . $sortAsc . "", $ApiToken, $ApiServer)); 
-}
-
-public static function SetColumns($columns,$changeSortColumn,$sortColumn,$sortAsc,$ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("ProcessedOrders/SetColumns", "columns=" . json_encode($columns) . "&changeSortColumn=" . $changeSortColumn . "&sortColumn=" . $sortColumn . "&sortAsc=" . $sortAsc . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetReturnOrderInfo($pkOrderId,$includeRefundLink,$ApiToken, $ApiServer)
@@ -193,11 +173,6 @@ public static function CreateFullResend($pkOrderId,$despatchLocation,$category,$
 public static function GetRefunds($pkOrderId,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("ProcessedOrders/GetRefunds", "pkOrderId=" . $pkOrderId . "", $ApiToken, $ApiServer)); 
-}
-
-public static function GetProcessedItemDetails($pkOrderId,$includeChildren,$includeItemOptions,$ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("ProcessedOrders/GetProcessedItemDetails", "pkOrderId=" . $pkOrderId . "&includeChildren=" . $includeChildren . "&includeItemOptions=" . $includeItemOptions . "", $ApiToken, $ApiServer)); 
 }
 
 public static function CheckOrderFullyReturned($pkOrderId,$ApiToken, $ApiServer)

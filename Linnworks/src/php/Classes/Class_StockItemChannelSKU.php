@@ -9,6 +9,7 @@ public $ChannelReferenceId;
 public $LastUpdate;
 public $SubmittedQuantity;
 public $ListedQuantity;
+public $MaxListedQuantity;
 public $StockItemId;
  
 } 

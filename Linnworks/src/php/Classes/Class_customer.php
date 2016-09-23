@@ -2,6 +2,7 @@
  class customer
 { public $sid_registration;
 public $id;
+public $fkPartnerSid;
 public $Email;
 public $RegistrationDate;
 public $IsCustomer;

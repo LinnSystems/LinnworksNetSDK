@@ -4,10 +4,17 @@
 public $StockLevel;
 public $StockValue;
 public $MinimumLevel;
+public $InOrderBook;
+public $Due;
 public $InOrders;
 public $Available;
-public $Due;
 public $UnitCost;
+public $SKU;
+public $AutoAdjust;
+public $LastUpdateDate;
+public $LastUpdateOperation;
+public $rowid;
+public $PendingUpdate;
 public $StockItemId;
  
 } 
