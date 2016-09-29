@@ -1,0 +1,12 @@
+{
+  "modules": [
+    {
+      "type": "NativeUserInterface",
+      "moduleName": "OrdersDashboard",
+      "formattedName": "Orders Dashboard",
+      "path": "http://localhost:8080/Views/",
+      "maxOpened": 1,
+      "icon": "fa fa-life-ring"
+    }
+  ]
+}
