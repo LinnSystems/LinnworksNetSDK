@@ -1,10 +1,8 @@
-What is this
---------------
+#What is this
 This is a native module that can be used in Linnworks.net. Unlike external user interfaces native modules directly sit in Linnworks.net and use the current users session. This means you have access to ALL Linnworks.net code including the ability to override any part of the user interface.
 
 
-Setup Guide
---------------
+#Setup Guide
 
 1. Upload either application to your web server
 2. Add the manifest.json to your application pointing to your webserver (change PATH variable).
