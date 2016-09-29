@@ -4,7 +4,7 @@
       "type": "NativeUserInterface",
       "moduleName": "OrdersDashboard",
       "formattedName": "Orders Dashboard",
-      "path": "http://localhost:8080/Views/",
+      "path": "https://s3-eu-west-1.amazonaws.com/app-examples.linnworks.net/Applications/OrdersDashboard/",
       "maxOpened": 1,
       "icon": "fa fa-life-ring"
     }
