@@ -3,6 +3,7 @@ function OrdersDashboardModule($scope, $element, $q) {
     var self = this;
 
     $scope.selectedLocation = '00000000-0000-0000-0000-000000000000';
+    $scope.ChartHandles = {};
 
     self.onMessage = function(msg) {
         switch (msg.key) {
@@ -111,14 +112,21 @@ function OrdersDashboardModule($scope, $element, $q) {
     $scope.CreateChart = function(id, type, label, labels, values, colors)
     {
         var context = $element.find("#" + id);
+        var handle = $scope.ChartHandles[id];
 
+        if (handle != null)
+        {
+            handle.destroy();
+            $scope.ChartHandles[id] = null;
+        }
+        
         if (context === undefined || context === null)
         {
             Core.Dialogs.addNotify("Couldn't find element for chart - " + id, 'ERROR');
             return;
         }
 
-        var myChart = new Chart(context, {
+        var newChart = new Chart(context, {
             type: type,
             data: {
                 labels: labels,
@@ -130,6 +138,8 @@ function OrdersDashboardModule($scope, $element, $q) {
                 }]
             }
         });
+
+        $scope.ChartHandles[id] = newChart;
     }
     
     $scope.DrawSourcesGraph = function(dictionary)
