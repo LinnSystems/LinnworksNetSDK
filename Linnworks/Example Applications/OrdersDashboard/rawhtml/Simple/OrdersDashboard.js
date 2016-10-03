@@ -119,9 +119,7 @@ function OrdersDashboardModule($scope, $element, $q) {
             handle.destroy();
             $scope.ChartHandles[id] = null;
         }
-
-        if($scope.ChartHandles[id] )
-
+        
         if (context === undefined || context === null)
         {
             Core.Dialogs.addNotify("Couldn't find element for chart - " + id, 'ERROR');
