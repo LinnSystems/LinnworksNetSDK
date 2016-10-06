@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace LinnworksAPI
 {
@@ -6,9 +7,10 @@ namespace LinnworksAPI
     {
         public FilterNameType FilterName;
         public String DisplayName;
-        public String FilterNameExact;
+        public List<String> FilterNameExact;
         public FieldType Field;
         public ConditionType Condition;
+        public String ConditionDisplayName;
         public FilterLogicType FilterLogic;
         public String Value;
     }

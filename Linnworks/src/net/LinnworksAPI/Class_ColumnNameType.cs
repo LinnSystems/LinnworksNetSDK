@@ -1,5 +1,9 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
 namespace LinnworksAPI
 {
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum ColumnNameType
     {
         SKU,
@@ -17,5 +21,6 @@ namespace LinnworksAPI
         BinRack,
         Category,
         Image,
+        VariationGroupName,
     }
 }

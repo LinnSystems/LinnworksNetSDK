@@ -1,0 +1,83 @@
+{
+	"modules" :
+	[
+		{
+			"type" : "ChannelIntegration",
+			"parameters" : 
+			[
+				 {
+					"name" :"ChannelName",
+					"value" :"CHANNELNAME"
+				 },
+				 {
+					"name" :"ChannelFriendlyName",
+					"value" :"Integration name"
+				 },
+				 {
+					"name" :"ChannelLogoURL",
+					"value" :"http://www.mychannelapi.com/img/vendor_logo_small.png"
+				 },
+				 {
+					"name" :"AddNewUserEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Config/AddNewUser"
+				 },
+				 {
+					"name" :"UserConfigEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Config/UserConfig"
+				 },
+				 {
+					"name" :"SaveConfigEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Config/SaveUserConfig"
+				 },
+				 {
+					"name" :"ShippingTagsEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Config/ShippingTags"
+				 },
+				 {
+					"name" :"PaymentTagsEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Config/PaymentTags"
+				 },
+				{
+					"name" :"ConfigDeletedEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Config/ConfigDeleted"
+				},
+				{
+					"name" :"ConfigTestEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Config/ConfigTest"
+				},
+				 {
+					"name" :"OrdersEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Order/Orders"
+				 },
+				 {
+					"name" :"DespatchEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Order/Despatch"
+				},
+				 {
+					"name" :"ProductsEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Product/Products"
+				 },
+				 {
+					"name" :"InventoryUpdateEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Product/InventoryUpdate"
+				 },
+				 {
+					"name" :"PriceUpdateEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Product/PriceUpdate"
+				 },
+				 {
+					"name" :"InventoryUpdateBatchSize",
+					"value" :"1000"
+				 },
+				 {
+					"name" :"DespatchUpdateBatchSize",
+					"value" :"100"
+				 },
+				 {
+					"name": "PriceUpdateBatchSize",
+					"value": "1000"
+				 }
+			]
+		}
+	]
+}

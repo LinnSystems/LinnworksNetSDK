@@ -66,6 +66,11 @@ namespace LinnworksAPI
             return Newtonsoft.Json.JsonConvert.DeserializeObject<PurchaseOrderHeader>(Factory.GetResponse("PurchaseOrder/Change_PurchaseOrderStatus", "changeStatusParameter=" + Newtonsoft.Json.JsonConvert.SerializeObject(changeStatusParameter) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
+        public static Deliver_PurchaseOrderItemAllResponse Deliver_PurchaseItemAll(Guid purchaseId, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Deliver_PurchaseOrderItemAllResponse>(Factory.GetResponse("PurchaseOrder/Deliver_PurchaseItemAll", "purchaseId=" + purchaseId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
         public static Update_PurchaseOrderItemResponse Deliver_PurchaseItem(Deliver_PurchaseItemParameter deliverItemParameter, String ApiToken, String ApiServer)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<Update_PurchaseOrderItemResponse>(Factory.GetResponse("PurchaseOrder/Deliver_PurchaseItem", "deliverItemParameter=" + Newtonsoft.Json.JsonConvert.SerializeObject(deliverItemParameter) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });

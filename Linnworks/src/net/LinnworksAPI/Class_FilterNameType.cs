@@ -1,5 +1,9 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
 namespace LinnworksAPI
 {
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum FilterNameType
     {
         General,
@@ -9,7 +13,7 @@ namespace LinnworksAPI
         PurchasePrice,
         Tracked,
         Barcode,
-        VariationsGroupName,
+        VariationGroupName,
         Available,
         MinimumLevel,
         InOrder,
@@ -25,5 +29,7 @@ namespace LinnworksAPI
         Image,
         ExtendedProperty,
         ExtendedPropertyName,
+        Channel,
+        CreationDate,
     }
 }

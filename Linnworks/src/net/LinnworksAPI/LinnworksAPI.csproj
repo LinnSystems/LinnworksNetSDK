@@ -88,6 +88,7 @@
     <Compile Include="Class_ConditionType.cs" />
     <Compile Include="Class_ConfigButton.cs" />
     <Compile Include="Class_ConfigItem.cs" />
+    <Compile Include="Class_ConfigItemExternal.cs" />
     <Compile Include="Class_ConfigPaymentMethodMapping.cs" />
     <Compile Include="Class_ConfigPaymentMethodMappingItem.cs" />
     <Compile Include="Class_ConfigPostalServiceMapping.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="Class_DateTimeFieldFilterType.cs" />
     <Compile Include="Class_Delete_PurchaseOrderItemParameter.cs" />
     <Compile Include="Class_Deliver_PurchaseItemParameter.cs" />
+    <Compile Include="Class_Deliver_PurchaseOrderItemAllResponse.cs" />
     <Compile Include="Class_DisplayType.cs" />
     <Compile Include="Class_EvaluatorDescriptor.cs" />
     <Compile Include="Class_EvaluatorGroup.cs" />
