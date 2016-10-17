@@ -8,6 +8,7 @@ namespace LinnworksAPI
     {
         SKU,
         Title,
+        VariationGroupName,
         RetailPrice,
         PurchasePrice,
         Tracked,
@@ -21,6 +22,7 @@ namespace LinnworksAPI
         BinRack,
         Category,
         Image,
-        VariationGroupName,
+        CreatedDate,
+        ModifiedDate,
     }
 }

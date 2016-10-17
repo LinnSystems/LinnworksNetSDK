@@ -1,0 +1,30 @@
+                        {
+  "modules": [
+    {
+      "moduleName": "Inventory",
+      "group": [
+        {
+          "moduleName": "MyInventory",
+          "type": "PluggableComponent",
+          "files": {
+            "scripts": [
+              "https://s3-eu-west-1.amazonaws.com/app-examples.linnworks.net/Applications/PluggableComponent/Views/js/ProductStatsComponent.js",
+              "https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/Chart.js\/2.1.4\/Chart.bundle.min.js",
+              "https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/pleasejs\/0.4.2\/Please.min.js"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "moduleName": "ProductStats",
+      "path": "https://s3-eu-west-1.amazonaws.com/app-examples.linnworks.net/Applications/PluggableComponent/Views/",
+      "formattedName": "Product Stats",
+      "isHidden": true,
+      "type": "NativeUserInterface",
+      "icon": "fa fa-graph"
+    }
+  ]
+}
+        
+        

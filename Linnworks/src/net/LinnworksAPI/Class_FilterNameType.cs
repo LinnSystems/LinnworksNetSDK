@@ -30,6 +30,7 @@ namespace LinnworksAPI
         ExtendedProperty,
         ExtendedPropertyName,
         Channel,
-        CreationDate,
+        CreatedDate,
+        ModifiedDate,
     }
 }

@@ -18,5 +18,7 @@ namespace LinnworksAPI
         HasError,
         OnlyErrors,
         NoErrors,
+        LastDays,
+        OlderThan,
     }
 }

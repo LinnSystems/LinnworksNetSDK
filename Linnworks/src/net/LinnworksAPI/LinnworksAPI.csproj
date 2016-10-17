@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
-    <Compile Include="Billing.cs" />
     <Compile Include="Class_ActionType.cs" />
     <Compile Include="Class_ActionTypeDescriptor.cs" />
     <Compile Include="Class_ActionWeb.cs" />
@@ -66,6 +65,11 @@
     <Compile Include="Class_BookInStockItem.cs" />
     <Compile Include="Class_BooleanFieldFilter.cs" />
     <Compile Include="Class_BooleanFilter.cs" />
+    <Compile Include="Class_CalcBin.cs" />
+    <Compile Include="Class_CalcBinItem.cs" />
+    <Compile Include="Class_CalcMethod.cs" />
+    <Compile Include="Class_CalcOrderHeader.cs" />
+    <Compile Include="Class_CalcOrderItem.cs" />
     <Compile Include="Class_Category.cs" />
     <Compile Include="Class_Change_PurchaseOrderStatusParameter.cs" />
     <Compile Include="Class_Channel.cs" />
@@ -155,6 +159,7 @@
     <Compile Include="Class_GenericEnumDescriptor.cs" />
     <Compile Include="Class_GenericPagedResult.cs" />
     <Compile Include="Class_GetExtendedPropertyFilter.cs" />
+    <Compile Include="Class_GetOrderPackagingCalculationRequest.cs" />
     <Compile Include="Class_GetSelectionList.cs" />
     <Compile Include="Class_Get_PurchaseOrderResponse.cs" />
     <Compile Include="Class_GroupType.cs" />
@@ -270,6 +275,7 @@
     <Compile Include="Class_Search_Stock_ByKey.cs" />
     <Compile Include="Class_SelectStringValueOption.cs" />
     <Compile Include="Class_ServiceItem.cs" />
+    <Compile Include="Class_SetOrderPackagingRequest.cs" />
     <Compile Include="Class_ShippingMethod.cs" />
     <Compile Include="Class_ShippingService.cs" />
     <Compile Include="Class_SortDirectionType.cs" />

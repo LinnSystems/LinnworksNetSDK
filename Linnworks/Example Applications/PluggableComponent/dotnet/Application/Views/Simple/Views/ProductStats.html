@@ -1,0 +1,27 @@
+﻿<div ng-controller="ProductStatsView" data-width="700">
+    <header>
+        <span>{{Item.Title}}</span>
+    </header>
+
+    <div ng-if="ShowError">
+        <div class="alert alert-warning">
+            <strong>Error</strong> There was an error loading some of the data required for this page. Please try again later.
+        </div>
+    </div>
+    <div ng-if="Loaded" class="graph-view">
+        <h2><center>Your Overall Stock</center></h2>
+        <canvas id="overallChart" width="400" height="200"></canvas>
+
+        <h2><center>Your Stock By Location</center></h2>
+        <div ng-repeat="Location in Locations">
+            <hr />
+            <p><center><strong>{{Location.Location.LocationName}}</strong></center></p>
+            <canvas id="{{Location.Location.StockLocationId}}" width="400" height="200"></canvas>
+        </div>        
+    </div>
+
+    <footer class="buttons">
+        <button type="button" class="btn btn-primary" ng-click="ViewProduct()">[t]View Product Details[/t]</button>
+        <button type="button" class="btn btn-default" ng-click="Close()">[t]Close[/t]</button>
+    </footer>
+</div>

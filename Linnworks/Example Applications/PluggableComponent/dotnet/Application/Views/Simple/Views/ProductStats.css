@@ -1,0 +1,4 @@
+[ng-controller=ProductStatsView] .graph-view
+{
+    max-height: 550px;
+}
