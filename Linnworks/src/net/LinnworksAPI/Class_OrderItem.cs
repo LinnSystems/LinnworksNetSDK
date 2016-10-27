@@ -45,5 +45,9 @@ namespace LinnworksAPI
         public List<OrderItemOption> AdditionalInfo;
         public Int32 StockLevelIndicator;
         public String BinRack;
+
+        //New stuff for the new locations until we start using the new Order Input stuff.
+        public Int32 LocationID;
+        public Int32 LocationWarehouse;
     }
 }
