@@ -31,11 +31,6 @@ namespace LinnworksAPI
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ImportRegister>>(Factory.GetResponse("ImportExport/GetImports", "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
-        public static void DownloadImportedFile(Guid fileId, String ApiToken, String ApiServer)
-        {
-            Factory.GetResponse("ImportExport/DownloadImportedFile", "fileId=" + fileId + "", ApiToken, ApiServer);
-        }
-
         public static FulfilmentCenterImportExportSettings GetFullfilmentCenterSettings(Guid fkStockLocationId, String ApiToken, String ApiServer)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<FulfilmentCenterImportExportSettings>(Factory.GetResponse("ImportExport/GetFullfilmentCenterSettings", "fkStockLocationId=" + fkStockLocationId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });

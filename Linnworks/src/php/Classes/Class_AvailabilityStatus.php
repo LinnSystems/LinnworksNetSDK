@@ -8,7 +8,6 @@ public $Packing;
 public $InTransit;
 public $CheckingIn;
 public $Delivered;
-public $DELIVERED;
 public $PARTIAL;
 public $PENDING;
 public $OPEN;

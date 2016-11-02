@@ -6,5 +6,6 @@ namespace LinnworksAPI
     {
         public String Source;
         public String SubSource;
+        public Double Width;
     }
 }

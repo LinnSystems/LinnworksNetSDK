@@ -2,6 +2,7 @@
  class ImportRegister
 { public $LastFileChecksum;
 public $ImportStatus;
+public $ImportSkipped;
 public $Id;
 public $Type;
 public $FriendlyName;

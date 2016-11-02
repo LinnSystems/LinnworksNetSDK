@@ -50,34 +50,9 @@ public static function DeleteVariationItem($pkVariationItemId,$pkStockItemId,$Ap
  Factory::GetResponse("Stock/DeleteVariationItem", "pkVariationItemId=" . $pkVariationItemId . "&pkStockItemId=" . $pkStockItemId . "", $ApiToken, $ApiServer); 
 }
 
-public static function FindInstantNewParentSKU($keyWord,$ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("Stock/FindInstantNewParentSKU", "keyWord=" . $keyWord . "", $ApiToken, $ApiServer)); 
-}
-
-public static function GetNewParentSKUs($keyWord,$entriesPerPage,$pageNumber,$ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("Stock/GetNewParentSKUs", "keyWord=" . $keyWord . "&entriesPerPage=" . $entriesPerPage . "&pageNumber=" . $pageNumber . "", $ApiToken, $ApiServer)); 
-}
-
 public static function CreateVariationGroup($template,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("Stock/CreateVariationGroup", "template=" . json_encode($template) . "", $ApiToken, $ApiServer)); 
-}
-
-public static function GetSystemWeightMeasure($ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("Stock/GetSystemWeightMeasure", "", $ApiToken, $ApiServer)); 
-}
-
-public static function GetWeightMeasures($ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("Stock/GetWeightMeasures", "", $ApiToken, $ApiServer)); 
-}
-
-public static function GetNewSKU($ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("Stock/GetNewSKU", "", $ApiToken, $ApiServer)); 
 }
 
 public static function SKUExists($SKU,$ApiToken, $ApiServer)
@@ -87,7 +62,7 @@ public static function SKUExists($SKU,$ApiToken, $ApiServer)
 
 public static function GetStockConsumption($stockItemId,$locationId,$startDate,$endDate,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Stock/GetStockConsumption", "stockItemId=" . $stockItemId . "&locationId=" . $locationId . "&startDate=" . json_encode($startDate) . "&endDate=" . json_encode($endDate) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Stock/GetStockConsumption", "stockItemId=" . $stockItemId . "&locationId=" . json_encode($locationId) . "&startDate=" . json_encode($startDate) . "&endDate=" . json_encode($endDate) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetItemChangesHistory($stockItemId,$locationId,$entriesPerPage,$pageNumber,$ApiToken, $ApiServer)
@@ -102,12 +77,17 @@ public static function GetItemChangesHistoryCSV($stockItemId,$locationId,$ApiTok
 
 public static function GetStockItems($keyWord,$locationId,$entriesPerPage,$pageNumber,$excludeComposites,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Stock/GetStockItems", "keyWord=" . $keyWord . "&locationId=" . $locationId . "&entriesPerPage=" . $entriesPerPage . "&pageNumber=" . $pageNumber . "&excludeComposites=" . $excludeComposites . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Stock/GetStockItems", "keyWord=" . $keyWord . "&locationId=" . json_encode($locationId) . "&entriesPerPage=" . $entriesPerPage . "&pageNumber=" . $pageNumber . "&excludeComposites=" . $excludeComposites . "", $ApiToken, $ApiServer)); 
 }
 
-public static function FindInstantStockItems($keyWord,$locationId,$excludeComposites,$ApiToken, $ApiServer)
+public static function GetStockItemsByKey($stockIdentifier,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Stock/FindInstantStockItems", "keyWord=" . $keyWord . "&locationId=" . $locationId . "&excludeComposites=" . $excludeComposites . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Stock/GetStockItemsByKey", "stockIdentifier=" . json_encode($stockIdentifier) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function GetStockItemsFull($keyword,$loadCompositeParents,$loadVariationParents,$entriesPerPage,$pageNumber,$dataRequirements,$searchTypes,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Stock/GetStockItemsFull", "keyword=" . $keyword . "&loadCompositeParents=" . $loadCompositeParents . "&loadVariationParents=" . $loadVariationParents . "&entriesPerPage=" . $entriesPerPage . "&pageNumber=" . $pageNumber . "&dataRequirements=" . json_encode($dataRequirements) . "&searchTypes=" . json_encode($searchTypes) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetStockLevel($stockItemId,$ApiToken, $ApiServer)
@@ -143,6 +123,26 @@ public static function GetStockItemScrapStat($stockItemId,$ApiToken, $ApiServer)
 public static function GetSoldStat($stockItemId,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("Stock/GetSoldStat", "stockItemId=" . $stockItemId . "", $ApiToken, $ApiServer)); 
+}
+
+public static function SetStockLevel($stockLevels,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Stock/SetStockLevel", "stockLevels=" . json_encode($stockLevels) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function UpdateStockLevelsBySKU($stockLevels,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Stock/UpdateStockLevelsBySKU", "stockLevels=" . json_encode($stockLevels) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function Update_StockItemPartial($update,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Stock/Update_StockItemPartial", "update=" . json_encode($update) . "", $ApiToken, $ApiServer); 
+}
+
+public static function BookInStockItem($stockItem,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Stock/BookInStockItem", "stockItem=" . json_encode($stockItem) . "", $ApiToken, $ApiServer); 
 } 
 }
 ?>

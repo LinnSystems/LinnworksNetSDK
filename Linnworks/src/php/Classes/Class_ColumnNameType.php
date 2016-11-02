@@ -11,9 +11,11 @@ public $Available;
 public $MinimumLevel;
 public $InOrder;
 public $StockLevel;
+public $StockValue;
 public $Due;
 public $BinRack;
 public $Category;
+public $Image;
  
 } 
 ?>

@@ -6,6 +6,7 @@ public $Mode;
 public $Source;
 public $SubSource;
 public $CountryCode;
+public $CountryName;
 public $Listing;
 public $ShowOnlyChanged;
 public $IncludeProducts;

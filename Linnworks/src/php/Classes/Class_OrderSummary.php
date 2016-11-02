@@ -7,6 +7,7 @@ public $ProcessDate;
 public $Source;
 public $CustomerName;
 public $NumProducts;
+public $FulfillmentLocationId;
  
 } 
 ?>

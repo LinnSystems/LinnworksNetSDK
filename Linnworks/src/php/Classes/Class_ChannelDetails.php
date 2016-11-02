@@ -1,6 +1,6 @@
 <?php
  class ChannelDetails
-{ public $Links;
+{ public $LinksCount;
 public $Templates;
 public $Changes;
 public $ContainsChanges;

@@ -4,7 +4,6 @@
 public $Name;
 public $AllowForAllDates;
 public $ExactSearchOptional;
-public $AllTypes;
  
 } 
 ?>

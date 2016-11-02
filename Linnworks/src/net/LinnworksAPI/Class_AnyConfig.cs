@@ -22,6 +22,7 @@ namespace LinnworksAPI
         public ConfigItem<DateTime> EstimatedInventoryScanComplete;
         public Boolean IsHeaderOnly;
         public Boolean IsHidden;
+        public ConfigItemExternal DynamicProperties;
         public ConfigPostalServiceMapping PostalServiceMapping;
         public ConfigPaymentMethodMapping PaymentMethodMapping;
         public Int32 PkChannelId;

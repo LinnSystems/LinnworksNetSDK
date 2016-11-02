@@ -1,43 +1,13 @@
 <?php
 class InventoryMethods 
-{ public static function CreateInventoryItemPrices($inventoryItemPrices,$ApiToken, $ApiServer)
-{
- Factory::GetResponse("Inventory/CreateInventoryItemPrices", "inventoryItemPrices=" . json_encode($inventoryItemPrices) . "", $ApiToken, $ApiServer); 
-}
-
-public static function UpdateInventoryItemPrices($inventoryItemPrices,$ApiToken, $ApiServer)
-{
- Factory::GetResponse("Inventory/UpdateInventoryItemPrices", "inventoryItemPrices=" . json_encode($inventoryItemPrices) . "", $ApiToken, $ApiServer); 
-}
-
-public static function DeleteInventoryItemPrices($inventoryItemPriceIds,$ApiToken, $ApiServer)
-{
- Factory::GetResponse("Inventory/DeleteInventoryItemPrices", "inventoryItemPriceIds=" . json_encode($inventoryItemPriceIds) . "", $ApiToken, $ApiServer); 
-}
-
-public static function GetInventoryItemDescriptions($inventoryItemId,$ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("Inventory/GetInventoryItemDescriptions", "inventoryItemId=" . $inventoryItemId . "", $ApiToken, $ApiServer)); 
-}
-
-public static function CreateInventoryItemDescriptions($inventoryItemDescriptions,$ApiToken, $ApiServer)
-{
- Factory::GetResponse("Inventory/CreateInventoryItemDescriptions", "inventoryItemDescriptions=" . json_encode($inventoryItemDescriptions) . "", $ApiToken, $ApiServer); 
-}
-
-public static function UpdateInventoryItemDescriptions($inventoryItemDescriptions,$ApiToken, $ApiServer)
-{
- Factory::GetResponse("Inventory/UpdateInventoryItemDescriptions", "inventoryItemDescriptions=" . json_encode($inventoryItemDescriptions) . "", $ApiToken, $ApiServer); 
-}
-
-public static function DeleteInventoryItemDescriptions($inventoryItemDescriptionIds,$ApiToken, $ApiServer)
-{
- Factory::GetResponse("Inventory/DeleteInventoryItemDescriptions", "inventoryItemDescriptionIds=" . json_encode($inventoryItemDescriptionIds) . "", $ApiToken, $ApiServer); 
-}
-
-public static function GetChannels($ApiToken, $ApiServer)
+{ public static function GetChannels($ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("Inventory/GetChannels", "", $ApiToken, $ApiServer)); 
+}
+
+public static function GetChannelsBySource($source,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Inventory/GetChannelsBySource", "source=" . $source . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetExtendedPropertyNames($ApiToken, $ApiServer)
@@ -50,11 +20,6 @@ public static function GetExtendedPropertyTypes($ApiToken, $ApiServer)
  return json_decode(Factory::GetResponse("Inventory/GetExtendedPropertyTypes", "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetSystemPropertyNames($ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("Inventory/GetSystemPropertyNames", "", $ApiToken, $ApiServer)); 
-}
-
 public static function GetPackageGroups($ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("Inventory/GetPackageGroups", "", $ApiToken, $ApiServer)); 
@@ -65,24 +30,29 @@ public static function GetPostalServices($ApiToken, $ApiServer)
  return json_decode(Factory::GetResponse("Inventory/GetPostalServices", "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetInventoryItems($view,$stockLocationIds,$startIndex,$itemsCount,$ApiToken, $ApiServer)
+public static function GetInventoryItems($view,$stockLocationIds,$startIndex,$itemsCount,$preloadChilds,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Inventory/GetInventoryItems", "view=" . json_encode($view) . "&stockLocationIds=" . json_encode($stockLocationIds) . "&startIndex=" . $startIndex . "&itemsCount=" . $itemsCount . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Inventory/GetInventoryItems", "view=" . json_encode($view) . "&stockLocationIds=" . json_encode($stockLocationIds) . "&startIndex=" . $startIndex . "&itemsCount=" . $itemsCount . "&preloadChilds=" . $preloadChilds . "", $ApiToken, $ApiServer)); 
+}
+
+public static function GetInventoryItemsChilds($view,$stockLocationIds,$itemIds,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Inventory/GetInventoryItemsChilds", "view=" . json_encode($view) . "&stockLocationIds=" . json_encode($stockLocationIds) . "&itemIds=" . json_encode($itemIds) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function UpdateInventoryItemField($inventoryItemId,$fieldName,$fieldValue,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("Inventory/UpdateInventoryItemField", "inventoryItemId=" . $inventoryItemId . "&fieldName=" . $fieldName . "&fieldValue=" . $fieldValue . "", $ApiToken, $ApiServer); 
+ return json_decode(Factory::GetResponse("Inventory/UpdateInventoryItemField", "inventoryItemId=" . $inventoryItemId . "&fieldName=" . $fieldName . "&fieldValue=" . $fieldValue . "", $ApiToken, $ApiServer)); 
 }
 
 public static function UpdateInventoryItemStockField($inventoryItemId,$fieldName,$fieldValue,$locationId,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("Inventory/UpdateInventoryItemStockField", "inventoryItemId=" . $inventoryItemId . "&fieldName=" . $fieldName . "&fieldValue=" . $fieldValue . "&locationId=" . $locationId . "", $ApiToken, $ApiServer); 
+ return json_decode(Factory::GetResponse("Inventory/UpdateInventoryItemStockField", "inventoryItemId=" . $inventoryItemId . "&fieldName=" . $fieldName . "&fieldValue=" . $fieldValue . "&locationId=" . $locationId . "", $ApiToken, $ApiServer)); 
 }
 
 public static function UpdateInventoryItemLocationField($inventoryItemId,$fieldName,$fieldValue,$locationId,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("Inventory/UpdateInventoryItemLocationField", "inventoryItemId=" . $inventoryItemId . "&fieldName=" . $fieldName . "&fieldValue=" . $fieldValue . "&locationId=" . $locationId . "", $ApiToken, $ApiServer); 
+ return json_decode(Factory::GetResponse("Inventory/UpdateInventoryItemLocationField", "inventoryItemId=" . $inventoryItemId . "&fieldName=" . $fieldName . "&fieldValue=" . $fieldValue . "&locationId=" . $locationId . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetInventoryItemById($id,$ApiToken, $ApiServer)
@@ -90,29 +60,29 @@ public static function GetInventoryItemById($id,$ApiToken, $ApiServer)
  return json_decode(Factory::GetResponse("Inventory/GetInventoryItemById", "id=" . $id . "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetInventoryViews($ApiToken, $ApiServer)
+public static function GetUserSpecificViews($ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Inventory/GetInventoryViews", "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Inventory/GetUserSpecificViews", "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetInventoryFilterTypes($ApiToken, $ApiServer)
+public static function CreateUserSpecificView($view,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Inventory/GetInventoryFilterTypes", "", $ApiToken, $ApiServer)); 
+ Factory::GetResponse("Inventory/CreateUserSpecificView", "view=" . json_encode($view) . "", $ApiToken, $ApiServer); 
 }
 
-public static function GetInventoryColumnTypes($ApiToken, $ApiServer)
+public static function UpdateUserSpecificView($viewName,$view,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Inventory/GetInventoryColumnTypes", "", $ApiToken, $ApiServer)); 
+ Factory::GetResponse("Inventory/UpdateUserSpecificView", "viewName=" . $viewName . "&view=" . json_encode($view) . "", $ApiToken, $ApiServer); 
 }
 
-public static function GetNewInventoryView($ApiToken, $ApiServer)
+public static function DeleteUserSpecificView($viewName,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Inventory/GetNewInventoryView", "", $ApiToken, $ApiServer)); 
+ Factory::GetResponse("Inventory/DeleteUserSpecificView", "viewName=" . $viewName . "", $ApiToken, $ApiServer); 
 }
 
-public static function UpdateInventoryViews($views,$ApiToken, $ApiServer)
+public static function GetPreDefinedViews($ApiToken, $ApiServer)
 {
- Factory::GetResponse("Inventory/UpdateInventoryViews", "views=" . json_encode($views) . "", $ApiToken, $ApiServer); 
+ return json_decode(Factory::GetResponse("Inventory/GetPreDefinedViews", "", $ApiToken, $ApiServer)); 
 }
 
 public static function AddInventoryItem($inventoryItem,$ApiToken, $ApiServer)
@@ -120,9 +90,9 @@ public static function AddInventoryItem($inventoryItem,$ApiToken, $ApiServer)
  Factory::GetResponse("Inventory/AddInventoryItem", "inventoryItem=" . json_encode($inventoryItem) . "", $ApiToken, $ApiServer); 
 }
 
-public static function DuplicateInventoryItem($inventoryItem,$sourceItemId,$ApiToken, $ApiServer)
+public static function DuplicateInventoryItem($inventoryItem,$sourceItemId,$copyImages,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("Inventory/DuplicateInventoryItem", "inventoryItem=" . json_encode($inventoryItem) . "&sourceItemId=" . $sourceItemId . "", $ApiToken, $ApiServer); 
+ Factory::GetResponse("Inventory/DuplicateInventoryItem", "inventoryItem=" . json_encode($inventoryItem) . "&sourceItemId=" . $sourceItemId . "&copyImages=" . $copyImages . "", $ApiToken, $ApiServer); 
 }
 
 public static function GetNewItemNumber($ApiToken, $ApiServer)
@@ -150,6 +120,11 @@ public static function GetInventoryItemChannelSKUs($inventoryItemId,$ApiToken, $
  return json_decode(Factory::GetResponse("Inventory/GetInventoryItemChannelSKUs", "inventoryItemId=" . $inventoryItemId . "", $ApiToken, $ApiServer)); 
 }
 
+public static function UpdateInventoryItemChannelSKUs($inventoryItemChannelSKUs,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Inventory/UpdateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" . json_encode($inventoryItemChannelSKUs) . "", $ApiToken, $ApiServer); 
+}
+
 public static function CreateInventoryItemChannelSKUs($inventoryItemChannelSKUs,$ApiToken, $ApiServer)
 {
  Factory::GetResponse("Inventory/CreateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" . json_encode($inventoryItemChannelSKUs) . "", $ApiToken, $ApiServer); 
@@ -170,14 +145,14 @@ public static function GetInventoryItemAuditTrail($inventoryItemId,$ApiToken, $A
  return json_decode(Factory::GetResponse("Inventory/GetInventoryItemAuditTrail", "inventoryItemId=" . $inventoryItemId . "", $ApiToken, $ApiServer)); 
 }
 
+public static function GetAmazonSite($subSource,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Inventory/GetAmazonSite", "subSource=" . $subSource . "", $ApiToken, $ApiServer)); 
+}
+
 public static function GetInventoryItemImages($inventoryItemId,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("Inventory/GetInventoryItemImages", "inventoryItemId=" . $inventoryItemId . "", $ApiToken, $ApiServer)); 
-}
-
-public static function GetInventoryItemImagesForTemplates($inventoryItemIds,$source,$ApiToken, $ApiServer)
-{
- return json_decode(Factory::GetResponse("Inventory/GetInventoryItemImagesForTemplates", "inventoryItemIds=" . json_encode($inventoryItemIds) . "&source=" . $source . "", $ApiToken, $ApiServer)); 
 }
 
 public static function SetInventoryItemImageAsMain($inventoryItemId,$mainImageId,$ApiToken, $ApiServer)
@@ -190,9 +165,9 @@ public static function UploadImagesToInventoryItem($inventoryItemId,$imageIds,$A
  return json_decode(Factory::GetResponse("Inventory/UploadImagesToInventoryItem", "inventoryItemId=" . $inventoryItemId . "&imageIds=" . json_encode($imageIds) . "", $ApiToken, $ApiServer)); 
 }
 
-public static function DeleteImagesFromInventoryItem($imageURL,$inventoryItemId,$ApiToken, $ApiServer)
+public static function DeleteImagesFromInventoryItem($inventoryItemImages,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("Inventory/DeleteImagesFromInventoryItem", "imageURL=" . $imageURL . "&inventoryItemId=" . $inventoryItemId . "", $ApiToken, $ApiServer); 
+ Factory::GetResponse("Inventory/DeleteImagesFromInventoryItem", "inventoryItemImages=" . json_encode($inventoryItemImages) . "", $ApiToken, $ApiServer); 
 }
 
 public static function GetCategories($ApiToken, $ApiServer)
@@ -233,11 +208,6 @@ public static function CreateCountries($countries,$ApiToken, $ApiServer)
 public static function UpdateCountries($countries,$ApiToken, $ApiServer)
 {
  Factory::GetResponse("Inventory/UpdateCountries", "countries=" . json_encode($countries) . "", $ApiToken, $ApiServer); 
-}
-
-public static function DeleteCountries($countries,$ApiToken, $ApiServer)
-{
- Factory::GetResponse("Inventory/DeleteCountries", "countries=" . json_encode($countries) . "", $ApiToken, $ApiServer); 
 }
 
 public static function GetStockLocations($ApiToken, $ApiServer)
@@ -285,9 +255,9 @@ public static function DeleteInventoryItemCompositions($stockItemId,$inventoryIt
  Factory::GetResponse("Inventory/DeleteInventoryItemCompositions", "stockItemId=" . $stockItemId . "&inventoryItemCompositionIds=" . json_encode($inventoryItemCompositionIds) . "", $ApiToken, $ApiServer); 
 }
 
-public static function GetInventoryItemExtendedProperties($inventoryItemId,$ApiToken, $ApiServer)
+public static function GetInventoryItemExtendedProperties($inventoryItemId,$propertyParams,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Inventory/GetInventoryItemExtendedProperties", "inventoryItemId=" . $inventoryItemId . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Inventory/GetInventoryItemExtendedProperties", "inventoryItemId=" . $inventoryItemId . "&propertyParams=" . json_encode($propertyParams) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function CreateInventoryItemExtendedProperties($inventoryItemExtendedProperties,$ApiToken, $ApiServer)
@@ -325,9 +295,29 @@ public static function DeleteInventoryItemTitles($inventoryItemTitleIds,$ApiToke
  Factory::GetResponse("Inventory/DeleteInventoryItemTitles", "inventoryItemTitleIds=" . json_encode($inventoryItemTitleIds) . "", $ApiToken, $ApiServer); 
 }
 
-public static function GetSupplierList($ApiToken, $ApiServer)
+public static function GetSuppliers($ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Inventory/GetSupplierList", "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Inventory/GetSuppliers", "", $ApiToken, $ApiServer)); 
+}
+
+public static function GetSupplierDetails($supplierId,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Inventory/GetSupplierDetails", "supplierId=" . $supplierId . "", $ApiToken, $ApiServer)); 
+}
+
+public static function AddSupplier($supplier,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Inventory/AddSupplier", "supplier=" . json_encode($supplier) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function UpdateSupplier($supplier,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Inventory/UpdateSupplier", "supplier=" . json_encode($supplier) . "", $ApiToken, $ApiServer); 
+}
+
+public static function DeleteSuppliers($suppliersIds,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Inventory/DeleteSuppliers", "suppliersIds=" . json_encode($suppliersIds) . "", $ApiToken, $ApiServer); 
 }
 
 public static function GetStockSupplierStat($inventoryItemId,$ApiToken, $ApiServer)
@@ -353,6 +343,41 @@ public static function DeleteStockSupplierStat($stockItemId,$itemSupplierIds,$Ap
 public static function GetInventoryItemPrices($inventoryItemId,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("Inventory/GetInventoryItemPrices", "inventoryItemId=" . $inventoryItemId . "", $ApiToken, $ApiServer)); 
+}
+
+public static function CreateInventoryItemPrices($inventoryItemPrices,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Inventory/CreateInventoryItemPrices", "inventoryItemPrices=" . json_encode($inventoryItemPrices) . "", $ApiToken, $ApiServer); 
+}
+
+public static function UpdateInventoryItemPrices($inventoryItemPrices,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Inventory/UpdateInventoryItemPrices", "inventoryItemPrices=" . json_encode($inventoryItemPrices) . "", $ApiToken, $ApiServer); 
+}
+
+public static function DeleteInventoryItemPrices($inventoryItemPriceIds,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Inventory/DeleteInventoryItemPrices", "inventoryItemPriceIds=" . json_encode($inventoryItemPriceIds) . "", $ApiToken, $ApiServer); 
+}
+
+public static function GetInventoryItemDescriptions($inventoryItemId,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Inventory/GetInventoryItemDescriptions", "inventoryItemId=" . $inventoryItemId . "", $ApiToken, $ApiServer)); 
+}
+
+public static function CreateInventoryItemDescriptions($inventoryItemDescriptions,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Inventory/CreateInventoryItemDescriptions", "inventoryItemDescriptions=" . json_encode($inventoryItemDescriptions) . "", $ApiToken, $ApiServer); 
+}
+
+public static function UpdateInventoryItemDescriptions($inventoryItemDescriptions,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Inventory/UpdateInventoryItemDescriptions", "inventoryItemDescriptions=" . json_encode($inventoryItemDescriptions) . "", $ApiToken, $ApiServer); 
+}
+
+public static function DeleteInventoryItemDescriptions($inventoryItemDescriptionIds,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Inventory/DeleteInventoryItemDescriptions", "inventoryItemDescriptionIds=" . json_encode($inventoryItemDescriptionIds) . "", $ApiToken, $ApiServer); 
 } 
 }
 ?>

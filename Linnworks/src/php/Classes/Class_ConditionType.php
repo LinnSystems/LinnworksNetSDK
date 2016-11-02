@@ -7,6 +7,7 @@ public $Less;
 public $Greater;
 public $Exists;
 public $NotEquals;
+public $NotContains;
  
 } 
 ?>

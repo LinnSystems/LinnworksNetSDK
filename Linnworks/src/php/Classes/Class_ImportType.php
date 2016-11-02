@@ -10,6 +10,7 @@ public $ProcessOrder;
 public $StockCount;
 public $SupplierPricesByCode;
 public $StockLevelBySupplierCode;
+public $StockLevel;
 public $ItemMapping;
 public $Orders;
 public $FulfilmentCenterOrdersImport;
@@ -22,6 +23,7 @@ public $DeleteImages;
 public $DeleteExtendedProperties;
 public $DeleteVariationItems;
 public $DeleteItemMapping;
+public $DeleteComposition;
  
 } 
 ?>

@@ -1,0 +1,142 @@
+﻿<div ng-controller="OrdersDashboardModule">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pleasejs/0.4.2/Please.min.js"></script>
+
+    <div class="well">
+        
+        <center>
+            <div class="main-body">
+                <p class="right">
+                    <select class="select-inline" ng-model="selectedLocation">
+                        <option ng-repeat="location in Locations" value="{{location.StockLocationId}}">{{location.LocationName}}</option>
+                    </select>
+                    <button class="btn btn-primary" ng-click="ReloadData()">Go</button>
+                </p>
+
+                <div class="clear-spacer">&nbsp;</div>
+
+                <div ng-if="ShowError">
+                    <div class="alert alert-error">                        
+                        <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> There was an error loading information which this dashboard requires. Please confirm that you have the necessary permissions.</p>
+                    </div>
+                </div>
+
+                <div ng-if="Orders.length == 0 && !ShowError">
+                    <div class="alert alert-error">
+                        <h2>No orders found</h2>
+                        <p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> This location has no orders and therefore no data can be created. Select a location with orders to generate information.</p>
+                    </div>
+                </div>
+
+                <div ng-if="Orders.length != 0 && !ShowError" id="orders-view" hidden>
+                    <center>
+                        <div class="widget-row" class="center">
+                            <div class="widget-holder">
+                                <div class="widget">
+                                    <center>
+                                        <p>
+                                            <h3><i class="fa fa-send"></i><br />{{Orders.length}}</h3>
+                                        </p>
+                                        <p>
+                                            Open Orders
+                                        </p>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="widget-holder">
+                                <div class="widget red">
+                                    <center>
+                                        <p>
+                                            <h3><i class="fa fa-envelope"></i><br />{{OrdersInvoicesPrinted}}/{{Orders.length}}</h3>
+                                        </p>
+                                        <p>
+                                            Invoices Printed
+                                        </p>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="widget-holder">
+                                <div class="widget green">
+                                    <center>
+                                        <p>
+                                            <h3><i class="fa fa-print"></i><br />{{OrdersLabelsPrinted}}/{{Orders.length}}</h3>
+                                        </p>
+                                        <p>
+                                            Labels Printed
+                                        </p>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="widget-holder">
+                                <div class="widget blue">
+                                    <center>
+                                        <p>
+                                            <h3>
+                                                <strong>
+                                                    <i class="fa fa-lock"></i><br />
+                                                    {{OrdersOnHold}}/{{Orders.length}}
+                                                </strong>
+                                            </h3>
+                                        </p>
+                                        <p>
+                                            On Hold
+                                        </p>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="large-clear">&nbsp;</div>
+
+                        <hr />
+
+                        <div class="chart-holder">
+                            <center class="chart-inner">
+                                <h2 class="block-header">Shipping Methods</h2>
+                                <canvas id="shippingChart" width="400" height="400"></canvas>
+                            </center>
+                        </div>
+                        <div class="chart-holder">
+                            <center class="chart-inner">
+                                <h2 class="block-header">Sources</h2>
+                                <canvas id="sourcesChart" width="400" height="400"></canvas>
+                            </center>
+                        </div>
+                        <div class="chart-holder">
+                            <center class="chart-inner">
+                                <h2 class="block-header">Revenue</h2>
+                                <canvas id="revenueChart" width="400" height="400"></canvas>
+                            </center>
+                        </div>
+
+                        <div class="large-clear">&nbsp;</div>
+
+                        <hr />
+
+
+                        <div ng-show="Orders.length != 0">
+                            <h2 class="block-header">Newest Orders</h2>
+
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer Name</th>
+                                    <th>Received Date</th>
+                                    <th></th>
+                                </tr>
+                                <tr ng-repeat="order in Orders | orderBy: '-GeneralInfo.ReceivedDate' | limitTo: 10">
+                                    <td>{{order.NumOrderId}}</td>
+                                    <td>{{order.CustomerInfo.FullName}}</td>
+                                    <td>{{order.GeneralInfo.ReceivedDate}}</td>
+                                    <td><button class="btn btn-default btn-block" ng-click="ViewOrder(order.OrderId);">View Order</button></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </center>
+                    </div>
+                </div>
+        </center>
+    </div>
+</div>

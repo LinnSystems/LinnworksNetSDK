@@ -53,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
-    <Compile Include="Billing.cs" />
     <Compile Include="Class_ActionType.cs" />
     <Compile Include="Class_ActionTypeDescriptor.cs" />
     <Compile Include="Class_ActionWeb.cs" />
@@ -69,8 +68,14 @@
     <Compile Include="Class_BaseSession.cs" />
     <Compile Include="Class_BookedReturnsExchangeItem.cs" />
     <Compile Include="Class_BookedReturnsExchangeOrder.cs" />
+    <Compile Include="Class_BookInStockItem.cs" />
     <Compile Include="Class_BooleanFieldFilter.cs" />
     <Compile Include="Class_BooleanFilter.cs" />
+    <Compile Include="Class_CalcBin.cs" />
+    <Compile Include="Class_CalcBinItem.cs" />
+    <Compile Include="Class_CalcMethod.cs" />
+    <Compile Include="Class_CalcOrderHeader.cs" />
+    <Compile Include="Class_CalcOrderItem.cs" />
     <Compile Include="Class_Category.cs" />
     <Compile Include="Class_Change_PurchaseOrderStatusParameter.cs" />
     <Compile Include="Class_Channel.cs" />
@@ -93,6 +98,7 @@
     <Compile Include="Class_ConditionType.cs" />
     <Compile Include="Class_ConfigButton.cs" />
     <Compile Include="Class_ConfigItem.cs" />
+    <Compile Include="Class_ConfigItemExternal.cs" />
     <Compile Include="Class_ConfigPaymentMethodMapping.cs" />
     <Compile Include="Class_ConfigPaymentMethodMappingItem.cs" />
     <Compile Include="Class_ConfigPostalServiceMapping.cs" />
@@ -126,6 +132,7 @@
     <Compile Include="Class_DateTimeFieldFilterType.cs" />
     <Compile Include="Class_Delete_PurchaseOrderItemParameter.cs" />
     <Compile Include="Class_Deliver_PurchaseItemParameter.cs" />
+    <Compile Include="Class_Deliver_PurchaseOrderItemAllResponse.cs" />
     <Compile Include="Class_DisplayType.cs" />
     <Compile Include="Class_EvaluatorDescriptor.cs" />
     <Compile Include="Class_EvaluatorGroup.cs" />
@@ -158,6 +165,7 @@
     <Compile Include="Class_GenericEnumDescriptor.cs" />
     <Compile Include="Class_GenericPagedResult.cs" />
     <Compile Include="Class_GetExtendedPropertyFilter.cs" />
+    <Compile Include="Class_GetOrderPackagingCalculationRequest.cs" />
     <Compile Include="Class_GetSelectionList.cs" />
     <Compile Include="Class_Get_PurchaseOrderResponse.cs" />
     <Compile Include="Class_GroupType.cs" />
@@ -216,6 +224,7 @@
     <Compile Include="Class_PackageGroup.cs" />
     <Compile Include="Class_PackageType.cs" />
     <Compile Include="Class_PagedStockCategoryLocationProductResult.cs" />
+    <Compile Include="Class_PartialUpdateParameter.cs" />
     <Compile Include="Class_PaymentMethod.cs" />
     <Compile Include="Class_PaymentRequest.cs" />
     <Compile Include="Class_PaymentResponse.cs" />
@@ -240,6 +249,7 @@
     <Compile Include="Class_PurchaseOrderItem.cs" />
     <Compile Include="Class_PurchaseOrderNote.cs" />
     <Compile Include="Class_PurchaseOrderStatus.cs" />
+    <Compile Include="Class_PurchaseOrderWithStockItem.cs" />
     <Compile Include="Class_RefundInfo.cs" />
     <Compile Include="Class_RefundItem.cs" />
     <Compile Include="Class_RefundItemType.cs" />
@@ -268,8 +278,10 @@
     <Compile Include="Class_Search_PurchaseOrderParameter.cs" />
     <Compile Include="Class_Search_PurchaseOrdersResult.cs" />
     <Compile Include="Class_Search_PurchaseOrder_AuditLog.cs" />
+    <Compile Include="Class_Search_Stock_ByKey.cs" />
     <Compile Include="Class_SelectStringValueOption.cs" />
     <Compile Include="Class_ServiceItem.cs" />
+    <Compile Include="Class_SetOrderPackagingRequest.cs" />
     <Compile Include="Class_ShippingMethod.cs" />
     <Compile Include="Class_ShippingService.cs" />
     <Compile Include="Class_SortDirectionType.cs" />
@@ -354,6 +366,7 @@
     <Compile Include="Locations.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Orders.cs" />
+    <Compile Include="Payments.cs" />
     <Compile Include="PostalServices.cs" />
     <Compile Include="PrintService.cs" />
     <Compile Include="ProcessedOrders.cs" />

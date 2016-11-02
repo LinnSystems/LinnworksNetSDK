@@ -86,6 +86,26 @@ namespace LinnworksAPI
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<OrderDetails>>(Factory.GetResponse("Orders/GetOrdersById", "pkOrderIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(pkOrderIds) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
+        public static List<CalcOrderHeader> GetOrderPackagingCalculation(GetOrderPackagingCalculationRequest request, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<CalcOrderHeader>>(Factory.GetResponse("Orders/GetOrderPackagingCalculation", "request=" + Newtonsoft.Json.JsonConvert.SerializeObject(request) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
+        public static CalcOrderHeader RecalculateSingleOrderPackaging(CalcOrderHeader request, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<CalcOrderHeader>(Factory.GetResponse("Orders/RecalculateSingleOrderPackaging", "request=" + Newtonsoft.Json.JsonConvert.SerializeObject(request) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
+        public static CalcOrderHeader SetOrderSplitPackagingManualOverwrite(CalcOrderHeader request, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<CalcOrderHeader>(Factory.GetResponse("Orders/SetOrderSplitPackagingManualOverwrite", "request=" + Newtonsoft.Json.JsonConvert.SerializeObject(request) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
+        public static CalcOrderHeader SetOrderPackaging(SetOrderPackagingRequest request, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<CalcOrderHeader>(Factory.GetResponse("Orders/SetOrderPackaging", "request=" + Newtonsoft.Json.JsonConvert.SerializeObject(request) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
         public static Guid GetUserLocationId(String ApiToken, String ApiServer)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<Guid>(Factory.GetResponse("Orders/GetUserLocationId", "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });

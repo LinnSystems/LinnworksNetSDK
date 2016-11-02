@@ -1,0 +1,108 @@
+[ng-controller=OrdersDashboardModule] .widget
+{
+    background-color: #f2f2f2;
+    padding: 5px;
+    border: solid 1px #cfcfcf;
+    width: 80%;
+    margin: auto;
+    transition: .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+[ng-controller=OrdersDashboardModule] .right
+{
+    float: right;
+}
+
+[ng-controller=OrdersDashboardModule] .center
+{
+    text-align: center;
+}
+
+[ng-controller=OrdersDashboardModule] .large-clear
+{
+    clear: both;
+    margin-top: 150px;
+}
+
+
+[ng-controller=OrdersDashboardModule] .widget:hover
+{
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+}
+
+[ng-controller=OrdersDashboardModule] .widget-holder
+{
+    width: 25%;
+    float: left;
+}
+
+[ng-controller=OrdersDashboardModule] .chart-holder
+{
+    width: 33%;
+    float: left;
+}
+
+[ng-controller=OrdersDashboardModule] .chart-inner
+{
+    padding: 20px;
+}
+
+[ng-controller=OrdersDashboardModule] .select-inline
+{
+    margin-top: 10px;
+}
+
+[ng-controller=OrdersDashboardModule] .clear-spacer
+{
+    clear: both;
+    margin-bottom: 15px;
+}
+
+[ng-controller=OrdersDashboardModule] .block-header
+{
+    background-color: #FFFFFf;
+    border: solid 1px #cfcfcf;
+    padding: 5px;
+    margin-bottom: 40px;
+}
+
+[ng-controller=OrdersDashboardModule] .alert-default
+{
+    background-color: #FFFFFf;
+    border: solid 1px #cfcfcf;
+}
+
+[ng-controller=OrdersDashboardModule] .widget-row
+{
+    clear:both;
+    text-align: center;
+}
+
+[ng-controller=OrdersDashboardModule] .main-body
+{
+    width: 80%;
+}
+
+[ng-controller=OrdersDashboardModule] .red
+{
+    color: #f2f2f2;
+    background-color: #d34848;
+    border-color: #b24646;    
+}
+
+[ng-controller=OrdersDashboardModule] .green
+{
+    color: #ffffff;
+    background-color: #72BF96;
+    border-color: #4eb246;    
+}
+
+[ng-controller=OrdersDashboardModule] .blue
+{
+    color: #f2f2f2;
+    background-color: #4897d3;
+    border-color: #467ab2;    
+}

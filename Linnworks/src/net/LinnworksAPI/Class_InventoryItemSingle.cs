@@ -23,7 +23,8 @@ namespace LinnworksAPI
         public Guid Category;
         public Boolean IsComposite;
         public String Image;
-        public String Name;
+        public DateTime? CreatedDate;
+        public DateTime? ModifiedDate;
         public Int32 TotalChangedProducts;
         public Boolean ContainsChanges;
     }

@@ -23,6 +23,7 @@ public $cCurrency;
 public $pkReturnId;
 public $ChannelReason;
 public $ChannelReasonSec;
+public $ReturnDate;
  
 } 
 ?>

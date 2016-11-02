@@ -2,6 +2,7 @@
  class OrderItem
 { public $OrderId;
 public $ItemId;
+public $StockItemId;
 public $ItemNumber;
 public $SKU;
 public $ItemSource;
@@ -37,6 +38,7 @@ public $HasImage;
 public $ImageId;
 public $AdditionalInfo;
 public $StockLevelIndicator;
+public $BinRack;
  
 } 
 ?>

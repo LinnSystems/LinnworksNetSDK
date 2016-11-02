@@ -4,6 +4,7 @@
 public $ChannelTag;
 public $DespatchNotes;
 public $OrderSyncDate;
+public $OrderSaveLocation;
 public $InventorySync;
 public $StockLocationBinding;
 public $PriceChange;

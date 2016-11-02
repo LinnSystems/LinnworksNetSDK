@@ -8,6 +8,7 @@ namespace LinnworksAPI
         public String ItemTitle;
         public String SKU;
         public Int32 Quantity;
+        public Double PurchasePrice;
         public Guid StockItemId;
     }
 }

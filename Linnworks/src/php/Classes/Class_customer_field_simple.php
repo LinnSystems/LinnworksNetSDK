@@ -1,12 +1,19 @@
 <?php
  class customer_field_simple
-{ public $Length;
-public $LongLength;
-public $Rank;
-public $SyncRoot;
-public $IsReadOnly;
-public $IsFixedSize;
-public $IsSynchronized;
+{ public $pkFieldId;
+public $id;
+public $FieldName;
+public $FieldDescription;
+public $FieldType;
+public $FieldTag;
+public $FieldValue;
+public $ModifiedOn;
+public $IsRequired;
+public $ValidationPattern;
+public $EndUserReadOnly;
+public $EndUserVisible;
+public $SortOrder;
+public $pkCustomerFieldId;
  
 } 
 ?>
