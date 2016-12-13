@@ -1,0 +1,65 @@
+{
+"modules" :
+[
+    {
+		"type" : "ExternalApplication"
+	},
+    {
+		"type" : "ShippingIntegration",
+		"parameters" : [
+		 {
+			name:"VendorName",
+			value:"PARCELSTATION"
+		 },
+		 {
+			name:"VendorFriendlyName",
+			value:"ParcelStation"
+		 },
+		 {
+			name:"VendorLogoURL",
+			value:"http://sandbox.shippingendpoint.net/img/parcelstation_logo_big.png"
+		 },
+		 {
+			name:"AddNewUserEndpoint",
+			value:"http://localhost:54135/api/Setup/AddNewUser"
+		 },
+		 {
+			name:"UserConfigEndpoint",
+			value:"http://localhost:54135/api/Setup/UserConfig"
+		 },
+		 {
+			name:"UpdateConfigEndpoint",
+			value:"http://localhost:54135/api/Setup/UpdateConfig"
+		 },
+		 {
+			name:"ConfigDeleteEndpoint",
+			value:"http://localhost:54135/api/Setup/ConfigDelete"
+		 },
+		 {
+			name:"UserAvailableServicesEndpoint",
+			value:"http://localhost:54135/api/Setup/UserAvailableServices"
+		 },
+		 {
+			name:"GenerateLabelEndpoint",
+			value:"http://localhost:54135/api/Consignment/GenerateLabel"
+		 },
+		 {
+			name:"CancelLabelEndpoint",
+			value:"http://localhost:54135/api/Consignment/CancelLabel"
+		 },
+		 {
+			name:"CreateManifest",
+			value:"http://localhost:54135/api/Manifest/CreateManifest"
+		 },
+		 {
+			name:"PrintManifest",
+			value:"http://localhost:54135/api/Manifest/PrintManifest"
+		 },	
+		 {
+			name:"ExtPropertyMap",
+			value:"http://localhost:54135/api/Setup/ExtendedPropertyMapping"
+		 }
+		]
+	}	
+]
+}

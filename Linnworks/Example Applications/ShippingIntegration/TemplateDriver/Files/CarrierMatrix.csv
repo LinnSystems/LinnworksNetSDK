@@ -1,0 +1,237 @@
+Carrier,Description,Service_Code,ServiceId,,,,
+Hermes,Hermes @ NDay,H24,916ce737-f8ad-4b99-9e51-0cb62fd59c6b,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""H24"",ServiceGroup = ""Hermes"",ServiceName = ""Hermes @ NDay"",ServiceTag = ""H24"",ServiceUniqueId = new Guid(""916ce737-f8ad-4b99-9e51-0cb62fd59c6b"")});"
+Hermes,Hermes @ Nday Signed,H24POD,1309805D-BF2F-476E-AD91-835A0528EB06,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""H24POD"",ServiceGroup = ""Hermes"",ServiceName = ""Hermes @ Nday Signed"",ServiceTag = ""H24POD"",ServiceUniqueId = new Guid(""1309805D-BF2F-476E-AD91-835A0528EB06"")});"
+Hermes,Hermes @ 2Day,H48,ed4698b8-07cf-4502-97e1-bfbd4de92193,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""H48"",ServiceGroup = ""Hermes"",ServiceName = ""Hermes @ 2Day"",ServiceTag = ""H48"",ServiceUniqueId = new Guid(""ed4698b8-07cf-4502-97e1-bfbd4de92193"")});"
+Hermes,Hermes @ 2Day Signed,H48POD,91D56596-8465-482B-B745-C5D41BBB32EF,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""H48POD"",ServiceGroup = ""Hermes"",ServiceName = ""Hermes @ 2Day Signed"",ServiceTag = ""H48POD"",ServiceUniqueId = new Guid(""91D56596-8465-482B-B745-C5D41BBB32EF"")});"
+Yodel,Yodel - PRIORITY 12:00,Y10 ,B6FFDAA1-57AF-4569-BB54-F9D2C1FB25C9,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y10 "",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - PRIORITY 12:00"",ServiceTag = ""Y10 "",ServiceUniqueId = new Guid(""B6FFDAA1-57AF-4569-BB54-F9D2C1FB25C9"")});"
+Yodel,Yodel - EXPRESS 24,Y20 ,FDFCCFD7-A3C3-4B64-83C1-3544A851E5A7,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y20 "",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - EXPRESS 24"",ServiceTag = ""Y20 "",ServiceUniqueId = new Guid(""FDFCCFD7-A3C3-4B64-83C1-3544A851E5A7"")});"
+Yodel,Yodel - EXPRESS 48,Y30 ,2655CC0D-9BF0-4CC0-BAD2-90CE8F2ECB08,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y30 "",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - EXPRESS 48"",ServiceTag = ""Y30 "",ServiceUniqueId = new Guid(""2655CC0D-9BF0-4CC0-BAD2-90CE8F2ECB08"")});"
+Yodel,Yodel - SATURDAY PRIORITY 12:00,Y40 ,3B97A0F1-AD62-4876-9877-7F144D1E1B16,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y40 "",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - SATURDAY PRIORITY 12:00"",ServiceTag = ""Y40 "",ServiceUniqueId = new Guid(""3B97A0F1-AD62-4876-9877-7F144D1E1B16"")});"
+Yodel,Yodel - EXPRESS ISLE,Y60 ,B4BA2EE8-792D-4524-9800-3DD30E2DBA63,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y60 "",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - EXPRESS ISLE"",ServiceTag = ""Y60 "",ServiceUniqueId = new Guid(""B4BA2EE8-792D-4524-9800-3DD30E2DBA63"")});"
+Yodel,Yodel - EXPRESS 24 (BT)                              ,Y120,E1B3A3AC-B0AD-4D0C-B545-0471EB388696,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y120"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - EXPRESS 24 (BT)                              "",ServiceTag = ""Y120"",ServiceUniqueId = new Guid(""E1B3A3AC-B0AD-4D0C-B545-0471EB388696"")});"
+Yodel,Yodel - EXPRESS 48 (UK)                              ,Y140,94AE56A2-9968-491B-82BF-B57E3E940732,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y140"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - EXPRESS 48 (UK)                              "",ServiceTag = ""Y140"",ServiceUniqueId = new Guid(""94AE56A2-9968-491B-82BF-B57E3E940732"")});"
+Yodel,YODEL ROI 48 POD                             ,Y151,A91B2C2E-349D-44D1-BB74-FBF4C1DC5A1C,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y151"",ServiceGroup = ""Yodel"",ServiceName = ""YODEL ROI 48 POD                             "",ServiceTag = ""Y151"",ServiceUniqueId = new Guid(""A91B2C2E-349D-44D1-BB74-FBF4C1DC5A1C"")});"
+Yodel,YODEL ROI 48 NON POD                         ,Y152,D383CB40-F426-4D7B-A81B-8B2AF70182B7,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y152"",ServiceGroup = ""Yodel"",ServiceName = ""YODEL ROI 48 NON POD                         "",ServiceTag = ""Y152"",ServiceUniqueId = new Guid(""D383CB40-F426-4D7B-A81B-8B2AF70182B7"")});"
+Yodel,YODEL ROI 72 POD                             ,Y153,09B26AD3-9B82-45C9-8286-759E2433A828,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y153"",ServiceGroup = ""Yodel"",ServiceName = ""YODEL ROI 72 POD                             "",ServiceTag = ""Y153"",ServiceUniqueId = new Guid(""09B26AD3-9B82-45C9-8286-759E2433A828"")});"
+Yodel,YODEL ROI 72 NON POD                         ,Y154,4D67CE7C-960E-440D-98BA-C339FF5F0F54,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y154"",ServiceGroup = ""Yodel"",ServiceName = ""YODEL ROI 72 NON POD                         "",ServiceTag = ""Y154"",ServiceUniqueId = new Guid(""4D67CE7C-960E-440D-98BA-C339FF5F0F54"")});"
+Yodel,YODEL CI 48 POD                              ,Y155,C459C1D7-94FF-4EE3-A87D-0EA9F622DBC1,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y155"",ServiceGroup = ""Yodel"",ServiceName = ""YODEL CI 48 POD                              "",ServiceTag = ""Y155"",ServiceUniqueId = new Guid(""C459C1D7-94FF-4EE3-A87D-0EA9F622DBC1"")});"
+Yodel,YODEL CI 48 NON POD                          ,Y156,CCDED543-DFD9-4872-8645-082F4EE4FF2C,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y156"",ServiceGroup = ""Yodel"",ServiceName = ""YODEL CI 48 NON POD                          "",ServiceTag = ""Y156"",ServiceUniqueId = new Guid(""CCDED543-DFD9-4872-8645-082F4EE4FF2C"")});"
+Yodel,YODEL CI 72 POD                              ,Y157,48CDD17B-66BE-4F34-8E40-1CFA67BFC0D2,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y157"",ServiceGroup = ""Yodel"",ServiceName = ""YODEL CI 72 POD                              "",ServiceTag = ""Y157"",ServiceUniqueId = new Guid(""48CDD17B-66BE-4F34-8E40-1CFA67BFC0D2"")});"
+Yodel,YODEL CI 72 NON POD                          ,Y158,AF8916BE-D59D-4E35-881C-281D78EE494E,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y158"",ServiceGroup = ""Yodel"",ServiceName = ""YODEL CI 72 NON POD                          "",ServiceTag = ""Y158"",ServiceUniqueId = new Guid(""AF8916BE-D59D-4E35-881C-281D78EE494E"")});"
+Yodel,Yodel - EXPRESS 48 (NI)                              ,Y180,9FF3C8EA-DA4A-4CBF-B43A-CB320F14CF8F,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y180"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - EXPRESS 48 (NI)                              "",ServiceTag = ""Y180"",ServiceUniqueId = new Guid(""9FF3C8EA-DA4A-4CBF-B43A-CB320F14CF8F"")});"
+Yodel,Yodel -  @HOME 24                                     ,Y310,0BBAE88D-6081-45DD-ABBE-E13622DB5F19,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y310"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel -  @HOME 24                                     "",ServiceTag = ""Y310"",ServiceUniqueId = new Guid(""0BBAE88D-6081-45DD-ABBE-E13622DB5F19"")});"
+Yodel,Yodel - @HOME 48                                     ,Y340,FEA9C986-7F80-460E-8669-9A5A9AE2ABA9,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y340"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - @HOME 48                                     "",ServiceTag = ""Y340"",ServiceUniqueId = new Guid(""FEA9C986-7F80-460E-8669-9A5A9AE2ABA9"")});"
+Yodel,Yodel - @HOME RETURN                                 ,Y350,9033E6DA-A449-4CE9-B991-15BE81DF8F89,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y350"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - @HOME RETURN                                 "",ServiceTag = ""Y350"",ServiceUniqueId = new Guid(""9033E6DA-A449-4CE9-B991-15BE81DF8F89"")});"
+Yodel,Yodel - @HOME CATALOGUE                              ,Y370,8309B2BA-E599-4FE1-858A-DEEA8BD25F40,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y370"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - @HOME CATALOGUE                              "",ServiceTag = ""Y370"",ServiceUniqueId = new Guid(""8309B2BA-E599-4FE1-858A-DEEA8BD25F40"")});"
+Yodel,Yodel - @HOME 72                                     ,Y380,D03AAE22-1B13-4B77-A840-D2CCB027C634,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y380"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - @HOME 72                                     "",ServiceTag = ""Y380"",ServiceUniqueId = new Guid(""D03AAE22-1B13-4B77-A840-D2CCB027C634"")});"
+Yodel,Yodel - @HOME 72 (NI)                                ,Y390,B25E550B-79C2-419A-9A92-1310AFCA649D,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y390"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - @HOME 72 (NI)                                "",ServiceTag = ""Y390"",ServiceUniqueId = new Guid(""B25E550B-79C2-419A-9A92-1310AFCA649D"")});"
+Yodel,Yodel - @HOME 48 (NI)                                ,Y730,3076ADA4-21BF-431F-AAD3-5000C1BFE838,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y730"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - @HOME 48 (NI)                                "",ServiceTag = ""Y730"",ServiceUniqueId = new Guid(""3076ADA4-21BF-431F-AAD3-5000C1BFE838"")});"
+Yodel,Yodel - @HOME 24 (BT)                                ,Y740,034DB148-67A2-49BF-9B61-5EF157F45AFF,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y740"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - @HOME 24 (BT)                                "",ServiceTag = ""Y740"",ServiceUniqueId = new Guid(""034DB148-67A2-49BF-9B61-5EF157F45AFF"")});"
+Yodel,Yodel - @HOME 48 (BT)                                ,Y750,6A031EE8-701C-4650-95CA-495BE283F066,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y750"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - @HOME 48 (BT)                                "",ServiceTag = ""Y750"",ServiceUniqueId = new Guid(""6A031EE8-701C-4650-95CA-495BE283F066"")});"
+Yodel,Yodel - @HOME MINI                                   ,Y840,4C889786-A2A7-4A75-98AA-DE7087EC2342,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y840"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - @HOME MINI                                   "",ServiceTag = ""Y840"",ServiceUniqueId = new Guid(""4C889786-A2A7-4A75-98AA-DE7087EC2342"")});"
+Yodel,Yodel - EXPRESS SATURDAY,Y850,3A49180A-E652-4D05-AA8F-F667C20ED949,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""Y850"",ServiceGroup = ""Yodel"",ServiceName = ""Yodel - EXPRESS SATURDAY"",ServiceTag = ""Y850"",ServiceUniqueId = new Guid(""3A49180A-E652-4D05-AA8F-F667C20ED949"")});"
+DPD,DPD - Sun 10:00,DPD7,3C33F5FA-BFCD-4354-8F6B-5AC24550942C,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DPD7"",ServiceGroup = ""DPD"",ServiceName = ""DPD - Sun 10:00"",ServiceTag = ""DPD7"",ServiceUniqueId = new Guid(""3C33F5FA-BFCD-4354-8F6B-5AC24550942C"")});"
+DPD,DPD - Two Day,DPD11,EBD73680-AFEA-4BE7-930A-A02DEFA91325,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DPD11"",ServiceGroup = ""DPD"",ServiceName = ""DPD - Two Day"",ServiceTag = ""DPD11"",ServiceUniqueId = new Guid(""EBD73680-AFEA-4BE7-930A-A02DEFA91325"")});"
+DPD,DPD - Next Day,DPD12,2B5C2099-CFBD-406A-8523-88373EB86271,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DPD12"",ServiceGroup = ""DPD"",ServiceName = ""DPD - Next Day"",ServiceTag = ""DPD12"",ServiceUniqueId = new Guid(""2B5C2099-CFBD-406A-8523-88373EB86271"")});"
+DPD,DPD 12:00,DPD13,543B7AE1-74B2-4F2E-931F-9F781DF180C0,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DPD13"",ServiceGroup = ""DPD"",ServiceName = ""DPD 12:00"",ServiceTag = ""DPD13"",ServiceUniqueId = new Guid(""543B7AE1-74B2-4F2E-931F-9F781DF180C0"")});"
+DPD,DPD 10:00,DPD14,C38DDAA6-F781-4F89-ADD0-B6B57AD2A729,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DPD14"",ServiceGroup = ""DPD"",ServiceName = ""DPD 10:00"",ServiceTag = ""DPD14"",ServiceUniqueId = new Guid(""C38DDAA6-F781-4F89-ADD0-B6B57AD2A729"")});"
+DPD,DPD - Timed,DPD15,FF15A867-5AA8-4CD0-AE48-B19421F023B7,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DPD15"",ServiceGroup = ""DPD"",ServiceName = ""DPD - Timed"",ServiceTag = ""DPD15"",ServiceUniqueId = new Guid(""FF15A867-5AA8-4CD0-AE48-B19421F023B7"")});"
+DPD,DPD - Saturday,DPD16,E1682D00-A164-4B68-A8B3-8567A5FC486D,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DPD16"",ServiceGroup = ""DPD"",ServiceName = ""DPD - Saturday"",ServiceTag = ""DPD16"",ServiceUniqueId = new Guid(""E1682D00-A164-4B68-A8B3-8567A5FC486D"")});"
+DPD,DPD - Sat 12:00,DPD17,9ED5907F-D0F2-4DA7-810E-B545541F1701,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DPD17"",ServiceGroup = ""DPD"",ServiceName = ""DPD - Sat 12:00"",ServiceTag = ""DPD17"",ServiceUniqueId = new Guid(""9ED5907F-D0F2-4DA7-810E-B545541F1701"")});"
+DPD,DPD - Sat 10:00,DPD18,851AEB8E-D77F-47F6-91AC-C723ED1E5660,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DPD18"",ServiceGroup = ""DPD"",ServiceName = ""DPD - Sat 10:00"",ServiceTag = ""DPD18"",ServiceUniqueId = new Guid(""851AEB8E-D77F-47F6-91AC-C723ED1E5660"")});"
+UKMail,Next Day Household/Neighbour Signature,UKM1,DDC5D52E-7A86-4829-919D-15640750DF1B,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM1"",ServiceGroup = ""UKMail"",ServiceName = ""Next Day Household/Neighbour Signature"",ServiceTag = ""UKM1"",ServiceUniqueId = new Guid(""DDC5D52E-7A86-4829-919D-15640750DF1B"")});"
+UKMail,Next Day 12:00 Household/Neighbour Signature,UKM2,80988E0C-790C-483E-8BC9-658A1C810716,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM2"",ServiceGroup = ""UKMail"",ServiceName = ""Next Day 12:00 Household/Neighbour Signature"",ServiceTag = ""UKM2"",ServiceUniqueId = new Guid(""80988E0C-790C-483E-8BC9-658A1C810716"")});"
+UKMail,Next Day Household/Neighbour/Safe Place,UKM210,9000ACE5-F37E-41C5-8C4F-D61A1F610B9D,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM210"",ServiceGroup = ""UKMail"",ServiceName = ""Next Day Household/Neighbour/Safe Place"",ServiceTag = ""UKM210"",ServiceUniqueId = new Guid(""9000ACE5-F37E-41C5-8C4F-D61A1F610B9D"")});"
+UKMail,Next Day 12:00 Household/Neighbour/Safe Place,UKM211,0F4D6DCB-8614-4B9E-A4ED-BF0585A594D1,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM211"",ServiceGroup = ""UKMail"",ServiceName = ""Next Day 12:00 Household/Neighbour/Safe Place"",ServiceTag = ""UKM211"",ServiceUniqueId = new Guid(""0F4D6DCB-8614-4B9E-A4ED-BF0585A594D1"")});"
+UKMail,Next Day 10:30 Household/Neighbour/Safe Place,UKM212,777BB6F3-A717-4CEE-977E-DE4DD40F7622,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM212"",ServiceGroup = ""UKMail"",ServiceName = ""Next Day 10:30 Household/Neighbour/Safe Place"",ServiceTag = ""UKM212"",ServiceUniqueId = new Guid(""777BB6F3-A717-4CEE-977E-DE4DD40F7622"")});"
+UKMail,Afternoon Household/Neighbour/Safe Place,UKM213,62616E97-601F-433A-B438-45406CA8E32D,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM213"",ServiceGroup = ""UKMail"",ServiceName = ""Afternoon Household/Neighbour/Safe Place"",ServiceTag = ""UKM213"",ServiceUniqueId = new Guid(""62616E97-601F-433A-B438-45406CA8E32D"")});"
+UKMail,Evening Household/Neighbour/Safe Place,UKM214,0782E776-98EF-4C06-AF49-B7FD5C3A7719,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM214"",ServiceGroup = ""UKMail"",ServiceName = ""Evening Household/Neighbour/Safe Place"",ServiceTag = ""UKM214"",ServiceUniqueId = new Guid(""0782E776-98EF-4C06-AF49-B7FD5C3A7719"")});"
+UKMail,Saturday Household/Neighbour/Safe Place,UKM215,B16594A4-E8EC-4DCE-B9C8-D3E771E9C407,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM215"",ServiceGroup = ""UKMail"",ServiceName = ""Saturday Household/Neighbour/Safe Place"",ServiceTag = ""UKM215"",ServiceUniqueId = new Guid(""B16594A4-E8EC-4DCE-B9C8-D3E771E9C407"")});"
+UKMail,Saturday 10:30 Household/Neighbour/Safe Place,UKM216,A87C8F31-3CFE-49C9-AC20-542828AFA000,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM216"",ServiceGroup = ""UKMail"",ServiceName = ""Saturday 10:30 Household/Neighbour/Safe Place"",ServiceTag = ""UKM216"",ServiceUniqueId = new Guid(""A87C8F31-3CFE-49C9-AC20-542828AFA000"")});"
+UKMail,Next Day Household Only,UKM220,69A33968-D39A-478A-90BD-EBB1BAD9F681,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM220"",ServiceGroup = ""UKMail"",ServiceName = ""Next Day Household Only"",ServiceTag = ""UKM220"",ServiceUniqueId = new Guid(""69A33968-D39A-478A-90BD-EBB1BAD9F681"")});"
+UKMail,Next Day 12:00 Household Only,UKM221,12EC5085-8021-499D-9A83-DAD537DEAC9A,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM221"",ServiceGroup = ""UKMail"",ServiceName = ""Next Day 12:00 Household Only"",ServiceTag = ""UKM221"",ServiceUniqueId = new Guid(""12EC5085-8021-499D-9A83-DAD537DEAC9A"")});"
+UKMail,Next Day 10:30 Household Only,UKM222,1B3291D1-D05E-4CBD-8908-A8C09A9290FD,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM222"",ServiceGroup = ""UKMail"",ServiceName = ""Next Day 10:30 Household Only"",ServiceTag = ""UKM222"",ServiceUniqueId = new Guid(""1B3291D1-D05E-4CBD-8908-A8C09A9290FD"")});"
+UKMail,Afternoon Household Only,UKM223,7274D7CD-7459-4CE4-AE00-62FD1FD9B080,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM223"",ServiceGroup = ""UKMail"",ServiceName = ""Afternoon Household Only"",ServiceTag = ""UKM223"",ServiceUniqueId = new Guid(""7274D7CD-7459-4CE4-AE00-62FD1FD9B080"")});"
+UKMail,Evening Household Only,UKM224,36CE1FE5-AE7D-4D88-8651-00E8C39DBC93,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM224"",ServiceGroup = ""UKMail"",ServiceName = ""Evening Household Only"",ServiceTag = ""UKM224"",ServiceUniqueId = new Guid(""36CE1FE5-AE7D-4D88-8651-00E8C39DBC93"")});"
+UKMail,Saturday Household Only,UKM225,2E9737E3-3256-49AF-84F0-31442C58852E,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM225"",ServiceGroup = ""UKMail"",ServiceName = ""Saturday Household Only"",ServiceTag = ""UKM225"",ServiceUniqueId = new Guid(""2E9737E3-3256-49AF-84F0-31442C58852E"")});"
+UKMail,Saturday 10:30 Household Only,UKM226,68F4DEFA-0B34-4EB5-A648-2F1DB8007ACC,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM226"",ServiceGroup = ""UKMail"",ServiceName = ""Saturday 10:30 Household Only"",ServiceTag = ""UKM226"",ServiceUniqueId = new Guid(""68F4DEFA-0B34-4EB5-A648-2F1DB8007ACC"")});"
+UKMail,Next Day 09:00 Household Only,UKM3,E6B40CA8-1297-4CD5-BA12-857F22671A1A,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM3"",ServiceGroup = ""UKMail"",ServiceName = ""Next Day 09:00 Household Only"",ServiceTag = ""UKM3"",ServiceUniqueId = new Guid(""E6B40CA8-1297-4CD5-BA12-857F22671A1A"")});"
+UKMail,Saturday Household/Neighbour Signature,UKM4,21778D6E-4965-486D-BA9E-E74090B3B8F5,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM4"",ServiceGroup = ""UKMail"",ServiceName = ""Saturday Household/Neighbour Signature"",ServiceTag = ""UKM4"",ServiceUniqueId = new Guid(""21778D6E-4965-486D-BA9E-E74090B3B8F5"")});"
+UKMail,Saturday 09:00 Household Only,UKM5,7C7DAEB7-4543-4AAE-A75E-FE5EB428EC10,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM5"",ServiceGroup = ""UKMail"",ServiceName = ""Saturday 09:00 Household Only"",ServiceTag = ""UKM5"",ServiceUniqueId = new Guid(""7C7DAEB7-4543-4AAE-A75E-FE5EB428EC10"")});"
+UKMail,Timed Delivery Household Only,UKM6,409BFA21-91FD-45FD-8E54-B503560DA99A,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM6"",ServiceGroup = ""UKMail"",ServiceName = ""Timed Delivery Household Only"",ServiceTag = ""UKM6"",ServiceUniqueId = new Guid(""409BFA21-91FD-45FD-8E54-B503560DA99A"")});"
+UKMail,Saturday 10:30 Household/Neighbour Signature,UKM7,BD9F11DA-0529-4152-A5CE-79DBAC7060BD,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM7"",ServiceGroup = ""UKMail"",ServiceName = ""Saturday 10:30 Household/Neighbour Signature"",ServiceTag = ""UKM7"",ServiceUniqueId = new Guid(""BD9F11DA-0529-4152-A5CE-79DBAC7060BD"")});"
+UKMail,Afternoon Household/Neighbour Signature,UKM77,E5EF991C-D04A-43CA-BDD0-9A9C71E088EE,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM77"",ServiceGroup = ""UKMail"",ServiceName = ""Afternoon Household/Neighbour Signature"",ServiceTag = ""UKM77"",ServiceUniqueId = new Guid(""E5EF991C-D04A-43CA-BDD0-9A9C71E088EE"")});"
+UKMail,Evening Household/Neighbour Signature,UKM78,91861E4B-483E-46F1-80EA-1E8B43F2408E,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM78"",ServiceGroup = ""UKMail"",ServiceName = ""Evening Household/Neighbour Signature"",ServiceTag = ""UKM78"",ServiceUniqueId = new Guid(""91861E4B-483E-46F1-80EA-1E8B43F2408E"")});"
+UKMail,Next Day 10:30 Household/Neighbour Signature,UKM9,CDDD78EA-38D3-4D78-93A2-748D156AC5F9,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM9"",ServiceGroup = ""UKMail"",ServiceName = ""Next Day 10:30 Household/Neighbour Signature"",ServiceTag = ""UKM9"",ServiceUniqueId = new Guid(""CDDD78EA-38D3-4D78-93A2-748D156AC5F9"")});"
+UKMail,48 Hour Household/Neighbour Signature,UKM48,5AC5EA69-B1D5-45C3-AA99-DDABD2D3A84F,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM48"",ServiceGroup = ""UKMail"",ServiceName = ""48 Hour Household/Neighbour Signature"",ServiceTag = ""UKM48"",ServiceUniqueId = new Guid(""5AC5EA69-B1D5-45C3-AA99-DDABD2D3A84F"")});"
+UKMail,72 Hour Household Only,UKM72,DD510529-6284-41B9-B685-4CF299219A5C,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""UKM72"",ServiceGroup = ""UKMail"",ServiceName = ""72 Hour Household Only"",ServiceTag = ""UKM72"",ServiceUniqueId = new Guid(""DD510529-6284-41B9-B685-4CF299219A5C"")});"
+DX,DX2HOME,DX2H,632D601A-01E9-45BB-B7E6-8A6C0693463B,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DX2H"",ServiceGroup = ""DX"",ServiceName = ""DX2HOME"",ServiceTag = ""DX2H"",ServiceUniqueId = new Guid(""632D601A-01E9-45BB-B7E6-8A6C0693463B"")});"
+DX,DXMadatory Signature,DXMS,80EB1A19-0665-43F7-A44D-2BA85E601592,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DXMS"",ServiceGroup = ""DX"",ServiceName = ""DXMadatory Signature"",ServiceTag = ""DXMS"",ServiceUniqueId = new Guid(""80EB1A19-0665-43F7-A44D-2BA85E601592"")});"
+DX,DXMadatory Signature Saturday,DXMSS,D2BC695A-A9F9-4908-89CB-1AF69127E6F9,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DXMSS"",ServiceGroup = ""DX"",ServiceName = ""DXMadatory Signature Saturday"",ServiceTag = ""DXMSS"",ServiceUniqueId = new Guid(""D2BC695A-A9F9-4908-89CB-1AF69127E6F9"")});"
+DX,DX2HOME Saturday,DX2HS,3EAB2A8A-8D02-4DFC-B806-39C856689446,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DX2HS"",ServiceGroup = ""DX"",ServiceName = ""DX2HOME Saturday"",ServiceTag = ""DX2HS"",ServiceUniqueId = new Guid(""3EAB2A8A-8D02-4DFC-B806-39C856689446"")});"
+DX,DX2HOME Pre 1,DX2H1,F8BB5DC4-1FC4-4D52-A807-8F6F0FD7A19A,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DX2H1"",ServiceGroup = ""DX"",ServiceName = ""DX2HOME Pre 1"",ServiceTag = ""DX2H1"",ServiceUniqueId = new Guid(""F8BB5DC4-1FC4-4D52-A807-8F6F0FD7A19A"")});"
+DX,DXMandatory Signature Pre 1,DXMS1,3166B2A0-9801-47D8-BCF0-8BC6E6886D9D,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""DXMS1"",ServiceGroup = ""DX"",ServiceName = ""DXMandatory Signature Pre 1"",ServiceTag = ""DXMS1"",ServiceUniqueId = new Guid(""3166B2A0-9801-47D8-BCF0-8BC6E6886D9D"")});"
+HermesDE,Hermes Germany Direct,HD1,DA707BC5-0E33-4B15-B1F0-DE62AECADCD5,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HD1"",ServiceGroup = ""HermesDE"",ServiceName = ""Hermes Germany Direct"",ServiceTag = ""HD1"",ServiceUniqueId = new Guid(""DA707BC5-0E33-4B15-B1F0-DE62AECADCD5"")});"
+OWE,Sweden Post Registered Mail International Direct,OWE10034,C12930D2-72D9-43D4-A3D0-D17432FE8696,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""OWE10034"",ServiceGroup = ""OWE"",ServiceName = ""Sweden Post Registered Mail International Direct"",ServiceTag = ""OWE10034"",ServiceUniqueId = new Guid(""C12930D2-72D9-43D4-A3D0-D17432FE8696"")});"
+TKT,France Direct,TK1,23BC67BA-66B4-4184-A6E3-A2BF0ABE512D,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""TK1"",ServiceGroup = ""TKT"",ServiceName = ""France Direct"",ServiceTag = ""TK1"",ServiceUniqueId = new Guid(""23BC67BA-66B4-4184-A6E3-A2BF0ABE512D"")});"
+Secured Mail,UK DSA Service,SMDSA,4F885D59-4DAD-4552-A708-EA71DDF6E0DE,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""SMDSA"",ServiceGroup = ""Secured Mail"",ServiceName = ""UK DSA Service"",ServiceTag = ""SMDSA"",ServiceUniqueId = new Guid(""4F885D59-4DAD-4552-A708-EA71DDF6E0DE"")});"
+XDP,Parcel - O/Night,XDP1,B0FD0B5D-F58E-41F1-B94D-9CC856766114,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""XDP1"",ServiceGroup = ""XDP"",ServiceName = ""Parcel - O/Night"",ServiceTag = ""XDP1"",ServiceUniqueId = new Guid(""B0FD0B5D-F58E-41F1-B94D-9CC856766114"")});"
+XDP,Parcel - Econ,XDP2,6A898C3B-BFF2-468B-9BC7-1724C986B077,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""XDP2"",ServiceGroup = ""XDP"",ServiceName = ""Parcel - Econ"",ServiceTag = ""XDP2"",ServiceUniqueId = new Guid(""6A898C3B-BFF2-468B-9BC7-1724C986B077"")});"
+XDP,Parcel - 12pm,XDP4,487D4EDE-AA8E-436B-8372-1B28413BAF8A,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""XDP4"",ServiceGroup = ""XDP"",ServiceName = ""Parcel - 12pm"",ServiceTag = ""XDP4"",ServiceUniqueId = new Guid(""487D4EDE-AA8E-436B-8372-1B28413BAF8A"")});"
+XDP,Parcel - 10.30am,XDP5,D7E3BBFA-AA37-4490-B5F8-F0B4A6C4C2A0,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""XDP5"",ServiceGroup = ""XDP"",ServiceName = ""Parcel - 10.30am"",ServiceTag = ""XDP5"",ServiceUniqueId = new Guid(""D7E3BBFA-AA37-4490-B5F8-F0B4A6C4C2A0"")});"
+XDP,Parcel - 9am,XDP6,240413AD-AE00-4667-BD75-A218AC94C2F9,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""XDP6"",ServiceGroup = ""XDP"",ServiceName = ""Parcel - 9am"",ServiceTag = ""XDP6"",ServiceUniqueId = new Guid(""240413AD-AE00-4667-BD75-A218AC94C2F9"")});"
+XDP,Parcel SAT Overnight,XDP15,7BEB2443-656A-4691-A21C-26D2DDEF9D7E,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""XDP15"",ServiceGroup = ""XDP"",ServiceName = ""Parcel SAT Overnight"",ServiceTag = ""XDP15"",ServiceUniqueId = new Guid(""7BEB2443-656A-4691-A21C-26D2DDEF9D7E"")});"
+XDP,Parcel SAT 12pm,XDP18,D95A475D-07D4-4112-AF10-C0CD95E723C4,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""XDP18"",ServiceGroup = ""XDP"",ServiceName = ""Parcel SAT 12pm"",ServiceTag = ""XDP18"",ServiceUniqueId = new Guid(""D95A475D-07D4-4112-AF10-C0CD95E723C4"")});"
+XDP,Parcel SAT 10.30am,XDP19,100F2659-892B-41B6-BE5E-AEC0B89D8BEF,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""XDP19"",ServiceGroup = ""XDP"",ServiceName = ""Parcel SAT 10.30am"",ServiceTag = ""XDP19"",ServiceUniqueId = new Guid(""100F2659-892B-41B6-BE5E-AEC0B89D8BEF"")});"
+XDP,Parcel SAT 9am,XDP20,D9629955-54E5-4C9E-A41D-5332A0BEDA83,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""XDP20"",ServiceGroup = ""XDP"",ServiceName = ""Parcel SAT 9am"",ServiceTag = ""XDP20"",ServiceUniqueId = new Guid(""D9629955-54E5-4C9E-A41D-5332A0BEDA83"")});"
+Hermes Europe,Hermes Germany Route,HWDE,4C6FD290-656A-454F-8998-EA339F6783D6,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWDE"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Germany Route"",ServiceTag = ""HWDE"",ServiceUniqueId = new Guid(""4C6FD290-656A-454F-8998-EA339F6783D6"")});"
+Hermes Europe,Hermes Austria Route,HWAU,4C82989D-A413-497A-BBB3-861D15020D83,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWAU"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Austria Route"",ServiceTag = ""HWAU"",ServiceUniqueId = new Guid(""4C82989D-A413-497A-BBB3-861D15020D83"")});"
+Hermes Europe,Hermes Belgium Route,HWBE,52456BCF-5A82-4DA9-B589-4EA52D0909AD,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWBE"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Belgium Route"",ServiceTag = ""HWBE"",ServiceUniqueId = new Guid(""52456BCF-5A82-4DA9-B589-4EA52D0909AD"")});"
+Hermes Europe,Hermes Denmark Route,HWDK,8189E1C7-EA73-46A9-8E35-7706B91AB510,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWDK"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Denmark Route"",ServiceTag = ""HWDK"",ServiceUniqueId = new Guid(""8189E1C7-EA73-46A9-8E35-7706B91AB510"")});"
+Hermes Europe,Hermes Finland Route,HWFI,6B2651A9-58FC-45DE-AE5C-BA05E1FD0B4A,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWFI"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Finland Route"",ServiceTag = ""HWFI"",ServiceUniqueId = new Guid(""6B2651A9-58FC-45DE-AE5C-BA05E1FD0B4A"")});"
+Hermes Europe,Hermes Italy Route,HWIT,2272D45C-B2FC-48E5-BC98-5C192C7577CB,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWIT"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Italy Route"",ServiceTag = ""HWIT"",ServiceUniqueId = new Guid(""2272D45C-B2FC-48E5-BC98-5C192C7577CB"")});"
+Hermes Europe,Hermes Luxembourg Route,HWLU,A8F1E206-5492-4AA8-8E21-DD18172DE40A,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWLU"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Luxembourg Route"",ServiceTag = ""HWLU"",ServiceUniqueId = new Guid(""A8F1E206-5492-4AA8-8E21-DD18172DE40A"")});"
+Hermes Europe,Hermes Monaco Route,HWMA,66121B6C-0E1B-44E4-8A50-5CCF7945D309,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWMA"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Monaco Route"",ServiceTag = ""HWMA"",ServiceUniqueId = new Guid(""66121B6C-0E1B-44E4-8A50-5CCF7945D309"")});"
+Hermes Europe,Hermes Netherlands Route,HWNL,48CF5597-D472-4B9C-80DC-65808A577085,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWNL"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Netherlands Route"",ServiceTag = ""HWNL"",ServiceUniqueId = new Guid(""48CF5597-D472-4B9C-80DC-65808A577085"")});"
+Hermes Europe,Hermes Portugal Route,HWPT,F51E2A0B-911C-4B2D-9C28-AF639B9BA46E,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWPT"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Portugal Route"",ServiceTag = ""HWPT"",ServiceUniqueId = new Guid(""F51E2A0B-911C-4B2D-9C28-AF639B9BA46E"")});"
+Hermes Europe,Hermes Republic of Ireland Route,HWIE,B5973199-476C-42C6-A84A-A64E8ADA5481,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWIE"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Republic of Ireland Route"",ServiceTag = ""HWIE"",ServiceUniqueId = new Guid(""B5973199-476C-42C6-A84A-A64E8ADA5481"")});"
+Hermes Europe,Hermes Spain Route,HWES,228241AC-09DE-4E34-A3E8-D792515BE7A4,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWES"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Spain Route"",ServiceTag = ""HWES"",ServiceUniqueId = new Guid(""228241AC-09DE-4E34-A3E8-D792515BE7A4"")});"
+Hermes Europe,Hermes Sweden Route,HWSE,4DBE2722-3F88-43F6-9648-0755090383AA,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWSE"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Sweden Route"",ServiceTag = ""HWSE"",ServiceUniqueId = new Guid(""4DBE2722-3F88-43F6-9648-0755090383AA"")});"
+Hermes Europe,Hermes Switzerland Route,HWCH,4820FB24-929A-4207-8856-8D1E82283F65,,,,"services.Add(new Classes.CourierService() { ServiceCode = ""HWCH"",ServiceGroup = ""Hermes Europe"",ServiceName = ""Hermes Switzerland Route"",ServiceTag = ""HWCH"",ServiceUniqueId = new Guid(""4820FB24-929A-4207-8856-8D1E82283F65"")});"
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
