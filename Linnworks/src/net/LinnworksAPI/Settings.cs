@@ -13,7 +13,7 @@ namespace LinnworksAPI
 
         public static void UpdateCurrencyConversionRates(List<CurrencyConversionRate> rates, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Settings/UpdateCurrencyConversionRates", "rates=" + Newtonsoft.Json.JsonConvert.SerializeObject(rates) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Settings/UpdateCurrencyConversionRates", "rates=" + Factory.SerializeAndUrlEscape(rates) + "", ApiToken, ApiServer);
         }
 
         public static Measures GetMeasures(String ApiToken, String ApiServer)

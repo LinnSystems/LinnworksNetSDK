@@ -33,7 +33,7 @@ namespace LinnworksAPI
 
         public static void ActionBookedOrder(Guid pkOrderId, List<BookedReturnsExchangeItem> bookedItems, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("ReturnsRefunds/ActionBookedOrder", "pkOrderId=" + pkOrderId + "&bookedItems=" + Newtonsoft.Json.JsonConvert.SerializeObject(bookedItems) + "", ApiToken, ApiServer);
+            Factory.GetResponse("ReturnsRefunds/ActionBookedOrder", "pkOrderId=" + pkOrderId + "&bookedItems=" + Factory.SerializeAndUrlEscape(bookedItems) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteBookedItem(Guid pkOrderId, Int32 pkReturnId, String ApiToken, String ApiServer)
@@ -53,7 +53,7 @@ namespace LinnworksAPI
 
         public static void EditBookedItemInfo(Guid pkOrderId, BookedReturnsExchangeItem bookedReturnsExchangeItem, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("ReturnsRefunds/EditBookedItemInfo", "pkOrderId=" + pkOrderId + "&bookedReturnsExchangeItem=" + Newtonsoft.Json.JsonConvert.SerializeObject(bookedReturnsExchangeItem) + "", ApiToken, ApiServer);
+            Factory.GetResponse("ReturnsRefunds/EditBookedItemInfo", "pkOrderId=" + pkOrderId + "&bookedReturnsExchangeItem=" + Factory.SerializeAndUrlEscape(bookedReturnsExchangeItem) + "", ApiToken, ApiServer);
         }
 
         public static void DeletePendingRefundItem(Guid fkOrderId, Guid pkRefundRowId, String ApiToken, String ApiServer)
@@ -68,17 +68,17 @@ namespace LinnworksAPI
 
         public static GenericPagedResult<ReturnsRefundsWeb> SearchReturnsRefundsPaged(DateTime? from, DateTime? to, ReturnsRefundsSearchDateType dateType, String searchField, Boolean exactMatch, String searchTerm, Int32 pageNum, Int32 numEntriesPerPage, HistoryType historyType, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<ReturnsRefundsWeb>>(Factory.GetResponse("ReturnsRefunds/SearchReturnsRefundsPaged", "from=" + Newtonsoft.Json.JsonConvert.SerializeObject(from) + "&to=" + Newtonsoft.Json.JsonConvert.SerializeObject(to) + "&dateType=" + Newtonsoft.Json.JsonConvert.SerializeObject(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "&historyType=" + Newtonsoft.Json.JsonConvert.SerializeObject(historyType) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<ReturnsRefundsWeb>>(Factory.GetResponse("ReturnsRefunds/SearchReturnsRefundsPaged", "from=" + Factory.SerializeAndUrlEscape(from) + "&to=" + Factory.SerializeAndUrlEscape(to) + "&dateType=" + Factory.SerializeAndUrlEscape(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "&historyType=" + Factory.SerializeAndUrlEscape(historyType) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static String CreateReturnsRefundsCSV(DateTime? from, DateTime? to, ReturnsRefundsSearchDateType dateType, String searchField, Boolean exactMatch, String searchTerm, String sortColumn, Boolean sortDirection, HistoryType historyType, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<String>(Factory.GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", "from=" + Newtonsoft.Json.JsonConvert.SerializeObject(from) + "&to=" + Newtonsoft.Json.JsonConvert.SerializeObject(to) + "&dateType=" + Newtonsoft.Json.JsonConvert.SerializeObject(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection + "&historyType=" + Newtonsoft.Json.JsonConvert.SerializeObject(historyType) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<String>(Factory.GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", "from=" + Factory.SerializeAndUrlEscape(from) + "&to=" + Factory.SerializeAndUrlEscape(to) + "&dateType=" + Factory.SerializeAndUrlEscape(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection + "&historyType=" + Factory.SerializeAndUrlEscape(historyType) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<SearchField> GetSearchTypes(HistoryType historyType, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<SearchField>>(Factory.GetResponse("ReturnsRefunds/GetSearchTypes", "historyType=" + Newtonsoft.Json.JsonConvert.SerializeObject(historyType) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<SearchField>>(Factory.GetResponse("ReturnsRefunds/GetSearchTypes", "historyType=" + Factory.SerializeAndUrlEscape(historyType) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
     }
 }

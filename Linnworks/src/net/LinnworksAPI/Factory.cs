@@ -4,6 +4,13 @@ using System.Net;
 
 public static class Factory
 {
+
+    public static string SerializeAndUrlEscape(object o)
+    {
+        //doesn't work! return System.Web.HttpUtility.UrlEncode(Newtonsoft.Json.JsonConvert.SerializeObject(o));
+        return Newtonsoft.Json.JsonConvert.SerializeObject(o).Trim('\"');
+    }
+
     public static string GetResponse(string Extension, string Body, string Token, string Server)
     {
         if (string.IsNullOrEmpty(Server))

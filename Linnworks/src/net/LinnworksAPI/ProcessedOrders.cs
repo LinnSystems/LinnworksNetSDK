@@ -8,7 +8,7 @@ namespace LinnworksAPI
     {
         public static List<RefundInfo> RefundFreeText(Guid pkOrderId, List<RefundItem> refundItems, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<RefundInfo>>(Factory.GetResponse("ProcessedOrders/RefundFreeText", "pkOrderId=" + pkOrderId + "&refundItems=" + Newtonsoft.Json.JsonConvert.SerializeObject(refundItems) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<RefundInfo>>(Factory.GetResponse("ProcessedOrders/RefundFreeText", "pkOrderId=" + pkOrderId + "&refundItems=" + Factory.SerializeAndUrlEscape(refundItems) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<RefundInfo> RefundShipping(Guid pkOrderId, String ApiToken, String ApiServer)
@@ -23,7 +23,7 @@ namespace LinnworksAPI
 
         public static List<RefundInfo> RefundServices(Guid pkOrderId, List<RefundItem> refundItems, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<RefundInfo>>(Factory.GetResponse("ProcessedOrders/RefundServices", "pkOrderId=" + pkOrderId + "&refundItems=" + Newtonsoft.Json.JsonConvert.SerializeObject(refundItems) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<RefundInfo>>(Factory.GetResponse("ProcessedOrders/RefundServices", "pkOrderId=" + pkOrderId + "&refundItems=" + Factory.SerializeAndUrlEscape(refundItems) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<RefundInfo> RefundCompleteOrder(Guid pkOrderId, Boolean isManualRefund, String ApiToken, String ApiServer)
@@ -48,12 +48,12 @@ namespace LinnworksAPI
 
         public static ExistingRefundTotal GetTotalRefunds(Guid pkOrderId, Boolean? includeBookings, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ExistingRefundTotal>(Factory.GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + Newtonsoft.Json.JsonConvert.SerializeObject(includeBookings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ExistingRefundTotal>(Factory.GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + Factory.SerializeAndUrlEscape(includeBookings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static ValidationResult IsRefundValid(Guid pkOrderId, List<RefundItem> refundItems, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ValidationResult>(Factory.GetResponse("ProcessedOrders/IsRefundValid", "pkOrderId=" + pkOrderId + "&refundItems=" + Newtonsoft.Json.JsonConvert.SerializeObject(refundItems) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ValidationResult>(Factory.GetResponse("ProcessedOrders/IsRefundValid", "pkOrderId=" + pkOrderId + "&refundItems=" + Factory.SerializeAndUrlEscape(refundItems) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static Boolean IsRefundValidationRequiredByOrderId(Guid pkOrderId, String ApiToken, String ApiServer)
@@ -88,12 +88,12 @@ namespace LinnworksAPI
 
         public static GenericPagedResult<ProcessedOrderWeb> SearchProcessedOrdersPaged(DateTime? from, DateTime? to, SearchDateType dateType, String searchField, Boolean exactMatch, String searchTerm, Int32 pageNum, Int32 numEntriesPerPage, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<ProcessedOrderWeb>>(Factory.GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", "from=" + Newtonsoft.Json.JsonConvert.SerializeObject(from) + "&to=" + Newtonsoft.Json.JsonConvert.SerializeObject(to) + "&dateType=" + Newtonsoft.Json.JsonConvert.SerializeObject(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<ProcessedOrderWeb>>(Factory.GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", "from=" + Factory.SerializeAndUrlEscape(from) + "&to=" + Factory.SerializeAndUrlEscape(to) + "&dateType=" + Factory.SerializeAndUrlEscape(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static String CreateProcessedOrdersCSV(DateTime? from, DateTime? to, SearchDateType dateType, String searchField, Boolean exactMatch, String searchTerm, String sortColumn, Boolean sortDirection, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<String>(Factory.GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", "from=" + Newtonsoft.Json.JsonConvert.SerializeObject(from) + "&to=" + Newtonsoft.Json.JsonConvert.SerializeObject(to) + "&dateType=" + Newtonsoft.Json.JsonConvert.SerializeObject(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<String>(Factory.GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", "from=" + Factory.SerializeAndUrlEscape(from) + "&to=" + Factory.SerializeAndUrlEscape(to) + "&dateType=" + Factory.SerializeAndUrlEscape(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static OrderReturnCategory AddReturnCategory(String categoryName, String ApiToken, String ApiServer)
@@ -148,7 +148,7 @@ namespace LinnworksAPI
 
         public static List<ReturnInfo> CreateReturn(Guid pkOrderId, List<RowQty> returnitems, Guid returnLocation, String channelReason, String channelSubReason, String category, String reason, Boolean isReturnBooking, Boolean ignoredValidation, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ReturnInfo>>(Factory.GetResponse("ProcessedOrders/CreateReturn", "pkOrderId=" + pkOrderId + "&returnitems=" + Newtonsoft.Json.JsonConvert.SerializeObject(returnitems) + "&returnLocation=" + returnLocation + "&channelReason=" + channelReason + "&channelSubReason=" + channelSubReason + "&category=" + category + "&reason=" + reason + "&isReturnBooking=" + isReturnBooking + "&ignoredValidation=" + ignoredValidation + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ReturnInfo>>(Factory.GetResponse("ProcessedOrders/CreateReturn", "pkOrderId=" + pkOrderId + "&returnitems=" + Factory.SerializeAndUrlEscape(returnitems) + "&returnLocation=" + returnLocation + "&channelReason=" + channelReason + "&channelSubReason=" + channelSubReason + "&category=" + category + "&reason=" + reason + "&isReturnBooking=" + isReturnBooking + "&ignoredValidation=" + ignoredValidation + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void ChangeOrderNote(Guid pkOrderNoteId, String noteText, Boolean isInternal, String ApiToken, String ApiServer)
@@ -163,12 +163,12 @@ namespace LinnworksAPI
 
         public static List<ReturnInfo> CreateExchange(Guid pkOrderId, List<RowQty> exchangeItems, Guid despatchLocation, Guid returnLocation, String channelReason, String channelSubReason, String category, String reason, Boolean isBooking, Boolean ignoredValidation, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ReturnInfo>>(Factory.GetResponse("ProcessedOrders/CreateExchange", "pkOrderId=" + pkOrderId + "&exchangeItems=" + Newtonsoft.Json.JsonConvert.SerializeObject(exchangeItems) + "&despatchLocation=" + despatchLocation + "&returnLocation=" + returnLocation + "&channelReason=" + channelReason + "&channelSubReason=" + channelSubReason + "&category=" + category + "&reason=" + reason + "&isBooking=" + isBooking + "&ignoredValidation=" + ignoredValidation + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ReturnInfo>>(Factory.GetResponse("ProcessedOrders/CreateExchange", "pkOrderId=" + pkOrderId + "&exchangeItems=" + Factory.SerializeAndUrlEscape(exchangeItems) + "&despatchLocation=" + despatchLocation + "&returnLocation=" + returnLocation + "&channelReason=" + channelReason + "&channelSubReason=" + channelSubReason + "&category=" + category + "&reason=" + reason + "&isBooking=" + isBooking + "&ignoredValidation=" + ignoredValidation + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<ReturnInfo> CreateResend(Guid pkOrderId, List<RowQty> resendItems, Guid despatchLocation, String category, String reason, Double additionalCost, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ReturnInfo>>(Factory.GetResponse("ProcessedOrders/CreateResend", "pkOrderId=" + pkOrderId + "&resendItems=" + Newtonsoft.Json.JsonConvert.SerializeObject(resendItems) + "&despatchLocation=" + despatchLocation + "&category=" + category + "&reason=" + reason + "&additionalCost=" + additionalCost + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ReturnInfo>>(Factory.GetResponse("ProcessedOrders/CreateResend", "pkOrderId=" + pkOrderId + "&resendItems=" + Factory.SerializeAndUrlEscape(resendItems) + "&despatchLocation=" + despatchLocation + "&category=" + category + "&reason=" + reason + "&additionalCost=" + additionalCost + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<ReturnInfo> CreateFullResend(Guid pkOrderId, Guid despatchLocation, String category, String reason, Double additionalCost, String ApiToken, String ApiServer)

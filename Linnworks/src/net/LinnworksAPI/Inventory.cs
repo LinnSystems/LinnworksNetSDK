@@ -13,17 +13,17 @@ namespace LinnworksAPI
 
         public static void CreateInventoryItemDescriptions(List<StockItemDescription> inventoryItemDescriptions, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/CreateInventoryItemDescriptions", "inventoryItemDescriptions=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemDescriptions) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/CreateInventoryItemDescriptions", "inventoryItemDescriptions=" + Factory.SerializeAndUrlEscape(inventoryItemDescriptions) + "", ApiToken, ApiServer);
         }
 
         public static void UpdateInventoryItemDescriptions(List<StockItemDescription> inventoryItemDescriptions, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateInventoryItemDescriptions", "inventoryItemDescriptions=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemDescriptions) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateInventoryItemDescriptions", "inventoryItemDescriptions=" + Factory.SerializeAndUrlEscape(inventoryItemDescriptions) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteInventoryItemDescriptions(List<Guid> inventoryItemDescriptionIds, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteInventoryItemDescriptions", "inventoryItemDescriptionIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemDescriptionIds) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteInventoryItemDescriptions", "inventoryItemDescriptionIds=" + Factory.SerializeAndUrlEscape(inventoryItemDescriptionIds) + "", ApiToken, ApiServer);
         }
 
         public static List<AnyConfig> GetChannels(String ApiToken, String ApiServer)
@@ -58,12 +58,12 @@ namespace LinnworksAPI
 
         public static PortionResult<InventoryItem> GetInventoryItems(InventoryView view, List<Guid> stockLocationIds, Int32 startIndex, Int32 itemsCount, Boolean preloadChilds, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<PortionResult<InventoryItem>>(Factory.GetResponse("Inventory/GetInventoryItems", "view=" + Newtonsoft.Json.JsonConvert.SerializeObject(view) + "&stockLocationIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockLocationIds) + "&startIndex=" + startIndex + "&itemsCount=" + itemsCount + "&preloadChilds=" + preloadChilds + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<PortionResult<InventoryItem>>(Factory.GetResponse("Inventory/GetInventoryItems", "view=" + Factory.SerializeAndUrlEscape(view) + "&stockLocationIds=" + Factory.SerializeAndUrlEscape(stockLocationIds) + "&startIndex=" + startIndex + "&itemsCount=" + itemsCount + "&preloadChilds=" + preloadChilds + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static Dictionary<Guid, List<InventoryItemSingle>> GetInventoryItemsChilds(InventoryView view, List<Guid> stockLocationIds, List<Guid> itemIds, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<Guid, List<InventoryItemSingle>>>(Factory.GetResponse("Inventory/GetInventoryItemsChilds", "view=" + Newtonsoft.Json.JsonConvert.SerializeObject(view) + "&stockLocationIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockLocationIds) + "&itemIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(itemIds) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<Guid, List<InventoryItemSingle>>>(Factory.GetResponse("Inventory/GetInventoryItemsChilds", "view=" + Factory.SerializeAndUrlEscape(view) + "&stockLocationIds=" + Factory.SerializeAndUrlEscape(stockLocationIds) + "&itemIds=" + Factory.SerializeAndUrlEscape(itemIds) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static Dictionary<String, Object> UpdateInventoryItemField(Guid inventoryItemId, ColumnNameType fieldName, String fieldValue, String ApiToken, String ApiServer)
@@ -93,12 +93,12 @@ namespace LinnworksAPI
 
         public static void CreateUserSpecificView(InventoryView view, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/CreateUserSpecificView", "view=" + Newtonsoft.Json.JsonConvert.SerializeObject(view) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/CreateUserSpecificView", "view=" + Factory.SerializeAndUrlEscape(view) + "", ApiToken, ApiServer);
         }
 
         public static void UpdateUserSpecificView(String viewName, InventoryView view, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateUserSpecificView", "viewName=" + viewName + "&view=" + Newtonsoft.Json.JsonConvert.SerializeObject(view) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateUserSpecificView", "viewName=" + viewName + "&view=" + Factory.SerializeAndUrlEscape(view) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteUserSpecificView(String viewName, String ApiToken, String ApiServer)
@@ -113,17 +113,17 @@ namespace LinnworksAPI
 
         public static Int32 GetInventoryItemsCount(Boolean? includeDeleted, Boolean? includeArchived, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Int32>(Factory.GetResponse("Inventory/GetInventoryItemsCount", "includeDeleted=" + Newtonsoft.Json.JsonConvert.SerializeObject(includeDeleted) + "&includeArchived=" + Newtonsoft.Json.JsonConvert.SerializeObject(includeArchived) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Int32>(Factory.GetResponse("Inventory/GetInventoryItemsCount", "includeDeleted=" + Factory.SerializeAndUrlEscape(includeDeleted) + "&includeArchived=" + Factory.SerializeAndUrlEscape(includeArchived) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void AddInventoryItem(StockItem inventoryItem, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/AddInventoryItem", "inventoryItem=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItem) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/AddInventoryItem", "inventoryItem=" + Factory.SerializeAndUrlEscape(inventoryItem) + "", ApiToken, ApiServer);
         }
 
         public static void DuplicateInventoryItem(StockItem inventoryItem, Guid sourceItemId, Boolean copyImages, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DuplicateInventoryItem", "inventoryItem=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItem) + "&sourceItemId=" + sourceItemId + "&copyImages=" + copyImages + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DuplicateInventoryItem", "inventoryItem=" + Factory.SerializeAndUrlEscape(inventoryItem) + "&sourceItemId=" + sourceItemId + "&copyImages=" + copyImages + "", ApiToken, ApiServer);
         }
 
         public static String GetNewItemNumber(String ApiToken, String ApiServer)
@@ -133,17 +133,17 @@ namespace LinnworksAPI
 
         public static void UpdateInventoryItem(StockItemInv inventoryItem, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateInventoryItem", "inventoryItem=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItem) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateInventoryItem", "inventoryItem=" + Factory.SerializeAndUrlEscape(inventoryItem) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteInventoryItems(IEnumerable<Guid> inventoryItemIds, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteInventoryItems", "inventoryItemIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemIds) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteInventoryItems", "inventoryItemIds=" + Factory.SerializeAndUrlEscape(inventoryItemIds) + "", ApiToken, ApiServer);
         }
 
         public static void AdjustTemplatesInstant(IEnumerable<Guid> inventoryItemIds, String source, String subSource, AdjustmentOptions adjustmentOptions, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/AdjustTemplatesInstant", "inventoryItemIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemIds) + "&source=" + source + "&subSource=" + subSource + "&adjustmentOptions=" + Newtonsoft.Json.JsonConvert.SerializeObject(adjustmentOptions) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/AdjustTemplatesInstant", "inventoryItemIds=" + Factory.SerializeAndUrlEscape(inventoryItemIds) + "&source=" + source + "&subSource=" + subSource + "&adjustmentOptions=" + Factory.SerializeAndUrlEscape(adjustmentOptions) + "", ApiToken, ApiServer);
         }
 
         public static List<StockItemChannelSKU> GetInventoryItemChannelSKUs(Guid inventoryItemId, String ApiToken, String ApiServer)
@@ -153,17 +153,17 @@ namespace LinnworksAPI
 
         public static void UpdateInventoryItemChannelSKUs(List<StockItemChannelSKU> inventoryItemChannelSKUs, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemChannelSKUs) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" + Factory.SerializeAndUrlEscape(inventoryItemChannelSKUs) + "", ApiToken, ApiServer);
         }
 
         public static void CreateInventoryItemChannelSKUs(List<StockItemChannelSKU> inventoryItemChannelSKUs, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/CreateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemChannelSKUs) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/CreateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" + Factory.SerializeAndUrlEscape(inventoryItemChannelSKUs) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteInventoryItemChannelSKUs(List<Guid> inventoryItemChannelSKUIds, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteInventoryItemChannelSKUs", "inventoryItemChannelSKUIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemChannelSKUIds) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteInventoryItemChannelSKUs", "inventoryItemChannelSKUIds=" + Factory.SerializeAndUrlEscape(inventoryItemChannelSKUIds) + "", ApiToken, ApiServer);
         }
 
         public static void UnlinkChannelListing(String channelRefId, String source, String subSource, String ApiToken, String ApiServer)
@@ -188,12 +188,12 @@ namespace LinnworksAPI
 
         public static List<PictureSource> UploadImagesToInventoryItem(Guid inventoryItemId, List<Guid> imageIds, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<PictureSource>>(Factory.GetResponse("Inventory/UploadImagesToInventoryItem", "inventoryItemId=" + inventoryItemId + "&imageIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(imageIds) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<PictureSource>>(Factory.GetResponse("Inventory/UploadImagesToInventoryItem", "inventoryItemId=" + inventoryItemId + "&imageIds=" + Factory.SerializeAndUrlEscape(imageIds) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void DeleteImagesFromInventoryItem(Dictionary<Guid, List<String>> inventoryItemImages, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteImagesFromInventoryItem", "inventoryItemImages=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemImages) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteImagesFromInventoryItem", "inventoryItemImages=" + Factory.SerializeAndUrlEscape(inventoryItemImages) + "", ApiToken, ApiServer);
         }
 
         public static List<Category> GetCategories(String ApiToken, String ApiServer)
@@ -208,7 +208,7 @@ namespace LinnworksAPI
 
         public static void UpdateCategory(Category category, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateCategory", "category=" + Newtonsoft.Json.JsonConvert.SerializeObject(category) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateCategory", "category=" + Factory.SerializeAndUrlEscape(category) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteCategoryById(Guid categoryId, String ApiToken, String ApiServer)
@@ -228,12 +228,12 @@ namespace LinnworksAPI
 
         public static void CreateCountries(IEnumerable<Country> countries, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/CreateCountries", "countries=" + Newtonsoft.Json.JsonConvert.SerializeObject(countries) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/CreateCountries", "countries=" + Factory.SerializeAndUrlEscape(countries) + "", ApiToken, ApiServer);
         }
 
         public static void UpdateCountries(IEnumerable<Country> countries, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateCountries", "countries=" + Newtonsoft.Json.JsonConvert.SerializeObject(countries) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateCountries", "countries=" + Factory.SerializeAndUrlEscape(countries) + "", ApiToken, ApiServer);
         }
 
         public static List<StockLocation> GetStockLocations(String ApiToken, String ApiServer)
@@ -248,17 +248,17 @@ namespace LinnworksAPI
 
         public static void AddItemLocations(List<StockItemLocation> itemLocations, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/AddItemLocations", "itemLocations=" + Newtonsoft.Json.JsonConvert.SerializeObject(itemLocations) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/AddItemLocations", "itemLocations=" + Factory.SerializeAndUrlEscape(itemLocations) + "", ApiToken, ApiServer);
         }
 
         public static void UpdateItemLocations(List<StockItemLocation> itemLocations, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateItemLocations", "itemLocations=" + Newtonsoft.Json.JsonConvert.SerializeObject(itemLocations) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateItemLocations", "itemLocations=" + Factory.SerializeAndUrlEscape(itemLocations) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteItemLocations(Guid inventoryItemId, List<Guid> itemLocations, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteItemLocations", "inventoryItemId=" + inventoryItemId + "&itemLocations=" + Newtonsoft.Json.JsonConvert.SerializeObject(itemLocations) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteItemLocations", "inventoryItemId=" + inventoryItemId + "&itemLocations=" + Factory.SerializeAndUrlEscape(itemLocations) + "", ApiToken, ApiServer);
         }
 
         public static List<StockItemComposition> GetInventoryItemCompositions(Guid inventoryItemId, Boolean getFullDetail, String ApiToken, String ApiServer)
@@ -268,37 +268,37 @@ namespace LinnworksAPI
 
         public static void CreateInventoryItemCompositions(List<StockItemComposition> inventoryItemCompositions, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/CreateInventoryItemCompositions", "inventoryItemCompositions=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemCompositions) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/CreateInventoryItemCompositions", "inventoryItemCompositions=" + Factory.SerializeAndUrlEscape(inventoryItemCompositions) + "", ApiToken, ApiServer);
         }
 
         public static void UpdateInventoryItemCompositions(List<StockItemComposition> inventoryItemCompositions, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateInventoryItemCompositions", "inventoryItemCompositions=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemCompositions) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateInventoryItemCompositions", "inventoryItemCompositions=" + Factory.SerializeAndUrlEscape(inventoryItemCompositions) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteInventoryItemCompositions(Guid stockItemId, List<Guid> inventoryItemCompositionIds, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteInventoryItemCompositions", "stockItemId=" + stockItemId + "&inventoryItemCompositionIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemCompositionIds) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteInventoryItemCompositions", "stockItemId=" + stockItemId + "&inventoryItemCompositionIds=" + Factory.SerializeAndUrlEscape(inventoryItemCompositionIds) + "", ApiToken, ApiServer);
         }
 
         public static List<StockItemExtendedProperty> GetInventoryItemExtendedProperties(Guid inventoryItemId, GetExtendedPropertyFilter propertyParams, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockItemExtendedProperty>>(Factory.GetResponse("Inventory/GetInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&propertyParams=" + Newtonsoft.Json.JsonConvert.SerializeObject(propertyParams) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockItemExtendedProperty>>(Factory.GetResponse("Inventory/GetInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&propertyParams=" + Factory.SerializeAndUrlEscape(propertyParams) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void CreateInventoryItemExtendedProperties(List<StockItemExtendedProperty> inventoryItemExtendedProperties, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/CreateInventoryItemExtendedProperties", "inventoryItemExtendedProperties=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemExtendedProperties) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/CreateInventoryItemExtendedProperties", "inventoryItemExtendedProperties=" + Factory.SerializeAndUrlEscape(inventoryItemExtendedProperties) + "", ApiToken, ApiServer);
         }
 
         public static void UpdateInventoryItemExtendedProperties(List<StockItemExtendedProperty> inventoryItemExtendedProperties, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateInventoryItemExtendedProperties", "inventoryItemExtendedProperties=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemExtendedProperties) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateInventoryItemExtendedProperties", "inventoryItemExtendedProperties=" + Factory.SerializeAndUrlEscape(inventoryItemExtendedProperties) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteInventoryItemExtendedProperties(Guid inventoryItemId, List<Guid> inventoryItemExtendedPropertyIds, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&inventoryItemExtendedPropertyIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemExtendedPropertyIds) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&inventoryItemExtendedPropertyIds=" + Factory.SerializeAndUrlEscape(inventoryItemExtendedPropertyIds) + "", ApiToken, ApiServer);
         }
 
         public static List<StockItemTitle> GetInventoryItemTitles(Guid inventoryItemId, String ApiToken, String ApiServer)
@@ -308,17 +308,17 @@ namespace LinnworksAPI
 
         public static void CreateInventoryItemTitles(List<StockItemTitle> inventoryItemTitles, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/CreateInventoryItemTitles", "inventoryItemTitles=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemTitles) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/CreateInventoryItemTitles", "inventoryItemTitles=" + Factory.SerializeAndUrlEscape(inventoryItemTitles) + "", ApiToken, ApiServer);
         }
 
         public static void UpdateInventoryItemTitles(List<StockItemTitle> inventoryItemTitles, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateInventoryItemTitles", "inventoryItemTitles=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemTitles) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateInventoryItemTitles", "inventoryItemTitles=" + Factory.SerializeAndUrlEscape(inventoryItemTitles) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteInventoryItemTitles(List<Guid> inventoryItemTitleIds, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteInventoryItemTitles", "inventoryItemTitleIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemTitleIds) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteInventoryItemTitles", "inventoryItemTitleIds=" + Factory.SerializeAndUrlEscape(inventoryItemTitleIds) + "", ApiToken, ApiServer);
         }
 
         public static List<Supplier> GetSuppliers(String ApiToken, String ApiServer)
@@ -333,17 +333,17 @@ namespace LinnworksAPI
 
         public static Supplier AddSupplier(Supplier supplier, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Supplier>(Factory.GetResponse("Inventory/AddSupplier", "supplier=" + Newtonsoft.Json.JsonConvert.SerializeObject(supplier) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Supplier>(Factory.GetResponse("Inventory/AddSupplier", "supplier=" + Factory.SerializeAndUrlEscape(supplier) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void UpdateSupplier(Supplier supplier, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateSupplier", "supplier=" + Newtonsoft.Json.JsonConvert.SerializeObject(supplier) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateSupplier", "supplier=" + Factory.SerializeAndUrlEscape(supplier) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteSuppliers(List<Guid> suppliersIds, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteSuppliers", "suppliersIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(suppliersIds) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteSuppliers", "suppliersIds=" + Factory.SerializeAndUrlEscape(suppliersIds) + "", ApiToken, ApiServer);
         }
 
         public static List<StockItemSupplierStat> GetStockSupplierStat(Guid inventoryItemId, String ApiToken, String ApiServer)
@@ -353,17 +353,17 @@ namespace LinnworksAPI
 
         public static void CreateStockSupplierStat(List<StockItemSupplierStat> itemSuppliers, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/CreateStockSupplierStat", "itemSuppliers=" + Newtonsoft.Json.JsonConvert.SerializeObject(itemSuppliers) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/CreateStockSupplierStat", "itemSuppliers=" + Factory.SerializeAndUrlEscape(itemSuppliers) + "", ApiToken, ApiServer);
         }
 
         public static void UpdateStockSupplierStat(List<StockItemSupplierStat> itemSuppliers, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateStockSupplierStat", "itemSuppliers=" + Newtonsoft.Json.JsonConvert.SerializeObject(itemSuppliers) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateStockSupplierStat", "itemSuppliers=" + Factory.SerializeAndUrlEscape(itemSuppliers) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteStockSupplierStat(Guid stockItemId, List<Guid> itemSupplierIds, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteStockSupplierStat", "stockItemId=" + stockItemId + "&itemSupplierIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(itemSupplierIds) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteStockSupplierStat", "stockItemId=" + stockItemId + "&itemSupplierIds=" + Factory.SerializeAndUrlEscape(itemSupplierIds) + "", ApiToken, ApiServer);
         }
 
         public static List<StockItemPrice> GetInventoryItemPrices(Guid inventoryItemId, String ApiToken, String ApiServer)
@@ -373,17 +373,17 @@ namespace LinnworksAPI
 
         public static void CreateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/CreateInventoryItemPrices", "inventoryItemPrices=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemPrices) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/CreateInventoryItemPrices", "inventoryItemPrices=" + Factory.SerializeAndUrlEscape(inventoryItemPrices) + "", ApiToken, ApiServer);
         }
 
         public static void UpdateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/UpdateInventoryItemPrices", "inventoryItemPrices=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemPrices) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/UpdateInventoryItemPrices", "inventoryItemPrices=" + Factory.SerializeAndUrlEscape(inventoryItemPrices) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteInventoryItemPrices(List<Guid> inventoryItemPriceIds, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Inventory/DeleteInventoryItemPrices", "inventoryItemPriceIds=" + Newtonsoft.Json.JsonConvert.SerializeObject(inventoryItemPriceIds) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Inventory/DeleteInventoryItemPrices", "inventoryItemPriceIds=" + Factory.SerializeAndUrlEscape(inventoryItemPriceIds) + "", ApiToken, ApiServer);
         }
     }
 }

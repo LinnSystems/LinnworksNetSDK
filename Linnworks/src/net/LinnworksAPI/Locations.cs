@@ -12,12 +12,12 @@ namespace LinnworksAPI
 
         public static void AddLocation(StockLocation location, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Locations/AddLocation", "location=" + Newtonsoft.Json.JsonConvert.SerializeObject(location) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Locations/AddLocation", "location=" + Factory.SerializeAndUrlEscape(location) + "", ApiToken, ApiServer);
         }
 
         public static void UpdateLocation(StockLocation location, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("Locations/UpdateLocation", "location=" + Newtonsoft.Json.JsonConvert.SerializeObject(location) + "", ApiToken, ApiServer);
+            Factory.GetResponse("Locations/UpdateLocation", "location=" + Factory.SerializeAndUrlEscape(location) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteLocation(Guid pkStockLocationId, String ApiToken, String ApiServer)
