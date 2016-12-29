@@ -353,6 +353,7 @@
     <Compile Include="Class_WarehouseTransferItemNote.cs" />
     <Compile Include="Class_WarehouseTransferNote.cs" />
     <Compile Include="Class_WarehouseTransferProperty.cs" />
+    <Compile Include="ClientConfig.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Dashboards.cs" />
     <Compile Include="Factory.cs" />

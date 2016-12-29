@@ -47,6 +47,10 @@ public static class Factory
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
+            if (LinnworksAPI.ClientConfig.ThrowExceptions)
+            {
+                throw;
+            }
             return "";
         }
     }
