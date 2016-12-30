@@ -129,6 +129,7 @@
     <Compile Include="Class_Deliver_PurchaseItemParameter.cs" />
     <Compile Include="Class_Deliver_PurchaseOrderItemAllResponse.cs" />
     <Compile Include="Class_DisplayType.cs" />
+    <Compile Include="Class_Error.cs" />
     <Compile Include="Class_EvaluatorDescriptor.cs" />
     <Compile Include="Class_EvaluatorGroup.cs" />
     <Compile Include="Class_EvaluatorType.cs" />
@@ -359,6 +360,7 @@
     <Compile Include="Factory.cs" />
     <Compile Include="ImportExport.cs" />
     <Compile Include="Inventory.cs" />
+    <Compile Include="LinnworksException.cs" />
     <Compile Include="Locations.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Orders.cs" />
