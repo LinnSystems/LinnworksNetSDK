@@ -6,5 +6,6 @@ namespace LinnworksAPI
     {
         public Guid pkStockLocationId;
         public Boolean Deleted;
+        public Int32 fkChannelLocationId;
     }
 }

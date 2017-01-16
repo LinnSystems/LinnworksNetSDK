@@ -4,10 +4,10 @@ namespace LinnworksAPI
 {
     public class OrderNote
     {
-        public Guid OrderNoteId;
-        public DateTime NoteDate;
         public Boolean Internal;
         public String Note;
-        public String CreatedBy;
+        public DateTime NoteEntryDate;
+        public String NoteUserName;
+        public Guid pkOrderNoteId;
     }
 }

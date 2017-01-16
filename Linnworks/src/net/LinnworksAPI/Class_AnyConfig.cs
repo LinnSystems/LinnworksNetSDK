@@ -7,9 +7,12 @@ namespace LinnworksAPI
     {
         public ConfigItem<Boolean> Enabled;
         public ConfigItem<String> ChannelTag;
+        public ConfigChannelLocationBinding ChannelLocationBinding;
+        public ConfigItem<Boolean> IsMultiLocation;
         public ConfigItem<Boolean> DespatchNotes;
         public ConfigItem<DateTime> OrderSyncDate;
         public ConfigPropertySelectionList<SelectStringValueOption, Guid> OrderSaveLocation;
+        public ConfigProperty<Boolean> HidesHeaderAttributes;
         public ConfigItem<Boolean> InventorySync;
         public ConfigStockLocationBinding StockLocationBinding;
         public ConfigItem<Boolean> PriceChange;

@@ -18,7 +18,7 @@ namespace LinnworksAPI
 
         public static GenericPagedResult<VariationGroup> SearchVariationGroups(VariationSearchType searchType, String searchText, Int32 pageNumber, Int32 entriesPerPage, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<VariationGroup>>(Factory.GetResponse("Stock/SearchVariationGroups", "searchType=" + Newtonsoft.Json.JsonConvert.SerializeObject(searchType) + "&searchText=" + searchText + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<VariationGroup>>(Factory.GetResponse("Stock/SearchVariationGroups", "searchType=" + searchType + "&searchText=" + searchText + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void DeleteVariationGroup(Guid pkVariationGroupId, String ApiToken, String ApiServer)

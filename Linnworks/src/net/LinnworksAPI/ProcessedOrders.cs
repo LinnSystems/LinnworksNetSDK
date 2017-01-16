@@ -88,12 +88,12 @@ namespace LinnworksAPI
 
         public static GenericPagedResult<ProcessedOrderWeb> SearchProcessedOrdersPaged(DateTime? from, DateTime? to, SearchDateType dateType, String searchField, Boolean exactMatch, String searchTerm, Int32 pageNum, Int32 numEntriesPerPage, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<ProcessedOrderWeb>>(Factory.GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", "from=" + Newtonsoft.Json.JsonConvert.SerializeObject(from) + "&to=" + Newtonsoft.Json.JsonConvert.SerializeObject(to) + "&dateType=" + Newtonsoft.Json.JsonConvert.SerializeObject(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<ProcessedOrderWeb>>(Factory.GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", "from=" + from + "&to=" + to + "&dateType=" + dateType + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static String CreateProcessedOrdersCSV(DateTime? from, DateTime? to, SearchDateType dateType, String searchField, Boolean exactMatch, String searchTerm, String sortColumn, Boolean sortDirection, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<String>(Factory.GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", "from=" + Newtonsoft.Json.JsonConvert.SerializeObject(from) + "&to=" + Newtonsoft.Json.JsonConvert.SerializeObject(to) + "&dateType=" + Newtonsoft.Json.JsonConvert.SerializeObject(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<String>(Factory.GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", "from=" + from + "&to=" + to + "&dateType=" + dateType + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static OrderReturnCategory AddReturnCategory(String categoryName, String ApiToken, String ApiServer)

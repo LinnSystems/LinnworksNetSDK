@@ -14,6 +14,7 @@ namespace LinnworksAPI
         public String ItemTitle;
         public Double UnitValue;
         public Double TaxRate;
+        public Boolean TaxCostInclusive;
         public String Currency;
         public Boolean IsCompositeParent;
         public Boolean IsPartialCompositeReturn;

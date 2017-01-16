@@ -28,17 +28,22 @@ namespace LinnworksAPI
 
         public static List<StockItemLocation> GetInventoryLocationData(DateTime? date, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockItemLocation>>(Factory.GetResponse("Dashboards/GetInventoryLocationData", "date=" + Newtonsoft.Json.JsonConvert.SerializeObject(date) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockItemLocation>>(Factory.GetResponse("Dashboards/GetInventoryLocationData", "date=" + date + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<StockCategoryLocation> GetInventoryLocationCategoriesData(DateTime? date, Guid locationId, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockCategoryLocation>>(Factory.GetResponse("Dashboards/GetInventoryLocationCategoriesData", "date=" + Newtonsoft.Json.JsonConvert.SerializeObject(date) + "&locationId=" + locationId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockCategoryLocation>>(Factory.GetResponse("Dashboards/GetInventoryLocationCategoriesData", "date=" + date + "&locationId=" + locationId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static PagedStockCategoryLocationProductResult GetInventoryLocationProductsData(DateTime? date, Guid locationId, Guid categoryId, Int32 pageNumber, Int32 entriesPerPage, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<PagedStockCategoryLocationProductResult>(Factory.GetResponse("Dashboards/GetInventoryLocationProductsData", "date=" + Newtonsoft.Json.JsonConvert.SerializeObject(date) + "&locationId=" + locationId + "&categoryId=" + categoryId + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<PagedStockCategoryLocationProductResult>(Factory.GetResponse("Dashboards/GetInventoryLocationProductsData", "date=" + date + "&locationId=" + locationId + "&categoryId=" + categoryId + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
+        public static CustomScriptResult ExecuteCustomScriptQuery(String script, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<CustomScriptResult>(Factory.GetResponse("Dashboards/ExecuteCustomScriptQuery", "script=" + script + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static CustomScriptResult ExecuteCustomPagedScript(Int32 scriptId, ScriptParameter parameters, Int32 entriesPerPage, Int32 pageNumber, String ApiToken, String ApiServer)

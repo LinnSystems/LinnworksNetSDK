@@ -8,6 +8,7 @@ namespace LinnworksAPI
         public List<StockItemSupplierStat> Suppliers;
         public List<StockItemLevel> StockLevels;
         public List<StockItemDescription> ItemChannelDescriptions;
+        public List<StockItemExtendedProperty> ItemExtendedProperties;
         public List<StockItemTitle> ItemChannelTitles;
         public List<StockItemPrice> ItemChannelPrices;
         public String ItemNumber;
@@ -27,6 +28,7 @@ namespace LinnworksAPI
         public Double Width;
         public Double Depth;
         public Double Weight;
+        public DateTime? CreationDate;
         public Guid StockItemId;
     }
 }
