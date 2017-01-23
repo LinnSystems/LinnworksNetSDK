@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace LinnworksAPI
 {
@@ -9,6 +10,7 @@ namespace LinnworksAPI
         public String SubSource;
         public Double Price;
         public String Tag;
+        public List<StockItemPricingRule> Rules;
         public Guid StockItemId;
     }
 }

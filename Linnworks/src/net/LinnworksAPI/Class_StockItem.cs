@@ -9,6 +9,7 @@ namespace LinnworksAPI
         public Int32 Due;
         public Int32 MinimumLevel;
         public Int32 Available;
+        public DateTime? CreationDate;
         public Boolean? IsCompositeParent;
         public String ItemNumber;
         public String ItemTitle;

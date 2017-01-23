@@ -18,5 +18,6 @@ namespace LinnworksAPI
         public String FaxNumber;
         public String Email;
         public String WebPage;
+        public String Currency;
     }
 }

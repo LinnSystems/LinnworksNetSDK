@@ -7,6 +7,7 @@ namespace LinnworksAPI
     {
         public String URL;
         public List<Guid> IdsProcessed;
+        public Dictionary<String, List<Guid>> ProcessedIds;
         public List<String> PrintErrors;
     }
 }

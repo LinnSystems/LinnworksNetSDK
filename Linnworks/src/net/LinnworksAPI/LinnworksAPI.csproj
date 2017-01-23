@@ -48,10 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth.cs" />
+    <Compile Include="ChannelMapping.cs" />
     <Compile Include="Class_ActionType.cs" />
     <Compile Include="Class_ActionTypeDescriptor.cs" />
     <Compile Include="Class_ActionWeb.cs" />
     <Compile Include="Class_AddData.cs" />
+    <Compile Include="Class_AddImageToInventoryItemRequest.cs" />
+    <Compile Include="Class_AddImageToInventoryItemResponse.cs" />
     <Compile Include="Class_Address.cs" />
     <Compile Include="Class_Add_PurchaseOrderItemParameter.cs" />
     <Compile Include="Class_AdjustmentOptions.cs" />
@@ -92,32 +95,26 @@
     <Compile Include="Class_ConditionItemBasic.cs" />
     <Compile Include="Class_ConditionType.cs" />
     <Compile Include="Class_ConfigButton.cs" />
+    <Compile Include="Class_ConfigChannelLocation.cs" />
+    <Compile Include="Class_ConfigChannelLocationBinding.cs" />
     <Compile Include="Class_ConfigItem.cs" />
     <Compile Include="Class_ConfigItemExternal.cs" />
     <Compile Include="Class_ConfigPaymentMethodMapping.cs" />
     <Compile Include="Class_ConfigPaymentMethodMappingItem.cs" />
     <Compile Include="Class_ConfigPostalServiceMapping.cs" />
     <Compile Include="Class_ConfigPostalServiceMappingItem.cs" />
+    <Compile Include="Class_ConfigProperty.cs" />
     <Compile Include="Class_ConfigPropertySelectionList.cs" />
     <Compile Include="Class_ConfigRule.cs" />
     <Compile Include="Class_ConfigRuleCollection.cs" />
     <Compile Include="Class_ConfigStockLocation.cs" />
     <Compile Include="Class_ConfigStockLocationBinding.cs" />
     <Compile Include="Class_Country.cs" />
-    <Compile Include="Class_CountryRegion.cs" />
-    <Compile Include="Class_CountryRegionReplaceWith.cs" />
     <Compile Include="Class_CouponValidationResult.cs" />
     <Compile Include="Class_CreatePDFResult.cs" />
     <Compile Include="Class_Create_PurchaseOrder_InitialParameter.cs" />
     <Compile Include="Class_CurrencyConversionRate.cs" />
-    <Compile Include="Class_customer.cs" />
     <Compile Include="Class_CustomerAddress.cs" />
-    <Compile Include="Class_customer_field_simple.cs" />
-    <Compile Include="Class_customer_invoice.cs" />
-    <Compile Include="Class_customer_invoice_line.cs" />
-    <Compile Include="Class_customer_invoice_payment.cs" />
-    <Compile Include="Class_customer_invoice_refund.cs" />
-    <Compile Include="Class_customer_profile.cs" />
     <Compile Include="Class_CustomScriptColumn.cs" />
     <Compile Include="Class_CustomScriptResult.cs" />
     <Compile Include="Class_DailyFrequencyType.cs" />
@@ -160,6 +157,7 @@
     <Compile Include="Class_FulfilmentCenterImportExportSettings.cs" />
     <Compile Include="Class_GenericEnumDescriptor.cs" />
     <Compile Include="Class_GenericPagedResult.cs" />
+    <Compile Include="Class_GetConversionRatesRequest.cs" />
     <Compile Include="Class_GetExtendedPropertyFilter.cs" />
     <Compile Include="Class_GetOrderPackagingCalculationRequest.cs" />
     <Compile Include="Class_GetSelectionList.cs" />
@@ -174,8 +172,8 @@
     <Compile Include="Class_ImportType.cs" />
     <Compile Include="Class_IncludeArchived.cs" />
     <Compile Include="Class_InventoryItem.cs" />
-    <Compile Include="Class_InventoryItemSingle.cs" />
     <Compile Include="Class_InventoryListingTemplate.cs" />
+    <Compile Include="Class_InventoryParameters.cs" />
     <Compile Include="Class_InventoryView.cs" />
     <Compile Include="Class_IRuleConditionItem.cs" />
     <Compile Include="Class_KeyGuidValue.cs" />
@@ -283,6 +281,7 @@
     <Compile Include="Class_SortDirectionType.cs" />
     <Compile Include="Class_Specification.cs" />
     <Compile Include="Class_SplitPackaging.cs" />
+    <Compile Include="Class_SqlDataRecord.cs" />
     <Compile Include="Class_StateType.cs" />
     <Compile Include="Class_StatusDetails.cs" />
     <Compile Include="Class_StockAvailability.cs" />
@@ -302,9 +301,11 @@
     <Compile Include="Class_StockItemFull.cs" />
     <Compile Include="Class_StockItemImage.cs" />
     <Compile Include="Class_StockItemInv.cs" />
+    <Compile Include="Class_StockItemLabel.cs" />
     <Compile Include="Class_StockItemLevel.cs" />
     <Compile Include="Class_StockItemLocation.cs" />
     <Compile Include="Class_StockItemPrice.cs" />
+    <Compile Include="Class_StockItemPricingRule.cs" />
     <Compile Include="Class_StockItemReturn.cs" />
     <Compile Include="Class_StockItemScrap.cs" />
     <Compile Include="Class_StockItemSold.cs" />
@@ -322,7 +323,6 @@
     <Compile Include="Class_System_Channel_Setting_Property.cs" />
     <Compile Include="Class_TempFile.cs" />
     <Compile Include="Class_TemplateHeader.cs" />
-    <Compile Include="Class_term_register.cs" />
     <Compile Include="Class_TestpadValue.cs" />
     <Compile Include="Class_TextFieldFilter.cs" />
     <Compile Include="Class_TextFieldFilterType.cs" />

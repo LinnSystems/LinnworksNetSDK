@@ -17,6 +17,7 @@ namespace LinnworksAPI
         public Double AverageLeadTime;
         public Int32 SupplierMinOrderQty;
         public Int32 SupplierPackSize;
+        public String SupplierCurrency;
         public Guid StockItemId;
     }
 }

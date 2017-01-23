@@ -5,7 +5,6 @@ namespace LinnworksAPI
 {
     public class InventoryItem
     {
-        public Dictionary<String, ChannelDetails> Channels;
         public Guid Id;
         public String SKU;
         public String Title;
@@ -22,9 +21,13 @@ namespace LinnworksAPI
         public String BinRack;
         public Guid Category;
         public Boolean IsComposite;
+        public Boolean IsArchived;
         public String Image;
         public DateTime? CreatedDate;
         public DateTime? ModifiedDate;
+        public String VariationGroupName;
+        public List<InventoryItem> Products;
+        public Dictionary<String, ChannelDetails> Channels;
         public Int32 TotalChangedProducts;
         public Boolean ContainsChanges;
     }
