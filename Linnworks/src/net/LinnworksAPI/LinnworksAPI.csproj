@@ -298,6 +298,7 @@
     <Compile Include="Class_StockItemExtendedProperty.cs" />
     <Compile Include="Class_StockItemFull.cs" />
     <Compile Include="Class_StockItemImage.cs" />
+    <Compile Include="Class_StockItemImageSimple.cs" />
     <Compile Include="Class_StockItemInv.cs" />
     <Compile Include="Class_StockItemLabel.cs" />
     <Compile Include="Class_StockItemLevel.cs" />
@@ -330,6 +331,7 @@
     <Compile Include="Class_TransferStatus.cs" />
     <Compile Include="Class_UpdateOrderItemResult.cs" />
     <Compile Include="Class_UpdateStatus.cs" />
+    <Compile Include="Class_UpdateStatusType.cs" />
     <Compile Include="Class_UpdateTotalsResult.cs" />
     <Compile Include="Class_Update_PurchaseOrderHeaderParameter.cs" />
     <Compile Include="Class_Update_PurchaseOrderItemParameter.cs" />

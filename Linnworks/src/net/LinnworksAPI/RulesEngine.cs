@@ -6,6 +6,8 @@ namespace LinnworksAPI
 {
     public static class RulesEngineMethods
     {
+        private static JsonSerializerSettings serializerSettings = new JsonSerializerSettings() { DateFormatString = "yyyy-MM-ddTHH:mm:ss.ffZ" };
+
         public static List<EvaluatorDescriptor> GetEvaluatorTypes(String ApiToken, String ApiServer)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<EvaluatorDescriptor>>(Factory.GetResponse("RulesEngine/GetEvaluatorTypes", "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
@@ -13,27 +15,27 @@ namespace LinnworksAPI
 
         public static List<FieldDescriptor> GetEvaluationFields(RuleSetType type, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<FieldDescriptor>>(Factory.GetResponse("RulesEngine/GetEvaluationFields", "type=" + type + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<FieldDescriptor>>(Factory.GetResponse("RulesEngine/GetEvaluationFields", "type=" + Newtonsoft.Json.JsonConvert.SerializeObject(type, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<String> GetOptions(String fieldName, RuleSetType type, String key, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<String>>(Factory.GetResponse("RulesEngine/GetOptions", "fieldName=" + fieldName + "&type=" + type + "&key=" + key + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<String>>(Factory.GetResponse("RulesEngine/GetOptions", "fieldName=" + fieldName + "&type=" + Newtonsoft.Json.JsonConvert.SerializeObject(type, serializerSettings) + "&key=" + key + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<MultiOptionResponse> GetMultiOptions(RuleSetType type, List<FieldKeys> fieldKeys, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<MultiOptionResponse>>(Factory.GetResponse("RulesEngine/GetMultiOptions", "type=" + type + "&fieldKeys=" + Newtonsoft.Json.JsonConvert.SerializeObject(fieldKeys) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<MultiOptionResponse>>(Factory.GetResponse("RulesEngine/GetMultiOptions", "type=" + Newtonsoft.Json.JsonConvert.SerializeObject(type, serializerSettings) + "&fieldKeys=" + Newtonsoft.Json.JsonConvert.SerializeObject(fieldKeys, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<String> GetKeyOptions(RuleSetType type, String fieldName, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<String>>(Factory.GetResponse("RulesEngine/GetKeyOptions", "type=" + type + "&fieldName=" + fieldName + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<String>>(Factory.GetResponse("RulesEngine/GetKeyOptions", "type=" + Newtonsoft.Json.JsonConvert.SerializeObject(type, serializerSettings) + "&fieldName=" + fieldName + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<MultiKeyOptionResponse> GetMultiKeyOptions(RuleSetType type, List<String> fieldNames, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<MultiKeyOptionResponse>>(Factory.GetResponse("RulesEngine/GetMultiKeyOptions", "type=" + type + "&fieldNames=" + Newtonsoft.Json.JsonConvert.SerializeObject(fieldNames) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<MultiKeyOptionResponse>>(Factory.GetResponse("RulesEngine/GetMultiKeyOptions", "type=" + Newtonsoft.Json.JsonConvert.SerializeObject(type, serializerSettings) + "&fieldNames=" + Newtonsoft.Json.JsonConvert.SerializeObject(fieldNames, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<RuleHeaderBasic> GetRules(String ApiToken, String ApiServer)
@@ -43,7 +45,7 @@ namespace LinnworksAPI
 
         public static List<RuleHeaderBasic> GetRulesByType(RuleSetType type, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<RuleHeaderBasic>>(Factory.GetResponse("RulesEngine/GetRulesByType", "type=" + type + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<RuleHeaderBasic>>(Factory.GetResponse("RulesEngine/GetRulesByType", "type=" + Newtonsoft.Json.JsonConvert.SerializeObject(type, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<RuleConditionHeader> GetRuleConditionNodes(Int32 pkRuleId, String ApiToken, String ApiServer)
@@ -58,37 +60,37 @@ namespace LinnworksAPI
 
         public static List<ActionTypeDescriptor> GetActionTypes(RuleSetType type, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ActionTypeDescriptor>>(Factory.GetResponse("RulesEngine/GetActionTypes", "type=" + type + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ActionTypeDescriptor>>(Factory.GetResponse("RulesEngine/GetActionTypes", "type=" + Newtonsoft.Json.JsonConvert.SerializeObject(type, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static RuleConditionHeader CreateNewCondition(ConditionHeaderBasic header, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleConditionHeader>(Factory.GetResponse("RulesEngine/CreateNewCondition", "header=" + Newtonsoft.Json.JsonConvert.SerializeObject(header) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleConditionHeader>(Factory.GetResponse("RulesEngine/CreateNewCondition", "header=" + Newtonsoft.Json.JsonConvert.SerializeObject(header, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void SaveConditionChanges(ConditionHeaderBasic conditionHeader, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("RulesEngine/SaveConditionChanges", "conditionHeader=" + Newtonsoft.Json.JsonConvert.SerializeObject(conditionHeader) + "", ApiToken, ApiServer);
+            Factory.GetResponse("RulesEngine/SaveConditionChanges", "conditionHeader=" + Newtonsoft.Json.JsonConvert.SerializeObject(conditionHeader, serializerSettings) + "", ApiToken, ApiServer);
         }
 
         public static Boolean CheckConditionNameExists(Int32 fkRuleId, Int32? fkConditionId, Int32? excludeConditionId, String conditionName, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Boolean>(Factory.GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + Newtonsoft.Json.JsonConvert.SerializeObject(fkConditionId) + "&excludeConditionId=" + Newtonsoft.Json.JsonConvert.SerializeObject(excludeConditionId) + "&conditionName=" + conditionName + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Boolean>(Factory.GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + Newtonsoft.Json.JsonConvert.SerializeObject(fkConditionId, serializerSettings) + "&excludeConditionId=" + Newtonsoft.Json.JsonConvert.SerializeObject(excludeConditionId, serializerSettings) + "&conditionName=" + conditionName + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<String> GetActionOptions(ActionType type, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<String>>(Factory.GetResponse("RulesEngine/GetActionOptions", "type=" + type + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<String>>(Factory.GetResponse("RulesEngine/GetActionOptions", "type=" + Newtonsoft.Json.JsonConvert.SerializeObject(type, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void UpdateAction(ActionWeb action, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("RulesEngine/UpdateAction", "action=" + Newtonsoft.Json.JsonConvert.SerializeObject(action) + "", ApiToken, ApiServer);
+            Factory.GetResponse("RulesEngine/UpdateAction", "action=" + Newtonsoft.Json.JsonConvert.SerializeObject(action, serializerSettings) + "", ApiToken, ApiServer);
         }
 
         public static ActionWeb AddAction(ActionWeb action, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ActionWeb>(Factory.GetResponse("RulesEngine/AddAction", "action=" + Newtonsoft.Json.JsonConvert.SerializeObject(action) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ActionWeb>(Factory.GetResponse("RulesEngine/AddAction", "action=" + Newtonsoft.Json.JsonConvert.SerializeObject(action, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void DeleteAction(Int32 pkActionId, String ApiToken, String ApiServer)
@@ -113,17 +115,17 @@ namespace LinnworksAPI
 
         public static RulesFields GetRequiredFieldsByType(RuleSetType type, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<RulesFields>(Factory.GetResponse("RulesEngine/GetRequiredFieldsByType", "type=" + type + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<RulesFields>(Factory.GetResponse("RulesEngine/GetRequiredFieldsByType", "type=" + Newtonsoft.Json.JsonConvert.SerializeObject(type, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static RuleEvaluationResult TestEvaluateRule(List<TestpadValue> testValues, Int32 pkRuleId, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleEvaluationResult>(Factory.GetResponse("RulesEngine/TestEvaluateRule", "testValues=" + Newtonsoft.Json.JsonConvert.SerializeObject(testValues) + "&pkRuleId=" + pkRuleId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleEvaluationResult>(Factory.GetResponse("RulesEngine/TestEvaluateRule", "testValues=" + Newtonsoft.Json.JsonConvert.SerializeObject(testValues, serializerSettings) + "&pkRuleId=" + pkRuleId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<TestpadValue> GetValuesFromExisting(Int32 pkRuleId, Object id, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<TestpadValue>>(Factory.GetResponse("RulesEngine/GetValuesFromExisting", "pkRuleId=" + pkRuleId + "&id=" + Newtonsoft.Json.JsonConvert.SerializeObject(id) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<TestpadValue>>(Factory.GetResponse("RulesEngine/GetValuesFromExisting", "pkRuleId=" + pkRuleId + "&id=" + Newtonsoft.Json.JsonConvert.SerializeObject(id, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static Int32? SetDraftLive(Int32 pkRuleId, String ApiToken, String ApiServer)
@@ -143,7 +145,7 @@ namespace LinnworksAPI
 
         public static RuleHeaderBasic CreateNewDraft(String ruleName, RuleSetType type, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleHeaderBasic>(Factory.GetResponse("RulesEngine/CreateNewDraft", "ruleName=" + ruleName + "&type=" + type + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleHeaderBasic>(Factory.GetResponse("RulesEngine/CreateNewDraft", "ruleName=" + ruleName + "&type=" + Newtonsoft.Json.JsonConvert.SerializeObject(type, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void SetRuleEnabled(Int32 pkRuleId, Boolean enabled, String ApiToken, String ApiServer)
@@ -173,7 +175,7 @@ namespace LinnworksAPI
 
         public static RuleConditionHeader CopyCondition(Int32 pkRuleId, Int32? targetParentConditionId, Int32 pkConditionId, Boolean includeChildren, Boolean includeActions, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleConditionHeader>(Factory.GetResponse("RulesEngine/CopyCondition", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + Newtonsoft.Json.JsonConvert.SerializeObject(targetParentConditionId) + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<RuleConditionHeader>(Factory.GetResponse("RulesEngine/CopyCondition", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + Newtonsoft.Json.JsonConvert.SerializeObject(targetParentConditionId, serializerSettings) + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static RuleAction CopyAction(Int32 pkRuleId, Int32 targetParentConditionId, Int32 pkActionId, String ApiToken, String ApiServer)

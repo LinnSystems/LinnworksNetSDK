@@ -7,7 +7,7 @@ namespace LinnworksAPI
     {
         public String LineTag;
         public String Type;
-        public String XML;
+        public string XML;
         public XmlDocument XMLDoc;
     }
 }

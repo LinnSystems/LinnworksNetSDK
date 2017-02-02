@@ -6,6 +6,8 @@ namespace LinnworksAPI
 {
     public static class WarehouseTransferMethods
     {
+        private static JsonSerializerSettings serializerSettings = new JsonSerializerSettings() { DateFormatString = "yyyy-MM-ddTHH:mm:ss.ffZ" };
+
         public static List<WarehouseTransfer> GetActiveTransfersForLocation(Guid locationId, String ApiToken, String ApiServer)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<WarehouseTransfer>>(Factory.GetResponse("WarehouseTransfer/GetActiveTransfersForLocation", "locationId=" + locationId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
@@ -113,7 +115,7 @@ namespace LinnworksAPI
 
         public static void ChangeTransferItemReceivedQuantity(Guid pkTransferId, Guid pkBinId, Guid pkTransferItemId, Int32? Quantity, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + Newtonsoft.Json.JsonConvert.SerializeObject(Quantity) + "", ApiToken, ApiServer);
+            Factory.GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + Newtonsoft.Json.JsonConvert.SerializeObject(Quantity, serializerSettings) + "", ApiToken, ApiServer);
         }
 
         public static List<WarehouseTransferNote> GetTransferNotes(Guid pkTransferId, String ApiToken, String ApiServer)
@@ -158,7 +160,7 @@ namespace LinnworksAPI
 
         public static GenericPagedResult<WarehouseTransfer> GetArchivedTransfersBetweenDates(DateTime start, DateTime end, Int32 pageNumber, Int32 entriesPerPage, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<WarehouseTransfer>>(Factory.GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenDates", "start=" + Newtonsoft.Json.JsonConvert.SerializeObject(start) + "&end=" + Newtonsoft.Json.JsonConvert.SerializeObject(end) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<WarehouseTransfer>>(Factory.GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenDates", "start=" + Newtonsoft.Json.JsonConvert.SerializeObject(start, serializerSettings) + "&end=" + Newtonsoft.Json.JsonConvert.SerializeObject(end, serializerSettings) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<Guid> SearchTransfersByLocation(SearchType searchType, String searchText, Guid locationID, String ApiToken, String ApiServer)
@@ -168,12 +170,12 @@ namespace LinnworksAPI
 
         public static List<WarehouseTransfer> GetListTransfers(List<Guid> ids, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<WarehouseTransfer>>(Factory.GetResponse("WarehouseTransfer/GetListTransfers", "ids=" + Newtonsoft.Json.JsonConvert.SerializeObject(ids) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<WarehouseTransfer>>(Factory.GetResponse("WarehouseTransfer/GetListTransfers", "ids=" + Newtonsoft.Json.JsonConvert.SerializeObject(ids, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<WarehouseTransfer> GetModifiedBasic(DateTime updateDate, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<WarehouseTransfer>>(Factory.GetResponse("WarehouseTransfer/GetModifiedBasic", "updateDate=" + Newtonsoft.Json.JsonConvert.SerializeObject(updateDate) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<WarehouseTransfer>>(Factory.GetResponse("WarehouseTransfer/GetModifiedBasic", "updateDate=" + Newtonsoft.Json.JsonConvert.SerializeObject(updateDate, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static DateTime GetServerTime(String ApiToken, String ApiServer)
