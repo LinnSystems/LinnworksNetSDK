@@ -153,11 +153,11 @@
     <Compile Include="Models\BaseRequest.cs" />
     <Compile Include="Models\Products\Product.cs" />
     <Compile Include="Models\Products\ProductInventory.cs" />
-    <Compile Include="Models\Products\ProductInventoryError.cs" />
+    <Compile Include="Models\Products\ProductInventoryResponse.cs" />
     <Compile Include="Models\Products\ProductInventoryUpdateRequest.cs" />
     <Compile Include="Models\Products\ProductInventoryUpdateResponse.cs" />
     <Compile Include="Models\Products\ProductPrice.cs" />
-    <Compile Include="Models\Products\ProductPriceError.cs" />
+    <Compile Include="Models\Products\ProductPriceResponse.cs" />
     <Compile Include="Models\Products\ProductPriceUpdateRequest.cs" />
     <Compile Include="Models\Products\ProductPriceUpdateResponse.cs" />
     <Compile Include="Models\Products\ProductsRequest.cs" />
@@ -188,6 +188,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
