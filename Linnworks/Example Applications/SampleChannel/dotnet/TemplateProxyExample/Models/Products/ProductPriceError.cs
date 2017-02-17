@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TemplateProxyExample.Models.Products
 {
-    public class ProductPriceError : BaseResponse
+    public class ProductPriceResponse : BaseResponse
     {
         public string SKU { get; set; }
     }

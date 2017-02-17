@@ -72,7 +72,7 @@ namespace TemplateProxyExample.Controllers
             {
                 if(product.SKU == "MyNonExistantSKU")
                 {
-                    response.Products.Add(new Models.Products.ProductInventoryError { SKU = product.SKU, Error = "SKU does not exist" });
+                    response.Products.Add(new Models.Products.ProductInventoryResponse { SKU = product.SKU, Error = "SKU does not exist" });
                 }
             }
             return response;
@@ -97,7 +97,7 @@ namespace TemplateProxyExample.Controllers
             {
                 if (product.SKU == "MyNonExistantSKU")
                 {
-                    response.Products.Add(new Models.Products.ProductPriceError { SKU = product.SKU, Error = "SKU does not exist" });
+                    response.Products.Add(new Models.Products.ProductPriceResponse { SKU = product.SKU, Error = "SKU does not exist" });
                 }
             }
             return response;
