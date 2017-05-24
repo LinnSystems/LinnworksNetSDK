@@ -82,6 +82,8 @@ namespace TemplateProxyExample.Controllers
                     PostalServiceTaxRate = 20m,
                     ReceivedDate = DateTime.UtcNow.AddMinutes(rand.Next(1, 10) * -1),
                     Site = string.Empty,
+                    Discount = 10,
+                    DiscountType = Models.Order.DiscountType.ItemsThenPostage
                 };
 
                 int randItems = rand.Next(1, 10);
