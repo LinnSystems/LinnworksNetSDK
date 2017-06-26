@@ -39,5 +39,8 @@ namespace TemplateProxyExample.Models.Order
         public DateTime PaidOn { get; set; }
         public decimal PostalServiceCost { get; set; }
         public decimal PostalServiceTaxRate { get; set; }
+        //Please see the DiscountType enum for an explanation on how to use the DiscountType and Discount fields to apply a top-level discount to orders
+        public DiscountType DiscountType { get; set; }
+        public double Discount { get; set; }
     }
 }

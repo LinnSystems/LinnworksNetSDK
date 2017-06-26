@@ -9,9 +9,9 @@ namespace TemplateProxyExample.Models.Products
     {
         public ProductInventoryUpdateResponse()
         {
-            this.Products = new List<ProductInventoryError>();
+            this.Products = new List<ProductInventoryResponse>();
         }
 
-        public List<ProductInventoryError> Products { get; set; }
+        public List<ProductInventoryResponse> Products { get; set; }
     }
 }

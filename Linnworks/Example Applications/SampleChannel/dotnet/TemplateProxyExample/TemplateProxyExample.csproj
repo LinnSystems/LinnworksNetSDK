@@ -129,7 +129,6 @@
     <Compile Include="Controllers\ConfigController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\UnitTestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,11 +153,11 @@
     <Compile Include="Models\BaseRequest.cs" />
     <Compile Include="Models\Products\Product.cs" />
     <Compile Include="Models\Products\ProductInventory.cs" />
-    <Compile Include="Models\Products\ProductInventoryError.cs" />
+    <Compile Include="Models\Products\ProductInventoryResponse.cs" />
     <Compile Include="Models\Products\ProductInventoryUpdateRequest.cs" />
     <Compile Include="Models\Products\ProductInventoryUpdateResponse.cs" />
     <Compile Include="Models\Products\ProductPrice.cs" />
-    <Compile Include="Models\Products\ProductPriceError.cs" />
+    <Compile Include="Models\Products\ProductPriceResponse.cs" />
     <Compile Include="Models\Products\ProductPriceUpdateRequest.cs" />
     <Compile Include="Models\Products\ProductPriceUpdateResponse.cs" />
     <Compile Include="Models\Products\ProductsRequest.cs" />

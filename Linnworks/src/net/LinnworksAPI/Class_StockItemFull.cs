@@ -11,6 +11,7 @@ namespace LinnworksAPI
         public List<StockItemExtendedProperty> ItemExtendedProperties;
         public List<StockItemTitle> ItemChannelTitles;
         public List<StockItemPrice> ItemChannelPrices;
+        public List<StockItemImage> Images;
         public String ItemNumber;
         public String ItemTitle;
         public String BarcodeNumber;

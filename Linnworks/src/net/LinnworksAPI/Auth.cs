@@ -5,6 +5,8 @@ namespace LinnworksAPI
 {
     public static class AuthMethods
     {
+        private static JsonSerializerSettings serializerSettings = new JsonSerializerSettings() { DateFormatString = "yyyy-MM-ddTHH:mm:ss.ffZ" };
+
         public static ApplicationProfileResponse GetApplicationProfileBySecretKey(Guid applicationId, Guid applicationSecret, Guid userId)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<ApplicationProfileResponse>(Factory.GetResponse("Auth/GetApplicationProfileBySecretKey", "applicationId=" + applicationId + "&applicationSecret=" + applicationSecret + "&userId=" + userId + "", "", ""), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });

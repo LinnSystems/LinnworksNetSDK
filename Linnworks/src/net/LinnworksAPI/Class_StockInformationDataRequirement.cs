@@ -14,5 +14,6 @@ namespace LinnworksAPI
         ChannelDescription,
         ChannelPrice,
         ExtendedProperties,
+        Images,
     }
 }
