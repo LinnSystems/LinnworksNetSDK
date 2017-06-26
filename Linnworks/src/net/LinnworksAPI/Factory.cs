@@ -1,9 +1,19 @@
 using System;
 using System.IO;
 using System.Net;
+using Newtonsoft.Json;
 
 public static class Factory
 {
+
+    public static string SerializeAndUrlEscape(object o)
+    {
+        //doesn't work! return System.Web.HttpUtility.UrlEncode(Newtonsoft.Json.JsonConvert.SerializeObject(o));
+        JsonSerializerSettings jss = new JsonSerializerSettings();
+        jss.DateFormatString = "yyyy-MM-ddTHH:mm:ss.ffZ";
+        return Newtonsoft.Json.JsonConvert.SerializeObject(o,jss).Trim('\"');
+    }
+
     public static string GetResponse(string Extension, string Body, string Token, string Server)
     {
         if (string.IsNullOrEmpty(Server))
@@ -40,6 +50,42 @@ public static class Factory
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
+            if (LinnworksAPI.ClientConfig.ThrowExceptions)
+            {
+                bool docatch = true;
+                
+                try
+                {
+                    WebException wex = (WebException)ex;
+                    string response;
+
+                    using (StreamReader reader = new StreamReader(wex.Response.GetResponseStream()))
+                    {
+                        response=reader.ReadToEnd();
+                    }
+
+                    LinnworksAPI.Error err = null;
+                    try
+                    {
+                        err = Newtonsoft.Json.JsonConvert.DeserializeObject<LinnworksAPI.Error>(response);
+                    }
+                    catch
+                    {
+                        docatch = false;
+                        throw new Exception("Error in response from Linnworks API: " + response, ex);
+                    }
+                    docatch = false;
+                    if (err!=null)
+                        throw new LinnworksAPI.LinnworksAPIException(err.Message, err.Code, ex);
+                    else
+                        throw new Exception("Error in response from Linnworks API: " + response, ex);
+                }
+                catch when (docatch)
+                {
+
+                }
+                throw;
+            }
             return "";
         }
     }
