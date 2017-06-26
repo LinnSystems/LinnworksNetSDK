@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Net;
+using Newtonsoft.Json;
 
 public static class Factory
 {
@@ -8,7 +9,9 @@ public static class Factory
     public static string SerializeAndUrlEscape(object o)
     {
         //doesn't work! return System.Web.HttpUtility.UrlEncode(Newtonsoft.Json.JsonConvert.SerializeObject(o));
-        return Newtonsoft.Json.JsonConvert.SerializeObject(o).Trim('\"');
+        JsonSerializerSettings jss = new JsonSerializerSettings();
+        jss.DateFormatString = "yyyy-MM-ddTHH:mm:ss.ffZ";
+        return Newtonsoft.Json.JsonConvert.SerializeObject(o,jss).Trim('\"');
     }
 
     public static string GetResponse(string Extension, string Body, string Token, string Server)

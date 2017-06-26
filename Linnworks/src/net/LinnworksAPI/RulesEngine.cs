@@ -23,7 +23,7 @@ namespace LinnworksAPI
 
         public static List<MultiOptionResponse> GetMultiOptions(RuleSetType type, List<FieldKeys> fieldKeys, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<MultiOptionResponse>>(Factory.GetResponse("RulesEngine/GetMultiOptions", "type=" + type + "&fieldKeys=" + Newtonsoft.Json.JsonConvert.SerializeObject(fieldKeys) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<MultiOptionResponse>>(Factory.GetResponse("RulesEngine/GetMultiOptions", "type=" + type + "&fieldKeys=" + Factory.SerializeAndUrlEscape(fieldKeys) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<String> GetKeyOptions(RuleSetType type, String fieldName, String ApiToken, String ApiServer)
@@ -33,7 +33,7 @@ namespace LinnworksAPI
 
         public static List<MultiKeyOptionResponse> GetMultiKeyOptions(RuleSetType type, List<String> fieldNames, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<MultiKeyOptionResponse>>(Factory.GetResponse("RulesEngine/GetMultiKeyOptions", "type=" + type + "&fieldNames=" + Newtonsoft.Json.JsonConvert.SerializeObject(fieldNames) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<MultiKeyOptionResponse>>(Factory.GetResponse("RulesEngine/GetMultiKeyOptions", "type=" + type + "&fieldNames=" + Factory.SerializeAndUrlEscape(fieldNames) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<RuleHeaderBasic> GetRules(String ApiToken, String ApiServer)

@@ -13,7 +13,7 @@ namespace LinnworksAPI
 
         public static CreatePDFResult CreatePDFfromJobForceTemplateWithQuantities(String templateType, List<KeyValuePair<Guid, Int32>> IDsAndQuantities, Int32? templateID, List<KeyValuePair<String, String>> parameters, String printerName, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<CreatePDFResult>(Factory.GetResponse("PrintService/CreatePDFfromJobForceTemplateWithQuantities", "templateType=" + templateType + "&IDsAndQuantities=" + Newtonsoft.Json.JsonConvert.SerializeObject(IDsAndQuantities) + "&templateID=" + Newtonsoft.Json.JsonConvert.SerializeObject(templateID) + "&parameters=" + Newtonsoft.Json.JsonConvert.SerializeObject(parameters) + "&printerName=" + printerName + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<CreatePDFResult>(Factory.GetResponse("PrintService/CreatePDFfromJobForceTemplateWithQuantities", "templateType=" + templateType + "&IDsAndQuantities=" + Factory.SerializeAndUrlEscape(IDsAndQuantities) + "&templateID=" + Factory.SerializeAndUrlEscape(templateID) + "&parameters=" + Factory.SerializeAndUrlEscape(parameters) + "&printerName=" + printerName + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static CreatePDFResult PrintTemplatePreview(Int32 templateId, String ApiToken, String ApiServer)
