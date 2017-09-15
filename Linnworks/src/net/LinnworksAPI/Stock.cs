@@ -70,7 +70,7 @@ namespace LinnworksAPI
 
         public static List<StockConsumption> GetStockConsumption(Guid stockItemId, Guid? locationId, DateTime startDate, DateTime endDate, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockConsumption>>(Factory.GetResponse("Stock/GetStockConsumption", "stockItemId=" + stockItemId + "&locationId=" + Newtonsoft.Json.JsonConvert.SerializeObject(locationId, serializerSettings) + "&startDate=" + Newtonsoft.Json.JsonConvert.SerializeObject(startDate, serializerSettings) + "&endDate=" + Newtonsoft.Json.JsonConvert.SerializeObject(endDate, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockConsumption>>(Factory.GetResponse("Stock/GetStockConsumption", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&startDate=" + Newtonsoft.Json.JsonConvert.SerializeObject(startDate, serializerSettings) + "&endDate=" + Newtonsoft.Json.JsonConvert.SerializeObject(endDate, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static GenericPagedResult<StockItemChangeHistory> GetItemChangesHistory(Guid stockItemId, Guid locationId, Int32 entriesPerPage, Int32 pageNumber, String ApiToken, String ApiServer)
@@ -83,9 +83,9 @@ namespace LinnworksAPI
             return Newtonsoft.Json.JsonConvert.DeserializeObject<TempFile>(Factory.GetResponse("Stock/GetItemChangesHistoryCSV", "stockItemId=" + stockItemId + "&locationId=" + locationId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
-        public static GenericPagedResult<StockItem> GetStockItems(String keyWord, Guid? locationId, Int32 entriesPerPage, Int32 pageNumber, Boolean excludeComposites, String ApiToken, String ApiServer)
+        public static GenericPagedResult<StockItem> GetStockItems(String keyWord, Guid? locationId, Int32 entriesPerPage, Int32 pageNumber, Boolean excludeComposites, Boolean excludeVariations, Boolean excludeBatches, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<StockItem>>(Factory.GetResponse("Stock/GetStockItems", "keyWord=" + keyWord + "&locationId=" + Newtonsoft.Json.JsonConvert.SerializeObject(locationId, serializerSettings) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<GenericPagedResult<StockItem>>(Factory.GetResponse("Stock/GetStockItems", "keyWord=" + keyWord + "&locationId=" + locationId + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "&excludeVariations=" + excludeVariations + "&excludeBatches=" + excludeBatches + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static List<StockItem> GetStockItemsByKey(Search_Stock_ByKey stockIdentifier, String ApiToken, String ApiServer)
@@ -133,14 +133,14 @@ namespace LinnworksAPI
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockItemSoldStat>>(Factory.GetResponse("Stock/GetSoldStat", "stockItemId=" + stockItemId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
-        public static List<StockItemLevel> SetStockLevel(List<StockLevelUpdate> stockLevels, String ApiToken, String ApiServer)
+        public static List<StockItemLevel> SetStockLevel(List<StockLevelUpdate> stockLevels, String changeSource, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockItemLevel>>(Factory.GetResponse("Stock/SetStockLevel", "stockLevels=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockLevels, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockItemLevel>>(Factory.GetResponse("Stock/SetStockLevel", "stockLevels=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockLevels, serializerSettings) + "&changeSource=" + changeSource + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
-        public static List<StockItemLevel> UpdateStockLevelsBySKU(List<StockLevelUpdate> stockLevels, String ApiToken, String ApiServer)
+        public static List<StockItemLevel> UpdateStockLevelsBySKU(List<StockLevelUpdate> stockLevels, String changeSource, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockItemLevel>>(Factory.GetResponse("Stock/UpdateStockLevelsBySKU", "stockLevels=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockLevels, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockItemLevel>>(Factory.GetResponse("Stock/UpdateStockLevelsBySKU", "stockLevels=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockLevels, serializerSettings) + "&changeSource=" + changeSource + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static void Update_StockItemPartial(PartialUpdateParameter update, String ApiToken, String ApiServer)
@@ -151,6 +151,16 @@ namespace LinnworksAPI
         public static void BookInStockItem(BookInStockItem stockItem, String ApiToken, String ApiServer)
         {
             Factory.GetResponse("Stock/BookInStockItem", "stockItem=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockItem, serializerSettings) + "", ApiToken, ApiServer);
+        }
+
+        public static List<StockItemBatch> CreateStockBatches(List<StockItemBatch> batches, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<StockItemBatch>>(Factory.GetResponse("Stock/CreateStockBatches", "batches=" + Newtonsoft.Json.JsonConvert.SerializeObject(batches, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
+        public static StockItemBatch BookInStockBatch(BatchedBookIn stockItem, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<StockItemBatch>(Factory.GetResponse("Stock/BookInStockBatch", "stockItem=" + Newtonsoft.Json.JsonConvert.SerializeObject(stockItem, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
     }
 }

@@ -20,11 +20,14 @@ namespace LinnworksAPI
         public Decimal? TotalHeight;
         public Decimal? TotalDepth;
         public Boolean ManualAdjust;
+        public Boolean CanAutoSplit;
+        public Boolean IsAutoSplit;
         public Int32 SplitPackageCount;
         public Boolean LabelPrinted;
         public List<String> CalculationHints;
         public List<CalcOrderItem> Items;
         public List<CalcBin> Bins;
+        public PackingResult ThreeDimPackaging;
         public CalcMethod DimMethod;
         public SqlDataRecord DataRecordMetaData;
     }

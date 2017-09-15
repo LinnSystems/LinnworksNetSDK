@@ -22,7 +22,14 @@ namespace LinnworksAPI
         BinRack,
         Category,
         Image,
+        Weight,
+        DimHeight,
+        DimWidth,
+        DimDepth,
         CreatedDate,
         ModifiedDate,
+        SerialNumberScanRequired,
+        BatchNumberScanRequired,
+        BatchType,
     }
 }

@@ -50,7 +50,7 @@ namespace LinnworksAPI
 
         public static ExistingRefundTotal GetTotalRefunds(Guid pkOrderId, Boolean? includeBookings, String ApiToken, String ApiServer)
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ExistingRefundTotal>(Factory.GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + Newtonsoft.Json.JsonConvert.SerializeObject(includeBookings, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ExistingRefundTotal>(Factory.GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + includeBookings + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
         public static ValidationResult IsRefundValid(Guid pkOrderId, List<RefundItem> refundItems, String ApiToken, String ApiServer)
@@ -153,9 +153,9 @@ namespace LinnworksAPI
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ReturnInfo>>(Factory.GetResponse("ProcessedOrders/CreateReturn", "pkOrderId=" + pkOrderId + "&returnitems=" + Newtonsoft.Json.JsonConvert.SerializeObject(returnitems, serializerSettings) + "&returnLocation=" + returnLocation + "&channelReason=" + channelReason + "&channelSubReason=" + channelSubReason + "&category=" + category + "&reason=" + reason + "&isReturnBooking=" + isReturnBooking + "&ignoredValidation=" + ignoredValidation + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
-        public static void ChangeOrderNote(Guid pkOrderNoteId, String noteText, Boolean isInternal, String ApiToken, String ApiServer)
+        public static void ChangeOrderNote(Guid pkOrderNoteId, String noteText, Boolean isInternal, Byte? noteTypeId, String ApiToken, String ApiServer)
         {
-            Factory.GetResponse("ProcessedOrders/ChangeOrderNote", "pkOrderNoteId=" + pkOrderNoteId + "&noteText=" + noteText + "&isInternal=" + isInternal + "", ApiToken, ApiServer);
+            Factory.GetResponse("ProcessedOrders/ChangeOrderNote", "pkOrderNoteId=" + pkOrderNoteId + "&noteText=" + noteText + "&isInternal=" + isInternal + "&noteTypeId=" + Newtonsoft.Json.JsonConvert.SerializeObject(noteTypeId, serializerSettings) + "", ApiToken, ApiServer);
         }
 
         public static void DeleteOrderNote(Guid pkOrderNoteId, String ApiToken, String ApiServer)

@@ -5,13 +5,18 @@ namespace LinnworksAPI
 {
     public class HeaderConfig
     {
+        public ConfigItem<String> SourceVersion;
         public ConfigItem<Boolean> Enabled;
         public ConfigItem<String> ChannelTag;
         public ConfigChannelLocationBinding ChannelLocationBinding;
         public ConfigItem<Boolean> IsMultiLocation;
         public ConfigItem<Boolean> DespatchNotes;
+        public ConfigItem<Boolean> CancellationNotes;
+        public ConfigItem<Boolean> RefundNotes;
+        public ConfigItem<Boolean> ReturnNotes;
         public ConfigItem<DateTime> OrderSyncDate;
         public ConfigPropertySelectionList<SelectStringValueOption, Guid> OrderSaveLocation;
+        public ConfigPropertySelectionList<SelectStringValueOption, String> ConfigDiscount;
         public ConfigProperty<Boolean> HidesHeaderAttributes;
         public ConfigItem<Boolean> InventorySync;
         public ConfigStockLocationBinding StockLocationBinding;
@@ -26,6 +31,7 @@ namespace LinnworksAPI
         public Boolean IsHeaderOnly;
         public Boolean IsHidden;
         public ConfigItemExternal DynamicProperties;
+        public DiscountType ConfigDiscountTyped;
         public ConfigPostalServiceMapping PostalServiceMapping;
         public ConfigPaymentMethodMapping PaymentMethodMapping;
         public Int32 PkChannelId;

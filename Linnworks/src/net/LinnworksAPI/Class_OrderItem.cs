@@ -39,10 +39,15 @@ namespace LinnworksAPI
         public Int32 Market;
         public String ChannelSKU;
         public String ChannelTitle;
+        public Double DiscountValue;
         public Boolean HasImage;
         public Guid? ImageId;
         public List<OrderItemOption> AdditionalInfo;
         public Int32 StockLevelIndicator;
+        public Boolean BatchNumberScanRequired;
+        public Boolean SerialNumberScanRequired;
         public String BinRack;
+        public Int32 InventoryTrackingType;
+        public Boolean isBatchedStockItem;
     }
 }

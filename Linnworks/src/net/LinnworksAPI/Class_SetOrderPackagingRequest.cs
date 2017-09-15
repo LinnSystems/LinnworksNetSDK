@@ -9,6 +9,7 @@ namespace LinnworksAPI
         public Guid pkOrderId;
         public Double TotalWeight;
         public Boolean ManualAdjust;
+        public Boolean IsAutoSplit;
         public Decimal TotalDepth;
         public Decimal TotalHeight;
         public Decimal TotalWidth;

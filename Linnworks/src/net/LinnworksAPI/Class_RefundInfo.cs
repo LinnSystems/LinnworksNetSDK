@@ -15,7 +15,7 @@ namespace LinnworksAPI
         public DateTime? ActionDate;
         public String ReturnReference;
         public Double? Cost;
-        public RefundStatus RefundStatus;
+        public PostSaleStatusType RefundStatus;
         public Boolean IgnoredValidation;
         public Guid? fkOrderItemRowId;
         public Boolean ShouldSerializeChannelReason;

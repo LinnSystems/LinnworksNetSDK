@@ -9,6 +9,7 @@ namespace LinnworksAPI
         public String LabelError;
         public Boolean InvoicePrinted;
         public Boolean PickListPrinted;
+        public Boolean IsRuleRun;
         public Int32 Notes;
         public Boolean PartShipped;
         public Byte? Marker;
@@ -22,5 +23,6 @@ namespace LinnworksAPI
         public DateTime DespatchByDate;
         public Guid Location;
         public Int32 NumItems;
+        public IRulesEngineHelper RulesEngine;
     }
 }

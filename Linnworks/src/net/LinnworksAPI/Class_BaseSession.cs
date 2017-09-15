@@ -21,6 +21,10 @@ namespace LinnworksAPI
         public String GroupName;
         public LocalityType Locality;
         public Dictionary<String, String> Properties;
-        public DataCache Cache;
+        public SessionCache Cache;
+        public SessionPermissions Permissions;
+        public SessionCache MemoryCache;
+        public Boolean IsSandbox;
+        public Boolean IsLocalhost;
     }
 }

@@ -11,9 +11,14 @@ namespace LinnworksAPI
         public String UpdateStatus;
         public String ChannelReferenceId;
         public DateTime LastUpdate;
+        public Int32 MaxListedQuantity;
+        public Int32 EndWhenStock;
         public Int32 SubmittedQuantity;
         public Int32 ListedQuantity;
-        public Int32 MaxListedQuantity;
+        public Double StockPercentage;
+        public Boolean IgnoreSync;
+        public Boolean? IgnoreSyncMultiLocation;
+        public Boolean IsMultiLocation;
         public Guid StockItemId;
     }
 }

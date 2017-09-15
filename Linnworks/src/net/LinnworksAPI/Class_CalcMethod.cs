@@ -10,5 +10,7 @@ namespace LinnworksAPI
         MAX,
         STACKED,
         WEIGHTFIT,
+        THREEDIM_ALL,
+        THREEDIM_ITEMS,
     }
 }

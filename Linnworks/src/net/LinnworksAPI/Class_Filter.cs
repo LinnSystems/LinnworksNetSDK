@@ -11,7 +11,6 @@ namespace LinnworksAPI
         public FieldType Field;
         public ConditionType Condition;
         public String ConditionDisplayName;
-        public FilterLogicType FilterLogic;
         public String Value;
     }
 }

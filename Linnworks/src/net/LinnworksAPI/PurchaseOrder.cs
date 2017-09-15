@@ -68,6 +68,11 @@ namespace LinnworksAPI
             return Newtonsoft.Json.JsonConvert.DeserializeObject<PurchaseOrderHeader>(Factory.GetResponse("PurchaseOrder/Change_PurchaseOrderStatus", "changeStatusParameter=" + Newtonsoft.Json.JsonConvert.SerializeObject(changeStatusParameter, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
 
+        public static Deliver_PurchaseOrderItemAllNoBatchResponse Deliver_PurchaseItemAll_ExceptBatchItems(Guid purchaseId, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Deliver_PurchaseOrderItemAllNoBatchResponse>(Factory.GetResponse("PurchaseOrder/Deliver_PurchaseItemAll_ExceptBatchItems", "purchaseId=" + purchaseId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
         public static Deliver_PurchaseOrderItemAllResponse Deliver_PurchaseItemAll(Guid purchaseId, String ApiToken, String ApiServer)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<Deliver_PurchaseOrderItemAllResponse>(Factory.GetResponse("PurchaseOrder/Deliver_PurchaseItemAll", "purchaseId=" + purchaseId + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
@@ -91,6 +96,26 @@ namespace LinnworksAPI
         public static List<PurchaseOrderAudit> Get_PurchaseOrderAudit(Search_PurchaseOrder_AuditLog auditLog, String ApiToken, String ApiServer)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<PurchaseOrderAudit>>(Factory.GetResponse("PurchaseOrder/Get_PurchaseOrderAudit", "auditLog=" + Newtonsoft.Json.JsonConvert.SerializeObject(auditLog, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
+        public static Get_PurchaseOrderExtendedPropertyResponse Get_PurchaseOrderExtendedProperty(Get_PurchaseOrderExtendedPropertyRequest request, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Get_PurchaseOrderExtendedPropertyResponse>(Factory.GetResponse("PurchaseOrder/Get_PurchaseOrderExtendedProperty", "request=" + Newtonsoft.Json.JsonConvert.SerializeObject(request, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
+        public static Add_PurchaseOrderExtendedPropertyResponse Add_PurchaseOrderExtendedProperty(Add_PurchaseOrderExtendedPropertyRequest request, String ApiToken, String ApiServer)
+        {
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<Add_PurchaseOrderExtendedPropertyResponse>(Factory.GetResponse("PurchaseOrder/Add_PurchaseOrderExtendedProperty", "request=" + Newtonsoft.Json.JsonConvert.SerializeObject(request, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
+
+        public static void Update_PurchaseOrderExtendedProperty(Update_PurchaseOrderExtendedPropertyRequest request, String ApiToken, String ApiServer)
+        {
+            Factory.GetResponse("PurchaseOrder/Update_PurchaseOrderExtendedProperty", "request=" + Newtonsoft.Json.JsonConvert.SerializeObject(request, serializerSettings) + "", ApiToken, ApiServer);
+        }
+
+        public static void Delete_PurchaseOrderExtendedProperty(Delete_PurchaseOrderExtendedPropertyRequest request, String ApiToken, String ApiServer)
+        {
+            Factory.GetResponse("PurchaseOrder/Delete_PurchaseOrderExtendedProperty", "request=" + Newtonsoft.Json.JsonConvert.SerializeObject(request, serializerSettings) + "", ApiToken, ApiServer);
         }
     }
 }

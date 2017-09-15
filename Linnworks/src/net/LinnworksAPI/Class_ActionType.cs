@@ -8,5 +8,9 @@ namespace LinnworksAPI
     {
         AssignShippingService,
         AssignToFolder,
+        AssignToLocation,
+        SplitOrderByWeight,
+        SplitOrderByValue,
+        SplitOrderSingle,
     }
 }

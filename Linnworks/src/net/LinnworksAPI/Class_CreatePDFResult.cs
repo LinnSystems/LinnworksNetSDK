@@ -5,6 +5,7 @@ namespace LinnworksAPI
 {
     public class CreatePDFResult
     {
+        public List<PrintError> KeyedError;
         public String URL;
         public List<Guid> IdsProcessed;
         public Dictionary<String, List<Guid>> ProcessedIds;

@@ -5,9 +5,9 @@ namespace LinnworksAPI
 {
     public class OrderXML
     {
+        public Guid pkOrderId;
         public String LineTag;
         public String Type;
-        public string XML;
-        public XmlDocument XMLDoc;
+        public XmlDocument Document;
     }
 }

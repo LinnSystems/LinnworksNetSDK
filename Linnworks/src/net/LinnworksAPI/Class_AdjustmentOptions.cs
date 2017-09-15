@@ -10,5 +10,6 @@ namespace LinnworksAPI
         public Boolean AddExtendedProperties;
         public Boolean ReviseExtendedProperties;
         public Boolean UpdateImages;
+        public Boolean VariationAttributes;
     }
 }

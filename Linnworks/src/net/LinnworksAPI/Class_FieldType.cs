@@ -6,13 +6,12 @@ namespace LinnworksAPI
     [JsonConverter(typeof(StringEnumConverter))]
     public enum FieldType
     {
-        Int,
-        Double,
+        Default,
         String,
-        Boolean,
-        Select,
-        Date,
-        Channel,
-        Other,
+        Int,
+        Bool,
+        Guid,
+        Float,
+        Double,
     }
 }

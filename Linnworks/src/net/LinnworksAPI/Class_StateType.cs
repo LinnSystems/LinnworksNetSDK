@@ -10,5 +10,6 @@ namespace LinnworksAPI
         LOCKED,
         MAINTENANCE,
         FAILED,
+        MIGRATION,
     }
 }

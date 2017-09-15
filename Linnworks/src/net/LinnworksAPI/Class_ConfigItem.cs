@@ -2,12 +2,12 @@ using System;
 
 namespace LinnworksAPI
 {
-    public class ConfigItem<Boolean>
+    public class ConfigItem<String>
     {
         public Boolean Loaded;
         public Int32 pkPropertyId;
         public Boolean IsChanged;
-        public Boolean PropertyValue;
+        public String PropertyValue;
         public String PropertyType;
     }
 }

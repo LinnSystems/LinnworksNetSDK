@@ -8,5 +8,6 @@ namespace LinnworksAPI
     {
         RETURNS,
         REFUNDS,
+        CANCELLATIONS,
     }
 }

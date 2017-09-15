@@ -7,5 +7,6 @@ namespace LinnworksAPI
         public String Type;
         public String Key;
         public ExecutionOptionType StockLevelBySupplierCode_ZeroWhenNotProvided;
+        public ExecutionOptionType FulfilmentCenterInventoryImport_OnlyMatchByFulfilmentSku;
     }
 }

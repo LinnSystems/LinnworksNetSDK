@@ -78,6 +78,6 @@ namespace LinnworksAPI
         public Int32 CancellationQuantity;
         public Guid fkOrderItemReturnId;
         public DateTime ActionDate;
-        public Int32 RefundStatus;
+        public PostSaleStatusType RefundStatus;
     }
 }

@@ -7,5 +7,6 @@ namespace LinnworksAPI
         public ActionType Value;
         public String DisplayName;
         public DisplayType DisplayType;
+        public FieldType FieldType;
     }
 }

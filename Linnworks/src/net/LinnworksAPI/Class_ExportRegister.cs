@@ -4,6 +4,7 @@ namespace LinnworksAPI
 {
     public class ExportRegister
     {
+        public DateTime? LastQueryExecuted;
         public Boolean LastExportStatus;
         public Int32 Id;
         public String Type;

@@ -5,15 +5,6 @@ namespace LinnworksAPI
     public class StockItemInv
     {
         public String VariationGroupName;
-        public String MetaData;
-        public Double TaxRate;
-        public Guid CategoryId;
-        public Guid PackageGroupId;
-        public Guid PostalServiceId;
-        public Double Weight;
-        public Double Width;
-        public Double Depth;
-        public Double Height;
         public Int32 Quantity;
         public Int32 InOrder;
         public Int32 Due;
@@ -24,11 +15,24 @@ namespace LinnworksAPI
         public String ItemNumber;
         public String ItemTitle;
         public String BarcodeNumber;
+        public String MetaData;
+        public Boolean isBatchedStockType;
         public Double PurchasePrice;
         public Double? RetailPrice;
+        public Double TaxRate;
+        public Guid PostalServiceId;
         public String PostalServiceName;
+        public Guid CategoryId;
         public String CategoryName;
+        public Guid PackageGroupId;
         public String PackageGroupName;
+        public Double Height;
+        public Double Width;
+        public Double Depth;
+        public Double Weight;
+        public Int32 InventoryTrackingType;
+        public Boolean BatchNumberScanRequired;
+        public Boolean SerialNumberScanRequired;
         public Guid StockItemId;
     }
 }

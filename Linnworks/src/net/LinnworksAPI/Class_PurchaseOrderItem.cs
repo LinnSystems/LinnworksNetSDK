@@ -15,5 +15,6 @@ namespace LinnworksAPI
         public Int32 PackSize;
         public String SKU;
         public String ItemTitle;
+        public Int32 InventoryTrackingType;
     }
 }

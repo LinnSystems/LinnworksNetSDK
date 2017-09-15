@@ -16,6 +16,7 @@ namespace LinnworksAPI
         public String ItemTitle;
         public String BarcodeNumber;
         public String MetaData;
+        public Boolean isBatchedStockType;
         public Double PurchasePrice;
         public Double? RetailPrice;
         public Double TaxRate;
@@ -30,6 +31,9 @@ namespace LinnworksAPI
         public Double Depth;
         public Double Weight;
         public DateTime? CreationDate;
+        public Int32 InventoryTrackingType;
+        public Boolean BatchNumberScanRequired;
+        public Boolean SerialNumberScanRequired;
         public Guid StockItemId;
     }
 }
