@@ -14,6 +14,7 @@ public $SecondaryTelNumber;
 public $FaxNumber;
 public $Email;
 public $WebPage;
+public $Currency;
  
 } 
 ?>

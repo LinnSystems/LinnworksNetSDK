@@ -8,6 +8,8 @@ public $ShippingInformation;
 public $ChannelTitle;
 public $ChannelDescription;
 public $ChannelPrice;
+public $ExtendedProperties;
+public $Images;
  
 } 
 ?>

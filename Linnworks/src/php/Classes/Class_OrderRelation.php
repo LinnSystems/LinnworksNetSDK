@@ -1,8 +1,10 @@
 <?php
  class OrderRelation
-{ public $Parent;
-public $Child;
-public $Type;
+{ public $ChildOrderId;
+public $ChildOrderPkOrderId;
+public $ParentOrderId;
+public $ParentOrderPkOrderId;
+public $RelationType;
  
 } 
 ?>

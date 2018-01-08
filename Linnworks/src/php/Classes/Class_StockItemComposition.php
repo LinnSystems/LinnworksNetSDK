@@ -4,6 +4,8 @@
 public $ItemTitle;
 public $SKU;
 public $Quantity;
+public $PurchasePrice;
+public $InventoryTrackingType;
 public $StockItemId;
  
 } 

@@ -1,5 +1,5 @@
 <?php
- class ConfigItem<Boolean>
+ class ConfigItem<String>
 { public $Loaded;
 public $pkPropertyId;
 public $IsChanged;

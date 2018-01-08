@@ -1,12 +1,13 @@
 <?php
  class FieldType
 { public $value__;
-public $Int;
-public $Double;
+public $Default;
 public $String;
-public $Boolean;
-public $Select;
-public $Other;
+public $Int;
+public $Bool;
+public $Guid;
+public $Float;
+public $Double;
  
 } 
 ?>

@@ -8,7 +8,7 @@ public $RetailPrice;
 public $PurchasePrice;
 public $Tracked;
 public $Barcode;
-public $VariationsGroupName;
+public $VariationGroupName;
 public $Available;
 public $MinimumLevel;
 public $InOrder;
@@ -24,6 +24,17 @@ public $AmazonASIN;
 public $Image;
 public $ExtendedProperty;
 public $ExtendedPropertyName;
+public $Channel;
+public $CreatedDate;
+public $ModifiedDate;
+public $SerialNumberScanRequired;
+public $BatchNumberScanRequired;
+public $BatchType;
+public $BatchNumber;
+public $Weight;
+public $DimHeight;
+public $DimWidth;
+public $DimDepth;
  
 } 
 ?>

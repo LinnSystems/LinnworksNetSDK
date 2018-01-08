@@ -4,6 +4,7 @@
 public $LocationName;
 public $IsFulfillmentCenter;
 public $LocationTag;
+public $BinRack;
  
 } 
 ?>

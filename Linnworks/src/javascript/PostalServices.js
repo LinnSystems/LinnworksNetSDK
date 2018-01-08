@@ -20,4 +20,9 @@ var PostalServices =
 	{
 		return Factory.GetResponse("PostalServices/DeletePostalService", token, server, "idToDelete=" + idToDelete +"");
 	},
+	// http://apidoc.linnworks.net/#/PostalServices-GetChannelLinks
+	GetChannelLinks: function(postalServiceId,token, server)
+	{
+		return Factory.GetResponse("PostalServices/GetChannelLinks", token, server, "postalServiceId=" + postalServiceId +"");
+	},
 };

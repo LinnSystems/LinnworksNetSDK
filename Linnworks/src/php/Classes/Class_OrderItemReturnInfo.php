@@ -1,6 +1,8 @@
 <?php
  class OrderItemReturnInfo
-{ public $fkOrderItemRowId;
+{ public $ChildItems;
+public $Batches;
+public $fkOrderItemRowId;
 public $ParentRowId;
 public $ReturnableQty;
 public $OrderQty;
@@ -9,11 +11,11 @@ public $SKU;
 public $ItemTitle;
 public $UnitValue;
 public $TaxRate;
+public $TaxCostInclusive;
 public $Currency;
 public $IsCompositeParent;
 public $IsPartialCompositeReturn;
 public $ParentRatio;
-public $ChildItems;
 public $pkStockItemId;
 public $ResentQty;
  

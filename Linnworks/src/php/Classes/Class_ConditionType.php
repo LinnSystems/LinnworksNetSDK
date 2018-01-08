@@ -5,9 +5,16 @@ public $Equals;
 public $Contains;
 public $Less;
 public $Greater;
-public $Exists;
 public $NotEquals;
 public $NotContains;
+public $Exists;
+public $Listed;
+public $NotListed;
+public $HasError;
+public $OnlyErrors;
+public $NoErrors;
+public $LastDays;
+public $OlderThan;
  
 } 
 ?>

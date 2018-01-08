@@ -1,6 +1,10 @@
 <?php
  class Deliver_PurchaseItemParameter
-{ public $pkPurchaseId;
+{ public $BatchNumber;
+public $BinRack;
+public $PrioritySequence;
+public $BatchStatus;
+public $pkPurchaseId;
 public $pkPurchaseItemId;
 public $Delivered;
 public $AddToDelivered;

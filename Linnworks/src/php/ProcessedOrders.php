@@ -82,12 +82,12 @@ public static function GetOrderInfo($pkOrderId,$ApiToken, $ApiServer)
 
 public static function SearchProcessedOrdersPaged($from,$to,$dateType,$searchField,$exactMatch,$searchTerm,$pageNum,$numEntriesPerPage,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", "from=" . json_encode($from) . "&to=" . json_encode($to) . "&dateType=" . json_encode($dateType) . "&searchField=" . $searchField . "&exactMatch=" . $exactMatch . "&searchTerm=" . $searchTerm . "&pageNum=" . $pageNum . "&numEntriesPerPage=" . $numEntriesPerPage . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", "from=" . json_encode($from) . "&to=" . json_encode($to) . "&dateType=" . $dateType . "&searchField=" . $searchField . "&exactMatch=" . $exactMatch . "&searchTerm=" . $searchTerm . "&pageNum=" . $pageNum . "&numEntriesPerPage=" . $numEntriesPerPage . "", $ApiToken, $ApiServer)); 
 }
 
 public static function CreateProcessedOrdersCSV($from,$to,$dateType,$searchField,$exactMatch,$searchTerm,$sortColumn,$sortDirection,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", "from=" . json_encode($from) . "&to=" . json_encode($to) . "&dateType=" . json_encode($dateType) . "&searchField=" . $searchField . "&exactMatch=" . $exactMatch . "&searchTerm=" . $searchTerm . "&sortColumn=" . $sortColumn . "&sortDirection=" . $sortDirection . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", "from=" . json_encode($from) . "&to=" . json_encode($to) . "&dateType=" . $dateType . "&searchField=" . $searchField . "&exactMatch=" . $exactMatch . "&searchTerm=" . $searchTerm . "&sortColumn=" . $sortColumn . "&sortDirection=" . $sortDirection . "", $ApiToken, $ApiServer)); 
 }
 
 public static function AddReturnCategory($categoryName,$ApiToken, $ApiServer)
@@ -145,9 +145,9 @@ public static function CreateReturn($pkOrderId,$returnitems,$returnLocation,$cha
  return json_decode(Factory::GetResponse("ProcessedOrders/CreateReturn", "pkOrderId=" . $pkOrderId . "&returnitems=" . json_encode($returnitems) . "&returnLocation=" . $returnLocation . "&channelReason=" . $channelReason . "&channelSubReason=" . $channelSubReason . "&category=" . $category . "&reason=" . $reason . "&isReturnBooking=" . $isReturnBooking . "&ignoredValidation=" . $ignoredValidation . "", $ApiToken, $ApiServer)); 
 }
 
-public static function ChangeOrderNote($pkOrderNoteId,$noteText,$isInternal,$ApiToken, $ApiServer)
+public static function ChangeOrderNote($pkOrderNoteId,$noteText,$isInternal,$noteTypeId,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("ProcessedOrders/ChangeOrderNote", "pkOrderNoteId=" . $pkOrderNoteId . "&noteText=" . $noteText . "&isInternal=" . $isInternal . "", $ApiToken, $ApiServer); 
+ Factory::GetResponse("ProcessedOrders/ChangeOrderNote", "pkOrderNoteId=" . $pkOrderNoteId . "&noteText=" . $noteText . "&isInternal=" . $isInternal . "&noteTypeId=" . json_encode($noteTypeId) . "", $ApiToken, $ApiServer); 
 }
 
 public static function DeleteOrderNote($pkOrderNoteId,$ApiToken, $ApiServer)

@@ -13,7 +13,7 @@ var Stock =
 	// http://apidoc.linnworks.net/#/Stock-SearchVariationGroups
 	SearchVariationGroups: function(searchType,searchText,pageNumber,entriesPerPage,token, server)
 	{
-		return Factory.GetResponse("Stock/SearchVariationGroups", token, server, "searchType=" + JSON.stringify(searchType) + "&searchText=" + searchText + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage +"");
+		return Factory.GetResponse("Stock/SearchVariationGroups", token, server, "searchType=" + searchType + "&searchText=" + searchText + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage +"");
 	},
 	// http://apidoc.linnworks.net/#/Stock-DeleteVariationGroup
 	DeleteVariationGroup: function(pkVariationGroupId,token, server)
@@ -50,35 +50,10 @@ var Stock =
 	{
 		return Factory.GetResponse("Stock/DeleteVariationItem", token, server, "pkVariationItemId=" + pkVariationItemId + "&pkStockItemId=" + pkStockItemId +"");
 	},
-	// http://apidoc.linnworks.net/#/Stock-FindInstantNewParentSKU
-	FindInstantNewParentSKU: function(keyWord,token, server)
-	{
-		return Factory.GetResponse("Stock/FindInstantNewParentSKU", token, server, "keyWord=" + keyWord +"");
-	},
-	// http://apidoc.linnworks.net/#/Stock-GetNewParentSKUs
-	GetNewParentSKUs: function(keyWord,entriesPerPage,pageNumber,token, server)
-	{
-		return Factory.GetResponse("Stock/GetNewParentSKUs", token, server, "keyWord=" + keyWord + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber +"");
-	},
 	// http://apidoc.linnworks.net/#/Stock-CreateVariationGroup
 	CreateVariationGroup: function(template,token, server)
 	{
 		return Factory.GetResponse("Stock/CreateVariationGroup", token, server, "template=" + JSON.stringify(template) +"");
-	},
-	// http://apidoc.linnworks.net/#/Stock-GetSystemWeightMeasure
-	GetSystemWeightMeasure: function(token, server)
-	{
-		return Factory.GetResponse("Stock/GetSystemWeightMeasure", token, server, "");
-	},
-	// http://apidoc.linnworks.net/#/Stock-GetWeightMeasures
-	GetWeightMeasures: function(token, server)
-	{
-		return Factory.GetResponse("Stock/GetWeightMeasures", token, server, "");
-	},
-	// http://apidoc.linnworks.net/#/Stock-GetNewSKU
-	GetNewSKU: function(token, server)
-	{
-		return Factory.GetResponse("Stock/GetNewSKU", token, server, "");
 	},
 	// http://apidoc.linnworks.net/#/Stock-SKUExists
 	SKUExists: function(SKU,token, server)
@@ -88,7 +63,7 @@ var Stock =
 	// http://apidoc.linnworks.net/#/Stock-GetStockConsumption
 	GetStockConsumption: function(stockItemId,locationId,startDate,endDate,token, server)
 	{
-		return Factory.GetResponse("Stock/GetStockConsumption", token, server, "stockItemId=" + stockItemId + "&locationId=" + locationId + "&startDate=" + JSON.stringify(startDate) + "&endDate=" + JSON.stringify(endDate) +"");
+		return Factory.GetResponse("Stock/GetStockConsumption", token, server, "stockItemId=" + stockItemId + "&locationId=" + JSON.stringify(locationId) + "&startDate=" + JSON.stringify(startDate) + "&endDate=" + JSON.stringify(endDate) +"");
 	},
 	// http://apidoc.linnworks.net/#/Stock-GetItemChangesHistory
 	GetItemChangesHistory: function(stockItemId,locationId,entriesPerPage,pageNumber,token, server)
@@ -101,19 +76,29 @@ var Stock =
 		return Factory.GetResponse("Stock/GetItemChangesHistoryCSV", token, server, "stockItemId=" + stockItemId + "&locationId=" + locationId +"");
 	},
 	// http://apidoc.linnworks.net/#/Stock-GetStockItems
-	GetStockItems: function(keyWord,locationId,entriesPerPage,pageNumber,excludeComposites,token, server)
+	GetStockItems: function(keyWord,locationId,entriesPerPage,pageNumber,excludeComposites,excludeVariations,excludeBatches,token, server)
 	{
-		return Factory.GetResponse("Stock/GetStockItems", token, server, "keyWord=" + keyWord + "&locationId=" + locationId + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites +"");
+		return Factory.GetResponse("Stock/GetStockItems", token, server, "keyWord=" + keyWord + "&locationId=" + JSON.stringify(locationId) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "&excludeVariations=" + excludeVariations + "&excludeBatches=" + excludeBatches +"");
 	},
-	// http://apidoc.linnworks.net/#/Stock-FindInstantStockItems
-	FindInstantStockItems: function(keyWord,locationId,excludeComposites,token, server)
+	// http://apidoc.linnworks.net/#/Stock-GetStockItemsByKey
+	GetStockItemsByKey: function(stockIdentifier,token, server)
 	{
-		return Factory.GetResponse("Stock/FindInstantStockItems", token, server, "keyWord=" + keyWord + "&locationId=" + locationId + "&excludeComposites=" + excludeComposites +"");
+		return Factory.GetResponse("Stock/GetStockItemsByKey", token, server, "stockIdentifier=" + JSON.stringify(stockIdentifier) +"");
+	},
+	// http://apidoc.linnworks.net/#/Stock-GetStockItemsFull
+	GetStockItemsFull: function(keyword,loadCompositeParents,loadVariationParents,entriesPerPage,pageNumber,dataRequirements,searchTypes,token, server)
+	{
+		return Factory.GetResponse("Stock/GetStockItemsFull", token, server, "keyword=" + keyword + "&loadCompositeParents=" + loadCompositeParents + "&loadVariationParents=" + loadVariationParents + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&dataRequirements=" + JSON.stringify(dataRequirements) + "&searchTypes=" + JSON.stringify(searchTypes) +"");
 	},
 	// http://apidoc.linnworks.net/#/Stock-GetStockLevel
 	GetStockLevel: function(stockItemId,token, server)
 	{
 		return Factory.GetResponse("Stock/GetStockLevel", token, server, "stockItemId=" + stockItemId +"");
+	},
+	// http://apidoc.linnworks.net/#/Stock-UpdateStockMinimumLevel
+	UpdateStockMinimumLevel: function(stockItemId,locationId,minimumLevel,token, server)
+	{
+		return Factory.GetResponse("Stock/UpdateStockMinimumLevel", token, server, "stockItemId=" + stockItemId + "&locationId=" + locationId + "&minimumLevel=" + minimumLevel +"");
 	},
 	// http://apidoc.linnworks.net/#/Stock-GetStockSold
 	GetStockSold: function(stockItemId,token, server)
@@ -139,5 +124,35 @@ var Stock =
 	GetSoldStat: function(stockItemId,token, server)
 	{
 		return Factory.GetResponse("Stock/GetSoldStat", token, server, "stockItemId=" + stockItemId +"");
+	},
+	// http://apidoc.linnworks.net/#/Stock-SetStockLevel
+	SetStockLevel: function(stockLevels,changeSource,token, server)
+	{
+		return Factory.GetResponse("Stock/SetStockLevel", token, server, "stockLevels=" + JSON.stringify(stockLevels) + "&changeSource=" + changeSource +"");
+	},
+	// http://apidoc.linnworks.net/#/Stock-UpdateStockLevelsBySKU
+	UpdateStockLevelsBySKU: function(stockLevels,changeSource,token, server)
+	{
+		return Factory.GetResponse("Stock/UpdateStockLevelsBySKU", token, server, "stockLevels=" + JSON.stringify(stockLevels) + "&changeSource=" + changeSource +"");
+	},
+	// http://apidoc.linnworks.net/#/Stock-Update_StockItemPartial
+	Update_StockItemPartial: function(update,token, server)
+	{
+		return Factory.GetResponse("Stock/Update_StockItemPartial", token, server, "update=" + JSON.stringify(update) +"");
+	},
+	// http://apidoc.linnworks.net/#/Stock-BookInStockItem
+	BookInStockItem: function(stockItem,token, server)
+	{
+		return Factory.GetResponse("Stock/BookInStockItem", token, server, "stockItem=" + JSON.stringify(stockItem) +"");
+	},
+	// http://apidoc.linnworks.net/#/Stock-CreateStockBatches
+	CreateStockBatches: function(batches,token, server)
+	{
+		return Factory.GetResponse("Stock/CreateStockBatches", token, server, "batches=" + JSON.stringify(batches) +"");
+	},
+	// http://apidoc.linnworks.net/#/Stock-BookInStockBatch
+	BookInStockBatch: function(stockItem,token, server)
+	{
+		return Factory.GetResponse("Stock/BookInStockBatch", token, server, "stockItem=" + JSON.stringify(stockItem) +"");
 	},
 };

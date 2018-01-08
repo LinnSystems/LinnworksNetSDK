@@ -7,6 +7,7 @@ public $ActionValue;
 public $fkConditionId;
 public $RuleVersion;
 public $fkRuleId;
+public $Properties;
  
 } 
 ?>

@@ -4,6 +4,7 @@
 public $FreeText;
 public $AutoComplete;
 public $Dropdown;
+public $None;
  
 } 
 ?>

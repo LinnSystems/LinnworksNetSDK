@@ -12,7 +12,7 @@ public static function GetVariationGroupSearchTypes($ApiToken, $ApiServer)
 
 public static function SearchVariationGroups($searchType,$searchText,$pageNumber,$entriesPerPage,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Stock/SearchVariationGroups", "searchType=" . json_encode($searchType) . "&searchText=" . $searchText . "&pageNumber=" . $pageNumber . "&entriesPerPage=" . $entriesPerPage . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Stock/SearchVariationGroups", "searchType=" . $searchType . "&searchText=" . $searchText . "&pageNumber=" . $pageNumber . "&entriesPerPage=" . $entriesPerPage . "", $ApiToken, $ApiServer)); 
 }
 
 public static function DeleteVariationGroup($pkVariationGroupId,$ApiToken, $ApiServer)
@@ -75,9 +75,9 @@ public static function GetItemChangesHistoryCSV($stockItemId,$locationId,$ApiTok
  return json_decode(Factory::GetResponse("Stock/GetItemChangesHistoryCSV", "stockItemId=" . $stockItemId . "&locationId=" . $locationId . "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetStockItems($keyWord,$locationId,$entriesPerPage,$pageNumber,$excludeComposites,$ApiToken, $ApiServer)
+public static function GetStockItems($keyWord,$locationId,$entriesPerPage,$pageNumber,$excludeComposites,$excludeVariations,$excludeBatches,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Stock/GetStockItems", "keyWord=" . $keyWord . "&locationId=" . json_encode($locationId) . "&entriesPerPage=" . $entriesPerPage . "&pageNumber=" . $pageNumber . "&excludeComposites=" . $excludeComposites . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Stock/GetStockItems", "keyWord=" . $keyWord . "&locationId=" . json_encode($locationId) . "&entriesPerPage=" . $entriesPerPage . "&pageNumber=" . $pageNumber . "&excludeComposites=" . $excludeComposites . "&excludeVariations=" . $excludeVariations . "&excludeBatches=" . $excludeBatches . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetStockItemsByKey($stockIdentifier,$ApiToken, $ApiServer)
@@ -125,14 +125,14 @@ public static function GetSoldStat($stockItemId,$ApiToken, $ApiServer)
  return json_decode(Factory::GetResponse("Stock/GetSoldStat", "stockItemId=" . $stockItemId . "", $ApiToken, $ApiServer)); 
 }
 
-public static function SetStockLevel($stockLevels,$ApiToken, $ApiServer)
+public static function SetStockLevel($stockLevels,$changeSource,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Stock/SetStockLevel", "stockLevels=" . json_encode($stockLevels) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Stock/SetStockLevel", "stockLevels=" . json_encode($stockLevels) . "&changeSource=" . $changeSource . "", $ApiToken, $ApiServer)); 
 }
 
-public static function UpdateStockLevelsBySKU($stockLevels,$ApiToken, $ApiServer)
+public static function UpdateStockLevelsBySKU($stockLevels,$changeSource,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Stock/UpdateStockLevelsBySKU", "stockLevels=" . json_encode($stockLevels) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Stock/UpdateStockLevelsBySKU", "stockLevels=" . json_encode($stockLevels) . "&changeSource=" . $changeSource . "", $ApiToken, $ApiServer)); 
 }
 
 public static function Update_StockItemPartial($update,$ApiToken, $ApiServer)
@@ -143,6 +143,16 @@ public static function Update_StockItemPartial($update,$ApiToken, $ApiServer)
 public static function BookInStockItem($stockItem,$ApiToken, $ApiServer)
 {
  Factory::GetResponse("Stock/BookInStockItem", "stockItem=" . json_encode($stockItem) . "", $ApiToken, $ApiServer); 
+}
+
+public static function CreateStockBatches($batches,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Stock/CreateStockBatches", "batches=" . json_encode($batches) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function BookInStockBatch($stockItem,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Stock/BookInStockBatch", "stockItem=" . json_encode($stockItem) . "", $ApiToken, $ApiServer)); 
 } 
 }
 ?>

@@ -1,13 +1,18 @@
 <?php
 class OrdersMethods 
-{ public static function GetUserLocationId($ApiToken, $ApiServer)
+{ public static function CreateOrders($orders,$location,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Orders/GetUserLocationId", "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Orders/CreateOrders", "orders=" . json_encode($orders) . "&location=" . $location . "", $ApiToken, $ApiServer)); 
 }
 
-public static function SetUserLocationId($locationId,$ApiToken, $ApiServer)
+public static function GetAssignedOrderItemBatches($request,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("Orders/SetUserLocationId", "locationId=" . $locationId . "", $ApiToken, $ApiServer); 
+ return json_decode(Factory::GetResponse("Orders/GetAssignedOrderItemBatches", "request=" . json_encode($request) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function GetUserLocationId($ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/GetUserLocationId", "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetOpenOrders($entriesPerPage,$pageNumber,$filters,$sorting,$fulfilmentCenter,$additionalFilter,$ApiToken, $ApiServer)
@@ -33,6 +38,16 @@ public static function SetLabelsPrinted($orderIds,$ApiToken, $ApiServer)
 public static function SetInvoicesPrinted($orderIds,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("Orders/SetInvoicesPrinted", "orderIds=" . json_encode($orderIds) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function SetPickListPrinted($Request,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("Orders/SetPickListPrinted", "Request=" . json_encode($Request) . "", $ApiToken, $ApiServer); 
+}
+
+public static function RunRulesEngine($orderIds,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/RunRulesEngine", "orderIds=" . json_encode($orderIds) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetOrderItemComposition($orderId,$stockItemId,$fulfilmentCenter,$ApiToken, $ApiServer)
@@ -145,6 +160,11 @@ public static function GetExtendedPropertyTypes($ApiToken, $ApiServer)
  return json_decode(Factory::GetResponse("Orders/GetExtendedPropertyTypes", "", $ApiToken, $ApiServer)); 
 }
 
+public static function GetExtendedPropertyNames($ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/GetExtendedPropertyNames", "", $ApiToken, $ApiServer)); 
+}
+
 public static function SetExtendedProperties($orderId,$extendedProperties,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("Orders/SetExtendedProperties", "orderId=" . $orderId . "&extendedProperties=" . json_encode($extendedProperties) . "", $ApiToken, $ApiServer)); 
@@ -173,6 +193,11 @@ public static function GetOrderAuditTrail($orderId,$ApiToken, $ApiServer)
 public static function GetOrderNotes($orderId,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("Orders/GetOrderNotes", "orderId=" . $orderId . "", $ApiToken, $ApiServer)); 
+}
+
+public static function GetOrderNoteTypes($ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/GetOrderNoteTypes", "", $ApiToken, $ApiServer)); 
 }
 
 public static function SetOrderNotes($orderId,$orderNotes,$ApiToken, $ApiServer)
@@ -265,14 +290,19 @@ public static function MergeOrders($ordersToMerge,$fulfilmentCenter,$pkPostalSer
  return json_decode(Factory::GetResponse("Orders/MergeOrders", "ordersToMerge=" . json_encode($ordersToMerge) . "&fulfilmentCenter=" . $fulfilmentCenter . "&pkPostalServiceId=" . $pkPostalServiceId . "", $ApiToken, $ApiServer)); 
 }
 
-public static function ProcessOrder($orderId,$scanPerformed,$ApiToken, $ApiServer)
+public static function ProcessOrder($orderId,$scanPerformed,$locationId,$allowZeroAndNegativeBatchQty,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Orders/ProcessOrder", "orderId=" . $orderId . "&scanPerformed=" . $scanPerformed . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Orders/ProcessOrder", "orderId=" . $orderId . "&scanPerformed=" . $scanPerformed . "&locationId=" . json_encode($locationId) . "&allowZeroAndNegativeBatchQty=" . $allowZeroAndNegativeBatchQty . "", $ApiToken, $ApiServer)); 
 }
 
-public static function ProcessOrdersInBatch($ordersIds,$ApiToken, $ApiServer)
+public static function ProcessOrder_RequiredBatchScans($BatchAssignment,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Orders/ProcessOrdersInBatch", "ordersIds=" . json_encode($ordersIds) . "", $ApiToken, $ApiServer)); 
+ Factory::GetResponse("Orders/ProcessOrder_RequiredBatchScans", "BatchAssignment=" . json_encode($BatchAssignment) . "", $ApiToken, $ApiServer); 
+}
+
+public static function ProcessOrdersInBatch($ordersIds,$locationId,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/ProcessOrdersInBatch", "ordersIds=" . json_encode($ordersIds) . "&locationId=" . json_encode($locationId) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function ProcessFulfilmentCentreOrder($orderId,$ApiToken, $ApiServer)
@@ -292,7 +322,7 @@ public static function SetOrderShippingInfo($orderId,$info,$ApiToken, $ApiServer
 
 public static function SetOrderCustomerInfo($orderId,$info,$saveToCrm,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("Orders/SetOrderCustomerInfo", "orderId=" . $orderId . "&info=" . json_encode($info) . "&saveToCrm=" . json_encode($saveToCrm) . "", $ApiToken, $ApiServer); 
+ return json_decode(Factory::GetResponse("Orders/SetOrderCustomerInfo", "orderId=" . $orderId . "&info=" . json_encode($info) . "&saveToCrm=" . json_encode($saveToCrm) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function SetOrderTotalsInfo($orderId,$info,$ApiToken, $ApiServer)
@@ -350,14 +380,14 @@ public static function UpdateLinkItem($pkStockId,$pkStockItemId,$source,$subSour
  Factory::GetResponse("Orders/UpdateLinkItem", "pkStockId=" . $pkStockId . "&pkStockItemId=" . $pkStockItemId . "&source=" . $source . "&subSource=" . $subSource . "&channelSKU=" . $channelSKU . "", $ApiToken, $ApiServer); 
 }
 
-public static function CreateNewItemAndLink($pkStockItemId,$itemTitle,$source,$subSource,$channelSKU,$ApiToken, $ApiServer)
+public static function CreateNewItemAndLink($pkStockItemId,$itemTitle,$source,$subSource,$channelSKU,$locationId,$initialQuantity,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Orders/CreateNewItemAndLink", "pkStockItemId=" . $pkStockItemId . "&itemTitle=" . $itemTitle . "&source=" . $source . "&subSource=" . $subSource . "&channelSKU=" . $channelSKU . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Orders/CreateNewItemAndLink", "pkStockItemId=" . $pkStockItemId . "&itemTitle=" . $itemTitle . "&source=" . $source . "&subSource=" . $subSource . "&channelSKU=" . $channelSKU . "&locationId=" . json_encode($locationId) . "&initialQuantity=" . json_encode($initialQuantity) . "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetOrderPackagingSplit($orderId,$ApiToken, $ApiServer)
+public static function GetOrderPackagingSplit($orderId,$openOrdersOnly,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Orders/GetOrderPackagingSplit", "orderId=" . $orderId . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Orders/GetOrderPackagingSplit", "orderId=" . $orderId . "&openOrdersOnly=" . $openOrdersOnly . "", $ApiToken, $ApiServer)); 
 }
 
 public static function SetOrderPackagingSplit($orderId,$packagingSplit,$ApiToken, $ApiServer)
@@ -365,19 +395,24 @@ public static function SetOrderPackagingSplit($orderId,$packagingSplit,$ApiToken
  return json_decode(Factory::GetResponse("Orders/SetOrderPackagingSplit", "orderId=" . $orderId . "&packagingSplit=" . json_encode($packagingSplit) . "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetOpenOrderIdByOrderOrReferenceId($orderOrReferenceId,$filters,$ApiToken, $ApiServer)
+public static function GetOpenOrderIdByOrderOrReferenceId($orderOrReferenceId,$filters,$locationId,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Orders/GetOpenOrderIdByOrderOrReferenceId", "orderOrReferenceId=" . $orderOrReferenceId . "&filters=" . json_encode($filters) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Orders/GetOpenOrderIdByOrderOrReferenceId", "orderOrReferenceId=" . $orderOrReferenceId . "&filters=" . json_encode($filters) . "&locationId=" . json_encode($locationId) . "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetOpenOrderIdByOrderOrReferenceIdAndProcess($orderOrReferenceId,$fulfilmentCenter,$filters,$ApiToken, $ApiServer)
+public static function ProcessOrderByOrderOrReferenceId($request,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Orders/GetOpenOrderIdByOrderOrReferenceIdAndProcess", "orderOrReferenceId=" . $orderOrReferenceId . "&fulfilmentCenter=" . $fulfilmentCenter . "&filters=" . json_encode($filters) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Orders/ProcessOrderByOrderOrReferenceId", "request=" . json_encode($request) . "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetOpenOrdersByItemBarcode($productBarcode,$filters,$ApiToken, $ApiServer)
+public static function GetOpenOrderIdByOrderOrReferenceIdAndProcess($orderOrReferenceId,$fulfilmentCenter,$filters,$batchScanned,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("Orders/GetOpenOrdersByItemBarcode", "productBarcode=" . $productBarcode . "&filters=" . json_encode($filters) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("Orders/GetOpenOrderIdByOrderOrReferenceIdAndProcess", "orderOrReferenceId=" . $orderOrReferenceId . "&fulfilmentCenter=" . $fulfilmentCenter . "&filters=" . json_encode($filters) . "&batchScanned=" . $batchScanned . "", $ApiToken, $ApiServer)); 
+}
+
+public static function GetOpenOrdersByItemBarcode($productBarcode,$filters,$locationId,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/GetOpenOrdersByItemBarcode", "productBarcode=" . $productBarcode . "&filters=" . json_encode($filters) . "&locationId=" . json_encode($locationId) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetOrderDetailsByReferenceId($ReferenceId,$ApiToken, $ApiServer)
@@ -398,6 +433,36 @@ public static function GetOrderById($pkOrderId,$ApiToken, $ApiServer)
 public static function GetOrdersById($pkOrderIds,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("Orders/GetOrdersById", "pkOrderIds=" . json_encode($pkOrderIds) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function GetOrderPackagingCalculation($request,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/GetOrderPackagingCalculation", "request=" . json_encode($request) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function RecalculateSingleOrderPackaging($request,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/RecalculateSingleOrderPackaging", "request=" . json_encode($request) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function SetOrderSplitPackagingManualOverwrite($request,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/SetOrderSplitPackagingManualOverwrite", "request=" . json_encode($request) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function SetOrderPackaging($request,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/SetOrderPackaging", "request=" . json_encode($request) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function GetOrderItemBatchsByOrderId($parameters,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/GetOrderItemBatchsByOrderId", "parameters=" . json_encode($parameters) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function GetAllAvailableOrderItemBatchsByOrderId($parameters,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("Orders/GetAllAvailableOrderItemBatchsByOrderId", "parameters=" . json_encode($parameters) . "", $ApiToken, $ApiServer)); 
 } 
 }
 ?>

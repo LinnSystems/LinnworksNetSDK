@@ -4,6 +4,7 @@
 public $All;
 public $Variations;
 public $NonVariations;
+public $SingleItems;
  
 } 
 ?>

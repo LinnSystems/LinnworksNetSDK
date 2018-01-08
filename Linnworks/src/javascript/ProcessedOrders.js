@@ -43,7 +43,7 @@ var ProcessedOrders =
 	// http://apidoc.linnworks.net/#/ProcessedOrders-GetTotalRefunds
 	GetTotalRefunds: function(pkOrderId,includeBookings,token, server)
 	{
-		return Factory.GetResponse("ProcessedOrders/GetTotalRefunds", token, server, "pkOrderId=" + pkOrderId + "&includeBookings=" + includeBookings +"");
+		return Factory.GetResponse("ProcessedOrders/GetTotalRefunds", token, server, "pkOrderId=" + pkOrderId + "&includeBookings=" + JSON.stringify(includeBookings) +"");
 	},
 	// http://apidoc.linnworks.net/#/ProcessedOrders-IsRefundValid
 	IsRefundValid: function(pkOrderId,refundItems,token, server)
@@ -70,26 +70,6 @@ var ProcessedOrders =
 	{
 		return Factory.GetResponse("ProcessedOrders/GetReturnItemsInfo", token, server, "pkOrderId=" + pkOrderId +"");
 	},
-	// http://apidoc.linnworks.net/#/ProcessedOrders-GetSearchTypes
-	GetSearchTypes: function(token, server)
-	{
-		return Factory.GetResponse("ProcessedOrders/GetSearchTypes", token, server, "");
-	},
-	// http://apidoc.linnworks.net/#/ProcessedOrders-GetColumns
-	GetColumns: function(token, server)
-	{
-		return Factory.GetResponse("ProcessedOrders/GetColumns", token, server, "");
-	},
-	// http://apidoc.linnworks.net/#/ProcessedOrders-SetColumnSortOrder
-	SetColumnSortOrder: function(sortColumn,sortAsc,token, server)
-	{
-		return Factory.GetResponse("ProcessedOrders/SetColumnSortOrder", token, server, "sortColumn=" + sortColumn + "&sortAsc=" + sortAsc +"");
-	},
-	// http://apidoc.linnworks.net/#/ProcessedOrders-SetColumns
-	SetColumns: function(columns,changeSortColumn,sortColumn,sortAsc,token, server)
-	{
-		return Factory.GetResponse("ProcessedOrders/SetColumns", token, server, "columns=" + JSON.stringify(columns) + "&changeSortColumn=" + changeSortColumn + "&sortColumn=" + sortColumn + "&sortAsc=" + sortAsc +"");
-	},
 	// http://apidoc.linnworks.net/#/ProcessedOrders-GetReturnOrderInfo
 	GetReturnOrderInfo: function(pkOrderId,includeRefundLink,token, server)
 	{
@@ -103,12 +83,12 @@ var ProcessedOrders =
 	// http://apidoc.linnworks.net/#/ProcessedOrders-SearchProcessedOrdersPaged
 	SearchProcessedOrdersPaged: function(from,to,dateType,searchField,exactMatch,searchTerm,pageNum,numEntriesPerPage,token, server)
 	{
-		return Factory.GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", token, server, "from=" + JSON.stringify(from) + "&to=" + JSON.stringify(to) + "&dateType=" + JSON.stringify(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage +"");
+		return Factory.GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", token, server, "from=" + JSON.stringify(from) + "&to=" + JSON.stringify(to) + "&dateType=" + dateType + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage +"");
 	},
 	// http://apidoc.linnworks.net/#/ProcessedOrders-CreateProcessedOrdersCSV
 	CreateProcessedOrdersCSV: function(from,to,dateType,searchField,exactMatch,searchTerm,sortColumn,sortDirection,token, server)
 	{
-		return Factory.GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", token, server, "from=" + JSON.stringify(from) + "&to=" + JSON.stringify(to) + "&dateType=" + JSON.stringify(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection +"");
+		return Factory.GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", token, server, "from=" + JSON.stringify(from) + "&to=" + JSON.stringify(to) + "&dateType=" + dateType + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection +"");
 	},
 	// http://apidoc.linnworks.net/#/ProcessedOrders-AddReturnCategory
 	AddReturnCategory: function(categoryName,token, server)
@@ -166,9 +146,9 @@ var ProcessedOrders =
 		return Factory.GetResponse("ProcessedOrders/CreateReturn", token, server, "pkOrderId=" + pkOrderId + "&returnitems=" + JSON.stringify(returnitems) + "&returnLocation=" + returnLocation + "&channelReason=" + channelReason + "&channelSubReason=" + channelSubReason + "&category=" + category + "&reason=" + reason + "&isReturnBooking=" + isReturnBooking + "&ignoredValidation=" + ignoredValidation +"");
 	},
 	// http://apidoc.linnworks.net/#/ProcessedOrders-ChangeOrderNote
-	ChangeOrderNote: function(pkOrderNoteId,noteText,isInternal,token, server)
+	ChangeOrderNote: function(pkOrderNoteId,noteText,isInternal,noteTypeId,token, server)
 	{
-		return Factory.GetResponse("ProcessedOrders/ChangeOrderNote", token, server, "pkOrderNoteId=" + pkOrderNoteId + "&noteText=" + noteText + "&isInternal=" + isInternal +"");
+		return Factory.GetResponse("ProcessedOrders/ChangeOrderNote", token, server, "pkOrderNoteId=" + pkOrderNoteId + "&noteText=" + noteText + "&isInternal=" + isInternal + "&noteTypeId=" + JSON.stringify(noteTypeId) +"");
 	},
 	// http://apidoc.linnworks.net/#/ProcessedOrders-DeleteOrderNote
 	DeleteOrderNote: function(pkOrderNoteId,token, server)
@@ -194,11 +174,6 @@ var ProcessedOrders =
 	GetRefunds: function(pkOrderId,token, server)
 	{
 		return Factory.GetResponse("ProcessedOrders/GetRefunds", token, server, "pkOrderId=" + pkOrderId +"");
-	},
-	// http://apidoc.linnworks.net/#/ProcessedOrders-GetProcessedItemDetails
-	GetProcessedItemDetails: function(pkOrderId,includeChildren,includeItemOptions,token, server)
-	{
-		return Factory.GetResponse("ProcessedOrders/GetProcessedItemDetails", token, server, "pkOrderId=" + pkOrderId + "&includeChildren=" + includeChildren + "&includeItemOptions=" + includeItemOptions +"");
 	},
 	// http://apidoc.linnworks.net/#/ProcessedOrders-CheckOrderFullyReturned
 	CheckOrderFullyReturned: function(pkOrderId,token, server)

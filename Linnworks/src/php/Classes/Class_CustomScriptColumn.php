@@ -1,6 +1,7 @@
 <?php
  class CustomScriptColumn
-{ public $Name;
+{ public $Index;
+public $Name;
 public $Type;
  
 } 

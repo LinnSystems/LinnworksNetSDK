@@ -5,9 +5,9 @@ class ReturnsRefundsMethods
  return json_decode(Factory::GetResponse("ReturnsRefunds/GetRefundOrders", "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetRefunds($pkOrderId,$ApiToken, $ApiServer)
+public static function GetRefunds($pkOrderId,$refundReference,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("ReturnsRefunds/GetRefunds", "pkOrderId=" . $pkOrderId . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("ReturnsRefunds/GetRefunds", "pkOrderId=" . $pkOrderId . "&refundReference=" . json_encode($refundReference) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetBookedReturnsExchangeOrders($ApiToken, $ApiServer)
@@ -35,9 +35,9 @@ public static function DeleteBookedItem($pkOrderId,$pkReturnId,$ApiToken, $ApiSe
  Factory::GetResponse("ReturnsRefunds/DeleteBookedItem", "pkOrderId=" . $pkOrderId . "&pkReturnId=" . $pkReturnId . "", $ApiToken, $ApiServer); 
 }
 
-public static function RefundOrder($pkOrderId,$ApiToken, $ApiServer)
+public static function RefundOrder($pkOrderId,$refundReference,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("ReturnsRefunds/RefundOrder", "pkOrderId=" . $pkOrderId . "", $ApiToken, $ApiServer); 
+ Factory::GetResponse("ReturnsRefunds/RefundOrder", "pkOrderId=" . $pkOrderId . "&refundReference=" . json_encode($refundReference) . "", $ApiToken, $ApiServer); 
 }
 
 public static function GetWarehouseLocations($ApiToken, $ApiServer)
@@ -62,17 +62,17 @@ public static function GetTotalRefunds($fkOrderId,$ApiToken, $ApiServer)
 
 public static function SearchReturnsRefundsPaged($from,$to,$dateType,$searchField,$exactMatch,$searchTerm,$pageNum,$numEntriesPerPage,$historyType,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("ReturnsRefunds/SearchReturnsRefundsPaged", "from=" . json_encode($from) . "&to=" . json_encode($to) . "&dateType=" . json_encode($dateType) . "&searchField=" . $searchField . "&exactMatch=" . $exactMatch . "&searchTerm=" . $searchTerm . "&pageNum=" . $pageNum . "&numEntriesPerPage=" . $numEntriesPerPage . "&historyType=" . json_encode($historyType) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("ReturnsRefunds/SearchReturnsRefundsPaged", "from=" . json_encode($from) . "&to=" . json_encode($to) . "&dateType=" . $dateType . "&searchField=" . $searchField . "&exactMatch=" . $exactMatch . "&searchTerm=" . $searchTerm . "&pageNum=" . $pageNum . "&numEntriesPerPage=" . $numEntriesPerPage . "&historyType=" . $historyType . "", $ApiToken, $ApiServer)); 
 }
 
 public static function CreateReturnsRefundsCSV($from,$to,$dateType,$searchField,$exactMatch,$searchTerm,$sortColumn,$sortDirection,$historyType,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", "from=" . json_encode($from) . "&to=" . json_encode($to) . "&dateType=" . json_encode($dateType) . "&searchField=" . $searchField . "&exactMatch=" . $exactMatch . "&searchTerm=" . $searchTerm . "&sortColumn=" . $sortColumn . "&sortDirection=" . $sortDirection . "&historyType=" . json_encode($historyType) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", "from=" . json_encode($from) . "&to=" . json_encode($to) . "&dateType=" . $dateType . "&searchField=" . $searchField . "&exactMatch=" . $exactMatch . "&searchTerm=" . $searchTerm . "&sortColumn=" . $sortColumn . "&sortDirection=" . $sortDirection . "&historyType=" . $historyType . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetSearchTypes($historyType,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("ReturnsRefunds/GetSearchTypes", "historyType=" . json_encode($historyType) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("ReturnsRefunds/GetSearchTypes", "historyType=" . $historyType . "", $ApiToken, $ApiServer)); 
 } 
 }
 ?>

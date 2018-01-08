@@ -1,7 +1,9 @@
 <?php
  class CreatePDFResult
-{ public $URL;
+{ public $KeyedError;
+public $URL;
 public $IdsProcessed;
+public $ProcessedIds;
 public $PrintErrors;
  
 } 

@@ -7,27 +7,27 @@ class RulesEngineMethods
 
 public static function GetEvaluationFields($type,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/GetEvaluationFields", "type=" . json_encode($type) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/GetEvaluationFields", "type=" . $type . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetOptions($fieldName,$type,$key,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/GetOptions", "fieldName=" . $fieldName . "&type=" . json_encode($type) . "&key=" . $key . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/GetOptions", "fieldName=" . $fieldName . "&type=" . $type . "&key=" . $key . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetMultiOptions($type,$fieldKeys,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/GetMultiOptions", "type=" . json_encode($type) . "&fieldKeys=" . json_encode($fieldKeys) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/GetMultiOptions", "type=" . $type . "&fieldKeys=" . json_encode($fieldKeys) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetKeyOptions($type,$fieldName,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/GetKeyOptions", "type=" . json_encode($type) . "&fieldName=" . $fieldName . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/GetKeyOptions", "type=" . $type . "&fieldName=" . $fieldName . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetMultiKeyOptions($type,$fieldNames,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/GetMultiKeyOptions", "type=" . json_encode($type) . "&fieldNames=" . json_encode($fieldNames) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/GetMultiKeyOptions", "type=" . $type . "&fieldNames=" . json_encode($fieldNames) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetRules($ApiToken, $ApiServer)
@@ -37,7 +37,7 @@ public static function GetRules($ApiToken, $ApiServer)
 
 public static function GetRulesByType($type,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/GetRulesByType", "type=" . json_encode($type) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/GetRulesByType", "type=" . $type . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetRuleConditionNodes($pkRuleId,$ApiToken, $ApiServer)
@@ -52,7 +52,7 @@ public static function GetConditionWeb($pkConditionId,$ApiToken, $ApiServer)
 
 public static function GetActionTypes($type,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/GetActionTypes", "type=" . json_encode($type) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/GetActionTypes", "type=" . $type . "", $ApiToken, $ApiServer)); 
 }
 
 public static function CreateNewCondition($header,$ApiToken, $ApiServer)
@@ -72,7 +72,7 @@ public static function CheckConditionNameExists($fkRuleId,$fkConditionId,$exclud
 
 public static function GetActionOptions($type,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/GetActionOptions", "type=" . json_encode($type) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/GetActionOptions", "type=" . $type . "", $ApiToken, $ApiServer)); 
 }
 
 public static function UpdateAction($action,$ApiToken, $ApiServer)
@@ -107,7 +107,7 @@ public static function GetRequiredFieldsByRuleId($pkRuleId,$ApiToken, $ApiServer
 
 public static function GetRequiredFieldsByType($type,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/GetRequiredFieldsByType", "type=" . json_encode($type) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/GetRequiredFieldsByType", "type=" . $type . "", $ApiToken, $ApiServer)); 
 }
 
 public static function TestEvaluateRule($testValues,$pkRuleId,$ApiToken, $ApiServer)
@@ -137,7 +137,7 @@ public static function CreateNewDraftFromExisting($pkRuleId,$ruleName,$ApiToken,
 
 public static function CreateNewDraft($ruleName,$type,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("RulesEngine/CreateNewDraft", "ruleName=" . $ruleName . "&type=" . json_encode($type) . "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("RulesEngine/CreateNewDraft", "ruleName=" . $ruleName . "&type=" . $type . "", $ApiToken, $ApiServer)); 
 }
 
 public static function SetRuleEnabled($pkRuleId,$enabled,$ApiToken, $ApiServer)

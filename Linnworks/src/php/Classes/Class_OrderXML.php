@@ -1,9 +1,9 @@
 <?php
  class OrderXML
-{ public $LineTag;
+{ public $pkOrderId;
+public $LineTag;
 public $Type;
-public $XML;
-public $XMLDoc;
+public $Document;
  
 } 
 ?>

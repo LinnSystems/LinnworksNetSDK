@@ -5,11 +5,13 @@ public $InOrder;
 public $Due;
 public $MinimumLevel;
 public $Available;
+public $CreationDate;
 public $IsCompositeParent;
 public $ItemNumber;
 public $ItemTitle;
 public $BarcodeNumber;
 public $MetaData;
+public $isBatchedStockType;
 public $PurchasePrice;
 public $RetailPrice;
 public $TaxRate;
@@ -23,6 +25,9 @@ public $Height;
 public $Width;
 public $Depth;
 public $Weight;
+public $InventoryTrackingType;
+public $BatchNumberScanRequired;
+public $SerialNumberScanRequired;
 public $StockItemId;
  
 } 

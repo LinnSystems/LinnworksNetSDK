@@ -1,10 +1,12 @@
 <?php
  class OrderNote
-{ public $OrderNoteId;
-public $NoteDate;
-public $Internal;
+{ public $pkOrderNoteId;
+public $fkOrderId;
 public $Note;
-public $CreatedBy;
+public $NoteEntryDate;
+public $NoteUserName;
+public $Internal;
+public $NoteTypeId;
  
 } 
 ?>

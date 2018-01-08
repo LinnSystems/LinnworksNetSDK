@@ -60,6 +60,16 @@ public static function Change_PurchaseOrderStatus($changeStatusParameter,$ApiTok
  return json_decode(Factory::GetResponse("PurchaseOrder/Change_PurchaseOrderStatus", "changeStatusParameter=" . json_encode($changeStatusParameter) . "", $ApiToken, $ApiServer)); 
 }
 
+public static function Deliver_PurchaseItemAll_ExceptBatchItems($purchaseId,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("PurchaseOrder/Deliver_PurchaseItemAll_ExceptBatchItems", "purchaseId=" . $purchaseId . "", $ApiToken, $ApiServer)); 
+}
+
+public static function Deliver_PurchaseItemAll($purchaseId,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("PurchaseOrder/Deliver_PurchaseItemAll", "purchaseId=" . $purchaseId . "", $ApiToken, $ApiServer)); 
+}
+
 public static function Deliver_PurchaseItem($deliverItemParameter,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("PurchaseOrder/Deliver_PurchaseItem", "deliverItemParameter=" . json_encode($deliverItemParameter) . "", $ApiToken, $ApiServer)); 
@@ -78,6 +88,26 @@ public static function Delete_PurchaseOrder($pkPurchaseId,$ApiToken, $ApiServer)
 public static function Get_PurchaseOrderAudit($auditLog,$ApiToken, $ApiServer)
 {
  return json_decode(Factory::GetResponse("PurchaseOrder/Get_PurchaseOrderAudit", "auditLog=" . json_encode($auditLog) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function Get_PurchaseOrderExtendedProperty($request,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("PurchaseOrder/Get_PurchaseOrderExtendedProperty", "request=" . json_encode($request) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function Add_PurchaseOrderExtendedProperty($request,$ApiToken, $ApiServer)
+{
+ return json_decode(Factory::GetResponse("PurchaseOrder/Add_PurchaseOrderExtendedProperty", "request=" . json_encode($request) . "", $ApiToken, $ApiServer)); 
+}
+
+public static function Update_PurchaseOrderExtendedProperty($request,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("PurchaseOrder/Update_PurchaseOrderExtendedProperty", "request=" . json_encode($request) . "", $ApiToken, $ApiServer); 
+}
+
+public static function Delete_PurchaseOrderExtendedProperty($request,$ApiToken, $ApiServer)
+{
+ Factory::GetResponse("PurchaseOrder/Delete_PurchaseOrderExtendedProperty", "request=" . json_encode($request) . "", $ApiToken, $ApiServer); 
 } 
 }
 ?>

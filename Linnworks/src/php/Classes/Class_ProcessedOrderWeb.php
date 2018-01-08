@@ -39,6 +39,7 @@ public $cFullName;
 public $cEmailAddress;
 public $cPostCode;
 public $dPaidOn;
+public $dCancelledOn;
 public $PackageCategory;
 public $PackageTitle;
 public $ItemWeight;
@@ -56,6 +57,8 @@ public $BillingPostCode;
 public $BillingCountryName;
 public $BillingPhoneNumber;
 public $HoldOrCancel;
+public $IsResend;
+public $IsExchange;
  
 } 
 ?>

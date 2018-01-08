@@ -27,7 +27,7 @@ public static function GetImports($ApiToken, $ApiServer)
 
 public static function DownloadImportedFile($fileId,$ApiToken, $ApiServer)
 {
- Factory::GetResponse("ImportExport/DownloadImportedFile", "fileId=" . $fileId . "", $ApiToken, $ApiServer); 
+ return json_decode(Factory::GetResponse("ImportExport/DownloadImportedFile", "fileId=" . $fileId . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetFullfilmentCenterSettings($fkStockLocationId,$ApiToken, $ApiServer)

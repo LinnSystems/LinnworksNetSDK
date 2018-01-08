@@ -1,6 +1,7 @@
 <?php
  class RowQty
 { public $OrderItemRowId;
+public $OrderItemBatchId;
 public $Refund;
 public $Qty;
 public $ScrapQty;

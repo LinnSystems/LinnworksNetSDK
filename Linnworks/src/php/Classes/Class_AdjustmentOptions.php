@@ -6,6 +6,7 @@ public $Description;
 public $AddExtendedProperties;
 public $ReviseExtendedProperties;
 public $UpdateImages;
+public $VariationAttributes;
  
 } 
 ?>

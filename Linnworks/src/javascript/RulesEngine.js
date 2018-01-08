@@ -8,27 +8,27 @@ var RulesEngine =
 	// http://apidoc.linnworks.net/#/RulesEngine-GetEvaluationFields
 	GetEvaluationFields: function(type,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/GetEvaluationFields", token, server, "type=" + JSON.stringify(type) +"");
+		return Factory.GetResponse("RulesEngine/GetEvaluationFields", token, server, "type=" + type +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-GetOptions
 	GetOptions: function(fieldName,type,key,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/GetOptions", token, server, "fieldName=" + fieldName + "&type=" + JSON.stringify(type) + "&key=" + key +"");
+		return Factory.GetResponse("RulesEngine/GetOptions", token, server, "fieldName=" + fieldName + "&type=" + type + "&key=" + key +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-GetMultiOptions
 	GetMultiOptions: function(type,fieldKeys,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/GetMultiOptions", token, server, "type=" + JSON.stringify(type) + "&fieldKeys=" + JSON.stringify(fieldKeys) +"");
+		return Factory.GetResponse("RulesEngine/GetMultiOptions", token, server, "type=" + type + "&fieldKeys=" + JSON.stringify(fieldKeys) +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-GetKeyOptions
 	GetKeyOptions: function(type,fieldName,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/GetKeyOptions", token, server, "type=" + JSON.stringify(type) + "&fieldName=" + fieldName +"");
+		return Factory.GetResponse("RulesEngine/GetKeyOptions", token, server, "type=" + type + "&fieldName=" + fieldName +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-GetMultiKeyOptions
 	GetMultiKeyOptions: function(type,fieldNames,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/GetMultiKeyOptions", token, server, "type=" + JSON.stringify(type) + "&fieldNames=" + JSON.stringify(fieldNames) +"");
+		return Factory.GetResponse("RulesEngine/GetMultiKeyOptions", token, server, "type=" + type + "&fieldNames=" + JSON.stringify(fieldNames) +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-GetRules
 	GetRules: function(token, server)
@@ -38,7 +38,7 @@ var RulesEngine =
 	// http://apidoc.linnworks.net/#/RulesEngine-GetRulesByType
 	GetRulesByType: function(type,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/GetRulesByType", token, server, "type=" + JSON.stringify(type) +"");
+		return Factory.GetResponse("RulesEngine/GetRulesByType", token, server, "type=" + type +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-GetRuleConditionNodes
 	GetRuleConditionNodes: function(pkRuleId,token, server)
@@ -53,7 +53,7 @@ var RulesEngine =
 	// http://apidoc.linnworks.net/#/RulesEngine-GetActionTypes
 	GetActionTypes: function(type,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/GetActionTypes", token, server, "type=" + JSON.stringify(type) +"");
+		return Factory.GetResponse("RulesEngine/GetActionTypes", token, server, "type=" + type +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-CreateNewCondition
 	CreateNewCondition: function(header,token, server)
@@ -68,12 +68,12 @@ var RulesEngine =
 	// http://apidoc.linnworks.net/#/RulesEngine-CheckConditionNameExists
 	CheckConditionNameExists: function(fkRuleId,fkConditionId,excludeConditionId,conditionName,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/CheckConditionNameExists", token, server, "fkRuleId=" + fkRuleId + "&fkConditionId=" + fkConditionId + "&excludeConditionId=" + excludeConditionId + "&conditionName=" + conditionName +"");
+		return Factory.GetResponse("RulesEngine/CheckConditionNameExists", token, server, "fkRuleId=" + fkRuleId + "&fkConditionId=" + JSON.stringify(fkConditionId) + "&excludeConditionId=" + JSON.stringify(excludeConditionId) + "&conditionName=" + conditionName +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-GetActionOptions
 	GetActionOptions: function(type,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/GetActionOptions", token, server, "type=" + JSON.stringify(type) +"");
+		return Factory.GetResponse("RulesEngine/GetActionOptions", token, server, "type=" + type +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-UpdateAction
 	UpdateAction: function(action,token, server)
@@ -108,7 +108,7 @@ var RulesEngine =
 	// http://apidoc.linnworks.net/#/RulesEngine-GetRequiredFieldsByType
 	GetRequiredFieldsByType: function(type,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/GetRequiredFieldsByType", token, server, "type=" + JSON.stringify(type) +"");
+		return Factory.GetResponse("RulesEngine/GetRequiredFieldsByType", token, server, "type=" + type +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-TestEvaluateRule
 	TestEvaluateRule: function(testValues,pkRuleId,token, server)
@@ -138,7 +138,7 @@ var RulesEngine =
 	// http://apidoc.linnworks.net/#/RulesEngine-CreateNewDraft
 	CreateNewDraft: function(ruleName,type,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/CreateNewDraft", token, server, "ruleName=" + ruleName + "&type=" + JSON.stringify(type) +"");
+		return Factory.GetResponse("RulesEngine/CreateNewDraft", token, server, "ruleName=" + ruleName + "&type=" + type +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-SetRuleEnabled
 	SetRuleEnabled: function(pkRuleId,enabled,token, server)
@@ -168,7 +168,7 @@ var RulesEngine =
 	// http://apidoc.linnworks.net/#/RulesEngine-CopyCondition
 	CopyCondition: function(pkRuleId,targetParentConditionId,pkConditionId,includeChildren,includeActions,token, server)
 	{
-		return Factory.GetResponse("RulesEngine/CopyCondition", token, server, "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + targetParentConditionId + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions +"");
+		return Factory.GetResponse("RulesEngine/CopyCondition", token, server, "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + JSON.stringify(targetParentConditionId) + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions +"");
 	},
 	// http://apidoc.linnworks.net/#/RulesEngine-CopyAction
 	CopyAction: function(pkRuleId,targetParentConditionId,pkActionId,token, server)

@@ -1,29 +1,9 @@
 var Auth =
 {
-	// http://apidoc.linnworks.net/#/Auth-GetDebugInformation
-	GetDebugInformation: function(key,password)
+	// http://apidoc.linnworks.net/#/Auth-GetApplicationProfileBySecretKey
+	GetApplicationProfileBySecretKey: function(applicationId,applicationSecret,userId)
 	{
-		return Factory.GetResponse("Auth/GetDebugInformation", "", "", "key=" + key + "&password=" + password +"");
-	},
-	// http://apidoc.linnworks.net/#/Auth-MultiLogin
-	MultiLogin: function(userName,password)
-	{
-		return Factory.GetResponse("Auth/MultiLogin", "", "", "userName=" + userName + "&password=" + password +"");
-	},
-	// http://apidoc.linnworks.net/#/Auth-Authorize
-	Authorize: function(userName,password,userId)
-	{
-		return Factory.GetResponse("Auth/Authorize", "", "", "userName=" + userName + "&password=" + password + "&userId=" + userId +"");
-	},
-	// http://apidoc.linnworks.net/#/Auth-ResetPassword
-	ResetPassword: function(userName,resetToken,newPassword,confirmNewPassword)
-	{
-		return Factory.GetResponse("Auth/ResetPassword", "", "", "userName=" + userName + "&resetToken=" + resetToken + "&newPassword=" + newPassword + "&confirmNewPassword=" + confirmNewPassword +"");
-	},
-	// http://apidoc.linnworks.net/#/Auth-ResetPasswordRequest
-	ResetPasswordRequest: function(userName)
-	{
-		return Factory.GetResponse("Auth/ResetPasswordRequest", "", "", "userName=" + userName +"");
+		return Factory.GetResponse("Auth/GetApplicationProfileBySecretKey", "", "", "applicationId=" + applicationId + "&applicationSecret=" + applicationSecret + "&userId=" + userId +"");
 	},
 	// http://apidoc.linnworks.net/#/Auth-AuthorizeByApplication
 	AuthorizeByApplication: function(applicationId,applicationSecret,token)

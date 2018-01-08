@@ -1,8 +1,11 @@
 <?php
  class StockItemImage
-{ public $pkRowId;
-public $Source;
+{ public $Source;
+public $FullSource;
+public $CheckSumValue;
+public $pkRowId;
 public $IsMain;
+public $SortOrder;
 public $StockItemId;
  
 } 

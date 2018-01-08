@@ -5,6 +5,7 @@ public $ALLDATES;
 public $RECEIVED;
 public $PROCESSED;
 public $PAYMENTRECEIVED;
+public $CANCELLED;
  
 } 
 ?>

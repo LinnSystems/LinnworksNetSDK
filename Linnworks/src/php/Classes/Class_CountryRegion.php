@@ -6,6 +6,8 @@ public $RegionName;
 public $TaxRate;
 public $fkCountryId;
 public $ReplaceWith;
+public $IsHomeRegion;
+public $TagsCount;
  
 } 
 ?>

@@ -108,7 +108,7 @@ var WarehouseTransfer =
 	// http://apidoc.linnworks.net/#/WarehouseTransfer-ChangeTransferItemReceivedQuantity
 	ChangeTransferItemReceivedQuantity: function(pkTransferId,pkBinId,pkTransferItemId,Quantity,token, server)
 	{
-		return Factory.GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", token, server, "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + Quantity +"");
+		return Factory.GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", token, server, "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + JSON.stringify(Quantity) +"");
 	},
 	// http://apidoc.linnworks.net/#/WarehouseTransfer-GetTransferNotes
 	GetTransferNotes: function(pkTransferId,token, server)

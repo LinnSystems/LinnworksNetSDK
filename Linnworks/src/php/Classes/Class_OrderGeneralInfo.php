@@ -5,6 +5,7 @@ public $LabelPrinted;
 public $LabelError;
 public $InvoicePrinted;
 public $PickListPrinted;
+public $IsRuleRun;
 public $Notes;
 public $PartShipped;
 public $Marker;
@@ -18,6 +19,7 @@ public $HoldOrCancel;
 public $DespatchByDate;
 public $Location;
 public $NumItems;
+public $RulesEngine;
  
 } 
 ?>

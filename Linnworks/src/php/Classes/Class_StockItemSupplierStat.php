@@ -13,6 +13,7 @@ public $AveragePrice;
 public $AverageLeadTime;
 public $SupplierMinOrderQty;
 public $SupplierPackSize;
+public $SupplierCurrency;
 public $StockItemId;
  
 } 

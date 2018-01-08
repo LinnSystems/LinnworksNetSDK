@@ -6,9 +6,9 @@ var ReturnsRefunds =
 		return Factory.GetResponse("ReturnsRefunds/GetRefundOrders", token, server, "");
 	},
 	// http://apidoc.linnworks.net/#/ReturnsRefunds-GetRefunds
-	GetRefunds: function(pkOrderId,token, server)
+	GetRefunds: function(pkOrderId,refundReference,token, server)
 	{
-		return Factory.GetResponse("ReturnsRefunds/GetRefunds", token, server, "pkOrderId=" + pkOrderId +"");
+		return Factory.GetResponse("ReturnsRefunds/GetRefunds", token, server, "pkOrderId=" + pkOrderId + "&refundReference=" + JSON.stringify(refundReference) +"");
 	},
 	// http://apidoc.linnworks.net/#/ReturnsRefunds-GetBookedReturnsExchangeOrders
 	GetBookedReturnsExchangeOrders: function(token, server)
@@ -36,9 +36,9 @@ var ReturnsRefunds =
 		return Factory.GetResponse("ReturnsRefunds/DeleteBookedItem", token, server, "pkOrderId=" + pkOrderId + "&pkReturnId=" + pkReturnId +"");
 	},
 	// http://apidoc.linnworks.net/#/ReturnsRefunds-RefundOrder
-	RefundOrder: function(pkOrderId,token, server)
+	RefundOrder: function(pkOrderId,refundReference,token, server)
 	{
-		return Factory.GetResponse("ReturnsRefunds/RefundOrder", token, server, "pkOrderId=" + pkOrderId +"");
+		return Factory.GetResponse("ReturnsRefunds/RefundOrder", token, server, "pkOrderId=" + pkOrderId + "&refundReference=" + JSON.stringify(refundReference) +"");
 	},
 	// http://apidoc.linnworks.net/#/ReturnsRefunds-GetWarehouseLocations
 	GetWarehouseLocations: function(token, server)
@@ -63,31 +63,16 @@ var ReturnsRefunds =
 	// http://apidoc.linnworks.net/#/ReturnsRefunds-SearchReturnsRefundsPaged
 	SearchReturnsRefundsPaged: function(from,to,dateType,searchField,exactMatch,searchTerm,pageNum,numEntriesPerPage,historyType,token, server)
 	{
-		return Factory.GetResponse("ReturnsRefunds/SearchReturnsRefundsPaged", token, server, "from=" + JSON.stringify(from) + "&to=" + JSON.stringify(to) + "&dateType=" + JSON.stringify(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "&historyType=" + JSON.stringify(historyType) +"");
+		return Factory.GetResponse("ReturnsRefunds/SearchReturnsRefundsPaged", token, server, "from=" + JSON.stringify(from) + "&to=" + JSON.stringify(to) + "&dateType=" + dateType + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "&historyType=" + historyType +"");
 	},
 	// http://apidoc.linnworks.net/#/ReturnsRefunds-CreateReturnsRefundsCSV
 	CreateReturnsRefundsCSV: function(from,to,dateType,searchField,exactMatch,searchTerm,sortColumn,sortDirection,historyType,token, server)
 	{
-		return Factory.GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", token, server, "from=" + JSON.stringify(from) + "&to=" + JSON.stringify(to) + "&dateType=" + JSON.stringify(dateType) + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection + "&historyType=" + JSON.stringify(historyType) +"");
-	},
-	// http://apidoc.linnworks.net/#/ReturnsRefunds-GetColumns
-	GetColumns: function(historyType,token, server)
-	{
-		return Factory.GetResponse("ReturnsRefunds/GetColumns", token, server, "historyType=" + JSON.stringify(historyType) +"");
+		return Factory.GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", token, server, "from=" + JSON.stringify(from) + "&to=" + JSON.stringify(to) + "&dateType=" + dateType + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection + "&historyType=" + historyType +"");
 	},
 	// http://apidoc.linnworks.net/#/ReturnsRefunds-GetSearchTypes
 	GetSearchTypes: function(historyType,token, server)
 	{
-		return Factory.GetResponse("ReturnsRefunds/GetSearchTypes", token, server, "historyType=" + JSON.stringify(historyType) +"");
-	},
-	// http://apidoc.linnworks.net/#/ReturnsRefunds-SetColumnSortOrder
-	SetColumnSortOrder: function(sortColumn,sortAsc,historyType,token, server)
-	{
-		return Factory.GetResponse("ReturnsRefunds/SetColumnSortOrder", token, server, "sortColumn=" + sortColumn + "&sortAsc=" + sortAsc + "&historyType=" + JSON.stringify(historyType) +"");
-	},
-	// http://apidoc.linnworks.net/#/ReturnsRefunds-SetColumns
-	SetColumns: function(columns,changeSortColumn,sortColumn,sortAsc,historyType,token, server)
-	{
-		return Factory.GetResponse("ReturnsRefunds/SetColumns", token, server, "columns=" + JSON.stringify(columns) + "&changeSortColumn=" + changeSortColumn + "&sortColumn=" + sortColumn + "&sortAsc=" + sortAsc + "&historyType=" + JSON.stringify(historyType) +"");
+		return Factory.GetResponse("ReturnsRefunds/GetSearchTypes", token, server, "historyType=" + historyType +"");
 	},
 };

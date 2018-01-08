@@ -1,0 +1,8 @@
+C:\Users\peal\Downloads\net\net\LinnworksAPI\bin\Debug\LinnworksAPI.dll
+C:\Users\peal\Downloads\net\net\LinnworksAPI\bin\Debug\LinnworksAPI.pdb
+C:\Users\peal\Downloads\net\net\LinnworksAPI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\peal\Downloads\net\net\LinnworksAPI\bin\Debug\System.Net.Http.dll
+C:\Users\peal\Downloads\net\net\LinnworksAPI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\peal\Downloads\net\net\LinnworksAPI\bin\Debug\System.Net.Http.xml
+C:\Users\peal\Downloads\net\net\LinnworksAPI\obj\Debug\LinnworksAPI.dll
+C:\Users\peal\Downloads\net\net\LinnworksAPI\obj\Debug\LinnworksAPI.pdb

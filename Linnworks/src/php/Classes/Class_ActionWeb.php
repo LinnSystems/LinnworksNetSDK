@@ -4,7 +4,7 @@
 public $fkConditionId;
 public $ActionName;
 public $ActionType;
-public $ActionValue;
+public $Properties;
  
 } 
 ?>

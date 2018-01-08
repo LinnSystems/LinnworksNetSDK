@@ -1,6 +1,8 @@
 <?php
  class Channel
-{ public $Source;
+{ public $pkPostalServiceId;
+public $PostalServiceName;
+public $Source;
 public $SubSource;
  
 } 

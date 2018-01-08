@@ -4,7 +4,7 @@ using System.Net;
 
 public static class Factory
 {
-    public static string GetResponse(string Extension, string Body, string Token, string Server)
+    public static string GetResponse(string Extension, string Body, Guid Token, string Server)
     {
         if (string.IsNullOrEmpty(Server))
         {
@@ -20,9 +20,9 @@ public static class Factory
         Request.ContentType = "application/x-www-form-urlencoded";
         Request.Method = "POST";
 
-        if (!string.IsNullOrEmpty(Token))
+        if (Token != Guid.Empty)
         {
-            Request.Headers.Add("Authorization", Token);
+            Request.Headers.Add("Authorization", Token.ToString());
         }
 
         using (StreamWriter writer = new StreamWriter(Request.GetRequestStream()))

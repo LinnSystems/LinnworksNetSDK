@@ -1,6 +1,7 @@
 <?php
  class ExportRegister
-{ public $LastExportStatus;
+{ public $LastQueryExecuted;
+public $LastExportStatus;
 public $Id;
 public $Type;
 public $FriendlyName;

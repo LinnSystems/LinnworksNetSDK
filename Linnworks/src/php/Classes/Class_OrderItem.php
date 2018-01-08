@@ -34,11 +34,17 @@ public $BarcodeNumber;
 public $Market;
 public $ChannelSKU;
 public $ChannelTitle;
+public $DiscountValue;
 public $HasImage;
 public $ImageId;
 public $AdditionalInfo;
 public $StockLevelIndicator;
+public $BatchNumberScanRequired;
+public $SerialNumberScanRequired;
 public $BinRack;
+public $BinRacks;
+public $InventoryTrackingType;
+public $isBatchedStockItem;
  
 } 
 ?>

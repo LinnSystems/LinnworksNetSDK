@@ -17,6 +17,10 @@ public $GroupName;
 public $Locality;
 public $Properties;
 public $Cache;
+public $Permissions;
+public $MemoryCache;
+public $IsSandbox;
+public $IsLocalhost;
  
 } 
 ?>
