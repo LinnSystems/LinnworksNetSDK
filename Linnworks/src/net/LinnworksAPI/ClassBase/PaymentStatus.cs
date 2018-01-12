@@ -13,8 +13,9 @@ using System.Reflection;
 namespace LinnworksAPI
 { [JsonConverter(typeof(StringEnumConverter))]
 public enum PaymentStatus
-{ Completed,
-Failed,
+{ Unpaid,
+Paid,
+Cancelled,
  
 } 
 }

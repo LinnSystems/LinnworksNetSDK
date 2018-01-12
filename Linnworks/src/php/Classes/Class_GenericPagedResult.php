@@ -1,5 +1,5 @@
 <?php
- class GenericPagedResult<VariationGroup>
+ class GenericPagedResult<ScrapItem>
 { public $PageNumber;
 public $EntriesPerPage;
 public $TotalEntries;

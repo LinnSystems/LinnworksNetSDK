@@ -13,13 +13,14 @@ using System.Reflection;
 namespace LinnworksAPI
 { [JsonConverter(typeof(StringEnumConverter))]
 public enum FieldType
-{ Default,
-String,
-Int,
-Bool,
-Guid,
-Float,
+{ Int,
 Double,
+String,
+Boolean,
+Select,
+Date,
+Channel,
+Other,
  
 } 
 }

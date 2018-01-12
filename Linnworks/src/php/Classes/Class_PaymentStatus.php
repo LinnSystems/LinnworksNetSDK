@@ -1,8 +1,9 @@
 <?php
  class PaymentStatus
 { public $value__;
-public $Completed;
-public $Failed;
+public $Unpaid;
+public $Paid;
+public $Cancelled;
  
 } 
 ?>
