@@ -30,10 +30,10 @@ var ImportExport =
 	{
 		return Factory.GetResponse("ImportExport/GetExport", token, server, "id=" + id +"");
 	},
-	// http://apidoc.linnworks.net/#/ImportExport-GetExports
-	GetExports: function(token, server)
+	// http://apidoc.linnworks.net/#/ImportExport-GetExportList
+	GetExportList: function(request,token, server)
 	{
-		return Factory.GetResponse("ImportExport/GetExports", token, server, "");
+		return Factory.GetResponse("ImportExport/GetExportList", token, server, "request=" + JSON.stringify(request) +"");
 	},
 	// http://apidoc.linnworks.net/#/ImportExport-GetFullfilmentCenterSettings
 	GetFullfilmentCenterSettings: function(fkStockLocationId,token, server)
@@ -45,10 +45,10 @@ var ImportExport =
 	{
 		return Factory.GetResponse("ImportExport/GetImport", token, server, "id=" + id +"");
 	},
-	// http://apidoc.linnworks.net/#/ImportExport-GetImports
-	GetImports: function(token, server)
+	// http://apidoc.linnworks.net/#/ImportExport-GetImportList
+	GetImportList: function(request,token, server)
 	{
-		return Factory.GetResponse("ImportExport/GetImports", token, server, "");
+		return Factory.GetResponse("ImportExport/GetImportList", token, server, "request=" + JSON.stringify(request) +"");
 	},
 	// http://apidoc.linnworks.net/#/ImportExport-RunNowExport
 	RunNowExport: function(exportId,token, server)

@@ -18,7 +18,11 @@ namespace LinnworksAPI
 		public Boolean AutomaticallyLinkBySKU;
 		public String Site;
 		public String MatchPostalServiceTag;
+		public String PostalServiceName;
+		public Boolean SavePostalServiceIfNotExist;
 		public String MatchPaymentMethodTag;
+		public String PaymentMethodName;
+		public Boolean SavePaymentMethodIfNotExist;
 		public String MappingSource;
 		public OrderState OrderState;
 		public PaymentStatus PaymentStatus;

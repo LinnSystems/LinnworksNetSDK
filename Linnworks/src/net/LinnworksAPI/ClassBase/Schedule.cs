@@ -17,6 +17,7 @@ namespace LinnworksAPI
 		public Int32 Id;
 		public Int32 Order;
 		public String Name;
+		public String ScheduleXML;
 		public ScheduleConfiguration Configuration;
 	} 
 }

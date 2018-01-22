@@ -12,6 +12,7 @@ public $PackSize;
 public $SKU;
 public $ItemTitle;
 public $InventoryTrackingType;
+public $IsDeleted;
  
 } 
 ?>

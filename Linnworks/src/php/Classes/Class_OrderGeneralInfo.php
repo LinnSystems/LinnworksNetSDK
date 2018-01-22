@@ -15,6 +15,7 @@ public $ExternalReferenceNum;
 public $ReceivedDate;
 public $Source;
 public $SubSource;
+public $SiteCode;
 public $HoldOrCancel;
 public $DespatchByDate;
 public $Location;

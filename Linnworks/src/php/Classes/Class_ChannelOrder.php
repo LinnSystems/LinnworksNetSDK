@@ -4,7 +4,11 @@
 public $AutomaticallyLinkBySKU;
 public $Site;
 public $MatchPostalServiceTag;
+public $PostalServiceName;
+public $SavePostalServiceIfNotExist;
 public $MatchPaymentMethodTag;
+public $PaymentMethodName;
+public $SavePaymentMethodIfNotExist;
 public $MappingSource;
 public $OrderState;
 public $PaymentStatus;

@@ -39,8 +39,8 @@ namespace LinnworksAPI
 			return Newtonsoft.Json.JsonConvert.DeserializeObject<Export>(Factory.GetResponse("ImportExport/GetExport", "id=" + id + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 		}
 
-		public static List<ExportRegister> GetExports(Guid ApiToken, String ApiServer)		{
-			return Newtonsoft.Json.JsonConvert.DeserializeObject<List<ExportRegister>>(Factory.GetResponse("ImportExport/GetExports", "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+		public static GetExportListResponse GetExportList(GetExportListRequest request,Guid ApiToken, String ApiServer)		{
+			return Newtonsoft.Json.JsonConvert.DeserializeObject<GetExportListResponse>(Factory.GetResponse("ImportExport/GetExportList", "request=" + Newtonsoft.Json.JsonConvert.SerializeObject(request, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 		}
 
 		public static FulfilmentCenterImportExportSettings GetFullfilmentCenterSettings(Guid fkStockLocationId,Guid ApiToken, String ApiServer)		{
@@ -51,8 +51,8 @@ namespace LinnworksAPI
 			return Newtonsoft.Json.JsonConvert.DeserializeObject<Import>(Factory.GetResponse("ImportExport/GetImport", "id=" + id + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 		}
 
-		public static IEnumerable<ImportRegister> GetImports(Guid ApiToken, String ApiServer)		{
-			return Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<ImportRegister>>(Factory.GetResponse("ImportExport/GetImports", "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
+		public static GetImportListResponse GetImportList(GetImportListRequest request,Guid ApiToken, String ApiServer)		{
+			return Newtonsoft.Json.JsonConvert.DeserializeObject<GetImportListResponse>(Factory.GetResponse("ImportExport/GetImportList", "request=" + Newtonsoft.Json.JsonConvert.SerializeObject(request, serializerSettings) + "", ApiToken, ApiServer), new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}); 
 		}
 
 		public static void RunNowExport(Int32 exportId,Guid ApiToken, String ApiServer)		{

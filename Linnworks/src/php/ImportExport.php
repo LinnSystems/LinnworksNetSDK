@@ -30,9 +30,9 @@ public static function GetExport($id,$ApiToken, $ApiServer)
  return json_decode(Factory::GetResponse("ImportExport/GetExport", "id=" . $id . "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetExports($ApiToken, $ApiServer)
+public static function GetExportList($request,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("ImportExport/GetExports", "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("ImportExport/GetExportList", "request=" . json_encode($request) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function GetFullfilmentCenterSettings($fkStockLocationId,$ApiToken, $ApiServer)
@@ -45,9 +45,9 @@ public static function GetImport($id,$ApiToken, $ApiServer)
  return json_decode(Factory::GetResponse("ImportExport/GetImport", "id=" . $id . "", $ApiToken, $ApiServer)); 
 }
 
-public static function GetImports($ApiToken, $ApiServer)
+public static function GetImportList($request,$ApiToken, $ApiServer)
 {
- return json_decode(Factory::GetResponse("ImportExport/GetImports", "", $ApiToken, $ApiServer)); 
+ return json_decode(Factory::GetResponse("ImportExport/GetImportList", "request=" . json_encode($request) . "", $ApiToken, $ApiServer)); 
 }
 
 public static function RunNowExport($exportId,$ApiToken, $ApiServer)

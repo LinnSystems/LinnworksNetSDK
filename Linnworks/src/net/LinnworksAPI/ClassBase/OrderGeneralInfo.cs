@@ -29,6 +29,7 @@ namespace LinnworksAPI
 		public DateTime ReceivedDate;
 		public String Source;
 		public String SubSource;
+		public String SiteCode;
 		public Boolean HoldOrCancel;
 		public DateTime DespatchByDate;
 		public Guid Location;

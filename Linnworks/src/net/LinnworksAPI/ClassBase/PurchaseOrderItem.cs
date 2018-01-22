@@ -26,5 +26,6 @@ namespace LinnworksAPI
 		public String SKU;
 		public String ItemTitle;
 		public Int32 InventoryTrackingType;
+		public Boolean IsDeleted;
 	} 
 }
