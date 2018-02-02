@@ -13,9 +13,8 @@ namespace LinnMacroCustomer
             Guid secretKey;
             Guid token;
 
-            var session = Authorize(applicationId, secretKey, token);
 
-            var context = new LinnworksAPI.ApiContext(session.Token, session.Server);
+            var context = new LinnworksAPI.ApiContext(new Guid("ddde1007-e273-42e9-b964-3f716ddf0978"), "https://eu-ext.linnworks.net");
 
             var macro = new LinnworksMacro.LinnworksMacro()
             {
