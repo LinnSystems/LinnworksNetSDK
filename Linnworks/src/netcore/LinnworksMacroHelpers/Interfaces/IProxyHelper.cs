@@ -31,6 +31,7 @@ namespace LinnworksMacroHelpers.Interfaces
     public interface IProxyFactory
     {
         ProxyUpload<FtpSettings, FtpUploadResult> GetFtpUploadProxy(FtpSettings settings);
+        Stream DownloadFtpFile(FtpSettings settings);
         ProxiedWebResponse WebRequest(ProxiedWebRequest request);
     }
 }
