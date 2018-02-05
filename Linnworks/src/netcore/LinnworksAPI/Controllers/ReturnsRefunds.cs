@@ -101,7 +101,11 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<BookedReturnsExchangeOrder>>(response);
 		}
 
-		public OrderRefundLinesPaged GetNotActionedRefundLines(Int32 page)
+		/// <summary>
+        /// Returns a paged list of booked refund lines 
+        /// </summary>
+        /// <param name="page">The page number to retrieve</param>
+        public OrderRefundLinesPaged GetNotActionedRefundLines(Int32 page)
 		{
 			var response = GetResponse("ReturnsRefunds/GetNotActionedRefundLines", "page=" + page + "");
             return JsonFormatter.ConvertFromJson<OrderRefundLinesPaged>(response);
@@ -161,7 +165,13 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<WarehouseLocation>>(response);
 		}
 
-		public void RefundOrder(Guid pkOrderId,String refundReference)
+		/// <summary>
+        /// Refund an order given the order ID 
+        /// </summary>
+        /// <param name="pkOrderId">unique ID of the order</param>
+        /// <param name="refundReference">Refund Reference Id</param>
+        /// <returns>List of refund order items</returns>
+        public void RefundOrder(Guid pkOrderId,String refundReference)
 		{
 			GetResponse("ReturnsRefunds/RefundOrder", "pkOrderId=" + pkOrderId + "&refundReference=" + refundReference + "");
 		}
