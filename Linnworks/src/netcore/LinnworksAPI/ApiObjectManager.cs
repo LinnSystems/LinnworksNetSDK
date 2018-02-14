@@ -6,6 +6,7 @@ namespace LinnworksAPI
         private AuthController auth;
         private CustomerController customer;
         private DashboardsController dashboards;
+        private EmailController email;
         private ImportExportController importexport;
         private InventoryController inventory;
         private LocationsController locations;
@@ -47,6 +48,14 @@ namespace LinnworksAPI
             get
             {
                 return dashboards ?? (dashboards = new DashboardsController(apiContext));
+            }
+        }
+
+        public EmailController Email
+        {
+            get
+            {
+                return email ?? (email = new EmailController(apiContext));
             }
         }
 
