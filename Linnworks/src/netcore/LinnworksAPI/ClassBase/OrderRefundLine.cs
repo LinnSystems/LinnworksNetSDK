@@ -28,6 +28,8 @@ namespace LinnworksAPI
 
 		public Double OrderTaxrate;
 
+		public String RefundLink;
+
 		public String SKU;
 
 		public String ChannelSKU;

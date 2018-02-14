@@ -12,7 +12,7 @@ namespace LinnworksAPI
 
 		public List<String> FilterNameExact;
 
-		public FieldType Field;
+		public InventoryFieldType Field;
 
 		public ConditionType Condition;
 

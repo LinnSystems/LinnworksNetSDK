@@ -6,18 +6,18 @@ namespace LinnworksAPI
 { 
     public class ScriptParameter
 	{
-		public Int32 Length;
+		public String Type;
 
-		public Int64 LongLength;
+		public String Name;
 
-		public Int32 Rank;
+		public String Description;
 
-		public Object SyncRoot;
+		public String DefaultValue;
 
-		public Boolean IsReadOnly;
+		public String DropDownQuery;
 
-		public Boolean IsFixedSize;
+		public Object[] AvailableValues;
 
-		public Boolean IsSynchronized;
+		public Object Value;
 	} 
 }

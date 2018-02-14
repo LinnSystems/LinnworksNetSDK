@@ -33,7 +33,7 @@ namespace LinnworksAPI
         /// <returns>True if it exists, False if it does not.</returns>
         public Boolean CheckConditionNameExists(Int32 fkRuleId,Int32? fkConditionId,Int32? excludeConditionId,String conditionName)
 		{
-			var response = GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + JsonFormatter.ConvertToJson(fkConditionId) + "&excludeConditionId=" + JsonFormatter.ConvertToJson(excludeConditionId) + "&conditionName=" + conditionName + "");
+			var response = GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + JsonFormatter.ConvertToJson(fkConditionId) + "&excludeConditionId=" + JsonFormatter.ConvertToJson(excludeConditionId) + "&conditionName=" + System.Net.WebUtility.UrlEncode(conditionName) + "");
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
@@ -95,7 +95,7 @@ namespace LinnworksAPI
         /// <returns>The rule header.</returns>
         public RuleHeaderBasic CreateNewDraft(String ruleName,RuleSetType type)
 		{
-			var response = GetResponse("RulesEngine/CreateNewDraft", "ruleName=" + ruleName + "&type=" + type.ToString() + "");
+			var response = GetResponse("RulesEngine/CreateNewDraft", "ruleName=" + System.Net.WebUtility.UrlEncode(ruleName) + "&type=" + type.ToString() + "");
             return JsonFormatter.ConvertFromJson<RuleHeaderBasic>(response);
 		}
 
@@ -107,7 +107,7 @@ namespace LinnworksAPI
         /// <returns>The rule header.</returns>
         public RuleHeaderBasic CreateNewDraftFromExisting(Int32 pkRuleId,String ruleName)
 		{
-			var response = GetResponse("RulesEngine/CreateNewDraftFromExisting", "pkRuleId=" + pkRuleId + "&ruleName=" + ruleName + "");
+			var response = GetResponse("RulesEngine/CreateNewDraftFromExisting", "pkRuleId=" + pkRuleId + "&ruleName=" + System.Net.WebUtility.UrlEncode(ruleName) + "");
             return JsonFormatter.ConvertFromJson<RuleHeaderBasic>(response);
 		}
 
@@ -200,7 +200,7 @@ namespace LinnworksAPI
         /// <returns>Returns a valid list of keys (e.g. for extended properties, a list of existing property names)</returns>
         public List<String> GetKeyOptions(RuleSetType type,String fieldName)
 		{
-			var response = GetResponse("RulesEngine/GetKeyOptions", "type=" + type.ToString() + "&fieldName=" + fieldName + "");
+			var response = GetResponse("RulesEngine/GetKeyOptions", "type=" + type.ToString() + "&fieldName=" + System.Net.WebUtility.UrlEncode(fieldName) + "");
             return JsonFormatter.ConvertFromJson<List<String>>(response);
 		}
 
@@ -237,7 +237,7 @@ namespace LinnworksAPI
         /// <returns>Returns a list of options.</returns>
         public List<String> GetOptions(String fieldName,RuleSetType type,String key)
 		{
-			var response = GetResponse("RulesEngine/GetOptions", "fieldName=" + fieldName + "&type=" + type.ToString() + "&key=" + key + "");
+			var response = GetResponse("RulesEngine/GetOptions", "fieldName=" + System.Net.WebUtility.UrlEncode(fieldName) + "&type=" + type.ToString() + "&key=" + System.Net.WebUtility.UrlEncode(key) + "");
             return JsonFormatter.ConvertFromJson<List<String>>(response);
 		}
 
@@ -354,7 +354,7 @@ namespace LinnworksAPI
         /// <param name="ruleName">The new name for the rule</param>
         public void SetRuleName(Int32 pkRuleId,String ruleName)
 		{
-			GetResponse("RulesEngine/SetRuleName", "pkRuleId=" + pkRuleId + "&ruleName=" + ruleName + "");
+			GetResponse("RulesEngine/SetRuleName", "pkRuleId=" + pkRuleId + "&ruleName=" + System.Net.WebUtility.UrlEncode(ruleName) + "");
 		}
 
 		/// <summary>

@@ -69,6 +69,6 @@ namespace LinnworksAPI
         /// <summary>
         /// View channels 
         /// </summary>
-		public List<Channel> Channels;
+		public List<InventoryChannel> Channels;
 	} 
 }

@@ -6,7 +6,7 @@ namespace LinnworksAPI
 { 
     public class ImportGenericFeed
 	{
-		public FeedType FeedType;
+		public ImportFeedType FeedType;
 
 		public String Encoding;
 

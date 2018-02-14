@@ -37,7 +37,7 @@ namespace LinnworksAPI
         /// <returns>Returns the URL of the CSV file</returns>
         public String CreateReturnsRefundsCSV(DateTime? from,DateTime? to,ReturnsRefundsSearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection,HistoryType historyType = HistoryType.RETURNS)
 		{
-			var response = GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", "from=" + JsonFormatter.ConvertToJson(from) + "&to=" + JsonFormatter.ConvertToJson(to) + "&dateType=" + dateType.ToString() + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&sortColumn=" + sortColumn + "&sortDirection=" + sortDirection + "&historyType=" + historyType.ToString() + "");
+			var response = GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", "from=" + JsonFormatter.ConvertToJson(from) + "&to=" + JsonFormatter.ConvertToJson(to) + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&sortColumn=" + System.Net.WebUtility.UrlEncode(sortColumn) + "&sortDirection=" + sortDirection + "&historyType=" + historyType.ToString() + "");
             return JsonFormatter.ConvertFromJson<String>(response);
 		}
 
@@ -173,7 +173,7 @@ namespace LinnworksAPI
         /// <returns>List of refund order items</returns>
         public void RefundOrder(Guid pkOrderId,String refundReference)
 		{
-			GetResponse("ReturnsRefunds/RefundOrder", "pkOrderId=" + pkOrderId + "&refundReference=" + refundReference + "");
+			GetResponse("ReturnsRefunds/RefundOrder", "pkOrderId=" + pkOrderId + "&refundReference=" + System.Net.WebUtility.UrlEncode(refundReference) + "");
 		}
 
 		/// <summary>
@@ -191,7 +191,7 @@ namespace LinnworksAPI
         /// <returns>Returns the requested list of processed orders. The columns returned can be changed through the SetColumns method.</returns>
         public GenericPagedResult<ReturnsRefundsWeb> SearchReturnsRefundsPaged(DateTime? from,DateTime? to,ReturnsRefundsSearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,Int32 pageNum,Int32 numEntriesPerPage,HistoryType historyType = HistoryType.RETURNS)
 		{
-			var response = GetResponse("ReturnsRefunds/SearchReturnsRefundsPaged", "from=" + JsonFormatter.ConvertToJson(from) + "&to=" + JsonFormatter.ConvertToJson(to) + "&dateType=" + dateType.ToString() + "&searchField=" + searchField + "&exactMatch=" + exactMatch + "&searchTerm=" + searchTerm + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "&historyType=" + historyType.ToString() + "");
+			var response = GetResponse("ReturnsRefunds/SearchReturnsRefundsPaged", "from=" + JsonFormatter.ConvertToJson(from) + "&to=" + JsonFormatter.ConvertToJson(to) + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "&historyType=" + historyType.ToString() + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<ReturnsRefundsWeb>>(response);
 		} 
     }

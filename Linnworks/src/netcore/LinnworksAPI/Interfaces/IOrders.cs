@@ -31,7 +31,7 @@ namespace LinnworksAPI
 		List<OrderItemBatch> GetAssignedOrderItemBatches(GetAssignedOrderItemBatchesRequest request);
 		List<OrderFolder> GetAvailableFolders();
 		List<KeyValuePair<Guid,String>> GetBatchPilots();
-		List<Country> GetCountries();
+		List<OrderCountry> GetCountries();
 		Guid GetDefaultPaymentMethodIdForNewOrder();
 		List<Guid> GetDraftOrders();
 		List<ExtendedProperty> GetExtendedProperties(Guid orderId);

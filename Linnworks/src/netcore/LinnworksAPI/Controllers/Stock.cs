@@ -50,7 +50,7 @@ namespace LinnworksAPI
         /// <returns>An enum describing Exists / NotExists / AlreadyVariation</returns>
         public VariationParentStatus CheckVariationParentSKUExists(String parentSKU)
 		{
-			var response = GetResponse("Stock/CheckVariationParentSKUExists", "parentSKU=" + parentSKU + "");
+			var response = GetResponse("Stock/CheckVariationParentSKUExists", "parentSKU=" + System.Net.WebUtility.UrlEncode(parentSKU) + "");
             return JsonFormatter.ConvertFromJson<VariationParentStatus>(response);
 		}
 
@@ -174,7 +174,7 @@ namespace LinnworksAPI
         /// <returns>Stock items list</returns>
         public GenericPagedResult<StockItem> GetStockItems(String keyWord,Guid? locationId,Int32 entriesPerPage,Int32 pageNumber,Boolean excludeComposites = false,Boolean excludeVariations = false,Boolean excludeBatches = false)
 		{
-			var response = GetResponse("Stock/GetStockItems", "keyWord=" + keyWord + "&locationId=" + JsonFormatter.ConvertToJson(locationId) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "&excludeVariations=" + excludeVariations + "&excludeBatches=" + excludeBatches + "");
+			var response = GetResponse("Stock/GetStockItems", "keyWord=" + System.Net.WebUtility.UrlEncode(keyWord) + "&locationId=" + JsonFormatter.ConvertToJson(locationId) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "&excludeVariations=" + excludeVariations + "&excludeBatches=" + excludeBatches + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<StockItem>>(response);
 		}
 
@@ -212,7 +212,7 @@ namespace LinnworksAPI
         /// <param name="searchTypes">The parameters that you would like to search by</param>
         public List<StockItemFull> GetStockItemsFull(String keyword,Boolean loadCompositeParents,Boolean loadVariationParents,Int32 entriesPerPage,Int32 pageNumber,List<StockInformationDataRequirement> dataRequirements,List<StockInformationSearchType> searchTypes)
 		{
-			var response = GetResponse("Stock/GetStockItemsFull", "keyword=" + keyword + "&loadCompositeParents=" + loadCompositeParents + "&loadVariationParents=" + loadVariationParents + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&dataRequirements=" + JsonFormatter.ConvertToJson(dataRequirements) + "&searchTypes=" + JsonFormatter.ConvertToJson(searchTypes) + "");
+			var response = GetResponse("Stock/GetStockItemsFull", "keyword=" + System.Net.WebUtility.UrlEncode(keyword) + "&loadCompositeParents=" + loadCompositeParents + "&loadVariationParents=" + loadVariationParents + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&dataRequirements=" + JsonFormatter.ConvertToJson(dataRequirements) + "&searchTypes=" + JsonFormatter.ConvertToJson(searchTypes) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemFull>>(response);
 		}
 
@@ -245,7 +245,7 @@ namespace LinnworksAPI
         /// <returns>A variation group object</returns>
         public VariationGroup GetVariationGroupByName(String variationName)
 		{
-			var response = GetResponse("Stock/GetVariationGroupByName", "variationName=" + variationName + "");
+			var response = GetResponse("Stock/GetVariationGroupByName", "variationName=" + System.Net.WebUtility.UrlEncode(variationName) + "");
             return JsonFormatter.ConvertFromJson<VariationGroup>(response);
 		}
 
@@ -288,7 +288,7 @@ namespace LinnworksAPI
         /// <param name="variationName">The name of the variation</param>
         public void RenameVariationGroup(Guid pkVariationItemId,String variationName)
 		{
-			GetResponse("Stock/RenameVariationGroup", "pkVariationItemId=" + pkVariationItemId + "&variationName=" + variationName + "");
+			GetResponse("Stock/RenameVariationGroup", "pkVariationItemId=" + pkVariationItemId + "&variationName=" + System.Net.WebUtility.UrlEncode(variationName) + "");
 		}
 
 		/// <summary>
@@ -301,7 +301,7 @@ namespace LinnworksAPI
         /// <returns>A paged list of search results</returns>
         public GenericPagedResult<VariationGroup> SearchVariationGroups(VariationSearchType searchType,String searchText,Int32 pageNumber,Int32 entriesPerPage)
 		{
-			var response = GetResponse("Stock/SearchVariationGroups", "searchType=" + searchType.ToString() + "&searchText=" + searchText + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
+			var response = GetResponse("Stock/SearchVariationGroups", "searchType=" + searchType.ToString() + "&searchText=" + System.Net.WebUtility.UrlEncode(searchText) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<VariationGroup>>(response);
 		}
 
@@ -312,7 +312,7 @@ namespace LinnworksAPI
         /// <returns>Returns StockItemLevel object</returns>
         public List<StockItemLevel> SetStockLevel(List<StockLevelUpdate> stockLevels,String changeSource = null)
 		{
-			var response = GetResponse("Stock/SetStockLevel", "stockLevels=" + JsonFormatter.ConvertToJson(stockLevels) + "&changeSource=" + changeSource + "");
+			var response = GetResponse("Stock/SetStockLevel", "stockLevels=" + JsonFormatter.ConvertToJson(stockLevels) + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemLevel>>(response);
 		}
 
@@ -323,7 +323,7 @@ namespace LinnworksAPI
         /// <returns>True if the SKU exists or False if it does not.</returns>
         public Boolean SKUExists(String SKU)
 		{
-			var response = GetResponse("Stock/SKUExists", "SKU=" + SKU + "");
+			var response = GetResponse("Stock/SKUExists", "SKU=" + System.Net.WebUtility.UrlEncode(SKU) + "");
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
@@ -343,7 +343,7 @@ namespace LinnworksAPI
         /// <returns>Returns StockItemLevel object</returns>
         public List<StockItemLevel> UpdateStockLevelsBySKU(List<StockLevelUpdate> stockLevels,String changeSource = null)
 		{
-			var response = GetResponse("Stock/UpdateStockLevelsBySKU", "stockLevels=" + JsonFormatter.ConvertToJson(stockLevels) + "&changeSource=" + changeSource + "");
+			var response = GetResponse("Stock/UpdateStockLevelsBySKU", "stockLevels=" + JsonFormatter.ConvertToJson(stockLevels) + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemLevel>>(response);
 		}
 

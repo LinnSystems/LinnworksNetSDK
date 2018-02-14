@@ -5,24 +5,44 @@ using System;
 namespace LinnworksAPI
 { 
     /// <summary>
-    /// Simplified StockLocation information for use in settings screen 
+    /// Stock Location 
     /// </summary>
     public class StockLocation
 	{
         /// <summary>
-        /// Location ID 
+        /// 1st line of address 
         /// </summary>
-		public Guid StockLocationId;
+		public String Address1;
 
         /// <summary>
-        /// Location name 
+        /// 2nd line of address 
         /// </summary>
-		public String LocationName;
+		public String Address2;
 
         /// <summary>
-        /// If location is a fulfilment center 
+        /// City 
         /// </summary>
-		public Boolean IsFulfillmentCenter;
+		public String City;
+
+        /// <summary>
+        /// County / Region 
+        /// </summary>
+		public String County;
+
+        /// <summary>
+        /// Country 
+        /// </summary>
+		public String Country;
+
+        /// <summary>
+        /// Postal code 
+        /// </summary>
+		public String ZipCode;
+
+        /// <summary>
+        /// Not trackable 
+        /// </summary>
+		public Boolean IsNotTrackable;
 
         /// <summary>
         /// Location tag 
@@ -30,8 +50,19 @@ namespace LinnworksAPI
 		public String LocationTag;
 
         /// <summary>
-        /// Bin rack 
+        /// Count in order 
         /// </summary>
-		public String BinRack;
+		public Boolean CountInOrderUntilAcknowledgement;
+
+        /// <summary>
+        /// Fulfilment center and stock will be deducted when order processed 
+        /// </summary>
+		public Boolean FulfilmentCenterDeductStockWhenProcessed;
+
+		public Guid StockLocationId;
+
+		public String LocationName;
+
+		public Boolean IsFulfillmentCenter;
 	} 
 }

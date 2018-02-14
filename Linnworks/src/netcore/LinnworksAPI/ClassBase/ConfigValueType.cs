@@ -7,14 +7,14 @@ using Newtonsoft.Json;
 namespace LinnworksAPI
 { 
     [JsonConverter(typeof(StringEnumConverter))]
-	public enum FieldType
+	public enum ConfigValueType
 	{
-		Default,
-		String,
-		Int,
-		Bool,
-		Guid,
-		Float,
-		Double,
+		STRING,
+		INT,
+		DOUBLE,
+		BOOLEAN,
+		PASSWORD,
+		LIST,
+		URL,
 	}
 }

@@ -41,7 +41,7 @@ namespace LinnworksAPI
         /// <returns>Returns the new purchase order note</returns>
         public PurchaseOrderNote Add_PurchaseOrderNote(Guid pkPurchaseId,String Note)
 		{
-			var response = GetResponse("PurchaseOrder/Add_PurchaseOrderNote", "pkPurchaseId=" + pkPurchaseId + "&Note=" + Note + "");
+			var response = GetResponse("PurchaseOrder/Add_PurchaseOrderNote", "pkPurchaseId=" + pkPurchaseId + "&Note=" + System.Net.WebUtility.UrlEncode(Note) + "");
             return JsonFormatter.ConvertFromJson<PurchaseOrderNote>(response);
 		}
 

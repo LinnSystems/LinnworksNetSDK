@@ -6,18 +6,10 @@ namespace LinnworksAPI
 { 
     public class ActionTypeDescriptorProperties
 	{
-		public Int32 Length;
+		public String DisplayName;
 
-		public Int64 LongLength;
+		public DisplayType DisplayType;
 
-		public Int32 Rank;
-
-		public Object SyncRoot;
-
-		public Boolean IsReadOnly;
-
-		public Boolean IsFixedSize;
-
-		public Boolean IsSynchronized;
+		public FieldType FieldType;
 	} 
 }

@@ -4,20 +4,19 @@ using System;
 
 namespace LinnworksAPI
 { 
+    /// <summary>
+    /// Split Order 
+    /// </summary>
     public class OrderSplit
 	{
-		public Int32 Length;
+        /// <summary>
+        /// Items 
+        /// </summary>
+		public List<OrderSplitOutItem> Items;
 
-		public Int64 LongLength;
-
-		public Int32 Rank;
-
-		public Object SyncRoot;
-
-		public Boolean IsReadOnly;
-
-		public Boolean IsFixedSize;
-
-		public Boolean IsSynchronized;
+        /// <summary>
+        /// Postal Service 
+        /// </summary>
+		public Guid PostalServiceId;
 	} 
 }

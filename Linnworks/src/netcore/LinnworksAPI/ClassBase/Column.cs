@@ -12,7 +12,7 @@ namespace LinnworksAPI
 
 		public GroupType Group;
 
-		public FieldType Field;
+		public InventoryViewFieldType Field;
 
 		public SortDirectionType SortDirection;
 

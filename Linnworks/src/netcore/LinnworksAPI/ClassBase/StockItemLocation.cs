@@ -6,12 +6,21 @@ namespace LinnworksAPI
 { 
     public class StockItemLocation
 	{
+        /// <summary>
+        /// Stock location ID 
+        /// </summary>
 		public Guid StockLocationId;
 
-		public String Location;
+        /// <summary>
+        /// Location name 
+        /// </summary>
+		public String LocationName;
 
-		public Double StockLevel;
+        /// <summary>
+        /// BinRack 
+        /// </summary>
+		public String BinRack;
 
-		public Double StockValue;
+		public Guid StockItemId;
 	} 
 }

@@ -26,7 +26,7 @@ namespace LinnworksAPI
         /// <returns>Custom script execution result (CustomScriptResult)</returns>
         public CustomScriptResult ExecuteCustomScriptQuery(String script)
 		{
-			var response = GetResponse("Dashboards/ExecuteCustomScriptQuery", "script=" + script + "");
+			var response = GetResponse("Dashboards/ExecuteCustomScriptQuery", "script=" + System.Net.WebUtility.UrlEncode(script) + "");
             return JsonFormatter.ConvertFromJson<CustomScriptResult>(response);
 		}
 
@@ -47,10 +47,10 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="date">Used to specify report date or null for current period</param>
         /// <returns>Sorted list of StockItemLocations</returns>
-        public List<StockItemLocation> GetInventoryLocationData(DateTime? date)
+        public List<StatsStockItemLocation> GetInventoryLocationData(DateTime? date)
 		{
 			var response = GetResponse("Dashboards/GetInventoryLocationData", "date=" + JsonFormatter.ConvertToJson(date) + "");
-            return JsonFormatter.ConvertFromJson<List<StockItemLocation>>(response);
+            return JsonFormatter.ConvertFromJson<List<StatsStockItemLocation>>(response);
 		}
 
 		/// <summary>

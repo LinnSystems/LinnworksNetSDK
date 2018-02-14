@@ -7,14 +7,13 @@ using Newtonsoft.Json;
 namespace LinnworksAPI
 { 
     [JsonConverter(typeof(StringEnumConverter))]
-	public enum FieldType
+	public enum ImportFeedType
 	{
-		Default,
-		String,
-		Int,
-		Bool,
-		Guid,
-		Float,
-		Double,
+		FTP,
+		SFTP,
+		HTTP,
+		BUCKET,
+		AMAZON_S3,
+		DROPBOX,
 	}
 }

@@ -84,7 +84,7 @@ namespace LinnworksAPI
 		GetScrapHistoryResponse GetScrapHistory(GetScrapHistoryRequest request);
 		GetStockItemBatchesByLocationResponse GetStockItemBatchesByLocation(GetStockItemBatchesByLocationRequest request);
 		List<StockItemLabel> GetStockItemLabels(List<Tuple<Int32,Int32>> selectedRegions,Guid token,Guid location);
-		List<StockLocation> GetStockLocations();
+		List<InventoryStockLocation> GetStockLocations();
 		List<StockItemSupplierStat> GetStockSupplierStat(Guid inventoryItemId);
 		Supplier GetSupplierDetails(Guid supplierId);
 		List<Supplier> GetSuppliers();

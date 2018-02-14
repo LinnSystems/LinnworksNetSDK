@@ -24,8 +24,8 @@ namespace LinnworksAPI
 		List<SplitPackaging> GetPackageSplit(Guid pkOrderId);
 		List<AuditEntry> GetProcessedAuditTrail(Guid pkOrderId);
 		List<OrderExtendedProperty> GetProcessedOrderExtendedProperties(Guid pkOrderId);
-		List<OrderNote> GetProcessedOrderNotes(Guid pkOrderId);
-		List<OrderRelation> GetProcessedRelatives(Guid pkOrderId);
+		List<ProcessedOrderNote> GetProcessedOrderNotes(Guid pkOrderId);
+		List<ProcessedOrderRelation> GetProcessedRelatives(Guid pkOrderId);
 		List<ServiceItem> GetRefundableServiceItems(Guid pkOrderId);
 		List<RefundInfo> GetRefunds(Guid pkOrderId);
 		RefundScreenOptions GetRefundsOptions(Guid pkOrderId);

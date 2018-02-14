@@ -9,7 +9,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Location ID 
         /// </summary>
-		public StockLocation Location;
+		public InventoryStockLocation Location;
 
         /// <summary>
         /// Stock level 

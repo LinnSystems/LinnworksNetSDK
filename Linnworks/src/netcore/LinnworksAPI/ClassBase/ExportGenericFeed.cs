@@ -6,7 +6,7 @@ namespace LinnworksAPI
 { 
     public class ExportGenericFeed
 	{
-		public FeedType FeedType;
+		public ExportFeedType FeedType;
 
 		public String FileName;
 

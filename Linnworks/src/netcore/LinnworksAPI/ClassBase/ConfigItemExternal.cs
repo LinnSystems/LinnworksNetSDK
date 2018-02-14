@@ -6,18 +6,28 @@ namespace LinnworksAPI
 { 
     public class ConfigItemExternal
 	{
-		public Int32 Length;
+		public List<ConfigItemListItem> ListValues;
 
-		public Int64 LongLength;
+		public ConfigValueType ValueType;
 
-		public Int32 Rank;
+		public String ConfigItemId;
 
-		public Object SyncRoot;
+		public String Name;
 
-		public Boolean IsReadOnly;
+		public String Description;
 
-		public Boolean IsFixedSize;
+		public String GroupName;
 
-		public Boolean IsSynchronized;
+		public Int32 SortOrder;
+
+		public String SelectedValue;
+
+		public String RegExValidation;
+
+		public String RegExError;
+
+		public Boolean MustBeSpecified;
+
+		public Boolean ReadOnly;
 	} 
 }

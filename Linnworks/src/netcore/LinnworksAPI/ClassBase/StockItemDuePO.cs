@@ -14,7 +14,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Stock location to be delivered to 
         /// </summary>
-		public StockLocation Location;
+		public InventoryStockLocation Location;
 
         /// <summary>
         /// Supplier ID 

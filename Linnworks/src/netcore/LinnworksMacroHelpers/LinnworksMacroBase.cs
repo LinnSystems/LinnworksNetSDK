@@ -6,7 +6,7 @@ namespace LinnworksMacroHelpers
 {
     public class LinnworksMacroBase
     {
-        public readonly RuntimeHelper RunTime = new RuntimeHelper();
+        public IRuntimeHelper RunTime { get; set; }
         public LinnworksAPI.ApiObjectManager Api { get; set; }
         public IProxyFactory ProxyFactory { get; set; }
     }

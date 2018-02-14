@@ -78,7 +78,7 @@ namespace LinnworksAPI
         /// <param name="adjustmentOptions">Fields which should be adjusted</param>
         public void AdjustTemplatesInstant(IEnumerable<Guid> inventoryItemIds,String source,String subSource,AdjustmentOptions adjustmentOptions)
 		{
-			GetResponse("Inventory/AdjustTemplatesInstant", "inventoryItemIds=" + JsonFormatter.ConvertToJson(inventoryItemIds) + "&source=" + source + "&subSource=" + subSource + "&adjustmentOptions=" + JsonFormatter.ConvertToJson(adjustmentOptions) + "");
+			GetResponse("Inventory/AdjustTemplatesInstant", "inventoryItemIds=" + JsonFormatter.ConvertToJson(inventoryItemIds) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&adjustmentOptions=" + JsonFormatter.ConvertToJson(adjustmentOptions) + "");
 		}
 
 		/// <summary>
@@ -106,7 +106,7 @@ namespace LinnworksAPI
         /// <returns>New category</returns>
         public Category CreateCategory(String categoryName)
 		{
-			var response = GetResponse("Inventory/CreateCategory", "categoryName=" + categoryName + "");
+			var response = GetResponse("Inventory/CreateCategory", "categoryName=" + System.Net.WebUtility.UrlEncode(categoryName) + "");
             return JsonFormatter.ConvertFromJson<Category>(response);
 		}
 
@@ -385,7 +385,7 @@ namespace LinnworksAPI
         /// <param name="viewName">User-specific view name</param>
         public void DeleteUserSpecificView(String viewName)
 		{
-			GetResponse("Inventory/DeleteUserSpecificView", "viewName=" + viewName + "");
+			GetResponse("Inventory/DeleteUserSpecificView", "viewName=" + System.Net.WebUtility.UrlEncode(viewName) + "");
 		}
 
 		/// <summary>
@@ -454,7 +454,7 @@ namespace LinnworksAPI
         /// <param name="source">Channel source</param>
         public List<HeaderConfig> GetChannelsBySource(String source)
 		{
-			var response = GetResponse("Inventory/GetChannelsBySource", "source=" + source + "");
+			var response = GetResponse("Inventory/GetChannelsBySource", "source=" + System.Net.WebUtility.UrlEncode(source) + "");
             return JsonFormatter.ConvertFromJson<List<HeaderConfig>>(response);
 		}
 
@@ -494,7 +494,7 @@ namespace LinnworksAPI
         /// <returns>list of available extended property names</returns>
         public List<String> GetExtendedPropertyNames(String propertyType = "Attribute")
 		{
-			var response = GetResponse("Inventory/GetExtendedPropertyNames", "propertyType=" + propertyType + "");
+			var response = GetResponse("Inventory/GetExtendedPropertyNames", "propertyType=" + System.Net.WebUtility.UrlEncode(propertyType) + "");
             return JsonFormatter.ConvertFromJson<List<String>>(response);
 		}
 
@@ -645,7 +645,7 @@ namespace LinnworksAPI
         /// <param name="subSource">Channel subsource</param>
         public List<StockItemPricingRule> GetInventoryItemPriceRulesBySource(Guid stockItemId,String source,String subSource)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemPriceRulesBySource", "stockItemId=" + stockItemId + "&source=" + source + "&subSource=" + subSource + "");
+			var response = GetResponse("Inventory/GetInventoryItemPriceRulesBySource", "stockItemId=" + stockItemId + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemPricingRule>>(response);
 		}
 
@@ -763,10 +763,10 @@ namespace LinnworksAPI
         /// Use this call to get all stock locations 
         /// </summary>
         /// <returns>List of all stock locations</returns>
-        public List<StockLocation> GetStockLocations()
+        public List<InventoryStockLocation> GetStockLocations()
 		{
 			var response = GetResponse("Inventory/GetStockLocations", "");
-            return JsonFormatter.ConvertFromJson<List<StockLocation>>(response);
+            return JsonFormatter.ConvertFromJson<List<InventoryStockLocation>>(response);
 		}
 
 		/// <summary>
@@ -848,7 +848,7 @@ namespace LinnworksAPI
         /// <param name="subSource">Subsource (e.g. EBAY1)</param>
         public Boolean IsInventoryItemChannelSKULinked(String channelSKU,String source,String subSource)
 		{
-			var response = GetResponse("Inventory/IsInventoryItemChannelSKULinked", "channelSKU=" + channelSKU + "&source=" + source + "&subSource=" + subSource + "");
+			var response = GetResponse("Inventory/IsInventoryItemChannelSKULinked", "channelSKU=" + System.Net.WebUtility.UrlEncode(channelSKU) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "");
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
@@ -899,7 +899,7 @@ namespace LinnworksAPI
         /// <param name="subSource">Subsource</param>
         public void UnlinkChannelListing(String channelRefId,String source,String subSource)
 		{
-			GetResponse("Inventory/UnlinkChannelListing", "channelRefId=" + channelRefId + "&source=" + source + "&subSource=" + subSource + "");
+			GetResponse("Inventory/UnlinkChannelListing", "channelRefId=" + System.Net.WebUtility.UrlEncode(channelRefId) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "");
 		}
 
 		/// <summary>
@@ -1040,7 +1040,7 @@ namespace LinnworksAPI
         /// <param name="fieldValue">Input value</param>
         public Dictionary<String,Object> UpdateInventoryItemField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue)
 		{
-			var response = GetResponse("Inventory/UpdateInventoryItemField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + fieldValue + "");
+			var response = GetResponse("Inventory/UpdateInventoryItemField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,Object>>(response);
 		}
 
@@ -1053,7 +1053,7 @@ namespace LinnworksAPI
         /// <param name="locationId">Location Id</param>
         public Dictionary<Guid,Dictionary<String,Object>> UpdateInventoryItemLevels(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,Guid locationId,String changeSource = null)
 		{
-			var response = GetResponse("Inventory/UpdateInventoryItemLevels", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + fieldValue + "&locationId=" + locationId + "&changeSource=" + changeSource + "");
+			var response = GetResponse("Inventory/UpdateInventoryItemLevels", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "&locationId=" + locationId + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "");
             return JsonFormatter.ConvertFromJson<Dictionary<Guid,Dictionary<String,Object>>>(response);
 		}
 
@@ -1066,7 +1066,7 @@ namespace LinnworksAPI
         /// <param name="locationId">Location Id</param>
         public Dictionary<String,Object> UpdateInventoryItemLocationField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,Guid locationId,String changeSource = null)
 		{
-			var response = GetResponse("Inventory/UpdateInventoryItemLocationField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + fieldValue + "&locationId=" + locationId + "&changeSource=" + changeSource + "");
+			var response = GetResponse("Inventory/UpdateInventoryItemLocationField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "&locationId=" + locationId + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,Object>>(response);
 		}
 
@@ -1098,7 +1098,7 @@ namespace LinnworksAPI
         /// <param name="changeSource">changeSource</param>
         public Dictionary<String,Object> UpdateInventoryItemStockField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,Guid locationId,String changeSource = null)
 		{
-			var response = GetResponse("Inventory/UpdateInventoryItemStockField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + fieldValue + "&locationId=" + locationId + "&changeSource=" + changeSource + "");
+			var response = GetResponse("Inventory/UpdateInventoryItemStockField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "&locationId=" + locationId + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,Object>>(response);
 		}
 
@@ -1154,7 +1154,7 @@ namespace LinnworksAPI
         /// <param name="view">Updated user-specific view</param>
         public void UpdateUserSpecificView(String viewName,InventoryView view)
 		{
-			GetResponse("Inventory/UpdateUserSpecificView", "viewName=" + viewName + "&view=" + JsonFormatter.ConvertToJson(view) + "");
+			GetResponse("Inventory/UpdateUserSpecificView", "viewName=" + System.Net.WebUtility.UrlEncode(viewName) + "&view=" + JsonFormatter.ConvertToJson(view) + "");
 		}
 
 		/// <summary>

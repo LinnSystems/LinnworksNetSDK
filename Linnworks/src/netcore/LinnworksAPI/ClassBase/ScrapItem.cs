@@ -22,6 +22,8 @@ namespace LinnworksAPI
 
 		public Double TotalCost;
 
+		public String UserName;
+
 		public DateTime CreatedDate;
 	} 
 }

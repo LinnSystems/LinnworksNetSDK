@@ -11,7 +11,7 @@ namespace LinnworksAPI
 		CustomScriptResult ExecuteCustomPagedScript(Int32 scriptId,ScriptParameter[] parameters,Int32 entriesPerPage,Int32 pageNumber);
 		CustomScriptResult ExecuteCustomScriptQuery(String script);
 		List<StockCategoryLocation> GetInventoryLocationCategoriesData(DateTime? date,Guid locationId);
-		List<StockItemLocation> GetInventoryLocationData(DateTime? date);
+		List<StatsStockItemLocation> GetInventoryLocationData(DateTime? date);
 		PagedStockCategoryLocationProductResult GetInventoryLocationProductsData(DateTime? date,Guid locationId,Guid categoryId,Int32 pageNumber,Int32 entriesPerPage);
 		List<LowStockLevel> GetLowStockLevel(Guid? locationId,Int32? numRows);
 		Dictionary<String,List<PerfomanceDetail>> GetPerformanceDetail(Int32 period,Int32 timeScale);
