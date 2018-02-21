@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LinnworksMacroHelpers.Classes;
+using NSubstitute;
+using NSubstitute.Core;
+using System;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace LinnMacroCustomer
 {
@@ -13,13 +14,7 @@ namespace LinnMacroCustomer
             Guid secretKey;
             Guid token;
 
-
-            var context = new LinnworksAPI.ApiContext(new Guid("ddde1007-e273-42e9-b964-3f716ddf0978"), "https://eu-ext.linnworks.net");
-
-            var macro = new LinnworksMacro.LinnworksMacro()
-            {
-                Api = new LinnworksAPI.ApiObjectManager(context)
-            };
+            var macro = SetupMacro(applicationId, secretKey, token);
 
             var result = macro.Execute(new Guid("37d8fb79-4eea-401b-911a-d5cb04db61a4"));
 
@@ -32,6 +27,21 @@ namespace LinnMacroCustomer
                 Console.WriteLine(result.ItemNumber);
             }
             Console.Read();
+        }
+
+        private static LinnworksMacro.LinnworksMacro SetupMacro(Guid applicationId, Guid secretKey, Guid token)
+        {
+            var auth = Authorize(applicationId, secretKey, token);
+
+            var context = new LinnworksAPI.ApiContext(auth.Token, auth.Server);
+
+            var macro = new LinnworksMacro.LinnworksMacro()
+            {
+                Api = new LinnworksAPI.ApiObjectManager(context),
+                ProxyFactory = Substitute.For<LinnworksMacroHelpers.Interfaces.IProxyFactory>()
+            };
+
+            return macro;
         }
 
         private static LinnworksAPI.BaseSession Authorize(Guid applicationId, Guid secretKey, Guid token)

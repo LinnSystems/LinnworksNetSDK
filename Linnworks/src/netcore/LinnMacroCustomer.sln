@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LinnMacroCustomer", "LinnMacroCustomer\LinnMacroCustomer.xproj", "{6E141DA3-6857-427D-91AD-0DBF6E4581D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnMacroCustomer", "LinnMacroCustomer\LinnMacroCustomer.csproj", "{5D151122-2528-45CA-B753-A846FCF98CD5}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LinnworksAPI", "LinnworksAPI\LinnworksAPI.xproj", "{2F231A47-4691-4613-A4CD-660AC894A03B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksMacro", "LinnworksMacro\LinnworksMacro.csproj", "{3BFF8317-4568-4CB8-A6A9-BF7BA96A7ECE}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LinnworksMacro", "LinnworksMacro\LinnworksMacro.xproj", "{3A12FB56-F0C0-44E6-ADA5-38F4A8F47AC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksMacroHelpers", "LinnworksMacroHelpers\LinnworksMacroHelpers.csproj", "{DA78209A-50E9-4608-B8A2-038E20E2252C}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LinnworksMacroHelpers", "LinnworksMacroHelpers\LinnworksMacroHelpers.xproj", "{DC74C21D-B504-4C76-AF26-47AF0AEDD697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksAPI", "LinnworksAPI\LinnworksAPI.csproj", "{397EA6BF-2993-44ED-9D79-EB195056AB22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,24 +17,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6E141DA3-6857-427D-91AD-0DBF6E4581D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E141DA3-6857-427D-91AD-0DBF6E4581D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E141DA3-6857-427D-91AD-0DBF6E4581D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E141DA3-6857-427D-91AD-0DBF6E4581D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F231A47-4691-4613-A4CD-660AC894A03B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F231A47-4691-4613-A4CD-660AC894A03B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F231A47-4691-4613-A4CD-660AC894A03B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F231A47-4691-4613-A4CD-660AC894A03B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A12FB56-F0C0-44E6-ADA5-38F4A8F47AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A12FB56-F0C0-44E6-ADA5-38F4A8F47AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A12FB56-F0C0-44E6-ADA5-38F4A8F47AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A12FB56-F0C0-44E6-ADA5-38F4A8F47AC8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC74C21D-B504-4C76-AF26-47AF0AEDD697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC74C21D-B504-4C76-AF26-47AF0AEDD697}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC74C21D-B504-4C76-AF26-47AF0AEDD697}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC74C21D-B504-4C76-AF26-47AF0AEDD697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D151122-2528-45CA-B753-A846FCF98CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D151122-2528-45CA-B753-A846FCF98CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D151122-2528-45CA-B753-A846FCF98CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D151122-2528-45CA-B753-A846FCF98CD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BFF8317-4568-4CB8-A6A9-BF7BA96A7ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BFF8317-4568-4CB8-A6A9-BF7BA96A7ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BFF8317-4568-4CB8-A6A9-BF7BA96A7ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BFF8317-4568-4CB8-A6A9-BF7BA96A7ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA78209A-50E9-4608-B8A2-038E20E2252C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA78209A-50E9-4608-B8A2-038E20E2252C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA78209A-50E9-4608-B8A2-038E20E2252C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA78209A-50E9-4608-B8A2-038E20E2252C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{397EA6BF-2993-44ED-9D79-EB195056AB22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{397EA6BF-2993-44ED-9D79-EB195056AB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{397EA6BF-2993-44ED-9D79-EB195056AB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{397EA6BF-2993-44ED-9D79-EB195056AB22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC8E5E9E-E22E-459A-845B-89AA4A7F89C8}
 	EndGlobalSection
 EndGlobal
