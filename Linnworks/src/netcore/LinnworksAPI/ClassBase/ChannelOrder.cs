@@ -165,5 +165,10 @@ namespace LinnworksAPI
         /// The order delivery address 
         /// </summary>
 		public ChannelAddress DeliveryAddress;
+
+        /// <summary>
+        /// Bool to re-save order 
+        /// </summary>
+		public Boolean ForceReSaveFulfilledOrder;
 	} 
 }
