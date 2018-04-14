@@ -150,5 +150,10 @@ namespace LinnworksAPI
         /// Unit value of item at time of despatch 
         /// </summary>
 		public Double DespatchUnitValue;
+
+        /// <summary>
+        /// The batch inventory selected 
+        /// </summary>
+		public StockItemBatchInventory BatchInventory;
 	} 
 }

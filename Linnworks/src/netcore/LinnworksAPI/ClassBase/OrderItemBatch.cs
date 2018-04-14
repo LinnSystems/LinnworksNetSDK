@@ -16,6 +16,8 @@ namespace LinnworksAPI
 
 		public StockItemBatch Batch;
 
+		public Double DespatchUnitValue;
+
 		public OrderItemBatchAssignmentType AssignmentType;
 	} 
 }

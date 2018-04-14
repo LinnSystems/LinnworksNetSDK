@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace LinnworksMacroHelpers.Classes
 {
@@ -56,6 +54,9 @@ namespace LinnworksMacroHelpers.Classes
 
             if (RawBody?.Length > 1048576)
                 throw new Exception("RawBody cannot be larger than 10mb");
+
+            if (Headers?.ContainsKey("Content-Type") == true)
+                throw new Exception($"Please use {nameof(ContentType)} property rather than adding Content-Type as a seperate.");
         }
 
         /// <summary>

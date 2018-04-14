@@ -37,6 +37,7 @@ namespace LinnworksAPI
 		StockLevelBatch,
 		ebayListingStrikeOff,
 		RenameSKU,
+		ProductIdentifiers,
 		TrackingNumbers,
 	}
 }

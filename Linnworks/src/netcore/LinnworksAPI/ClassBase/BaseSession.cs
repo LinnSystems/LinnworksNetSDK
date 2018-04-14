@@ -6,13 +6,15 @@ namespace LinnworksAPI
 { 
     public class BaseSession
 	{
-		public DateTime LastActivity;
+		public Int32? TTL;
 
 		public String Device;
 
 		public String DeviceType;
 
 		public String Server;
+
+		public String PushServer;
 
 		public StatusDetails Status;
 

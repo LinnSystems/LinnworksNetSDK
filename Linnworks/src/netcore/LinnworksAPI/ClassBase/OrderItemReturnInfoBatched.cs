@@ -14,6 +14,8 @@ namespace LinnworksAPI
 
 		public Double DespatchUnitValue;
 
+		public Guid OrderId;
+
 		public Guid fkOrderItemRowId;
 
 		public Guid ParentRowId;

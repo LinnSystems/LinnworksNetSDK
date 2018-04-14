@@ -16,6 +16,10 @@ namespace LinnworksAPI
 
 		public String DropDownQuery;
 
+		public String DatabaseType;
+
+		public Int32 DatabaseTypeLength;
+
 		public Object[] AvailableValues;
 
 		public Object Value;

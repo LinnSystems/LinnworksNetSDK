@@ -301,6 +301,20 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to search for archived transfers which were archived between two dates. 
+        /// </summary>
+        /// <param name="start">The start date.</param>
+        /// <param name="end">The end date.</param>
+        /// <param name="pageNumber">The page number (starting at 1).</param>
+        /// <param name="entriesPerPage">The number of entries to be returned per page.</param>
+        /// <returns>A paged result containing the relevant transfers.</returns>
+        public GenericPagedResult<WarehouseTransfer> GetArchivedTransfersBetweenArchivedDates(DateTime start,DateTime end,Int32 pageNumber,Int32 entriesPerPage)
+		{
+			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenArchivedDates", "start=" + JsonFormatter.ConvertToJson(start) + "&end=" + JsonFormatter.ConvertToJson(end) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
+            return JsonFormatter.ConvertFromJson<GenericPagedResult<WarehouseTransfer>>(response);
+		}
+
+		/// <summary>
         /// Use this call to search for archived transfers which were created between two dates. 
         /// </summary>
         /// <param name="start">The start date.</param>

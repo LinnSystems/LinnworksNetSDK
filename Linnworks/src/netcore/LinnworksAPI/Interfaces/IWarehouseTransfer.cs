@@ -33,6 +33,7 @@ namespace LinnworksAPI
 		List<WarehouseTransfer> GetActiveTransfersAllLocations();
 		List<WarehouseTransfer> GetActiveTransfersForLocation(Guid locationId);
 		GenericPagedResult<WarehouseTransfer> GetArchivedTransfers(Int32 pageNumber,Int32 entriesPerPage);
+		GenericPagedResult<WarehouseTransfer> GetArchivedTransfersBetweenArchivedDates(DateTime start,DateTime end,Int32 pageNumber,Int32 entriesPerPage);
 		GenericPagedResult<WarehouseTransfer> GetArchivedTransfersBetweenDates(DateTime start,DateTime end,Int32 pageNumber,Int32 entriesPerPage);
 		GenericPagedResult<WarehouseTransfer> GetArchivedTransfersFiltered(SearchType searchType,String filter,Int32 pageNumber,Int32 entriesPerPage);
 		List<WarehouseTransferItem> GetDiscrepancyItems(Guid pkTransferId);

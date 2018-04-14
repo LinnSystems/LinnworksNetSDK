@@ -55,5 +55,10 @@ namespace LinnworksAPI
         /// Country tax rate 
         /// </summary>
 		public Double CountryTaxRate;
+
+        /// <summary>
+        /// Currency conversion rate. Set at point of save by the currency 
+        /// </summary>
+		public Double ConversionRate;
 	} 
 }

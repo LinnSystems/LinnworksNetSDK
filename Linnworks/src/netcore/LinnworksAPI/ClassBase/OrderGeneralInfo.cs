@@ -54,6 +54,8 @@ namespace LinnworksAPI
         /// </summary>
 		public Byte? Marker;
 
+		public List<OrderIdentifier> Identifiers;
+
         /// <summary>
         /// Order reference number (Channel defined) 
         /// </summary>
@@ -98,6 +100,10 @@ namespace LinnworksAPI
         /// Despatch by Date 
         /// </summary>
 		public DateTime DespatchByDate;
+
+		public ScheduledDelivery ScheduledDelivery;
+
+		public Boolean HasScheduledDelivery;
 
         /// <summary>
         /// Order location ID 

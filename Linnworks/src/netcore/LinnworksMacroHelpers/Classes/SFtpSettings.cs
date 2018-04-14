@@ -1,45 +1,42 @@
-﻿using System;
-using LinnworksMacroHelpers.Helpers;
+﻿using LinnworksMacroHelpers.Helpers;
 using LinnworksMacroHelpers.Interfaces;
+using System;
 
 namespace LinnworksMacroHelpers.Classes
 {
-    /// <summary>
-    /// FTP settings for file upload or download, note Active FTP is not supported.
-    /// </summary>
-    public sealed class FtpSettings : IUploadSettings
+    public sealed class SFtpSettings : IUploadSettings
     {
         /// <summary>
-        /// FTP server without port
+        /// SFTP Server 
         /// </summary>
-        public string Server { get; set; } = "";
+        public string Server { get; set; }
 
         /// <summary>
-        /// FTP port 21 by default
+        /// SFTP Username
         /// </summary>
-        public int Port { get; set; } = 21;
+        public string UserName { get; set; }
 
         /// <summary>
-        /// FTP username
+        /// SFTP Password
         /// </summary>
-        public string UserName { get; set; } = "";
+        public string Password { get; set; }
 
         /// <summary>
-        /// FTP Password
+        /// SFTP Port 22 by default
         /// </summary>
-        public string Password { get; set; } = "";
+        public Int32 Port { get; set; }
+        /// <summary>
+        /// Transfer compression disabled by default
+        /// </summary>
+        public Boolean Compression { get; set; }
 
         /// <summary>
-        /// Destination Filename
+        /// Optional field.
         /// </summary>
-        public string FullPath { get; set; } = "";
+        public string FingerPrint { get; set; }
 
-        /// <summary>
-        /// FTP Secure socket layer is disabled by default
-        /// </summary>
-        public bool SSL { get; set; } = false;
-
-        public string Encoding { get; set; } = "";
+        public string FullPath { get; set; }
+        public string Encoding { get; set; }
 
         public void Validate()
         {

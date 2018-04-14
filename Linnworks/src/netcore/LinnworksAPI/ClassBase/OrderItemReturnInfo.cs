@@ -16,6 +16,8 @@ namespace LinnworksAPI
         /// </summary>
 		public OrderItemReturnInfoBatched[] Batches;
 
+		public Guid OrderId;
+
 		public Guid fkOrderItemRowId;
 
 		public Guid ParentRowId;

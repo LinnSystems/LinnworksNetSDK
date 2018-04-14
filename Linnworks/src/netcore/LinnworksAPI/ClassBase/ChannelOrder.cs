@@ -117,6 +117,11 @@ namespace LinnworksAPI
 		public String Currency;
 
         /// <summary>
+        /// The currency conversion rate Sale/Base 
+        /// </summary>
+		public Double ConversionRate;
+
+        /// <summary>
         /// UTC recieved date/time of the order 
         /// </summary>
 		public DateTime ReceivedDate;
@@ -165,6 +170,12 @@ namespace LinnworksAPI
         /// The order delivery address 
         /// </summary>
 		public ChannelAddress DeliveryAddress;
+
+		public DateTime DeliveryStartDate;
+
+		public DateTime DeliveryEndDate;
+
+		public HashSet<String> OrderIdentifierTags;
 
         /// <summary>
         /// Bool to re-save order 

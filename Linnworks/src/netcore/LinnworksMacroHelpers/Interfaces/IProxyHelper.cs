@@ -1,10 +1,7 @@
 ﻿using LinnworksMacroHelpers.Classes;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace LinnworksMacroHelpers.Interfaces
 {
@@ -31,7 +28,10 @@ namespace LinnworksMacroHelpers.Interfaces
     public interface IProxyFactory
     {
         ProxyUpload<FtpSettings, FtpUploadResult> GetFtpUploadProxy(FtpSettings settings);
+        ProxyUpload<SFtpSettings, FtpUploadResult> GetSFtpUploadProxy(SFtpSettings settings);
+        
         Stream DownloadFtpFile(FtpSettings settings);
+        Stream DownloadSFtpFile(SFtpSettings settings);
         ProxiedWebResponse WebRequest(ProxiedWebRequest request);
     }
 }

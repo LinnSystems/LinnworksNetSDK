@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace LinnworksMacroHelpers.Helpers
+﻿namespace LinnworksMacroHelpers.Helpers
 {
     public static class DataHelper
     {

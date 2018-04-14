@@ -32,13 +32,15 @@ namespace LinnworksAPI
             return client;
         }
 
-        public static async Task<string> GetResponseAsync(string extension, string body, Guid token, string server)
+        public static async Task<string> GetResponseAsync(string extension, string body, ApiContext context)
         {
             try
             {
-                var client = GetClient(token);
+                var client = GetClient(context.SessionId);
+                var content = new StringContent(body, Encoding.UTF8, "application/x-www-form-urlencoded");
+                content.Headers.Add("RecursionCount", context.RecursionCount.ToString());
 
-                var response = await client.PostAsync(new Uri(server + extension), new StringContent(body, Encoding.UTF8, "application/x-www-form-urlencoded"));
+                var response = await client.PostAsync(new Uri(context.ApiServer + extension), content);
                    
                 string responseResult = await response.Content.ReadAsStringAsync();
 

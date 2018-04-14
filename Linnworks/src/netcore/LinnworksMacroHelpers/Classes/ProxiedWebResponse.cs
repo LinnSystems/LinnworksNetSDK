@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace LinnworksMacroHelpers.Classes
 {
-    public class ProxiedWebResponse
+    public sealed class ProxiedWebResponse
     {
         public string ErrorMessage { get; set; }
         public byte[] RawResponse { get; set; }

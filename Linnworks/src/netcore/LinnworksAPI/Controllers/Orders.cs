@@ -62,6 +62,17 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<UpdateOrderItemResult>(response);
 		}
 
+		public void AssignOrderItemBatches(AssignOrderItemBatches request)
+		{
+			GetResponse("Orders/AssignOrderItemBatches", "request=" + JsonFormatter.ConvertToJson(request) + "");
+		}
+
+		public List<OrderItemBatch> AssignStockToOrder(AssignStockToOrderRequest request)
+		{
+			var response = GetResponse("Orders/AssignStockToOrder", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<List<OrderItemBatch>>(response);
+		}
+
 		/// <summary>
         /// Assign a list of orders to a specific folder 
         /// </summary>
@@ -935,12 +946,7 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<UpdateTotalsResult>(response);
 		}
 
-		/// <summary>
-        /// Update the shipping info of a specific order 
-        /// </summary>
-        /// <param name="orderId">Order id</param>
-        /// <param name="info">Shipping info</param>
-        public UpdateTotalsResult SetOrderShippingInfo(Guid orderId,OrderShippingInfo info)
+		public UpdateTotalsResult SetOrderShippingInfo(Guid orderId,UpdateOrderShippingInfoRequest info)
 		{
 			var response = GetResponse("Orders/SetOrderShippingInfo", "orderId=" + orderId + "&info=" + JsonFormatter.ConvertToJson(info) + "");
             return JsonFormatter.ConvertFromJson<UpdateTotalsResult>(response);

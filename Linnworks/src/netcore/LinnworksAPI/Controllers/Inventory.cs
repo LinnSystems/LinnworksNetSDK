@@ -41,6 +41,15 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Used to add product identifiers 
+        /// </summary>
+        /// <param name="request">Object with collection of product identifiers</param>
+        public void AddProductIdentifiers(AddProductIdentifiersRequest request)
+		{
+			GetResponse("Inventory/AddProductIdentifiers", "request=" + JsonFormatter.ConvertToJson(request) + "");
+		}
+
+		/// <summary>
         /// Used to add scrap categories 
         /// </summary>
         /// <param name="request">Object with List of scrap category names</param>
@@ -349,6 +358,15 @@ namespace LinnworksAPI
         public void DeleteItemLocations(Guid inventoryItemId,List<Guid> itemLocations)
 		{
 			GetResponse("Inventory/DeleteItemLocations", "inventoryItemId=" + inventoryItemId + "&itemLocations=" + JsonFormatter.ConvertToJson(itemLocations) + "");
+		}
+
+		/// <summary>
+        /// Used to delete product identifiers 
+        /// </summary>
+        /// <param name="request">Object with collection of product identifiers</param>
+        public void DeleteProductIdentifiers(DeleteProductIdentifiersRequest request)
+		{
+			GetResponse("Inventory/DeleteProductIdentifiers", "request=" + JsonFormatter.ConvertToJson(request) + "");
 		}
 
 		/// <summary>
@@ -720,6 +738,26 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Used to get product identifiers for a stock item 
+        /// </summary>
+        /// <param name="request">Object with StockItemId</param>
+        public GetProductIdentifiersByStockItemIdResponse GetProductIdentifiersByStockItemId(GetProductIdentifiersByStockItemIdRequest request)
+		{
+			var response = GetResponse("Inventory/GetProductIdentifiersByStockItemId", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<GetProductIdentifiersByStockItemIdResponse>(response);
+		}
+
+		/// <summary>
+        /// Use this call to get available Product Identifier types 
+        /// </summary>
+        /// <returns>Object with  Dictionary of Product Identifier types</returns>
+        public GetProductIdentifierTypesRequest GetProductIdentifierTypes()
+		{
+			var response = GetResponse("Inventory/GetProductIdentifierTypes", "");
+            return JsonFormatter.ConvertFromJson<GetProductIdentifierTypesRequest>(response);
+		}
+
+		/// <summary>
         /// Used to get scrap categories 
         /// </summary>
         public GetScrapCategoriesResponse GetScrapCategories()
@@ -961,15 +999,6 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Use this call to update the list of Ebay Compatibility 
-        /// </summary>
-        /// <param name="ebayCompatibilityList">List of Ebay Compatibility</param>
-        public void UpdateEbayCompatibilityList(List<StockItemEbayCompatibility> ebayCompatibilityList)
-		{
-			GetResponse("Inventory/UpdateEbayCompatibilityList", "ebayCompatibilityList=" + JsonFormatter.ConvertToJson(ebayCompatibilityList) + "");
-		}
-
-		/// <summary>
         /// Update properties on images 
         /// </summary>
         /// <param name="images">Images to edit</param>
@@ -1118,6 +1147,15 @@ namespace LinnworksAPI
         public void UpdateItemLocations(List<StockItemLocation> itemLocations)
 		{
 			GetResponse("Inventory/UpdateItemLocations", "itemLocations=" + JsonFormatter.ConvertToJson(itemLocations) + "");
+		}
+
+		/// <summary>
+        /// Used to update product identifiers 
+        /// </summary>
+        /// <param name="request">Object with collection of product identifiers</param>
+        public void UpdateProductIdentifiers(UpdateProductIdentifiersRequest request)
+		{
+			GetResponse("Inventory/UpdateProductIdentifiers", "request=" + JsonFormatter.ConvertToJson(request) + "");
 		}
 
 		/// <summary>

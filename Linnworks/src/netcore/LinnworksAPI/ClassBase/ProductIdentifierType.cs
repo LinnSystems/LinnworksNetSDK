@@ -7,15 +7,17 @@ using Newtonsoft.Json;
 namespace LinnworksAPI
 { 
     [JsonConverter(typeof(StringEnumConverter))]
-	public enum AuditType
+	public enum ProductIdentifierType
 	{
-		TransferStatusChange,
-		TransferItem,
-		TransferNote,
-		TransferProperty,
-		TransferBin,
-		TransferInformation,
-		TransferMerge,
-		TransferArchived,
+		EAN,
+		MPN,
+		GTIN,
+		UPC,
+		ASIN,
+		ISBN,
+		Google,
+		CustomID,
+		PZN,
+		GCID,
 	}
 }

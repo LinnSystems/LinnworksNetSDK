@@ -13,7 +13,7 @@ namespace LinnworksAPI
 
         public string GetResponse(string extension, string body)
         {
-            var response = Factory.GetResponseAsync(extension, body, ApiContext.SessionId, ApiContext.ApiServer);
+            var response = Factory.GetResponseAsync(extension, body, ApiContext);
             return response.Result;
         }
     }

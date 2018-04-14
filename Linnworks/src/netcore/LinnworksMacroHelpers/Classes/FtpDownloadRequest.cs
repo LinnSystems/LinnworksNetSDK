@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LinnworksMacroHelpers.Classes
+﻿namespace LinnworksMacroHelpers.Classes
 {
-    public class FtpDownloadRequest
+    public sealed class FtpDownloadRequest
     {
         public FtpDownloadRequest() { }
         public FtpDownloadRequest(FtpSettings settings)

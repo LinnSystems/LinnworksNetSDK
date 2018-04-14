@@ -11,6 +11,8 @@ namespace LinnworksAPI
 		UpdateOrderItemResult AddCoupon(Guid orderId,String barcode,CouponValidationResult couponData,Guid fulfilmentCenter);
 		UpdateOrderItemResult AddOrderItem(Guid orderId,Guid itemId,String channelSKU,Guid fulfilmentCenter,Int32 quantity,LinePricingRequest linePricing);
 		UpdateOrderItemResult AddOrderService(Guid orderId,String service,Double cost,Double taxRate,Guid fulfilmentCenter);
+		void AssignOrderItemBatches(AssignOrderItemBatches request);
+		List<OrderItemBatch> AssignStockToOrder(AssignStockToOrderRequest request);
 		List<Guid> AssignToFolder(List<Guid> orderIds,String folder);
 		String CancelOrder(Guid orderId,Guid fulfilmentCenter,Double refund,String note);
 		List<Guid> ChangeOrderTag(List<Guid> orderIds,Int32? tag);
@@ -90,7 +92,7 @@ namespace LinnworksAPI
 		void SetOrderNotes(Guid orderId,List<OrderNote> orderNotes);
 		CalcOrderHeader SetOrderPackaging(SetOrderPackagingRequest request);
 		UpdateTotalsResult SetOrderPackagingSplit(Guid orderId,List<OrderPackagingSplit> packagingSplit);
-		UpdateTotalsResult SetOrderShippingInfo(Guid orderId,OrderShippingInfo info);
+		UpdateTotalsResult SetOrderShippingInfo(Guid orderId,UpdateOrderShippingInfoRequest info);
 		CalcOrderHeader SetOrderSplitPackagingManualOverwrite(CalcOrderHeader request);
 		void SetOrderTotalsInfo(Guid orderId,OrderTotalsInfo info);
 		List<PaymentMethod> SetPaymentMethods(PaymentMethod[] paymentMethods);

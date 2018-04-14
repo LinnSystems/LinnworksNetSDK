@@ -32,6 +32,11 @@ namespace LinnworksAPI
 		public Int32? ScrapQty;
 
         /// <summary>
+        /// The batch related to the rowqty 
+        /// </summary>
+		public OrderItemBatch Batch;
+
+        /// <summary>
         /// Additional costs 
         /// </summary>
 		public Double AdditionalCost;

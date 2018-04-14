@@ -11,6 +11,7 @@ namespace LinnworksAPI
 		AddImageToInventoryItemResponse AddImageToInventoryItem(AddImageToInventoryItemRequest request);
 		void AddInventoryItem(StockItem inventoryItem);
 		void AddItemLocations(List<StockItemLocation> itemLocations);
+		void AddProductIdentifiers(AddProductIdentifiersRequest request);
 		AddScrapCategoriesResponse AddScrapCategories(AddScrapCategoriesRequest request);
 		AddScrapItemResponse AddScrapItem(AddScrapItemRequest request);
 		Supplier AddSupplier(Supplier supplier);
@@ -44,6 +45,7 @@ namespace LinnworksAPI
 		void DeleteInventoryItems(DeleteInventoryItemsRequest request,List<Guid> inventoryItemIds);
 		void DeleteInventoryItemTitles(List<Guid> inventoryItemTitleIds);
 		void DeleteItemLocations(Guid inventoryItemId,List<Guid> itemLocations);
+		void DeleteProductIdentifiers(DeleteProductIdentifiersRequest request);
 		void DeleteScrapCategories(DeleteScrapCategoriesRequest request);
 		void DeleteStockSupplierStat(Guid stockItemId,List<Guid> itemSupplierIds);
 		void DeleteSuppliers(List<Guid> suppliersIds);
@@ -80,6 +82,8 @@ namespace LinnworksAPI
 		List<KeyGuidValue> GetPackageGroups();
 		List<KeyGuidValue> GetPostalServices();
 		List<InventoryView> GetPreDefinedViews();
+		GetProductIdentifiersByStockItemIdResponse GetProductIdentifiersByStockItemId(GetProductIdentifiersByStockItemIdRequest request);
+		GetProductIdentifierTypesRequest GetProductIdentifierTypes();
 		GetScrapCategoriesResponse GetScrapCategories();
 		GetScrapHistoryResponse GetScrapHistory(GetScrapHistoryRequest request);
 		GetStockItemBatchesByLocationResponse GetStockItemBatchesByLocation(GetStockItemBatchesByLocationRequest request);
@@ -104,7 +108,6 @@ namespace LinnworksAPI
 		Int32 UpdateCompositeParentStockLevel(Guid stockItemId,Guid locationId,Int32 fieldValue);
 		void UpdateCountries(IEnumerable<Country> countries);
 		void UpdateCountryRegions(UpdateCountryRegionsRequest request);
-		void UpdateEbayCompatibilityList(List<StockItemEbayCompatibility> ebayCompatibilityList);
 		void UpdateImages(List<StockItemImageSimple> images);
 		void UpdateInventoryItem(StockItemInv inventoryItem);
 		void UpdateInventoryItemChannelSKUs(List<StockItemChannelSKU> inventoryItemChannelSKUs);
@@ -120,6 +123,7 @@ namespace LinnworksAPI
 		Dictionary<String,Object> UpdateInventoryItemStockField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,Guid locationId,String changeSource = null);
 		void UpdateInventoryItemTitles(List<StockItemTitle> inventoryItemTitles);
 		void UpdateItemLocations(List<StockItemLocation> itemLocations);
+		void UpdateProductIdentifiers(UpdateProductIdentifiersRequest request);
 		void UpdateScrapCategories(UpdateScrapCategoriesRequest request);
 		void UpdateStockSupplierStat(List<StockItemSupplierStat> itemSuppliers);
 		void UpdateSupplier(Supplier supplier);
