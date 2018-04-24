@@ -4,10 +4,8 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Search_Stock_ByKey
+    public class GetStockLevel_BatchRequest
 	{
-		public String Key;
-
-		public Guid LocationId;
+		public List<Guid> StockItemIds;
 	} 
 }

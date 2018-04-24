@@ -18,7 +18,8 @@ namespace LinnMacroCustomer
 
             var macro = new LinnworksMacro.LinnworksMacro()
             {
-                Api = new LinnworksAPI.ApiObjectManager(context)
+                Api = new LinnworksAPI.ApiObjectManager(context),
+                Logger = new LoggerProxy()
             };
 
             var result = macro.Execute(new Guid("37d8fb79-4eea-401b-911a-d5cb04db61a4"));

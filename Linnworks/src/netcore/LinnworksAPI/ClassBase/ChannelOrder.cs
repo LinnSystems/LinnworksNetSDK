@@ -161,6 +161,8 @@ namespace LinnworksAPI
         /// </summary>
 		public DiscountType DiscountType;
 
+		public DiscountTaxType DiscountTaxType;
+
         /// <summary>
         /// The orders billing address 
         /// </summary>

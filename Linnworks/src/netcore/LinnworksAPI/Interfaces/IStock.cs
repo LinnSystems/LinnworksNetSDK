@@ -15,7 +15,9 @@ namespace LinnworksAPI
 		List<StockItemBatch> CreateStockBatches(List<StockItemBatch> batches);
 		VariationGroup CreateVariationGroup(VariationGroupTemplate template);
 		void DeleteVariationGroup(Guid pkVariationGroupId);
+		void DeleteVariationGroups(DeleteVariationGroupsRequest request);
 		void DeleteVariationItem(Guid pkVariationItemId,Guid pkStockItemId);
+		void DeleteVariationItems(DeleteVariationItemsRequest request);
 		GenericPagedResult<StockItemChangeHistory> GetItemChangesHistory(Guid stockItemId,Guid locationId,Int32 entriesPerPage,Int32 pageNumber);
 		TempFile GetItemChangesHistoryCSV(Guid stockItemId,Guid locationId);
 		List<StockItemSoldStat> GetSoldStat(Guid stockItemId);
@@ -27,6 +29,7 @@ namespace LinnworksAPI
 		List<StockItemScrap> GetStockItemScrapStat(Guid stockItemId);
 		List<StockItemFull> GetStockItemsFull(String keyword,Boolean loadCompositeParents,Boolean loadVariationParents,Int32 entriesPerPage,Int32 pageNumber,List<StockInformationDataRequirement> dataRequirements,List<StockInformationSearchType> searchTypes);
 		List<StockItemLevel> GetStockLevel(Guid stockItemId);
+		List<GetStockLevel_BatchResponse> GetStockLevel_Batch(GetStockLevel_BatchRequest request);
 		List<StockItemSold> GetStockSold(Guid stockItemId);
 		VariationGroup GetVariationGroupByName(String variationName);
 		VariationGroup GetVariationGroupByParentId(Guid pkStockItemId);

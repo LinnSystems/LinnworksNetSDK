@@ -4,10 +4,8 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Search_Stock_ByKey
+    public class DeleteVariationGroupsRequest
 	{
-		public String Key;
-
-		public Guid LocationId;
+		public IEnumerable<Guid> VariationGroupsIdList;
 	} 
 }
