@@ -1,4 +1,5 @@
 ﻿using LinnworksMacroHelpers.Classes;
+using LinnworksMacroHelpers.Classes.Email;
 using System;
 using System.IO;
 using System.Text;
@@ -33,5 +34,6 @@ namespace LinnworksMacroHelpers.Interfaces
         Stream DownloadFtpFile(FtpSettings settings);
         Stream DownloadSFtpFile(SFtpSettings settings);
         ProxiedWebResponse WebRequest(ProxiedWebRequest request);
+        ProxiedEmailResponse EmailRequest(ProxiedEmailRequest request);
     }
 }
