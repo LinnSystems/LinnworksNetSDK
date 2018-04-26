@@ -34,6 +34,6 @@ namespace LinnworksMacroHelpers.Interfaces
         Stream DownloadFtpFile(FtpSettings settings);
         Stream DownloadSFtpFile(SFtpSettings settings);
         ProxiedWebResponse WebRequest(ProxiedWebRequest request);
-        ProxiedEmailResponse EmailRequest(ProxiedEmailRequest request);
+        ProxiedEmailResponse SendEmail(ProxiedEmailRequest request);
     }
 }
