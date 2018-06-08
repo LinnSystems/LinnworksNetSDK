@@ -39,5 +39,6 @@ namespace LinnworksAPI
 		RenameSKU,
 		ProductIdentifiers,
 		TrackingNumbers,
+		JITStatus,
 	}
 }

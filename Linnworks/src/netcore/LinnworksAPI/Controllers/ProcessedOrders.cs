@@ -350,18 +350,6 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Use this call to refund the entire order. You may only call this method if the order does not currently have any refunds associated with it. 
-        /// </summary>
-        /// <param name="pkOrderId">The id of the order to perform a complete refund for.</param>
-        /// <param name="isManualRefund">If true, the refund will need to be manually actioned. If false (and channel refunds are available), it will automatically be actioned.</param>
-        /// <returns>A list of new refunds</returns>
-        public List<RefundInfo> RefundCompleteOrder(Guid pkOrderId,Boolean isManualRefund)
-		{
-			var response = GetResponse("ProcessedOrders/RefundCompleteOrder", "pkOrderId=" + pkOrderId + "&isManualRefund=" + isManualRefund + "");
-            return JsonFormatter.ConvertFromJson<List<RefundInfo>>(response);
-		}
-
-		/// <summary>
         /// Use this call to add or update a free text refund. This method can also be used to change the refund amount for any pending manual refund. Please check any automated refunds are valid prior to calling this method. 
         /// </summary>
         /// <param name="pkOrderId">The id of the order to add/update refunds for</param>

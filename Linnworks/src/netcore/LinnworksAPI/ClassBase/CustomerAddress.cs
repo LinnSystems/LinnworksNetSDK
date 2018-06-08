@@ -25,6 +25,8 @@ namespace LinnworksAPI
 
 		public String Country;
 
+		public String Continent;
+
 		public String FullName;
 
 		public String Company;

@@ -28,5 +28,7 @@ namespace LinnworksAPI
         /// Cost of the item for this order 
         /// </summary>
 		public Decimal CostPerUnit;
+
+		public String BinRack;
 	} 
 }

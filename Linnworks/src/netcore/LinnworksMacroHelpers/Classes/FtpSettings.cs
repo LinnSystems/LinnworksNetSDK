@@ -41,6 +41,8 @@ namespace LinnworksMacroHelpers.Classes
 
         public string Encoding { get; set; } = "";
 
+        public bool PassiveMode => true;
+
         public void Validate()
         {
             if (string.IsNullOrWhiteSpace(Server))

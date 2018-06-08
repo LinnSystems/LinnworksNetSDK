@@ -145,6 +145,18 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<StockItemSold>>(response);
 		}
 
+		public BinracksResponse GetSuggestedBinRacks(GetSuggestedBinRacksRequest request)
+		{
+			var response = GetResponse("Stock/GetSuggestedBinRacks", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<BinracksResponse>(response);
+		}
+
+		public BinracksResponse GetSuggestedBinRacks(SearchBinracksRequest request)
+		{
+			var response = GetResponse("Stock/GetSuggestedBinRacks", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<BinracksResponse>(response);
+		}
+
 		public VariationGroup GetVariationGroupByName(String variationName)
 		{
 			var response = GetResponse("Stock/GetVariationGroupByName", "variationName=" + System.Net.WebUtility.UrlEncode(variationName) + "");

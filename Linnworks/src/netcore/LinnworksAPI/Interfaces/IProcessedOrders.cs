@@ -37,7 +37,6 @@ namespace LinnworksAPI
 		ValidationResult IsRefundValid(Guid pkOrderId,List<RefundItem> refundItems);
 		Boolean IsRefundValidationRequiredByOrderId(Guid pkOrderId);
 		void MarkManualRefundsAsActioned(Guid pkOrderId);
-		List<RefundInfo> RefundCompleteOrder(Guid pkOrderId,Boolean isManualRefund);
 		List<RefundInfo> RefundFreeText(Guid pkOrderId,List<RefundItem> refundItems);
 		List<RefundInfo> RefundServices(Guid pkOrderId,List<RefundItem> refundItems);
 		List<RefundInfo> RefundShipping(Guid pkOrderId);

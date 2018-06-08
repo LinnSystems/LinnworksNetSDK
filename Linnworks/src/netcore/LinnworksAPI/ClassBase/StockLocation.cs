@@ -59,6 +59,8 @@ namespace LinnworksAPI
         /// </summary>
 		public Boolean FulfilmentCenterDeductStockWhenProcessed;
 
+		public Boolean IsWarehouseManaged;
+
 		public Guid StockLocationId;
 
 		public String LocationName;

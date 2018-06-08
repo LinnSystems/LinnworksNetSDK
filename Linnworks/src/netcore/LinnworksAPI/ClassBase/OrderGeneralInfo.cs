@@ -54,6 +54,8 @@ namespace LinnworksAPI
         /// </summary>
 		public Byte? Marker;
 
+		public Boolean IsParked;
+
 		public List<OrderIdentifier> Identifiers;
 
         /// <summary>

@@ -34,5 +34,6 @@ namespace LinnworksAPI
 		SerialNumberScanRequired,
 		BatchNumberScanRequired,
 		BatchType,
+		JIT,
 	}
 }

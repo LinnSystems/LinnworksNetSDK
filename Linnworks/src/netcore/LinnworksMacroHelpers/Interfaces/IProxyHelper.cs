@@ -1,6 +1,8 @@
 ﻿using LinnworksMacroHelpers.Classes;
 using LinnworksMacroHelpers.Classes.Email;
+using LinnworksMacroHelpers.Classes.Utility;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -35,5 +37,12 @@ namespace LinnworksMacroHelpers.Interfaces
         Stream DownloadSFtpFile(SFtpSettings settings);
         ProxiedWebResponse WebRequest(ProxiedWebRequest request);
         ProxiedEmailResponse SendEmail(ProxiedEmailRequest request);
+
+        ProxiedListDirectoryResponse ListDirectoryFTP(FtpSettings settings);
+        ProxiedListDirectoryResponse ListDirectorySFTP(SFtpSettings settings);
+        ProxiedDeleteFileResponse DeleteFileFTP(FtpSettings settings);
+        ProxiedDeleteFileResponse DeleteFileSFTP(SFtpSettings settings);
+        ProxiedRenameFileResponse RenameFileFTP(FtpSettings settings, string newName);
+        ProxiedRenameFileResponse RenameFileSFTP(SFtpSettings settings, string newName);
     }
 }

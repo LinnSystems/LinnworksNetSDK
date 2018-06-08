@@ -43,5 +43,6 @@ namespace LinnworksAPI
 		DimHeight,
 		DimWidth,
 		DimDepth,
+		JIT,
 	}
 }

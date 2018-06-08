@@ -10,7 +10,7 @@ namespace LinnworksAPI
 
 		public Int32 EntriesPerPage;
 
-		public Int32 TotalEntries;
+		public Int64 TotalEntries;
 
 		public Int32 TotalPages;
 

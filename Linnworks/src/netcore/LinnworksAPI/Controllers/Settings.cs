@@ -12,7 +12,63 @@ namespace LinnworksAPI
         {                       
         }
 
-        /// <summary>
+        public DataPurgeCheckTokenResponse DataPurgeCheckToken(DataPurgeCheckTokenRequest request)
+		{
+			var response = GetResponse("Settings/DataPurgeCheckToken", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<DataPurgeCheckTokenResponse>(response);
+		}
+
+		public DataPurgeCreateTokenResponse DataPurgeCreateToken(DataPurgeBasicRequest request)
+		{
+			var response = GetResponse("Settings/DataPurgeCreateToken", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<DataPurgeCreateTokenResponse>(response);
+		}
+
+		public void DataPurgeDelete(DataPurgeDeleteRequest request)
+		{
+			GetResponse("Settings/DataPurgeDelete", "request=" + JsonFormatter.ConvertToJson(request) + "");
+		}
+
+		public List<DataPurgeFoundEntryResponse> DataPurgeFindEntries(DataPurgeFindEntriesRequest request)
+		{
+			var response = GetResponse("Settings/DataPurgeFindEntries", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<List<DataPurgeFoundEntryResponse>>(response);
+		}
+
+		public DateTime DataPurgeGetLatestDate(DataPurgeBasicRequest request)
+		{
+			var response = GetResponse("Settings/DataPurgeGetLatestDate", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<DateTime>(response);
+		}
+
+		public DataPurgeCreateTokenResponse DataPurgeGetToken(DataPurgeBasicRequest request)
+		{
+			var response = GetResponse("Settings/DataPurgeGetToken", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<DataPurgeCreateTokenResponse>(response);
+		}
+
+		public void DataPurgeObfuscate(DataPurgeObfuscateRequest request)
+		{
+			GetResponse("Settings/DataPurgeObfuscate", "request=" + JsonFormatter.ConvertToJson(request) + "");
+		}
+
+		public void DataPurgeObfuscateOrderSet(DataPurgeObfuscateOrderSetRequest request)
+		{
+			GetResponse("Settings/DataPurgeObfuscateOrderSet", "request=" + JsonFormatter.ConvertToJson(request) + "");
+		}
+
+		public DateTime DataPurgeObfuscationGetLatestDate(DataPurgeBasicRequest request)
+		{
+			var response = GetResponse("Settings/DataPurgeObfuscationGetLatestDate", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<DateTime>(response);
+		}
+
+		public void DataPurgeRevokeToken(DataPurgeBasicRequest request)
+		{
+			GetResponse("Settings/DataPurgeRevokeToken", "request=" + JsonFormatter.ConvertToJson(request) + "");
+		}
+
+		/// <summary>
         /// Delete currency conversion rates 
         /// </summary>
         /// <param name="currencies">Currencies to delete</param>

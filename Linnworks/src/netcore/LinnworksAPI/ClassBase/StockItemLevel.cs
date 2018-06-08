@@ -36,6 +36,8 @@ namespace LinnworksAPI
         /// </summary>
 		public Int32 Due;
 
+		public Boolean JIT;
+
         /// <summary>
         /// Currently in open orders 
         /// </summary>
