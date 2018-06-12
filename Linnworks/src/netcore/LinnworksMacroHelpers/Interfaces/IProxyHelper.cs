@@ -2,15 +2,14 @@
 using LinnworksMacroHelpers.Classes.Email;
 using LinnworksMacroHelpers.Classes.Utility;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
 namespace LinnworksMacroHelpers.Interfaces
 {
     public interface ProxyUpload<TSettings, TResult> : IDisposable
-        where TSettings : IUploadSettings
-        where TResult : class
+        where TSettings : BaseSettings
+        where TResult : BaseUploadResult
     {
         /// <summary>
         /// Writes supplied bytes to the FTP proxy.
@@ -31,18 +30,23 @@ namespace LinnworksMacroHelpers.Interfaces
     public interface IProxyFactory
     {
         ProxyUpload<FtpSettings, FtpUploadResult> GetFtpUploadProxy(FtpSettings settings);
-        ProxyUpload<SFtpSettings, FtpUploadResult> GetSFtpUploadProxy(SFtpSettings settings);
+        ProxyUpload<SFtpSettings, SftpUploadResult> GetSFtpUploadProxy(SFtpSettings settings);
+        ProxyUpload<FtpsSettings, FtpsUploadResult> GetFtpsUploadProxy(FtpsSettings settings);
         
         Stream DownloadFtpFile(FtpSettings settings);
         Stream DownloadSFtpFile(SFtpSettings settings);
+        Stream DownloadFtpsFile(FtpsSettings settings);
         ProxiedWebResponse WebRequest(ProxiedWebRequest request);
         ProxiedEmailResponse SendEmail(ProxiedEmailRequest request);
 
         ProxiedListDirectoryResponse ListDirectoryFTP(FtpSettings settings);
         ProxiedListDirectoryResponse ListDirectorySFTP(SFtpSettings settings);
+        ProxiedListDirectoryResponse ListDirectoryFTPS(FtpsSettings settings);
         ProxiedDeleteFileResponse DeleteFileFTP(FtpSettings settings);
         ProxiedDeleteFileResponse DeleteFileSFTP(SFtpSettings settings);
+        ProxiedDeleteFileResponse DeleteFileFTPS(FtpsSettings settings);
         ProxiedRenameFileResponse RenameFileFTP(FtpSettings settings, string newName);
         ProxiedRenameFileResponse RenameFileSFTP(SFtpSettings settings, string newName);
+        ProxiedRenameFileResponse RenameFileFTPS(FtpsSettings settings, string newName);
     }
 }
