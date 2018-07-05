@@ -394,6 +394,12 @@ namespace LinnworksAPI
 			GetResponse("ProcessedOrders/RenameReturnCategory", "pkItemId=" + pkItemId + "&newName=" + System.Net.WebUtility.UrlEncode(newName) + "");
 		}
 
+		public SearchProcessedOrdersResponse SearchProcessedOrders(SearchProcessedOrdersRequest request)
+		{
+			var response = GetResponse("ProcessedOrders/SearchProcessedOrders", "request=" + JsonFormatter.ConvertToJson(request) + "");
+            return JsonFormatter.ConvertFromJson<SearchProcessedOrdersResponse>(response);
+		}
+
 		/// <summary>
         /// Use this call to search for processed orders. 
         /// </summary>

@@ -12,6 +12,8 @@ namespace LinnworksAPI
 
 		public ProductIdentifierType Type;
 
+		public String Site;
+
 		public String Value;
 
 		public DateTime ModifiedDate;

@@ -7,18 +7,9 @@ using Newtonsoft.Json;
 namespace LinnworksAPI
 { 
     [JsonConverter(typeof(StringEnumConverter))]
-	public enum ProductIdentifierType
+	public enum SortDirection
 	{
-		EAN,
-		MPN,
-		GTIN,
-		UPC,
-		ASIN,
-		ISBN,
-		Google,
-		CustomID,
-		PZN,
-		GCID,
-		ePID,
+		ASC,
+		DESC,
 	}
 }

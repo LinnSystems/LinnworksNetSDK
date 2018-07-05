@@ -16,6 +16,8 @@ namespace LinnworksAPI
 
 		public ConfigItem<Boolean> IsMultiLocation;
 
+		public ConfigItem<Boolean> AutoPopulatedLocations;
+
 		public ConfigItem<Boolean> DespatchNotes;
 
 		public ConfigItem<Boolean> CancellationNotes;

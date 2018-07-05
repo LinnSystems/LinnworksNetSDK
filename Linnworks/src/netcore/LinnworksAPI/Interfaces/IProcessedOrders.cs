@@ -41,6 +41,7 @@ namespace LinnworksAPI
 		List<RefundInfo> RefundServices(Guid pkOrderId,List<RefundItem> refundItems);
 		List<RefundInfo> RefundShipping(Guid pkOrderId);
 		void RenameReturnCategory(Int32 pkItemId,String newName);
+		SearchProcessedOrdersResponse SearchProcessedOrders(SearchProcessedOrdersRequest request);
 		GenericPagedResult<ProcessedOrderWeb> SearchProcessedOrdersPaged(DateTime? from,DateTime? to,SearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,Int32 pageNum,Int32 numEntriesPerPage);
 		ValidationResult ValidateCompleteOrderRefund(Guid pkOrderId);
 	} 
