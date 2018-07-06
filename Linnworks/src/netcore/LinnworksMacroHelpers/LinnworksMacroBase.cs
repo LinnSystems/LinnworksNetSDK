@@ -1,4 +1,5 @@
-﻿using LinnworksMacroHelpers.Interfaces;
+﻿using LinnworksMacroHelpers.Classes;
+using LinnworksMacroHelpers.Interfaces;
 
 namespace LinnworksMacroHelpers
 {
@@ -8,5 +9,6 @@ namespace LinnworksMacroHelpers
         public LinnworksAPI.ApiObjectManager Api { get; set; }
         public IProxyFactory ProxyFactory { get; set; }
         public ILogger Logger { get; set; }
+        public MacroConfigurationProxy Configuration { get; set; }
     }
 }
