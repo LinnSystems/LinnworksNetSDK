@@ -46,3 +46,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# bin and VS folders created by build
+bin/
+obj/
+.vs/
