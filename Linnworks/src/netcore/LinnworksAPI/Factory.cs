@@ -1,64 +1,46 @@
 ﻿using System;
-using System.Collections.Concurrent;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Net;
 
 namespace LinnworksAPI
 {
     public class Factory
     {
-        private static ConcurrentDictionary<Guid, HttpClient> Clients = new ConcurrentDictionary<Guid, HttpClient>();
-
-        private static HttpClient GetClient(Guid token)
+        public static string GetResponse(string extension, string body, ApiContext context)
         {
-            HttpClient client = null;
+            string url = context.ApiServer + extension;
+            var req = HttpWebRequest.Create(url);
+            req.Method = "POST";
+            req.ContentType = "application/x-www-form-urlencoded";
+            req.Headers.Add("RecursionCount", context.RecursionCount.ToString());
 
-            if (!Clients.TryGetValue(token, out client))
+            if (context.SessionId != Guid.Empty)
+                req.Headers.Add(HttpRequestHeader.Authorization, context.SessionId.ToString());
+
+            req.ContentLength = body.Length;
+            using (Stream post = req.GetRequestStream())
             {
-                lock(typeof(HttpClient))
+                using (StreamWriter writer = new StreamWriter(post))
                 {
-                    client = new HttpClient();
-                    client.Timeout = new TimeSpan(0, 10, 0);
-
-                    if (token != Guid.Empty)
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token.ToString());
-
-                    Clients.TryAdd(token, client);
+                    writer.Write(body);
                 }
             }
 
-            return client;
-        }
+            var response = (HttpWebResponse)req.GetResponse();
+            string responseBody = "";
 
-        public static async Task<string> GetResponseAsync(string extension, string body, ApiContext context)
-        {
-            try
+            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
             {
-                var client = GetClient(context.SessionId);
-                var content = new StringContent(body, Encoding.UTF8, "application/x-www-form-urlencoded");
-                content.Headers.Add("RecursionCount", context.RecursionCount.ToString());
-
-                var response = await client.PostAsync(new Uri(context.ApiServer + extension), content);
-                   
-                string responseResult = await response.Content.ReadAsStringAsync();
-
-                if (response.IsSuccessStatusCode)
-                {
-                    return responseResult;
-                }
-                else
-                {
-                    var error = JsonFormatter.ConvertFromJson<ApiError>(responseResult);
-                    throw new Exception(error.Message);
-                }
-
+                responseBody = sr.ReadToEnd();
             }
-            catch (HttpRequestException)
+
+            if ((int)response.StatusCode < 200 || (int)response.StatusCode > 299)
             {
-                throw ;
+                var error = JsonFormatter.ConvertFromJson<ApiError>(responseBody);
+                throw new Exception(error.Message);
             }
+
+            return responseBody;
         }
 
         public class ApiError

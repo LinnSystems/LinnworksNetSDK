@@ -70,7 +70,7 @@ namespace LinnworksMacroHelpers.Classes
             if (encoding == null)
                 encoding = Encoding.UTF8;
 
-            this.RawBody = encoding.GetBytes(value);
+            RawBody = encoding.GetBytes(value);
         }
     }
 }

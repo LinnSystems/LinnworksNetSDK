@@ -15,7 +15,7 @@ namespace LinnworksMacroHelpers.Classes
 
         public string GetStringResponse(Encoding encoding = null)
         {
-            return (encoding ?? Encoding.UTF8).GetString(this.RawResponse);
+            return (encoding ?? Encoding.UTF8).GetString(RawResponse);
         }
     }
 }

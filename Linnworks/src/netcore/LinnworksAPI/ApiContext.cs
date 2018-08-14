@@ -11,7 +11,7 @@ namespace LinnworksAPI
         public ApiContext(Guid sessionId, string apiServer, int recursionCount) 
             : this(sessionId, apiServer)
         {
-            this.RecursionCount = recursionCount;
+            RecursionCount = recursionCount;
         }
 
         public ApiContext(Guid sessionId, string apiServer)
@@ -22,8 +22,8 @@ namespace LinnworksAPI
             if (string.IsNullOrWhiteSpace(apiServer))
                 throw new ArgumentNullException(nameof(apiServer), "ApiServer is missing");
 
-            this.SessionId = sessionId;
-            this.ApiServer = apiServer + (apiServer.EndsWith("/api/") ? "" : "/api/");
+            SessionId = sessionId;
+            ApiServer = apiServer + (apiServer.EndsWith("/api/") ? "" : "/api/");
         }
 
         public ApiContext(string apiServer)
@@ -31,8 +31,8 @@ namespace LinnworksAPI
             if (string.IsNullOrWhiteSpace(apiServer))
                 throw new ArgumentNullException(nameof(apiServer), "ApiServer is missing");
 
-            this.SessionId = Guid.Empty;
-            this.ApiServer = apiServer + (apiServer.EndsWith("/api/") ? "" : "/api/");
+            SessionId = Guid.Empty;
+            ApiServer = apiServer + (apiServer.EndsWith("/api/") ? "" : "/api/");
         }
     }
 }

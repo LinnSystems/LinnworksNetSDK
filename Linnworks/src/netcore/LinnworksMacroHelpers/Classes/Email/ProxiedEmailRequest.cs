@@ -99,34 +99,34 @@ namespace LinnworksMacroHelpers.Classes.Email
 
         public void Validate()
         {
-            if (this.Settings == null)
+            if (Settings == null)
                 throw new Exception("Settings must be supplied");
 
-            this.Settings.Validate();
-            this.CleanCollections();
+            Settings.Validate();
+            CleanCollections();
 
             if (To?.Any() == false && CC?.Any() == false && BCC?.Any() == false)
                 throw new Exception("At lest one To, CC or BCC must be supplied");
 
-            if (string.IsNullOrWhiteSpace(this.Body))
+            if (string.IsNullOrWhiteSpace(Body))
                 throw new Exception("Body must have some content");
 
-            if (string.IsNullOrWhiteSpace(this.Subject))
+            if (string.IsNullOrWhiteSpace(Subject))
                 throw new Exception("Subjet must be supplied");
 
-            this.Sender?.Validate();
-            this.From?.Validate();
-            this.To?.Validate();
-            this.CC?.Validate();
-            this.BCC?.Validate();
-            this.ReplyToList?.Validate();
-            this.Headers?.Validate();
-            this.Attachments?.Validate();
+            Sender?.Validate();
+            From?.Validate();
+            To?.Validate();
+            CC?.Validate();
+            BCC?.Validate();
+            ReplyToList?.Validate();
+            Headers?.Validate();
+            Attachments?.Validate();
 
-            if (this.Attachments?.Sum(s => s.Content.Length) > MAXIMUM_SUM_ATTACHMENTS_SIZE)
+            if (Attachments?.Sum(s => s.Content.Length) > MAXIMUM_SUM_ATTACHMENTS_SIZE)
                 throw new Exception($"Total size of attachments exceeds {(20971520 / 1024) / 1024}MB");
 
-            if(Headers?.Count > 0 && Headers.Select(s=> s.Name.Trim()).Distinct(StringComparer.OrdinalIgnoreCase).Count() != Headers.Count)
+            if (Headers?.Count > 0 && Headers.Select(s => s.Name.Trim()).Distinct(StringComparer.OrdinalIgnoreCase).Count() != Headers.Count)
                 throw new Exception("Duplicate email headers are not allowed");
         }
 
@@ -138,12 +138,12 @@ namespace LinnworksMacroHelpers.Classes.Email
 
         private void CleanCollections()
         {
-            this.To?.RemoveAll(s => s == null);
-            this.CC?.RemoveAll(s => s == null);
-            this.BCC?.RemoveAll(s => s == null);
-            this.ReplyToList?.RemoveAll(s => s == null);
-            this.Headers?.RemoveAll(s => s == null);
-            this.Attachments?.RemoveAll(s => s == null);
+            To?.RemoveAll(s => s == null);
+            CC?.RemoveAll(s => s == null);
+            BCC?.RemoveAll(s => s == null);
+            ReplyToList?.RemoveAll(s => s == null);
+            Headers?.RemoveAll(s => s == null);
+            Attachments?.RemoveAll(s => s == null);
         }
     }
 
@@ -159,11 +159,11 @@ namespace LinnworksMacroHelpers.Classes.Email
             if (port <= 0)
                 throw new ArgumentOutOfRangeException(nameof(port), $"{nameof(host)} must be supplied with email settings.");
 
-            this.Host = host;
-            this.Port = port;
-            this.Username = username;
-            this.Password = password;
-            this.EnableSsl = enableSsl;
+            Host = host;
+            Port = port;
+            Username = username;
+            Password = password;
+            EnableSsl = enableSsl;
         }
 
         /// <summary>
@@ -204,16 +204,16 @@ namespace LinnworksMacroHelpers.Classes.Email
     public class EmailAddress : IValidation
     {
         public EmailAddress() { }
-        
+
         public EmailAddress(string address)
         {
-            this.Address = address;
+            Address = address;
         }
 
-        public EmailAddress(string address, string displayName) 
+        public EmailAddress(string address, string displayName)
             : this(address)
         {
-            this.DisplayName = displayName;
+            DisplayName = displayName;
         }
 
 
@@ -250,8 +250,8 @@ namespace LinnworksMacroHelpers.Classes.Email
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentNullException(nameof(value), $"{nameof(value)} must be provided for an email header");
 
-            this.Name = name;
-            this.Value = value;
+            Name = name;
+            Value = value;
         }
 
         /// <summary>
@@ -266,10 +266,10 @@ namespace LinnworksMacroHelpers.Classes.Email
 
         public void Validate()
         {
-            if (string.IsNullOrWhiteSpace(this.Name))
+            if (string.IsNullOrWhiteSpace(Name))
                 throw new ArgumentNullException("Name must be supplied for header");
 
-            if (string.IsNullOrWhiteSpace(this.Value))
+            if (string.IsNullOrWhiteSpace(Value))
                 throw new ArgumentNullException("Value must be supplied for header");
         }
     }
@@ -294,9 +294,9 @@ namespace LinnworksMacroHelpers.Classes.Email
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentNullException(nameof(name), $"{nameof(name)} must be supplied with email attachment.");
 
-            this.Content = content;
-            this.ContentType = contentType;
-            this.Name = name;
+            Content = content;
+            ContentType = contentType;
+            Name = name;
         }
 
         /// <summary>

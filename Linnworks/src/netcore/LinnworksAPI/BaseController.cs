@@ -8,13 +8,13 @@ namespace LinnworksAPI
 
         public BaseController(ApiContext apiContext)
         {
-            this.ApiContext = apiContext;
+            ApiContext = apiContext;
         }
 
         public string GetResponse(string extension, string body)
         {
-            var response = Factory.GetResponseAsync(extension, body, ApiContext);
-            return response.Result;
+            var response = Factory.GetResponse(extension, body, ApiContext);
+            return response;
         }
     }
 

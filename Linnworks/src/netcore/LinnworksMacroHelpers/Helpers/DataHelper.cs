@@ -1,6 +1,4 @@
 ﻿namespace LinnworksMacroHelpers.Helpers
 {
-    public static class DataHelper
-    {
-    }
+    public static class DataHelper { }
 }
