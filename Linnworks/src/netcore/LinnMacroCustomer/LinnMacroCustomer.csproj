@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>LinnMacroCustomer</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>LinnMacroCustomer</PackageId>
@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LinnworksAPI\LinnworksAPI.csproj" />
-    <ProjectReference Include="..\LinnworksMacro\LinnworksMacro.csproj" />
+    <ProjectReference Include="LinnworksAPI\LinnworksAPI.csproj" />
+    <ProjectReference Include="LinnworksMacro\LinnworksMacro.csproj" />
   </ItemGroup>
 
 </Project>

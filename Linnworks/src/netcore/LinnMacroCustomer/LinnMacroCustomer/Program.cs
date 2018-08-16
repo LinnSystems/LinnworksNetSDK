@@ -6,23 +6,23 @@ namespace LinnMacroCustomer
     {
         public static void Main(string[] args)
         {
-            Guid applicationId;
-            Guid secretKey;
-            Guid token;
+            //Guid applicationId;
+            //Guid secretKey;
+            //Guid token;
 
-            var macro = SetupMacro(applicationId, secretKey, token);
+            //var macro = SetupMacro(applicationId, secretKey, token);
 
-            var result = macro.Execute(new Guid("37d8fb79-4eea-401b-911a-d5cb04db61a4"));
+            //var result = macro.Execute(new Guid("37d8fb79-4eea-401b-911a-d5cb04db61a4"));
 
-            if (result == null)
-            {
-                Console.WriteLine("Stock item not found");
-            }
-            else
-            {
-                Console.WriteLine(result.ItemNumber);
-            }
-            Console.Read();
+            //if (result == null)
+            //{
+            //    Console.WriteLine("Stock item not found");
+            //}
+            //else
+            //{
+            //    Console.WriteLine(result.ItemNumber);
+            //}
+            //Console.Read();
         }
 
         private static LinnworksAPI.BaseSession Authorize(Guid applicationId, Guid secretKey, Guid token)
