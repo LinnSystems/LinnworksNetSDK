@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnMacroCustomer", "LinnMacroCustomer\LinnMacroCustomer.csproj", "{1BBD3B47-2034-42FB-A379-A8807E7F2B08}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksAPI", "..\LinnworksAPI\LinnworksAPI.csproj", "{6CCC2DF2-C196-4334-8750-C7D40D595AFA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksMacro", "..\LinnworksMacro\LinnworksMacro.csproj", "{657C1059-2DF9-43B4-8007-E77187BC482E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksMacroHelpers", "..\LinnworksMacroHelpers\LinnworksMacroHelpers.csproj", "{1A24A40B-7AEC-4D44-B7E2-06FD58EDDFE4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnMacroCustomer", "LinnMacroCustomer.csproj", "{E7AD1B6A-380A-493C-9CE4-8503A474EED5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1BBD3B47-2034-42FB-A379-A8807E7F2B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BBD3B47-2034-42FB-A379-A8807E7F2B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BBD3B47-2034-42FB-A379-A8807E7F2B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BBD3B47-2034-42FB-A379-A8807E7F2B08}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CCC2DF2-C196-4334-8750-C7D40D595AFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CCC2DF2-C196-4334-8750-C7D40D595AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CCC2DF2-C196-4334-8750-C7D40D595AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{1A24A40B-7AEC-4D44-B7E2-06FD58EDDFE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A24A40B-7AEC-4D44-B7E2-06FD58EDDFE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A24A40B-7AEC-4D44-B7E2-06FD58EDDFE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7AD1B6A-380A-493C-9CE4-8503A474EED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7AD1B6A-380A-493C-9CE4-8503A474EED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7AD1B6A-380A-493C-9CE4-8503A474EED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7AD1B6A-380A-493C-9CE4-8503A474EED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
