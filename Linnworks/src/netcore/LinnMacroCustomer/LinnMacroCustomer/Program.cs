@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LinnMacroCustomer
 {
@@ -12,7 +9,6 @@ namespace LinnMacroCustomer
             Guid applicationId;
             Guid secretKey;
             Guid token;
-
 
             var macro = SetupMacro(applicationId, secretKey, token);
 
