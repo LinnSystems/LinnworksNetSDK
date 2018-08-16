@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnMacroCustomer", "LinnMacroCustomer\LinnMacroCustomer.csproj", "{1BBD3B47-2034-42FB-A379-A8807E7F2B08}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksAPI", "..\LinnworksAPI\LinnworksAPI.csproj", "{6CCC2DF2-C196-4334-8750-C7D40D595AFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksAPI", "LinnworksAPI\LinnworksAPI.csproj", "{6CCC2DF2-C196-4334-8750-C7D40D595AFA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksMacro", "..\LinnworksMacro\LinnworksMacro.csproj", "{657C1059-2DF9-43B4-8007-E77187BC482E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksMacro", "LinnworksMacro\LinnworksMacro.csproj", "{657C1059-2DF9-43B4-8007-E77187BC482E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksMacroHelpers", "..\LinnworksMacroHelpers\LinnworksMacroHelpers.csproj", "{1A24A40B-7AEC-4D44-B7E2-06FD58EDDFE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinnworksMacroHelpers", "LinnworksMacroHelpers\LinnworksMacroHelpers.csproj", "{1A24A40B-7AEC-4D44-B7E2-06FD58EDDFE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
