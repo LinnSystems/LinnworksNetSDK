@@ -10,5 +10,7 @@ namespace LinnworksMacroHelpers
         public IProxyFactory ProxyFactory { get; set; }
         public ILogger Logger { get; set; }
         public MacroConfigurationProxy Configuration { get; set; }
+
+        public ISettingsHelper SettingsHelper { get; set; }
     }
 }
