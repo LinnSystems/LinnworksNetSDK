@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
+using System.Net;
 
 namespace LinnworksAPI
 {
@@ -14,7 +15,7 @@ namespace LinnworksAPI
 
         public static string ConvertToJson<T>(T t)
         {
-            return JsonConvert.SerializeObject(t, SerializerSettingsDateFormat);
+            return WebUtility.UrlEncode(JsonConvert.SerializeObject(t, SerializerSettingsDateFormat));
         }
     }
 }
