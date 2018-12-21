@@ -29,6 +29,9 @@ namespace LinnworksAPI
         /// </summary>
 		public Decimal CostPerUnit;
 
+        /// <summary>
+        /// Binrack of the item to be booked in. 
+        /// </summary>
 		public String BinRack;
 	} 
 }

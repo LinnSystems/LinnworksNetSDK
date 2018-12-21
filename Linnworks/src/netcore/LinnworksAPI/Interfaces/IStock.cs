@@ -30,9 +30,8 @@ namespace LinnworksAPI
 		List<StockItemFull> GetStockItemsFull(String keyword,Boolean loadCompositeParents,Boolean loadVariationParents,Int32 entriesPerPage,Int32 pageNumber,List<StockInformationDataRequirement> dataRequirements,List<StockInformationSearchType> searchTypes);
 		List<StockItemLevel> GetStockLevel(Guid stockItemId);
 		List<GetStockLevel_BatchResponse> GetStockLevel_Batch(GetStockLevel_BatchRequest request);
+		GetStockLevelByLocationResponse GetStockLevelByLocation(GetStockLevelByLocationRequest request);
 		List<StockItemSold> GetStockSold(Guid stockItemId);
-		BinracksResponse GetSuggestedBinRacks(GetSuggestedBinRacksRequest request);
-		BinracksResponse GetSuggestedBinRacks(SearchBinracksRequest request);
 		VariationGroup GetVariationGroupByName(String variationName);
 		VariationGroup GetVariationGroupByParentId(Guid pkStockItemId);
 		List<GenericEnumDescriptor> GetVariationGroupSearchTypes();

@@ -44,5 +44,8 @@ namespace LinnworksAPI
 		DimWidth,
 		DimDepth,
 		JIT,
+		ReorderAmount,
+		ReorderDate,
+		AverageConsumption,
 	}
 }

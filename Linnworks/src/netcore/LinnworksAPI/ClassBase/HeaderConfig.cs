@@ -56,6 +56,10 @@ namespace LinnworksAPI
 
 		public Boolean IsHeaderOnly;
 
+        /// <summary>
+        /// Controls whether a channel's configs are displayed in the UI
+        /// Set to true in the derived class if we want to hide it (See PlaytradeConfig.cs) 
+        /// </summary>
 		public Boolean IsHidden;
 
 		public ConfigItemExternal[] DynamicProperties;
@@ -66,6 +70,9 @@ namespace LinnworksAPI
 
 		public ConfigPaymentMethodMapping PaymentMethodMapping;
 
+        /// <summary>
+        /// Channel ID 
+        /// </summary>
 		public Int32 PkChannelId;
 
 		public String Source;

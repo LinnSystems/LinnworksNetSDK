@@ -82,7 +82,7 @@ namespace LinnworksAPI
         /// <returns>List of ExportRegister objects</returns>
         public GetExportListResponse GetExportList(GetExportListRequest request)
 		{
-			var response = GetResponse("ImportExport/GetExportList", "request=" + JsonFormatter.ConvertToJson(request) + "");
+			var response = GetResponse("ImportExport/GetExportList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetExportListResponse>(response);
 		}
 
@@ -114,7 +114,7 @@ namespace LinnworksAPI
         /// <returns>List of ImportRegister objects</returns>
         public GetImportListResponse GetImportList(GetImportListRequest request)
 		{
-			var response = GetResponse("ImportExport/GetImportList", "request=" + JsonFormatter.ConvertToJson(request) + "");
+			var response = GetResponse("ImportExport/GetImportList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetImportListResponse>(response);
 		}
 

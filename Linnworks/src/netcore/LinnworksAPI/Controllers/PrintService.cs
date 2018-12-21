@@ -22,7 +22,7 @@ namespace LinnworksAPI
         /// <param name="printerName">printer name of the ivrtual printer to use. If null then the sepecified in the template</param>
         public CreatePDFResult CreatePDFfromJobForceTemplate(String templateType,List<Guid> IDs,Int32? templateID,List<KeyValuePair<String,String>> parameters,String printerName)
 		{
-			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplate", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&IDs=" + JsonFormatter.ConvertToJson(IDs) + "&templateID=" + JsonFormatter.ConvertToJson(templateID) + "&parameters=" + JsonFormatter.ConvertToJson(parameters) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "");
+			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplate", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&IDs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(IDs)) + "&templateID=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(templateID)) + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
 		}
 
@@ -36,7 +36,7 @@ namespace LinnworksAPI
         /// <param name="printerName">printer name of the ivrtual printer to use. If null then the sepecified in the template</param>
         public CreatePDFResult CreatePDFfromJobForceTemplateStockIn(String templateType,List<PrintingKey> PrintingKeys,Int32? templateID,List<KeyValuePair<String,String>> parameters,String printerName)
 		{
-			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplateStockIn", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&PrintingKeys=" + JsonFormatter.ConvertToJson(PrintingKeys) + "&templateID=" + JsonFormatter.ConvertToJson(templateID) + "&parameters=" + JsonFormatter.ConvertToJson(parameters) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "");
+			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplateStockIn", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&PrintingKeys=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(PrintingKeys)) + "&templateID=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(templateID)) + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
 		}
 
@@ -50,7 +50,7 @@ namespace LinnworksAPI
         /// <param name="printerName">Printer name of the virtual printer to use. If null then the sepecified in the template</param>
         public CreatePDFResult CreatePDFfromJobForceTemplateWithQuantities(String templateType,List<KeyValuePair<Guid,Int32>> IDsAndQuantities,Int32? templateID,List<KeyValuePair<String,String>> parameters,String printerName)
 		{
-			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplateWithQuantities", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&IDsAndQuantities=" + JsonFormatter.ConvertToJson(IDsAndQuantities) + "&templateID=" + JsonFormatter.ConvertToJson(templateID) + "&parameters=" + JsonFormatter.ConvertToJson(parameters) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "");
+			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplateWithQuantities", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&IDsAndQuantities=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(IDsAndQuantities)) + "&templateID=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(templateID)) + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
 		}
 
@@ -62,7 +62,7 @@ namespace LinnworksAPI
         /// <param name="returnPostalServiceName">Name of the postal service to use. If null then specified in settings or same as the outbound shipment</param>
         public CreatePDFResult CreateReturnShippingLabelsPDF(List<Guid> IDs,List<KeyValuePair<Guid,Int32>> orderItemIdsAndQuantities,String returnPostalServiceName)
 		{
-			var response = GetResponse("PrintService/CreateReturnShippingLabelsPDF", "IDs=" + JsonFormatter.ConvertToJson(IDs) + "&orderItemIdsAndQuantities=" + JsonFormatter.ConvertToJson(orderItemIdsAndQuantities) + "&returnPostalServiceName=" + System.Net.WebUtility.UrlEncode(returnPostalServiceName) + "");
+			var response = GetResponse("PrintService/CreateReturnShippingLabelsPDF", "IDs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(IDs)) + "&orderItemIdsAndQuantities=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderItemIdsAndQuantities)) + "&returnPostalServiceName=" + System.Net.WebUtility.UrlEncode(returnPostalServiceName) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
 		}
 
@@ -74,7 +74,7 @@ namespace LinnworksAPI
         /// <param name="returnPostalServiceName">Name of the postal service to use. If null then specified in settings or same as the outbound shipment</param>
         public CreatePDFResult CreateReturnShippingLabelsPDFWithSKUs(String referenceNum,List<KeyValuePair<String,Int32>> SKUsAndQuantities,String returnPostalServiceName)
 		{
-			var response = GetResponse("PrintService/CreateReturnShippingLabelsPDFWithSKUs", "referenceNum=" + System.Net.WebUtility.UrlEncode(referenceNum) + "&SKUsAndQuantities=" + JsonFormatter.ConvertToJson(SKUsAndQuantities) + "&returnPostalServiceName=" + System.Net.WebUtility.UrlEncode(returnPostalServiceName) + "");
+			var response = GetResponse("PrintService/CreateReturnShippingLabelsPDFWithSKUs", "referenceNum=" + System.Net.WebUtility.UrlEncode(referenceNum) + "&SKUsAndQuantities=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(SKUsAndQuantities)) + "&returnPostalServiceName=" + System.Net.WebUtility.UrlEncode(returnPostalServiceName) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
 		}
 

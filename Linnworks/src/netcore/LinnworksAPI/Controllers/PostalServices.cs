@@ -19,7 +19,7 @@ namespace LinnworksAPI
         /// <returns>The data of the created service</returns>
         public PostalService CreatePostalService(PostalService_WithChannelAndShippingLinks PostalServiceDetails)
 		{
-			var response = GetResponse("PostalServices/CreatePostalService", "PostalServiceDetails=" + JsonFormatter.ConvertToJson(PostalServiceDetails) + "");
+			var response = GetResponse("PostalServices/CreatePostalService", "PostalServiceDetails=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(PostalServiceDetails)) + "");
             return JsonFormatter.ConvertFromJson<PostalService>(response);
 		}
 
@@ -61,7 +61,7 @@ namespace LinnworksAPI
         /// <returns>The data of the created service</returns>
         public void UpdatePostalService(PostalService PostalServiceDetails)
 		{
-			GetResponse("PostalServices/UpdatePostalService", "PostalServiceDetails=" + JsonFormatter.ConvertToJson(PostalServiceDetails) + "");
+			GetResponse("PostalServices/UpdatePostalService", "PostalServiceDetails=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(PostalServiceDetails)) + "");
 		} 
     }
 }

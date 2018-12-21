@@ -12,14 +12,44 @@ namespace LinnworksAPI
         {                       
         }
 
-        /// <summary>
+        public AcknowledgeRefundErrorsResponse AcknowledgeRefundErrors(AcknowledgeRefundErrorsRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/AcknowledgeRefundErrors", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<AcknowledgeRefundErrorsResponse>(response);
+		}
+
+		public AcknowledgeRMAErrorsResponse AcknowledgeRMAErrors(AcknowledgeRMAErrorsRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/AcknowledgeRMAErrors", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<AcknowledgeRMAErrorsResponse>(response);
+		}
+
+		/// <summary>
         /// Action list of booked returns/exchange items for a given order ID. If the return is for a batched item, the batch must be booked in manually. 
         /// </summary>
         /// <param name="pkOrderId">unique ID of the order</param>
         /// <param name="bookedItems">list of returns/exchange items to be actioned</param>
         public void ActionBookedOrder(Guid pkOrderId,List<BookedReturnsExchangeItem> bookedItems)
 		{
-			GetResponse("ReturnsRefunds/ActionBookedOrder", "pkOrderId=" + pkOrderId + "&bookedItems=" + JsonFormatter.ConvertToJson(bookedItems) + "");
+			GetResponse("ReturnsRefunds/ActionBookedOrder", "pkOrderId=" + pkOrderId + "&bookedItems=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(bookedItems)) + "");
+		}
+
+		public ActionRefundResponse ActionRefund(ActionRefundRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/ActionRefund", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<ActionRefundResponse>(response);
+		}
+
+		public ActionRMABookingResponse ActionRMABooking(ActionRMABookingRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/ActionRMABooking", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<ActionRMABookingResponse>(response);
+		}
+
+		public CreateRefundResponse CreateRefund(CreateRefundRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/CreateRefund", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<CreateRefundResponse>(response);
 		}
 
 		/// <summary>
@@ -37,8 +67,14 @@ namespace LinnworksAPI
         /// <returns>Returns the URL of the CSV file</returns>
         public String CreateReturnsRefundsCSV(DateTime? from,DateTime? to,ReturnsRefundsSearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection,HistoryType historyType = HistoryType.RETURNS)
 		{
-			var response = GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", "from=" + JsonFormatter.ConvertToJson(from) + "&to=" + JsonFormatter.ConvertToJson(to) + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&sortColumn=" + System.Net.WebUtility.UrlEncode(sortColumn) + "&sortDirection=" + sortDirection + "&historyType=" + historyType.ToString() + "");
+			var response = GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", "from=" + System.Net.WebUtility.UrlEncode(from.HasValue ? from.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&to=" + System.Net.WebUtility.UrlEncode(to.HasValue ? to.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&sortColumn=" + System.Net.WebUtility.UrlEncode(sortColumn) + "&sortDirection=" + sortDirection + "&historyType=" + historyType.ToString() + "");
             return JsonFormatter.ConvertFromJson<String>(response);
+		}
+
+		public CreateRMABookingResponse CreateRMABooking(CreateRMABookingRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/CreateRMABooking", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<CreateRMABookingResponse>(response);
 		}
 
 		/// <summary>
@@ -71,6 +107,18 @@ namespace LinnworksAPI
 			GetResponse("ReturnsRefunds/DeletePendingRefundItem", "fkOrderId=" + fkOrderId + "&pkRefundRowId=" + pkRefundRowId + "");
 		}
 
+		public DeleteRefundResponse DeleteRefund(DeleteRefundRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/DeleteRefund", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<DeleteRefundResponse>(response);
+		}
+
+		public DeleteRMAResponse DeleteRMA(DeleteRMARequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/DeleteRMA", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<DeleteRMAResponse>(response);
+		}
+
 		/// <summary>
         /// Edit booked exchange/return item 
         /// </summary>
@@ -78,7 +126,19 @@ namespace LinnworksAPI
         /// <param name="bookedReturnsExchangeItem">The updated booked return/exchange item object</param>
         public void EditBookedItemInfo(Guid pkOrderId,BookedReturnsExchangeItem bookedReturnsExchangeItem)
 		{
-			GetResponse("ReturnsRefunds/EditBookedItemInfo", "pkOrderId=" + pkOrderId + "&bookedReturnsExchangeItem=" + JsonFormatter.ConvertToJson(bookedReturnsExchangeItem) + "");
+			GetResponse("ReturnsRefunds/EditBookedItemInfo", "pkOrderId=" + pkOrderId + "&bookedReturnsExchangeItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(bookedReturnsExchangeItem)) + "");
+		}
+
+		public GetActionableRefundHeadersResponse GetActionableRefundHeaders(GetActionableRefundHeadersRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/GetActionableRefundHeaders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetActionableRefundHeadersResponse>(response);
+		}
+
+		public GetActionableRMAHeadersResponse GetActionableRMAHeaders(GetActionableRMAHeadersRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/GetActionableRMAHeaders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetActionableRMAHeadersResponse>(response);
 		}
 
 		/// <summary>
@@ -101,14 +161,34 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<BookedReturnsExchangeOrder>>(response);
 		}
 
-		/// <summary>
-        /// Returns a paged list of booked refund lines 
-        /// </summary>
-        /// <param name="page">The page number to retrieve</param>
-        public OrderRefundLinesPaged GetNotActionedRefundLines(Int32 page)
+		public GetProcessedOrAckedErrorRefundHeadersResponse GetProcessedOrAckedErrorRefundHeaders(GetProcessedOrAckedErrorRefundHeadersRequest request)
 		{
-			var response = GetResponse("ReturnsRefunds/GetNotActionedRefundLines", "page=" + page + "");
-            return JsonFormatter.ConvertFromJson<OrderRefundLinesPaged>(response);
+			var response = GetResponse("ReturnsRefunds/GetProcessedOrAckedErrorRefundHeaders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetProcessedOrAckedErrorRefundHeadersResponse>(response);
+		}
+
+		public GetProcessedOrAckedErrorRMAHeadersResponse GetProcessedOrAckedErrorRMAHeaders(GetProcessedOrAckedErrorRMAHeadersRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/GetProcessedOrAckedErrorRMAHeaders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetProcessedOrAckedErrorRMAHeadersResponse>(response);
+		}
+
+		public GetRefundHeadersByOrderIdResponse GetRefundHeadersByOrderId(GetRefundHeadersByOrderIdRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/GetRefundHeadersByOrderId", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetRefundHeadersByOrderIdResponse>(response);
+		}
+
+		public GetRefundLinesByHeaderIdResponse GetRefundLinesByHeaderId(GetRefundLinesByHeaderIdRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/GetRefundLinesByHeaderId", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetRefundLinesByHeaderIdResponse>(response);
+		}
+
+		public GetRefundOptionsResponse GetRefundOptions(GetRefundOptionsRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/GetRefundOptions", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetRefundOptionsResponse>(response);
 		}
 
 		/// <summary>
@@ -129,8 +209,20 @@ namespace LinnworksAPI
         /// <returns>List of refund order items</returns>
         public List<RefundInfo> GetRefunds(Guid pkOrderId,Guid? refundReference = null)
 		{
-			var response = GetResponse("ReturnsRefunds/GetRefunds", "pkOrderId=" + pkOrderId + "&refundReference=" + JsonFormatter.ConvertToJson(refundReference) + "");
+			var response = GetResponse("ReturnsRefunds/GetRefunds", "pkOrderId=" + pkOrderId + "&refundReference=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(refundReference)) + "");
             return JsonFormatter.ConvertFromJson<List<RefundInfo>>(response);
+		}
+
+		public GetReturnOptionsResponse GetReturnOptions(GetReturnOptionsRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/GetReturnOptions", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetReturnOptionsResponse>(response);
+		}
+
+		public GetRMAHeadersByOrderIdResponse GetRMAHeadersByOrderId(GetRMAHeadersByOrderIdRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/GetRMAHeadersByOrderId", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetRMAHeadersByOrderIdResponse>(response);
 		}
 
 		/// <summary>
@@ -191,8 +283,20 @@ namespace LinnworksAPI
         /// <returns>Returns the requested list of processed orders. The columns returned can be changed through the SetColumns method.</returns>
         public GenericPagedResult<ReturnsRefundsWeb> SearchReturnsRefundsPaged(DateTime? from,DateTime? to,ReturnsRefundsSearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,Int32 pageNum,Int32 numEntriesPerPage,HistoryType historyType = HistoryType.RETURNS)
 		{
-			var response = GetResponse("ReturnsRefunds/SearchReturnsRefundsPaged", "from=" + JsonFormatter.ConvertToJson(from) + "&to=" + JsonFormatter.ConvertToJson(to) + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "&historyType=" + historyType.ToString() + "");
+			var response = GetResponse("ReturnsRefunds/SearchReturnsRefundsPaged", "from=" + System.Net.WebUtility.UrlEncode(from.HasValue ? from.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&to=" + System.Net.WebUtility.UrlEncode(to.HasValue ? to.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "&historyType=" + historyType.ToString() + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<ReturnsRefundsWeb>>(response);
+		}
+
+		public UpdateRefundResponse UpdateRefund(UpdateRefundRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/UpdateRefund", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<UpdateRefundResponse>(response);
+		}
+
+		public UpdateRMABookingResponse UpdateRMABooking(UpdateRMABookingRequest request)
+		{
+			var response = GetResponse("ReturnsRefunds/UpdateRMABooking", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<UpdateRMABookingResponse>(response);
 		} 
     }
 }

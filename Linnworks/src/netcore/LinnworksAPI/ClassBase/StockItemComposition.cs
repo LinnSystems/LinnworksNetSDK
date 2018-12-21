@@ -36,6 +36,12 @@ namespace LinnworksAPI
         /// </summary>
 		public Byte InventoryTrackingType;
 
+		public Double DimHeight;
+
+		public Double DimWidth;
+
+		public Double DimDepth;
+
 		public Guid StockItemId;
 	} 
 }

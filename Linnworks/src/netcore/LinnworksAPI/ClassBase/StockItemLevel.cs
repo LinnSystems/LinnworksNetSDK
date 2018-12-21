@@ -36,6 +36,9 @@ namespace LinnworksAPI
         /// </summary>
 		public Int32 Due;
 
+        /// <summary>
+        /// Stock Item Just In Time (JIT) status 
+        /// </summary>
 		public Boolean JIT;
 
         /// <summary>
@@ -85,6 +88,11 @@ namespace LinnworksAPI
         /// dbo.StockLevel.PendingUpdate 
         /// </summary>
 		public Boolean PendingUpdate;
+
+        /// <summary>
+        /// Stock item purchase price. It's used to calculate UnitCost 
+        /// </summary>
+		public Double StockItemPurchasePrice;
 
 		public Guid StockItemId;
 	} 

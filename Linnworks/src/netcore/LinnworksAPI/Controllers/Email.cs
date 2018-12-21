@@ -18,7 +18,7 @@ namespace LinnworksAPI
         /// <param name="request">Custom email generation request body</param>
         public GenerateAdhocEmailResponse GenerateAdhocEmail(GenerateAdhocEmailRequest request)
 		{
-			var response = GetResponse("Email/GenerateAdhocEmail", "request=" + JsonFormatter.ConvertToJson(request) + "");
+			var response = GetResponse("Email/GenerateAdhocEmail", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GenerateAdhocEmailResponse>(response);
 		}
 
@@ -28,7 +28,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public GenerateFreeTextEmailResponse GenerateFreeTextEmail(GenerateFreeTextEmailRequest request)
 		{
-			var response = GetResponse("Email/GenerateFreeTextEmail", "request=" + JsonFormatter.ConvertToJson(request) + "");
+			var response = GetResponse("Email/GenerateFreeTextEmail", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GenerateFreeTextEmailResponse>(response);
 		}
 

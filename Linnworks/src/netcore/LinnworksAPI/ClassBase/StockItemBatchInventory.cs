@@ -60,5 +60,25 @@ namespace LinnworksAPI
         /// Is BatchInventory deleted 
         /// </summary>
 		public Boolean IsDeleted;
+
+        /// <summary>
+        /// Warehouse binrack standard type 
+        /// </summary>
+		public Int32? WarehouseBinrackStandardType;
+
+        /// <summary>
+        /// Warehouse binrack type friendly name 
+        /// </summary>
+		public String WarehouseBinrackTypeName;
+
+        /// <summary>
+        /// Number of items in Transfer phase. 
+        /// </summary>
+		public Int32? InTransfer;
+
+        /// <summary>
+        /// Binrack Id (Use for WMS) 
+        /// </summary>
+		public Int32? BinRackId;
 	} 
 }

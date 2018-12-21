@@ -23,5 +23,6 @@ namespace LinnworksAPI
 		NoErrors,
 		LastDays,
 		OlderThan,
+		Next,
 	}
 }

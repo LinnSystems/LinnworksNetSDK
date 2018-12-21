@@ -12,11 +12,6 @@ namespace LinnworksAPI
 		public String ORDER_NOT_FOUND_ERROR;
 
         /// <summary>
-        /// Order ID (pkOrderID) 
-        /// </summary>
-		public Guid OrderId;
-
-        /// <summary>
         /// Linnworks order number 
         /// </summary>
 		public Int32 NumOrderId;
@@ -46,9 +41,14 @@ namespace LinnworksAPI
         /// </summary>
 		public List<String> FolderName;
 
-        /// <summary>
-        /// List of order items 
-        /// </summary>
+		public Boolean IsPostFilteredOut;
+
+		public Boolean CanFulfil;
+
 		public List<OrderItem> Items;
+
+		public Boolean HasItems;
+
+		public Guid OrderId;
 	} 
 }

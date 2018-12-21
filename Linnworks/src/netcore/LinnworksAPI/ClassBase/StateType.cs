@@ -10,8 +10,8 @@ namespace LinnworksAPI
 	public enum StateType
 	{
 		AVAILABLE,
-		LOCKED,
+		LOCKED_BASIC,
+		LOCKED_FULL,
 		MAINTENANCE,
-		FAILED,
 	}
 }

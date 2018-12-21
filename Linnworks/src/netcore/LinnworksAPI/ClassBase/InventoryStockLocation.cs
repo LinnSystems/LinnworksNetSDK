@@ -33,5 +33,10 @@ namespace LinnworksAPI
         /// Bin rack 
         /// </summary>
 		public String BinRack;
+
+        /// <summary>
+        /// If the location is warehosue managed. 
+        /// </summary>
+		public Boolean? IsWarehouseManaged;
 	} 
 }

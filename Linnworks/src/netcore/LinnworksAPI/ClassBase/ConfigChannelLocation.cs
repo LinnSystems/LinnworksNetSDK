@@ -17,5 +17,7 @@ namespace LinnworksAPI
 		public Guid OrderDownloadLocation;
 
 		public List<Guid> InventorySyncLocations;
+
+		public Boolean IsFulfilment;
 	} 
 }

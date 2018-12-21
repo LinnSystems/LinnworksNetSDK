@@ -15,5 +15,6 @@ namespace LinnworksAPI
 		Boolean,
 		Select,
 		Date,
+		Datetime2,
 	}
 }

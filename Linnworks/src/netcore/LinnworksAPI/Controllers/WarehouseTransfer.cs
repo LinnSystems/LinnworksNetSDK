@@ -121,7 +121,7 @@ namespace LinnworksAPI
         /// <param name="Quantity">The new quantity.</param>
         public void ChangeTransferItemReceivedQuantity(Guid pkTransferId,Guid pkBinId,Guid pkTransferItemId,Int32? Quantity)
 		{
-			GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + JsonFormatter.ConvertToJson(Quantity) + "");
+			GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(Quantity)) + "");
 		}
 
 		/// <summary>
@@ -310,7 +310,7 @@ namespace LinnworksAPI
         /// <returns>A paged result containing the relevant transfers.</returns>
         public GenericPagedResult<WarehouseTransfer> GetArchivedTransfersBetweenArchivedDates(DateTime start,DateTime end,Int32 pageNumber,Int32 entriesPerPage)
 		{
-			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenArchivedDates", "start=" + JsonFormatter.ConvertToJson(start) + "&end=" + JsonFormatter.ConvertToJson(end) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
+			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenArchivedDates", "start=" + System.Net.WebUtility.UrlEncode(start.ToString("yyyy-MM-dd HH:mm:ss")) + "&end=" + System.Net.WebUtility.UrlEncode(end.ToString("yyyy-MM-dd HH:mm:ss")) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<WarehouseTransfer>>(response);
 		}
 
@@ -324,7 +324,7 @@ namespace LinnworksAPI
         /// <returns>A paged result containing the relevant transfers.</returns>
         public GenericPagedResult<WarehouseTransfer> GetArchivedTransfersBetweenDates(DateTime start,DateTime end,Int32 pageNumber,Int32 entriesPerPage)
 		{
-			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenDates", "start=" + JsonFormatter.ConvertToJson(start) + "&end=" + JsonFormatter.ConvertToJson(end) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
+			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenDates", "start=" + System.Net.WebUtility.UrlEncode(start.ToString("yyyy-MM-dd HH:mm:ss")) + "&end=" + System.Net.WebUtility.UrlEncode(end.ToString("yyyy-MM-dd HH:mm:ss")) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<WarehouseTransfer>>(response);
 		}
 
@@ -360,7 +360,7 @@ namespace LinnworksAPI
         /// <returns>A list of transfers with basic details loaded</returns>
         public List<WarehouseTransfer> GetListTransfers(List<Guid> ids)
 		{
-			var response = GetResponse("WarehouseTransfer/GetListTransfers", "ids=" + JsonFormatter.ConvertToJson(ids) + "");
+			var response = GetResponse("WarehouseTransfer/GetListTransfers", "ids=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ids)) + "");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransfer>>(response);
 		}
 
@@ -371,7 +371,7 @@ namespace LinnworksAPI
         /// <returns>A list of transfers with basic information loaded.</returns>
         public List<WarehouseTransfer> GetModifiedBasic(DateTime updateDate)
 		{
-			var response = GetResponse("WarehouseTransfer/GetModifiedBasic", "updateDate=" + JsonFormatter.ConvertToJson(updateDate) + "");
+			var response = GetResponse("WarehouseTransfer/GetModifiedBasic", "updateDate=" + System.Net.WebUtility.UrlEncode(updateDate.ToString("yyyy-MM-dd HH:mm:ss")) + "");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransfer>>(response);
 		}
 

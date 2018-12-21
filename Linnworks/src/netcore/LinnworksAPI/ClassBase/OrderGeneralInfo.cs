@@ -54,8 +54,14 @@ namespace LinnworksAPI
         /// </summary>
 		public Byte? Marker;
 
+        /// <summary>
+        /// Is the order parked? 
+        /// </summary>
 		public Boolean IsParked;
 
+        /// <summary>
+        /// Order identifiers. [Prime | Scheduled] 
+        /// </summary>
 		public List<OrderIdentifier> Identifiers;
 
         /// <summary>
@@ -103,6 +109,9 @@ namespace LinnworksAPI
         /// </summary>
 		public DateTime DespatchByDate;
 
+        /// <summary>
+        /// Scheduled delivery dates. Take priority over despatch by date 
+        /// </summary>
 		public ScheduledDelivery ScheduledDelivery;
 
 		public Boolean HasScheduledDelivery;
@@ -118,5 +127,7 @@ namespace LinnworksAPI
 		public Int32 NumItems;
 
 		public IRulesEngineHelper RulesEngine;
+
+		public StockAllocationType? StockAllocationType;
 	} 
 }

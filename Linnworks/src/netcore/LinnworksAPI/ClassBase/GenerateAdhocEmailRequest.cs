@@ -23,5 +23,10 @@ namespace LinnworksAPI
         /// Tags to append to email 
         /// </summary>
 		public List<EmailStubCustomTag> tags;
+
+        /// <summary>
+        /// List of attachments to send with the email 
+        /// </summary>
+		public List<String> attachments;
 	} 
 }

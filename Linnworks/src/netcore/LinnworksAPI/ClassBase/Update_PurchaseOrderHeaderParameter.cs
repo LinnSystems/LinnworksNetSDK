@@ -40,6 +40,11 @@ namespace LinnworksAPI
 		public String ExternalInvoiceNumber;
 
         /// <summary>
+        /// Unit amount includes,excludes or no tax. 0 - Excludes Tax, 1 - Includes tax, 2 - No Tax. Nullable if null, the value not updated 
+        /// </summary>
+		public Int32? UnitAmountTaxIncludedType;
+
+        /// <summary>
         /// DateTime of the purchase order delivered, will be set to DateOfPurchase until the PO is fully delivered UTC 
         /// </summary>
 		public DateTime? DateOfPurchase;
@@ -50,7 +55,8 @@ namespace LinnworksAPI
 		public DateTime? QuotedDeliveryDate;
 
         /// <summary>
-        /// Shipping tax rate 
+        /// **DEPRECIATED** 
+        /// Use additional costs with Shipping flag to record shipping costs. This field remains available in the API for backward compatibility and acts pretty much like an additional cost item with type 
         /// </summary>
 		public Decimal? ShippingTaxRate;
 
@@ -60,7 +66,8 @@ namespace LinnworksAPI
 		public Decimal? ConversionRate;
 
         /// <summary>
-        /// Shipping cost including tax in purchase order currency 
+        /// **DEPRECIATED** 
+        /// Use additional costs with Shipping flag to record shipping costs. This field remains available in the API for backward compatibility and acts pretty much like an additional cost item with type 
         /// </summary>
 		public Decimal? PostagePaid;
 	} 

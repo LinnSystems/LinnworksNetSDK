@@ -18,7 +18,7 @@ namespace LinnworksAPI
         /// <param name="location">The StockLocation object describing the StockLocation to be added.</param>
         public void AddLocation(StockLocation location)
 		{
-			GetResponse("Locations/AddLocation", "location=" + JsonFormatter.ConvertToJson(location) + "");
+			GetResponse("Locations/AddLocation", "location=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(location)) + "");
 		}
 
 		/// <summary>
@@ -47,7 +47,7 @@ namespace LinnworksAPI
         /// <param name="location">Stock location information to update</param>
         public void UpdateLocation(StockLocation location)
 		{
-			GetResponse("Locations/UpdateLocation", "location=" + JsonFormatter.ConvertToJson(location) + "");
+			GetResponse("Locations/UpdateLocation", "location=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(location)) + "");
 		} 
     }
 }

@@ -40,5 +40,10 @@ namespace LinnworksAPI
         /// Product variation attributes 
         /// </summary>
 		public Boolean VariationAttributes;
+
+        /// <summary>
+        /// Reload all images for the template 
+        /// </summary>
+		public Boolean ReloadAllImages;
 	} 
 }

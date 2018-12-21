@@ -73,5 +73,25 @@ namespace LinnworksAPI
         /// Whether or not the stock item for this purchase order item has been deleted in the system 
         /// </summary>
 		public Boolean IsDeleted;
+
+        /// <summary>
+        /// Order the item was added to PO. First item = 0 
+        /// </summary>
+		public Int32 SortOrder;
+
+        /// <summary>
+        /// Item height 
+        /// </summary>
+		public Decimal DimHeight;
+
+        /// <summary>
+        /// Item Width 
+        /// </summary>
+		public Decimal DimWidth;
+
+        /// <summary>
+        /// Item Depth 
+        /// </summary>
+		public Decimal DimDepth;
 	} 
 }

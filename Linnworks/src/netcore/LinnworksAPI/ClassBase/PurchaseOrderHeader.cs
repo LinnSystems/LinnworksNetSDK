@@ -65,6 +65,11 @@ namespace LinnworksAPI
 		public Int32 DeliveredLinesCount;
 
         /// <summary>
+        /// Unit amount includes,exclud or no tax. 0 - Tax Exclusive cost, 1 - Cost Inclusive of tax, 2 - No Tax 
+        /// </summary>
+		public Int32 UnitAmountTaxIncludedType;
+
+        /// <summary>
         /// DateTime of the purchase order UTC 
         /// </summary>
 		public DateTime DateOfPurchase;
@@ -80,7 +85,8 @@ namespace LinnworksAPI
 		public DateTime QuotedDeliveryDate;
 
         /// <summary>
-        /// Shipping cost including tax 
+        /// **DEPRECIATED** 
+        /// Use additional costs with Shipping flag to record shipping costs. This field remains available in the API for backward compatibility and acts pretty much like an additional cost item with type id = 0 
         /// </summary>
 		public Decimal PostagePaid;
 
@@ -95,7 +101,8 @@ namespace LinnworksAPI
 		public Decimal taxPaid;
 
         /// <summary>
-        /// Shipping tax rate 
+        /// **DEPRECIATED** 
+        /// Use additional costs with Shipping flag to record shipping costs. This field remains available in the API for backward compatibility and acts pretty much like an additional cost item with type id = 0 
         /// </summary>
 		public Decimal ShippingTaxRate;
 
@@ -103,5 +110,30 @@ namespace LinnworksAPI
         /// Conversion rate of the purchase order currency. When PO is delivered Stock Value will be multipled by this conversion rate. For example if your system currency is GBP and Purchase order is in EUR the conversion rate is 0.81. 
         /// </summary>
 		public Decimal ConversionRate;
+
+        /// <summary>
+        /// Total shipping cost of the purchase order, converted to system currency 
+        /// </summary>
+		public Decimal ConvertedShippingCost;
+
+        /// <summary>
+        /// Total shipping cost tax of the purchase order, converted to system currency 
+        /// </summary>
+		public Decimal ConvertedShippingTax;
+
+        /// <summary>
+        /// Total amount of additional costs of the purchase order, converted to system currency 
+        /// </summary>
+		public Decimal ConvertedOtherCost;
+
+        /// <summary>
+        /// Total tax amount of additional costs of the purchase order, converted to system currency 
+        /// </summary>
+		public Decimal ConvertedOtherTax;
+
+        /// <summary>
+        /// Total amount of the purchase order, converted to system currency 
+        /// </summary>
+		public Decimal ConvertedGrandTotal;
 	} 
 }

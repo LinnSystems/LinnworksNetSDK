@@ -161,6 +161,9 @@ namespace LinnworksAPI
         /// </summary>
 		public DiscountType DiscountType;
 
+        /// <summary>
+        /// This represents if the discount is applied before or after tax 
+        /// </summary>
 		public DiscountTaxType DiscountTaxType;
 
         /// <summary>
@@ -173,10 +176,19 @@ namespace LinnworksAPI
         /// </summary>
 		public ChannelAddress DeliveryAddress;
 
+        /// <summary>
+        /// Channel specified delivery start date (do not set where is not provided) 
+        /// </summary>
 		public DateTime DeliveryStartDate;
 
+        /// <summary>
+        /// Channel specified delivery end date (do not set where is not provided) 
+        /// </summary>
 		public DateTime DeliveryEndDate;
 
+        /// <summary>
+        /// Order identifier tags 
+        /// </summary>
 		public HashSet<String> OrderIdentifierTags;
 
         /// <summary>

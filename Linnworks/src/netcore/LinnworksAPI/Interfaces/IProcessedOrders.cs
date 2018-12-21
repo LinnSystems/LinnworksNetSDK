@@ -19,6 +19,7 @@ namespace LinnworksAPI
 		List<ReturnInfo> CreateReturn(Guid pkOrderId,List<RowQty> returnitems,Guid returnLocation,String channelReason,String channelSubReason,String category,String reason,Boolean isReturnBooking,Boolean ignoredValidation);
 		void DeleteOrderNote(Guid pkOrderNoteId);
 		void DeleteReturnCategory(Int32 pkItemId);
+		DownloadOrdersToCSVResponse DownloadOrdersToCSV(DownloadOrdersToCSVRequest request);
 		List<ChannelRefundReason> GetChannelRefundReasons(Guid pkOrderId);
 		ProcessedOrderWeb GetOrderInfo(Guid pkOrderId);
 		List<SplitPackaging> GetPackageSplit(Guid pkOrderId);

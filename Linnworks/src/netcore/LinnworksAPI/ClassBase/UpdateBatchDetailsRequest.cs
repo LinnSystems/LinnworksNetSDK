@@ -11,5 +11,7 @@ namespace LinnworksAPI
 		public Int32 InventoryTrackingType;
 
 		public Boolean BatchNumberScanRequired;
+
+		public Boolean? ResetBatchDates;
 	} 
 }

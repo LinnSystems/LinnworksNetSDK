@@ -9,11 +9,10 @@ namespace LinnworksAPI
     [JsonConverter(typeof(StringEnumConverter))]
 	public enum PostSaleStatusType
 	{
-		NONE,
 		OPEN,
 		PROCESSED,
-		ERROR_HANDLED,
-		ERROR_LOCKED,
-		ERROR_UNLOCKED,
+		ERROR,
+		ERROR_ACKED,
+		PENDING,
 	}
 }

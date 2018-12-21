@@ -35,6 +35,11 @@ namespace LinnworksAPI
 		public String SupplierReferenceNumber;
 
         /// <summary>
+        /// Unit amount includes,excludes or no tax. 0 - Excludes Tax, 1 - Includes tax, 2 - No Tax 
+        /// </summary>
+		public Int32 UnitAmountTaxIncludedType;
+
+        /// <summary>
         /// DateTime of the purchase order 
         /// </summary>
 		public DateTime DateOfPurchase;
@@ -45,12 +50,14 @@ namespace LinnworksAPI
 		public DateTime QuotedDeliveryDate;
 
         /// <summary>
-        /// Shipping cost including tax in the purchase order currency 
+        /// **DEPRECIATED** 
+        /// Use additional costs with Shipping flag to record shipping costs. This field remains available in the API for backward compatibility and acts pretty much like an additional cost item with type 
         /// </summary>
 		public Decimal PostagePaid;
 
         /// <summary>
-        /// Shipping cost tax rate 
+        /// **DEPRECIATED** 
+        /// Use additional costs with Shipping flag to record shipping costs. This field remains available in the API for backward compatibility and acts pretty much like an additional cost item with type 
         /// </summary>
 		public Decimal ShippingTaxRate;
 

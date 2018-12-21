@@ -10,19 +10,9 @@ namespace LinnworksAPI
     public class OrderItem
 	{
         /// <summary>
-        /// Order ID (pkOrderID) 
-        /// </summary>
-		public Guid OrderId;
-
-        /// <summary>
         /// Stock Item ID 
         /// </summary>
 		public Guid ItemId;
-
-        /// <summary>
-        /// Stock Item ID 
-        /// </summary>
-		public Guid StockItemId;
 
         /// <summary>
         /// Item number as on channel 
@@ -58,11 +48,6 @@ namespace LinnworksAPI
         /// Composite availability 
         /// </summary>
 		public Int32? CompositeAvailablity;
-
-        /// <summary>
-        /// Record row ID 
-        /// </summary>
-		public Guid RowId;
 
         /// <summary>
         /// If stock level specified 
@@ -230,5 +215,17 @@ namespace LinnworksAPI
         /// If item has batches 
         /// </summary>
 		public Boolean isBatchedStockItem;
+
+		public Boolean HasPurchaseOrders;
+
+		public Boolean CanPurchaseOrderFulfil;
+
+		public Boolean IsUnlinked;
+
+		public Guid RowId;
+
+		public Guid OrderId;
+
+		public Guid StockItemId;
 	} 
 }

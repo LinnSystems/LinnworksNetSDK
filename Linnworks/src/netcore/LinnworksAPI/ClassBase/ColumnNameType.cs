@@ -35,5 +35,8 @@ namespace LinnworksAPI
 		BatchNumberScanRequired,
 		BatchType,
 		JIT,
+		ReorderAmount,
+		ReorderDate,
+		AverageConsumption,
 	}
 }

@@ -45,7 +45,7 @@ namespace LinnworksAPI
         /// <param name="noteTypeId">Set the type of note</param>
         public void ChangeOrderNote(Guid pkOrderNoteId,String noteText,Boolean isInternal,Byte? noteTypeId = null)
 		{
-			GetResponse("ProcessedOrders/ChangeOrderNote", "pkOrderNoteId=" + pkOrderNoteId + "&noteText=" + System.Net.WebUtility.UrlEncode(noteText) + "&isInternal=" + isInternal + "&noteTypeId=" + JsonFormatter.ConvertToJson(noteTypeId) + "");
+			GetResponse("ProcessedOrders/ChangeOrderNote", "pkOrderNoteId=" + pkOrderNoteId + "&noteText=" + System.Net.WebUtility.UrlEncode(noteText) + "&isInternal=" + isInternal + "&noteTypeId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(noteTypeId)) + "");
 		}
 
 		/// <summary>
@@ -71,7 +71,7 @@ namespace LinnworksAPI
         /// <returns>Returns information about the new exchanges</returns>
         public List<ReturnInfo> CreateExchange(Guid pkOrderId,List<RowQty> exchangeItems,Guid despatchLocation,Guid returnLocation,String channelReason,String channelSubReason,String category,String reason,Boolean isBooking,Boolean ignoredValidation)
 		{
-			var response = GetResponse("ProcessedOrders/CreateExchange", "pkOrderId=" + pkOrderId + "&exchangeItems=" + JsonFormatter.ConvertToJson(exchangeItems) + "&despatchLocation=" + despatchLocation + "&returnLocation=" + returnLocation + "&channelReason=" + System.Net.WebUtility.UrlEncode(channelReason) + "&channelSubReason=" + System.Net.WebUtility.UrlEncode(channelSubReason) + "&category=" + System.Net.WebUtility.UrlEncode(category) + "&reason=" + System.Net.WebUtility.UrlEncode(reason) + "&isBooking=" + isBooking + "&ignoredValidation=" + ignoredValidation + "");
+			var response = GetResponse("ProcessedOrders/CreateExchange", "pkOrderId=" + pkOrderId + "&exchangeItems=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(exchangeItems)) + "&despatchLocation=" + despatchLocation + "&returnLocation=" + returnLocation + "&channelReason=" + System.Net.WebUtility.UrlEncode(channelReason) + "&channelSubReason=" + System.Net.WebUtility.UrlEncode(channelSubReason) + "&category=" + System.Net.WebUtility.UrlEncode(category) + "&reason=" + System.Net.WebUtility.UrlEncode(reason) + "&isBooking=" + isBooking + "&ignoredValidation=" + ignoredValidation + "");
             return JsonFormatter.ConvertFromJson<List<ReturnInfo>>(response);
 		}
 
@@ -95,7 +95,7 @@ namespace LinnworksAPI
         /// <returns>Returns the URL of the CSV file</returns>
         public String CreateProcessedOrdersCSV(DateTime? from,DateTime? to,SearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection)
 		{
-			var response = GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", "from=" + JsonFormatter.ConvertToJson(from) + "&to=" + JsonFormatter.ConvertToJson(to) + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&sortColumn=" + System.Net.WebUtility.UrlEncode(sortColumn) + "&sortDirection=" + sortDirection + "");
+			var response = GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", "from=" + System.Net.WebUtility.UrlEncode(from.HasValue ? from.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&to=" + System.Net.WebUtility.UrlEncode(to.HasValue ? to.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&sortColumn=" + System.Net.WebUtility.UrlEncode(sortColumn) + "&sortDirection=" + sortDirection + "");
             return JsonFormatter.ConvertFromJson<String>(response);
 		}
 
@@ -110,7 +110,7 @@ namespace LinnworksAPI
         /// <param name="additionalCost">Order-level additional cost</param>
         public List<ReturnInfo> CreateResend(Guid pkOrderId,List<RowQty> resendItems,Guid despatchLocation,String category,String reason,Double additionalCost)
 		{
-			var response = GetResponse("ProcessedOrders/CreateResend", "pkOrderId=" + pkOrderId + "&resendItems=" + JsonFormatter.ConvertToJson(resendItems) + "&despatchLocation=" + despatchLocation + "&category=" + System.Net.WebUtility.UrlEncode(category) + "&reason=" + System.Net.WebUtility.UrlEncode(reason) + "&additionalCost=" + additionalCost + "");
+			var response = GetResponse("ProcessedOrders/CreateResend", "pkOrderId=" + pkOrderId + "&resendItems=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(resendItems)) + "&despatchLocation=" + despatchLocation + "&category=" + System.Net.WebUtility.UrlEncode(category) + "&reason=" + System.Net.WebUtility.UrlEncode(reason) + "&additionalCost=" + additionalCost + "");
             return JsonFormatter.ConvertFromJson<List<ReturnInfo>>(response);
 		}
 
@@ -129,7 +129,7 @@ namespace LinnworksAPI
         /// <returns>Returns information about the new returns</returns>
         public List<ReturnInfo> CreateReturn(Guid pkOrderId,List<RowQty> returnitems,Guid returnLocation,String channelReason,String channelSubReason,String category,String reason,Boolean isReturnBooking,Boolean ignoredValidation)
 		{
-			var response = GetResponse("ProcessedOrders/CreateReturn", "pkOrderId=" + pkOrderId + "&returnitems=" + JsonFormatter.ConvertToJson(returnitems) + "&returnLocation=" + returnLocation + "&channelReason=" + System.Net.WebUtility.UrlEncode(channelReason) + "&channelSubReason=" + System.Net.WebUtility.UrlEncode(channelSubReason) + "&category=" + System.Net.WebUtility.UrlEncode(category) + "&reason=" + System.Net.WebUtility.UrlEncode(reason) + "&isReturnBooking=" + isReturnBooking + "&ignoredValidation=" + ignoredValidation + "");
+			var response = GetResponse("ProcessedOrders/CreateReturn", "pkOrderId=" + pkOrderId + "&returnitems=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(returnitems)) + "&returnLocation=" + returnLocation + "&channelReason=" + System.Net.WebUtility.UrlEncode(channelReason) + "&channelSubReason=" + System.Net.WebUtility.UrlEncode(channelSubReason) + "&category=" + System.Net.WebUtility.UrlEncode(category) + "&reason=" + System.Net.WebUtility.UrlEncode(reason) + "&isReturnBooking=" + isReturnBooking + "&ignoredValidation=" + ignoredValidation + "");
             return JsonFormatter.ConvertFromJson<List<ReturnInfo>>(response);
 		}
 
@@ -149,6 +149,16 @@ namespace LinnworksAPI
         public void DeleteReturnCategory(Int32 pkItemId)
 		{
 			GetResponse("ProcessedOrders/DeleteReturnCategory", "pkItemId=" + pkItemId + "");
+		}
+
+		/// <summary>
+        /// Download Processed Orders to CSV 
+        /// </summary>
+        /// <param name="request">Request parameter populated with search critera for the file download</param>
+        public DownloadOrdersToCSVResponse DownloadOrdersToCSV(DownloadOrdersToCSVRequest request)
+		{
+			var response = GetResponse("ProcessedOrders/DownloadOrdersToCSV", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<DownloadOrdersToCSVResponse>(response);
 		}
 
 		/// <summary>
@@ -313,7 +323,7 @@ namespace LinnworksAPI
         /// <returns>Returns the total refund amount as retrieved based on the parameters.</returns>
         public ExistingRefundTotal GetTotalRefunds(Guid pkOrderId,Boolean? includeBookings = null)
 		{
-			var response = GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + JsonFormatter.ConvertToJson(includeBookings) + "");
+			var response = GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(includeBookings)) + "");
             return JsonFormatter.ConvertFromJson<ExistingRefundTotal>(response);
 		}
 
@@ -325,7 +335,7 @@ namespace LinnworksAPI
         /// <returns>The validation result and, if provided, additional information</returns>
         public ValidationResult IsRefundValid(Guid pkOrderId,List<RefundItem> refundItems)
 		{
-			var response = GetResponse("ProcessedOrders/IsRefundValid", "pkOrderId=" + pkOrderId + "&refundItems=" + JsonFormatter.ConvertToJson(refundItems) + "");
+			var response = GetResponse("ProcessedOrders/IsRefundValid", "pkOrderId=" + pkOrderId + "&refundItems=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(refundItems)) + "");
             return JsonFormatter.ConvertFromJson<ValidationResult>(response);
 		}
 
@@ -357,7 +367,7 @@ namespace LinnworksAPI
         /// <returns>Any new/modified refund rows</returns>
         public List<RefundInfo> RefundFreeText(Guid pkOrderId,List<RefundItem> refundItems)
 		{
-			var response = GetResponse("ProcessedOrders/RefundFreeText", "pkOrderId=" + pkOrderId + "&refundItems=" + JsonFormatter.ConvertToJson(refundItems) + "");
+			var response = GetResponse("ProcessedOrders/RefundFreeText", "pkOrderId=" + pkOrderId + "&refundItems=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(refundItems)) + "");
             return JsonFormatter.ConvertFromJson<List<RefundInfo>>(response);
 		}
 
@@ -369,7 +379,7 @@ namespace LinnworksAPI
         /// <returns>A list of new refunds</returns>
         public List<RefundInfo> RefundServices(Guid pkOrderId,List<RefundItem> refundItems)
 		{
-			var response = GetResponse("ProcessedOrders/RefundServices", "pkOrderId=" + pkOrderId + "&refundItems=" + JsonFormatter.ConvertToJson(refundItems) + "");
+			var response = GetResponse("ProcessedOrders/RefundServices", "pkOrderId=" + pkOrderId + "&refundItems=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(refundItems)) + "");
             return JsonFormatter.ConvertFromJson<List<RefundInfo>>(response);
 		}
 
@@ -394,9 +404,14 @@ namespace LinnworksAPI
 			GetResponse("ProcessedOrders/RenameReturnCategory", "pkItemId=" + pkItemId + "&newName=" + System.Net.WebUtility.UrlEncode(newName) + "");
 		}
 
-		public SearchProcessedOrdersResponse SearchProcessedOrders(SearchProcessedOrdersRequest request)
+		/// <summary>
+        /// Search Processed Orders 
+        /// </summary>
+        /// <param name="request">Search parameters consisting of keyword, dates, filters and sorting.</param>
+        /// <returns>Paged list of processed orders.</returns>
+        public SearchProcessedOrdersResponse SearchProcessedOrders(SearchProcessedOrdersRequest request)
 		{
-			var response = GetResponse("ProcessedOrders/SearchProcessedOrders", "request=" + JsonFormatter.ConvertToJson(request) + "");
+			var response = GetResponse("ProcessedOrders/SearchProcessedOrders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<SearchProcessedOrdersResponse>(response);
 		}
 
@@ -414,7 +429,7 @@ namespace LinnworksAPI
         /// <returns>Returns the requested list of processed orders. The columns returned can be changed through the SetColumns method.</returns>
         public GenericPagedResult<ProcessedOrderWeb> SearchProcessedOrdersPaged(DateTime? from,DateTime? to,SearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,Int32 pageNum,Int32 numEntriesPerPage)
 		{
-			var response = GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", "from=" + JsonFormatter.ConvertToJson(from) + "&to=" + JsonFormatter.ConvertToJson(to) + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "");
+			var response = GetResponse("ProcessedOrders/SearchProcessedOrdersPaged", "from=" + System.Net.WebUtility.UrlEncode(from.HasValue ? from.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&to=" + System.Net.WebUtility.UrlEncode(to.HasValue ? to.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&pageNum=" + pageNum + "&numEntriesPerPage=" + numEntriesPerPage + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<ProcessedOrderWeb>>(response);
 		}
 

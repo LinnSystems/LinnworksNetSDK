@@ -24,8 +24,6 @@ namespace LinnworksAPI
 
 		public String Email;
 
-		public Guid UserId;
-
 		public String UserName;
 
 		public String UserType;
@@ -39,5 +37,7 @@ namespace LinnworksAPI
 		public LocalityType Locality;
 
 		public Dictionary<String,String> Properties;
+
+		public Guid UserId;
 	} 
 }

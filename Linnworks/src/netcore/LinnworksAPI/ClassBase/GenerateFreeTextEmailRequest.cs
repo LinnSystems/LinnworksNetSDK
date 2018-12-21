@@ -20,5 +20,7 @@ namespace LinnworksAPI
         /// Body of email 
         /// </summary>
 		public String body;
+
+		public String templateType;
 	} 
 }

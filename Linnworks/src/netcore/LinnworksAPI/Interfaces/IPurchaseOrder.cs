@@ -8,11 +8,13 @@ namespace LinnworksAPI
 { 
     public interface IPurchaseOrderController
 	{
+		Add_AdditionalCostTypesResponse Add_AdditionalCostTypes(Add_AdditionalCostTypesRequest request);
 		Add_PurchaseOrderExtendedPropertyResponse Add_PurchaseOrderExtendedProperty(Add_PurchaseOrderExtendedPropertyRequest request);
 		Update_PurchaseOrderItemResponse Add_PurchaseOrderItem(Add_PurchaseOrderItemParameter addItemParameter);
 		PurchaseOrderNote Add_PurchaseOrderNote(Guid pkPurchaseId,String Note);
 		PurchaseOrderHeader Change_PurchaseOrderStatus(Change_PurchaseOrderStatusParameter changeStatusParameter);
 		Guid Create_PurchaseOrder_Initial(Create_PurchaseOrder_InitialParameter createParameters);
+		void Delete_AdditionalCostTypes(Delete_AdditionalCostTypesRequest request);
 		void Delete_PurchaseOrder(Guid pkPurchaseId);
 		void Delete_PurchaseOrderExtendedProperty(Delete_PurchaseOrderExtendedPropertyRequest request);
 		PurchaseOrderHeader Delete_PurchaseOrderItem(Delete_PurchaseOrderItemParameter deleteItemParameter);
@@ -20,13 +22,25 @@ namespace LinnworksAPI
 		Update_PurchaseOrderItemResponse Deliver_PurchaseItem(Deliver_PurchaseItemParameter deliverItemParameter);
 		Deliver_PurchaseOrderItemAllResponse Deliver_PurchaseItemAll(Guid purchaseId);
 		Deliver_PurchaseOrderItemAllNoBatchResponse Deliver_PurchaseItemAll_ExceptBatchItems(Guid purchaseId);
+		FindStockItem_Response FindStockItem(FindStockItemRequest request);
+		Get_Additional_CostResponse Get_Additional_Cost(Get_Additional_CostRequest request);
+		Get_AdditionalCostTypesResponse Get_AdditionalCostTypes();
+		Get_DeliveredRecords_Response Get_DeliveredRecords(Guid pkPurchaseId);
+		Get_EmailCSVFileResponse Get_EmailCSVFile(Get_EmailCSVFileRequest request);
+		Get_EmailsSentResponse Get_EmailsSent(Get_EmailsSentRequest request);
+		Get_PaymentStatementResponse Get_Payment_Statement(Get_PaymentStatementRequest request);
 		Get_PurchaseOrderResponse Get_PurchaseOrder(Guid pkPurchaseId);
 		List<PurchaseOrderAudit> Get_PurchaseOrderAudit(Search_PurchaseOrder_AuditLog auditLog);
 		Get_PurchaseOrderExtendedPropertyResponse Get_PurchaseOrderExtendedProperty(Get_PurchaseOrderExtendedPropertyRequest request);
 		List<PurchaseOrderNote> Get_PurchaseOrderNote(Guid pkPurchaseId);
 		List<PurchaseOrderStatus> GetPurchaseOrderStatusList();
 		List<Guid> GetPurchaseOrdersWithStockItems(PurchaseOrderWithStockItem purchaseOrder);
+		Modify_AdditionalCostResponse Modify_AdditionalCost(Modify_AdditionalCostRequest request);
+		Modify_AdditionalCostAllocationResponse Modify_AdditionalCostAllocation(Modify_AdditionalCostAllocationRequest request);
+		Modify_PaymentStatementResponse Modify_PaymentStatement(Modify_PaymentStatementRequest request);
+		Modify_PurchaseOrderItems_BulkResponse Modify_PurchaseOrderItems_Bulk(Modify_PurchaseOrderItems_BulkRequest request);
 		Search_PurchaseOrdersResult Search_PurchaseOrders(Search_PurchaseOrderParameter searchParameter);
+		Update_AdditionalCostTypesResponse Update_AdditionalCostTypes(Update_AdditionalCostTypesRequest request);
 		void Update_PurchaseOrderExtendedProperty(Update_PurchaseOrderExtendedPropertyRequest request);
 		PurchaseOrderHeader Update_PurchaseOrderHeader(Update_PurchaseOrderHeaderParameter updateParameter);
 		Update_PurchaseOrderItemResponse Update_PurchaseOrderItem(Update_PurchaseOrderItemParameter updateItemParameter);

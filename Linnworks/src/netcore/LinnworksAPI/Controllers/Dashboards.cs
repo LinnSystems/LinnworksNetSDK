@@ -12,9 +12,18 @@ namespace LinnworksAPI
         {                       
         }
 
+        /// <summary>
+        /// Use this call to retrieve Query Data report
+        ///  Contact support with Query Data report name and we will provide you with parameters. 
+        /// </summary>
+        /// <param name="scriptId">Used to specify custom paged script id</param>
+        /// <param name="parameters">Used to specify custom paged script conditional parameters</param>
+        /// <param name="entriesPerPage">Used to specify number of entries per page in report</param>
+        /// <param name="pageNumber">Used to specify custom paged script page number</param>
+        /// <returns>Custom script execution result</returns>
         public CustomScriptResult ExecuteCustomPagedScript(Int32 scriptId,ScriptParameter[] parameters,Int32 entriesPerPage,Int32 pageNumber)
 		{
-			var response = GetResponse("Dashboards/ExecuteCustomPagedScript", "scriptId=" + scriptId + "&parameters=" + JsonFormatter.ConvertToJson(parameters) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "");
+			var response = GetResponse("Dashboards/ExecuteCustomPagedScript", "scriptId=" + scriptId + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "");
             return JsonFormatter.ConvertFromJson<CustomScriptResult>(response);
 		}
 
@@ -38,7 +47,7 @@ namespace LinnworksAPI
         /// <returns>Sorted list of StockCategoryLocation</returns>
         public List<StockCategoryLocation> GetInventoryLocationCategoriesData(DateTime? date,Guid locationId)
 		{
-			var response = GetResponse("Dashboards/GetInventoryLocationCategoriesData", "date=" + JsonFormatter.ConvertToJson(date) + "&locationId=" + locationId + "");
+			var response = GetResponse("Dashboards/GetInventoryLocationCategoriesData", "date=" + System.Net.WebUtility.UrlEncode(date.HasValue ? date.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&locationId=" + locationId + "");
             return JsonFormatter.ConvertFromJson<List<StockCategoryLocation>>(response);
 		}
 
@@ -49,7 +58,7 @@ namespace LinnworksAPI
         /// <returns>Sorted list of StockItemLocations</returns>
         public List<StatsStockItemLocation> GetInventoryLocationData(DateTime? date)
 		{
-			var response = GetResponse("Dashboards/GetInventoryLocationData", "date=" + JsonFormatter.ConvertToJson(date) + "");
+			var response = GetResponse("Dashboards/GetInventoryLocationData", "date=" + System.Net.WebUtility.UrlEncode(date.HasValue ? date.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "");
             return JsonFormatter.ConvertFromJson<List<StatsStockItemLocation>>(response);
 		}
 
@@ -64,7 +73,7 @@ namespace LinnworksAPI
         /// <returns>PagedStockCategoryLocationProductResult</returns>
         public PagedStockCategoryLocationProductResult GetInventoryLocationProductsData(DateTime? date,Guid locationId,Guid categoryId,Int32 pageNumber,Int32 entriesPerPage)
 		{
-			var response = GetResponse("Dashboards/GetInventoryLocationProductsData", "date=" + JsonFormatter.ConvertToJson(date) + "&locationId=" + locationId + "&categoryId=" + categoryId + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
+			var response = GetResponse("Dashboards/GetInventoryLocationProductsData", "date=" + System.Net.WebUtility.UrlEncode(date.HasValue ? date.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&locationId=" + locationId + "&categoryId=" + categoryId + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
             return JsonFormatter.ConvertFromJson<PagedStockCategoryLocationProductResult>(response);
 		}
 
@@ -76,7 +85,7 @@ namespace LinnworksAPI
         /// <returns>List of LowStockLevel</returns>
         public List<LowStockLevel> GetLowStockLevel(Guid? locationId,Int32? numRows)
 		{
-			var response = GetResponse("Dashboards/GetLowStockLevel", "locationId=" + JsonFormatter.ConvertToJson(locationId) + "&numRows=" + JsonFormatter.ConvertToJson(numRows) + "");
+			var response = GetResponse("Dashboards/GetLowStockLevel", "locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&numRows=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(numRows)) + "");
             return JsonFormatter.ConvertFromJson<List<LowStockLevel>>(response);
 		}
 

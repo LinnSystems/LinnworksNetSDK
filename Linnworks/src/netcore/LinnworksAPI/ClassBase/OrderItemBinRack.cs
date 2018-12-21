@@ -23,5 +23,9 @@ namespace LinnworksAPI
         /// LocationId of the BinRack 
         /// </summary>
 		public Guid Location;
+
+		public Int32? BatchId;
+
+		public Int32? OrderItemBatchId;
 	} 
 }
