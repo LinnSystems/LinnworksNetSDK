@@ -87,6 +87,7 @@ namespace LinnworksAPI
 		ORDER_TAX_TOTAL,
 		ORDER_TAX_CURRENCY,
 		FOLDER,
+		FOLDERS,
 		JOB,
 		ITEMS,
 		ITEMS_IMAGE,

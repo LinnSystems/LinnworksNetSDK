@@ -93,5 +93,10 @@ namespace LinnworksAPI
         /// Item Depth 
         /// </summary>
 		public Decimal DimDepth;
+
+        /// <summary>
+        /// Supplier Code 
+        /// </summary>
+		public String SupplierCode;
 	} 
 }

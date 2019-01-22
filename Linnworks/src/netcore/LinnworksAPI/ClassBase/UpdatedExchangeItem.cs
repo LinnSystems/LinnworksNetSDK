@@ -6,8 +6,14 @@ namespace LinnworksAPI
 { 
     public class UpdatedExchangeItem
 	{
+        /// <summary>
+        /// The RMA row identifier for this line 
+        /// </summary>
 		public Int32 RMARowId;
 
+        /// <summary>
+        /// If set to true, will remove the line from the booking 
+        /// </summary>
 		public Boolean RemoveFromBooking;
 
 		public Guid ExchangeStockItemId;

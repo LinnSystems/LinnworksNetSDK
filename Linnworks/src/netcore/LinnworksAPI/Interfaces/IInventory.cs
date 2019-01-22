@@ -15,6 +15,7 @@ namespace LinnworksAPI
 		AddScrapCategoriesResponse AddScrapCategories(AddScrapCategoriesRequest request);
 		AddScrapItemResponse AddScrapItem(AddScrapItemRequest request);
 		Supplier AddSupplier(Supplier supplier);
+		void AdjustEbayTemplatesInstantLMS(IEnumerable<Guid> inventoryItemIds,String subSource,String siteId,AdjustmentOptions adjustmentOptions);
 		void AdjustTemplatesInstant(IEnumerable<Guid> inventoryItemIds,String source,String subSource,AdjustmentOptions adjustmentOptions);
 		void ArchiveInventoryItems(InventoryParametersRequest parameters);
 		void CreateBatches(IEnumerable<StockItemBatch> batches);
@@ -59,6 +60,7 @@ namespace LinnworksAPI
 		List<HeaderConfig> GetChannelsBySource(String source);
 		IEnumerable<Country> GetCountries();
 		Dictionary<String,String> GetCountryCodes();
+		Dictionary<String,String> GetEbayCompatibilityCultures();
 		List<StockItemEbayCompatibility> GetEbayCompatibilityList(Guid stockItemId);
 		List<String> GetExtendedPropertyNames(String propertyType = "Attribute");
 		List<String> GetExtendedPropertyTypes();

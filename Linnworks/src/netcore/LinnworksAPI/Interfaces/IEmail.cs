@@ -10,6 +10,6 @@ namespace LinnworksAPI
 	{
 		GenerateAdhocEmailResponse GenerateAdhocEmail(GenerateAdhocEmailRequest request);
 		GenerateFreeTextEmailResponse GenerateFreeTextEmail(GenerateFreeTextEmailRequest request);
-		List<EmailTemplateHeader> GetEmailTemplates();
+		EmailTemplate GetEmailTemplate(Int32 pkEmailTemplateRowId);
 	} 
 }

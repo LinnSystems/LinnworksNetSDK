@@ -12,6 +12,8 @@ namespace LinnworksAPI
 
 		public Boolean MustHaveRefund;
 
+		public Boolean RefundAutoPopulated;
+
 		public Boolean CanHaveRefund;
 
 		public List<ChannelReason> ReturnReasons;

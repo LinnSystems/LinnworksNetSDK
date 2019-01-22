@@ -254,7 +254,12 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<GetStockLevel_BatchResponse>>(response);
 		}
 
-		public GetStockLevelByLocationResponse GetStockLevelByLocation(GetStockLevelByLocationRequest request)
+		/// <summary>
+        /// Use this call to retrieve report about "item stock level" 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>StockItemLevel</returns>
+        public GetStockLevelByLocationResponse GetStockLevelByLocation(GetStockLevelByLocationRequest request)
 		{
 			var response = GetResponse("Stock/GetStockLevelByLocation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetStockLevelByLocationResponse>(response);

@@ -20,6 +20,7 @@ namespace LinnworksAPI
         /// <param name="parameters">Used to specify custom paged script conditional parameters</param>
         /// <param name="entriesPerPage">Used to specify number of entries per page in report</param>
         /// <param name="pageNumber">Used to specify custom paged script page number</param>
+        /// <param name="cancellationToken">Terminates execution if task was cancelled on client</param>
         /// <returns>Custom script execution result</returns>
         public CustomScriptResult ExecuteCustomPagedScript(Int32 scriptId,ScriptParameter[] parameters,Int32 entriesPerPage,Int32 pageNumber)
 		{
@@ -32,6 +33,7 @@ namespace LinnworksAPI
         ///  Apps using this call will not be allowed to Application Store. 
         /// </summary>
         /// <param name="script">Custom SQL script query text</param>
+        /// <param name="cancellationToken">Terminates execution if task was cancelled on client</param>
         /// <returns>Custom script execution result (CustomScriptResult)</returns>
         public CustomScriptResult ExecuteCustomScriptQuery(String script)
 		{

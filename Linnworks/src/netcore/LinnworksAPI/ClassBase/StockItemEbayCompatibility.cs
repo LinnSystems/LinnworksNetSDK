@@ -35,5 +35,10 @@ namespace LinnworksAPI
         /// Years to exclude 
         /// </summary>
 		public String ExcludeYears;
+
+        /// <summary>
+        /// Compatibility culture, one of US, UK, DE, AU, CA, FR, IT, ES 
+        /// </summary>
+		public String Culture;
 	} 
 }

@@ -33,13 +33,14 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Get the whole list of email header templates 
+        /// Get the full data of a specific email template 
         /// </summary>
-        /// <returns>List of email template headers</returns>
-        public List<EmailTemplateHeader> GetEmailTemplates()
+        /// <param name="pkEmailTemplateRowId">Id of the email template to retrieve</param>
+        /// <returns>Email template object with full data</returns>
+        public EmailTemplate GetEmailTemplate(Int32 pkEmailTemplateRowId)
 		{
-			var response = GetResponse("Email/GetEmailTemplates", "");
-            return JsonFormatter.ConvertFromJson<List<EmailTemplateHeader>>(response);
+			var response = GetResponse("Email/GetEmailTemplate", "pkEmailTemplateRowId=" + pkEmailTemplateRowId + "");
+            return JsonFormatter.ConvertFromJson<EmailTemplate>(response);
 		} 
     }
 }

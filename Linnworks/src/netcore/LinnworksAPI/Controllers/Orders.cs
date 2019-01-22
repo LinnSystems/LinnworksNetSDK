@@ -256,10 +256,11 @@ namespace LinnworksAPI
         /// <param name="sorting">Sorting to apply</param>
         /// <param name="fulfilmentCenter">Location to get the orders for</param>
         /// <param name="additionalFilter">Additional filter</param>
+        /// <param name="exactMatch">Whether we should use</param>
         /// <returns>List of id's</returns>
-        public List<Guid> GetAllOpenOrders(FieldsFilter filters,List<FieldSorting> sorting,Guid fulfilmentCenter,String additionalFilter)
+        public List<Guid> GetAllOpenOrders(FieldsFilter filters,List<FieldSorting> sorting,Guid fulfilmentCenter,String additionalFilter,Boolean exactMatch = false)
 		{
-			var response = GetResponse("Orders/GetAllOpenOrders", "filters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(filters)) + "&sorting=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(sorting)) + "&fulfilmentCenter=" + fulfilmentCenter + "&additionalFilter=" + System.Net.WebUtility.UrlEncode(additionalFilter) + "");
+			var response = GetResponse("Orders/GetAllOpenOrders", "filters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(filters)) + "&sorting=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(sorting)) + "&fulfilmentCenter=" + fulfilmentCenter + "&additionalFilter=" + System.Net.WebUtility.UrlEncode(additionalFilter) + "&exactMatch=" + exactMatch + "");
             return JsonFormatter.ConvertFromJson<List<Guid>>(response);
 		}
 

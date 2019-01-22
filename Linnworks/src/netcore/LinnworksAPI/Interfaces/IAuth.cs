@@ -8,7 +8,7 @@ namespace LinnworksAPI
 { 
     public interface IAuthController
 	{
-		BaseSession AuthorizeByApplication(Guid applicationId,Guid applicationSecret,Guid token);
+		BaseSession AuthorizeByApplication(AuthorizeByApplicationRequest request);
 		ApplicationProfileResponse GetApplicationProfileBySecretKey(Guid applicationId,Guid applicationSecret,Guid userId);
 		DateTime GetServerUTCTime();
 	} 

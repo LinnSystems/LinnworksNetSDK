@@ -6,10 +6,19 @@ namespace LinnworksAPI
 { 
     public class ActionRMABookingRequest
 	{
+        /// <summary>
+        /// The unique identifier for the RMA header to action 
+        /// </summary>
 		public Int32 RMAHeaderId;
 
+        /// <summary>
+        /// The order ID this RMA header pertains to. Used as a double-step verification to ensure the right RMA header is being actioned 
+        /// </summary>
 		public Guid OrderId;
 
+        /// <summary>
+        /// When actioning an RMA beyond the initial approval, the channel may require additional information, which can be passed via this field. Not required 
+        /// </summary>
 		public ActionForm Request;
 	} 
 }

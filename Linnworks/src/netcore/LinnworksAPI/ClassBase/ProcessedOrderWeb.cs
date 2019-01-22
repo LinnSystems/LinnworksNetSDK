@@ -302,5 +302,10 @@ namespace LinnworksAPI
         /// If order was created from an exchange 
         /// </summary>
 		public Boolean IsExchange;
+
+        /// <summary>
+        /// Order fulfilment location 
+        /// </summary>
+		public String FulfilmentLocationName;
 	} 
 }

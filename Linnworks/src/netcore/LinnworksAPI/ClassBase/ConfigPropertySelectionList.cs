@@ -6,8 +6,6 @@ namespace LinnworksAPI
 { 
     public class ConfigPropertySelectionList<SelectStringValueOption,Guid>
 	{
-		public GetSelectionList<SelectStringValueOption> OnGetSelectionList;
-
 		public Boolean Loaded;
 
 		public Int32 pkPropertyId;

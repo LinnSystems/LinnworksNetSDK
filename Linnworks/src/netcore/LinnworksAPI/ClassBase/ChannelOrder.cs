@@ -12,6 +12,11 @@ namespace LinnworksAPI
 		public Boolean UseChannelTax;
 
         /// <summary>
+        /// Used when IsNew is false to update the order 
+        /// </summary>
+		public Guid pkOrderId;
+
+        /// <summary>
         /// When the order is saved it will try and link by SKU after trying by channel sku mapping. 
         /// </summary>
 		public Boolean AutomaticallyLinkBySKU;

@@ -6,10 +6,19 @@ namespace LinnworksAPI
 { 
     public class CreateRefundRequest
 	{
+        /// <summary>
+        /// Determines whether the refund was initiated on the channel, or within Linnworks 
+        /// </summary>
 		public Boolean ChannelInitiated;
 
+        /// <summary>
+        /// The unique identifier for the order this refund is associated with 
+        /// </summary>
 		public Guid OrderId;
 
+        /// <summary>
+        /// A collection of line-level refunds detailing the refund as a whole 
+        /// </summary>
 		public List<NewRefundLine> RefundLines;
 	} 
 }

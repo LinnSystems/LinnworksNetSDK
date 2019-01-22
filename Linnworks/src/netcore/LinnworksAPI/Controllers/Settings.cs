@@ -33,6 +33,15 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Gets latest conversion rates for all known currencies. The rate is updated every couple of hours. 
+        /// </summary>
+        public GetLatestCurrencyRateResponse GetLatestCurrencyRate(GetLatestCurrencyRateRequest request)
+		{
+			var response = GetResponse("Settings/GetLatestCurrencyRate", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetLatestCurrencyRateResponse>(response);
+		}
+
+		/// <summary>
         /// Get user measures units from the database 
         /// </summary>
         public Measures GetMeasures()

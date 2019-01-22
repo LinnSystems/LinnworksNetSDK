@@ -90,6 +90,11 @@ namespace LinnworksAPI
 		public Double UnitCost;
 
         /// <summary>
+        /// Despatch stock unit cost 
+        /// </summary>
+		public Double DespatchStockUnitCost;
+
+        /// <summary>
         /// Percentage (0%, 10%, 20%, etc...) 
         /// </summary>
 		public Double Discount;
@@ -215,6 +220,8 @@ namespace LinnworksAPI
         /// If item has batches 
         /// </summary>
 		public Boolean isBatchedStockItem;
+
+		public Boolean IsWarehouseManaged;
 
 		public Boolean HasPurchaseOrders;
 

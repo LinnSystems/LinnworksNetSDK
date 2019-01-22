@@ -28,7 +28,7 @@ namespace LinnworksAPI
 		List<CustomerAddress> CustomerLookUp(String field,String txt);
 		void DeleteOrder(Guid orderId);
 		List<StockItemBatch> GetAllAvailableOrderItemBatchsByOrderId(AvailableOrderItemBatchsInfo parameters);
-		List<Guid> GetAllOpenOrders(FieldsFilter filters,List<FieldSorting> sorting,Guid fulfilmentCenter,String additionalFilter);
+		List<Guid> GetAllOpenOrders(FieldsFilter filters,List<FieldSorting> sorting,Guid fulfilmentCenter,String additionalFilter,Boolean exactMatch = false);
 		List<Guid> GetAllOpenOrdersBetweenIndex(Int32 fromIndex,Int32 toIndex,FieldsFilter filters,List<FieldSorting> sorting,Guid fulfilmentCenter,String additionalFilter);
 		List<OrderItemBatch> GetAssignedOrderItemBatches(GetAssignedOrderItemBatchesRequest request);
 		List<OrderFolder> GetAvailableFolders();

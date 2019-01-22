@@ -24,8 +24,14 @@ namespace LinnworksAPI
         /// </summary>
 		public Guid Location;
 
+        /// <summary>
+        /// If the item is batched, identifies the batch number 
+        /// </summary>
 		public Int32? BatchId;
 
+        /// <summary>
+        /// If the item is batched, identifies the unique order item batch row 
+        /// </summary>
 		public Int32? OrderItemBatchId;
 	} 
 }

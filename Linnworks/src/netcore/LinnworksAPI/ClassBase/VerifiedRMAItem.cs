@@ -8,28 +8,61 @@ namespace LinnworksAPI
 	{
 		public ReturnValidationErrorType ReturnValidationError;
 
+        /// <summary>
+        /// A unique identifier for the RMA line 
+        /// </summary>
 		public Int32 RMARowId;
 
+        /// <summary>
+        /// A unique identifier for the header this RMA line belongs to 
+        /// </summary>
 		public Int32 RMAHeaderId;
 
+        /// <summary>
+        /// Identifies the type of RMA for this line 
+        /// </summary>
 		public RMAType Type;
 
+        /// <summary>
+        /// A detailed description of this RMA line's status 
+        /// </summary>
 		public PostSaleStatus Status;
 
+        /// <summary>
+        /// The channel reference number for this RMA 
+        /// </summary>
 		public String ExternalReference;
 
+        /// <summary>
+        /// Line-level indicator of whether the refund has been actioned 
+        /// </summary>
 		public Boolean Actioned;
 
+        /// <summary>
+        /// If a refund has been actioned, this denotes the date it was actioned. For not actioned lines, this value is null 
+        /// </summary>
 		public DateTime? ActionedDate;
 
+        /// <summary>
+        /// Identifies whether the line has been removed from the RMA, and is pending an update to the database to reflect this 
+        /// </summary>
 		public Boolean Deleted;
 
 		public Int32 ResendQuantity;
 
+        /// <summary>
+        /// In the case of an exchange or resend line, this is the identifier for the created order 
+        /// </summary>
 		public Guid NewOrderId;
 
+        /// <summary>
+        /// Identifies any validation or submission errors for this RMA item 
+        /// </summary>
 		public String Error;
 
+        /// <summary>
+        /// Identifies any validation or submission information for this RMA item 
+        /// </summary>
 		public String Info;
 
 		public Guid ExchangeStockItemId;

@@ -10,6 +10,7 @@ namespace LinnworksAPI
 	{
 		void DeleteCurrencyConversionRates(List<String> currencies);
 		List<CurrencyConversionRate> GetCurrencyConversionRates(GetConversionRatesRequest requestParams);
+		GetLatestCurrencyRateResponse GetLatestCurrencyRate(GetLatestCurrencyRateRequest request);
 		Measures GetMeasures();
 		void InsertCurrencyConversionRates(List<CurrencyConversionRate> rates);
 		void UpdateCurrencyConversionRates(List<CurrencyConversionRate> rates);

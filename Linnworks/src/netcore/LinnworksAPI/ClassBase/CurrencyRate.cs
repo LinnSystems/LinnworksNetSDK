@@ -4,12 +4,24 @@ using System;
 
 namespace LinnworksAPI
 { 
+    /// <summary>
+    /// Class represents currency conversion rate to base currency 
+    /// </summary>
     public class CurrencyRate
 	{
+        /// <summary>
+        /// Currency code 
+        /// </summary>
 		public String Currency;
 
+        /// <summary>
+        /// Currency rate to Base Currency. CurrencyRate / BaseCurrencyRate = Converted value 
+        /// </summary>
 		public Decimal? Rate;
 
+        /// <summary>
+        /// UTC time when the currency rate was updated 
+        /// </summary>
 		public DateTime? AccurateAsOf;
 	} 
 }

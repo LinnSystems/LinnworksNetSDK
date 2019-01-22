@@ -15,12 +15,10 @@ namespace LinnworksAPI
         /// <summary>
         /// Generates a sesssion and provide Authorization Token and server in response. 
         /// </summary>
-        /// <param name="applicationId">Your application Id</param>
-        /// <param name="applicationSecret">Your application secret key</param>
-        /// <param name="token">Base token generated on Application installation. (static)</param>
-        public BaseSession AuthorizeByApplication(Guid applicationId,Guid applicationSecret,Guid token)
+        /// <param name="request"></param>
+        public BaseSession AuthorizeByApplication(AuthorizeByApplicationRequest request)
 		{
-			var response = GetResponse("Auth/AuthorizeByApplication", "applicationId=" + applicationId + "&applicationSecret=" + applicationSecret + "&token=" + token + "");
+			var response = GetResponse("Auth/AuthorizeByApplication", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<BaseSession>(response);
 		}
 

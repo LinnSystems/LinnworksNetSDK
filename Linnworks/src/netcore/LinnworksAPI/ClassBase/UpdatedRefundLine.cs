@@ -6,8 +6,14 @@ namespace LinnworksAPI
 { 
     public class UpdatedRefundLine
 	{
+        /// <summary>
+        /// Identifies the refund line 
+        /// </summary>
 		public Guid RefundRowId;
 
+        /// <summary>
+        /// Determines whether to remove the line from the refund 
+        /// </summary>
 		public Boolean RemoveFromRefund;
 
 		public Boolean IsFreeText;
@@ -15,6 +21,8 @@ namespace LinnworksAPI
 		public String FreeTextOrNote;
 
 		public Decimal Amount;
+
+		public Int32 Quantity;
 
 		public String ReasonTag;
 

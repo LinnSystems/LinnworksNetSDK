@@ -6,10 +6,19 @@ namespace LinnworksAPI
 { 
     public class ResendItem
 	{
+        /// <summary>
+        /// The quantity of the selected item to resend 
+        /// </summary>
 		public Int32 ResendQuantity;
 
+        /// <summary>
+        /// The identifier for the location to create the resend order in. This is where the item will have its stock deducted from 
+        /// </summary>
 		public Guid DespatchLocationId;
 
+        /// <summary>
+        /// This field denotes the additional cost that will be incurred to the customer for this resend 
+        /// </summary>
 		public Decimal AdditionalCost;
 
 		public Guid OrderItemRowId;

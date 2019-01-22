@@ -6,6 +6,9 @@ namespace LinnworksAPI
 { 
     public class AcknowledgeRefundErrorsResponse
 	{
+        /// <summary>
+        /// Determines whether the entire refund header was set to "ERROR_ACKED" state as a result of this call (will be found in the History tab) 
+        /// </summary>
 		public Boolean EntireRefundHeaderSetToErrorAcked;
 
 		public Int32? RefundHeaderId;

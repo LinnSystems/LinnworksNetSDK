@@ -11,5 +11,7 @@ namespace LinnworksAPI
 		public String Source;
 
 		public Boolean IsMain;
+
+		public Int32 SortOrder;
 	} 
 }

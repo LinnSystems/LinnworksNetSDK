@@ -79,6 +79,18 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to create LMS Update (Only works for fixed price templates) 
+        /// </summary>
+        /// <param name="inventoryItemIds">Inventory item ids</param>
+        /// <param name="subSource">Channel Name</param>
+        /// <param name="siteId">Ebay Site to adjust N.B this is not currently used</param>
+        /// <param name="adjustmentOptions">Fields which should be adjusted</param>
+        public void AdjustEbayTemplatesInstantLMS(IEnumerable<Guid> inventoryItemIds,String subSource,String siteId,AdjustmentOptions adjustmentOptions)
+		{
+			GetResponse("Inventory/AdjustEbayTemplatesInstantLMS", "inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&siteId=" + System.Net.WebUtility.UrlEncode(siteId) + "&adjustmentOptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(adjustmentOptions)) + "");
+		}
+
+		/// <summary>
         /// Use this call to adjust templates 
         /// </summary>
         /// <param name="inventoryItemIds">Inventory item ids</param>
@@ -492,6 +504,15 @@ namespace LinnworksAPI
         public Dictionary<String,String> GetCountryCodes()
 		{
 			var response = GetResponse("Inventory/GetCountryCodes", "");
+            return JsonFormatter.ConvertFromJson<Dictionary<String,String>>(response);
+		}
+
+		/// <summary>
+        /// Use this call to get a list of Ebay Compatibility culture list 
+        /// </summary>
+        public Dictionary<String,String> GetEbayCompatibilityCultures()
+		{
+			var response = GetResponse("Inventory/GetEbayCompatibilityCultures", "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,String>>(response);
 		}
 

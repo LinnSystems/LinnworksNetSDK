@@ -21,6 +21,7 @@ namespace LinnworksAPI
 		HasError,
 		OnlyErrors,
 		NoErrors,
+		HasWarning,
 		LastDays,
 		OlderThan,
 		Next,

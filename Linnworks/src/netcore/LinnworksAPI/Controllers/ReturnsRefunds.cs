@@ -12,13 +12,21 @@ namespace LinnworksAPI
         {                       
         }
 
+        /// <summary>
+        /// Acknowledges all error responses for a given refund header 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
         public AcknowledgeRefundErrorsResponse AcknowledgeRefundErrors(AcknowledgeRefundErrorsRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/AcknowledgeRefundErrors", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<AcknowledgeRefundErrorsResponse>(response);
 		}
 
-		public AcknowledgeRMAErrorsResponse AcknowledgeRMAErrors(AcknowledgeRMAErrorsRequest request)
+		/// <summary>
+        /// Acknowledges all error responses for a given RMA header 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public AcknowledgeRMAErrorsResponse AcknowledgeRMAErrors(AcknowledgeRMAErrorsRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/AcknowledgeRMAErrors", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<AcknowledgeRMAErrorsResponse>(response);
@@ -34,19 +42,31 @@ namespace LinnworksAPI
 			GetResponse("ReturnsRefunds/ActionBookedOrder", "pkOrderId=" + pkOrderId + "&bookedItems=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(bookedItems)) + "");
 		}
 
-		public ActionRefundResponse ActionRefund(ActionRefundRequest request)
+		/// <summary>
+        /// Sends a refund to the channel for actioning 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public ActionRefundResponse ActionRefund(ActionRefundRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/ActionRefund", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<ActionRefundResponse>(response);
 		}
 
-		public ActionRMABookingResponse ActionRMABooking(ActionRMABookingRequest request)
+		/// <summary>
+        /// Accepts a booked return or exchange in the system 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public ActionRMABookingResponse ActionRMABooking(ActionRMABookingRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/ActionRMABooking", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<ActionRMABookingResponse>(response);
 		}
 
-		public CreateRefundResponse CreateRefund(CreateRefundRequest request)
+		/// <summary>
+        /// Creates a refund in the system for approval 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public CreateRefundResponse CreateRefund(CreateRefundRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/CreateRefund", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<CreateRefundResponse>(response);
@@ -71,7 +91,11 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<String>(response);
 		}
 
-		public CreateRMABookingResponse CreateRMABooking(CreateRMABookingRequest request)
+		/// <summary>
+        /// Creates an RMA booking in the system 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public CreateRMABookingResponse CreateRMABooking(CreateRMABookingRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/CreateRMABooking", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<CreateRMABookingResponse>(response);
@@ -107,13 +131,21 @@ namespace LinnworksAPI
 			GetResponse("ReturnsRefunds/DeletePendingRefundItem", "fkOrderId=" + fkOrderId + "&pkRefundRowId=" + pkRefundRowId + "");
 		}
 
-		public DeleteRefundResponse DeleteRefund(DeleteRefundRequest request)
+		/// <summary>
+        /// Deletes all lines from the given refund header that have not yet been processed, or acknowledged as errors, removing it from the "Actionable Refunds" screen. If no lines are left, the header row is deleted 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public DeleteRefundResponse DeleteRefund(DeleteRefundRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/DeleteRefund", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<DeleteRefundResponse>(response);
 		}
 
-		public DeleteRMAResponse DeleteRMA(DeleteRMARequest request)
+		/// <summary>
+        /// Deletes all lines from the given RMA header that have not yet been processed, or acknowledged as errors, removing it from the "RMA Bookings" screen. If no lines are left, the header row is deleted 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public DeleteRMAResponse DeleteRMA(DeleteRMARequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/DeleteRMA", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<DeleteRMAResponse>(response);
@@ -129,13 +161,21 @@ namespace LinnworksAPI
 			GetResponse("ReturnsRefunds/EditBookedItemInfo", "pkOrderId=" + pkOrderId + "&bookedReturnsExchangeItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(bookedReturnsExchangeItem)) + "");
 		}
 
-		public GetActionableRefundHeadersResponse GetActionableRefundHeaders(GetActionableRefundHeadersRequest request)
+		/// <summary>
+        /// Returns a paged list of booked refund headers 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public GetActionableRefundHeadersResponse GetActionableRefundHeaders(GetActionableRefundHeadersRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/GetActionableRefundHeaders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetActionableRefundHeadersResponse>(response);
 		}
 
-		public GetActionableRMAHeadersResponse GetActionableRMAHeaders(GetActionableRMAHeadersRequest request)
+		/// <summary>
+        /// Returns a paged list of booked refund headers 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public GetActionableRMAHeadersResponse GetActionableRMAHeaders(GetActionableRMAHeadersRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/GetActionableRMAHeaders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetActionableRMAHeadersResponse>(response);
@@ -161,31 +201,51 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<BookedReturnsExchangeOrder>>(response);
 		}
 
-		public GetProcessedOrAckedErrorRefundHeadersResponse GetProcessedOrAckedErrorRefundHeaders(GetProcessedOrAckedErrorRefundHeadersRequest request)
+		/// <summary>
+        /// Returns a paged list of processed or acknowledged error refund headers 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public GetProcessedOrAckedErrorRefundHeadersResponse GetProcessedOrAckedErrorRefundHeaders(GetProcessedOrAckedErrorRefundHeadersRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/GetProcessedOrAckedErrorRefundHeaders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetProcessedOrAckedErrorRefundHeadersResponse>(response);
 		}
 
-		public GetProcessedOrAckedErrorRMAHeadersResponse GetProcessedOrAckedErrorRMAHeaders(GetProcessedOrAckedErrorRMAHeadersRequest request)
+		/// <summary>
+        /// Returns a paged list of processed or acknowledged error RMA headers 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public GetProcessedOrAckedErrorRMAHeadersResponse GetProcessedOrAckedErrorRMAHeaders(GetProcessedOrAckedErrorRMAHeadersRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/GetProcessedOrAckedErrorRMAHeaders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetProcessedOrAckedErrorRMAHeadersResponse>(response);
 		}
 
-		public GetRefundHeadersByOrderIdResponse GetRefundHeadersByOrderId(GetRefundHeadersByOrderIdRequest request)
+		/// <summary>
+        /// Returns all refund headers associated with the given order ID 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public GetRefundHeadersByOrderIdResponse GetRefundHeadersByOrderId(GetRefundHeadersByOrderIdRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/GetRefundHeadersByOrderId", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetRefundHeadersByOrderIdResponse>(response);
 		}
 
-		public GetRefundLinesByHeaderIdResponse GetRefundLinesByHeaderId(GetRefundLinesByHeaderIdRequest request)
+		/// <summary>
+        /// Returns a refund, given its header ID 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public GetRefundLinesByHeaderIdResponse GetRefundLinesByHeaderId(GetRefundLinesByHeaderIdRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/GetRefundLinesByHeaderId", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetRefundLinesByHeaderIdResponse>(response);
 		}
 
-		public GetRefundOptionsResponse GetRefundOptions(GetRefundOptionsRequest request)
+		/// <summary>
+        /// Returns channel-specific information regarding the types of refund that can be applied to the given order 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public GetRefundOptionsResponse GetRefundOptions(GetRefundOptionsRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/GetRefundOptions", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetRefundOptionsResponse>(response);
@@ -213,13 +273,21 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<RefundInfo>>(response);
 		}
 
-		public GetReturnOptionsResponse GetReturnOptions(GetReturnOptionsRequest request)
+		/// <summary>
+        /// Returns channel-specific information regarding the types of refund that can be applied to the given order 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public GetReturnOptionsResponse GetReturnOptions(GetReturnOptionsRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/GetReturnOptions", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetReturnOptionsResponse>(response);
 		}
 
-		public GetRMAHeadersByOrderIdResponse GetRMAHeadersByOrderId(GetRMAHeadersByOrderIdRequest request)
+		/// <summary>
+        /// Returns all RMA headers associated with the given order ID 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public GetRMAHeadersByOrderIdResponse GetRMAHeadersByOrderId(GetRMAHeadersByOrderIdRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/GetRMAHeadersByOrderId", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetRMAHeadersByOrderIdResponse>(response);
@@ -287,13 +355,21 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<GenericPagedResult<ReturnsRefundsWeb>>(response);
 		}
 
-		public UpdateRefundResponse UpdateRefund(UpdateRefundRequest request)
+		/// <summary>
+        /// Updates an existing refund in the system 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public UpdateRefundResponse UpdateRefund(UpdateRefundRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/UpdateRefund", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<UpdateRefundResponse>(response);
 		}
 
-		public UpdateRMABookingResponse UpdateRMABooking(UpdateRMABookingRequest request)
+		/// <summary>
+        /// Updates an RMA booking in the system 
+        /// </summary>
+        /// <param name="request">The request class for this call</param>
+        public UpdateRMABookingResponse UpdateRMABooking(UpdateRMABookingRequest request)
 		{
 			var response = GetResponse("ReturnsRefunds/UpdateRMABooking", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<UpdateRMABookingResponse>(response);
