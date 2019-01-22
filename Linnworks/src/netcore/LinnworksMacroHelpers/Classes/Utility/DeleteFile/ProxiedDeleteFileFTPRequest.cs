@@ -1,7 +1,7 @@
 ﻿namespace LinnworksMacroHelpers.Classes.Utility
 {
-    public class ProxiedDeleteFileFTPRequest : ProxiedBaseFTPRequest
+    public class ProxiedDeleteFileDropboxRequest : ProxiedBaseDropboxRequest
     {
-        public ProxiedDeleteFileFTPRequest(FtpSettings settings) : base(settings) { }
+        public ProxiedDeleteFileDropboxRequest(DropboxSettings settings) : base(settings) { }
     }
 }

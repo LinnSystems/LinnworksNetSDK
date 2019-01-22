@@ -9,7 +9,8 @@ using System.Text;
 namespace LinnworksMacroHelpers.Classes.Email
 {
     public sealed class ProxiedEmailRequest
-    {
+    {       
+
         /// <summary>
         /// Email settings
         /// </summary>
@@ -28,22 +29,22 @@ namespace LinnworksMacroHelpers.Classes.Email
         /// <summary>
         /// List of recipients
         /// </summary>
-        public List<EmailAddress> To { get; set; } = new List<EmailAddress>();
+        public List<EmailAddress> To { get; set; }
 
         /// <summary>
         /// List of CC recipients
         /// </summary>
-        public List<EmailAddress> CC { get; set; } = new List<EmailAddress>();
+        public List<EmailAddress> CC { get; set; }
 
         /// <summary>
         /// List of BCC recipients
         /// </summary>
-        public List<EmailAddress> BCC { get; set; } = new List<EmailAddress>();
+        public List<EmailAddress> BCC { get; set; }
 
         /// <summary>
         /// List of reply to
         /// </summary>
-        public List<EmailAddress> ReplyToList { get; set; } = new List<EmailAddress>();
+        public List<EmailAddress> ReplyToList { get; set; }
 
         /// <summary>
         /// Body of email
@@ -96,6 +97,16 @@ namespace LinnworksMacroHelpers.Classes.Email
         /// Email attachements.
         /// </summary>
         public List<EmailAttachment> Attachments { get; set; }
+
+        public ProxiedEmailRequest()
+        {
+            To = new List<EmailAddress>();
+            CC = new List<EmailAddress>();
+            BCC = new List<EmailAddress>();
+            ReplyToList = new List<EmailAddress>();
+            Headers = new List<EmailHeader>();
+            Attachments = new List<EmailAttachment>();
+        }
 
         public void Validate()
         {
