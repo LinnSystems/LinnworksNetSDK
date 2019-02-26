@@ -13,3 +13,12 @@ C:\work\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\bin\Debug\Newtonsoft.Json
 C:\work\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.csprojResolveAssemblyReference.cache
 C:\work\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.dll
 C:\work\LinnworksNetSDK\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.pdb
+C:\work\gitsdk\Linnworks\src\net\LinnworksAPI\bin\Debug\LinnworksAPI.dll
+C:\work\gitsdk\Linnworks\src\net\LinnworksAPI\bin\Debug\LinnworksAPI.pdb
+C:\work\gitsdk\Linnworks\src\net\LinnworksAPI\bin\Debug\Newtonsoft.Json.dll
+C:\work\gitsdk\Linnworks\src\net\LinnworksAPI\bin\Debug\Newtonsoft.Json.xml
+C:\work\gitsdk\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.csprojAssemblyReference.cache
+C:\work\gitsdk\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.csproj.CoreCompileInputs.cache
+C:\work\gitsdk\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.csproj.CopyComplete
+C:\work\gitsdk\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.dll
+C:\work\gitsdk\Linnworks\src\net\LinnworksAPI\obj\Debug\LinnworksAPI.pdb
