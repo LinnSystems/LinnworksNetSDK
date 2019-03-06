@@ -6,9 +6,10 @@ namespace LinnMacroCustomer
     {
         public static void Main(string[] args)
         {
-            Guid applicationId;
-            Guid secretKey;
-            Guid token;
+            //Replace the following with your application details and installation token
+            Guid applicationId = Guid.NewGuid();
+            Guid secretKey = Guid.NewGuid();
+            Guid token = Guid.NewGuid();
 
             var macro = SetupMacro(applicationId, secretKey, token);
 
@@ -29,7 +30,12 @@ namespace LinnMacroCustomer
         {
             var controller = new LinnworksAPI.AuthController(new LinnworksAPI.ApiContext("https://api.linnworks.net"));
 
-            return controller.AuthorizeByApplication(applicationId, secretKey, token);
+            return controller.AuthorizeByApplication(new LinnworksAPI.AuthorizeByApplicationRequest
+            {
+                ApplicationId = applicationId,
+                ApplicationSecret = secretKey,
+                Token = token
+            });
         }
 
         private static LinnworksMacro.LinnworksMacro SetupMacro(Guid applicationId, Guid secretKey, Guid token)
