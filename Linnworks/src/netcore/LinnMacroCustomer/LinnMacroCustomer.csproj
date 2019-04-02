@@ -5,11 +5,14 @@
 	<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\LinnworksAPI\LinnworksAPI.csproj" />
-    <ProjectReference Include="..\..\LinnworksMacro\LinnworksMacro.csproj" />
+    <ProjectReference Include="..\LinnworksAPI\LinnworksAPI.csproj" />
+    <ProjectReference Include="..\LinnworksMacro\LinnworksMacro.csproj" />
   </ItemGroup>
 
 </Project>
