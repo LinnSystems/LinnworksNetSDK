@@ -201,9 +201,9 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="fulfilmentCenter">Fulfilment center to be associated</param>
         /// <returns>Order created</returns>
-        public OpenOrder CreateNewOrder(Guid fulfilmentCenter)
+        public OpenOrder CreateNewOrder(Guid fulfilmentCenter,Boolean createAsDraft = true)
 		{
-			var response = GetResponse("Orders/CreateNewOrder", "fulfilmentCenter=" + fulfilmentCenter + "");
+			var response = GetResponse("Orders/CreateNewOrder", "fulfilmentCenter=" + fulfilmentCenter + "&createAsDraft=" + createAsDraft + "");
             return JsonFormatter.ConvertFromJson<OpenOrder>(response);
 		}
 
@@ -237,6 +237,16 @@ namespace LinnworksAPI
         public void DeleteOrder(Guid orderId)
 		{
 			GetResponse("Orders/DeleteOrder", "orderId=" + orderId + "");
+		}
+
+		/// <summary>
+        /// Get a basic info of open orders, from a list of open order items 
+        /// </summary>
+        /// <param name="request"></param>
+        public Get_OpenOrderBasicInfoFromItemsResponse Get_OpenOrderBasicInfoFromItems(Get_OpenOrderBasicInfoFromItemsRequest request)
+		{
+			var response = GetResponse("Orders/Get_OpenOrderBasicInfoFromItems", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<Get_OpenOrderBasicInfoFromItemsResponse>(response);
 		}
 
 		/// <summary>
@@ -689,7 +699,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Get the user location from setings 
+        /// Get the user location from settings 
         /// </summary>
         /// <returns>User location Id</returns>
         public Guid GetUserLocationId()
@@ -825,9 +835,10 @@ namespace LinnworksAPI
         /// Run Rules Engine on Open Orders 
         /// </summary>
         /// <param name="orderIds">List of order IDs to run rules on</param>
-        public List<Guid> RunRulesEngine(Guid[] orderIds)
+        /// <param name="ruleId">Id of Rule to run. Null if all rules should be run</param>
+        public List<Guid> RunRulesEngine(Guid[] orderIds,Int32? ruleId = null)
 		{
-			var response = GetResponse("Orders/RunRulesEngine", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "");
+			var response = GetResponse("Orders/RunRulesEngine", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&ruleId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ruleId)) + "");
             return JsonFormatter.ConvertFromJson<List<Guid>>(response);
 		}
 

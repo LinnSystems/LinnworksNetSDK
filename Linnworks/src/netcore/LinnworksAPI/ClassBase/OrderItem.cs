@@ -60,6 +60,11 @@ namespace LinnworksAPI
 		public Int32 OnOrder;
 
         /// <summary>
+        /// Purchase order bound to this item 
+        /// </summary>
+		public OrderItemOnOrder OnPurchaseOrder;
+
+        /// <summary>
         /// Quantity currently in open orders 
         /// </summary>
 		public Int32? InOrderBook;

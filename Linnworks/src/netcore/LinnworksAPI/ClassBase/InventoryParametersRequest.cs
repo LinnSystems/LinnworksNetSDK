@@ -12,12 +12,14 @@ namespace LinnworksAPI
 		public List<Guid> InventoryItemIds;
 
         /// <summary>
-        /// n/a 
+        /// A list of row numbers for items selected in the my inventory grid. 
+        /// For instance if the first entry in the list is 4, 4; the selection was from the fourth row, to the fourth row. 
         /// </summary>
 		public List<Tuple<Int32,Int32>> SelectedRegions;
 
         /// <summary>
-        /// n/a (can be ignored) 
+        /// An internal token used to identify the list of inventory items within a certain view.
+        /// From this, the inventory item ids can be extracted with the selected regions. 
         /// </summary>
 		public Guid Token;
 	} 

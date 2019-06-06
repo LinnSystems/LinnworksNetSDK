@@ -162,6 +162,11 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<Deliver_PurchaseOrderItemAllNoBatchResponse>(response);
 		}
 
+		public void Deliver_PurchaseItems_WithQuantity(Deliver_PurchaseItems_WithQuantityRequest request)
+		{
+			GetResponse("PurchaseOrder/Deliver_PurchaseItems_WithQuantity", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+		}
+
 		/// <summary>
         /// Try to find an item by SKU of SpplierCode 
         /// </summary>
@@ -261,6 +266,16 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("PurchaseOrder/Get_PurchaseOrderExtendedProperty", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<Get_PurchaseOrderExtendedPropertyResponse>(response);
+		}
+
+		/// <summary>
+        /// Get a list of open orders bound to a purchase order item 
+        /// </summary>
+        /// <param name="request"></param>
+        public Get_PurchaseOrderItem_OpenOrdersResponse Get_PurchaseOrderItem_OpenOrders(Get_PurchaseOrderItem_OpenOrdersRequest request)
+		{
+			var response = GetResponse("PurchaseOrder/Get_PurchaseOrderItem_OpenOrders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<Get_PurchaseOrderItem_OpenOrdersResponse>(response);
 		}
 
 		/// <summary>

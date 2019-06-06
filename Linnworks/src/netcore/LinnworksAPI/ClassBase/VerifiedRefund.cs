@@ -6,8 +6,6 @@ namespace LinnworksAPI
 { 
     public class VerifiedRefund
 	{
-		public RefundValidationErrorType RefundValidationError;
-
         /// <summary>
         /// A unique identifier for the refund line 
         /// </summary>
@@ -40,10 +38,16 @@ namespace LinnworksAPI
         /// </summary>
 		public VerifiedRefundItem RefundedItem;
 
+		public RefundValidationErrorType RefundValidationError;
+
         /// <summary>
         /// If validation has failed for this item, the field will be populated with the appropriate error message 
         /// </summary>
+		public String ValidationError;
+
 		public String Error;
+
+		public List<RefundError> Errors;
 
         /// <summary>
         /// The channel reference number for this refund 

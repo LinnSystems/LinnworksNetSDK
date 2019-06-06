@@ -4,12 +4,10 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Dimension
+    public class PODeliveredItems
 	{
-		public Int32 Width;
+		public Guid pkPurchaseItemId;
 
-		public Int32 Depth;
-
-		public Int32 Height;
+		public Int32 QuantityDelivered;
 	} 
 }

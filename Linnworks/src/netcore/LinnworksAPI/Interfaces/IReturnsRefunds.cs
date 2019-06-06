@@ -24,7 +24,6 @@ namespace LinnworksAPI
 		void EditBookedItemInfo(Guid pkOrderId,BookedReturnsExchangeItem bookedReturnsExchangeItem);
 		GetActionableRefundHeadersResponse GetActionableRefundHeaders(GetActionableRefundHeadersRequest request);
 		GetActionableRMAHeadersResponse GetActionableRMAHeaders(GetActionableRMAHeadersRequest request);
-		List<BookedReturnsExchangeItem> GetBookedReturnsExchangeItems(Guid pkOrderId);
 		List<BookedReturnsExchangeOrder> GetBookedReturnsExchangeOrders();
 		GetProcessedOrAckedErrorRefundHeadersResponse GetProcessedOrAckedErrorRefundHeaders(GetProcessedOrAckedErrorRefundHeadersRequest request);
 		GetProcessedOrAckedErrorRMAHeadersResponse GetProcessedOrAckedErrorRMAHeaders(GetProcessedOrAckedErrorRMAHeadersRequest request);
@@ -32,7 +31,6 @@ namespace LinnworksAPI
 		GetRefundLinesByHeaderIdResponse GetRefundLinesByHeaderId(GetRefundLinesByHeaderIdRequest request);
 		GetRefundOptionsResponse GetRefundOptions(GetRefundOptionsRequest request);
 		List<RefundOrder> GetRefundOrders();
-		List<RefundInfo> GetRefunds(Guid pkOrderId,Guid? refundReference = null);
 		GetReturnOptionsResponse GetReturnOptions(GetReturnOptionsRequest request);
 		GetRMAHeadersByOrderIdResponse GetRMAHeadersByOrderId(GetRMAHeadersByOrderIdRequest request);
 		List<SearchField> GetSearchTypes(HistoryType historyType);

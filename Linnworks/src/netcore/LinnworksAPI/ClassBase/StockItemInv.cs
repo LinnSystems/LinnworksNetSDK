@@ -21,8 +21,6 @@ namespace LinnworksAPI
 
 		public Int32 Available;
 
-		public DateTime? CreationDate;
-
 		public Boolean? IsCompositeParent;
 
 		public String ItemNumber;
@@ -60,6 +58,8 @@ namespace LinnworksAPI
 		public Double Depth;
 
 		public Double Weight;
+
+		public DateTime? CreationDate;
 
 		public Int32 InventoryTrackingType;
 

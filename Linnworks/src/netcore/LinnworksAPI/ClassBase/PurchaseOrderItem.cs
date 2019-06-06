@@ -95,8 +95,20 @@ namespace LinnworksAPI
 		public Decimal DimDepth;
 
         /// <summary>
-        /// Supplier Code 
+        /// Number of open order items this item is bound 
         /// </summary>
+		public Int32 BoundToOpenOrdersItems;
+
+        /// <summary>
+        /// Bin rack 
+        /// </summary>
+		public String BinRack;
+
+        /// <summary>
+        /// Sum of quantity of items bound to open order items 
+        /// </summary>
+		public Int32 QuantityBoundToOpenOrdersItems;
+
 		public String SupplierCode;
 	} 
 }

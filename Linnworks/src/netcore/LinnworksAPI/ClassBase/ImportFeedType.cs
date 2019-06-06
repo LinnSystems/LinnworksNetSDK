@@ -15,5 +15,6 @@ namespace LinnworksAPI
 		BUCKET,
 		AMAZON_S3,
 		DROPBOX,
+		FTPS,
 	}
 }

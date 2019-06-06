@@ -34,12 +34,17 @@ namespace LinnworksAPI
 		public String ExternalReference;
 
         /// <summary>
+        /// The timestamp for when the RMA was created 
+        /// </summary>
+		public DateTime CreatedDate;
+
+        /// <summary>
         /// Line-level indicator of whether the refund has been actioned 
         /// </summary>
 		public Boolean Actioned;
 
         /// <summary>
-        /// If a refund has been actioned, this denotes the date it was actioned. For not actioned lines, this value is null 
+        /// If an RMA has been actioned, this denotes the date it was actioned. For not actioned lines, this value is null 
         /// </summary>
 		public DateTime? ActionedDate;
 
@@ -58,7 +63,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Identifies any validation or submission errors for this RMA item 
         /// </summary>
+		public String ValidationError;
+
 		public String Error;
+
+		public List<RMAError> Errors;
 
         /// <summary>
         /// Identifies any validation or submission information for this RMA item 
@@ -69,6 +78,8 @@ namespace LinnworksAPI
 
 		public String ExchangeSKU;
 
+		public String ExchangeTitle;
+
 		public Int32 ExchangeQuantity;
 
 		public Guid DespatchLocationId;
@@ -76,6 +87,10 @@ namespace LinnworksAPI
 		public Decimal AdditionalCost;
 
 		public Guid OrderItemRowId;
+
+		public String ReturnItemSKU;
+
+		public String ReturnItemTitle;
 
 		public Int32? BatchInventoryId;
 
@@ -98,5 +113,7 @@ namespace LinnworksAPI
 		public String ReasonTag;
 
 		public String SubReasonTag;
+
+		public String BinrackOverride;
 	} 
 }

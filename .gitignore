@@ -54,3 +54,4 @@ obj/
 
 # Nuget packages
 **/packages/*
+*.pdb

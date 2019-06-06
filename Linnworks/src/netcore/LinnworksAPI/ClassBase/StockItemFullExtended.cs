@@ -5,39 +5,44 @@ using System;
 namespace LinnworksAPI
 { 
     /// <summary>
-    /// Stock Item 
+    /// Stock item with full extended details. 
     /// </summary>
-    public class StockItem
+    public class StockItemFullExtended
 	{
         /// <summary>
-        /// Quantity in stock 
+        /// List of item descriptions 
         /// </summary>
-		public Int32 Quantity;
+		public List<StockItemDescription> ItemChannelDescriptions;
 
         /// <summary>
-        /// Quantity in order book 
+        /// List of extended properties 
         /// </summary>
-		public Int32 InOrder;
+		public List<StockItemExtendedProperty> ItemExtendedProperties;
 
         /// <summary>
-        /// Quantity due in purchase orders 
+        /// List item titles 
         /// </summary>
-		public Int32 Due;
+		public List<StockItemTitle> ItemChannelTitles;
 
         /// <summary>
-        /// Minimum level of stock item. -1 is not tracked 
+        /// List of item prices 
         /// </summary>
-		public Int32 MinimumLevel;
+		public List<StockItemPrice> ItemChannelPrices;
 
         /// <summary>
-        /// Available level. Quantity - InOrder 
+        /// Suppliers 
         /// </summary>
-		public Int32 Available;
+		public List<StockItemSupplierStat> Suppliers;
 
         /// <summary>
-        /// Item is a composite parent 
+        /// Stock Levels 
         /// </summary>
-		public Boolean? IsCompositeParent;
+		public List<StockItemLevel> StockLevels;
+
+        /// <summary>
+        /// Image URLs 
+        /// </summary>
+		public List<StockItemImage> Images;
 
 		public String ItemNumber;
 
@@ -76,6 +81,8 @@ namespace LinnworksAPI
 		public Double Weight;
 
 		public DateTime? CreationDate;
+
+		public Boolean IsCompositeParent;
 
 		public Int32 InventoryTrackingType;
 

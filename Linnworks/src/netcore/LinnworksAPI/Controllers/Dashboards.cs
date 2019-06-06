@@ -22,9 +22,25 @@ namespace LinnworksAPI
         /// <param name="pageNumber">Used to specify custom paged script page number</param>
         /// <param name="cancellationToken">Terminates execution if task was cancelled on client</param>
         /// <returns>Custom script execution result</returns>
-        public CustomScriptResult ExecuteCustomPagedScript(Int32 scriptId,ScriptParameter[] parameters,Int32 entriesPerPage,Int32 pageNumber)
+        public CustomScriptResult ExecuteCustomPagedScript(Int32 scriptId,List<ScriptParameter> parameters,Int32 entriesPerPage,Int32 pageNumber)
 		{
 			var response = GetResponse("Dashboards/ExecuteCustomPagedScript", "scriptId=" + scriptId + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "");
+            return JsonFormatter.ConvertFromJson<CustomScriptResult>(response);
+		}
+
+		/// <summary>
+        /// Use this call to retrieve Query Data report
+        ///  Contact support with Query Data report name and we will provide you with parameters. 
+        /// </summary>
+        /// <param name="scriptId">Used to specify custom paged script id</param>
+        /// <param name="parameters">Used to specify custom paged script conditional parameters</param>
+        /// <param name="entriesPerPage">Used to specify number of entries per page in report</param>
+        /// <param name="pageNumber">Used to specify custom paged script page number</param>
+        /// <param name="cancellationToken">Terminates execution if task was cancelled on client</param>
+        /// <returns>Custom script execution result</returns>
+        public CustomScriptResult ExecuteCustomPagedScript_Customer(Int32 scriptId,List<ScriptParameter> parameters,Int32 entriesPerPage,Int32 pageNumber)
+		{
+			var response = GetResponse("Dashboards/ExecuteCustomPagedScript_Customer", "scriptId=" + scriptId + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "");
             return JsonFormatter.ConvertFromJson<CustomScriptResult>(response);
 		}
 

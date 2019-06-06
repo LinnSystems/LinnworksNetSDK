@@ -4,8 +4,10 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DataPurgeCreateTokenResponse
+    public class OptionBase
 	{
-		public String Token;
+		public String Text;
+
+		public String Value;
 	} 
 }

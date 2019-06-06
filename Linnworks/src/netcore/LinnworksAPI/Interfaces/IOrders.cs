@@ -23,10 +23,11 @@ namespace LinnworksAPI
 		List<KeyValuePair<Guid,String>> ClearShippingLabelInfo(List<Guid> orderIds,Boolean withoutConfirmation);
 		String CompleteOrder(Guid orderId);
 		Guid? CreateNewItemAndLink(Guid pkStockItemId,String itemTitle,String source,String subSource,String channelSKU,Guid? locationId,Int32? initialQuantity);
-		OpenOrder CreateNewOrder(Guid fulfilmentCenter);
+		OpenOrder CreateNewOrder(Guid fulfilmentCenter,Boolean createAsDraft = true);
 		List<Guid> CreateOrders(List<ChannelOrder> orders,String location);
 		List<CustomerAddress> CustomerLookUp(String field,String txt);
 		void DeleteOrder(Guid orderId);
+		Get_OpenOrderBasicInfoFromItemsResponse Get_OpenOrderBasicInfoFromItems(Get_OpenOrderBasicInfoFromItemsRequest request);
 		List<StockItemBatch> GetAllAvailableOrderItemBatchsByOrderId(AvailableOrderItemBatchsInfo parameters);
 		List<Guid> GetAllOpenOrders(FieldsFilter filters,List<FieldSorting> sorting,Guid fulfilmentCenter,String additionalFilter,Boolean exactMatch = false);
 		List<Guid> GetAllOpenOrdersBetweenIndex(Int32 fromIndex,Int32 toIndex,FieldsFilter filters,List<FieldSorting> sorting,Guid fulfilmentCenter,String additionalFilter);
@@ -79,7 +80,7 @@ namespace LinnworksAPI
 		List<ProcessOrderResult> ProcessOrdersInBatch(List<Guid> ordersIds,Guid? locationId);
 		CalcOrderHeader RecalculateSingleOrderPackaging(CalcOrderHeader request);
 		UpdateOrderItemResult RemoveOrderItem(Guid orderId,Guid rowid,Guid fulfilmentCenter);
-		List<Guid> RunRulesEngine(Guid[] orderIds);
+		List<Guid> RunRulesEngine(Guid[] orderIds,Int32? ruleId = null);
 		void SaveOrderView(Int32 pkViewId,String viewName,String OrderViewDetailJSON);
 		void SetAdditionalInfo(Guid orderId,Guid rowId,OrderItemOption[] additionalInfo);
 		List<OrderFolder> SetAvailableFolders(List<OrderFolder> folders);

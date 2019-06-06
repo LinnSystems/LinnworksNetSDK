@@ -27,6 +27,10 @@ namespace LinnworksAPI
 
 		public Int32 PackSize;
 
+		public Int32 BoundToOpenOrdersItems;
+
+		public Int32 QuantityBoundToOpenOrdersItems;
+
 		public Decimal Cost;
 
 		public Decimal TaxRate;

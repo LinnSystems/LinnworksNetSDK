@@ -40,5 +40,8 @@ namespace LinnworksAPI
 		ProductIdentifiers,
 		TrackingNumbers,
 		JITStatus,
+		ReorderPointGeneralParams,
+		ReorderPointWeeklyParams,
+		eBayCompatibilityKtypesCulture,
 	}
 }

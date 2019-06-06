@@ -20,6 +20,8 @@ namespace LinnworksAPI
 
 		public String ExchangeSKU;
 
+		public String ExchangeTitle;
+
 		public Int32 ExchangeQuantity;
 
 		public Guid DespatchLocationId;
@@ -27,6 +29,10 @@ namespace LinnworksAPI
 		public Decimal AdditionalCost;
 
 		public Guid OrderItemRowId;
+
+		public String ReturnItemSKU;
+
+		public String ReturnItemTitle;
 
 		public Int32? BatchInventoryId;
 
@@ -49,5 +55,7 @@ namespace LinnworksAPI
 		public String ReasonTag;
 
 		public String SubReasonTag;
+
+		public String BinrackOverride;
 	} 
 }

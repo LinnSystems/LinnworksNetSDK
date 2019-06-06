@@ -4,8 +4,8 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DataPurgeCheckTokenResponse
+    public class Get_PurchaseOrderItem_OpenOrdersRequest
 	{
-		public Boolean IsValid;
+		public Guid pkPurchaseItemId;
 	} 
 }

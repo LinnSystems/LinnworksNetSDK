@@ -32,7 +32,7 @@ namespace LinnworksAPI
 		public Double TaxRate;
 
         /// <summary>
-        /// Discount on the line as a whole number eg. 10 
+        /// Discount percentage on the line as a whole number eg. 10 
         /// </summary>
 		public Double LineDiscount;
 

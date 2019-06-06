@@ -20,5 +20,6 @@ namespace LinnworksAPI
 		ChangeOrderParkStatus,
 		AssignTagToOrder,
 		ExecuteMacro,
+		AssignIdentifierToOrder,
 	}
 }

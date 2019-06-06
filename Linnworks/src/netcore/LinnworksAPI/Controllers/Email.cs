@@ -41,6 +41,16 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Email/GetEmailTemplate", "pkEmailTemplateRowId=" + pkEmailTemplateRowId + "");
             return JsonFormatter.ConvertFromJson<EmailTemplate>(response);
+		}
+
+		/// <summary>
+        /// Get the whole list of email header templates 
+        /// </summary>
+        /// <returns>List of email template headers</returns>
+        public List<EmailTemplateHeader> GetEmailTemplates()
+		{
+			var response = GetResponse("Email/GetEmailTemplates", "");
+            return JsonFormatter.ConvertFromJson<List<EmailTemplateHeader>>(response);
 		} 
     }
 }

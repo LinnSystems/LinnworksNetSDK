@@ -60,7 +60,6 @@ namespace LinnworksAPI
 		List<HeaderConfig> GetChannelsBySource(String source);
 		IEnumerable<Country> GetCountries();
 		Dictionary<String,String> GetCountryCodes();
-		Dictionary<String,String> GetEbayCompatibilityCultures();
 		List<StockItemEbayCompatibility> GetEbayCompatibilityList(Guid stockItemId);
 		List<String> GetExtendedPropertyNames(String propertyType = "Attribute");
 		List<String> GetExtendedPropertyTypes();
@@ -75,9 +74,11 @@ namespace LinnworksAPI
 		List<StockItemExtendedProperty> GetInventoryItemExtendedProperties(Guid inventoryItemId,GetExtendedPropertyFilter propertyParams);
 		List<StockItemImage> GetInventoryItemImages(Guid inventoryItemId);
 		List<StockItemLocation> GetInventoryItemLocations(Guid inventoryItemId);
+		Dictionary<String,List<String>> GetInventoryItemPriceChannelSuffixes();
 		List<StockItemPricingRule> GetInventoryItemPriceRulesById(Guid stockItemPriceId);
 		List<StockItemPricingRule> GetInventoryItemPriceRulesBySource(Guid stockItemId,String source,String subSource);
 		List<StockItemPrice> GetInventoryItemPrices(Guid inventoryItemId);
+		Dictionary<String,List<String>> GetInventoryItemPriceTags();
 		Int32 GetInventoryItemsCount(Boolean? includeDeleted,Boolean? includeArchived);
 		List<StockItemTitle> GetInventoryItemTitles(Guid inventoryItemId);
 		String GetNewItemNumber();

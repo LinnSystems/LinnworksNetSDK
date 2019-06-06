@@ -20,5 +20,7 @@ namespace LinnworksAPI
         /// Evaluation options 
         /// </summary>
 		public List<String> Options;
+
+		public List<OptionBase> KeyedOptions;
 	} 
 }

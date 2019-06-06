@@ -67,7 +67,8 @@ namespace LinnworksAPI
 		public OrderState OrderState;
 
         /// <summary>
-        /// Payment status of the order, eg Paid 
+        /// Payment status of the order, eg Paid
+        /// If Unpaid ChannelOrderAdapter.Save() will ensure order is PARKED 
         /// </summary>
 		public PaymentStatus PaymentStatus;
 

@@ -18,6 +18,10 @@ namespace LinnworksAPI
 
 		public Guid OrderItemRowId;
 
+		public String ReturnItemSKU;
+
+		public String ReturnItemTitle;
+
 		public Int32? BatchInventoryId;
 
 		public Guid ReturnLocation;
@@ -39,5 +43,7 @@ namespace LinnworksAPI
 		public String ReasonTag;
 
 		public String SubReasonTag;
+
+		public String BinrackOverride;
 	} 
 }

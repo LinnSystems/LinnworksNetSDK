@@ -24,6 +24,12 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<VariationItem>>(response);
 		}
 
+		public BatchStockLevelDeltaResponse BatchStockLevelDelta(BatchStockLevelDetaRequest request)
+		{
+			var response = GetResponse("Stock/BatchStockLevelDelta", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<BatchStockLevelDeltaResponse>(response);
+		}
+
 		/// <summary>
         /// Increases the stock level and current stock value of a batched stock item by the specified quantity 
         /// </summary>
@@ -230,6 +236,17 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Stock/GetStockItemsFull", "keyword=" + System.Net.WebUtility.UrlEncode(keyword) + "&loadCompositeParents=" + loadCompositeParents + "&loadVariationParents=" + loadVariationParents + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&dataRequirements=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(dataRequirements)) + "&searchTypes=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(searchTypes)) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemFull>>(response);
+		}
+
+		/// <summary>
+        /// Used to get inventory item information at a basic level from ids. 
+        /// </summary>
+        /// <param name="request">Object with a list of pkStockItemIds and Data Requirements</param>
+        /// <returns>Object with StockItemsFullExtendedByIds</returns>
+        public GetStockItemsFullByIdsResponse GetStockItemsFullByIds(GetStockItemsFullByIdsRequest request)
+		{
+			var response = GetResponse("Stock/GetStockItemsFullByIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetStockItemsFullByIdsResponse>(response);
 		}
 
 		/// <summary>

@@ -17,6 +17,11 @@ namespace LinnworksAPI
 		public String ExchangeSKU;
 
         /// <summary>
+        /// Identifies the title of the item that will replace the returned item 
+        /// </summary>
+		public String ExchangeTitle;
+
+        /// <summary>
         /// The number of this item to send as part of the exchange 
         /// </summary>
 		public Int32 ExchangeQuantity;
@@ -32,6 +37,10 @@ namespace LinnworksAPI
 		public Decimal AdditionalCost;
 
 		public Guid OrderItemRowId;
+
+		public String ReturnItemSKU;
+
+		public String ReturnItemTitle;
 
 		public Int32? BatchInventoryId;
 
@@ -54,5 +63,7 @@ namespace LinnworksAPI
 		public String ReasonTag;
 
 		public String SubReasonTag;
+
+		public String BinrackOverride;
 	} 
 }

@@ -22,6 +22,7 @@ namespace LinnworksAPI
 		Update_PurchaseOrderItemResponse Deliver_PurchaseItem(Deliver_PurchaseItemParameter deliverItemParameter);
 		Deliver_PurchaseOrderItemAllResponse Deliver_PurchaseItemAll(Guid purchaseId);
 		Deliver_PurchaseOrderItemAllNoBatchResponse Deliver_PurchaseItemAll_ExceptBatchItems(Guid purchaseId);
+		void Deliver_PurchaseItems_WithQuantity(Deliver_PurchaseItems_WithQuantityRequest request);
 		FindStockItem_Response FindStockItem(FindStockItemRequest request);
 		Get_Additional_CostResponse Get_Additional_Cost(Get_Additional_CostRequest request);
 		Get_AdditionalCostTypesResponse Get_AdditionalCostTypes();
@@ -32,6 +33,7 @@ namespace LinnworksAPI
 		Get_PurchaseOrderResponse Get_PurchaseOrder(Guid pkPurchaseId);
 		List<PurchaseOrderAudit> Get_PurchaseOrderAudit(Search_PurchaseOrder_AuditLog auditLog);
 		Get_PurchaseOrderExtendedPropertyResponse Get_PurchaseOrderExtendedProperty(Get_PurchaseOrderExtendedPropertyRequest request);
+		Get_PurchaseOrderItem_OpenOrdersResponse Get_PurchaseOrderItem_OpenOrders(Get_PurchaseOrderItem_OpenOrdersRequest request);
 		List<PurchaseOrderNote> Get_PurchaseOrderNote(Guid pkPurchaseId);
 		List<PurchaseOrderStatus> GetPurchaseOrderStatusList();
 		List<Guid> GetPurchaseOrdersWithStockItems(PurchaseOrderWithStockItem purchaseOrder);

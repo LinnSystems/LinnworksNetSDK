@@ -6,6 +6,8 @@ namespace LinnworksAPI
 { 
     public class ScriptParameter
 	{
+		public Int32 ParameterId;
+
 		public String Type;
 
 		public String Name;
@@ -20,8 +22,10 @@ namespace LinnworksAPI
 
 		public Int32 DatabaseTypeLength;
 
-		public Object[] AvailableValues;
+		public List<String> AvailableValues;
 
 		public Object Value;
+
+		public Int32 SortOrder;
 	} 
 }

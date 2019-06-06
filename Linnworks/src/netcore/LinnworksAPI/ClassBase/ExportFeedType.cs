@@ -14,5 +14,6 @@ namespace LinnworksAPI
 		BUCKET,
 		DROPBOX,
 		HTTP,
+		FTPS,
 	}
 }

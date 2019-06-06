@@ -7,12 +7,14 @@ using Newtonsoft.Json;
 namespace LinnworksAPI
 { 
     [JsonConverter(typeof(StringEnumConverter))]
-	public enum FeedType
+	public enum StockItemFullExtendedDataRequirement
 	{
-		FTP,
-		SFTP,
-		BUCKET,
-		DROPBOX,
-		HTTP,
+		StockLevels,
+		Supplier,
+		ChannelTitle,
+		ChannelDescription,
+		ChannelPrice,
+		ExtendedProperties,
+		Images,
 	}
 }

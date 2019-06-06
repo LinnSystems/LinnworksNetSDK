@@ -35,5 +35,10 @@ namespace LinnworksAPI
         /// Audit trail record tag 
         /// </summary>
 		public String Tag;
+
+        /// <summary>
+        /// Note type description 
+        /// </summary>
+		public String TypeDescription;
 	} 
 }

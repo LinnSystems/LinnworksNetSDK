@@ -508,15 +508,6 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Use this call to get a list of Ebay Compatibility culture list 
-        /// </summary>
-        public Dictionary<String,String> GetEbayCompatibilityCultures()
-		{
-			var response = GetResponse("Inventory/GetEbayCompatibilityCultures", "");
-            return JsonFormatter.ConvertFromJson<Dictionary<String,String>>(response);
-		}
-
-		/// <summary>
         /// Use this call to get a list of Ebay Compatibility 
         /// </summary>
         /// <param name="stockItemId">Stock Item Id</param>
@@ -667,6 +658,15 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to get all possible price change subsource suffices for all channels 
+        /// </summary>
+        public Dictionary<String,List<String>> GetInventoryItemPriceChannelSuffixes()
+		{
+			var response = GetResponse("Inventory/GetInventoryItemPriceChannelSuffixes", "");
+            return JsonFormatter.ConvertFromJson<Dictionary<String,List<String>>>(response);
+		}
+
+		/// <summary>
         /// Use this call to get stock item price rules by price id 
         /// </summary>
         /// <param name="stockItemPriceId">Price ID of an item</param>
@@ -697,6 +697,15 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Inventory/GetInventoryItemPrices", "inventoryItemId=" + inventoryItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemPrice>>(response);
+		}
+
+		/// <summary>
+        /// Use this call to get all possible price change tags for all channels 
+        /// </summary>
+        public Dictionary<String,List<String>> GetInventoryItemPriceTags()
+		{
+			var response = GetResponse("Inventory/GetInventoryItemPriceTags", "");
+            return JsonFormatter.ConvertFromJson<Dictionary<String,List<String>>>(response);
 		}
 
 		/// <summary>

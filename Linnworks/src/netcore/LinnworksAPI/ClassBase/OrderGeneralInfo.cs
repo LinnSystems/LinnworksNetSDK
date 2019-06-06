@@ -62,7 +62,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Order identifiers. [Prime | Scheduled] 
         /// </summary>
-		public List<OrderIdentifier> Identifiers;
+		public List<Identifier> Identifiers;
 
         /// <summary>
         /// Order reference number (Channel defined) 

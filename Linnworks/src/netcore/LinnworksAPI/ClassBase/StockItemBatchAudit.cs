@@ -25,5 +25,9 @@ namespace LinnworksAPI
 		public String BatchNumber;
 
 		public String Location;
+
+		public Int32? fkJobId;
+
+		public Int32? OrderId;
 	} 
 }
