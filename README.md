@@ -7,7 +7,6 @@ Please use this in conjunction with https://apps.linnworks.net/
 Linnworks.net SDK is lightweight reflection of the Linnworks.net API project. 
 
 Available in the following languages in full:
-- .NET Framework
 - .NET Core 2.1
 
 Contributions will be accepted.
