@@ -13,6 +13,7 @@ namespace LinnworksAPI
         private OrdersController orders;
         private OrderWorkflowController orderworkflow;
         private PostalServicesController postalservices;
+        private PostSaleController postsale;
         private PrintServiceController printservice;
         private ProcessedOrdersController processedorders;
         private PurchaseOrderController purchaseorder;
@@ -104,6 +105,14 @@ namespace LinnworksAPI
             get
             {
                 return postalservices ?? (postalservices = new PostalServicesController(apiContext));
+            }
+        }
+
+        public PostSaleController PostSale
+        {
+            get
+            {
+                return postsale ?? (postsale = new PostSaleController(apiContext));
             }
         }
 

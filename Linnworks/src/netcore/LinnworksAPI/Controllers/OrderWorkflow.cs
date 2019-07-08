@@ -18,7 +18,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public CheckinUserResponse CheckinUser(CheckinUserRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/CheckinUser", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/CheckinUser", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<CheckinUserResponse>(response);
 		}
 
@@ -28,7 +28,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public DeallocateOrderFromJobResponse DeallocateOrderFromJob(DeallocateOrderFromJobRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/DeallocateOrderFromJob", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/DeallocateOrderFromJob", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<DeallocateOrderFromJobResponse>(response);
 		}
 
@@ -38,7 +38,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public GetGroupResponse GetGroup(GetGroupRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/GetGroup", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/GetGroup", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GetGroupResponse>(response);
 		}
 
@@ -48,7 +48,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public GetGroupListResponse GetGroupList(GetGroupListRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/GetGroupList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/GetGroupList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GetGroupListResponse>(response);
 		}
 
@@ -59,7 +59,7 @@ namespace LinnworksAPI
         /// <returns>Detailed Job class with order ids and all attachments</returns>
         public GetJobResponse GetJob(GetJobRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/GetJob", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/GetJob", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GetJobResponse>(response);
 		}
 
@@ -70,7 +70,7 @@ namespace LinnworksAPI
         /// <returns>List of audit trail rows</returns>
         public GetJobAuditResponse GetJobAudit(GetJobAuditRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/GetJobAudit", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/GetJobAudit", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GetJobAuditResponse>(response);
 		}
 
@@ -81,7 +81,7 @@ namespace LinnworksAPI
         /// <returns>Detailed Job class with order ids and all attachments</returns>
         public GetJobResponse GetJobByName(GetJobByNameRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/GetJobByName", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/GetJobByName", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GetJobResponse>(response);
 		}
 
@@ -91,7 +91,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public GetJobErrorsResponse GetJobErrors(GetJobErrorsRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/GetJobErrors", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/GetJobErrors", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GetJobErrorsResponse>(response);
 		}
 
@@ -101,7 +101,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public GetPrintAttachmentResponse GetPrintAttachment(GetPrintAttachmentRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/GetPrintAttachment", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/GetPrintAttachment", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GetPrintAttachmentResponse>(response);
 		}
 
@@ -114,7 +114,7 @@ namespace LinnworksAPI
         /// <returns>List of workflow groups with jobs</returns>
         public GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/GetWorkflow", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/GetWorkflow", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GetWorkflowResponse>(response);
 		}
 
@@ -124,7 +124,7 @@ namespace LinnworksAPI
         /// <param name="request">Job id to run</param>
         public RunResponse Run(RunJobsRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/Run", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/Run", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<RunResponse>(response);
 		}
 
@@ -135,7 +135,7 @@ namespace LinnworksAPI
         /// <returns>Updated group object</returns>
         public UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
 		{
-			var response = GetResponse("OrderWorkflow/UpdateGroup", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("OrderWorkflow/UpdateGroup", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<UpdateGroupResponse>(response);
 		} 
     }

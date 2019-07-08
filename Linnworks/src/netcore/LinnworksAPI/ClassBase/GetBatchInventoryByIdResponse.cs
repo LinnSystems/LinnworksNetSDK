@@ -4,12 +4,8 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionOption
+    public class GetBatchInventoryByIdResponse
 	{
-		public String Icon;
-
-		public String Text;
-
-		public String Value;
+		public List<StockItemBatch> Batches;
 	} 
 }

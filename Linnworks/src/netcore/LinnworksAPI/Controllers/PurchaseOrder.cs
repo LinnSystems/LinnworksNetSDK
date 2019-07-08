@@ -17,7 +17,7 @@ namespace LinnworksAPI
         /// </summary>
         public Add_AdditionalCostTypesResponse Add_AdditionalCostTypes(Add_AdditionalCostTypesRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Add_AdditionalCostTypes", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Add_AdditionalCostTypes", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Add_AdditionalCostTypesResponse>(response);
 		}
 
@@ -27,7 +27,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public Add_PurchaseOrderExtendedPropertyResponse Add_PurchaseOrderExtendedProperty(Add_PurchaseOrderExtendedPropertyRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Add_PurchaseOrderExtendedProperty", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Add_PurchaseOrderExtendedProperty", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Add_PurchaseOrderExtendedPropertyResponse>(response);
 		}
 
@@ -38,7 +38,7 @@ namespace LinnworksAPI
         /// <returns>Returns class that represents modified/recalculated purchase order header and modified purchase order item line</returns>
         public Update_PurchaseOrderItemResponse Add_PurchaseOrderItem(Add_PurchaseOrderItemParameter addItemParameter)
 		{
-			var response = GetResponse("PurchaseOrder/Add_PurchaseOrderItem", "addItemParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(addItemParameter)) + "");
+			var response = GetResponse("PurchaseOrder/Add_PurchaseOrderItem", "addItemParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(addItemParameter)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Update_PurchaseOrderItemResponse>(response);
 		}
 
@@ -50,7 +50,7 @@ namespace LinnworksAPI
         /// <returns>Returns the new purchase order note</returns>
         public PurchaseOrderNote Add_PurchaseOrderNote(Guid pkPurchaseId,String Note)
 		{
-			var response = GetResponse("PurchaseOrder/Add_PurchaseOrderNote", "pkPurchaseId=" + pkPurchaseId + "&Note=" + System.Net.WebUtility.UrlEncode(Note) + "");
+			var response = GetResponse("PurchaseOrder/Add_PurchaseOrderNote", "pkPurchaseId=" + pkPurchaseId + "&Note=" + System.Net.WebUtility.UrlEncode(Note) + "", "POST");
             return JsonFormatter.ConvertFromJson<PurchaseOrderNote>(response);
 		}
 
@@ -64,7 +64,7 @@ namespace LinnworksAPI
         /// <returns>Returns the Purchase Order Header for the Purchase Order</returns>
         public PurchaseOrderHeader Change_PurchaseOrderStatus(Change_PurchaseOrderStatusParameter changeStatusParameter)
 		{
-			var response = GetResponse("PurchaseOrder/Change_PurchaseOrderStatus", "changeStatusParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(changeStatusParameter)) + "");
+			var response = GetResponse("PurchaseOrder/Change_PurchaseOrderStatus", "changeStatusParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(changeStatusParameter)) + "", "POST");
             return JsonFormatter.ConvertFromJson<PurchaseOrderHeader>(response);
 		}
 
@@ -75,7 +75,7 @@ namespace LinnworksAPI
         /// <returns>New Purchase Order Id</returns>
         public Guid Create_PurchaseOrder_Initial(Create_PurchaseOrder_InitialParameter createParameters)
 		{
-			var response = GetResponse("PurchaseOrder/Create_PurchaseOrder_Initial", "createParameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(createParameters)) + "");
+			var response = GetResponse("PurchaseOrder/Create_PurchaseOrder_Initial", "createParameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(createParameters)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Guid>(response);
 		}
 
@@ -84,7 +84,7 @@ namespace LinnworksAPI
         /// </summary>
         public void Delete_AdditionalCostTypes(Delete_AdditionalCostTypesRequest request)
 		{
-			GetResponse("PurchaseOrder/Delete_AdditionalCostTypes", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			GetResponse("PurchaseOrder/Delete_AdditionalCostTypes", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
 		}
 
 		/// <summary>
@@ -93,7 +93,7 @@ namespace LinnworksAPI
         /// <param name="pkPurchaseId">Purchase Order unique id</param>
         public void Delete_PurchaseOrder(Guid pkPurchaseId)
 		{
-			GetResponse("PurchaseOrder/Delete_PurchaseOrder", "pkPurchaseId=" + pkPurchaseId + "");
+			GetResponse("PurchaseOrder/Delete_PurchaseOrder", "pkPurchaseId=" + pkPurchaseId + "", "POST");
 		}
 
 		/// <summary>
@@ -102,7 +102,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public void Delete_PurchaseOrderExtendedProperty(Delete_PurchaseOrderExtendedPropertyRequest request)
 		{
-			GetResponse("PurchaseOrder/Delete_PurchaseOrderExtendedProperty", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			GetResponse("PurchaseOrder/Delete_PurchaseOrderExtendedProperty", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
 		}
 
 		/// <summary>
@@ -112,7 +112,7 @@ namespace LinnworksAPI
         /// <returns>Returns recalculated/modified purchase order header</returns>
         public PurchaseOrderHeader Delete_PurchaseOrderItem(Delete_PurchaseOrderItemParameter deleteItemParameter)
 		{
-			var response = GetResponse("PurchaseOrder/Delete_PurchaseOrderItem", "deleteItemParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(deleteItemParameter)) + "");
+			var response = GetResponse("PurchaseOrder/Delete_PurchaseOrderItem", "deleteItemParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(deleteItemParameter)) + "", "POST");
             return JsonFormatter.ConvertFromJson<PurchaseOrderHeader>(response);
 		}
 
@@ -124,7 +124,7 @@ namespace LinnworksAPI
         /// <returns>Returns number of notes on the purchase order</returns>
         public Int32 Delete_PurchaseOrderNote(Guid pkPurchaseId,Guid pkPurchaseOrderNoteId)
 		{
-			var response = GetResponse("PurchaseOrder/Delete_PurchaseOrderNote", "pkPurchaseId=" + pkPurchaseId + "&pkPurchaseOrderNoteId=" + pkPurchaseOrderNoteId + "");
+			var response = GetResponse("PurchaseOrder/Delete_PurchaseOrderNote", "pkPurchaseId=" + pkPurchaseId + "&pkPurchaseOrderNoteId=" + pkPurchaseOrderNoteId + "", "POST");
             return JsonFormatter.ConvertFromJson<Int32>(response);
 		}
 
@@ -136,7 +136,7 @@ namespace LinnworksAPI
         /// <returns>Purchase order header and affected purchase order item records</returns>
         public Update_PurchaseOrderItemResponse Deliver_PurchaseItem(Deliver_PurchaseItemParameter deliverItemParameter)
 		{
-			var response = GetResponse("PurchaseOrder/Deliver_PurchaseItem", "deliverItemParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(deliverItemParameter)) + "");
+			var response = GetResponse("PurchaseOrder/Deliver_PurchaseItem", "deliverItemParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(deliverItemParameter)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Update_PurchaseOrderItemResponse>(response);
 		}
 
@@ -147,7 +147,7 @@ namespace LinnworksAPI
         /// <returns>Purchase order header and affected purchase order items records</returns>
         public Deliver_PurchaseOrderItemAllResponse Deliver_PurchaseItemAll(Guid purchaseId)
 		{
-			var response = GetResponse("PurchaseOrder/Deliver_PurchaseItemAll", "purchaseId=" + purchaseId + "");
+			var response = GetResponse("PurchaseOrder/Deliver_PurchaseItemAll", "purchaseId=" + purchaseId + "", "POST");
             return JsonFormatter.ConvertFromJson<Deliver_PurchaseOrderItemAllResponse>(response);
 		}
 
@@ -158,13 +158,13 @@ namespace LinnworksAPI
         /// <returns>Purchase order header and affected purchase order items records</returns>
         public Deliver_PurchaseOrderItemAllNoBatchResponse Deliver_PurchaseItemAll_ExceptBatchItems(Guid purchaseId)
 		{
-			var response = GetResponse("PurchaseOrder/Deliver_PurchaseItemAll_ExceptBatchItems", "purchaseId=" + purchaseId + "");
+			var response = GetResponse("PurchaseOrder/Deliver_PurchaseItemAll_ExceptBatchItems", "purchaseId=" + purchaseId + "", "POST");
             return JsonFormatter.ConvertFromJson<Deliver_PurchaseOrderItemAllNoBatchResponse>(response);
 		}
 
 		public void Deliver_PurchaseItems_WithQuantity(Deliver_PurchaseItems_WithQuantityRequest request)
 		{
-			GetResponse("PurchaseOrder/Deliver_PurchaseItems_WithQuantity", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			GetResponse("PurchaseOrder/Deliver_PurchaseItems_WithQuantity", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
 		}
 
 		/// <summary>
@@ -173,7 +173,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public FindStockItem_Response FindStockItem(FindStockItemRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/FindStockItem", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/FindStockItem", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<FindStockItem_Response>(response);
 		}
 
@@ -183,7 +183,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public Get_Additional_CostResponse Get_Additional_Cost(Get_Additional_CostRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Get_Additional_Cost", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Get_Additional_Cost", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Get_Additional_CostResponse>(response);
 		}
 
@@ -192,7 +192,7 @@ namespace LinnworksAPI
         /// </summary>
         public Get_AdditionalCostTypesResponse Get_AdditionalCostTypes()
 		{
-			var response = GetResponse("PurchaseOrder/Get_AdditionalCostTypes", "");
+			var response = GetResponse("PurchaseOrder/Get_AdditionalCostTypes", "", "POST");
             return JsonFormatter.ConvertFromJson<Get_AdditionalCostTypesResponse>(response);
 		}
 
@@ -202,7 +202,7 @@ namespace LinnworksAPI
         /// <param name="pkPurchaseId">PO id</param>
         public Get_DeliveredRecords_Response Get_DeliveredRecords(Guid pkPurchaseId)
 		{
-			var response = GetResponse("PurchaseOrder/Get_DeliveredRecords", "pkPurchaseId=" + pkPurchaseId + "");
+			var response = GetResponse("PurchaseOrder/Get_DeliveredRecords", "pkPurchaseId=" + pkPurchaseId + "", "POST");
             return JsonFormatter.ConvertFromJson<Get_DeliveredRecords_Response>(response);
 		}
 
@@ -212,7 +212,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public Get_EmailCSVFileResponse Get_EmailCSVFile(Get_EmailCSVFileRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Get_EmailCSVFile", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Get_EmailCSVFile", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Get_EmailCSVFileResponse>(response);
 		}
 
@@ -222,7 +222,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public Get_EmailsSentResponse Get_EmailsSent(Get_EmailsSentRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Get_EmailsSent", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Get_EmailsSent", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Get_EmailsSentResponse>(response);
 		}
 
@@ -232,7 +232,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public Get_PaymentStatementResponse Get_Payment_Statement(Get_PaymentStatementRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Get_Payment_Statement", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Get_Payment_Statement", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Get_PaymentStatementResponse>(response);
 		}
 
@@ -243,7 +243,7 @@ namespace LinnworksAPI
         /// <returns>Returns class containing purchase order header and items</returns>
         public Get_PurchaseOrderResponse Get_PurchaseOrder(Guid pkPurchaseId)
 		{
-			var response = GetResponse("PurchaseOrder/Get_PurchaseOrder", "pkPurchaseId=" + pkPurchaseId + "");
+			var response = GetResponse("PurchaseOrder/Get_PurchaseOrder", "pkPurchaseId=" + pkPurchaseId + "", "POST");
             return JsonFormatter.ConvertFromJson<Get_PurchaseOrderResponse>(response);
 		}
 
@@ -254,7 +254,7 @@ namespace LinnworksAPI
         /// <returns>Returns the Audit Log for the Purchase Order</returns>
         public List<PurchaseOrderAudit> Get_PurchaseOrderAudit(Search_PurchaseOrder_AuditLog auditLog)
 		{
-			var response = GetResponse("PurchaseOrder/Get_PurchaseOrderAudit", "auditLog=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(auditLog)) + "");
+			var response = GetResponse("PurchaseOrder/Get_PurchaseOrderAudit", "auditLog=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(auditLog)) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<PurchaseOrderAudit>>(response);
 		}
 
@@ -264,7 +264,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public Get_PurchaseOrderExtendedPropertyResponse Get_PurchaseOrderExtendedProperty(Get_PurchaseOrderExtendedPropertyRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Get_PurchaseOrderExtendedProperty", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Get_PurchaseOrderExtendedProperty", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Get_PurchaseOrderExtendedPropertyResponse>(response);
 		}
 
@@ -274,7 +274,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public Get_PurchaseOrderItem_OpenOrdersResponse Get_PurchaseOrderItem_OpenOrders(Get_PurchaseOrderItem_OpenOrdersRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Get_PurchaseOrderItem_OpenOrders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Get_PurchaseOrderItem_OpenOrders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Get_PurchaseOrderItem_OpenOrdersResponse>(response);
 		}
 
@@ -285,7 +285,7 @@ namespace LinnworksAPI
         /// <returns>List of purchase order notes</returns>
         public List<PurchaseOrderNote> Get_PurchaseOrderNote(Guid pkPurchaseId)
 		{
-			var response = GetResponse("PurchaseOrder/Get_PurchaseOrderNote", "pkPurchaseId=" + pkPurchaseId + "");
+			var response = GetResponse("PurchaseOrder/Get_PurchaseOrderNote", "pkPurchaseId=" + pkPurchaseId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<PurchaseOrderNote>>(response);
 		}
 
@@ -295,7 +295,7 @@ namespace LinnworksAPI
         /// <returns>Returns a list of available statuses</returns>
         public List<PurchaseOrderStatus> GetPurchaseOrderStatusList()
 		{
-			var response = GetResponse("PurchaseOrder/GetPurchaseOrderStatusList", "");
+			var response = GetResponse("PurchaseOrder/GetPurchaseOrderStatusList", "", "POST");
             return JsonFormatter.ConvertFromJson<List<PurchaseOrderStatus>>(response);
 		}
 
@@ -306,7 +306,7 @@ namespace LinnworksAPI
         /// <returns>Returns a list of Purchase Order Ids with undelivered stock using the Stock Item and Location Id parameters</returns>
         public List<Guid> GetPurchaseOrdersWithStockItems(PurchaseOrderWithStockItem purchaseOrder)
 		{
-			var response = GetResponse("PurchaseOrder/GetPurchaseOrdersWithStockItems", "purchaseOrder=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(purchaseOrder)) + "");
+			var response = GetResponse("PurchaseOrder/GetPurchaseOrdersWithStockItems", "purchaseOrder=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(purchaseOrder)) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<Guid>>(response);
 		}
 
@@ -317,7 +317,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public Modify_AdditionalCostResponse Modify_AdditionalCost(Modify_AdditionalCostRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Modify_AdditionalCost", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Modify_AdditionalCost", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Modify_AdditionalCostResponse>(response);
 		}
 
@@ -327,7 +327,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public Modify_AdditionalCostAllocationResponse Modify_AdditionalCostAllocation(Modify_AdditionalCostAllocationRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Modify_AdditionalCostAllocation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Modify_AdditionalCostAllocation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Modify_AdditionalCostAllocationResponse>(response);
 		}
 
@@ -337,7 +337,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public Modify_PaymentStatementResponse Modify_PaymentStatement(Modify_PaymentStatementRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Modify_PaymentStatement", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Modify_PaymentStatement", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Modify_PaymentStatementResponse>(response);
 		}
 
@@ -347,7 +347,7 @@ namespace LinnworksAPI
         /// <returns>Returns all added and modified purchase order items and purchase order header</returns>
         public Modify_PurchaseOrderItems_BulkResponse Modify_PurchaseOrderItems_Bulk(Modify_PurchaseOrderItems_BulkRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Modify_PurchaseOrderItems_Bulk", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Modify_PurchaseOrderItems_Bulk", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Modify_PurchaseOrderItems_BulkResponse>(response);
 		}
 
@@ -359,7 +359,7 @@ namespace LinnworksAPI
         /// <returns>Response class which contains Result - the list of purchase order headers and paging information</returns>
         public Search_PurchaseOrdersResult Search_PurchaseOrders(Search_PurchaseOrderParameter searchParameter)
 		{
-			var response = GetResponse("PurchaseOrder/Search_PurchaseOrders", "searchParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(searchParameter)) + "");
+			var response = GetResponse("PurchaseOrder/Search_PurchaseOrders", "searchParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(searchParameter)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Search_PurchaseOrdersResult>(response);
 		}
 
@@ -368,7 +368,7 @@ namespace LinnworksAPI
         /// </summary>
         public Update_AdditionalCostTypesResponse Update_AdditionalCostTypes(Update_AdditionalCostTypesRequest request)
 		{
-			var response = GetResponse("PurchaseOrder/Update_AdditionalCostTypes", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("PurchaseOrder/Update_AdditionalCostTypes", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Update_AdditionalCostTypesResponse>(response);
 		}
 
@@ -379,7 +379,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public void Update_PurchaseOrderExtendedProperty(Update_PurchaseOrderExtendedPropertyRequest request)
 		{
-			GetResponse("PurchaseOrder/Update_PurchaseOrderExtendedProperty", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			GetResponse("PurchaseOrder/Update_PurchaseOrderExtendedProperty", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
 		}
 
 		/// <summary>
@@ -389,7 +389,7 @@ namespace LinnworksAPI
         /// <returns>Returns modified/recalculated purchase order header</returns>
         public PurchaseOrderHeader Update_PurchaseOrderHeader(Update_PurchaseOrderHeaderParameter updateParameter)
 		{
-			var response = GetResponse("PurchaseOrder/Update_PurchaseOrderHeader", "updateParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(updateParameter)) + "");
+			var response = GetResponse("PurchaseOrder/Update_PurchaseOrderHeader", "updateParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(updateParameter)) + "", "POST");
             return JsonFormatter.ConvertFromJson<PurchaseOrderHeader>(response);
 		}
 
@@ -400,7 +400,7 @@ namespace LinnworksAPI
         /// <returns>Returns class that represents modified/recalculated purchase order header and modified purchase order item line</returns>
         public Update_PurchaseOrderItemResponse Update_PurchaseOrderItem(Update_PurchaseOrderItemParameter updateItemParameter)
 		{
-			var response = GetResponse("PurchaseOrder/Update_PurchaseOrderItem", "updateItemParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(updateItemParameter)) + "");
+			var response = GetResponse("PurchaseOrder/Update_PurchaseOrderItem", "updateItemParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(updateItemParameter)) + "", "POST");
             return JsonFormatter.ConvertFromJson<Update_PurchaseOrderItemResponse>(response);
 		} 
     }

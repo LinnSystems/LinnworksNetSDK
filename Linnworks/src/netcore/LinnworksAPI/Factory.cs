@@ -6,23 +6,26 @@ namespace LinnworksAPI
 {
     public class Factory
     {
-        public static string GetResponse(string extension, string body, ApiContext context)
+        public static string GetResponse(string extension, string body, ApiContext context, string httpMethod)
         {
             string url = context.ApiServer + extension;
             var req = HttpWebRequest.Create(url);
-            req.Method = "POST";
+            req.Method = httpMethod;
             req.ContentType = "application/x-www-form-urlencoded";
             req.Headers.Add("RecursionCount", context.RecursionCount.ToString());
 
             if (context.SessionId != Guid.Empty)
                 req.Headers.Add(HttpRequestHeader.Authorization, context.SessionId.ToString());
 
-            req.ContentLength = body.Length;
-            using (Stream post = req.GetRequestStream())
+            if (!string.IsNullOrWhiteSpace(body))
             {
-                using (StreamWriter writer = new StreamWriter(post))
+                req.ContentLength = body.Length;
+                using (Stream post = req.GetRequestStream())
                 {
-                    writer.Write(body);
+                    using (StreamWriter writer = new StreamWriter(post))
+                    {
+                        writer.Write(body);
+                    }
                 }
             }
 

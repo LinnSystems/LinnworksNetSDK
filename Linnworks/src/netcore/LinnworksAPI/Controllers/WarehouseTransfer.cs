@@ -20,7 +20,7 @@ namespace LinnworksAPI
         /// <returns>A WarehouseTransferItem object</returns>
         public WarehouseTransferItem AddItemToTransfer(Guid fkTransferId,Guid pkStockItemId)
 		{
-			var response = GetResponse("WarehouseTransfer/AddItemToTransfer", "fkTransferId=" + fkTransferId + "&pkStockItemId=" + pkStockItemId + "");
+			var response = GetResponse("WarehouseTransfer/AddItemToTransfer", "fkTransferId=" + fkTransferId + "&pkStockItemId=" + pkStockItemId + "", "POST");
             return JsonFormatter.ConvertFromJson<WarehouseTransferItem>(response);
 		}
 
@@ -33,7 +33,7 @@ namespace LinnworksAPI
         /// <returns>ID of note</returns>
         public Guid AddTransferBinNote(Guid fkTransferBinId,String note,Guid fkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/AddTransferBinNote", "fkTransferBinId=" + fkTransferBinId + "&note=" + System.Net.WebUtility.UrlEncode(note) + "&fkTransferId=" + fkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/AddTransferBinNote", "fkTransferBinId=" + fkTransferBinId + "&note=" + System.Net.WebUtility.UrlEncode(note) + "&fkTransferId=" + fkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<Guid>(response);
 		}
 
@@ -46,7 +46,7 @@ namespace LinnworksAPI
         /// <returns>The id of the new note.</returns>
         public Guid AddTransferItemNote(Guid fkTransferId,Guid fkTransferItemId,String note)
 		{
-			var response = GetResponse("WarehouseTransfer/AddTransferItemNote", "fkTransferId=" + fkTransferId + "&fkTransferItemId=" + fkTransferItemId + "&note=" + System.Net.WebUtility.UrlEncode(note) + "");
+			var response = GetResponse("WarehouseTransfer/AddTransferItemNote", "fkTransferId=" + fkTransferId + "&fkTransferItemId=" + fkTransferItemId + "&note=" + System.Net.WebUtility.UrlEncode(note) + "", "POST");
             return JsonFormatter.ConvertFromJson<Guid>(response);
 		}
 
@@ -58,7 +58,7 @@ namespace LinnworksAPI
         /// <returns>ID of note</returns>
         public Guid AddTransferNote(Guid pkTransferId,String note)
 		{
-			var response = GetResponse("WarehouseTransfer/AddTransferNote", "pkTransferId=" + pkTransferId + "&note=" + System.Net.WebUtility.UrlEncode(note) + "");
+			var response = GetResponse("WarehouseTransfer/AddTransferNote", "pkTransferId=" + pkTransferId + "&note=" + System.Net.WebUtility.UrlEncode(note) + "", "POST");
             return JsonFormatter.ConvertFromJson<Guid>(response);
 		}
 
@@ -71,7 +71,7 @@ namespace LinnworksAPI
         /// <returns>Returns the id of the property.</returns>
         public Guid AddTransferProperty(Guid fkTransferId,String propertyName,String propertyValue)
 		{
-			var response = GetResponse("WarehouseTransfer/AddTransferProperty", "fkTransferId=" + fkTransferId + "&propertyName=" + System.Net.WebUtility.UrlEncode(propertyName) + "&propertyValue=" + System.Net.WebUtility.UrlEncode(propertyValue) + "");
+			var response = GetResponse("WarehouseTransfer/AddTransferProperty", "fkTransferId=" + fkTransferId + "&propertyName=" + System.Net.WebUtility.UrlEncode(propertyName) + "&propertyValue=" + System.Net.WebUtility.UrlEncode(propertyValue) + "", "POST");
             return JsonFormatter.ConvertFromJson<Guid>(response);
 		}
 
@@ -85,7 +85,7 @@ namespace LinnworksAPI
         /// <returns>Returns the actual quantity reallocated (if the source bin has less than requested than the number returned will reflect the smaller quantity).</returns>
         public Int32 AllocateItemToBin(Guid pkSrcBinId,Guid pkDstBinId,Guid pkTransferItemId,Int32 quantity)
 		{
-			var response = GetResponse("WarehouseTransfer/AllocateItemToBin", "pkSrcBinId=" + pkSrcBinId + "&pkDstBinId=" + pkDstBinId + "&pkTransferItemId=" + pkTransferItemId + "&quantity=" + quantity + "");
+			var response = GetResponse("WarehouseTransfer/AllocateItemToBin", "pkSrcBinId=" + pkSrcBinId + "&pkDstBinId=" + pkDstBinId + "&pkTransferItemId=" + pkTransferItemId + "&quantity=" + quantity + "", "POST");
             return JsonFormatter.ConvertFromJson<Int32>(response);
 		}
 
@@ -99,7 +99,7 @@ namespace LinnworksAPI
         /// <param name="BinBarcode">The new barcode for the bin  (pass an empty string if no change is required).</param>
         public void ChangeBinDetails(Guid pkTransferId,Guid pkBinId,String BinName,String BinReference,String BinBarcode)
 		{
-			GetResponse("WarehouseTransfer/ChangeBinDetails", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&BinName=" + System.Net.WebUtility.UrlEncode(BinName) + "&BinReference=" + System.Net.WebUtility.UrlEncode(BinReference) + "&BinBarcode=" + System.Net.WebUtility.UrlEncode(BinBarcode) + "");
+			GetResponse("WarehouseTransfer/ChangeBinDetails", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&BinName=" + System.Net.WebUtility.UrlEncode(BinName) + "&BinReference=" + System.Net.WebUtility.UrlEncode(BinReference) + "&BinBarcode=" + System.Net.WebUtility.UrlEncode(BinBarcode) + "", "POST");
 		}
 
 		/// <summary>
@@ -109,7 +109,7 @@ namespace LinnworksAPI
         /// <param name="newLocationId">The location id which represents the from location.</param>
         public void ChangeTransferFromLocation(Guid pkTransferId,Guid newLocationId)
 		{
-			GetResponse("WarehouseTransfer/ChangeTransferFromLocation", "pkTransferId=" + pkTransferId + "&newLocationId=" + newLocationId + "");
+			GetResponse("WarehouseTransfer/ChangeTransferFromLocation", "pkTransferId=" + pkTransferId + "&newLocationId=" + newLocationId + "", "POST");
 		}
 
 		/// <summary>
@@ -121,7 +121,7 @@ namespace LinnworksAPI
         /// <param name="Quantity">The new quantity.</param>
         public void ChangeTransferItemReceivedQuantity(Guid pkTransferId,Guid pkBinId,Guid pkTransferItemId,Int32? Quantity)
 		{
-			GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(Quantity)) + "");
+			GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(Quantity)) + "", "POST");
 		}
 
 		/// <summary>
@@ -132,7 +132,7 @@ namespace LinnworksAPI
         /// <param name="Quantity">The new request quantity.</param>
         public void ChangeTransferItemRequestQuantity(Guid pkTransferId,Guid pkTransferItemId,Int32 Quantity)
 		{
-			GetResponse("WarehouseTransfer/ChangeTransferItemRequestQuantity", "pkTransferId=" + pkTransferId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + Quantity + "");
+			GetResponse("WarehouseTransfer/ChangeTransferItemRequestQuantity", "pkTransferId=" + pkTransferId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + Quantity + "", "POST");
 		}
 
 		/// <summary>
@@ -145,7 +145,7 @@ namespace LinnworksAPI
         /// <returns>The revised bin item.</returns>
         public WarehouseTransferItem ChangeTransferItemSentQuantity(Guid pkTransferId,Guid pkBinId,Guid pkTransferItemId,Int32 Quantity)
 		{
-			var response = GetResponse("WarehouseTransfer/ChangeTransferItemSentQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + Quantity + "");
+			var response = GetResponse("WarehouseTransfer/ChangeTransferItemSentQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + Quantity + "", "POST");
             return JsonFormatter.ConvertFromJson<WarehouseTransferItem>(response);
 		}
 
@@ -157,7 +157,7 @@ namespace LinnworksAPI
         /// <param name="toLocationId">The location id which represents the to location.</param>
         public void ChangeTransferLocations(Guid pkTransferId,Guid fromLocationId,Guid toLocationId)
 		{
-			GetResponse("WarehouseTransfer/ChangeTransferLocations", "pkTransferId=" + pkTransferId + "&fromLocationId=" + fromLocationId + "&toLocationId=" + toLocationId + "");
+			GetResponse("WarehouseTransfer/ChangeTransferLocations", "pkTransferId=" + pkTransferId + "&fromLocationId=" + fromLocationId + "&toLocationId=" + toLocationId + "", "POST");
 		}
 
 		/// <summary>
@@ -168,7 +168,7 @@ namespace LinnworksAPI
         /// <param name="newValue">The new value for the property.</param>
         public void ChangeTransferProperty(Guid pkTransferId,Guid pkTransferPropertyId,String newValue)
 		{
-			GetResponse("WarehouseTransfer/ChangeTransferProperty", "pkTransferId=" + pkTransferId + "&pkTransferPropertyId=" + pkTransferPropertyId + "&newValue=" + System.Net.WebUtility.UrlEncode(newValue) + "");
+			GetResponse("WarehouseTransfer/ChangeTransferProperty", "pkTransferId=" + pkTransferId + "&pkTransferPropertyId=" + pkTransferPropertyId + "&newValue=" + System.Net.WebUtility.UrlEncode(newValue) + "", "POST");
 		}
 
 		/// <summary>
@@ -178,7 +178,7 @@ namespace LinnworksAPI
         /// <param name="newStatus">new status for transfer</param>
         public void ChangeTransferStatus(Guid pkTransferId,TransferStatus newStatus)
 		{
-			GetResponse("WarehouseTransfer/ChangeTransferStatus", "pkTransferId=" + pkTransferId + "&newStatus=" + newStatus.ToString() + "");
+			GetResponse("WarehouseTransfer/ChangeTransferStatus", "pkTransferId=" + pkTransferId + "&newStatus=" + newStatus.ToString() + "", "POST");
 		}
 
 		/// <summary>
@@ -188,7 +188,7 @@ namespace LinnworksAPI
         /// <param name="newLocationId">The location id which represents the to location.</param>
         public void ChangeTransferToLocation(Guid pkTransferId,Guid newLocationId)
 		{
-			GetResponse("WarehouseTransfer/ChangeTransferToLocation", "pkTransferId=" + pkTransferId + "&newLocationId=" + newLocationId + "");
+			GetResponse("WarehouseTransfer/ChangeTransferToLocation", "pkTransferId=" + pkTransferId + "&newLocationId=" + newLocationId + "", "POST");
 		}
 
 		/// <summary>
@@ -199,7 +199,7 @@ namespace LinnworksAPI
         /// <returns>Returns an empty guid if no transfer is found. Otherwise, returns the id of the transfer.</returns>
         public Guid CheckForDraftTransfer(Guid toLocationId,Guid fromLocationId)
 		{
-			var response = GetResponse("WarehouseTransfer/CheckForDraftTransfer", "toLocationId=" + toLocationId + "&fromLocationId=" + fromLocationId + "");
+			var response = GetResponse("WarehouseTransfer/CheckForDraftTransfer", "toLocationId=" + toLocationId + "&fromLocationId=" + fromLocationId + "", "POST");
             return JsonFormatter.ConvertFromJson<Guid>(response);
 		}
 
@@ -211,7 +211,7 @@ namespace LinnworksAPI
         /// <returns>Returns an instance of WarehouseTransferBin representing the newly created bin.</returns>
         public WarehouseTransferBin CreateNewBin(Guid pkTransferId,String barcode)
 		{
-			var response = GetResponse("WarehouseTransfer/CreateNewBin", "pkTransferId=" + pkTransferId + "&barcode=" + System.Net.WebUtility.UrlEncode(barcode) + "");
+			var response = GetResponse("WarehouseTransfer/CreateNewBin", "pkTransferId=" + pkTransferId + "&barcode=" + System.Net.WebUtility.UrlEncode(barcode) + "", "POST");
             return JsonFormatter.ConvertFromJson<WarehouseTransferBin>(response);
 		}
 
@@ -222,7 +222,7 @@ namespace LinnworksAPI
         /// <returns>New transfer</returns>
         public WarehouseTransfer CreateTransferFromDescrepancies(Guid pkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/CreateTransferFromDescrepancies", "pkTransferId=" + pkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/CreateTransferFromDescrepancies", "pkTransferId=" + pkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<WarehouseTransfer>(response);
 		}
 
@@ -234,7 +234,7 @@ namespace LinnworksAPI
         /// <returns>New transfer</returns>
         public WarehouseTransfer CreateTransferRequestWithReturn(Guid fromLocationId,Guid toLocationId)
 		{
-			var response = GetResponse("WarehouseTransfer/CreateTransferRequestWithReturn", "fromLocationId=" + fromLocationId + "&toLocationId=" + toLocationId + "");
+			var response = GetResponse("WarehouseTransfer/CreateTransferRequestWithReturn", "fromLocationId=" + fromLocationId + "&toLocationId=" + toLocationId + "", "POST");
             return JsonFormatter.ConvertFromJson<WarehouseTransfer>(response);
 		}
 
@@ -244,7 +244,7 @@ namespace LinnworksAPI
         /// <param name="pkTransferId">The id of the transfer to be deleted.</param>
         public void DeleteEmptyDraftTransfer(Guid pkTransferId)
 		{
-			GetResponse("WarehouseTransfer/DeleteEmptyDraftTransfer", "pkTransferId=" + pkTransferId + "");
+			GetResponse("WarehouseTransfer/DeleteEmptyDraftTransfer", "pkTransferId=" + pkTransferId + "", "POST");
 		}
 
 		/// <summary>
@@ -254,7 +254,7 @@ namespace LinnworksAPI
         /// <param name="DeleteReason">Explanation for deletion</param>
         public void DeleteTransfer(Guid pkTransferId,String DeleteReason)
 		{
-			GetResponse("WarehouseTransfer/DeleteTransfer", "pkTransferId=" + pkTransferId + "&DeleteReason=" + System.Net.WebUtility.UrlEncode(DeleteReason) + "");
+			GetResponse("WarehouseTransfer/DeleteTransfer", "pkTransferId=" + pkTransferId + "&DeleteReason=" + System.Net.WebUtility.UrlEncode(DeleteReason) + "", "POST");
 		}
 
 		/// <summary>
@@ -264,7 +264,7 @@ namespace LinnworksAPI
         /// <param name="pkTransferPropertyId">pkTransferPropertyId</param>
         public void DeleteTransferProperty(Guid pkTransferId,Guid pkTransferPropertyId)
 		{
-			GetResponse("WarehouseTransfer/DeleteTransferProperty", "pkTransferId=" + pkTransferId + "&pkTransferPropertyId=" + pkTransferPropertyId + "");
+			GetResponse("WarehouseTransfer/DeleteTransferProperty", "pkTransferId=" + pkTransferId + "&pkTransferPropertyId=" + pkTransferPropertyId + "", "POST");
 		}
 
 		/// <summary>
@@ -273,7 +273,7 @@ namespace LinnworksAPI
         /// <returns>List of active transfers for all locations</returns>
         public List<WarehouseTransfer> GetActiveTransfersAllLocations()
 		{
-			var response = GetResponse("WarehouseTransfer/GetActiveTransfersAllLocations", "");
+			var response = GetResponse("WarehouseTransfer/GetActiveTransfersAllLocations", "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransfer>>(response);
 		}
 
@@ -284,7 +284,7 @@ namespace LinnworksAPI
         /// <returns>List of active transfers relating to particular location</returns>
         public List<WarehouseTransfer> GetActiveTransfersForLocation(Guid locationId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetActiveTransfersForLocation", "locationId=" + locationId + "");
+			var response = GetResponse("WarehouseTransfer/GetActiveTransfersForLocation", "locationId=" + locationId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransfer>>(response);
 		}
 
@@ -296,7 +296,7 @@ namespace LinnworksAPI
         /// <returns>A paged result containing the relevant transfers.</returns>
         public GenericPagedResult<WarehouseTransfer> GetArchivedTransfers(Int32 pageNumber,Int32 entriesPerPage)
 		{
-			var response = GetResponse("WarehouseTransfer/GetArchivedTransfers", "pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
+			var response = GetResponse("WarehouseTransfer/GetArchivedTransfers", "pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", "POST");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<WarehouseTransfer>>(response);
 		}
 
@@ -310,7 +310,7 @@ namespace LinnworksAPI
         /// <returns>A paged result containing the relevant transfers.</returns>
         public GenericPagedResult<WarehouseTransfer> GetArchivedTransfersBetweenArchivedDates(DateTime start,DateTime end,Int32 pageNumber,Int32 entriesPerPage)
 		{
-			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenArchivedDates", "start=" + System.Net.WebUtility.UrlEncode(start.ToString("yyyy-MM-dd HH:mm:ss")) + "&end=" + System.Net.WebUtility.UrlEncode(end.ToString("yyyy-MM-dd HH:mm:ss")) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
+			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenArchivedDates", "start=" + System.Net.WebUtility.UrlEncode(start.ToString("yyyy-MM-dd HH:mm:ss")) + "&end=" + System.Net.WebUtility.UrlEncode(end.ToString("yyyy-MM-dd HH:mm:ss")) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", "POST");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<WarehouseTransfer>>(response);
 		}
 
@@ -324,7 +324,7 @@ namespace LinnworksAPI
         /// <returns>A paged result containing the relevant transfers.</returns>
         public GenericPagedResult<WarehouseTransfer> GetArchivedTransfersBetweenDates(DateTime start,DateTime end,Int32 pageNumber,Int32 entriesPerPage)
 		{
-			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenDates", "start=" + System.Net.WebUtility.UrlEncode(start.ToString("yyyy-MM-dd HH:mm:ss")) + "&end=" + System.Net.WebUtility.UrlEncode(end.ToString("yyyy-MM-dd HH:mm:ss")) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
+			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersBetweenDates", "start=" + System.Net.WebUtility.UrlEncode(start.ToString("yyyy-MM-dd HH:mm:ss")) + "&end=" + System.Net.WebUtility.UrlEncode(end.ToString("yyyy-MM-dd HH:mm:ss")) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", "POST");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<WarehouseTransfer>>(response);
 		}
 
@@ -338,7 +338,7 @@ namespace LinnworksAPI
         /// <returns>A paged result containing the relevant transfers.</returns>
         public GenericPagedResult<WarehouseTransfer> GetArchivedTransfersFiltered(SearchType searchType,String filter,Int32 pageNumber,Int32 entriesPerPage)
 		{
-			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersFiltered", "searchType=" + searchType.ToString() + "&filter=" + System.Net.WebUtility.UrlEncode(filter) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
+			var response = GetResponse("WarehouseTransfer/GetArchivedTransfersFiltered", "searchType=" + searchType.ToString() + "&filter=" + System.Net.WebUtility.UrlEncode(filter) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", "POST");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<WarehouseTransfer>>(response);
 		}
 
@@ -349,7 +349,7 @@ namespace LinnworksAPI
         /// <returns>A list of transfer items and relevant quantities.</returns>
         public List<WarehouseTransferItem> GetDiscrepancyItems(Guid pkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetDiscrepancyItems", "pkTransferId=" + pkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/GetDiscrepancyItems", "pkTransferId=" + pkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransferItem>>(response);
 		}
 
@@ -360,7 +360,7 @@ namespace LinnworksAPI
         /// <returns>A list of transfers with basic details loaded</returns>
         public List<WarehouseTransfer> GetListTransfers(List<Guid> ids)
 		{
-			var response = GetResponse("WarehouseTransfer/GetListTransfers", "ids=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ids)) + "");
+			var response = GetResponse("WarehouseTransfer/GetListTransfers", "ids=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ids)) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransfer>>(response);
 		}
 
@@ -371,7 +371,7 @@ namespace LinnworksAPI
         /// <returns>A list of transfers with basic information loaded.</returns>
         public List<WarehouseTransfer> GetModifiedBasic(DateTime updateDate)
 		{
-			var response = GetResponse("WarehouseTransfer/GetModifiedBasic", "updateDate=" + System.Net.WebUtility.UrlEncode(updateDate.ToString("yyyy-MM-dd HH:mm:ss")) + "");
+			var response = GetResponse("WarehouseTransfer/GetModifiedBasic", "updateDate=" + System.Net.WebUtility.UrlEncode(updateDate.ToString("yyyy-MM-dd HH:mm:ss")) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransfer>>(response);
 		}
 
@@ -381,7 +381,7 @@ namespace LinnworksAPI
         /// <returns>Returns the current UTC date/time</returns>
         public DateTime GetServerTime()
 		{
-			var response = GetResponse("WarehouseTransfer/GetServerTime", "");
+			var response = GetResponse("WarehouseTransfer/GetServerTime", "", "POST");
             return JsonFormatter.ConvertFromJson<DateTime>(response);
 		}
 
@@ -392,7 +392,7 @@ namespace LinnworksAPI
         /// <returns>Returns a list of inbound stock.</returns>
         public List<StockAvailability> GetStockAvailability(Guid pkTransferItemId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetStockAvailability", "pkTransferItemId=" + pkTransferItemId + "");
+			var response = GetResponse("WarehouseTransfer/GetStockAvailability", "pkTransferItemId=" + pkTransferItemId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<StockAvailability>>(response);
 		}
 
@@ -403,7 +403,7 @@ namespace LinnworksAPI
         /// <returns>A list of transfer audit entries.</returns>
         public List<WarehouseTransferAudit> GetTransferAudit(Guid pkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetTransferAudit", "pkTransferId=" + pkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/GetTransferAudit", "pkTransferId=" + pkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransferAudit>>(response);
 		}
 
@@ -414,7 +414,7 @@ namespace LinnworksAPI
         /// <returns>A list of notes associated with the bin.</returns>
         public List<WarehouseTransferBinNote> GetTransferBinNotes(Guid pkBinId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetTransferBinNotes", "pkBinId=" + pkBinId + "");
+			var response = GetResponse("WarehouseTransfer/GetTransferBinNotes", "pkBinId=" + pkBinId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransferBinNote>>(response);
 		}
 
@@ -426,7 +426,7 @@ namespace LinnworksAPI
         /// <returns>A list of notes associated with the item.</returns>
         public List<WarehouseTransferItemNote> GetTransferItemNotes(Guid pkTransferId,Guid pkTransferItemId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetTransferItemNotes", "pkTransferId=" + pkTransferId + "&pkTransferItemId=" + pkTransferItemId + "");
+			var response = GetResponse("WarehouseTransfer/GetTransferItemNotes", "pkTransferId=" + pkTransferId + "&pkTransferItemId=" + pkTransferItemId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransferItemNote>>(response);
 		}
 
@@ -437,7 +437,7 @@ namespace LinnworksAPI
         /// <returns>A list of transfer items.</returns>
         public List<WarehouseTransferItem> GetTransferItems(Guid pkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetTransferItems", "pkTransferId=" + pkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/GetTransferItems", "pkTransferId=" + pkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransferItem>>(response);
 		}
 
@@ -448,7 +448,7 @@ namespace LinnworksAPI
         /// <returns>A list of notes for the transfer.</returns>
         public List<WarehouseTransferNote> GetTransferNotes(Guid pkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetTransferNotes", "pkTransferId=" + pkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/GetTransferNotes", "pkTransferId=" + pkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransferNote>>(response);
 		}
 
@@ -459,7 +459,7 @@ namespace LinnworksAPI
         /// <returns>A list of properties.</returns>
         public List<WarehouseTransferProperty> GetTransferProperties(Guid pkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetTransferProperties", "pkTransferId=" + pkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/GetTransferProperties", "pkTransferId=" + pkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<WarehouseTransferProperty>>(response);
 		}
 
@@ -470,7 +470,7 @@ namespace LinnworksAPI
         /// <returns>The transfer object complete with items.</returns>
         public WarehouseTransfer GetTransferWithItems(Guid pkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetTransferWithItems", "pkTransferId=" + pkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/GetTransferWithItems", "pkTransferId=" + pkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<WarehouseTransfer>(response);
 		}
 
@@ -481,7 +481,7 @@ namespace LinnworksAPI
         /// <returns>Warehouse Transfer Object with items</returns>
         public WarehouseTransfer GetTransferWithNotes(Guid pkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/GetTransferWithNotes", "pkTransferId=" + pkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/GetTransferWithNotes", "pkTransferId=" + pkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<WarehouseTransfer>(response);
 		}
 
@@ -492,7 +492,7 @@ namespace LinnworksAPI
         /// <returns>A boolean indicating whether or not the transfer has changed (True = Changed, False = Unchanged).</returns>
         public Boolean IsDraftTransferChanged(Guid pkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/IsDraftTransferChanged", "pkTransferId=" + pkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/IsDraftTransferChanged", "pkTransferId=" + pkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
@@ -503,7 +503,7 @@ namespace LinnworksAPI
         /// <returns>URL of PDF with auto-print flag</returns>
         public String PrintTransfer(Guid pkTransferId)
 		{
-			var response = GetResponse("WarehouseTransfer/PrintTransfer", "pkTransferId=" + pkTransferId + "");
+			var response = GetResponse("WarehouseTransfer/PrintTransfer", "pkTransferId=" + pkTransferId + "", "POST");
             return JsonFormatter.ConvertFromJson<String>(response);
 		}
 
@@ -512,7 +512,7 @@ namespace LinnworksAPI
         /// </summary>
         public void RemoveAllEmptyBins()
 		{
-			GetResponse("WarehouseTransfer/RemoveAllEmptyBins", "");
+			GetResponse("WarehouseTransfer/RemoveAllEmptyBins", "", "POST");
 		}
 
 		/// <summary>
@@ -522,7 +522,7 @@ namespace LinnworksAPI
         /// <param name="pkTransferItemId">The id of the transfer item.</param>
         public void RemoveItemFromTransfer(Guid pkTransferId,Guid pkTransferItemId)
 		{
-			GetResponse("WarehouseTransfer/RemoveItemFromTransfer", "pkTransferId=" + pkTransferId + "&pkTransferItemId=" + pkTransferItemId + "");
+			GetResponse("WarehouseTransfer/RemoveItemFromTransfer", "pkTransferId=" + pkTransferId + "&pkTransferItemId=" + pkTransferItemId + "", "POST");
 		}
 
 		/// <summary>
@@ -533,7 +533,7 @@ namespace LinnworksAPI
         /// <returns>A list of the relevant transfer ids.</returns>
         public List<Guid> SearchTransfersAllLocations(SearchType searchType,String searchText)
 		{
-			var response = GetResponse("WarehouseTransfer/SearchTransfersAllLocations", "searchType=" + searchType.ToString() + "&searchText=" + System.Net.WebUtility.UrlEncode(searchText) + "");
+			var response = GetResponse("WarehouseTransfer/SearchTransfersAllLocations", "searchType=" + searchType.ToString() + "&searchText=" + System.Net.WebUtility.UrlEncode(searchText) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<Guid>>(response);
 		}
 
@@ -546,7 +546,7 @@ namespace LinnworksAPI
         /// <returns>A list of the relevant transfer ids.</returns>
         public List<Guid> SearchTransfersByLocation(SearchType searchType,String searchText,Guid locationID)
 		{
-			var response = GetResponse("WarehouseTransfer/SearchTransfersByLocation", "searchType=" + searchType.ToString() + "&searchText=" + System.Net.WebUtility.UrlEncode(searchText) + "&locationID=" + locationID + "");
+			var response = GetResponse("WarehouseTransfer/SearchTransfersByLocation", "searchType=" + searchType.ToString() + "&searchText=" + System.Net.WebUtility.UrlEncode(searchText) + "&locationID=" + locationID + "", "POST");
             return JsonFormatter.ConvertFromJson<List<Guid>>(response);
 		}
 
@@ -557,7 +557,7 @@ namespace LinnworksAPI
         /// <param name="ReferenceNumber">The new reference number.</param>
         public void SetReferenceNumber(Guid pkTransferId,String ReferenceNumber)
 		{
-			GetResponse("WarehouseTransfer/SetReferenceNumber", "pkTransferId=" + pkTransferId + "&ReferenceNumber=" + System.Net.WebUtility.UrlEncode(ReferenceNumber) + "");
+			GetResponse("WarehouseTransfer/SetReferenceNumber", "pkTransferId=" + pkTransferId + "&ReferenceNumber=" + System.Net.WebUtility.UrlEncode(ReferenceNumber) + "", "POST");
 		} 
     }
 }

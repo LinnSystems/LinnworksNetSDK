@@ -18,7 +18,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public BaseSession AuthorizeByApplication(AuthorizeByApplicationRequest request)
 		{
-			var response = GetResponse("Auth/AuthorizeByApplication", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("Auth/AuthorizeByApplication", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<BaseSession>(response);
 		}
 
@@ -34,13 +34,13 @@ namespace LinnworksAPI
         /// <returns>Class that represents the application subscription profile</returns>
         public ApplicationProfileResponse GetApplicationProfileBySecretKey(Guid applicationId,Guid applicationSecret,Guid userId)
 		{
-			var response = GetResponse("Auth/GetApplicationProfileBySecretKey", "applicationId=" + applicationId + "&applicationSecret=" + applicationSecret + "&userId=" + userId + "");
+			var response = GetResponse("Auth/GetApplicationProfileBySecretKey", "applicationId=" + applicationId + "&applicationSecret=" + applicationSecret + "&userId=" + userId + "", "POST");
             return JsonFormatter.ConvertFromJson<ApplicationProfileResponse>(response);
 		}
 
 		public DateTime GetServerUTCTime()
 		{
-			var response = GetResponse("Auth/GetServerUTCTime", "");
+			var response = GetResponse("Auth/GetServerUTCTime", "", "POST");
             return JsonFormatter.ConvertFromJson<DateTime>(response);
 		} 
     }

@@ -18,5 +18,6 @@ namespace LinnworksAPI
 		Channel,
 		Other,
 		Datetime2,
+		Calculated,
 	}
 }

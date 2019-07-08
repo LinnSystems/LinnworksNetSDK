@@ -19,7 +19,7 @@ namespace LinnworksAPI
         /// <returns>The action object, complete with action id.</returns>
         public ActionWeb AddAction(ActionWeb action)
 		{
-			var response = GetResponse("RulesEngine/AddAction", "action=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(action)) + "");
+			var response = GetResponse("RulesEngine/AddAction", "action=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(action)) + "", "POST");
             return JsonFormatter.ConvertFromJson<ActionWeb>(response);
 		}
 
@@ -33,7 +33,7 @@ namespace LinnworksAPI
         /// <returns>True if it exists, False if it does not.</returns>
         public Boolean CheckConditionNameExists(Int32 fkRuleId,Int32? fkConditionId,Int32? excludeConditionId,String conditionName)
 		{
-			var response = GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fkConditionId)) + "&excludeConditionId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(excludeConditionId)) + "&conditionName=" + System.Net.WebUtility.UrlEncode(conditionName) + "");
+			var response = GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fkConditionId)) + "&excludeConditionId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(excludeConditionId)) + "&conditionName=" + System.Net.WebUtility.UrlEncode(conditionName) + "", "POST");
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
@@ -46,7 +46,7 @@ namespace LinnworksAPI
         /// <returns>The new action.</returns>
         public RuleAction CopyAction(Int32 pkRuleId,Int32 targetParentConditionId,Int32 pkActionId)
 		{
-			var response = GetResponse("RulesEngine/CopyAction", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + targetParentConditionId + "&pkActionId=" + pkActionId + "");
+			var response = GetResponse("RulesEngine/CopyAction", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + targetParentConditionId + "&pkActionId=" + pkActionId + "", "POST");
             return JsonFormatter.ConvertFromJson<RuleAction>(response);
 		}
 
@@ -61,7 +61,7 @@ namespace LinnworksAPI
         /// <returns>An object describing the newly created nodes and actions.</returns>
         public RuleConditionHeader CopyCondition(Int32 pkRuleId,Int32? targetParentConditionId,Int32 pkConditionId,Boolean includeChildren,Boolean includeActions)
 		{
-			var response = GetResponse("RulesEngine/CopyCondition", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(targetParentConditionId)) + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions + "");
+			var response = GetResponse("RulesEngine/CopyCondition", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(targetParentConditionId)) + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions + "", "POST");
             return JsonFormatter.ConvertFromJson<RuleConditionHeader>(response);
 		}
 
@@ -72,7 +72,7 @@ namespace LinnworksAPI
         /// <returns>The id of the draft copy.</returns>
         public Int32 CreateDraftFromExisting(Int32 pkRuleId)
 		{
-			var response = GetResponse("RulesEngine/CreateDraftFromExisting", "pkRuleId=" + pkRuleId + "");
+			var response = GetResponse("RulesEngine/CreateDraftFromExisting", "pkRuleId=" + pkRuleId + "", "POST");
             return JsonFormatter.ConvertFromJson<Int32>(response);
 		}
 
@@ -83,7 +83,7 @@ namespace LinnworksAPI
         /// <returns>The condition object including pkConditionId.</returns>
         public RuleConditionHeader CreateNewCondition(ConditionHeaderBasic header)
 		{
-			var response = GetResponse("RulesEngine/CreateNewCondition", "header=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(header)) + "");
+			var response = GetResponse("RulesEngine/CreateNewCondition", "header=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(header)) + "", "POST");
             return JsonFormatter.ConvertFromJson<RuleConditionHeader>(response);
 		}
 
@@ -95,7 +95,7 @@ namespace LinnworksAPI
         /// <returns>The rule header.</returns>
         public RuleHeaderBasic CreateNewDraft(String ruleName,RuleSetType type)
 		{
-			var response = GetResponse("RulesEngine/CreateNewDraft", "ruleName=" + System.Net.WebUtility.UrlEncode(ruleName) + "&type=" + type.ToString() + "");
+			var response = GetResponse("RulesEngine/CreateNewDraft", "ruleName=" + System.Net.WebUtility.UrlEncode(ruleName) + "&type=" + type.ToString() + "", "POST");
             return JsonFormatter.ConvertFromJson<RuleHeaderBasic>(response);
 		}
 
@@ -107,7 +107,7 @@ namespace LinnworksAPI
         /// <returns>The rule header.</returns>
         public RuleHeaderBasic CreateNewDraftFromExisting(Int32 pkRuleId,String ruleName)
 		{
-			var response = GetResponse("RulesEngine/CreateNewDraftFromExisting", "pkRuleId=" + pkRuleId + "&ruleName=" + System.Net.WebUtility.UrlEncode(ruleName) + "");
+			var response = GetResponse("RulesEngine/CreateNewDraftFromExisting", "pkRuleId=" + pkRuleId + "&ruleName=" + System.Net.WebUtility.UrlEncode(ruleName) + "", "POST");
             return JsonFormatter.ConvertFromJson<RuleHeaderBasic>(response);
 		}
 
@@ -117,7 +117,7 @@ namespace LinnworksAPI
         /// <param name="pkActionId">The id of the action to delete</param>
         public void DeleteAction(Int32 pkActionId)
 		{
-			GetResponse("RulesEngine/DeleteAction", "pkActionId=" + pkActionId + "");
+			GetResponse("RulesEngine/DeleteAction", "pkActionId=" + pkActionId + "", "POST");
 		}
 
 		/// <summary>
@@ -126,7 +126,7 @@ namespace LinnworksAPI
         /// <param name="pkConditionId">The condition to delete</param>
         public void DeleteCondition(Int32 pkConditionId)
 		{
-			GetResponse("RulesEngine/DeleteCondition", "pkConditionId=" + pkConditionId + "");
+			GetResponse("RulesEngine/DeleteCondition", "pkConditionId=" + pkConditionId + "", "POST");
 		}
 
 		/// <summary>
@@ -135,7 +135,7 @@ namespace LinnworksAPI
         /// <param name="pkRuleId">The rule id to delete.</param>
         public void DeleteRuleById(Int32 pkRuleId)
 		{
-			GetResponse("RulesEngine/DeleteRuleById", "pkRuleId=" + pkRuleId + "");
+			GetResponse("RulesEngine/DeleteRuleById", "pkRuleId=" + pkRuleId + "", "POST");
 		}
 
 		/// <summary>
@@ -145,7 +145,7 @@ namespace LinnworksAPI
         /// <returns>A list of valid options</returns>
         public Dictionary<String,List<ActionOption>> GetActionOptions(ActionType type)
 		{
-			var response = GetResponse("RulesEngine/GetActionOptions", "type=" + type.ToString() + "");
+			var response = GetResponse("RulesEngine/GetActionOptions", "type=" + type.ToString() + "", "POST");
             return JsonFormatter.ConvertFromJson<Dictionary<String,List<ActionOption>>>(response);
 		}
 
@@ -156,7 +156,7 @@ namespace LinnworksAPI
         /// <returns>Valid action types</returns>
         public List<ActionTypeDescriptor> GetActionTypes(RuleSetType type)
 		{
-			var response = GetResponse("RulesEngine/GetActionTypes", "type=" + type.ToString() + "");
+			var response = GetResponse("RulesEngine/GetActionTypes", "type=" + type.ToString() + "", "POST");
             return JsonFormatter.ConvertFromJson<List<ActionTypeDescriptor>>(response);
 		}
 
@@ -167,7 +167,7 @@ namespace LinnworksAPI
         /// <returns>An object describing the condition and its items.</returns>
         public ConditionHeaderBasic GetConditionWeb(Int32 pkConditionId)
 		{
-			var response = GetResponse("RulesEngine/GetConditionWeb", "pkConditionId=" + pkConditionId + "");
+			var response = GetResponse("RulesEngine/GetConditionWeb", "pkConditionId=" + pkConditionId + "", "POST");
             return JsonFormatter.ConvertFromJson<ConditionHeaderBasic>(response);
 		}
 
@@ -178,7 +178,7 @@ namespace LinnworksAPI
         /// <returns>Returns a list of evaluation available fields.</returns>
         public List<FieldDescriptor> GetEvaluationFields(RuleSetType type)
 		{
-			var response = GetResponse("RulesEngine/GetEvaluationFields", "type=" + type.ToString() + "");
+			var response = GetResponse("RulesEngine/GetEvaluationFields", "type=" + type.ToString() + "", "POST");
             return JsonFormatter.ConvertFromJson<List<FieldDescriptor>>(response);
 		}
 
@@ -188,7 +188,7 @@ namespace LinnworksAPI
         /// <returns>Returns a list of valid evaluators.</returns>
         public List<EvaluatorDescriptor> GetEvaluatorTypes()
 		{
-			var response = GetResponse("RulesEngine/GetEvaluatorTypes", "");
+			var response = GetResponse("RulesEngine/GetEvaluatorTypes", "", "POST");
             return JsonFormatter.ConvertFromJson<List<EvaluatorDescriptor>>(response);
 		}
 
@@ -200,7 +200,7 @@ namespace LinnworksAPI
         /// <returns>Returns a valid list of keys (e.g. for extended properties, a list of existing property names)</returns>
         public List<String> GetKeyOptions(RuleSetType type,String fieldName)
 		{
-			var response = GetResponse("RulesEngine/GetKeyOptions", "type=" + type.ToString() + "&fieldName=" + System.Net.WebUtility.UrlEncode(fieldName) + "");
+			var response = GetResponse("RulesEngine/GetKeyOptions", "type=" + type.ToString() + "&fieldName=" + System.Net.WebUtility.UrlEncode(fieldName) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<String>>(response);
 		}
 
@@ -212,7 +212,7 @@ namespace LinnworksAPI
         /// <returns>A list of keys grouped by field name</returns>
         public List<MultiKeyOptionResponse> GetMultiKeyOptions(RuleSetType type,List<String> fieldNames)
 		{
-			var response = GetResponse("RulesEngine/GetMultiKeyOptions", "type=" + type.ToString() + "&fieldNames=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fieldNames)) + "");
+			var response = GetResponse("RulesEngine/GetMultiKeyOptions", "type=" + type.ToString() + "&fieldNames=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fieldNames)) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<MultiKeyOptionResponse>>(response);
 		}
 
@@ -224,7 +224,7 @@ namespace LinnworksAPI
         /// <returns>A list of valid options grouped by Field/Key</returns>
         public List<MultiOptionResponse> GetMultiOptions(RuleSetType type,List<FieldKeys> fieldKeys)
 		{
-			var response = GetResponse("RulesEngine/GetMultiOptions", "type=" + type.ToString() + "&fieldKeys=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fieldKeys)) + "");
+			var response = GetResponse("RulesEngine/GetMultiOptions", "type=" + type.ToString() + "&fieldKeys=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fieldKeys)) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<MultiOptionResponse>>(response);
 		}
 
@@ -237,7 +237,7 @@ namespace LinnworksAPI
         /// <returns>Returns a list of options.</returns>
         public List<String> GetOptions(String fieldName,RuleSetType type,String key)
 		{
-			var response = GetResponse("RulesEngine/GetOptions", "fieldName=" + System.Net.WebUtility.UrlEncode(fieldName) + "&type=" + type.ToString() + "&key=" + System.Net.WebUtility.UrlEncode(key) + "");
+			var response = GetResponse("RulesEngine/GetOptions", "fieldName=" + System.Net.WebUtility.UrlEncode(fieldName) + "&type=" + type.ToString() + "&key=" + System.Net.WebUtility.UrlEncode(key) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<String>>(response);
 		}
 
@@ -248,7 +248,7 @@ namespace LinnworksAPI
         /// <returns>A object containing a list of fields</returns>
         public RulesFields GetRequiredFieldsByRuleId(Int32 pkRuleId)
 		{
-			var response = GetResponse("RulesEngine/GetRequiredFieldsByRuleId", "pkRuleId=" + pkRuleId + "");
+			var response = GetResponse("RulesEngine/GetRequiredFieldsByRuleId", "pkRuleId=" + pkRuleId + "", "POST");
             return JsonFormatter.ConvertFromJson<RulesFields>(response);
 		}
 
@@ -259,7 +259,7 @@ namespace LinnworksAPI
         /// <returns>A object containing a list of fields for enabled rules</returns>
         public RulesFields GetRequiredFieldsByType(RuleSetType type)
 		{
-			var response = GetResponse("RulesEngine/GetRequiredFieldsByType", "type=" + type.ToString() + "");
+			var response = GetResponse("RulesEngine/GetRequiredFieldsByType", "type=" + type.ToString() + "", "POST");
             return JsonFormatter.ConvertFromJson<RulesFields>(response);
 		}
 
@@ -270,7 +270,7 @@ namespace LinnworksAPI
         /// <returns>An object describing the rule hierarchy.</returns>
         public List<RuleConditionHeader> GetRuleConditionNodes(Int32 pkRuleId)
 		{
-			var response = GetResponse("RulesEngine/GetRuleConditionNodes", "pkRuleId=" + pkRuleId + "");
+			var response = GetResponse("RulesEngine/GetRuleConditionNodes", "pkRuleId=" + pkRuleId + "", "POST");
             return JsonFormatter.ConvertFromJson<List<RuleConditionHeader>>(response);
 		}
 
@@ -280,7 +280,7 @@ namespace LinnworksAPI
         /// <returns>A list of rules</returns>
         public List<RuleHeaderBasic> GetRules()
 		{
-			var response = GetResponse("RulesEngine/GetRules", "");
+			var response = GetResponse("RulesEngine/GetRules", "", "POST");
             return JsonFormatter.ConvertFromJson<List<RuleHeaderBasic>>(response);
 		}
 
@@ -291,7 +291,7 @@ namespace LinnworksAPI
         /// <returns>A list of rules of the requested type</returns>
         public List<RuleHeaderBasic> GetRulesByType(RuleSetType type)
 		{
-			var response = GetResponse("RulesEngine/GetRulesByType", "type=" + type.ToString() + "");
+			var response = GetResponse("RulesEngine/GetRulesByType", "type=" + type.ToString() + "", "POST");
             return JsonFormatter.ConvertFromJson<List<RuleHeaderBasic>>(response);
 		}
 
@@ -303,7 +303,7 @@ namespace LinnworksAPI
         /// <returns>A list of test values based on the existing object.</returns>
         public List<TestpadValue> GetValuesFromExisting(Int32 pkRuleId,Object id)
 		{
-			var response = GetResponse("RulesEngine/GetValuesFromExisting", "pkRuleId=" + pkRuleId + "&id=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(id)) + "");
+			var response = GetResponse("RulesEngine/GetValuesFromExisting", "pkRuleId=" + pkRuleId + "&id=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(id)) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<TestpadValue>>(response);
 		}
 
@@ -313,7 +313,7 @@ namespace LinnworksAPI
         /// <param name="conditionHeader">The condition object describing the revised condition. pkConditionId and fkRuleId must be unchanged.</param>
         public void SaveConditionChanges(ConditionHeaderBasic conditionHeader)
 		{
-			GetResponse("RulesEngine/SaveConditionChanges", "conditionHeader=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(conditionHeader)) + "");
+			GetResponse("RulesEngine/SaveConditionChanges", "conditionHeader=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(conditionHeader)) + "", "POST");
 		}
 
 		/// <summary>
@@ -323,7 +323,7 @@ namespace LinnworksAPI
         /// <param name="enabled">True for enabled, False for disabled.</param>
         public void SetConditionEnabled(Int32 pkConditionId,Boolean enabled)
 		{
-			GetResponse("RulesEngine/SetConditionEnabled", "pkConditionId=" + pkConditionId + "&enabled=" + enabled + "");
+			GetResponse("RulesEngine/SetConditionEnabled", "pkConditionId=" + pkConditionId + "&enabled=" + enabled + "", "POST");
 		}
 
 		/// <summary>
@@ -333,7 +333,7 @@ namespace LinnworksAPI
         /// <returns>The run order of the now live rule.</returns>
         public Int32? SetDraftLive(Int32 pkRuleId)
 		{
-			var response = GetResponse("RulesEngine/SetDraftLive", "pkRuleId=" + pkRuleId + "");
+			var response = GetResponse("RulesEngine/SetDraftLive", "pkRuleId=" + pkRuleId + "", "POST");
             return JsonFormatter.ConvertFromJson<Int32?>(response);
 		}
 
@@ -344,7 +344,7 @@ namespace LinnworksAPI
         /// <param name="enabled">Boolean incidating whether or not the rule is enabled</param>
         public void SetRuleEnabled(Int32 pkRuleId,Boolean enabled)
 		{
-			GetResponse("RulesEngine/SetRuleEnabled", "pkRuleId=" + pkRuleId + "&enabled=" + enabled + "");
+			GetResponse("RulesEngine/SetRuleEnabled", "pkRuleId=" + pkRuleId + "&enabled=" + enabled + "", "POST");
 		}
 
 		/// <summary>
@@ -354,7 +354,7 @@ namespace LinnworksAPI
         /// <param name="ruleName">The new name for the rule</param>
         public void SetRuleName(Int32 pkRuleId,String ruleName)
 		{
-			GetResponse("RulesEngine/SetRuleName", "pkRuleId=" + pkRuleId + "&ruleName=" + System.Net.WebUtility.UrlEncode(ruleName) + "");
+			GetResponse("RulesEngine/SetRuleName", "pkRuleId=" + pkRuleId + "&ruleName=" + System.Net.WebUtility.UrlEncode(ruleName) + "", "POST");
 		}
 
 		/// <summary>
@@ -364,7 +364,7 @@ namespace LinnworksAPI
         /// <param name="pkConditionId2">The id of the second condition</param>
         public void SwapConditions(Int32 pkConditionId1,Int32 pkConditionId2)
 		{
-			GetResponse("RulesEngine/SwapConditions", "pkConditionId1=" + pkConditionId1 + "&pkConditionId2=" + pkConditionId2 + "");
+			GetResponse("RulesEngine/SwapConditions", "pkConditionId1=" + pkConditionId1 + "&pkConditionId2=" + pkConditionId2 + "", "POST");
 		}
 
 		/// <summary>
@@ -374,7 +374,7 @@ namespace LinnworksAPI
         /// <param name="pkRuleId2">The second rule id</param>
         public void SwapRules(Int32 pkRuleId1,Int32 pkRuleId2)
 		{
-			GetResponse("RulesEngine/SwapRules", "pkRuleId1=" + pkRuleId1 + "&pkRuleId2=" + pkRuleId2 + "");
+			GetResponse("RulesEngine/SwapRules", "pkRuleId1=" + pkRuleId1 + "&pkRuleId2=" + pkRuleId2 + "", "POST");
 		}
 
 		/// <summary>
@@ -385,7 +385,7 @@ namespace LinnworksAPI
         /// <returns>The action id of the matched action or, where possible, the nearest condition id</returns>
         public RuleEvaluationResult TestEvaluateRule(List<TestpadValue> testValues,Int32 pkRuleId)
 		{
-			var response = GetResponse("RulesEngine/TestEvaluateRule", "testValues=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(testValues)) + "&pkRuleId=" + pkRuleId + "");
+			var response = GetResponse("RulesEngine/TestEvaluateRule", "testValues=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(testValues)) + "&pkRuleId=" + pkRuleId + "", "POST");
             return JsonFormatter.ConvertFromJson<RuleEvaluationResult>(response);
 		}
 
@@ -395,7 +395,7 @@ namespace LinnworksAPI
         /// <param name="action">The details of the updated action. pkActionId and fkConditionId must be unchanged original.</param>
         public void UpdateAction(ActionWeb action)
 		{
-			GetResponse("RulesEngine/UpdateAction", "action=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(action)) + "");
+			GetResponse("RulesEngine/UpdateAction", "action=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(action)) + "", "POST");
 		} 
     }
 }

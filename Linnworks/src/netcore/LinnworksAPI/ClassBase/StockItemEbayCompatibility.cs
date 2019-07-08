@@ -7,14 +7,19 @@ namespace LinnworksAPI
     public class StockItemEbayCompatibility
 	{
         /// <summary>
-        /// StockItem unique identifier 
+        /// StockItem unique identifier (Optional if SKU is supplied) 
         /// </summary>
-		public Guid FkStockItemId;
+		public Guid? FkStockItemId;
 
         /// <summary>
-        /// Compatibility list ID 
+        /// Compatibility list ID (Optional) 
         /// </summary>
-		public Guid FkCompatibilityListId;
+		public Guid? FkCompatibilityListId;
+
+        /// <summary>
+        /// Stock item SKU (Will be ignored fkStockItemId is supplied) 
+        /// </summary>
+		public String SKU;
 
         /// <summary>
         /// Compatibility notes 

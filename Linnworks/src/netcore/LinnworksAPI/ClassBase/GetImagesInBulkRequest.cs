@@ -4,12 +4,10 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionOption
+    public class GetImagesInBulkRequest
 	{
-		public String Icon;
+		public List<Guid> StockItemIds;
 
-		public String Text;
-
-		public String Value;
+		public List<String> SKUS;
 	} 
 }

@@ -25,5 +25,6 @@ namespace LinnworksAPI
 		LastDays,
 		OlderThan,
 		Next,
+		Is,
 	}
 }

@@ -18,7 +18,7 @@ namespace LinnworksAPI
         /// <param name="currencies">Currencies to delete</param>
         public void DeleteCurrencyConversionRates(List<String> currencies)
 		{
-			GetResponse("Settings/DeleteCurrencyConversionRates", "currencies=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(currencies)) + "");
+			GetResponse("Settings/DeleteCurrencyConversionRates", "currencies=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(currencies)) + "", "POST");
 		}
 
 		/// <summary>
@@ -28,7 +28,7 @@ namespace LinnworksAPI
         /// Currency: Get a specific currency rate. Leave empty to get all</param>
         public List<CurrencyConversionRate> GetCurrencyConversionRates(GetConversionRatesRequest requestParams)
 		{
-			var response = GetResponse("Settings/GetCurrencyConversionRates", "requestParams=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(requestParams)) + "");
+			var response = GetResponse("Settings/GetCurrencyConversionRates", "requestParams=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(requestParams)) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<CurrencyConversionRate>>(response);
 		}
 
@@ -37,7 +37,7 @@ namespace LinnworksAPI
         /// </summary>
         public GetLatestCurrencyRateResponse GetLatestCurrencyRate(GetLatestCurrencyRateRequest request)
 		{
-			var response = GetResponse("Settings/GetLatestCurrencyRate", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("Settings/GetLatestCurrencyRate", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GetLatestCurrencyRateResponse>(response);
 		}
 
@@ -46,7 +46,7 @@ namespace LinnworksAPI
         /// </summary>
         public Measures GetMeasures()
 		{
-			var response = GetResponse("Settings/GetMeasures", "");
+			var response = GetResponse("Settings/GetMeasures", "", "POST");
             return JsonFormatter.ConvertFromJson<Measures>(response);
 		}
 
@@ -56,7 +56,7 @@ namespace LinnworksAPI
         /// <param name="rates">Currencies to insert</param>
         public void InsertCurrencyConversionRates(List<CurrencyConversionRate> rates)
 		{
-			GetResponse("Settings/InsertCurrencyConversionRates", "rates=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(rates)) + "");
+			GetResponse("Settings/InsertCurrencyConversionRates", "rates=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(rates)) + "", "POST");
 		}
 
 		/// <summary>
@@ -65,7 +65,7 @@ namespace LinnworksAPI
         /// <param name="rates">Rates to update. Currency is the key</param>
         public void UpdateCurrencyConversionRates(List<CurrencyConversionRate> rates)
 		{
-			GetResponse("Settings/UpdateCurrencyConversionRates", "rates=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(rates)) + "");
+			GetResponse("Settings/UpdateCurrencyConversionRates", "rates=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(rates)) + "", "POST");
 		} 
     }
 }

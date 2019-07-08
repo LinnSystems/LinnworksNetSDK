@@ -24,6 +24,16 @@ namespace LinnworksAPI
         /// </summary>
 		public Int32 SortOrder;
 
+        /// <summary>
+        /// Internal checksum value 
+        /// </summary>
+		public String ChecksumValue;
+
+        /// <summary>
+        /// Raw file checksum (Used for UI to determine if the image file is the same before submitting for upload) 
+        /// </summary>
+		public String RawChecksum;
+
 		public Guid StockItemId;
 	} 
 }

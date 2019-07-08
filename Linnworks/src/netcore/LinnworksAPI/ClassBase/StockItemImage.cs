@@ -30,6 +30,10 @@ namespace LinnworksAPI
 
 		public Int32 SortOrder;
 
+		public String ChecksumValue;
+
+		public String RawChecksum;
+
 		public Guid StockItemId;
 	} 
 }

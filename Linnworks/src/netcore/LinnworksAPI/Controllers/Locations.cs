@@ -18,7 +18,7 @@ namespace LinnworksAPI
         /// <param name="location">The StockLocation object describing the StockLocation to be added.</param>
         public void AddLocation(StockLocation location)
 		{
-			GetResponse("Locations/AddLocation", "location=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(location)) + "");
+			GetResponse("Locations/AddLocation", "location=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(location)) + "", "POST");
 		}
 
 		/// <summary>
@@ -27,7 +27,7 @@ namespace LinnworksAPI
         /// <param name="pkStockLocationId">Id of the location to delete</param>
         public void DeleteLocation(Guid pkStockLocationId)
 		{
-			GetResponse("Locations/DeleteLocation", "pkStockLocationId=" + pkStockLocationId + "");
+			GetResponse("Locations/DeleteLocation", "pkStockLocationId=" + pkStockLocationId + "", "POST");
 		}
 
 		/// <summary>
@@ -37,7 +37,7 @@ namespace LinnworksAPI
         /// <returns>location</returns>
         public StockLocation GetLocation(Guid pkStockLocationId)
 		{
-			var response = GetResponse("Locations/GetLocation", "pkStockLocationId=" + pkStockLocationId + "");
+			var response = GetResponse("Locations/GetLocation", "pkStockLocationId=" + pkStockLocationId + "", "POST");
             return JsonFormatter.ConvertFromJson<StockLocation>(response);
 		}
 
@@ -47,7 +47,7 @@ namespace LinnworksAPI
         /// <param name="location">Stock location information to update</param>
         public void UpdateLocation(StockLocation location)
 		{
-			GetResponse("Locations/UpdateLocation", "location=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(location)) + "");
+			GetResponse("Locations/UpdateLocation", "location=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(location)) + "", "POST");
 		} 
     }
 }

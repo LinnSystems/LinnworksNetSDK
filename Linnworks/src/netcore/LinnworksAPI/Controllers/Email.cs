@@ -18,7 +18,7 @@ namespace LinnworksAPI
         /// <param name="request">Custom email generation request body</param>
         public GenerateAdhocEmailResponse GenerateAdhocEmail(GenerateAdhocEmailRequest request)
 		{
-			var response = GetResponse("Email/GenerateAdhocEmail", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("Email/GenerateAdhocEmail", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GenerateAdhocEmailResponse>(response);
 		}
 
@@ -28,7 +28,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public GenerateFreeTextEmailResponse GenerateFreeTextEmail(GenerateFreeTextEmailRequest request)
 		{
-			var response = GetResponse("Email/GenerateFreeTextEmail", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("Email/GenerateFreeTextEmail", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
             return JsonFormatter.ConvertFromJson<GenerateFreeTextEmailResponse>(response);
 		}
 
@@ -39,7 +39,7 @@ namespace LinnworksAPI
         /// <returns>Email template object with full data</returns>
         public EmailTemplate GetEmailTemplate(Int32 pkEmailTemplateRowId)
 		{
-			var response = GetResponse("Email/GetEmailTemplate", "pkEmailTemplateRowId=" + pkEmailTemplateRowId + "");
+			var response = GetResponse("Email/GetEmailTemplate", "pkEmailTemplateRowId=" + pkEmailTemplateRowId + "", "POST");
             return JsonFormatter.ConvertFromJson<EmailTemplate>(response);
 		}
 
@@ -49,7 +49,7 @@ namespace LinnworksAPI
         /// <returns>List of email template headers</returns>
         public List<EmailTemplateHeader> GetEmailTemplates()
 		{
-			var response = GetResponse("Email/GetEmailTemplates", "");
+			var response = GetResponse("Email/GetEmailTemplates", "", "POST");
             return JsonFormatter.ConvertFromJson<List<EmailTemplateHeader>>(response);
 		} 
     }

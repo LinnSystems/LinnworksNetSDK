@@ -25,7 +25,7 @@ namespace LinnworksAPI
 		void CreateInventoryItemChannelSKUs(List<StockItemChannelSKU> inventoryItemChannelSKUs);
 		void CreateInventoryItemCompositions(List<StockItemComposition> inventoryItemCompositions);
 		void CreateInventoryItemDescriptions(List<StockItemDescription> inventoryItemDescriptions);
-		void CreateInventoryItemExtendedProperties(List<StockItemExtendedProperty> inventoryItemExtendedProperties);
+		void CreateInventoryItemExtendedProperties(List<StockItemExtendedPropertyUpsertItem> inventoryItemExtendedProperties);
 		void CreateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices);
 		void CreateInventoryItemPricingRules(List<StockItemPricingRule> rules);
 		void CreateInventoryItemTitles(List<StockItemTitle> inventoryItemTitles);
@@ -55,6 +55,7 @@ namespace LinnworksAPI
 		Dictionary<String,List<String>> GetAllExtendedPropertyNames();
 		GetBatchAuditResponse GetBatchAudit(GetBatchAuditRequest request);
 		List<StockItemBatch> GetBatchesByStockItemId(Guid stockItemId,Boolean onlyAvailable);
+		GetBatchInventoryByIdResponse GetBatchInventoryById(GetBatchInventoryByIdRequest request);
 		List<Category> GetCategories();
 		List<AnyConfig> GetChannels();
 		List<HeaderConfig> GetChannelsBySource(String source);
@@ -63,6 +64,7 @@ namespace LinnworksAPI
 		List<StockItemEbayCompatibility> GetEbayCompatibilityList(Guid stockItemId);
 		List<String> GetExtendedPropertyNames(String propertyType = "Attribute");
 		List<String> GetExtendedPropertyTypes();
+		GetImagesInBulkResponse GetImagesInBulk(GetImagesInBulkRequest request);
 		Dictionary<String,Byte> GetInventoryBatchTypes();
 		List<StockItemAuditTrail> GetInventoryItemAuditTrail(Guid inventoryItemId);
 		List<StockItemBatch> GetInventoryItemBatchInformation(GetInventoryItemBatchInformationRequest Request);
@@ -90,6 +92,7 @@ namespace LinnworksAPI
 		GetScrapCategoriesResponse GetScrapCategories();
 		GetScrapHistoryResponse GetScrapHistory(GetScrapHistoryRequest request);
 		GetStockItemBatchesByLocationResponse GetStockItemBatchesByLocation(GetStockItemBatchesByLocationRequest request);
+		GetStockItemIdsBySKU GetStockItemIdsBySKU(GetStockItemIdsBySKURequest request);
 		List<StockItemLabel> GetStockItemLabels(List<Tuple<Int32,Int32>> selectedRegions,Guid token,Guid location);
 		List<InventoryStockLocation> GetStockLocations();
 		List<StockItemSupplierStat> GetStockSupplierStat(Guid inventoryItemId);

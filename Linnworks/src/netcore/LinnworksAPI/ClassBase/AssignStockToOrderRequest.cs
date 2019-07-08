@@ -8,8 +8,6 @@ namespace LinnworksAPI
 	{
 		public Guid OrderId;
 
-		public Boolean AllowZeroAndNegativeBatchQty;
-
 		public List<Guid> OrderItemRows;
 
         /// <summary>

@@ -74,7 +74,7 @@ namespace LinnworksAPI
 		MoveToFulfilmentCenterResult MoveToFulfilmentCenter(List<Guid> orderIds,Guid fulfilmentCenterId);
 		MoveToLocationResult MoveToLocation(List<Guid> orderIds,Guid pkStockLocationId);
 		ProcessOrderResult ProcessFulfilmentCentreOrder(Guid orderId);
-		ProcessOrderResult ProcessOrder(Guid orderId,Boolean scanPerformed,Guid? locationId,Boolean allowZeroAndNegativeBatchQty = false);
+		ProcessOrderResult ProcessOrder(Guid orderId,Boolean scanPerformed,Guid? locationId);
 		void ProcessOrder_RequiredBatchScans(BatchAssignmentForOrderItems BatchAssignment);
 		ProcessOrderByOrderIdOrReferenceResponse ProcessOrderByOrderOrReferenceId(ProcessOrderByOrderIdOrReferenceRequest request);
 		List<ProcessOrderResult> ProcessOrdersInBatch(List<Guid> ordersIds,Guid? locationId);
