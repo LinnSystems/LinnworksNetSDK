@@ -164,7 +164,7 @@ namespace LinnworksAPI
         /// <returns>List of StockConsumption</returns>
         public List<StockConsumption> GetStockConsumption(Guid stockItemId,Guid? locationId,DateTime startDate,DateTime endDate)
 		{
-			var response = GetResponse("Stock/GetStockConsumption", "stockItemId=" + stockItemId + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&startDate=" + System.Net.WebUtility.UrlEncode(startDate.ToString("yyyy-MM-dd HH:mm:ss")) + "&endDate=" + System.Net.WebUtility.UrlEncode(endDate.ToString("yyyy-MM-dd HH:mm:ss")) + "", "POST");
+			var response = GetResponse("Stock/GetStockConsumption", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&startDate=" + System.Net.WebUtility.UrlEncode(startDate.ToString("yyyy-MM-dd HH:mm:ss")) + "&endDate=" + System.Net.WebUtility.UrlEncode(endDate.ToString("yyyy-MM-dd HH:mm:ss")) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<StockConsumption>>(response);
 		}
 
@@ -196,7 +196,7 @@ namespace LinnworksAPI
         /// <returns>Stock items list</returns>
         public GenericPagedResult<StockItem> GetStockItems(String keyWord,Guid? locationId,Int32 entriesPerPage,Int32 pageNumber,Boolean excludeComposites = false,Boolean excludeVariations = false,Boolean excludeBatches = false)
 		{
-			var response = GetResponse("Stock/GetStockItems", "keyWord=" + System.Net.WebUtility.UrlEncode(keyWord) + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "&excludeVariations=" + excludeVariations + "&excludeBatches=" + excludeBatches + "", "POST");
+			var response = GetResponse("Stock/GetStockItems", "keyWord=" + System.Net.WebUtility.UrlEncode(keyWord) + "&locationId=" + locationId + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "&excludeVariations=" + excludeVariations + "&excludeBatches=" + excludeBatches + "", "POST");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<StockItem>>(response);
 		}
 

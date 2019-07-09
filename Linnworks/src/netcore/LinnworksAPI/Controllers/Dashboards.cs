@@ -103,7 +103,7 @@ namespace LinnworksAPI
         /// <returns>List of LowStockLevel</returns>
         public List<LowStockLevel> GetLowStockLevel(Guid? locationId,Int32? numRows)
 		{
-			var response = GetResponse("Dashboards/GetLowStockLevel", "locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&numRows=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(numRows)) + "", "POST");
+			var response = GetResponse("Dashboards/GetLowStockLevel", "locationId=" + locationId + "&numRows=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(numRows)) + "", "POST");
             return JsonFormatter.ConvertFromJson<List<LowStockLevel>>(response);
 		}
 
