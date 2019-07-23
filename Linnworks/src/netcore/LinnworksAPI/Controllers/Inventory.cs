@@ -590,6 +590,12 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<StockItemBatch>>(response);
 		}
 
+		public GetInventoryItemBatchInformationByIdsResponse GetInventoryItemBatchInformationByIds(GetInventoryItemBatchInformationByIdsRequest request)
+		{
+			var response = GetResponse("Inventory/GetInventoryItemBatchInformationByIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+            return JsonFormatter.ConvertFromJson<GetInventoryItemBatchInformationByIdsResponse>(response);
+		}
+
 		/// <summary>
         /// Use this call to get all product details 
         /// </summary>

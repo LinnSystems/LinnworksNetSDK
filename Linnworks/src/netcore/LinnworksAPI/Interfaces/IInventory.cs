@@ -68,6 +68,7 @@ namespace LinnworksAPI
 		Dictionary<String,Byte> GetInventoryBatchTypes();
 		List<StockItemAuditTrail> GetInventoryItemAuditTrail(Guid inventoryItemId);
 		List<StockItemBatch> GetInventoryItemBatchInformation(GetInventoryItemBatchInformationRequest Request);
+		GetInventoryItemBatchInformationByIdsResponse GetInventoryItemBatchInformationByIds(GetInventoryItemBatchInformationByIdsRequest request);
 		StockItemInv GetInventoryItemById(Guid id);
 		List<StockItemChannelSKU> GetInventoryItemChannelSKUs(Guid inventoryItemId);
 		List<StockItemChannelSKUWithLocation> GetInventoryItemChannelSKUsWithLocation(Guid channelSKURowId);
