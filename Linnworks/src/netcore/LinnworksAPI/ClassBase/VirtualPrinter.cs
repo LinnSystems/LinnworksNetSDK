@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System;
-using Linn.Pub.PlainOldDataObjects.Printing.ClassBase;
 
 namespace LinnworksAPI
 { 
