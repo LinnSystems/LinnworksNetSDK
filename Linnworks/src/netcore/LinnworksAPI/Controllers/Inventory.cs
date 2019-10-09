@@ -18,7 +18,7 @@ namespace LinnworksAPI
         /// <param name="request">Add Image object</param>
         public AddImageToInventoryItemResponse AddImageToInventoryItem(AddImageToInventoryItemRequest request)
 		{
-			var response = GetResponse("Inventory/AddImageToInventoryItem", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/AddImageToInventoryItem", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<AddImageToInventoryItemResponse>(response);
 		}
 
@@ -28,7 +28,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItem">New StockItem</param>
         public void AddInventoryItem(StockItem inventoryItem)
 		{
-			GetResponse("Inventory/AddInventoryItem", "inventoryItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItem)) + "", "POST");
+			GetResponse("Inventory/AddInventoryItem", "inventoryItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItem)) + "");
 		}
 
 		/// <summary>
@@ -37,7 +37,7 @@ namespace LinnworksAPI
         /// <param name="itemLocations">List of stock item locations</param>
         public void AddItemLocations(List<StockItemLocation> itemLocations)
 		{
-			GetResponse("Inventory/AddItemLocations", "itemLocations=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemLocations)) + "", "POST");
+			GetResponse("Inventory/AddItemLocations", "itemLocations=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemLocations)) + "");
 		}
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace LinnworksAPI
         /// <param name="request">Object with collection of product identifiers</param>
         public void AddProductIdentifiers(AddProductIdentifiersRequest request)
 		{
-			GetResponse("Inventory/AddProductIdentifiers", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			GetResponse("Inventory/AddProductIdentifiers", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -55,7 +55,7 @@ namespace LinnworksAPI
         /// <param name="request">Object with List of scrap category names</param>
         public AddScrapCategoriesResponse AddScrapCategories(AddScrapCategoriesRequest request)
 		{
-			var response = GetResponse("Inventory/AddScrapCategories", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/AddScrapCategories", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<AddScrapCategoriesResponse>(response);
 		}
 
@@ -64,7 +64,7 @@ namespace LinnworksAPI
         /// </summary>
         public AddScrapItemResponse AddScrapItem(AddScrapItemRequest request)
 		{
-			var response = GetResponse("Inventory/AddScrapItem", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/AddScrapItem", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<AddScrapItemResponse>(response);
 		}
 
@@ -74,7 +74,7 @@ namespace LinnworksAPI
         /// <param name="supplier">Details of supplier to be added. Set pkSupplierId to a new uniqueidentifier</param>
         public Supplier AddSupplier(Supplier supplier)
 		{
-			var response = GetResponse("Inventory/AddSupplier", "supplier=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(supplier)) + "", "POST");
+			var response = GetResponse("Inventory/AddSupplier", "supplier=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(supplier)) + "");
             return JsonFormatter.ConvertFromJson<Supplier>(response);
 		}
 
@@ -87,7 +87,7 @@ namespace LinnworksAPI
         /// <param name="adjustmentOptions">Fields which should be adjusted</param>
         public void AdjustEbayTemplatesInstantLMS(IEnumerable<Guid> inventoryItemIds,String subSource,String siteId,AdjustmentOptions adjustmentOptions)
 		{
-			GetResponse("Inventory/AdjustEbayTemplatesInstantLMS", "inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&siteId=" + System.Net.WebUtility.UrlEncode(siteId) + "&adjustmentOptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(adjustmentOptions)) + "", "POST");
+			GetResponse("Inventory/AdjustEbayTemplatesInstantLMS", "inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&siteId=" + System.Net.WebUtility.UrlEncode(siteId) + "&adjustmentOptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(adjustmentOptions)) + "");
 		}
 
 		/// <summary>
@@ -99,7 +99,7 @@ namespace LinnworksAPI
         /// <param name="adjustmentOptions">Fields which should be adjusted</param>
         public void AdjustTemplatesInstant(IEnumerable<Guid> inventoryItemIds,String source,String subSource,AdjustmentOptions adjustmentOptions)
 		{
-			GetResponse("Inventory/AdjustTemplatesInstant", "inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&adjustmentOptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(adjustmentOptions)) + "", "POST");
+			GetResponse("Inventory/AdjustTemplatesInstant", "inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&adjustmentOptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(adjustmentOptions)) + "");
 		}
 
 		/// <summary>
@@ -108,7 +108,16 @@ namespace LinnworksAPI
         /// <param name="parameters">InventoryParameters object</param>
         public void ArchiveInventoryItems(InventoryParametersRequest parameters)
 		{
-			GetResponse("Inventory/ArchiveInventoryItems", "parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "", "POST");
+			GetResponse("Inventory/ArchiveInventoryItems", "parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "");
+		}
+
+		/// <summary>
+        /// Scrap batched items in bulk without consumption 
+        /// </summary>
+        /// <param name="request"></param>
+        public void BulkScrapBatchedItems(BulkScrapBatchedItemsRequest request)
+		{
+			GetResponse("Inventory/BulkScrapBatchedItems", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -117,7 +126,7 @@ namespace LinnworksAPI
         /// <param name="batches">List of batches to create</param>
         public void CreateBatches(IEnumerable<StockItemBatch> batches)
 		{
-			GetResponse("Inventory/CreateBatches", "batches=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(batches)) + "", "POST");
+			GetResponse("Inventory/CreateBatches", "batches=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(batches)) + "");
 		}
 
 		/// <summary>
@@ -127,7 +136,7 @@ namespace LinnworksAPI
         /// <returns>New category</returns>
         public Category CreateCategory(String categoryName)
 		{
-			var response = GetResponse("Inventory/CreateCategory", "categoryName=" + System.Net.WebUtility.UrlEncode(categoryName) + "", "POST");
+			var response = GetResponse("Inventory/CreateCategory", "categoryName=" + System.Net.WebUtility.UrlEncode(categoryName) + "");
             return JsonFormatter.ConvertFromJson<Category>(response);
 		}
 
@@ -137,7 +146,7 @@ namespace LinnworksAPI
         /// <param name="countries">Countries to create</param>
         public void CreateCountries(IEnumerable<Country> countries)
 		{
-			GetResponse("Inventory/CreateCountries", "countries=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(countries)) + "", "POST");
+			GetResponse("Inventory/CreateCountries", "countries=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(countries)) + "");
 		}
 
 		/// <summary>
@@ -146,7 +155,7 @@ namespace LinnworksAPI
         /// <param name="request">Country regions to create</param>
         public CreateCountryRegionsResponse CreateCountryRegions(CreateCountryRegionsRequest request)
 		{
-			var response = GetResponse("Inventory/CreateCountryRegions", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/CreateCountryRegions", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<CreateCountryRegionsResponse>(response);
 		}
 
@@ -156,7 +165,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemChannelSKUs">stockitem channel skus</param>
         public void CreateInventoryItemChannelSKUs(List<StockItemChannelSKU> inventoryItemChannelSKUs)
 		{
-			GetResponse("Inventory/CreateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemChannelSKUs)) + "", "POST");
+			GetResponse("Inventory/CreateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemChannelSKUs)) + "");
 		}
 
 		/// <summary>
@@ -165,7 +174,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemCompositions">stockItem compositions</param>
         public void CreateInventoryItemCompositions(List<StockItemComposition> inventoryItemCompositions)
 		{
-			GetResponse("Inventory/CreateInventoryItemCompositions", "inventoryItemCompositions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemCompositions)) + "", "POST");
+			GetResponse("Inventory/CreateInventoryItemCompositions", "inventoryItemCompositions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemCompositions)) + "");
 		}
 
 		/// <summary>
@@ -174,7 +183,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemDescriptions">list of stockitem Descriptions</param>
         public void CreateInventoryItemDescriptions(List<StockItemDescription> inventoryItemDescriptions)
 		{
-			GetResponse("Inventory/CreateInventoryItemDescriptions", "inventoryItemDescriptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemDescriptions)) + "", "POST");
+			GetResponse("Inventory/CreateInventoryItemDescriptions", "inventoryItemDescriptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemDescriptions)) + "");
 		}
 
 		/// <summary>
@@ -183,7 +192,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemExtendedProperties">list of stockitem Extended Properties</param>
         public void CreateInventoryItemExtendedProperties(List<StockItemExtendedPropertyUpsertItem> inventoryItemExtendedProperties)
 		{
-			GetResponse("Inventory/CreateInventoryItemExtendedProperties", "inventoryItemExtendedProperties=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemExtendedProperties)) + "", "POST");
+			GetResponse("Inventory/CreateInventoryItemExtendedProperties", "inventoryItemExtendedProperties=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemExtendedProperties)) + "");
 		}
 
 		/// <summary>
@@ -192,7 +201,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemPrices">List of stock item prices to create</param>
         public void CreateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices)
 		{
-			GetResponse("Inventory/CreateInventoryItemPrices", "inventoryItemPrices=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemPrices)) + "", "POST");
+			GetResponse("Inventory/CreateInventoryItemPrices", "inventoryItemPrices=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemPrices)) + "");
 		}
 
 		/// <summary>
@@ -201,7 +210,7 @@ namespace LinnworksAPI
         /// <param name="rules">List of stock item pricing rules</param>
         public void CreateInventoryItemPricingRules(List<StockItemPricingRule> rules)
 		{
-			GetResponse("Inventory/CreateInventoryItemPricingRules", "rules=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(rules)) + "", "POST");
+			GetResponse("Inventory/CreateInventoryItemPricingRules", "rules=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(rules)) + "");
 		}
 
 		/// <summary>
@@ -210,7 +219,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemTitles">list of stockitem Titles</param>
         public void CreateInventoryItemTitles(List<StockItemTitle> inventoryItemTitles)
 		{
-			GetResponse("Inventory/CreateInventoryItemTitles", "inventoryItemTitles=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemTitles)) + "", "POST");
+			GetResponse("Inventory/CreateInventoryItemTitles", "inventoryItemTitles=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemTitles)) + "");
 		}
 
 		/// <summary>
@@ -219,7 +228,7 @@ namespace LinnworksAPI
         /// <param name="itemSuppliers">List of StockItemSupplierStat</param>
         public void CreateStockSupplierStat(List<StockItemSupplierStat> itemSuppliers)
 		{
-			GetResponse("Inventory/CreateStockSupplierStat", "itemSuppliers=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemSuppliers)) + "", "POST");
+			GetResponse("Inventory/CreateStockSupplierStat", "itemSuppliers=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemSuppliers)) + "");
 		}
 
 		/// <summary>
@@ -228,7 +237,7 @@ namespace LinnworksAPI
         /// <param name="view">New user-specific view</param>
         public void CreateUserSpecificView(InventoryView view)
 		{
-			GetResponse("Inventory/CreateUserSpecificView", "view=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(view)) + "", "POST");
+			GetResponse("Inventory/CreateUserSpecificView", "view=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(view)) + "");
 		}
 
 		/// <summary>
@@ -237,7 +246,7 @@ namespace LinnworksAPI
         /// <param name="stockItemId">Stock item unique identifier</param>
         public void DeleteBatchesByStockItemId(Guid stockItemId)
 		{
-			GetResponse("Inventory/DeleteBatchesByStockItemId", "stockItemId=" + stockItemId + "", "POST");
+			GetResponse("Inventory/DeleteBatchesByStockItemId", "stockItemId=" + stockItemId + "");
 		}
 
 		/// <summary>
@@ -246,7 +255,7 @@ namespace LinnworksAPI
         /// <param name="batchInventoryIds">List of batch inventory ids</param>
         public void DeleteBatchInventoryInBulk(IEnumerable<Int32> batchInventoryIds)
 		{
-			GetResponse("Inventory/DeleteBatchInventoryInBulk", "batchInventoryIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(batchInventoryIds)) + "", "POST");
+			GetResponse("Inventory/DeleteBatchInventoryInBulk", "batchInventoryIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(batchInventoryIds)) + "");
 		}
 
 		/// <summary>
@@ -255,7 +264,7 @@ namespace LinnworksAPI
         /// <param name="categoryId">Unique id that identifies the category that you want to delete.</param>
         public void DeleteCategoryById(Guid categoryId)
 		{
-			GetResponse("Inventory/DeleteCategoryById", "categoryId=" + categoryId + "", "POST");
+			GetResponse("Inventory/DeleteCategoryById", "categoryId=" + categoryId + "");
 		}
 
 		/// <summary>
@@ -264,7 +273,7 @@ namespace LinnworksAPI
         /// <param name="countriesIds">Ids of countries to delete</param>
         public void DeleteCountries(IEnumerable<Guid> countriesIds)
 		{
-			GetResponse("Inventory/DeleteCountries", "countriesIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(countriesIds)) + "", "POST");
+			GetResponse("Inventory/DeleteCountries", "countriesIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(countriesIds)) + "");
 		}
 
 		/// <summary>
@@ -273,7 +282,7 @@ namespace LinnworksAPI
         /// <param name="request">List of Ebay Compatibility</param>
         public DeleteEbayCompatibilityListResponse DeleteEbayCompatibilityList(DeleteEbayCompatibilityListRequest request)
 		{
-			var response = GetResponse("Inventory/DeleteEbayCompatibilityList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/DeleteEbayCompatibilityList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<DeleteEbayCompatibilityListResponse>(response);
 		}
 
@@ -283,7 +292,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemImages">Inventory item ids and a list of image urls to be deleted for each item</param>
         public void DeleteImagesFromInventoryItem(Dictionary<Guid,List<String>> inventoryItemImages)
 		{
-			GetResponse("Inventory/DeleteImagesFromInventoryItem", "inventoryItemImages=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemImages)) + "", "POST");
+			GetResponse("Inventory/DeleteImagesFromInventoryItem", "inventoryItemImages=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemImages)) + "");
 		}
 
 		/// <summary>
@@ -292,7 +301,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemChannelSKUIds">stockitem channel sku ids</param>
         public void DeleteInventoryItemChannelSKUs(List<Guid> inventoryItemChannelSKUIds)
 		{
-			GetResponse("Inventory/DeleteInventoryItemChannelSKUs", "inventoryItemChannelSKUIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemChannelSKUIds)) + "", "POST");
+			GetResponse("Inventory/DeleteInventoryItemChannelSKUs", "inventoryItemChannelSKUIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemChannelSKUIds)) + "");
 		}
 
 		/// <summary>
@@ -302,7 +311,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemCompositionIds">stockItem composition ids</param>
         public void DeleteInventoryItemCompositions(Guid stockItemId,List<Guid> inventoryItemCompositionIds)
 		{
-			GetResponse("Inventory/DeleteInventoryItemCompositions", "stockItemId=" + stockItemId + "&inventoryItemCompositionIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemCompositionIds)) + "", "POST");
+			GetResponse("Inventory/DeleteInventoryItemCompositions", "stockItemId=" + stockItemId + "&inventoryItemCompositionIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemCompositionIds)) + "");
 		}
 
 		/// <summary>
@@ -311,7 +320,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemDescriptionIds">list of stockitem Descriptions</param>
         public void DeleteInventoryItemDescriptions(List<Guid> inventoryItemDescriptionIds)
 		{
-			GetResponse("Inventory/DeleteInventoryItemDescriptions", "inventoryItemDescriptionIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemDescriptionIds)) + "", "POST");
+			GetResponse("Inventory/DeleteInventoryItemDescriptions", "inventoryItemDescriptionIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemDescriptionIds)) + "");
 		}
 
 		/// <summary>
@@ -321,7 +330,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemExtendedPropertyIds">list of stockitem Extended Properties</param>
         public void DeleteInventoryItemExtendedProperties(Guid inventoryItemId,List<Guid> inventoryItemExtendedPropertyIds)
 		{
-			GetResponse("Inventory/DeleteInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&inventoryItemExtendedPropertyIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemExtendedPropertyIds)) + "", "POST");
+			GetResponse("Inventory/DeleteInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&inventoryItemExtendedPropertyIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemExtendedPropertyIds)) + "");
 		}
 
 		/// <summary>
@@ -330,7 +339,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemPriceIds">List of stock item prices</param>
         public void DeleteInventoryItemPrices(List<Guid> inventoryItemPriceIds)
 		{
-			GetResponse("Inventory/DeleteInventoryItemPrices", "inventoryItemPriceIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemPriceIds)) + "", "POST");
+			GetResponse("Inventory/DeleteInventoryItemPrices", "inventoryItemPriceIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemPriceIds)) + "");
 		}
 
 		/// <summary>
@@ -339,7 +348,7 @@ namespace LinnworksAPI
         /// <param name="pricingRuleIds">List of stock item pricing rule ids to delete</param>
         public void DeleteInventoryItemPricingRules(List<Int32> pricingRuleIds)
 		{
-			GetResponse("Inventory/DeleteInventoryItemPricingRules", "pricingRuleIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(pricingRuleIds)) + "", "POST");
+			GetResponse("Inventory/DeleteInventoryItemPricingRules", "pricingRuleIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(pricingRuleIds)) + "");
 		}
 
 		/// <summary>
@@ -350,7 +359,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemIds">List of stock item IDs that needs to be deleted</param>
         public void DeleteInventoryItems(DeleteInventoryItemsRequest request,List<Guid> inventoryItemIds)
 		{
-			GetResponse("Inventory/DeleteInventoryItems", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "&inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "", "POST");
+			GetResponse("Inventory/DeleteInventoryItems", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "&inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "");
 		}
 
 		/// <summary>
@@ -359,7 +368,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemTitleIds">list of stockitem Titles</param>
         public void DeleteInventoryItemTitles(List<Guid> inventoryItemTitleIds)
 		{
-			GetResponse("Inventory/DeleteInventoryItemTitles", "inventoryItemTitleIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemTitleIds)) + "", "POST");
+			GetResponse("Inventory/DeleteInventoryItemTitles", "inventoryItemTitleIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemTitleIds)) + "");
 		}
 
 		/// <summary>
@@ -369,7 +378,7 @@ namespace LinnworksAPI
         /// <param name="itemLocations">List of stock item location ids</param>
         public void DeleteItemLocations(Guid inventoryItemId,List<Guid> itemLocations)
 		{
-			GetResponse("Inventory/DeleteItemLocations", "inventoryItemId=" + inventoryItemId + "&itemLocations=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemLocations)) + "", "POST");
+			GetResponse("Inventory/DeleteItemLocations", "inventoryItemId=" + inventoryItemId + "&itemLocations=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemLocations)) + "");
 		}
 
 		/// <summary>
@@ -378,7 +387,7 @@ namespace LinnworksAPI
         /// <param name="request">Object with collection of product identifiers</param>
         public void DeleteProductIdentifiers(DeleteProductIdentifiersRequest request)
 		{
-			GetResponse("Inventory/DeleteProductIdentifiers", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			GetResponse("Inventory/DeleteProductIdentifiers", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -387,7 +396,7 @@ namespace LinnworksAPI
         /// <param name="request">Object with List of scrap category ids</param>
         public void DeleteScrapCategories(DeleteScrapCategoriesRequest request)
 		{
-			GetResponse("Inventory/DeleteScrapCategories", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			GetResponse("Inventory/DeleteScrapCategories", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -397,7 +406,7 @@ namespace LinnworksAPI
         /// <param name="itemSupplierIds">List of StockItemSupplierStat</param>
         public void DeleteStockSupplierStat(Guid stockItemId,List<Guid> itemSupplierIds)
 		{
-			GetResponse("Inventory/DeleteStockSupplierStat", "stockItemId=" + stockItemId + "&itemSupplierIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemSupplierIds)) + "", "POST");
+			GetResponse("Inventory/DeleteStockSupplierStat", "stockItemId=" + stockItemId + "&itemSupplierIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemSupplierIds)) + "");
 		}
 
 		/// <summary>
@@ -406,7 +415,7 @@ namespace LinnworksAPI
         /// </summary>
         public void DeleteSuppliers(List<Guid> suppliersIds)
 		{
-			GetResponse("Inventory/DeleteSuppliers", "suppliersIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(suppliersIds)) + "", "POST");
+			GetResponse("Inventory/DeleteSuppliers", "suppliersIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(suppliersIds)) + "");
 		}
 
 		/// <summary>
@@ -415,7 +424,7 @@ namespace LinnworksAPI
         /// <param name="viewName">User-specific view name</param>
         public void DeleteUserSpecificView(String viewName)
 		{
-			GetResponse("Inventory/DeleteUserSpecificView", "viewName=" + System.Net.WebUtility.UrlEncode(viewName) + "", "POST");
+			GetResponse("Inventory/DeleteUserSpecificView", "viewName=" + System.Net.WebUtility.UrlEncode(viewName) + "");
 		}
 
 		/// <summary>
@@ -426,7 +435,7 @@ namespace LinnworksAPI
         /// <param name="copyImages">Set to True to copy images from source stock item</param>
         public void DuplicateInventoryItem(StockItem inventoryItem,Guid sourceItemId,Boolean copyImages)
 		{
-			GetResponse("Inventory/DuplicateInventoryItem", "inventoryItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItem)) + "&sourceItemId=" + sourceItemId + "&copyImages=" + copyImages + "", "POST");
+			GetResponse("Inventory/DuplicateInventoryItem", "inventoryItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItem)) + "&sourceItemId=" + sourceItemId + "&copyImages=" + copyImages + "");
 		}
 
 		/// <summary>
@@ -434,7 +443,7 @@ namespace LinnworksAPI
         /// </summary>
         public Dictionary<String,List<String>> GetAllExtendedPropertyNames()
 		{
-			var response = GetResponse("Inventory/GetAllExtendedPropertyNames", "", "POST");
+			var response = GetResponse("Inventory/GetAllExtendedPropertyNames", "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,List<String>>>(response);
 		}
 
@@ -444,7 +453,7 @@ namespace LinnworksAPI
         /// <param name="request"></param>
         public GetBatchAuditResponse GetBatchAudit(GetBatchAuditRequest request)
 		{
-			var response = GetResponse("Inventory/GetBatchAudit", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/GetBatchAudit", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetBatchAuditResponse>(response);
 		}
 
@@ -455,17 +464,17 @@ namespace LinnworksAPI
         /// <param name="onlyAvailable">If true, only available batches will be returned</param>
         public List<StockItemBatch> GetBatchesByStockItemId(Guid stockItemId,Boolean onlyAvailable)
 		{
-			var response = GetResponse("Inventory/GetBatchesByStockItemId", "stockItemId=" + stockItemId + "&onlyAvailable=" + onlyAvailable + "", "POST");
+			var response = GetResponse("Inventory/GetBatchesByStockItemId", "stockItemId=" + stockItemId + "&onlyAvailable=" + onlyAvailable + "");
             return JsonFormatter.ConvertFromJson<List<StockItemBatch>>(response);
 		}
 
 		/// <summary>
-        /// Used to delete batch inventory info 
+        /// Retruns batch header and only batch inventory for provided batch 
         /// </summary>
         /// <param name="request"></param>
         public GetBatchInventoryByIdResponse GetBatchInventoryById(GetBatchInventoryByIdRequest request)
 		{
-			var response = GetResponse("Inventory/GetBatchInventoryById", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/GetBatchInventoryById", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetBatchInventoryByIdResponse>(response);
 		}
 
@@ -475,7 +484,7 @@ namespace LinnworksAPI
         /// <returns>List of categories</returns>
         public List<Category> GetCategories()
 		{
-			var response = GetResponse("Inventory/GetCategories", "", "POST");
+			var response = GetResponse("Inventory/GetCategories", "");
             return JsonFormatter.ConvertFromJson<List<Category>>(response);
 		}
 
@@ -484,7 +493,7 @@ namespace LinnworksAPI
         /// </summary>
         public List<AnyConfig> GetChannels()
 		{
-			var response = GetResponse("Inventory/GetChannels", "", "POST");
+			var response = GetResponse("Inventory/GetChannels", "");
             return JsonFormatter.ConvertFromJson<List<AnyConfig>>(response);
 		}
 
@@ -494,7 +503,7 @@ namespace LinnworksAPI
         /// <param name="source">Channel source</param>
         public List<HeaderConfig> GetChannelsBySource(String source)
 		{
-			var response = GetResponse("Inventory/GetChannelsBySource", "source=" + System.Net.WebUtility.UrlEncode(source) + "", "POST");
+			var response = GetResponse("Inventory/GetChannelsBySource", "source=" + System.Net.WebUtility.UrlEncode(source) + "");
             return JsonFormatter.ConvertFromJson<List<HeaderConfig>>(response);
 		}
 
@@ -504,7 +513,7 @@ namespace LinnworksAPI
         /// <returns>List of all countries</returns>
         public IEnumerable<Country> GetCountries()
 		{
-			var response = GetResponse("Inventory/GetCountries", "", "POST");
+			var response = GetResponse("Inventory/GetCountries", "");
             return JsonFormatter.ConvertFromJson<IEnumerable<Country>>(response);
 		}
 
@@ -513,7 +522,7 @@ namespace LinnworksAPI
         /// </summary>
         public Dictionary<String,String> GetCountryCodes()
 		{
-			var response = GetResponse("Inventory/GetCountryCodes", "", "POST");
+			var response = GetResponse("Inventory/GetCountryCodes", "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,String>>(response);
 		}
 
@@ -524,7 +533,7 @@ namespace LinnworksAPI
         /// <returns>List of Ebay Compatibility</returns>
         public List<StockItemEbayCompatibility> GetEbayCompatibilityList(Guid stockItemId)
 		{
-			var response = GetResponse("Inventory/GetEbayCompatibilityList", "stockItemId=" + stockItemId + "", "POST");
+			var response = GetResponse("Inventory/GetEbayCompatibilityList", "stockItemId=" + stockItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemEbayCompatibility>>(response);
 		}
 
@@ -534,7 +543,7 @@ namespace LinnworksAPI
         /// <returns>list of available extended property names</returns>
         public List<String> GetExtendedPropertyNames(String propertyType = "Attribute")
 		{
-			var response = GetResponse("Inventory/GetExtendedPropertyNames", "propertyType=" + System.Net.WebUtility.UrlEncode(propertyType) + "", "POST");
+			var response = GetResponse("Inventory/GetExtendedPropertyNames", "propertyType=" + System.Net.WebUtility.UrlEncode(propertyType) + "");
             return JsonFormatter.ConvertFromJson<List<String>>(response);
 		}
 
@@ -544,7 +553,7 @@ namespace LinnworksAPI
         /// <returns>list of default extended property types</returns>
         public List<String> GetExtendedPropertyTypes()
 		{
-			var response = GetResponse("Inventory/GetExtendedPropertyTypes", "", "POST");
+			var response = GetResponse("Inventory/GetExtendedPropertyTypes", "");
             return JsonFormatter.ConvertFromJson<List<String>>(response);
 		}
 
@@ -555,7 +564,7 @@ namespace LinnworksAPI
         /// <returns>list of inventory item images</returns>
         public GetImagesInBulkResponse GetImagesInBulk(GetImagesInBulkRequest request)
 		{
-			var response = GetResponse("Inventory/GetImagesInBulk", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/GetImagesInBulk", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetImagesInBulkResponse>(response);
 		}
 
@@ -565,7 +574,7 @@ namespace LinnworksAPI
         /// <returns>Dictionary of inventory batch types</returns>
         public Dictionary<String,Byte> GetInventoryBatchTypes()
 		{
-			var response = GetResponse("Inventory/GetInventoryBatchTypes", "", "POST");
+			var response = GetResponse("Inventory/GetInventoryBatchTypes", "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,Byte>>(response);
 		}
 
@@ -576,7 +585,7 @@ namespace LinnworksAPI
         /// <returns>StockItem AuditTrail</returns>
         public List<StockItemAuditTrail> GetInventoryItemAuditTrail(Guid inventoryItemId)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemAuditTrail", "inventoryItemId=" + inventoryItemId + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemAuditTrail", "inventoryItemId=" + inventoryItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemAuditTrail>>(response);
 		}
 
@@ -586,13 +595,13 @@ namespace LinnworksAPI
         /// <param name="Request">Details for the batch to be fetched</param>
         public List<StockItemBatch> GetInventoryItemBatchInformation(GetInventoryItemBatchInformationRequest Request)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemBatchInformation", "Request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(Request)) + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemBatchInformation", "Request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(Request)) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemBatch>>(response);
 		}
 
 		public GetInventoryItemBatchInformationByIdsResponse GetInventoryItemBatchInformationByIds(GetInventoryItemBatchInformationByIdsRequest request)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemBatchInformationByIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemBatchInformationByIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetInventoryItemBatchInformationByIdsResponse>(response);
 		}
 
@@ -602,7 +611,7 @@ namespace LinnworksAPI
         /// <param name="id"></param>
         public StockItemInv GetInventoryItemById(Guid id)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemById", "id=" + id + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemById", "id=" + id + "");
             return JsonFormatter.ConvertFromJson<StockItemInv>(response);
 		}
 
@@ -613,7 +622,7 @@ namespace LinnworksAPI
         /// <returns>List for stock channel skus</returns>
         public List<StockItemChannelSKU> GetInventoryItemChannelSKUs(Guid inventoryItemId)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemChannelSKUs", "inventoryItemId=" + inventoryItemId + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemChannelSKUs", "inventoryItemId=" + inventoryItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemChannelSKU>>(response);
 		}
 
@@ -623,7 +632,7 @@ namespace LinnworksAPI
         /// <param name="channelSKURowId">ChannelSKU record Id</param>
         public List<StockItemChannelSKUWithLocation> GetInventoryItemChannelSKUsWithLocation(Guid channelSKURowId)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemChannelSKUsWithLocation", "channelSKURowId=" + channelSKURowId + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemChannelSKUsWithLocation", "channelSKURowId=" + channelSKURowId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemChannelSKUWithLocation>>(response);
 		}
 
@@ -635,7 +644,7 @@ namespace LinnworksAPI
         /// <returns>List of StockItem Compositions</returns>
         public List<StockItemComposition> GetInventoryItemCompositions(Guid inventoryItemId,Boolean getFullDetail = false)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemCompositions", "inventoryItemId=" + inventoryItemId + "&getFullDetail=" + getFullDetail + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemCompositions", "inventoryItemId=" + inventoryItemId + "&getFullDetail=" + getFullDetail + "");
             return JsonFormatter.ConvertFromJson<List<StockItemComposition>>(response);
 		}
 
@@ -646,7 +655,7 @@ namespace LinnworksAPI
         /// <returns>list of stockitem Descriptions</returns>
         public List<StockItemDescription> GetInventoryItemDescriptions(Guid inventoryItemId)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemDescriptions", "inventoryItemId=" + inventoryItemId + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemDescriptions", "inventoryItemId=" + inventoryItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemDescription>>(response);
 		}
 
@@ -658,7 +667,7 @@ namespace LinnworksAPI
         /// <returns>list of stockitem Extended Properties</returns>
         public List<StockItemExtendedProperty> GetInventoryItemExtendedProperties(Guid inventoryItemId,GetExtendedPropertyFilter propertyParams)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&propertyParams=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(propertyParams)) + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&propertyParams=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(propertyParams)) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemExtendedProperty>>(response);
 		}
 
@@ -669,7 +678,7 @@ namespace LinnworksAPI
         /// <returns>list of inventory item images</returns>
         public List<StockItemImage> GetInventoryItemImages(Guid inventoryItemId)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemImages", "inventoryItemId=" + inventoryItemId + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemImages", "inventoryItemId=" + inventoryItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemImage>>(response);
 		}
 
@@ -680,7 +689,7 @@ namespace LinnworksAPI
         /// <returns>List of stock item locations</returns>
         public List<StockItemLocation> GetInventoryItemLocations(Guid inventoryItemId)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemLocations", "inventoryItemId=" + inventoryItemId + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemLocations", "inventoryItemId=" + inventoryItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemLocation>>(response);
 		}
 
@@ -689,7 +698,7 @@ namespace LinnworksAPI
         /// </summary>
         public Dictionary<String,List<String>> GetInventoryItemPriceChannelSuffixes()
 		{
-			var response = GetResponse("Inventory/GetInventoryItemPriceChannelSuffixes", "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemPriceChannelSuffixes", "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,List<String>>>(response);
 		}
 
@@ -699,7 +708,7 @@ namespace LinnworksAPI
         /// <param name="stockItemPriceId">Price ID of an item</param>
         public List<StockItemPricingRule> GetInventoryItemPriceRulesById(Guid stockItemPriceId)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemPriceRulesById", "stockItemPriceId=" + stockItemPriceId + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemPriceRulesById", "stockItemPriceId=" + stockItemPriceId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemPricingRule>>(response);
 		}
 
@@ -711,7 +720,7 @@ namespace LinnworksAPI
         /// <param name="subSource">Channel subsource</param>
         public List<StockItemPricingRule> GetInventoryItemPriceRulesBySource(Guid stockItemId,String source,String subSource)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemPriceRulesBySource", "stockItemId=" + stockItemId + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemPriceRulesBySource", "stockItemId=" + stockItemId + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemPricingRule>>(response);
 		}
 
@@ -722,7 +731,7 @@ namespace LinnworksAPI
         /// <returns>List of stock item prices</returns>
         public List<StockItemPrice> GetInventoryItemPrices(Guid inventoryItemId)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemPrices", "inventoryItemId=" + inventoryItemId + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemPrices", "inventoryItemId=" + inventoryItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemPrice>>(response);
 		}
 
@@ -731,8 +740,19 @@ namespace LinnworksAPI
         /// </summary>
         public Dictionary<String,List<String>> GetInventoryItemPriceTags()
 		{
-			var response = GetResponse("Inventory/GetInventoryItemPriceTags", "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemPriceTags", "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,List<String>>>(response);
+		}
+
+		/// <summary>
+        /// Use this call to get all StockItem Compositions 
+        /// </summary>
+        /// <param name="request">Object with InventoryItemIds</param>
+        /// <returns>Object with InventoryItemsCompositionByIds</returns>
+        public GetInventoryItemsCompositionByIdsResponse GetInventoryItemsCompositionByIds(GetInventoryItemsCompositionByIdsRequest request)
+		{
+			var response = GetResponse("Inventory/GetInventoryItemsCompositionByIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetInventoryItemsCompositionByIdsResponse>(response);
 		}
 
 		/// <summary>
@@ -742,7 +762,7 @@ namespace LinnworksAPI
         /// <param name="includeArchived">Include archived items</param>
         public Int32 GetInventoryItemsCount(Boolean? includeDeleted,Boolean? includeArchived)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemsCount", "includeDeleted=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(includeDeleted)) + "&includeArchived=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(includeArchived)) + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemsCount", "includeDeleted=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(includeDeleted)) + "&includeArchived=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(includeArchived)) + "");
             return JsonFormatter.ConvertFromJson<Int32>(response);
 		}
 
@@ -753,7 +773,7 @@ namespace LinnworksAPI
         /// <returns>list of stockitem Titles</returns>
         public List<StockItemTitle> GetInventoryItemTitles(Guid inventoryItemId)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemTitles", "inventoryItemId=" + inventoryItemId + "", "POST");
+			var response = GetResponse("Inventory/GetInventoryItemTitles", "inventoryItemId=" + inventoryItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemTitle>>(response);
 		}
 
@@ -763,7 +783,7 @@ namespace LinnworksAPI
         /// <returns>New SKU</returns>
         public String GetNewItemNumber()
 		{
-			var response = GetResponse("Inventory/GetNewItemNumber", "", "POST");
+			var response = GetResponse("Inventory/GetNewItemNumber", "");
             return JsonFormatter.ConvertFromJson<String>(response);
 		}
 
@@ -772,7 +792,7 @@ namespace LinnworksAPI
         /// </summary>
         public List<KeyGuidValue> GetPackageGroups()
 		{
-			var response = GetResponse("Inventory/GetPackageGroups", "", "POST");
+			var response = GetResponse("Inventory/GetPackageGroups", "");
             return JsonFormatter.ConvertFromJson<List<KeyGuidValue>>(response);
 		}
 
@@ -781,7 +801,7 @@ namespace LinnworksAPI
         /// </summary>
         public List<KeyGuidValue> GetPostalServices()
 		{
-			var response = GetResponse("Inventory/GetPostalServices", "", "POST");
+			var response = GetResponse("Inventory/GetPostalServices", "");
             return JsonFormatter.ConvertFromJson<List<KeyGuidValue>>(response);
 		}
 
@@ -790,7 +810,7 @@ namespace LinnworksAPI
         /// </summary>
         public List<InventoryView> GetPreDefinedViews()
 		{
-			var response = GetResponse("Inventory/GetPreDefinedViews", "", "POST");
+			var response = GetResponse("Inventory/GetPreDefinedViews", "");
             return JsonFormatter.ConvertFromJson<List<InventoryView>>(response);
 		}
 
@@ -800,7 +820,7 @@ namespace LinnworksAPI
         /// <param name="request">Object with StockItemId</param>
         public GetProductIdentifiersByStockItemIdResponse GetProductIdentifiersByStockItemId(GetProductIdentifiersByStockItemIdRequest request)
 		{
-			var response = GetResponse("Inventory/GetProductIdentifiersByStockItemId", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/GetProductIdentifiersByStockItemId", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetProductIdentifiersByStockItemIdResponse>(response);
 		}
 
@@ -810,7 +830,7 @@ namespace LinnworksAPI
         /// <returns>Object with  Dictionary of Product Identifier types</returns>
         public GetProductIdentifierTypesRequest GetProductIdentifierTypes()
 		{
-			var response = GetResponse("Inventory/GetProductIdentifierTypes", "", "POST");
+			var response = GetResponse("Inventory/GetProductIdentifierTypes", "");
             return JsonFormatter.ConvertFromJson<GetProductIdentifierTypesRequest>(response);
 		}
 
@@ -819,7 +839,7 @@ namespace LinnworksAPI
         /// </summary>
         public GetScrapCategoriesResponse GetScrapCategories()
 		{
-			var response = GetResponse("Inventory/GetScrapCategories", "", "POST");
+			var response = GetResponse("Inventory/GetScrapCategories", "");
             return JsonFormatter.ConvertFromJson<GetScrapCategoriesResponse>(response);
 		}
 
@@ -828,7 +848,7 @@ namespace LinnworksAPI
         /// </summary>
         public GetScrapHistoryResponse GetScrapHistory(GetScrapHistoryRequest request)
 		{
-			var response = GetResponse("Inventory/GetScrapHistory", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/GetScrapHistory", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetScrapHistoryResponse>(response);
 		}
 
@@ -838,7 +858,7 @@ namespace LinnworksAPI
         /// <param name="request">Contains Guid StockItemId, Guid LocationId, bool OnlyAvailable</param>
         public GetStockItemBatchesByLocationResponse GetStockItemBatchesByLocation(GetStockItemBatchesByLocationRequest request)
 		{
-			var response = GetResponse("Inventory/GetStockItemBatchesByLocation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/GetStockItemBatchesByLocation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetStockItemBatchesByLocationResponse>(response);
 		}
 
@@ -849,7 +869,7 @@ namespace LinnworksAPI
         /// <returns>list of inventory item images</returns>
         public GetStockItemIdsBySKU GetStockItemIdsBySKU(GetStockItemIdsBySKURequest request)
 		{
-			var response = GetResponse("Inventory/GetStockItemIdsBySKU", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/GetStockItemIdsBySKU", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetStockItemIdsBySKU>(response);
 		}
 
@@ -861,7 +881,7 @@ namespace LinnworksAPI
         /// <param name="location">Location id</param>
         public List<StockItemLabel> GetStockItemLabels(List<Tuple<Int32,Int32>> selectedRegions,Guid token,Guid location)
 		{
-			var response = GetResponse("Inventory/GetStockItemLabels", "selectedRegions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(selectedRegions)) + "&token=" + token + "&location=" + location + "", "POST");
+			var response = GetResponse("Inventory/GetStockItemLabels", "selectedRegions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(selectedRegions)) + "&token=" + token + "&location=" + location + "");
             return JsonFormatter.ConvertFromJson<List<StockItemLabel>>(response);
 		}
 
@@ -871,7 +891,7 @@ namespace LinnworksAPI
         /// <returns>List of all stock locations</returns>
         public List<InventoryStockLocation> GetStockLocations()
 		{
-			var response = GetResponse("Inventory/GetStockLocations", "", "POST");
+			var response = GetResponse("Inventory/GetStockLocations", "");
             return JsonFormatter.ConvertFromJson<List<InventoryStockLocation>>(response);
 		}
 
@@ -882,7 +902,7 @@ namespace LinnworksAPI
         /// <returns>List of StockItemSupplierStat</returns>
         public List<StockItemSupplierStat> GetStockSupplierStat(Guid inventoryItemId)
 		{
-			var response = GetResponse("Inventory/GetStockSupplierStat", "inventoryItemId=" + inventoryItemId + "", "POST");
+			var response = GetResponse("Inventory/GetStockSupplierStat", "inventoryItemId=" + inventoryItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemSupplierStat>>(response);
 		}
 
@@ -893,7 +913,7 @@ namespace LinnworksAPI
         /// <returns>Supplier</returns>
         public Supplier GetSupplierDetails(Guid supplierId)
 		{
-			var response = GetResponse("Inventory/GetSupplierDetails", "supplierId=" + supplierId + "", "POST");
+			var response = GetResponse("Inventory/GetSupplierDetails", "supplierId=" + supplierId + "");
             return JsonFormatter.ConvertFromJson<Supplier>(response);
 		}
 
@@ -903,7 +923,7 @@ namespace LinnworksAPI
         /// <returns>List of all Suppliers' names</returns>
         public List<Supplier> GetSuppliers()
 		{
-			var response = GetResponse("Inventory/GetSuppliers", "", "POST");
+			var response = GetResponse("Inventory/GetSuppliers", "");
             return JsonFormatter.ConvertFromJson<List<Supplier>>(response);
 		}
 
@@ -912,7 +932,7 @@ namespace LinnworksAPI
         /// </summary>
         public List<InventoryView> GetUserSpecificViews()
 		{
-			var response = GetResponse("Inventory/GetUserSpecificViews", "", "POST");
+			var response = GetResponse("Inventory/GetUserSpecificViews", "");
             return JsonFormatter.ConvertFromJson<List<InventoryView>>(response);
 		}
 
@@ -922,7 +942,7 @@ namespace LinnworksAPI
         /// <param name="stockItemId">Stock item unique identifier</param>
         public Boolean HasStockItemBatches(Guid stockItemId)
 		{
-			var response = GetResponse("Inventory/HasStockItemBatches", "stockItemId=" + stockItemId + "", "POST");
+			var response = GetResponse("Inventory/HasStockItemBatches", "stockItemId=" + stockItemId + "");
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
@@ -932,7 +952,7 @@ namespace LinnworksAPI
         /// <param name="request">Object with StockItemId</param>
         public HasStockItemStockLevelResponse HasStockItemStockLevel(HasStockItemStockLevelRequest request)
 		{
-			var response = GetResponse("Inventory/HasStockItemStockLevel", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/HasStockItemStockLevel", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<HasStockItemStockLevelResponse>(response);
 		}
 
@@ -942,7 +962,7 @@ namespace LinnworksAPI
         /// <param name="request">List of Ebay Compatibility</param>
         public InsertUpdateEbayCompatibilityListResponse InsertUpdateEbayCompatibilityList(InsertUpdateEbayCompatibilityListRequest request)
 		{
-			var response = GetResponse("Inventory/InsertUpdateEbayCompatibilityList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/InsertUpdateEbayCompatibilityList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<InsertUpdateEbayCompatibilityListResponse>(response);
 		}
 
@@ -954,7 +974,7 @@ namespace LinnworksAPI
         /// <param name="subSource">Subsource (e.g. EBAY1)</param>
         public Boolean IsInventoryItemChannelSKULinked(String channelSKU,String source,String subSource)
 		{
-			var response = GetResponse("Inventory/IsInventoryItemChannelSKULinked", "channelSKU=" + System.Net.WebUtility.UrlEncode(channelSKU) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "", "POST");
+			var response = GetResponse("Inventory/IsInventoryItemChannelSKULinked", "channelSKU=" + System.Net.WebUtility.UrlEncode(channelSKU) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "");
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
@@ -965,7 +985,7 @@ namespace LinnworksAPI
         /// <returns>List of all stock locations</returns>
         public Boolean IsOwnedStockLocation(Guid locationId)
 		{
-			var response = GetResponse("Inventory/IsOwnedStockLocation", "locationId=" + locationId + "", "POST");
+			var response = GetResponse("Inventory/IsOwnedStockLocation", "locationId=" + locationId + "");
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
@@ -974,7 +994,7 @@ namespace LinnworksAPI
         /// </summary>
         public ScrapBatchedItemResponse ScrapBatchedItem(ScrapBatchedItemRequest request)
 		{
-			var response = GetResponse("Inventory/ScrapBatchedItem", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Inventory/ScrapBatchedItem", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<ScrapBatchedItemResponse>(response);
 		}
 
@@ -985,7 +1005,7 @@ namespace LinnworksAPI
         /// <param name="mainImageId">main image id</param>
         public void SetInventoryItemImageAsMain(Guid inventoryItemId,Guid mainImageId)
 		{
-			GetResponse("Inventory/SetInventoryItemImageAsMain", "inventoryItemId=" + inventoryItemId + "&mainImageId=" + mainImageId + "", "POST");
+			GetResponse("Inventory/SetInventoryItemImageAsMain", "inventoryItemId=" + inventoryItemId + "&mainImageId=" + mainImageId + "");
 		}
 
 		/// <summary>
@@ -994,7 +1014,7 @@ namespace LinnworksAPI
         /// <param name="parameters">InventoryParameters object</param>
         public void UnarchiveInventoryItems(InventoryParametersRequest parameters)
 		{
-			GetResponse("Inventory/UnarchiveInventoryItems", "parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "", "POST");
+			GetResponse("Inventory/UnarchiveInventoryItems", "parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "");
 		}
 
 		/// <summary>
@@ -1005,7 +1025,7 @@ namespace LinnworksAPI
         /// <param name="subSource">Subsource</param>
         public void UnlinkChannelListing(String channelRefId,String source,String subSource)
 		{
-			GetResponse("Inventory/UnlinkChannelListing", "channelRefId=" + System.Net.WebUtility.UrlEncode(channelRefId) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "", "POST");
+			GetResponse("Inventory/UnlinkChannelListing", "channelRefId=" + System.Net.WebUtility.UrlEncode(channelRefId) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "");
 		}
 
 		/// <summary>
@@ -1014,7 +1034,7 @@ namespace LinnworksAPI
         /// <param name="request">Stock item id and batch details</param>
         public void UpdateBatchDetails(UpdateBatchDetailsRequest request)
 		{
-			GetResponse("Inventory/UpdateBatchDetails", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			GetResponse("Inventory/UpdateBatchDetails", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -1023,7 +1043,7 @@ namespace LinnworksAPI
         /// <param name="batches">List of batches to update</param>
         public void UpdateBatchesWithInventory(IEnumerable<StockItemBatch> batches)
 		{
-			GetResponse("Inventory/UpdateBatchesWithInventory", "batches=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(batches)) + "", "POST");
+			GetResponse("Inventory/UpdateBatchesWithInventory", "batches=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(batches)) + "");
 		}
 
 		/// <summary>
@@ -1032,7 +1052,7 @@ namespace LinnworksAPI
         /// <param name="category">category to update</param>
         public void UpdateCategory(Category category)
 		{
-			GetResponse("Inventory/UpdateCategory", "category=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(category)) + "", "POST");
+			GetResponse("Inventory/UpdateCategory", "category=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(category)) + "");
 		}
 
 		/// <summary>
@@ -1044,7 +1064,7 @@ namespace LinnworksAPI
         /// <returns>Composite parent stock level</returns>
         public Int32 UpdateCompositeParentStockLevel(Guid stockItemId,Guid locationId,Int32 fieldValue)
 		{
-			var response = GetResponse("Inventory/UpdateCompositeParentStockLevel", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&fieldValue=" + fieldValue + "", "POST");
+			var response = GetResponse("Inventory/UpdateCompositeParentStockLevel", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&fieldValue=" + fieldValue + "");
             return JsonFormatter.ConvertFromJson<Int32>(response);
 		}
 
@@ -1054,7 +1074,7 @@ namespace LinnworksAPI
         /// <param name="countries">Countries to udpate</param>
         public void UpdateCountries(IEnumerable<Country> countries)
 		{
-			GetResponse("Inventory/UpdateCountries", "countries=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(countries)) + "", "POST");
+			GetResponse("Inventory/UpdateCountries", "countries=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(countries)) + "");
 		}
 
 		/// <summary>
@@ -1063,7 +1083,7 @@ namespace LinnworksAPI
         /// <param name="request">Country region information to update</param>
         public void UpdateCountryRegions(UpdateCountryRegionsRequest request)
 		{
-			GetResponse("Inventory/UpdateCountryRegions", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			GetResponse("Inventory/UpdateCountryRegions", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -1072,7 +1092,7 @@ namespace LinnworksAPI
         /// <param name="images">Images to edit</param>
         public void UpdateImages(List<StockItemImageSimple> images)
 		{
-			GetResponse("Inventory/UpdateImages", "images=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(images)) + "", "POST");
+			GetResponse("Inventory/UpdateImages", "images=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(images)) + "");
 		}
 
 		/// <summary>
@@ -1081,7 +1101,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItem">Inventory item object</param>
         public void UpdateInventoryItem(StockItemInv inventoryItem)
 		{
-			GetResponse("Inventory/UpdateInventoryItem", "inventoryItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItem)) + "", "POST");
+			GetResponse("Inventory/UpdateInventoryItem", "inventoryItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItem)) + "");
 		}
 
 		/// <summary>
@@ -1090,7 +1110,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemChannelSKUs">stockitem channel skus</param>
         public void UpdateInventoryItemChannelSKUs(List<StockItemChannelSKU> inventoryItemChannelSKUs)
 		{
-			GetResponse("Inventory/UpdateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemChannelSKUs)) + "", "POST");
+			GetResponse("Inventory/UpdateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemChannelSKUs)) + "");
 		}
 
 		/// <summary>
@@ -1099,7 +1119,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemChannelSKUsWithLocation">Listing information</param>
         public void UpdateInventoryItemChannelSKUsWithLocation(List<StockItemChannelSKUWithLocation> inventoryItemChannelSKUsWithLocation)
 		{
-			GetResponse("Inventory/UpdateInventoryItemChannelSKUsWithLocation", "inventoryItemChannelSKUsWithLocation=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemChannelSKUsWithLocation)) + "", "POST");
+			GetResponse("Inventory/UpdateInventoryItemChannelSKUsWithLocation", "inventoryItemChannelSKUsWithLocation=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemChannelSKUsWithLocation)) + "");
 		}
 
 		/// <summary>
@@ -1108,7 +1128,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemCompositions">stockItem compositions</param>
         public void UpdateInventoryItemCompositions(List<StockItemComposition> inventoryItemCompositions)
 		{
-			GetResponse("Inventory/UpdateInventoryItemCompositions", "inventoryItemCompositions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemCompositions)) + "", "POST");
+			GetResponse("Inventory/UpdateInventoryItemCompositions", "inventoryItemCompositions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemCompositions)) + "");
 		}
 
 		/// <summary>
@@ -1117,7 +1137,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemDescriptions">list of stockitem Descriptions</param>
         public void UpdateInventoryItemDescriptions(List<StockItemDescription> inventoryItemDescriptions)
 		{
-			GetResponse("Inventory/UpdateInventoryItemDescriptions", "inventoryItemDescriptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemDescriptions)) + "", "POST");
+			GetResponse("Inventory/UpdateInventoryItemDescriptions", "inventoryItemDescriptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemDescriptions)) + "");
 		}
 
 		/// <summary>
@@ -1126,12 +1146,12 @@ namespace LinnworksAPI
         /// <param name="inventoryItemExtendedProperties">list of stockitem Extended Properties</param>
         public void UpdateInventoryItemExtendedProperties(List<StockItemExtendedProperty> inventoryItemExtendedProperties)
 		{
-			GetResponse("Inventory/UpdateInventoryItemExtendedProperties", "inventoryItemExtendedProperties=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemExtendedProperties)) + "", "POST");
+			GetResponse("Inventory/UpdateInventoryItemExtendedProperties", "inventoryItemExtendedProperties=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemExtendedProperties)) + "");
 		}
 
 		public Dictionary<String,Object> UpdateInventoryItemField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue)
 		{
-			var response = GetResponse("Inventory/UpdateInventoryItemField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "", "POST");
+			var response = GetResponse("Inventory/UpdateInventoryItemField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,Object>>(response);
 		}
 
@@ -1145,7 +1165,7 @@ namespace LinnworksAPI
         /// <param name="changeSource"></param>
         public Dictionary<Guid,Dictionary<String,Object>> UpdateInventoryItemLevels(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,Guid locationId,String changeSource = null)
 		{
-			var response = GetResponse("Inventory/UpdateInventoryItemLevels", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "&locationId=" + locationId + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "", "POST");
+			var response = GetResponse("Inventory/UpdateInventoryItemLevels", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "&locationId=" + locationId + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "");
             return JsonFormatter.ConvertFromJson<Dictionary<Guid,Dictionary<String,Object>>>(response);
 		}
 
@@ -1159,7 +1179,7 @@ namespace LinnworksAPI
         /// <param name="changeSource"></param>
         public Dictionary<String,Object> UpdateInventoryItemLocationField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,Guid locationId,String changeSource = null)
 		{
-			var response = GetResponse("Inventory/UpdateInventoryItemLocationField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "&locationId=" + locationId + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "", "POST");
+			var response = GetResponse("Inventory/UpdateInventoryItemLocationField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "&locationId=" + locationId + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,Object>>(response);
 		}
 
@@ -1169,7 +1189,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemPrices">List of stock item prices to update</param>
         public void UpdateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices)
 		{
-			GetResponse("Inventory/UpdateInventoryItemPrices", "inventoryItemPrices=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemPrices)) + "", "POST");
+			GetResponse("Inventory/UpdateInventoryItemPrices", "inventoryItemPrices=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemPrices)) + "");
 		}
 
 		/// <summary>
@@ -1178,7 +1198,7 @@ namespace LinnworksAPI
         /// <param name="rules">List of stock item pricing rules to update</param>
         public void UpdateInventoryItemPricingRules(List<StockItemPricingRule> rules)
 		{
-			GetResponse("Inventory/UpdateInventoryItemPricingRules", "rules=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(rules)) + "", "POST");
+			GetResponse("Inventory/UpdateInventoryItemPricingRules", "rules=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(rules)) + "");
 		}
 
 		/// <summary>
@@ -1191,7 +1211,7 @@ namespace LinnworksAPI
         /// <param name="changeSource">changeSource</param>
         public Dictionary<String,Object> UpdateInventoryItemStockField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,Guid locationId,String changeSource = null)
 		{
-			var response = GetResponse("Inventory/UpdateInventoryItemStockField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "&locationId=" + locationId + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "", "POST");
+			var response = GetResponse("Inventory/UpdateInventoryItemStockField", "inventoryItemId=" + inventoryItemId + "&fieldName=" + fieldName.ToString() + "&fieldValue=" + System.Net.WebUtility.UrlEncode(fieldValue) + "&locationId=" + locationId + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,Object>>(response);
 		}
 
@@ -1201,7 +1221,7 @@ namespace LinnworksAPI
         /// <param name="inventoryItemTitles">list of stockitem Titles</param>
         public void UpdateInventoryItemTitles(List<StockItemTitle> inventoryItemTitles)
 		{
-			GetResponse("Inventory/UpdateInventoryItemTitles", "inventoryItemTitles=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemTitles)) + "", "POST");
+			GetResponse("Inventory/UpdateInventoryItemTitles", "inventoryItemTitles=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemTitles)) + "");
 		}
 
 		/// <summary>
@@ -1210,7 +1230,7 @@ namespace LinnworksAPI
         /// <param name="itemLocations">List of stock item locations</param>
         public void UpdateItemLocations(List<StockItemLocation> itemLocations)
 		{
-			GetResponse("Inventory/UpdateItemLocations", "itemLocations=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemLocations)) + "", "POST");
+			GetResponse("Inventory/UpdateItemLocations", "itemLocations=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemLocations)) + "");
 		}
 
 		/// <summary>
@@ -1219,7 +1239,7 @@ namespace LinnworksAPI
         /// <param name="request">Object with collection of product identifiers</param>
         public void UpdateProductIdentifiers(UpdateProductIdentifiersRequest request)
 		{
-			GetResponse("Inventory/UpdateProductIdentifiers", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			GetResponse("Inventory/UpdateProductIdentifiers", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -1228,7 +1248,7 @@ namespace LinnworksAPI
         /// <param name="request">Object with List of scrap categories</param>
         public void UpdateScrapCategories(UpdateScrapCategoriesRequest request)
 		{
-			GetResponse("Inventory/UpdateScrapCategories", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			GetResponse("Inventory/UpdateScrapCategories", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -1237,7 +1257,7 @@ namespace LinnworksAPI
         /// <param name="itemSuppliers">List of StockItemSupplierStat</param>
         public void UpdateStockSupplierStat(List<StockItemSupplierStat> itemSuppliers)
 		{
-			GetResponse("Inventory/UpdateStockSupplierStat", "itemSuppliers=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemSuppliers)) + "", "POST");
+			GetResponse("Inventory/UpdateStockSupplierStat", "itemSuppliers=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(itemSuppliers)) + "");
 		}
 
 		/// <summary>
@@ -1246,7 +1266,7 @@ namespace LinnworksAPI
         /// <param name="supplier">Details of supplier to be updated. pkSupplierId is used to identify the supplier to update.</param>
         public void UpdateSupplier(Supplier supplier)
 		{
-			GetResponse("Inventory/UpdateSupplier", "supplier=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(supplier)) + "", "POST");
+			GetResponse("Inventory/UpdateSupplier", "supplier=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(supplier)) + "");
 		}
 
 		/// <summary>
@@ -1256,7 +1276,7 @@ namespace LinnworksAPI
         /// <param name="view">Updated user-specific view</param>
         public void UpdateUserSpecificView(String viewName,InventoryView view)
 		{
-			GetResponse("Inventory/UpdateUserSpecificView", "viewName=" + System.Net.WebUtility.UrlEncode(viewName) + "&view=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(view)) + "", "POST");
+			GetResponse("Inventory/UpdateUserSpecificView", "viewName=" + System.Net.WebUtility.UrlEncode(viewName) + "&view=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(view)) + "");
 		}
 
 		/// <summary>
@@ -1266,7 +1286,7 @@ namespace LinnworksAPI
         /// <param name="imageIds">List of image Ids</param>
         public List<PictureSource> UploadImagesToInventoryItem(Guid inventoryItemId,List<Guid> imageIds)
 		{
-			var response = GetResponse("Inventory/UploadImagesToInventoryItem", "inventoryItemId=" + inventoryItemId + "&imageIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(imageIds)) + "", "POST");
+			var response = GetResponse("Inventory/UploadImagesToInventoryItem", "inventoryItemId=" + inventoryItemId + "&imageIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(imageIds)) + "");
             return JsonFormatter.ConvertFromJson<List<PictureSource>>(response);
 		} 
     }

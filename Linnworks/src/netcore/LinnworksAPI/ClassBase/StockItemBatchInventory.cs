@@ -29,7 +29,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Pick order 
         /// </summary>
-		public Int16 PrioritySequence;
+		public Int32 PrioritySequence;
 
         /// <summary>
         /// Quantity 

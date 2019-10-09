@@ -18,7 +18,7 @@ namespace LinnworksAPI
         /// <param name="customerDetails">Includes all the customer details</param>
         public void CreateNewCustomer(CustomerAddress customerDetails)
 		{
-			GetResponse("Customer/CreateNewCustomer", "customerDetails=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(customerDetails)) + "", "POST");
+			GetResponse("Customer/CreateNewCustomer", "customerDetails=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(customerDetails)) + "");
 		} 
     }
 }

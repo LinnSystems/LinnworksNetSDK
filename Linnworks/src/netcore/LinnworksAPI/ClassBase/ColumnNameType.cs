@@ -38,5 +38,6 @@ namespace LinnworksAPI
 		ReorderAmount,
 		ReorderDate,
 		AverageConsumption,
+		DefaultSupplier,
 	}
 }

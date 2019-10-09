@@ -25,5 +25,7 @@ namespace LinnworksAPI
 		public List<String> Errors;
 
 		public Int32 NewLevel;
+
+		public String BatchStatus;
 	} 
 }

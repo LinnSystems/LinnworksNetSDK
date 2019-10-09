@@ -8,6 +8,7 @@ namespace LinnworksAPI
 { 
     public interface IWarehouseTransferController
 	{
+		AddItemsToTransferResponse AddItemsToTransfer(AddItemsToTransferRequest request);
 		WarehouseTransferItem AddItemToTransfer(Guid fkTransferId,Guid pkStockItemId);
 		Guid AddTransferBinNote(Guid fkTransferBinId,String note,Guid fkTransferId);
 		Guid AddTransferItemNote(Guid fkTransferId,Guid fkTransferItemId,String note);

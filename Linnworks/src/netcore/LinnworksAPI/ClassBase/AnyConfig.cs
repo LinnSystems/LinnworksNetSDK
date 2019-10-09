@@ -78,6 +78,6 @@ namespace LinnworksAPI
 
 		public String SubSource;
 
-		public List<System_Channel_Setting_Property> HeaderAuditValues;
+		public List<Channel_Setting_Audit> HeaderAuditValues;
 	} 
 }

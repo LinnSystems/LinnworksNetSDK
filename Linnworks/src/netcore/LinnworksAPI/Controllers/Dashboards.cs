@@ -24,7 +24,7 @@ namespace LinnworksAPI
         /// <returns>Custom script execution result</returns>
         public CustomScriptResult ExecuteCustomPagedScript(Int32 scriptId,List<ScriptParameter> parameters,Int32 entriesPerPage,Int32 pageNumber)
 		{
-			var response = GetResponse("Dashboards/ExecuteCustomPagedScript", "scriptId=" + scriptId + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "", "POST");
+			var response = GetResponse("Dashboards/ExecuteCustomPagedScript", "scriptId=" + scriptId + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "");
             return JsonFormatter.ConvertFromJson<CustomScriptResult>(response);
 		}
 
@@ -40,7 +40,7 @@ namespace LinnworksAPI
         /// <returns>Custom script execution result</returns>
         public CustomScriptResult ExecuteCustomPagedScript_Customer(Int32 scriptId,List<ScriptParameter> parameters,Int32 entriesPerPage,Int32 pageNumber)
 		{
-			var response = GetResponse("Dashboards/ExecuteCustomPagedScript_Customer", "scriptId=" + scriptId + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "", "POST");
+			var response = GetResponse("Dashboards/ExecuteCustomPagedScript_Customer", "scriptId=" + scriptId + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "");
             return JsonFormatter.ConvertFromJson<CustomScriptResult>(response);
 		}
 
@@ -53,7 +53,7 @@ namespace LinnworksAPI
         /// <returns>Custom script execution result (CustomScriptResult)</returns>
         public CustomScriptResult ExecuteCustomScriptQuery(String script)
 		{
-			var response = GetResponse("Dashboards/ExecuteCustomScriptQuery", "script=" + System.Net.WebUtility.UrlEncode(script) + "", "POST");
+			var response = GetResponse("Dashboards/ExecuteCustomScriptQuery", "script=" + System.Net.WebUtility.UrlEncode(script) + "");
             return JsonFormatter.ConvertFromJson<CustomScriptResult>(response);
 		}
 
@@ -65,7 +65,7 @@ namespace LinnworksAPI
         /// <returns>Sorted list of StockCategoryLocation</returns>
         public List<StockCategoryLocation> GetInventoryLocationCategoriesData(DateTime? date,Guid locationId)
 		{
-			var response = GetResponse("Dashboards/GetInventoryLocationCategoriesData", "date=" + System.Net.WebUtility.UrlEncode(date.HasValue ? date.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&locationId=" + locationId + "", "POST");
+			var response = GetResponse("Dashboards/GetInventoryLocationCategoriesData", "date=" + System.Net.WebUtility.UrlEncode(date.HasValue ? date.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&locationId=" + locationId + "");
             return JsonFormatter.ConvertFromJson<List<StockCategoryLocation>>(response);
 		}
 
@@ -76,7 +76,7 @@ namespace LinnworksAPI
         /// <returns>Sorted list of StockItemLocations</returns>
         public List<StatsStockItemLocation> GetInventoryLocationData(DateTime? date)
 		{
-			var response = GetResponse("Dashboards/GetInventoryLocationData", "date=" + System.Net.WebUtility.UrlEncode(date.HasValue ? date.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "", "POST");
+			var response = GetResponse("Dashboards/GetInventoryLocationData", "date=" + System.Net.WebUtility.UrlEncode(date.HasValue ? date.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "");
             return JsonFormatter.ConvertFromJson<List<StatsStockItemLocation>>(response);
 		}
 
@@ -91,7 +91,7 @@ namespace LinnworksAPI
         /// <returns>PagedStockCategoryLocationProductResult</returns>
         public PagedStockCategoryLocationProductResult GetInventoryLocationProductsData(DateTime? date,Guid locationId,Guid categoryId,Int32 pageNumber,Int32 entriesPerPage)
 		{
-			var response = GetResponse("Dashboards/GetInventoryLocationProductsData", "date=" + System.Net.WebUtility.UrlEncode(date.HasValue ? date.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&locationId=" + locationId + "&categoryId=" + categoryId + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", "POST");
+			var response = GetResponse("Dashboards/GetInventoryLocationProductsData", "date=" + System.Net.WebUtility.UrlEncode(date.HasValue ? date.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&locationId=" + locationId + "&categoryId=" + categoryId + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
             return JsonFormatter.ConvertFromJson<PagedStockCategoryLocationProductResult>(response);
 		}
 
@@ -103,7 +103,7 @@ namespace LinnworksAPI
         /// <returns>List of LowStockLevel</returns>
         public List<LowStockLevel> GetLowStockLevel(Guid? locationId,Int32? numRows)
 		{
-			var response = GetResponse("Dashboards/GetLowStockLevel", "locationId=" + locationId + "&numRows=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(numRows)) + "", "POST");
+			var response = GetResponse("Dashboards/GetLowStockLevel", "locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&numRows=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(numRows)) + "");
             return JsonFormatter.ConvertFromJson<List<LowStockLevel>>(response);
 		}
 
@@ -115,7 +115,7 @@ namespace LinnworksAPI
         /// <returns>List of PerfomanceDetail</returns>
         public Dictionary<String,List<PerfomanceDetail>> GetPerformanceDetail(Int32 period,Int32 timeScale)
 		{
-			var response = GetResponse("Dashboards/GetPerformanceDetail", "period=" + period + "&timeScale=" + timeScale + "", "POST");
+			var response = GetResponse("Dashboards/GetPerformanceDetail", "period=" + period + "&timeScale=" + timeScale + "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,List<PerfomanceDetail>>>(response);
 		}
 
@@ -126,7 +126,7 @@ namespace LinnworksAPI
         /// <returns>List of PerfomanceData</returns>
         public List<PerfomanceData> GetPerformanceTableData(Int32 period)
 		{
-			var response = GetResponse("Dashboards/GetPerformanceTableData", "period=" + period + "", "POST");
+			var response = GetResponse("Dashboards/GetPerformanceTableData", "period=" + period + "");
             return JsonFormatter.ConvertFromJson<List<PerfomanceData>>(response);
 		}
 
@@ -140,7 +140,7 @@ namespace LinnworksAPI
         /// <returns>List of TopProductData</returns>
         public List<TopProductData> GetTopProducts(TopProductsType type,Int32 period,Int32 numRows,Int32 orderStatus)
 		{
-			var response = GetResponse("Dashboards/GetTopProducts", "type=" + type.ToString() + "&period=" + period + "&numRows=" + numRows + "&orderStatus=" + orderStatus + "", "POST");
+			var response = GetResponse("Dashboards/GetTopProducts", "type=" + type.ToString() + "&period=" + period + "&numRows=" + numRows + "&orderStatus=" + orderStatus + "");
             return JsonFormatter.ConvertFromJson<List<TopProductData>>(response);
 		} 
     }

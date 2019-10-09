@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace LinnworksAPI
 { 
@@ -27,7 +28,7 @@ namespace LinnworksAPI
 		Get_Additional_CostResponse Get_Additional_Cost(Get_Additional_CostRequest request);
 		Get_AdditionalCostTypesResponse Get_AdditionalCostTypes();
 		Get_DeliveredRecords_Response Get_DeliveredRecords(Guid pkPurchaseId);
-		Get_EmailCSVFileResponse Get_EmailCSVFile(Get_EmailCSVFileRequest request);
+		Task<Get_EmailCSVFileResponse> Get_EmailCSVFile(Get_EmailCSVFileRequest request);
 		Get_EmailsSentResponse Get_EmailsSent(Get_EmailsSentRequest request);
 		Get_PaymentStatementResponse Get_Payment_Statement(Get_PaymentStatementRequest request);
 		Get_PurchaseOrderResponse Get_PurchaseOrder(Guid pkPurchaseId);

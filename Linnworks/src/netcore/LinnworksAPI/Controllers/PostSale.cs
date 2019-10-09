@@ -19,7 +19,7 @@ namespace LinnworksAPI
         /// <returns>A validation and submission result (where appropriate) for the requested cancellation</returns>
         public ValidatedCancellation CreateCancellation(CancellationRequest request)
 		{
-			var response = GetResponse("PostSale/CreateCancellation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("PostSale/CreateCancellation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<ValidatedCancellation>(response);
 		} 
     }

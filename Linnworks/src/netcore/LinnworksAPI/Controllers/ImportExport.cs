@@ -19,7 +19,7 @@ namespace LinnworksAPI
         /// <param name="id">Id of the export to delete</param>
         public void DeleteExport(Int32 id)
 		{
-			GetResponse("ImportExport/DeleteExport", "id=" + id + "", "POST");
+			GetResponse("ImportExport/DeleteExport", "id=" + id + "");
 		}
 
 		/// <summary>
@@ -28,7 +28,7 @@ namespace LinnworksAPI
         /// <param name="id">Id of the import to delete</param>
         public void DeleteImport(Int32 id)
 		{
-			GetResponse("ImportExport/DeleteImport", "id=" + id + "", "POST");
+			GetResponse("ImportExport/DeleteImport", "id=" + id + "");
 		}
 
 		/// <summary>
@@ -37,7 +37,7 @@ namespace LinnworksAPI
         /// <param name="fileId">Id of the file to get</param>
         public HttpResponseMessage DownloadImportedFile(Guid fileId)
 		{
-			var response = GetResponse("ImportExport/DownloadImportedFile", "fileId=" + fileId + "", "GET");
+			var response = GetResponse("ImportExport/DownloadImportedFile", "fileId=" + fileId + "");
             return JsonFormatter.ConvertFromJson<HttpResponseMessage>(response);
 		}
 
@@ -49,7 +49,7 @@ namespace LinnworksAPI
         /// <returns>The exportRegister object after enable/disable it, with a possible next schedule date</returns>
         public ExportRegister EnableExport(Int32 exportId,Boolean enable)
 		{
-			var response = GetResponse("ImportExport/EnableExport", "exportId=" + exportId + "&enable=" + enable + "", "POST");
+			var response = GetResponse("ImportExport/EnableExport", "exportId=" + exportId + "&enable=" + enable + "");
             return JsonFormatter.ConvertFromJson<ExportRegister>(response);
 		}
 
@@ -61,7 +61,7 @@ namespace LinnworksAPI
         /// <returns>The importRegister object after enable/disable it, with a possible next schedule date</returns>
         public ImportRegister EnableImport(Int32 importId,Boolean enable)
 		{
-			var response = GetResponse("ImportExport/EnableImport", "importId=" + importId + "&enable=" + enable + "", "POST");
+			var response = GetResponse("ImportExport/EnableImport", "importId=" + importId + "&enable=" + enable + "");
             return JsonFormatter.ConvertFromJson<ImportRegister>(response);
 		}
 
@@ -72,7 +72,7 @@ namespace LinnworksAPI
         /// <returns>Export object</returns>
         public Export GetExport(Int32 id)
 		{
-			var response = GetResponse("ImportExport/GetExport", "id=" + id + "", "POST");
+			var response = GetResponse("ImportExport/GetExport", "id=" + id + "");
             return JsonFormatter.ConvertFromJson<Export>(response);
 		}
 
@@ -82,7 +82,7 @@ namespace LinnworksAPI
         /// <returns>List of ExportRegister objects</returns>
         public GetExportListResponse GetExportList(GetExportListRequest request)
 		{
-			var response = GetResponse("ImportExport/GetExportList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("ImportExport/GetExportList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetExportListResponse>(response);
 		}
 
@@ -93,7 +93,7 @@ namespace LinnworksAPI
         /// <returns>settings</returns>
         public FulfilmentCenterImportExportSettings GetFullfilmentCenterSettings(Guid fkStockLocationId)
 		{
-			var response = GetResponse("ImportExport/GetFullfilmentCenterSettings", "fkStockLocationId=" + fkStockLocationId + "", "POST");
+			var response = GetResponse("ImportExport/GetFullfilmentCenterSettings", "fkStockLocationId=" + fkStockLocationId + "");
             return JsonFormatter.ConvertFromJson<FulfilmentCenterImportExportSettings>(response);
 		}
 
@@ -104,7 +104,7 @@ namespace LinnworksAPI
         /// <returns>Import object</returns>
         public Import GetImport(Int32 id)
 		{
-			var response = GetResponse("ImportExport/GetImport", "id=" + id + "", "POST");
+			var response = GetResponse("ImportExport/GetImport", "id=" + id + "");
             return JsonFormatter.ConvertFromJson<Import>(response);
 		}
 
@@ -114,7 +114,7 @@ namespace LinnworksAPI
         /// <returns>List of ImportRegister objects</returns>
         public GetImportListResponse GetImportList(GetImportListRequest request)
 		{
-			var response = GetResponse("ImportExport/GetImportList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("ImportExport/GetImportList", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetImportListResponse>(response);
 		}
 
@@ -124,7 +124,7 @@ namespace LinnworksAPI
         /// <param name="exportId">Export id to execute</param>
         public void RunNowExport(Int32 exportId)
 		{
-			GetResponse("ImportExport/RunNowExport", "exportId=" + exportId + "", "POST");
+			GetResponse("ImportExport/RunNowExport", "exportId=" + exportId + "");
 		}
 
 		/// <summary>
@@ -133,7 +133,7 @@ namespace LinnworksAPI
         /// <param name="importId">Import id to execute</param>
         public void RunNowImport(Int32 importId)
 		{
-			GetResponse("ImportExport/RunNowImport", "importId=" + importId + "", "POST");
+			GetResponse("ImportExport/RunNowImport", "importId=" + importId + "");
 		} 
     }
 }

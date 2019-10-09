@@ -18,6 +18,7 @@ namespace LinnworksAPI
 		void AdjustEbayTemplatesInstantLMS(IEnumerable<Guid> inventoryItemIds,String subSource,String siteId,AdjustmentOptions adjustmentOptions);
 		void AdjustTemplatesInstant(IEnumerable<Guid> inventoryItemIds,String source,String subSource,AdjustmentOptions adjustmentOptions);
 		void ArchiveInventoryItems(InventoryParametersRequest parameters);
+		void BulkScrapBatchedItems(BulkScrapBatchedItemsRequest request);
 		void CreateBatches(IEnumerable<StockItemBatch> batches);
 		Category CreateCategory(String categoryName);
 		void CreateCountries(IEnumerable<Country> countries);
@@ -82,6 +83,7 @@ namespace LinnworksAPI
 		List<StockItemPricingRule> GetInventoryItemPriceRulesBySource(Guid stockItemId,String source,String subSource);
 		List<StockItemPrice> GetInventoryItemPrices(Guid inventoryItemId);
 		Dictionary<String,List<String>> GetInventoryItemPriceTags();
+		GetInventoryItemsCompositionByIdsResponse GetInventoryItemsCompositionByIds(GetInventoryItemsCompositionByIdsRequest request);
 		Int32 GetInventoryItemsCount(Boolean? includeDeleted,Boolean? includeArchived);
 		List<StockItemTitle> GetInventoryItemTitles(Guid inventoryItemId);
 		String GetNewItemNumber();

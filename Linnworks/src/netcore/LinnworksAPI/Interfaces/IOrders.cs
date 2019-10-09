@@ -48,9 +48,11 @@ namespace LinnworksAPI
 		KeyValuePair<List<OrderSummary>,String> GetOpenOrdersByItemBarcode(String productBarcode,FieldsFilter filters,Guid? locationId);
 		OpenOrder GetOrder(Guid orderId,Guid? fulfilmentLocationId,Boolean loadItems,Boolean loadAdditionalInfo);
 		List<OrderAuditTrail> GetOrderAuditTrail(Guid orderId);
+		GetOrderAuditTrailsByIdsResponse GetOrderAuditTrailsByIds(GetOrderAuditTrailsByIdsRequest request);
 		OrderDetails GetOrderById(Guid pkOrderId);
 		OrderDetails GetOrderDetailsByNumOrderId(Int32 OrderId);
 		List<OrderDetails> GetOrderDetailsByReferenceId(String ReferenceId);
+		GetOrderItemBatchesByOrderIdsResponse GetOrderItemBatchesByOrderIds(GetOrderItemBatchesByOrderIdsRequest request);
 		List<OrderItemBatch> GetOrderItemBatchsByOrderId(OrderItemBatchInfo parameters);
 		OrderItem GetOrderItemComposition(Guid orderId,Guid stockItemId,Guid fulfilmentCenter);
 		List<OrderItem> GetOrderItems(Guid orderId,Guid fulfilmentCenter);

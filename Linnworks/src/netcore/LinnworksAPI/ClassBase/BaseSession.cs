@@ -18,8 +18,6 @@ namespace LinnworksAPI
 
 		public StatusDetails Status;
 
-		public String BsonId;
-
 		public Guid Id;
 
 		public String Email;

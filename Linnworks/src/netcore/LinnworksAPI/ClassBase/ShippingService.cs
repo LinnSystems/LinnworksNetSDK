@@ -25,5 +25,10 @@ namespace LinnworksAPI
         /// Shipping account ID 
         /// </summary>
 		public String accountid;
+
+        /// <summary>
+        /// Courier Friendly Name (e.g. FedEx (US) for ShipEngine) 
+        /// </summary>
+		public String vendorFriendlyName;
 	} 
 }

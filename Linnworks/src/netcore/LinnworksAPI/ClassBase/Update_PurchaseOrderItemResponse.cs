@@ -18,5 +18,11 @@ namespace LinnworksAPI
         /// Recalculated purchase order header 
         /// </summary>
 		public PurchaseOrderHeader PurchaseOrderHeader;
+
+        /// <summary>
+        /// If the item was batched or booked into a WMS location, this is the batch inventory id for the booked in stock. 
+        /// If an item was not delivered or was a non batched item, this will be null. 
+        /// </summary>
+		public Int32? BatchInventoryId;
 	} 
 }

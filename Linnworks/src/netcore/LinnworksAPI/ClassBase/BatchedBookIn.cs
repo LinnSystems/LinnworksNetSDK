@@ -41,7 +41,7 @@ namespace LinnworksAPI
         /// </summary>
 		public String BatchStatus;
 
-		public Int16? PrioritySequence;
+		public Int32? PrioritySequence;
 
         /// <summary>
         /// Batch expiry date 

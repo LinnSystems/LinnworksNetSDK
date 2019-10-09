@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace LinnworksAPI
 {
@@ -13,6 +14,17 @@ namespace LinnworksAPI
         }
 
         /// <summary>
+        /// Add rolling stock take/count. Rolling stock count will create a stock count header for every day (UTC based). Every request will create a session, adds all entries into the stock count
+        /// recounts all totals and discrepancies. WMS location or batched items requires BatchInventoryId to be specified. If you are submitting stock level for item that doesn't have batch inventory you must create it first, get its id and submit in the count
+        /// The method validates all entries, if any errors encountered the whole request will be rejected. 
+        /// </summary>
+        public AddRollingStockTakeResponse AddRollingStockTake(AddRollingStockTakeRequest request)
+		{
+			var response = GetResponse("Stock/AddRollingStockTake", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<AddRollingStockTakeResponse>(response);
+		}
+
+		/// <summary>
         /// Use this call to add a new item to a variation group 
         /// </summary>
         /// <param name="pkVariationItemId">The variation group id</param>
@@ -20,13 +32,13 @@ namespace LinnworksAPI
         /// <returns>The row id for the new item</returns>
         public List<VariationItem> AddVariationItems(Guid pkVariationItemId,List<Guid> pkStockItemIds)
 		{
-			var response = GetResponse("Stock/AddVariationItems", "pkVariationItemId=" + pkVariationItemId + "&pkStockItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(pkStockItemIds)) + "", "POST");
+			var response = GetResponse("Stock/AddVariationItems", "pkVariationItemId=" + pkVariationItemId + "&pkStockItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(pkStockItemIds)) + "");
             return JsonFormatter.ConvertFromJson<List<VariationItem>>(response);
 		}
 
 		public BatchStockLevelDeltaResponse BatchStockLevelDelta(BatchStockLevelDetaRequest request)
 		{
-			var response = GetResponse("Stock/BatchStockLevelDelta", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Stock/BatchStockLevelDelta", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<BatchStockLevelDeltaResponse>(response);
 		}
 
@@ -36,7 +48,7 @@ namespace LinnworksAPI
         /// <param name="stockItem">Batch stock item</param>
         public StockItemBatch BookInStockBatch(BatchedBookIn stockItem)
 		{
-			var response = GetResponse("Stock/BookInStockBatch", "stockItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(stockItem)) + "", "POST");
+			var response = GetResponse("Stock/BookInStockBatch", "stockItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(stockItem)) + "");
             return JsonFormatter.ConvertFromJson<StockItemBatch>(response);
 		}
 
@@ -46,7 +58,7 @@ namespace LinnworksAPI
         /// <param name="stockItem">Book in parameters used to update stock items</param>
         public void BookInStockItem(BookInStockItem stockItem)
 		{
-			GetResponse("Stock/BookInStockItem", "stockItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(stockItem)) + "", "POST");
+			GetResponse("Stock/BookInStockItem", "stockItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(stockItem)) + "");
 		}
 
 		/// <summary>
@@ -56,7 +68,7 @@ namespace LinnworksAPI
         /// <returns>An enum describing Exists / NotExists / AlreadyVariation</returns>
         public VariationParentStatus CheckVariationParentSKUExists(String parentSKU)
 		{
-			var response = GetResponse("Stock/CheckVariationParentSKUExists", "parentSKU=" + System.Net.WebUtility.UrlEncode(parentSKU) + "", "POST");
+			var response = GetResponse("Stock/CheckVariationParentSKUExists", "parentSKU=" + System.Net.WebUtility.UrlEncode(parentSKU) + "");
             return JsonFormatter.ConvertFromJson<VariationParentStatus>(response);
 		}
 
@@ -67,7 +79,7 @@ namespace LinnworksAPI
         /// <returns>Returns the stock item batches with batch IDs</returns>
         public List<StockItemBatch> CreateStockBatches(List<StockItemBatch> batches)
 		{
-			var response = GetResponse("Stock/CreateStockBatches", "batches=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(batches)) + "", "POST");
+			var response = GetResponse("Stock/CreateStockBatches", "batches=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(batches)) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemBatch>>(response);
 		}
 
@@ -77,7 +89,7 @@ namespace LinnworksAPI
         /// <param name="template">Variation parent inforamtion</param>
         public VariationGroup CreateVariationGroup(VariationGroupTemplate template)
 		{
-			var response = GetResponse("Stock/CreateVariationGroup", "template=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(template)) + "", "POST");
+			var response = GetResponse("Stock/CreateVariationGroup", "template=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(template)) + "");
             return JsonFormatter.ConvertFromJson<VariationGroup>(response);
 		}
 
@@ -86,7 +98,7 @@ namespace LinnworksAPI
         /// </summary>
         public void DeleteVariationGroup(Guid pkVariationGroupId)
 		{
-			GetResponse("Stock/DeleteVariationGroup", "pkVariationGroupId=" + pkVariationGroupId + "", "POST");
+			GetResponse("Stock/DeleteVariationGroup", "pkVariationGroupId=" + pkVariationGroupId + "");
 		}
 
 		/// <summary>
@@ -94,7 +106,7 @@ namespace LinnworksAPI
         /// </summary>
         public void DeleteVariationGroups(DeleteVariationGroupsRequest request)
 		{
-			GetResponse("Stock/DeleteVariationGroups", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			GetResponse("Stock/DeleteVariationGroups", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -105,7 +117,7 @@ namespace LinnworksAPI
         /// <returns>The row id for the new item</returns>
         public void DeleteVariationItem(Guid pkVariationItemId,Guid pkStockItemId)
 		{
-			GetResponse("Stock/DeleteVariationItem", "pkVariationItemId=" + pkVariationItemId + "&pkStockItemId=" + pkStockItemId + "", "POST");
+			GetResponse("Stock/DeleteVariationItem", "pkVariationItemId=" + pkVariationItemId + "&pkStockItemId=" + pkStockItemId + "");
 		}
 
 		/// <summary>
@@ -114,7 +126,7 @@ namespace LinnworksAPI
         /// <param name="request">Contains variation group id 'VariationItemId' and id list of child items 'StockItemIds'</param>
         public void DeleteVariationItems(DeleteVariationItemsRequest request)
 		{
-			GetResponse("Stock/DeleteVariationItems", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			GetResponse("Stock/DeleteVariationItems", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -127,7 +139,7 @@ namespace LinnworksAPI
         /// <returns>PagedStockItemChangeHistoryResult</returns>
         public GenericPagedResult<StockItemChangeHistory> GetItemChangesHistory(Guid stockItemId,Guid locationId,Int32 entriesPerPage,Int32 pageNumber)
 		{
-			var response = GetResponse("Stock/GetItemChangesHistory", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "", "POST");
+			var response = GetResponse("Stock/GetItemChangesHistory", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<StockItemChangeHistory>>(response);
 		}
 
@@ -137,10 +149,10 @@ namespace LinnworksAPI
         /// <param name="stockItemId">Used to specify stock item id</param>
         /// <param name="locationId">Used to specify location id. If null then combined</param>
         /// <returns>TempFile</returns>
-        public TempFile GetItemChangesHistoryCSV(Guid stockItemId,Guid locationId)
+        public Task<TempFile> GetItemChangesHistoryCSV(Guid stockItemId,Guid locationId)
 		{
-			var response = GetResponse("Stock/GetItemChangesHistoryCSV", "stockItemId=" + stockItemId + "&locationId=" + locationId + "", "POST");
-            return JsonFormatter.ConvertFromJson<TempFile>(response);
+			var response = GetResponse("Stock/GetItemChangesHistoryCSV", "stockItemId=" + stockItemId + "&locationId=" + locationId + "");
+            return JsonFormatter.ConvertFromJson<Task<TempFile>>(response);
 		}
 
 		/// <summary>
@@ -150,7 +162,7 @@ namespace LinnworksAPI
         /// <returns>List of StockItemSoldStat</returns>
         public List<StockItemSoldStat> GetSoldStat(Guid stockItemId)
 		{
-			var response = GetResponse("Stock/GetSoldStat", "stockItemId=" + stockItemId + "", "POST");
+			var response = GetResponse("Stock/GetSoldStat", "stockItemId=" + stockItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemSoldStat>>(response);
 		}
 
@@ -164,7 +176,7 @@ namespace LinnworksAPI
         /// <returns>List of StockConsumption</returns>
         public List<StockConsumption> GetStockConsumption(Guid stockItemId,Guid? locationId,DateTime startDate,DateTime endDate)
 		{
-			var response = GetResponse("Stock/GetStockConsumption", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&startDate=" + System.Net.WebUtility.UrlEncode(startDate.ToString("yyyy-MM-dd HH:mm:ss")) + "&endDate=" + System.Net.WebUtility.UrlEncode(endDate.ToString("yyyy-MM-dd HH:mm:ss")) + "", "POST");
+			var response = GetResponse("Stock/GetStockConsumption", "stockItemId=" + stockItemId + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&startDate=" + System.Net.WebUtility.UrlEncode(startDate.ToString("yyyy-MM-dd HH:mm:ss")) + "&endDate=" + System.Net.WebUtility.UrlEncode(endDate.ToString("yyyy-MM-dd HH:mm:ss")) + "");
             return JsonFormatter.ConvertFromJson<List<StockConsumption>>(response);
 		}
 
@@ -175,7 +187,7 @@ namespace LinnworksAPI
         /// <returns>List of StockItemDuePO</returns>
         public List<StockItemDuePO> GetStockDuePO(Guid stockItemId)
 		{
-			var response = GetResponse("Stock/GetStockDuePO", "stockItemId=" + stockItemId + "", "POST");
+			var response = GetResponse("Stock/GetStockDuePO", "stockItemId=" + stockItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemDuePO>>(response);
 		}
 
@@ -186,7 +198,7 @@ namespace LinnworksAPI
         /// <returns>List of StockItemReturn</returns>
         public List<StockItemReturn> GetStockItemReturnStat(Guid stockItemId)
 		{
-			var response = GetResponse("Stock/GetStockItemReturnStat", "stockItemId=" + stockItemId + "", "POST");
+			var response = GetResponse("Stock/GetStockItemReturnStat", "stockItemId=" + stockItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemReturn>>(response);
 		}
 
@@ -196,7 +208,7 @@ namespace LinnworksAPI
         /// <returns>Stock items list</returns>
         public GenericPagedResult<StockItem> GetStockItems(String keyWord,Guid? locationId,Int32 entriesPerPage,Int32 pageNumber,Boolean excludeComposites = false,Boolean excludeVariations = false,Boolean excludeBatches = false)
 		{
-			var response = GetResponse("Stock/GetStockItems", "keyWord=" + System.Net.WebUtility.UrlEncode(keyWord) + "&locationId=" + locationId + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "&excludeVariations=" + excludeVariations + "&excludeBatches=" + excludeBatches + "", "POST");
+			var response = GetResponse("Stock/GetStockItems", "keyWord=" + System.Net.WebUtility.UrlEncode(keyWord) + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "&excludeVariations=" + excludeVariations + "&excludeBatches=" + excludeBatches + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<StockItem>>(response);
 		}
 
@@ -207,7 +219,7 @@ namespace LinnworksAPI
         /// <returns>A list of Stock Items</returns>
         public List<StockItem> GetStockItemsByKey(Search_Stock_ByKey stockIdentifier)
 		{
-			var response = GetResponse("Stock/GetStockItemsByKey", "stockIdentifier=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(stockIdentifier)) + "", "POST");
+			var response = GetResponse("Stock/GetStockItemsByKey", "stockIdentifier=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(stockIdentifier)) + "");
             return JsonFormatter.ConvertFromJson<List<StockItem>>(response);
 		}
 
@@ -218,7 +230,7 @@ namespace LinnworksAPI
         /// <returns>List of StockItemScrap</returns>
         public List<StockItemScrap> GetStockItemScrapStat(Guid stockItemId)
 		{
-			var response = GetResponse("Stock/GetStockItemScrapStat", "stockItemId=" + stockItemId + "", "POST");
+			var response = GetResponse("Stock/GetStockItemScrapStat", "stockItemId=" + stockItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemScrap>>(response);
 		}
 
@@ -234,7 +246,7 @@ namespace LinnworksAPI
         /// <param name="searchTypes">The parameters that you would like to search by</param>
         public List<StockItemFull> GetStockItemsFull(String keyword,Boolean loadCompositeParents,Boolean loadVariationParents,Int32 entriesPerPage,Int32 pageNumber,List<StockInformationDataRequirement> dataRequirements,List<StockInformationSearchType> searchTypes)
 		{
-			var response = GetResponse("Stock/GetStockItemsFull", "keyword=" + System.Net.WebUtility.UrlEncode(keyword) + "&loadCompositeParents=" + loadCompositeParents + "&loadVariationParents=" + loadVariationParents + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&dataRequirements=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(dataRequirements)) + "&searchTypes=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(searchTypes)) + "", "POST");
+			var response = GetResponse("Stock/GetStockItemsFull", "keyword=" + System.Net.WebUtility.UrlEncode(keyword) + "&loadCompositeParents=" + loadCompositeParents + "&loadVariationParents=" + loadVariationParents + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&dataRequirements=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(dataRequirements)) + "&searchTypes=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(searchTypes)) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemFull>>(response);
 		}
 
@@ -245,7 +257,7 @@ namespace LinnworksAPI
         /// <returns>Object with StockItemsFullExtendedByIds</returns>
         public GetStockItemsFullByIdsResponse GetStockItemsFullByIds(GetStockItemsFullByIdsRequest request)
 		{
-			var response = GetResponse("Stock/GetStockItemsFullByIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Stock/GetStockItemsFullByIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetStockItemsFullByIdsResponse>(response);
 		}
 
@@ -256,7 +268,7 @@ namespace LinnworksAPI
         /// <returns>List of StockItemLevel</returns>
         public List<StockItemLevel> GetStockLevel(Guid stockItemId)
 		{
-			var response = GetResponse("Stock/GetStockLevel", "stockItemId=" + stockItemId + "", "POST");
+			var response = GetResponse("Stock/GetStockLevel", "stockItemId=" + stockItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemLevel>>(response);
 		}
 
@@ -267,7 +279,7 @@ namespace LinnworksAPI
         /// <returns>List of StockItemLevel</returns>
         public List<GetStockLevel_BatchResponse> GetStockLevel_Batch(GetStockLevel_BatchRequest request)
 		{
-			var response = GetResponse("Stock/GetStockLevel_Batch", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Stock/GetStockLevel_Batch", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<List<GetStockLevel_BatchResponse>>(response);
 		}
 
@@ -278,7 +290,7 @@ namespace LinnworksAPI
         /// <returns>StockItemLevel</returns>
         public GetStockLevelByLocationResponse GetStockLevelByLocation(GetStockLevelByLocationRequest request)
 		{
-			var response = GetResponse("Stock/GetStockLevelByLocation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "POST");
+			var response = GetResponse("Stock/GetStockLevelByLocation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetStockLevelByLocationResponse>(response);
 		}
 
@@ -289,7 +301,7 @@ namespace LinnworksAPI
         /// <returns>List of StockItemSold</returns>
         public List<StockItemSold> GetStockSold(Guid stockItemId)
 		{
-			var response = GetResponse("Stock/GetStockSold", "stockItemId=" + stockItemId + "", "POST");
+			var response = GetResponse("Stock/GetStockSold", "stockItemId=" + stockItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemSold>>(response);
 		}
 
@@ -300,7 +312,7 @@ namespace LinnworksAPI
         /// <returns>A variation group object</returns>
         public VariationGroup GetVariationGroupByName(String variationName)
 		{
-			var response = GetResponse("Stock/GetVariationGroupByName", "variationName=" + System.Net.WebUtility.UrlEncode(variationName) + "", "POST");
+			var response = GetResponse("Stock/GetVariationGroupByName", "variationName=" + System.Net.WebUtility.UrlEncode(variationName) + "");
             return JsonFormatter.ConvertFromJson<VariationGroup>(response);
 		}
 
@@ -312,7 +324,7 @@ namespace LinnworksAPI
         /// <returns>A variation group object</returns>
         public VariationGroup GetVariationGroupByParentId(Guid pkStockItemId)
 		{
-			var response = GetResponse("Stock/GetVariationGroupByParentId", "pkStockItemId=" + pkStockItemId + "", "POST");
+			var response = GetResponse("Stock/GetVariationGroupByParentId", "pkStockItemId=" + pkStockItemId + "");
             return JsonFormatter.ConvertFromJson<VariationGroup>(response);
 		}
 
@@ -322,7 +334,7 @@ namespace LinnworksAPI
         /// <returns>A list of search types</returns>
         public List<GenericEnumDescriptor> GetVariationGroupSearchTypes()
 		{
-			var response = GetResponse("Stock/GetVariationGroupSearchTypes", "", "POST");
+			var response = GetResponse("Stock/GetVariationGroupSearchTypes", "");
             return JsonFormatter.ConvertFromJson<List<GenericEnumDescriptor>>(response);
 		}
 
@@ -333,7 +345,7 @@ namespace LinnworksAPI
         /// <returns>A list of items</returns>
         public List<VariationItem> GetVariationItems(Guid pkVariationItemId)
 		{
-			var response = GetResponse("Stock/GetVariationItems", "pkVariationItemId=" + pkVariationItemId + "", "POST");
+			var response = GetResponse("Stock/GetVariationItems", "pkVariationItemId=" + pkVariationItemId + "");
             return JsonFormatter.ConvertFromJson<List<VariationItem>>(response);
 		}
 
@@ -344,7 +356,7 @@ namespace LinnworksAPI
         /// <param name="variationName">The name of the variation</param>
         public void RenameVariationGroup(Guid pkVariationItemId,String variationName)
 		{
-			GetResponse("Stock/RenameVariationGroup", "pkVariationItemId=" + pkVariationItemId + "&variationName=" + System.Net.WebUtility.UrlEncode(variationName) + "", "POST");
+			GetResponse("Stock/RenameVariationGroup", "pkVariationItemId=" + pkVariationItemId + "&variationName=" + System.Net.WebUtility.UrlEncode(variationName) + "");
 		}
 
 		/// <summary>
@@ -357,7 +369,7 @@ namespace LinnworksAPI
         /// <returns>A paged list of search results</returns>
         public GenericPagedResult<VariationGroup> SearchVariationGroups(VariationSearchType searchType,String searchText,Int32 pageNumber,Int32 entriesPerPage)
 		{
-			var response = GetResponse("Stock/SearchVariationGroups", "searchType=" + searchType.ToString() + "&searchText=" + System.Net.WebUtility.UrlEncode(searchText) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "", "POST");
+			var response = GetResponse("Stock/SearchVariationGroups", "searchType=" + searchType.ToString() + "&searchText=" + System.Net.WebUtility.UrlEncode(searchText) + "&pageNumber=" + pageNumber + "&entriesPerPage=" + entriesPerPage + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<VariationGroup>>(response);
 		}
 
@@ -369,7 +381,7 @@ namespace LinnworksAPI
         /// <returns>Returns StockItemLevel object</returns>
         public List<StockItemLevel> SetStockLevel(List<StockLevelUpdate> stockLevels,String changeSource = null)
 		{
-			var response = GetResponse("Stock/SetStockLevel", "stockLevels=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(stockLevels)) + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "", "POST");
+			var response = GetResponse("Stock/SetStockLevel", "stockLevels=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(stockLevels)) + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemLevel>>(response);
 		}
 
@@ -380,7 +392,7 @@ namespace LinnworksAPI
         /// <returns>True if the SKU exists or False if it does not.</returns>
         public Boolean SKUExists(String SKU)
 		{
-			var response = GetResponse("Stock/SKUExists", "SKU=" + System.Net.WebUtility.UrlEncode(SKU) + "", "POST");
+			var response = GetResponse("Stock/SKUExists", "SKU=" + System.Net.WebUtility.UrlEncode(SKU) + "");
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
@@ -390,7 +402,7 @@ namespace LinnworksAPI
         /// <param name="update">Contains the StockItemId along with a list of parameters</param>
         public void Update_StockItemPartial(PartialUpdateParameter update)
 		{
-			GetResponse("Stock/Update_StockItemPartial", "update=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(update)) + "", "POST");
+			GetResponse("Stock/Update_StockItemPartial", "update=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(update)) + "");
 		}
 
 		/// <summary>
@@ -401,7 +413,7 @@ namespace LinnworksAPI
         /// <returns>Returns StockItemLevel object</returns>
         public List<StockItemLevel> UpdateStockLevelsBySKU(List<StockLevelUpdate> stockLevels,String changeSource = null)
 		{
-			var response = GetResponse("Stock/UpdateStockLevelsBySKU", "stockLevels=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(stockLevels)) + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "", "POST");
+			var response = GetResponse("Stock/UpdateStockLevelsBySKU", "stockLevels=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(stockLevels)) + "&changeSource=" + System.Net.WebUtility.UrlEncode(changeSource) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemLevel>>(response);
 		}
 
@@ -413,7 +425,7 @@ namespace LinnworksAPI
         /// <param name="minimumLevel">minimumLevel</param>
         public void UpdateStockMinimumLevel(Guid stockItemId,Guid locationId,Int32 minimumLevel)
 		{
-			GetResponse("Stock/UpdateStockMinimumLevel", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&minimumLevel=" + minimumLevel + "", "POST");
+			GetResponse("Stock/UpdateStockMinimumLevel", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&minimumLevel=" + minimumLevel + "");
 		} 
     }
 }
