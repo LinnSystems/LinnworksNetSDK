@@ -188,7 +188,7 @@ namespace TemplateDriver.Controllers
         }
 
         [HttpPost()]
-        [ActionName("ConfigDelete")]
+        [ActionName("UserAvailableServices")]
         public Models.UserAvailableServicesResponse UserAvailableServices(Models.UserAvailableServicesRequest request)
         {
             Classes.AuthorizationConfig auth = Classes.AuthorizationConfig.Load(request.AuthorizationToken);
