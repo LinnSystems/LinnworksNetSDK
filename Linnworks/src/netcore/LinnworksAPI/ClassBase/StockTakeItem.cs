@@ -12,6 +12,16 @@ namespace LinnworksAPI
 		public String BinRack;
 
         /// <summary>
+        /// (optional) Pickwave items associated with the batch. This data will be used for concurrency check and validation of data. 
+        /// Super important stuff when you are submitting batch inventory stock count in WMS location. 
+        /// Order items will automatically be allocated to a specific batch when the order is placed/printed/added to pickwave. This will normally block stock count, 
+        /// however it is possible to get the state of pickwave items, and if all items are picked from the location the user can still count them. When stock count is submitted
+        /// we need to also submit the state of the pickwave at the point of count, so we can compare state was and the state is, discount any stock from the count that was processed/shipped	
+        /// If this parameter is not supplied and the batch is allocated to orders, the stock count for this item will be blocked and will not be submitted 
+        /// </summary>
+		public List<BatchPickingWaveStockItems> PickingWaveItems;
+
+        /// <summary>
         /// Stock Item Id 
         /// </summary>
 		public Guid StockItemId;

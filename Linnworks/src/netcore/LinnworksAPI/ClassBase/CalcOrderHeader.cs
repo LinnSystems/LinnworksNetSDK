@@ -37,7 +37,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Total Item weight in the order 
         /// </summary>
-		public Double ItemWeight;
+		public Decimal ItemWeight;
 
         /// <summary>
         /// Packaging Group Id 
@@ -57,12 +57,12 @@ namespace LinnworksAPI
         /// <summary>
         /// Packaging weight 
         /// </summary>
-		public Double PackagingWeight;
+		public Decimal PackagingWeight;
 
         /// <summary>
         /// Total weight, items + packaging weight 
         /// </summary>
-		public Double TotalWeight;
+		public Decimal TotalWeight;
 
         /// <summary>
         /// Total width of the order packaging. If null the recalculation was not performed yet. See documentation about how the dimensions of the order calculated. 
@@ -125,10 +125,5 @@ namespace LinnworksAPI
         /// Dimension Calculation method 
         /// </summary>
 		public CalcMethod DimMethod;
-
-        /// <summary>
-        /// Object to data table mapping 
-        /// </summary>
-		public SqlDataRecord DataRecordMetaData;
 	} 
 }

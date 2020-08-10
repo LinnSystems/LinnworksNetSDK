@@ -16,5 +16,6 @@ namespace LinnworksAPI
 		PASSWORD,
 		LIST,
 		URL,
+		BUTTON,
 	}
 }

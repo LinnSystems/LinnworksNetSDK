@@ -8,9 +8,11 @@ namespace LinnworksAPI
 	{
 		public PostSaleStatusType Status;
 
-		public Boolean NeedsConfirmation;
+		public PostSaleSubStatus SubStatus;
 
-		public List<ChannelExistingCancellation> ChannelExistingCancellations;
+		public ISet<ChannelExistingCancellation> ChannelExistingCancellations;
+
+		public Boolean NeedsConfirmation;
 
 		public String RefundReference;
 

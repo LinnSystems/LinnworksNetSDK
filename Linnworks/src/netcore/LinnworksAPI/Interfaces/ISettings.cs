@@ -9,6 +9,7 @@ namespace LinnworksAPI
     public interface ISettingsController
 	{
 		void DeleteCurrencyConversionRates(List<String> currencies);
+		GetAvailableTimeZonesResponse GetAvailableTimeZones();
 		List<CurrencyConversionRate> GetCurrencyConversionRates(GetConversionRatesRequest requestParams);
 		GetLatestCurrencyRateResponse GetLatestCurrencyRate(GetLatestCurrencyRateRequest request);
 		Measures GetMeasures();

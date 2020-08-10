@@ -25,5 +25,10 @@ namespace LinnworksAPI
 		public String UserName;
 
 		public DateTime CreatedDate;
+
+        /// <summary>
+        /// Stock location Id, nullable as historically this filed has not been set and therefore some entries in the database may not have location against the scrap item. 
+        /// </summary>
+		public Guid? StockLocationId;
 	} 
 }

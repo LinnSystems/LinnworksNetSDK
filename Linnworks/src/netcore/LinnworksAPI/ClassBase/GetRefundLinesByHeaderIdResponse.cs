@@ -14,7 +14,7 @@ namespace LinnworksAPI
         /// <summary>
         /// A collection of all refunds associated with the loaded header 
         /// </summary>
-		public List<VerifiedRefund> RefundLines;
+		public ISet<VerifiedRefund> RefundLines;
 
         /// <summary>
         /// Channel-specific information about refund requirements, e.g. accepted refund reasons 

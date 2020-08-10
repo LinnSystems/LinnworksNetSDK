@@ -27,5 +27,7 @@ namespace LinnworksAPI
 		public String UserName;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

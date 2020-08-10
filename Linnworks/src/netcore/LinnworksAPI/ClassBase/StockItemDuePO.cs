@@ -47,5 +47,7 @@ namespace LinnworksAPI
 		public Double UnitCost;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

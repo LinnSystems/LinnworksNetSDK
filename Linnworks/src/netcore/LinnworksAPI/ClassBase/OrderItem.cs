@@ -199,6 +199,21 @@ namespace LinnworksAPI
         /// <summary>
         /// If batch number scan required 
         /// </summary>
+		public Double ShippingCost;
+
+        /// <summary>
+        /// ShippingCost 
+        /// </summary>
+		public Int32 PartShippedQty;
+
+        /// <summary>
+        /// PartShippedQty 
+        /// </summary>
+		public String ItemName;
+
+        /// <summary>
+        /// ItemName 
+        /// </summary>
 		public Boolean BatchNumberScanRequired;
 
         /// <summary>
@@ -233,6 +248,10 @@ namespace LinnworksAPI
 		public Boolean CanPurchaseOrderFulfil;
 
 		public Boolean IsUnlinked;
+
+		public Int32 StockItemIntId;
+
+		public StockItemBoxConfiguration[] Boxes;
 
 		public Guid RowId;
 

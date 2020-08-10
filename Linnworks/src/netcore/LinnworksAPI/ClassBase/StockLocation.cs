@@ -69,5 +69,7 @@ namespace LinnworksAPI
 		public String LocationName;
 
 		public Boolean IsFulfillmentCenter;
+
+		public Int32 StockLocationIntId;
 	} 
 }

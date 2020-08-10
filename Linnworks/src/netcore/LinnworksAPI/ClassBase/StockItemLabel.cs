@@ -33,6 +33,10 @@ namespace LinnworksAPI
 
 		public Int32 BatchInventoryId;
 
+		public Guid LocationId;
+
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

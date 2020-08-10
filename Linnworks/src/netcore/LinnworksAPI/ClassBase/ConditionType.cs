@@ -26,5 +26,7 @@ namespace LinnworksAPI
 		OlderThan,
 		Next,
 		Is,
+		InTheFeed,
+		NotInTheFeed,
 	}
 }

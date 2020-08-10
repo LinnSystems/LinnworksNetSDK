@@ -21,6 +21,6 @@ namespace LinnworksAPI
 
 		public List<String> Errors;
 
-		public List<VerifiedRefund> RefundLines;
+		public ISet<VerifiedRefund> RefundLines;
 	} 
 }

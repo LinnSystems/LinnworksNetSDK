@@ -13,11 +13,13 @@ namespace LinnworksAPI
 
 		public Guid RowId;
 
+		public Int32? BoxId;
+
 		public Int32 Quantity;
 
 		public String TrackingNumber;
 
-		public Double Weight;
+		public Decimal Weight;
 
 		public String SKU;
 

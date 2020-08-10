@@ -6,6 +6,8 @@ namespace LinnworksAPI
 { 
     public class CancellationRequest
 	{
+		public Boolean IsRetry;
+
 		public Boolean IsChannelCancellation;
 
 		public Boolean IsChannelCancellationConfirmed;

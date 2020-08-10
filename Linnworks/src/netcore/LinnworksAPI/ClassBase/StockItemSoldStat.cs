@@ -37,5 +37,7 @@ namespace LinnworksAPI
 		public List<StockItemSoldStatDetail> Detail;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

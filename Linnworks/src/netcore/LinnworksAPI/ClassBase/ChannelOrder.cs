@@ -163,6 +163,11 @@ namespace LinnworksAPI
 		public Double Discount;
 
         /// <summary>
+        /// The tax number of the buyer 
+        /// </summary>
+		public String BuyerTaxNumber;
+
+        /// <summary>
         /// This represents how the discount will be split between items and postage. For an expsanation of each opiton, see the enum documentation 
         /// </summary>
 		public DiscountType DiscountType;

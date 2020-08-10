@@ -43,5 +43,7 @@ namespace LinnworksAPI
 		public Double DimDepth;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

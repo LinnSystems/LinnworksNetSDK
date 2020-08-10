@@ -82,5 +82,7 @@ namespace LinnworksAPI
 		public Boolean IsMultiLocation;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

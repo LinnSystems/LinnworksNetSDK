@@ -15,5 +15,10 @@ namespace LinnworksAPI
         /// A list of row ids to acknowledge errors for 
         /// </summary>
 		public List<Int32> RMARowIds;
+
+        /// <summary>
+        /// Ignores the RefundRowIds list and acknowledges all errors for the given rma header id 
+        /// </summary>
+		public Boolean AcknowledgeAllErrors;
 	} 
 }

@@ -79,6 +79,18 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to create LMS Update for dispatch time only (Mr Auto) 
+        /// </summary>
+        /// <param name="inventoryItemIds">Inventory item ids</param>
+        /// <param name="subSource">Channel Name</param>
+        /// <param name="siteId">Ebay Site to adjust N.B this is not currently used</param>
+        /// <param name="adjustmentOptions">Fields which should be adjusted</param>
+        public void AdjustEbayTemplatesDispatchLMS(IEnumerable<Guid> inventoryItemIds,String subSource,String siteId,AdjustmentOptions adjustmentOptions)
+		{
+			GetResponse("Inventory/AdjustEbayTemplatesDispatchLMS", "inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&siteId=" + System.Net.WebUtility.UrlEncode(siteId) + "&adjustmentOptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(adjustmentOptions)) + "");
+		}
+
+		/// <summary>
         /// Use this call to create LMS Update (Only works for fixed price templates) 
         /// </summary>
         /// <param name="inventoryItemIds">Inventory item ids</param>
@@ -109,6 +121,17 @@ namespace LinnworksAPI
         public void ArchiveInventoryItems(InventoryParametersRequest parameters)
 		{
 			GetResponse("Inventory/ArchiveInventoryItems", "parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "");
+		}
+
+		/// <summary>
+        /// Use this call to get stock item channel skus for a list of inventory items 
+        /// </summary>
+        /// <param name="inventoryItemIds">List of Stock item Id's'</param>
+        /// <returns>List for stock channel skus</returns>
+        public IEnumerable<StockItemChannelSkuResponse> BatchGetInventoryItemChannelSKUs(List<Guid> inventoryItemIds)
+		{
+			var response = GetResponse("Inventory/BatchGetInventoryItemChannelSKUs", "inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "");
+            return JsonFormatter.ConvertFromJson<IEnumerable<StockItemChannelSkuResponse>>(response);
 		}
 
 		/// <summary>
@@ -462,9 +485,10 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="stockItemId">Item id</param>
         /// <param name="onlyAvailable">If true, only available batches will be returned</param>
-        public List<StockItemBatch> GetBatchesByStockItemId(Guid stockItemId,Boolean onlyAvailable)
+        /// <param name="stockLocationId"></param>
+        public List<StockItemBatch> GetBatchesByStockItemId(Guid stockItemId,Boolean onlyAvailable,Guid? stockLocationId = null)
 		{
-			var response = GetResponse("Inventory/GetBatchesByStockItemId", "stockItemId=" + stockItemId + "&onlyAvailable=" + onlyAvailable + "");
+			var response = GetResponse("Inventory/GetBatchesByStockItemId", "stockItemId=" + stockItemId + "&onlyAvailable=" + onlyAvailable + "&stockLocationId=" + stockLocationId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemBatch>>(response);
 		}
 
@@ -790,10 +814,10 @@ namespace LinnworksAPI
 		/// <summary>
         /// Use this call to get all package groups 
         /// </summary>
-        public List<KeyGuidValue> GetPackageGroups()
+        public IEnumerable<KeyGuidValue> GetPackageGroups()
 		{
 			var response = GetResponse("Inventory/GetPackageGroups", "");
-            return JsonFormatter.ConvertFromJson<List<KeyGuidValue>>(response);
+            return JsonFormatter.ConvertFromJson<IEnumerable<KeyGuidValue>>(response);
 		}
 
 		/// <summary>
@@ -812,6 +836,16 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Inventory/GetPreDefinedViews", "");
             return JsonFormatter.ConvertFromJson<List<InventoryView>>(response);
+		}
+
+		/// <summary>
+        /// Used to get product identifiers for multiple stock items 
+        /// </summary>
+        /// <param name="request">Object containing a list of stock item ids</param>
+        public GetProductIdentifiersByStockItemIdResponse GetProductIdentifiersBulkByStockItemId(GetProductIdentifiersBulkByStockItemIdRequest request)
+		{
+			var response = GetResponse("Inventory/GetProductIdentifiersBulkByStockItemId", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetProductIdentifiersByStockItemIdResponse>(response);
 		}
 
 		/// <summary>

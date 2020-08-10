@@ -15,6 +15,11 @@ namespace LinnworksAPI
 		public Guid StockLocationId;
 
         /// <summary>
+        /// Stock location integet id 
+        /// </summary>
+		public Int32 StockLocationIntId;
+
+        /// <summary>
         /// Location name 
         /// </summary>
 		public String LocationName;

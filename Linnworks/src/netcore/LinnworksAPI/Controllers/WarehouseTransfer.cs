@@ -100,7 +100,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Use this calll to change details of a bin. 
+        /// Use this call to change details of a bin. 
         /// </summary>
         /// <param name="pkTransferId">The id of the transfer the bin belongs to.</param>
         /// <param name="pkBinId">The id of the bin.</param>
@@ -131,7 +131,7 @@ namespace LinnworksAPI
         /// <param name="Quantity">The new quantity.</param>
         public void ChangeTransferItemReceivedQuantity(Guid pkTransferId,Guid pkBinId,Guid pkTransferItemId,Int32? Quantity)
 		{
-			GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(Quantity)) + "");
+			GetResponse("WarehouseTransfer/ChangeTransferItemReceivedQuantity", "pkTransferId=" + pkTransferId + "&pkBinId=" + pkBinId + "&pkTransferItemId=" + pkTransferItemId + "&Quantity=" + Quantity + "");
 		}
 
 		/// <summary>

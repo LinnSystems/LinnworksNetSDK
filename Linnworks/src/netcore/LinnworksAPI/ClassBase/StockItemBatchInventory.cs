@@ -80,5 +80,10 @@ namespace LinnworksAPI
         /// Binrack Id (Use for WMS) 
         /// </summary>
 		public Int32? BinRackId;
+
+        /// <summary>
+        /// Warehouse binrack type unique id. 
+        /// </summary>
+		public Int32? WarehouseBinrackTypeId;
 	} 
 }

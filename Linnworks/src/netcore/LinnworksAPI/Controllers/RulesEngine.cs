@@ -33,7 +33,7 @@ namespace LinnworksAPI
         /// <returns>True if it exists, False if it does not.</returns>
         public Boolean CheckConditionNameExists(Int32 fkRuleId,Int32? fkConditionId,Int32? excludeConditionId,String conditionName)
 		{
-			var response = GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fkConditionId)) + "&excludeConditionId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(excludeConditionId)) + "&conditionName=" + System.Net.WebUtility.UrlEncode(conditionName) + "");
+			var response = GetResponse("RulesEngine/CheckConditionNameExists", "fkRuleId=" + fkRuleId + "&fkConditionId=" + fkConditionId + "&excludeConditionId=" + excludeConditionId + "&conditionName=" + System.Net.WebUtility.UrlEncode(conditionName) + "");
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
@@ -61,7 +61,7 @@ namespace LinnworksAPI
         /// <returns>An object describing the newly created nodes and actions.</returns>
         public RuleConditionHeader CopyCondition(Int32 pkRuleId,Int32? targetParentConditionId,Int32 pkConditionId,Boolean includeChildren,Boolean includeActions)
 		{
-			var response = GetResponse("RulesEngine/CopyCondition", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(targetParentConditionId)) + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions + "");
+			var response = GetResponse("RulesEngine/CopyCondition", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + targetParentConditionId + "&pkConditionId=" + pkConditionId + "&includeChildren=" + includeChildren + "&includeActions=" + includeActions + "");
             return JsonFormatter.ConvertFromJson<RuleConditionHeader>(response);
 		}
 

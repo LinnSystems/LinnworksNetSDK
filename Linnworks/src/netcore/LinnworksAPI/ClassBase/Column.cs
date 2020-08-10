@@ -10,6 +10,8 @@ namespace LinnworksAPI
 
 		public String DisplayName;
 
+		public String ExportName;
+
 		public GroupType Group;
 
 		public InventoryViewFieldType Field;

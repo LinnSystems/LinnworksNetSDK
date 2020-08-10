@@ -32,7 +32,7 @@ namespace LinnworksAPI
 
 		public Boolean ChannelInitiated;
 
-		public List<VerifiedRefund> RefundLines;
+		public ISet<VerifiedRefund> RefundLines;
 
 		public String RefundLink;
 	} 

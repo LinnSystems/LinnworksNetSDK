@@ -22,7 +22,7 @@ namespace LinnworksAPI
 		public String BinRack;
 
         /// <summary>
-        /// If defined, this value will be used to apply the delivery to a batch 
+        /// If defined, this value will be used to apply the delivery to a batch only when the batch in the provided binrack did not exist before. 
         /// </summary>
 		public Int32 PrioritySequence;
 

@@ -126,7 +126,10 @@ namespace LinnworksAPI
         /// </summary>
 		public Int32 NumItems;
 
-		public IRulesEngineHelper RulesEngine;
+        /// <summary>
+        /// All related Pickwave Ids 
+        /// </summary>
+		public List<Int32> PickwaveIds;
 
 		public StockAllocationType? StockAllocationType;
 	} 

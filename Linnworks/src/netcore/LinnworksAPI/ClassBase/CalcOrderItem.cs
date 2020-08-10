@@ -19,6 +19,8 @@ namespace LinnworksAPI
         /// </summary>
 		public Guid fkOrderItemId;
 
+		public Int32 StockItemIntId;
+
         /// <summary>
         /// SKU 
         /// </summary>
@@ -32,22 +34,22 @@ namespace LinnworksAPI
         /// <summary>
         /// Item weight 
         /// </summary>
-		public Double ItemWeight;
+		public Decimal ItemWeight;
 
         /// <summary>
         /// Item height 
         /// </summary>
-		public Double DimHeight;
+		public Decimal DimHeight;
 
         /// <summary>
         /// Item width 
         /// </summary>
-		public Double DimWidth;
+		public Decimal DimWidth;
 
         /// <summary>
         /// item depth 
         /// </summary>
-		public Double DimDepth;
+		public Decimal DimDepth;
 
         /// <summary>
         /// Prefered Packaging group 
@@ -58,5 +60,9 @@ namespace LinnworksAPI
         /// Indicates whether the item is a child of a composite, if EmptyGuid or Null not a child 
         /// </summary>
 		public Guid? fkCompositeParentRowId;
+
+		public Boolean IsCompositeChild;
+
+		public List<StockItemBoxConfiguration> Boxes;
 	} 
 }

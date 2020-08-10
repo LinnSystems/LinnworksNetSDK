@@ -8,6 +8,8 @@ namespace LinnworksAPI
 	{
 		public String BinRack;
 
+		public List<BatchPickingWaveStockItems> PickingWaveItems;
+
         /// <summary>
         /// List of errors for specific stock take item 
         /// </summary>

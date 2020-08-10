@@ -27,7 +27,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Total weight of order packaging 
         /// </summary>
-		public Double TotalWeight;
+		public Decimal TotalWeight;
 
         /// <summary>
         /// Indicate if this data is manually adjusted with the rest of fields or is auto calculated 

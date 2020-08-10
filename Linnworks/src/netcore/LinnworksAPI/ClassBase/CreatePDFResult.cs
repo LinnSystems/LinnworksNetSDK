@@ -20,6 +20,8 @@ namespace LinnworksAPI
 
 		public Dictionary<String,List<Guid>> ProcessedIds;
 
+		public Int32 PageCount;
+
         /// <summary>
         /// List of OrderId / Error message 
         /// </summary>

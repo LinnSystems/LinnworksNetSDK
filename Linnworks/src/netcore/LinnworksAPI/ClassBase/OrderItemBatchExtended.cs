@@ -8,6 +8,8 @@ namespace LinnworksAPI
 	{
 		public Guid pkOrderId;
 
+		public Guid OrderId;
+
 		public List<OrderItemBatch> Batches;
 	} 
 }

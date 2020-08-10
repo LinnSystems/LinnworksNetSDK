@@ -176,7 +176,7 @@ namespace LinnworksAPI
         /// <returns>List of StockConsumption</returns>
         public List<StockConsumption> GetStockConsumption(Guid stockItemId,Guid? locationId,DateTime startDate,DateTime endDate)
 		{
-			var response = GetResponse("Stock/GetStockConsumption", "stockItemId=" + stockItemId + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&startDate=" + System.Net.WebUtility.UrlEncode(startDate.ToString("yyyy-MM-dd HH:mm:ss")) + "&endDate=" + System.Net.WebUtility.UrlEncode(endDate.ToString("yyyy-MM-dd HH:mm:ss")) + "");
+			var response = GetResponse("Stock/GetStockConsumption", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&startDate=" + System.Net.WebUtility.UrlEncode(startDate.ToString("yyyy-MM-dd HH:mm:ss")) + "&endDate=" + System.Net.WebUtility.UrlEncode(endDate.ToString("yyyy-MM-dd HH:mm:ss")) + "");
             return JsonFormatter.ConvertFromJson<List<StockConsumption>>(response);
 		}
 
@@ -208,8 +208,14 @@ namespace LinnworksAPI
         /// <returns>Stock items list</returns>
         public GenericPagedResult<StockItem> GetStockItems(String keyWord,Guid? locationId,Int32 entriesPerPage,Int32 pageNumber,Boolean excludeComposites = false,Boolean excludeVariations = false,Boolean excludeBatches = false)
 		{
-			var response = GetResponse("Stock/GetStockItems", "keyWord=" + System.Net.WebUtility.UrlEncode(keyWord) + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "&excludeVariations=" + excludeVariations + "&excludeBatches=" + excludeBatches + "");
+			var response = GetResponse("Stock/GetStockItems", "keyWord=" + System.Net.WebUtility.UrlEncode(keyWord) + "&locationId=" + locationId + "&entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&excludeComposites=" + excludeComposites + "&excludeVariations=" + excludeVariations + "&excludeBatches=" + excludeBatches + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<StockItem>>(response);
+		}
+
+		public GetStockItemsByIdsResponse GetStockItemsByIds(GetStockItemsByIdsRequest request)
+		{
+			var response = GetResponse("Stock/GetStockItemsByIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetStockItemsByIdsResponse>(response);
 		}
 
 		/// <summary>
@@ -259,6 +265,12 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Stock/GetStockItemsFullByIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetStockItemsFullByIdsResponse>(response);
+		}
+
+		public GetStockItemTypeInfoResponse GetStockItemTypeInfo(GetStockItemTypeInfoRequest request)
+		{
+			var response = GetResponse("Stock/GetStockItemTypeInfo", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetStockItemTypeInfoResponse>(response);
 		}
 
 		/// <summary>
@@ -403,6 +415,23 @@ namespace LinnworksAPI
         public void Update_StockItemPartial(PartialUpdateParameter update)
 		{
 			GetResponse("Stock/Update_StockItemPartial", "update=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(update)) + "");
+		}
+
+		public UpdateSkuGroupIdentifierResponse UpdateSkuGroupIdentifier(UpdateSkuGroupIdentifierRequest request)
+		{
+			var response = GetResponse("Stock/UpdateSkuGroupIdentifier", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<UpdateSkuGroupIdentifierResponse>(response);
+		}
+
+		/// <summary>
+        /// Allows the change of non batched / composite stock levels in build. Accepts either StockItemId or SKU and Stock location name or id 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>Returns StockItemLevel object</returns>
+        public UpdateStockLevelsBulkResponse UpdateStockLevelsBulk(UpdateStockLevelsBulkRequest request)
+		{
+			var response = GetResponse("Stock/UpdateStockLevelsBulk", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<UpdateStockLevelsBulkResponse>(response);
 		}
 
 		/// <summary>

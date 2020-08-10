@@ -10,6 +10,12 @@ namespace LinnworksAPI
 
 		public String SubSource;
 
+		public String SourceVersion;
+
+		public String SourceType;
+
 		public Double Width;
+
+		public Int32 ChannelId;
 	} 
 }

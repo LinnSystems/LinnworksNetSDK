@@ -12,8 +12,13 @@ namespace LinnworksAPI
 		public Int32 RefundHeaderId;
 
         /// <summary>
-        /// A list of row ids to acknowledge errors for 
+        /// A list of row ids to acknowledge errors for. Can be left empty when "AcknowledgeAllErrors" is set to true 
         /// </summary>
 		public List<Guid> RefundRowIds;
+
+        /// <summary>
+        /// Ignores the RefundRowIds list and acknowledges all errors for the given refund header id 
+        /// </summary>
+		public Boolean AcknowledgeAllErrors;
 	} 
 }

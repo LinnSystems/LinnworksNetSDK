@@ -11,6 +11,8 @@ namespace LinnworksAPI
         /// </summary>
 		public String VariationGroupName;
 
+		public String ItemDescription;
+
 		public Int32 Quantity;
 
 		public Int32 InOrder;
@@ -68,5 +70,7 @@ namespace LinnworksAPI
 		public Boolean SerialNumberScanRequired;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

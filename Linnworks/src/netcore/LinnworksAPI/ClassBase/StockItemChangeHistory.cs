@@ -37,5 +37,7 @@ namespace LinnworksAPI
 		public Double ChangeValue;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

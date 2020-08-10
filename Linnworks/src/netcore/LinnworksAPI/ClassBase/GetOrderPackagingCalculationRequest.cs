@@ -12,7 +12,7 @@ namespace LinnworksAPI
         /// <summary>
         /// List of order ids for which the packaging information should be returned, recalculated, saved 
         /// </summary>
-		public List<Guid> pkOrderIds;
+		public Guid[] pkOrderIds;
 
         /// <summary>
         /// Flag to indicate that recalculation is necessary 

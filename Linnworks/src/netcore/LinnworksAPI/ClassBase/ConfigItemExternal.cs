@@ -29,5 +29,7 @@ namespace LinnworksAPI
 		public Boolean MustBeSpecified;
 
 		public Boolean ReadOnly;
+
+		public Boolean HidesHeaderAttribute;
 	} 
 }

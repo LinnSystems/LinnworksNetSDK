@@ -21,6 +21,12 @@ namespace LinnworksAPI
 			GetResponse("Settings/DeleteCurrencyConversionRates", "currencies=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(currencies)) + "");
 		}
 
+		public GetAvailableTimeZonesResponse GetAvailableTimeZones()
+		{
+			var response = GetResponse("Settings/GetAvailableTimeZones", "");
+            return JsonFormatter.ConvertFromJson<GetAvailableTimeZonesResponse>(response);
+		}
+
 		/// <summary>
         /// Get Currency Conversion Rates 
         /// </summary>

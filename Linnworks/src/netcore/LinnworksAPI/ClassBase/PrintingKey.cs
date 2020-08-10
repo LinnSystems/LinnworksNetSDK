@@ -11,5 +11,7 @@ namespace LinnworksAPI
 		public Int32? Quantity;
 
 		public Int32? BatchInventoryId;
+
+		public Guid? LocationId;
 	} 
 }

@@ -29,5 +29,7 @@ namespace LinnworksAPI
 		public Int32? SupplierPackSize;
 
 		public Boolean ContainsComposites;
+
+		public Int32 StockItemIntId;
 	} 
 }

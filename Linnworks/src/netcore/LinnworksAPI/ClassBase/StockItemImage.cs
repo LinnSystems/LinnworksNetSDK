@@ -35,5 +35,7 @@ namespace LinnworksAPI
 		public String RawChecksum;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

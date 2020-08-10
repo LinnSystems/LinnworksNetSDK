@@ -51,9 +51,9 @@ namespace LinnworksAPI
         /// <param name="script">Custom SQL script query text</param>
         /// <param name="cancellationToken">Terminates execution if task was cancelled on client</param>
         /// <returns>Custom script execution result (CustomScriptResult)</returns>
-        public CustomScriptResult ExecuteCustomScriptQuery(String script)
+        public CustomScriptResult ExecuteCustomScriptQuery(ExecuteCustomScriptQueryRequest request)
 		{
-			var response = GetResponse("Dashboards/ExecuteCustomScriptQuery", "script=" + System.Net.WebUtility.UrlEncode(script) + "");
+			var response = GetResponse("Dashboards/ExecuteCustomScriptQuery", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<CustomScriptResult>(response);
 		}
 
@@ -103,7 +103,7 @@ namespace LinnworksAPI
         /// <returns>List of LowStockLevel</returns>
         public List<LowStockLevel> GetLowStockLevel(Guid? locationId,Int32? numRows)
 		{
-			var response = GetResponse("Dashboards/GetLowStockLevel", "locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&numRows=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(numRows)) + "");
+			var response = GetResponse("Dashboards/GetLowStockLevel", "locationId=" + locationId + "&numRows=" + numRows + "");
             return JsonFormatter.ConvertFromJson<List<LowStockLevel>>(response);
 		}
 

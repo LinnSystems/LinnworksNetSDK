@@ -16,9 +16,9 @@ namespace LinnworksAPI
 
 		public Boolean CanHaveRefund;
 
-		public List<ChannelReason> ReturnReasons;
+		public ISet<ChannelReason> ReturnReasons;
 
-		public List<PostSaleSubStatus> SubStatuses;
+		public ISet<PostSaleSubStatus> SubStatuses;
 
 		public RefundOptions RefundOptions;
 
@@ -28,7 +28,7 @@ namespace LinnworksAPI
 
 		public OrderRMAHeader RMAHeader;
 
-		public List<VerifiedRMAItem> AllExistingRMAs;
+		public ISet<VerifiedRMAItem> AllExistingRMAs;
 
 		public List<String> Errors;
 

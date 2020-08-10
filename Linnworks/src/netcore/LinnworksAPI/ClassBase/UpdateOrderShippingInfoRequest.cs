@@ -14,22 +14,17 @@ namespace LinnworksAPI
         /// <summary>
         /// Order total weight 
         /// </summary>
-		public Double? TotalWeight;
+		public Decimal? TotalWeight;
 
         /// <summary>
         /// If order is processed 
         /// </summary>
-		public Double? ItemWeight;
+		public Decimal? ItemWeight;
 
         /// <summary>
         /// Order postage cost 
         /// </summary>
 		public Double? PostageCost;
-
-        /// <summary>
-        /// Order postage cost excluding tax 
-        /// </summary>
-		public Double? PostageCostExTax;
 
         /// <summary>
         /// Order tracking number provided by courier 

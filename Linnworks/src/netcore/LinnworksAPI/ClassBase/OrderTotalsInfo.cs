@@ -7,6 +7,11 @@ namespace LinnworksAPI
     public class OrderTotalsInfo
 	{
         /// <summary>
+        /// Order Id 
+        /// </summary>
+		public Guid pkOrderId;
+
+        /// <summary>
         /// Order subtotal 
         /// </summary>
 		public Double Subtotal;

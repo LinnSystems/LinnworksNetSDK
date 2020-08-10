@@ -24,12 +24,12 @@ namespace LinnworksAPI
         /// <summary>
         /// Order total weight 
         /// </summary>
-		public Double TotalWeight;
+		public Decimal TotalWeight;
 
         /// <summary>
         /// If order is processed 
         /// </summary>
-		public Double ItemWeight;
+		public Decimal ItemWeight;
 
         /// <summary>
         /// Package category ID 

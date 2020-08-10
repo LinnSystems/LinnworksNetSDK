@@ -36,6 +36,8 @@ namespace LinnworksAPI
         /// </summary>
 		public OrderTotalsInfo TotalsInfo;
 
+		public OrderTaxInfo TaxInfo;
+
         /// <summary>
         /// Folder name of an order if any assigned 
         /// </summary>
@@ -45,9 +47,13 @@ namespace LinnworksAPI
 
 		public Boolean CanFulfil;
 
+		public StockAllocationType StockAllocationType;
+
 		public List<OrderItem> Items;
 
 		public Boolean HasItems;
+
+		public Int32 TotalItemsSum;
 
 		public Guid OrderId;
 	} 

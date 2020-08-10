@@ -67,5 +67,7 @@ namespace LinnworksAPI
 		public Int32 RetryCount;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

@@ -105,7 +105,7 @@ namespace LinnworksAPI
         /// <param name="tag">new tag. null to remove the tag</param>
         public List<Guid> ChangeOrderTag(List<Guid> orderIds,Int32? tag)
 		{
-			var response = GetResponse("Orders/ChangeOrderTag", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&tag=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(tag)) + "");
+			var response = GetResponse("Orders/ChangeOrderTag", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&tag=" + tag + "");
             return JsonFormatter.ConvertFromJson<List<Guid>>(response);
 		}
 
@@ -192,7 +192,7 @@ namespace LinnworksAPI
         /// <returns>Item id if has been created, null if not</returns>
         public Guid? CreateNewItemAndLink(Guid pkStockItemId,String itemTitle,String source,String subSource,String channelSKU,Guid? locationId,Int32? initialQuantity)
 		{
-			var response = GetResponse("Orders/CreateNewItemAndLink", "pkStockItemId=" + pkStockItemId + "&itemTitle=" + System.Net.WebUtility.UrlEncode(itemTitle) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&channelSKU=" + System.Net.WebUtility.UrlEncode(channelSKU) + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "&initialQuantity=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(initialQuantity)) + "");
+			var response = GetResponse("Orders/CreateNewItemAndLink", "pkStockItemId=" + pkStockItemId + "&itemTitle=" + System.Net.WebUtility.UrlEncode(itemTitle) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&channelSKU=" + System.Net.WebUtility.UrlEncode(channelSKU) + "&locationId=" + locationId + "&initialQuantity=" + initialQuantity + "");
             return JsonFormatter.ConvertFromJson<Guid?>(response);
 		}
 
@@ -200,6 +200,7 @@ namespace LinnworksAPI
         /// Create an empty draft order. (Please see CreateOrders call) 
         /// </summary>
         /// <param name="fulfilmentCenter">Fulfilment center to be associated</param>
+        /// <param name="createAsDraft"></param>
         /// <returns>Order created</returns>
         public OpenOrder CreateNewOrder(Guid fulfilmentCenter,Boolean createAsDraft = true)
 		{
@@ -397,7 +398,7 @@ namespace LinnworksAPI
         /// <returns>Order id, or null if not found</returns>
         public Guid? GetOpenOrderIdByOrderOrReferenceId(String orderOrReferenceId,FieldsFilter filters,Guid? locationId)
 		{
-			var response = GetResponse("Orders/GetOpenOrderIdByOrderOrReferenceId", "orderOrReferenceId=" + System.Net.WebUtility.UrlEncode(orderOrReferenceId) + "&filters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(filters)) + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "");
+			var response = GetResponse("Orders/GetOpenOrderIdByOrderOrReferenceId", "orderOrReferenceId=" + System.Net.WebUtility.UrlEncode(orderOrReferenceId) + "&filters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(filters)) + "&locationId=" + locationId + "");
             return JsonFormatter.ConvertFromJson<Guid?>(response);
 		}
 
@@ -438,7 +439,7 @@ namespace LinnworksAPI
         /// <returns>List of open orders for this page and total orders. The orders don't have the Billing Address information; to get this information use GetOrder</returns>
         public GenericPagedResult<OpenOrder> GetOpenOrders(Int32 entriesPerPage,Int32 pageNumber,FieldsFilter filters,List<FieldSorting> sorting,Guid? fulfilmentCenter,String additionalFilter)
 		{
-			var response = GetResponse("Orders/GetOpenOrders", "entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&filters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(filters)) + "&sorting=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(sorting)) + "&fulfilmentCenter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fulfilmentCenter)) + "&additionalFilter=" + System.Net.WebUtility.UrlEncode(additionalFilter) + "");
+			var response = GetResponse("Orders/GetOpenOrders", "entriesPerPage=" + entriesPerPage + "&pageNumber=" + pageNumber + "&filters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(filters)) + "&sorting=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(sorting)) + "&fulfilmentCenter=" + fulfilmentCenter + "&additionalFilter=" + System.Net.WebUtility.UrlEncode(additionalFilter) + "");
             return JsonFormatter.ConvertFromJson<GenericPagedResult<OpenOrder>>(response);
 		}
 
@@ -451,7 +452,7 @@ namespace LinnworksAPI
         /// <returns>A list of order summary and posible errors</returns>
         public KeyValuePair<List<OrderSummary>,String> GetOpenOrdersByItemBarcode(String productBarcode,FieldsFilter filters,Guid? locationId)
 		{
-			var response = GetResponse("Orders/GetOpenOrdersByItemBarcode", "productBarcode=" + System.Net.WebUtility.UrlEncode(productBarcode) + "&filters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(filters)) + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "");
+			var response = GetResponse("Orders/GetOpenOrdersByItemBarcode", "productBarcode=" + System.Net.WebUtility.UrlEncode(productBarcode) + "&filters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(filters)) + "&locationId=" + locationId + "");
             return JsonFormatter.ConvertFromJson<KeyValuePair<List<OrderSummary>,String>>(response);
 		}
 
@@ -465,7 +466,7 @@ namespace LinnworksAPI
         /// <returns>Order</returns>
         public OpenOrder GetOrder(Guid orderId,Guid? fulfilmentLocationId,Boolean loadItems,Boolean loadAdditionalInfo)
 		{
-			var response = GetResponse("Orders/GetOrder", "orderId=" + orderId + "&fulfilmentLocationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fulfilmentLocationId)) + "&loadItems=" + loadItems + "&loadAdditionalInfo=" + loadAdditionalInfo + "");
+			var response = GetResponse("Orders/GetOrder", "orderId=" + orderId + "&fulfilmentLocationId=" + fulfilmentLocationId + "&loadItems=" + loadItems + "&loadAdditionalInfo=" + loadAdditionalInfo + "");
             return JsonFormatter.ConvertFromJson<OpenOrder>(response);
 		}
 
@@ -631,7 +632,7 @@ namespace LinnworksAPI
         /// <returns>Order</returns>
         public List<OpenOrder> GetOrders(List<Guid> ordersIds,Guid? fulfilmentLocationId,Boolean loadItems,Boolean loadAdditionalInfo)
 		{
-			var response = GetResponse("Orders/GetOrders", "ordersIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ordersIds)) + "&fulfilmentLocationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fulfilmentLocationId)) + "&loadItems=" + loadItems + "&loadAdditionalInfo=" + loadAdditionalInfo + "");
+			var response = GetResponse("Orders/GetOrders", "ordersIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ordersIds)) + "&fulfilmentLocationId=" + fulfilmentLocationId + "&loadItems=" + loadItems + "&loadAdditionalInfo=" + loadAdditionalInfo + "");
             return JsonFormatter.ConvertFromJson<List<OpenOrder>>(response);
 		}
 
@@ -797,7 +798,7 @@ namespace LinnworksAPI
         /// <returns>Return a boolean meaning if has been processed, and a possible error</returns>
         public ProcessOrderResult ProcessOrder(Guid orderId,Boolean scanPerformed,Guid? locationId)
 		{
-			var response = GetResponse("Orders/ProcessOrder", "orderId=" + orderId + "&scanPerformed=" + scanPerformed + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "");
+			var response = GetResponse("Orders/ProcessOrder", "orderId=" + orderId + "&scanPerformed=" + scanPerformed + "&locationId=" + locationId + "");
             return JsonFormatter.ConvertFromJson<ProcessOrderResult>(response);
 		}
 
@@ -826,7 +827,7 @@ namespace LinnworksAPI
         /// <returns>Return a list of possible errors</returns>
         public List<ProcessOrderResult> ProcessOrdersInBatch(List<Guid> ordersIds,Guid? locationId)
 		{
-			var response = GetResponse("Orders/ProcessOrdersInBatch", "ordersIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ordersIds)) + "&locationId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(locationId)) + "");
+			var response = GetResponse("Orders/ProcessOrdersInBatch", "ordersIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ordersIds)) + "&locationId=" + locationId + "");
             return JsonFormatter.ConvertFromJson<List<ProcessOrderResult>>(response);
 		}
 
@@ -860,7 +861,7 @@ namespace LinnworksAPI
         /// <param name="ruleId">Id of Rule to run. Null if all rules should be run</param>
         public List<Guid> RunRulesEngine(Guid[] orderIds,Int32? ruleId = null)
 		{
-			var response = GetResponse("Orders/RunRulesEngine", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&ruleId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ruleId)) + "");
+			var response = GetResponse("Orders/RunRulesEngine", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&ruleId=" + ruleId + "");
             return JsonFormatter.ConvertFromJson<List<Guid>>(response);
 		}
 
@@ -876,7 +877,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Update additional info of a specific item 
+        /// Overwrites the existing order item additional info 
         /// </summary>
         /// <param name="orderId">Order id</param>
         /// <param name="rowId">Item row id</param>
@@ -1070,6 +1071,15 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Orders/UnassignToFolder", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&folder=" + System.Net.WebUtility.UrlEncode(folder) + "");
             return JsonFormatter.ConvertFromJson<List<Guid>>(response);
+		}
+
+		/// <summary>
+        /// Updates additional info of a specific item 
+        /// </summary>
+        /// <param name="request"></param>
+        public void UpdateAdditionalInfo(UpdateAdditionalInfoRequest request)
+		{
+			GetResponse("Orders/UpdateAdditionalInfo", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>

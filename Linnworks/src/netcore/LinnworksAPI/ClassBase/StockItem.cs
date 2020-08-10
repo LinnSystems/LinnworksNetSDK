@@ -10,6 +10,11 @@ namespace LinnworksAPI
     public class StockItem
 	{
         /// <summary>
+        /// Item Description(Metadata) 
+        /// </summary>
+		public String ItemDescription;
+
+        /// <summary>
         /// Quantity in stock 
         /// </summary>
 		public Int32 Quantity;
@@ -84,5 +89,7 @@ namespace LinnworksAPI
 		public Boolean SerialNumberScanRequired;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

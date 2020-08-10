@@ -95,5 +95,7 @@ namespace LinnworksAPI
 		public Double StockItemPurchasePrice;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

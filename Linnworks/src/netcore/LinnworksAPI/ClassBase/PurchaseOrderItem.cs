@@ -20,6 +20,11 @@ namespace LinnworksAPI
 		public Guid fkStockItemId;
 
         /// <summary>
+        /// Unique system stock integer identifier. Use this id to query linnworks api for product information, stock levels etc 
+        /// </summary>
+		public Int32 StockItemIntId;
+
+        /// <summary>
         /// Quantity of unique stock items ordered 
         /// </summary>
 		public Int32 Quantity;
@@ -90,6 +95,11 @@ namespace LinnworksAPI
 		public Decimal DimWidth;
 
         /// <summary>
+        /// Barcode 
+        /// </summary>
+		public String BarcodeNumber;
+
+        /// <summary>
         /// Item Depth 
         /// </summary>
 		public Decimal DimDepth;
@@ -109,6 +119,16 @@ namespace LinnworksAPI
         /// </summary>
 		public Int32 QuantityBoundToOpenOrdersItems;
 
+        /// <summary>
+        /// Supplier Code 
+        /// </summary>
 		public String SupplierCode;
+
+		public String SupplierBarcode;
+
+        /// <summary>
+        /// Sku group id assocaited with purchase item. Used for containerisation. 
+        /// </summary>
+		public List<Int32> SkuGroupIds;
 	} 
 }

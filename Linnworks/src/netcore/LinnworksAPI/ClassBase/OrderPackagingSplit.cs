@@ -19,7 +19,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Order packaging weight 
         /// </summary>
-		public Double PackagingWeight;
+		public Decimal PackagingWeight;
 
         /// <summary>
         /// Order packaging type 
@@ -34,7 +34,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Total weight 
         /// </summary>
-		public Double TotalWeight;
+		public Decimal TotalWeight;
 
         /// <summary>
         /// Tracking number 

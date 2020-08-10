@@ -77,5 +77,7 @@ namespace LinnworksAPI
 		public String SupplierCurrency;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

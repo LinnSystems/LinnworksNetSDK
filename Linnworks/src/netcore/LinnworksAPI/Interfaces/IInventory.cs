@@ -15,9 +15,11 @@ namespace LinnworksAPI
 		AddScrapCategoriesResponse AddScrapCategories(AddScrapCategoriesRequest request);
 		AddScrapItemResponse AddScrapItem(AddScrapItemRequest request);
 		Supplier AddSupplier(Supplier supplier);
+		void AdjustEbayTemplatesDispatchLMS(IEnumerable<Guid> inventoryItemIds,String subSource,String siteId,AdjustmentOptions adjustmentOptions);
 		void AdjustEbayTemplatesInstantLMS(IEnumerable<Guid> inventoryItemIds,String subSource,String siteId,AdjustmentOptions adjustmentOptions);
 		void AdjustTemplatesInstant(IEnumerable<Guid> inventoryItemIds,String source,String subSource,AdjustmentOptions adjustmentOptions);
 		void ArchiveInventoryItems(InventoryParametersRequest parameters);
+		IEnumerable<StockItemChannelSkuResponse> BatchGetInventoryItemChannelSKUs(List<Guid> inventoryItemIds);
 		void BulkScrapBatchedItems(BulkScrapBatchedItemsRequest request);
 		void CreateBatches(IEnumerable<StockItemBatch> batches);
 		Category CreateCategory(String categoryName);
@@ -55,7 +57,7 @@ namespace LinnworksAPI
 		void DuplicateInventoryItem(StockItem inventoryItem,Guid sourceItemId,Boolean copyImages);
 		Dictionary<String,List<String>> GetAllExtendedPropertyNames();
 		GetBatchAuditResponse GetBatchAudit(GetBatchAuditRequest request);
-		List<StockItemBatch> GetBatchesByStockItemId(Guid stockItemId,Boolean onlyAvailable);
+		List<StockItemBatch> GetBatchesByStockItemId(Guid stockItemId,Boolean onlyAvailable,Guid? stockLocationId = null);
 		GetBatchInventoryByIdResponse GetBatchInventoryById(GetBatchInventoryByIdRequest request);
 		List<Category> GetCategories();
 		List<AnyConfig> GetChannels();
@@ -87,9 +89,10 @@ namespace LinnworksAPI
 		Int32 GetInventoryItemsCount(Boolean? includeDeleted,Boolean? includeArchived);
 		List<StockItemTitle> GetInventoryItemTitles(Guid inventoryItemId);
 		String GetNewItemNumber();
-		List<KeyGuidValue> GetPackageGroups();
+		IEnumerable<KeyGuidValue> GetPackageGroups();
 		List<KeyGuidValue> GetPostalServices();
 		List<InventoryView> GetPreDefinedViews();
+		GetProductIdentifiersByStockItemIdResponse GetProductIdentifiersBulkByStockItemId(GetProductIdentifiersBulkByStockItemIdRequest request);
 		GetProductIdentifiersByStockItemIdResponse GetProductIdentifiersByStockItemId(GetProductIdentifiersByStockItemIdRequest request);
 		GetProductIdentifierTypesRequest GetProductIdentifierTypes();
 		GetScrapCategoriesResponse GetScrapCategories();

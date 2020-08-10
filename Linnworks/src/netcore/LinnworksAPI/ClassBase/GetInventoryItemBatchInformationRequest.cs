@@ -23,5 +23,10 @@ namespace LinnworksAPI
         /// Defines whether we should only return available items 
         /// </summary>
 		public Boolean AvailableOnly;
+
+        /// <summary>
+        /// Only return warehouse locations that can have orders assigned to them for picking 
+        /// </summary>
+		public Boolean AssignableOnly;
 	} 
 }

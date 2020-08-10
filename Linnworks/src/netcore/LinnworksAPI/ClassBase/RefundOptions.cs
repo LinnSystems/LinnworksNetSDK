@@ -28,13 +28,13 @@ namespace LinnworksAPI
 
 		public List<PostSaleSubStatus> SubStatuses;
 
-		public List<ChannelReason> InsufficientRefundReasons;
+		public ISet<ChannelReason> InsufficientRefundReasons;
 
-		public List<ChannelReason> ItemRefundReasons;
+		public ISet<ChannelReason> ItemRefundReasons;
 
-		public List<ChannelReason> ServiceRefundReasons;
+		public ISet<ChannelReason> ServiceRefundReasons;
 
-		public List<ChannelReason> ShippingRefundReasons;
+		public ISet<ChannelReason> ShippingRefundReasons;
 
 		public CannotRefundReasonType CannotRefundReason;
 
@@ -42,7 +42,7 @@ namespace LinnworksAPI
 
 		public OrderRefundHeader RefundHeader;
 
-		public List<VerifiedRefund> AllExistingRefunds;
+		public ISet<VerifiedRefund> AllExistingRefunds;
 
 		public List<String> Errors;
 	} 

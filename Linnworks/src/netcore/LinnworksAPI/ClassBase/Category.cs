@@ -15,5 +15,12 @@ namespace LinnworksAPI
         /// Category name 
         /// </summary>
 		public String CategoryName;
+
+        /// <summary>
+        /// Structure Category Id to which this product category is assigned to, nullable if not available 
+        /// </summary>
+		public Int32? StructureCategoryId;
+
+		public Int32? ProductCategoryId;
 	} 
 }

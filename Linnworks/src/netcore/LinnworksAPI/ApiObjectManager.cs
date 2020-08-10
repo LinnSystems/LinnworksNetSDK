@@ -9,9 +9,11 @@ namespace LinnworksAPI
         private EmailController email;
         private ImportExportController importexport;
         private InventoryController inventory;
+        private ListingsController listings;
         private LocationsController locations;
         private OrdersController orders;
         private OrderWorkflowController orderworkflow;
+        private PickingController picking;
         private PostalServicesController postalservices;
         private PostSaleController postsale;
         private PrintServiceController printservice;
@@ -22,6 +24,7 @@ namespace LinnworksAPI
         private SettingsController settings;
         private StockController stock;
         private WarehouseTransferController warehousetransfer;
+        private WmsController wms;
 
 
         public ApiObjectManager(ApiContext apiContext)
@@ -76,6 +79,14 @@ namespace LinnworksAPI
             }
         }
 
+        public ListingsController Listings
+        {
+            get
+            {
+                return listings ?? (listings = new ListingsController(apiContext));
+            }
+        }
+
         public LocationsController Locations
         {
             get
@@ -97,6 +108,14 @@ namespace LinnworksAPI
             get
             {
                 return orderworkflow ?? (orderworkflow = new OrderWorkflowController(apiContext));
+            }
+        }
+
+        public PickingController Picking
+        {
+            get
+            {
+                return picking ?? (picking = new PickingController(apiContext));
             }
         }
 
@@ -177,6 +196,14 @@ namespace LinnworksAPI
             get
             {
                 return warehousetransfer ?? (warehousetransfer = new WarehouseTransferController(apiContext));
+            }
+        }
+
+        public WmsController Wms
+        {
+            get
+            {
+                return wms ?? (wms = new WmsController(apiContext));
             }
         }
 

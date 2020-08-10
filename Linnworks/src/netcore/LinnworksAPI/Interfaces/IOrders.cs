@@ -102,6 +102,7 @@ namespace LinnworksAPI
 		void SetPickListPrinted(SetPickListPrintedRequest Request);
 		List<OpenOrder> SplitOrder(Guid orderId,OrderSplit[] newOrders,String type,Guid fulfilmentLocationId);
 		List<Guid> UnassignToFolder(List<Guid> orderIds,String folder);
+		void UpdateAdditionalInfo(UpdateAdditionalInfoRequest request);
 		void UpdateBillingAddress(Guid orderId,CustomerAddress billingAddress);
 		void UpdateLinkItem(Guid pkStockId,Guid pkStockItemId,String source,String subSource,String channelSKU);
 		UpdateOrderItemResult UpdateOrderItem(Guid orderId,OrderItem orderItem,Guid fulfilmentCenter,String source,String subSource);

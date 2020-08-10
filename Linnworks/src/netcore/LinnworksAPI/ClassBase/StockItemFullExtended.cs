@@ -91,5 +91,7 @@ namespace LinnworksAPI
 		public Boolean SerialNumberScanRequired;
 
 		public Guid StockItemId;
+
+		public Int32 StockItemIntId;
 	} 
 }

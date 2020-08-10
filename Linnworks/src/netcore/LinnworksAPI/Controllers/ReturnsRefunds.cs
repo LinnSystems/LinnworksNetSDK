@@ -14,7 +14,7 @@ namespace LinnworksAPI
         }
 
         /// <summary>
-        /// Acknowledges all error responses for a given refund header 
+        /// Acknowledges error responses for a given refund header 
         /// </summary>
         /// <param name="request">The request class for this call</param>
         public AcknowledgeRefundErrorsResponse AcknowledgeRefundErrors(AcknowledgeRefundErrorsRequest request)
