@@ -6,16 +6,16 @@ namespace LinnworksAPI
 { 
     public class ImportColumn
 	{
-		public List<AddData> AdditionalData;
+		public List<AddData> AdditionalData { get; set; }
 
-		public String FileColumn;
+		public String FileColumn { get; set; }
 
-		public String Column;
+		public String Column { get; set; }
 
-		public String Expression;
+		public String Expression { get; set; }
 
-		public String DefaultValue;
+		public String DefaultValue { get; set; }
 
-		public Boolean Visible;
+		public Boolean Visible { get; set; }
 	} 
 }

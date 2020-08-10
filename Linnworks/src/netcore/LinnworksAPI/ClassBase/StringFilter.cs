@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class StringFilter
 	{
-		public StringFilterType Type;
+		public StringFilterType Type { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

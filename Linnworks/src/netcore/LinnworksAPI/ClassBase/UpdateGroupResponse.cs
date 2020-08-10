@@ -12,6 +12,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Updated group details 
         /// </summary>
-		public Group Group;
+		public Group Group { get; set; }
 	} 
 }

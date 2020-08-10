@@ -12,21 +12,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Row id 
         /// </summary>
-		public Int32 pkEmailStubTagId;
+		public Int32 pkEmailStubTagId { get; set; }
 
         /// <summary>
         /// Relation to email_stub 
         /// </summary>
-		public Int32 fkEmailStubId;
+		public Int32 fkEmailStubId { get; set; }
 
         /// <summary>
         /// Name of the tag 
         /// </summary>
-		public String TagName;
+		public String TagName { get; set; }
 
         /// <summary>
         /// Value which will be inserted into the template 
         /// </summary>
-		public String TagValue;
+		public String TagValue { get; set; }
 	} 
 }

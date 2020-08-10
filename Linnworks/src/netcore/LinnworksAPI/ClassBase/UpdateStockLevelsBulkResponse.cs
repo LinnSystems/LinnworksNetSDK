@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class UpdateStockLevelsBulkResponse
 	{
-		public List<UpdateStockLevelsBulkResponseItem> Items;
+		public List<UpdateStockLevelsBulkResponseItem> Items { get; set; }
 	} 
 }

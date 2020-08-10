@@ -9,35 +9,35 @@ namespace LinnworksAPI
         /// <summary>
         /// When changes were made 
         /// </summary>
-		public DateTime Date;
+		public DateTime Date { get; set; }
 
         /// <summary>
         /// Change level 
         /// </summary>
-		public Int32 Level;
+		public Int32 Level { get; set; }
 
         /// <summary>
         /// Stock value change 
         /// </summary>
-		public Double StockValue;
+		public Double StockValue { get; set; }
 
         /// <summary>
         /// Change note 
         /// </summary>
-		public String Note;
+		public String Note { get; set; }
 
         /// <summary>
         /// Changed quantity 
         /// </summary>
-		public Int32 ChangeQty;
+		public Int32 ChangeQty { get; set; }
 
         /// <summary>
         /// Changed value 
         /// </summary>
-		public Double ChangeValue;
+		public Double ChangeValue { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

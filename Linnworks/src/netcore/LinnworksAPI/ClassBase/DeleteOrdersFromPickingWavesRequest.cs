@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of Linnworks OrderIds 
         /// </summary>
-		public List<Int32> OrderIds;
+		public List<Int32> OrderIds { get; set; }
 	} 
 }

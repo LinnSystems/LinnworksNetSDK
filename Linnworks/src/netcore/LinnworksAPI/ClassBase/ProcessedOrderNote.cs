@@ -6,18 +6,18 @@ namespace LinnworksAPI
 { 
     public class ProcessedOrderNote
 	{
-		public Guid pkOrderNoteId;
+		public Guid pkOrderNoteId { get; set; }
 
-		public Guid fkOrderId;
+		public Guid fkOrderId { get; set; }
 
-		public String Note;
+		public String Note { get; set; }
 
-		public DateTime NoteEntryDate;
+		public DateTime NoteEntryDate { get; set; }
 
-		public String NoteUserName;
+		public String NoteUserName { get; set; }
 
-		public Boolean? Internal;
+		public Boolean? Internal { get; set; }
 
-		public Byte? NoteTypeId;
+		public Byte? NoteTypeId { get; set; }
 	} 
 }

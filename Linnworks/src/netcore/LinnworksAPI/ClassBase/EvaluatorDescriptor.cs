@@ -6,18 +6,18 @@ namespace LinnworksAPI
 { 
     public class EvaluatorDescriptor
 	{
-		public EvaluatorType EvaluatorType;
+		public EvaluatorType EvaluatorType { get; set; }
 
-		public ClientEvaluatorGroupType ClientType;
+		public ClientEvaluatorGroupType ClientType { get; set; }
 
-		public String ClientTypeName;
+		public String ClientTypeName { get; set; }
 
-		public EvaluatorGroup EvaluatorGroup;
+		public EvaluatorGroup EvaluatorGroup { get; set; }
 
-		public String Description;
+		public String Description { get; set; }
 
-		public Int32 GroupIndex;
+		public Int32 GroupIndex { get; set; }
 
-		public Int32 EvalIndex;
+		public Int32 EvalIndex { get; set; }
 	} 
 }

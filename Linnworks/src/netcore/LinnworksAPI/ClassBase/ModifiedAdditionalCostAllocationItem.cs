@@ -9,14 +9,14 @@ namespace LinnworksAPI
         /// <summary>
         /// Relation to the initial request. This Id will match to what was specified in the request so that the client side can be updated with new CostAllocationIds 
         /// </summary>
-		public Guid Id;
+		public Guid Id { get; set; }
 
-		public Int32 CostAllocationId;
+		public Int32 CostAllocationId { get; set; }
 
-		public Int32 PurchaseAdditionalCostItemId;
+		public Int32 PurchaseAdditionalCostItemId { get; set; }
 
-		public Guid PurchaseItemId;
+		public Guid PurchaseItemId { get; set; }
 
-		public Decimal AllocationPercentage;
+		public Decimal AllocationPercentage { get; set; }
 	} 
 }

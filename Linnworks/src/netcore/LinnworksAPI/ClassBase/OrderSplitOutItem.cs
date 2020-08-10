@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class OrderSplitOutItem
 	{
-		public Guid RowId;
+		public Guid RowId { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
-		public Double Weight;
+		public Double Weight { get; set; }
 
-		public Double UnitCost;
+		public Double UnitCost { get; set; }
 	} 
 }

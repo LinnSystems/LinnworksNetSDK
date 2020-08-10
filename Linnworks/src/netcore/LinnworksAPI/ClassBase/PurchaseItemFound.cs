@@ -6,30 +6,30 @@ namespace LinnworksAPI
 { 
     public class PurchaseItemFound
 	{
-		public Guid pkStockItemId;
+		public Guid pkStockItemId { get; set; }
 
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
-		public String ItemTitle;
+		public String ItemTitle { get; set; }
 
-		public Int32 InventoryTrackingType;
+		public Int32 InventoryTrackingType { get; set; }
 
-		public Decimal TaxRate;
+		public Decimal TaxRate { get; set; }
 
-		public Decimal PurchasePrice;
+		public Decimal PurchasePrice { get; set; }
 
-		public Decimal? KnownPurchasePrice;
+		public Decimal? KnownPurchasePrice { get; set; }
 
-		public String SupplierCode;
+		public String SupplierCode { get; set; }
 
-		public Guid? fkSupplierId;
+		public Guid? fkSupplierId { get; set; }
 
-		public Int32? SupplierMinOrderQty;
+		public Int32? SupplierMinOrderQty { get; set; }
 
-		public Int32? SupplierPackSize;
+		public Int32? SupplierPackSize { get; set; }
 
-		public Boolean ContainsComposites;
+		public Boolean ContainsComposites { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

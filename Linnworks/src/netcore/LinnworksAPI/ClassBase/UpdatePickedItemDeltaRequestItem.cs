@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Picking wave row id 
         /// </summary>
-		public Int32 PickingWaveItemsRowId;
+		public Int32 PickingWaveItemsRowId { get; set; }
 
         /// <summary>
         /// Tote id 
         /// </summary>
-		public Int32? ToteId;
+		public Int32? ToteId { get; set; }
 
         /// <summary>
         /// Tray tag (optional) 
         /// </summary>
-		public String TrayTag;
+		public String TrayTag { get; set; }
 
         /// <summary>
         /// Picked quantity delta 
         /// </summary>
-		public Int32 PickedQuantityDelta;
+		public Int32 PickedQuantityDelta { get; set; }
 	} 
 }

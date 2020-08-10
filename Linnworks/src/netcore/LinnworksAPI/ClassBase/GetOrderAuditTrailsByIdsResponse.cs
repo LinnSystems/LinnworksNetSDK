@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetOrderAuditTrailsByIdsResponse
 	{
-		public List<OrderAuditTrailExtended> AuditTrails;
+		public List<OrderAuditTrailExtended> AuditTrails { get; set; }
 	} 
 }

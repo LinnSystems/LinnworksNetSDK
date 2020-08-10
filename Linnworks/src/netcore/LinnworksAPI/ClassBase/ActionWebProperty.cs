@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class ActionWebProperty
 	{
-		public Int32 ActionPropertyId;
+		public Int32 ActionPropertyId { get; set; }
 
-		public String DisplayName;
+		public String DisplayName { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class BooleanFieldFilter
 	{
-		public Boolean Value;
+		public Boolean Value { get; set; }
 
-		public FieldCode FieldCode;
+		public FieldCode FieldCode { get; set; }
 	} 
 }

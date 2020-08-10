@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class GetStockLevelByLocationRequest
 	{
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Guid LocationId;
+		public Guid LocationId { get; set; }
 	} 
 }

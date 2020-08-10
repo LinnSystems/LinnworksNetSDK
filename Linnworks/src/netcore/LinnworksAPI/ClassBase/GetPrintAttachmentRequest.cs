@@ -12,11 +12,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Job id for which you would like to get print the attachment 
         /// </summary>
-		public Int32 JobId;
+		public Int32 JobId { get; set; }
 
         /// <summary>
         /// Attachment/print id 
         /// </summary>
-		public Int32 AttachmentId;
+		public Int32 AttachmentId { get; set; }
 	} 
 }

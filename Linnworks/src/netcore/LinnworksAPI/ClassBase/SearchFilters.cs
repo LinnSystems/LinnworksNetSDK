@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class SearchFilters
 	{
-		public SearchFieldTypes? SearchField;
+		public SearchFieldTypes? SearchField { get; set; }
 
-		public String SearchTerm;
+		public String SearchTerm { get; set; }
 	} 
 }

@@ -9,8 +9,8 @@ namespace LinnworksAPI
     /// </summary>
     public class SubQueryOutputMappingSelectionField
 	{
-		public String SelectionFieldName;
+		public String SelectionFieldName { get; set; }
 
-		public String SelectionFieldValue;
+		public String SelectionFieldValue { get; set; }
 	} 
 }

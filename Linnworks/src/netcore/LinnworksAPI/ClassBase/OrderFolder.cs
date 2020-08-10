@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Folder ID 
         /// </summary>
-		public Guid pkFolderId;
+		public Guid pkFolderId { get; set; }
 
         /// <summary>
         /// Folder name 
         /// </summary>
-		public String FolderName;
+		public String FolderName { get; set; }
 	} 
 }

@@ -9,23 +9,23 @@ namespace LinnworksAPI
         /// <summary>
         /// Date from 
         /// </summary>
-		public DateTime? DateFrom;
+		public DateTime? DateFrom { get; set; }
 
         /// <summary>
         /// Date to 
         /// </summary>
-		public DateTime? DateTo;
+		public DateTime? DateTo { get; set; }
 
         /// <summary>
         /// Filter type 
         /// </summary>
-		public DateTimeFieldFilterType Type;
+		public DateTimeFieldFilterType Type { get; set; }
 
         /// <summary>
         /// Filtering input 
         /// </summary>
-		public Int32? Value;
+		public Int32? Value { get; set; }
 
-		public FieldCode FieldCode;
+		public FieldCode FieldCode { get; set; }
 	} 
 }

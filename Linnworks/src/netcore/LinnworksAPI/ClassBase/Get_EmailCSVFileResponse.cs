@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class Get_EmailCSVFileResponse
 	{
-		public String Url;
+		public String Url { get; set; }
 	} 
 }

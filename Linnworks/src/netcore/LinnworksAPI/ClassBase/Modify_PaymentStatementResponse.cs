@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of modified items, added or updated. Each item has Id which was provided in the request 
         /// </summary>
-		public List<ModifiedPaymentStatementItem> ModifiedItems;
+		public List<ModifiedPaymentStatementItem> ModifiedItems { get; set; }
 	} 
 }

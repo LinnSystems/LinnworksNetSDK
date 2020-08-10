@@ -12,6 +12,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Updated job details 
         /// </summary>
-		public Job Job;
+		public Job Job { get; set; }
 	} 
 }

@@ -9,12 +9,12 @@ namespace LinnworksAPI
         /// <summary>
         /// Allocation row id that will be updated with the new AllocationPercentage 
         /// </summary>
-		public Int32 CostAllocationId;
+		public Int32 CostAllocationId { get; set; }
 
-		public Guid Id;
+		public Guid Id { get; set; }
 
-		public Int32 PurchaseAdditionalCostItemId;
+		public Int32 PurchaseAdditionalCostItemId { get; set; }
 
-		public Decimal AllocationPercentage;
+		public Decimal AllocationPercentage { get; set; }
 	} 
 }

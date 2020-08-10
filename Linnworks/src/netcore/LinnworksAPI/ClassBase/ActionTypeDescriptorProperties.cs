@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class ActionTypeDescriptorProperties
 	{
-		public String DisplayName;
+		public String DisplayName { get; set; }
 
-		public DisplayType DisplayType;
+		public DisplayType DisplayType { get; set; }
 
-		public FieldType FieldType;
+		public FieldType FieldType { get; set; }
 	} 
 }

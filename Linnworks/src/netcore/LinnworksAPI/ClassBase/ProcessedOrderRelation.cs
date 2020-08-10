@@ -9,26 +9,26 @@ namespace LinnworksAPI
         /// <summary>
         /// Child order number 
         /// </summary>
-		public Int32 ChildOrderId;
+		public Int32 ChildOrderId { get; set; }
 
         /// <summary>
         /// Child order ID 
         /// </summary>
-		public Guid ChildOrderPkOrderId;
+		public Guid ChildOrderPkOrderId { get; set; }
 
         /// <summary>
         /// Parent order number 
         /// </summary>
-		public Int32 ParentOrderId;
+		public Int32 ParentOrderId { get; set; }
 
         /// <summary>
         /// Parent order ID 
         /// </summary>
-		public Guid ParentOrderPkOrderId;
+		public Guid ParentOrderPkOrderId { get; set; }
 
         /// <summary>
         /// Relation type 
         /// </summary>
-		public String RelationType;
+		public String RelationType { get; set; }
 	} 
 }

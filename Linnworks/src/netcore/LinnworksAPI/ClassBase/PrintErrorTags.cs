@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class PrintErrorTags
 	{
-		public String Tag;
+		public String Tag { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

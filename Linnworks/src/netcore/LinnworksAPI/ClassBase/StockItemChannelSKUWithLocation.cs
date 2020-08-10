@@ -9,65 +9,65 @@ namespace LinnworksAPI
         /// <summary>
         /// Record row ID 
         /// </summary>
-		public Guid fkRowId;
+		public Guid fkRowId { get; set; }
 
         /// <summary>
         /// Location ID 
         /// </summary>
-		public Int32 LocationId;
+		public Int32 LocationId { get; set; }
 
         /// <summary>
         /// Location name 
         /// </summary>
-		public String LocationName;
+		public String LocationName { get; set; }
 
         /// <summary>
         /// Ignored on a sync 
         /// </summary>
-		public Boolean? IgnoreSync;
+		public Boolean? IgnoreSync { get; set; }
 
         /// <summary>
         /// Maximum listed quantity 
         /// </summary>
-		public Int32? MaxListedQuantity;
+		public Int32? MaxListedQuantity { get; set; }
 
         /// <summary>
         /// End listing when stock level 
         /// </summary>
-		public Int32? EndWhenStock;
+		public Int32? EndWhenStock { get; set; }
 
         /// <summary>
         /// Stock percantage 
         /// </summary>
-		public Double? StockPercentage;
+		public Double? StockPercentage { get; set; }
 
         /// <summary>
         /// Last update date and time 
         /// </summary>
-		public DateTime LastUpdate;
+		public DateTime LastUpdate { get; set; }
 
         /// <summary>
         /// Current update status 
         /// </summary>
-		public String UpdateStatus;
+		public String UpdateStatus { get; set; }
 
         /// <summary>
         /// Quantity submitted to the channel 
         /// </summary>
-		public Int32 SubmittedQuantity;
+		public Int32 SubmittedQuantity { get; set; }
 
         /// <summary>
         /// Currently listed quantity 
         /// </summary>
-		public Int32 ListedQuantity;
+		public Int32 ListedQuantity { get; set; }
 
         /// <summary>
         /// How many retries 
         /// </summary>
-		public Int32 RetryCount;
+		public Int32 RetryCount { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

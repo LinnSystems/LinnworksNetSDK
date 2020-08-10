@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class CustomScriptColumn
 	{
-		public Int32 Index;
+		public Int32 Index { get; set; }
 
-		public String Name;
+		public String Name { get; set; }
 
-		public String Type;
+		public String Type { get; set; }
 	} 
 }

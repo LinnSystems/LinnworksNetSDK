@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class StatsStockItemLocation
 	{
-		public Guid StockLocationId;
+		public Guid StockLocationId { get; set; }
 
-		public String Location;
+		public String Location { get; set; }
 
-		public Double StockLevel;
+		public Double StockLevel { get; set; }
 
-		public Double StockValue;
+		public Double StockValue { get; set; }
 	} 
 }

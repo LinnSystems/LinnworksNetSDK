@@ -9,19 +9,19 @@ namespace LinnworksAPI
         /// <summary>
         /// If a refund was created as part of accepting the return/exchange booking, this identifies the created header 
         /// </summary>
-		public Int32? RefundHeaderId;
+		public Int32? RefundHeaderId { get; set; }
 
         /// <summary>
         /// For the header that was actioned, returns its status 
         /// </summary>
-		public PostSaleStatus Status;
+		public PostSaleStatus Status { get; set; }
 
-		public Int32? RMAHeaderId;
+		public Int32? RMAHeaderId { get; set; }
 
-		public List<VerifiedRMAItem> Items;
+		public List<VerifiedRMAItem> Items { get; set; }
 
-		public List<String> Errors;
+		public List<String> Errors { get; set; }
 
-		public List<String> Info;
+		public List<String> Info { get; set; }
 	} 
 }

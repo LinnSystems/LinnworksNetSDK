@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Stock item id 
         /// </summary>
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
         /// <summary>
         /// Stock item batch data 
         /// </summary>
-		public List<StockItemBatch> ItemBatchInformation;
+		public List<StockItemBatch> ItemBatchInformation { get; set; }
 	} 
 }

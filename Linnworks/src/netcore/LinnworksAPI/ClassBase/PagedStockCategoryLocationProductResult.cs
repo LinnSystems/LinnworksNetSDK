@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class PagedStockCategoryLocationProductResult
 	{
-		public Int64 TotalResults;
+		public Int64 TotalResults { get; set; }
 
-		public List<StockCategoryLocationProduct> Results;
+		public List<StockCategoryLocationProduct> Results { get; set; }
 	} 
 }

@@ -9,25 +9,25 @@ namespace LinnworksAPI
         /// <summary>
         /// The batches that make up this row 
         /// </summary>
-		public List<OrderItemShippingBatchWithRow> AssignedBatches;
+		public List<OrderItemShippingBatchWithRow> AssignedBatches { get; set; }
 
-		public Guid RowId;
+		public Guid RowId { get; set; }
 
-		public Int32? BoxId;
+		public Int32? BoxId { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
-		public String TrackingNumber;
+		public String TrackingNumber { get; set; }
 
-		public Decimal Weight;
+		public Decimal Weight { get; set; }
 
-		public String SKU;
+		public String SKU { get; set; }
 
-		public String Title;
+		public String Title { get; set; }
 
         /// <summary>
         /// Is the order item batched 
         /// </summary>
-		public Boolean IsBatched;
+		public Boolean IsBatched { get; set; }
 	} 
 }

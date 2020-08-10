@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class StockAvailability
 	{
-		public Guid PkId;
+		public Guid PkId { get; set; }
 
-		public LevelType LevelType;
+		public LevelType LevelType { get; set; }
 
-		public AvailabilityStatus Status;
+		public AvailabilityStatus Status { get; set; }
 
-		public String ReferenceNumber;
+		public String ReferenceNumber { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 	} 
 }

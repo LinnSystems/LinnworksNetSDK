@@ -12,11 +12,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Location id for which the workflow will be retrieved 
         /// </summary>
-		public Guid LocationId;
+		public Guid LocationId { get; set; }
 
         /// <summary>
         /// Optional - you can specify a specific group id. The result will only return jobs within this group. 
         /// </summary>
-		public Int32? GroupId;
+		public Int32? GroupId { get; set; }
 	} 
 }

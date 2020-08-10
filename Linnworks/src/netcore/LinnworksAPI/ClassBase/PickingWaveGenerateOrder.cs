@@ -9,8 +9,8 @@ namespace LinnworksAPI
         /// <summary>
         /// Order Id (Integer) 
         /// </summary>
-		public Int32 OrderId;
+		public Int32 OrderId { get; set; }
 
-		public List<PickingWaveGenerateOrderItem> Items;
+		public List<PickingWaveGenerateOrderItem> Items { get; set; }
 	} 
 }

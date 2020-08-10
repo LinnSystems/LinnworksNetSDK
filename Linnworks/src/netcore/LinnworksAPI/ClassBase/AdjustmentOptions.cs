@@ -9,41 +9,41 @@ namespace LinnworksAPI
         /// <summary>
         /// Product title 
         /// </summary>
-		public Boolean Title;
+		public Boolean Title { get; set; }
 
         /// <summary>
         /// Product price 
         /// </summary>
-		public Boolean Price;
+		public Boolean Price { get; set; }
 
         /// <summary>
         /// Product description 
         /// </summary>
-		public Boolean Description;
+		public Boolean Description { get; set; }
 
         /// <summary>
         /// If product extended properties needs to be added 
         /// </summary>
-		public Boolean AddExtendedProperties;
+		public Boolean AddExtendedProperties { get; set; }
 
         /// <summary>
         /// Revise product extended properties 
         /// </summary>
-		public Boolean ReviseExtendedProperties;
+		public Boolean ReviseExtendedProperties { get; set; }
 
         /// <summary>
         /// Update product images 
         /// </summary>
-		public Boolean UpdateImages;
+		public Boolean UpdateImages { get; set; }
 
         /// <summary>
         /// Product variation attributes 
         /// </summary>
-		public Boolean VariationAttributes;
+		public Boolean VariationAttributes { get; set; }
 
         /// <summary>
         /// Reload all images for the template 
         /// </summary>
-		public Boolean ReloadAllImages;
+		public Boolean ReloadAllImages { get; set; }
 	} 
 }

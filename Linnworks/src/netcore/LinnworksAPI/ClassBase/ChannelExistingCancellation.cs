@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class ChannelExistingCancellation
 	{
-		public String Sku;
+		public String Sku { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
-		public String Reason;
+		public String Reason { get; set; }
 	} 
 }

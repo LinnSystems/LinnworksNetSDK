@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetBatchAuditRequest
 	{
-		public Guid ItemId;
+		public Guid ItemId { get; set; }
 	} 
 }

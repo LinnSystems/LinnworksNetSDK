@@ -6,28 +6,28 @@ namespace LinnworksAPI
 { 
     public class FieldDescriptor
 	{
-		public String Name;
+		public String Name { get; set; }
 
-		public String FieldName;
+		public String FieldName { get; set; }
 
-		public String FieldGroup;
+		public String FieldGroup { get; set; }
 
-		public Boolean IsASet;
+		public Boolean IsASet { get; set; }
 
-		public List<EvaluatorGroup> ValidEvaluatorGroups;
+		public List<EvaluatorGroup> ValidEvaluatorGroups { get; set; }
 
-		public String Key;
+		public String Key { get; set; }
 
-		public String KeyDisplayName;
+		public String KeyDisplayName { get; set; }
 
-		public Boolean HasKeyOptions;
+		public Boolean HasKeyOptions { get; set; }
 
-		public Boolean HasAttributeKey;
+		public Boolean HasAttributeKey { get; set; }
 
-		public Boolean HasOptions;
+		public Boolean HasOptions { get; set; }
 
-		public DisplayType DisplayType;
+		public DisplayType DisplayType { get; set; }
 
-		public Boolean ExactMatchRequired;
+		public Boolean ExactMatchRequired { get; set; }
 	} 
 }

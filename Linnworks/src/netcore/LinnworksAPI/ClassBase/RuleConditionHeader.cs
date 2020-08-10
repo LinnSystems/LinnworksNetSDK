@@ -6,22 +6,22 @@ namespace LinnworksAPI
 { 
     public class RuleConditionHeader
 	{
-		public Int32 pkConditionId;
+		public Int32 pkConditionId { get; set; }
 
-		public Int32 fkRuleId;
+		public Int32 fkRuleId { get; set; }
 
-		public Int32 RunOrder;
+		public Int32 RunOrder { get; set; }
 
-		public Boolean Enabled;
+		public Boolean Enabled { get; set; }
 
-		public String ConditionName;
+		public String ConditionName { get; set; }
 
-		public Int32 fkParentConditionId;
+		public Int32 fkParentConditionId { get; set; }
 
-		public List<IRuleConditionItem> Conditions;
+		public List<IRuleConditionItem> Conditions { get; set; }
 
-		public RuleAction Action;
+		public RuleAction Action { get; set; }
 
-		public List<RuleConditionHeader> Subrules;
+		public List<RuleConditionHeader> Subrules { get; set; }
 	} 
 }

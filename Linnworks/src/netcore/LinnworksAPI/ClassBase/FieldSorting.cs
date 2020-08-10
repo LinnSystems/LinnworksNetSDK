@@ -10,16 +10,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Field code to sort by 
         /// </summary>
-		public FieldCode FieldCode;
+		public FieldCode FieldCode { get; set; }
 
         /// <summary>
         /// Sorting direction (Ascending:0, descending:1) 
         /// </summary>
-		public ListSortDirection Direction;
+		public ListSortDirection Direction { get; set; }
 
         /// <summary>
         /// Priority of sorting (e.g. sort by date first, then by status) 
         /// </summary>
-		public Int32 Order;
+		public Int32 Order { get; set; }
 	} 
 }

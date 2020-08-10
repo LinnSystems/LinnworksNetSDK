@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class ConfigRuleCollection
 	{
-		public ConfigRule Item;
+		public ConfigRule Item { get; set; }
 
-		public List<ConfigRule> Items;
+		public List<ConfigRule> Items { get; set; }
 	} 
 }

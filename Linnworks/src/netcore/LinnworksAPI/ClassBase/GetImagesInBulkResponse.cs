@@ -9,6 +9,6 @@ namespace LinnworksAPI
     /// </summary>
     public class GetImagesInBulkResponse
 	{
-		public List<GetImagesInBulkResponseImage> Images;
+		public List<GetImagesInBulkResponseImage> Images { get; set; }
 	} 
 }

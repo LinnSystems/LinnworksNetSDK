@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class Get_EmailsSentRequest
 	{
-		public Guid pkPurchaseId;
+		public Guid pkPurchaseId { get; set; }
 	} 
 }

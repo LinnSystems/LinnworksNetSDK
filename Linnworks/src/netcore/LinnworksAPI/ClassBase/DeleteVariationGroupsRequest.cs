@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// /// A list of VariationsGroups Guids 
         /// </summary>
-		public IEnumerable<Guid> VariationGroupsIdList;
+		public IEnumerable<Guid> VariationGroupsIdList { get; set; }
 	} 
 }

@@ -12,21 +12,21 @@ namespace LinnworksAPI
         /// <summary>
         /// The item id 
         /// </summary>
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
         /// <summary>
         /// The location to get the batch information from 
         /// </summary>
-		public Guid? StockLocationId;
+		public Guid? StockLocationId { get; set; }
 
         /// <summary>
         /// Defines whether we should only return available items 
         /// </summary>
-		public Boolean AvailableOnly;
+		public Boolean AvailableOnly { get; set; }
 
         /// <summary>
         /// Only return warehouse locations that can have orders assigned to them for picking 
         /// </summary>
-		public Boolean AssignableOnly;
+		public Boolean AssignableOnly { get; set; }
 	} 
 }

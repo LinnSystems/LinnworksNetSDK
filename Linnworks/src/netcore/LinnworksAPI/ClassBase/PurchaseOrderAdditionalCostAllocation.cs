@@ -12,21 +12,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Allocation row id. Use this Id to update or delete specific record. 
         /// </summary>
-		public Int32 CostAllocationId;
+		public Int32 CostAllocationId { get; set; }
 
         /// <summary>
         /// Relation to additional cost line 
         /// </summary>
-		public Int32 PurchaseAdditionalCostItemId;
+		public Int32 PurchaseAdditionalCostItemId { get; set; }
 
         /// <summary>
         /// Specific purchase order line id the cost is attributed to 
         /// </summary>
-		public Guid PurchaseItemId;
+		public Guid PurchaseItemId { get; set; }
 
         /// <summary>
         /// Percentage of the cost that will be attributed to Purchase order item id 
         /// </summary>
-		public Decimal AllocationPercentage;
+		public Decimal AllocationPercentage { get; set; }
 	} 
 }

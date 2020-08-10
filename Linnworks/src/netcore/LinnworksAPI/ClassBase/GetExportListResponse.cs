@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetExportListResponse
 	{
-		public List<ExportRegisterPublicSchedules> register;
+		public List<ExportRegisterPublicSchedules> register { get; set; }
 	} 
 }

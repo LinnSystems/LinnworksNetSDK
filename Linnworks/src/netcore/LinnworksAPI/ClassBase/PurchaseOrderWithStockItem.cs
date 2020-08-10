@@ -12,11 +12,11 @@ namespace LinnworksAPI
         /// <summary>
         /// The Id of the Stock Item 
         /// </summary>
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
         /// <summary>
         /// List of Location Ids to determine whether to return Purchase Order Ids based on stock location as well as Stock Item Id 
         /// </summary>
-		public List<Guid> LocationIds;
+		public List<Guid> LocationIds { get; set; }
 	} 
 }

@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class PrintError
 	{
-		public String TemplateType;
+		public String TemplateType { get; set; }
 
-		public Guid Id;
+		public Guid Id { get; set; }
 
-		public String Error;
+		public String Error { get; set; }
 
-		public List<PrintErrorTags> Tags;
+		public List<PrintErrorTags> Tags { get; set; }
 	} 
 }

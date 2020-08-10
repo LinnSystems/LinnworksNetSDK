@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class OptionBase
 	{
-		public String Text;
+		public String Text { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

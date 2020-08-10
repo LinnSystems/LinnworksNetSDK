@@ -9,56 +9,56 @@ namespace LinnworksAPI
     /// </summary>
     public class ChannelOrderItem
 	{
-		public Boolean TaxCostInclusive;
+		public Boolean TaxCostInclusive { get; set; }
 
         /// <summary>
         /// Validate if the tax should be overwritten on the orderitem. 
         /// </summary>
-		public Boolean UseChannelTax;
+		public Boolean UseChannelTax { get; set; }
 
         /// <summary>
         /// Indivdual price of the item 
         /// </summary>
-		public Double PricePerUnit;
+		public Double PricePerUnit { get; set; }
 
         /// <summary>
         /// Quantity customer ordered 
         /// </summary>
-		public Int32 Qty;
+		public Int32 Qty { get; set; }
 
         /// <summary>
         /// Tax Rate as a whole number eg. 20 
         /// </summary>
-		public Double TaxRate;
+		public Double TaxRate { get; set; }
 
         /// <summary>
         /// Discount percentage on the line as a whole number eg. 10 
         /// </summary>
-		public Double LineDiscount;
+		public Double LineDiscount { get; set; }
 
         /// <summary>
         /// Unique line number 
         /// </summary>
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
         /// <summary>
         /// SKU of the item ordered on the channel 
         /// </summary>
-		public String ChannelSKU;
+		public String ChannelSKU { get; set; }
 
         /// <summary>
         /// Indicates the item is a service and not a physical item 
         /// </summary>
-		public Boolean IsService;
+		public Boolean IsService { get; set; }
 
         /// <summary>
         /// Title of the item ordered, or service name 
         /// </summary>
-		public String ItemTitle;
+		public String ItemTitle { get; set; }
 
         /// <summary>
         /// Options on the item ordered 
         /// </summary>
-		public List<ChannelOrderItemOption> Options;
+		public List<ChannelOrderItemOption> Options { get; set; }
 	} 
 }

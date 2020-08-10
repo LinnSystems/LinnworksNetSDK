@@ -12,41 +12,41 @@ namespace LinnworksAPI
         /// <summary>
         /// Delivery record Id 
         /// </summary>
-		public Int32 pkDeliveryRecordId;
+		public Int32 pkDeliveryRecordId { get; set; }
 
         /// <summary>
         /// Purchase item id 
         /// </summary>
-		public Guid fkPurchaseItemId;
+		public Guid fkPurchaseItemId { get; set; }
 
         /// <summary>
         /// Purchase item location id 
         /// </summary>
-		public Guid fkStockLocationId;
+		public Guid fkStockLocationId { get; set; }
 
         /// <summary>
         /// Unit cost 
         /// </summary>
-		public Decimal UnitCost;
+		public Decimal UnitCost { get; set; }
 
         /// <summary>
         /// Quantity delivered 
         /// </summary>
-		public Int32 DeliveredQuantity;
+		public Int32 DeliveredQuantity { get; set; }
 
         /// <summary>
         /// Record creation date 
         /// </summary>
-		public DateTime CreatedDateTime;
+		public DateTime CreatedDateTime { get; set; }
 
         /// <summary>
         /// Record modification date 
         /// </summary>
-		public DateTime? ModifiedDateTime;
+		public DateTime? ModifiedDateTime { get; set; }
 
         /// <summary>
         /// Purchase item batch Id (Optional) 
         /// </summary>
-		public Int32? fkBatchInventoryId;
+		public Int32? fkBatchInventoryId { get; set; }
 	} 
 }

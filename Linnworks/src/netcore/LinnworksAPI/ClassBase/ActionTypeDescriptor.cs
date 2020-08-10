@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class ActionTypeDescriptor
 	{
-		public ActionType Value;
+		public ActionType Value { get; set; }
 
-		public String DisplayName;
+		public String DisplayName { get; set; }
 
-		public ActionTypeDescriptorProperties[] Properties;
+		public ActionTypeDescriptorProperties[] Properties { get; set; }
 
-		public DisplayType DisplayType;
+		public DisplayType DisplayType { get; set; }
 
-		public FieldType FieldType;
+		public FieldType FieldType { get; set; }
 	} 
 }

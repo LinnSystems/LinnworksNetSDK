@@ -12,36 +12,36 @@ namespace LinnworksAPI
         /// <summary>
         /// Stock location ID. 
         /// </summary>
-		public Guid fkStockLocationId;
+		public Guid fkStockLocationId { get; set; }
 
         /// <summary>
         /// ID of Order Export if enabled. 
         /// </summary>
-		public Int32 fkOrdersExportId;
+		public Int32 fkOrdersExportId { get; set; }
 
         /// <summary>
         /// ID of Order Import if enabled. 
         /// </summary>
-		public Int32 fkOrdersImportId;
+		public Int32 fkOrdersImportId { get; set; }
 
         /// <summary>
         /// ID of Inventory Import if enabled. 
         /// </summary>
-		public Int32 fkInventoryImportId;
+		public Int32 fkInventoryImportId { get; set; }
 
         /// <summary>
         /// True if Order Export is enabled. 
         /// </summary>
-		public Boolean OrdersExportEnabled;
+		public Boolean OrdersExportEnabled { get; set; }
 
         /// <summary>
         /// True if Order Import is enabled. 
         /// </summary>
-		public Boolean OrdersImportEnabled;
+		public Boolean OrdersImportEnabled { get; set; }
 
         /// <summary>
         /// True if Inventory Import is enabled. 
         /// </summary>
-		public Boolean InventoryImportEnabled;
+		public Boolean InventoryImportEnabled { get; set; }
 	} 
 }

@@ -6,16 +6,16 @@ namespace LinnworksAPI
 { 
     public class CreateRefundResponse
 	{
-		public Int32? RefundHeaderId;
+		public Int32? RefundHeaderId { get; set; }
 
-		public String RefundReference;
+		public String RefundReference { get; set; }
 
-		public PostSaleStatus Status;
+		public PostSaleStatus Status { get; set; }
 
-		public CannotRefundReasonType CannotRefundReason;
+		public CannotRefundReasonType CannotRefundReason { get; set; }
 
-		public List<String> Errors;
+		public List<String> Errors { get; set; }
 
-		public ISet<VerifiedRefund> RefundLines;
+		public ISet<VerifiedRefund> RefundLines { get; set; }
 	} 
 }

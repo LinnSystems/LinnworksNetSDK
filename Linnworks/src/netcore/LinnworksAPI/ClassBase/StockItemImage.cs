@@ -12,30 +12,30 @@ namespace LinnworksAPI
         /// <summary>
         /// URL to thumnail image 
         /// </summary>
-		public String Source;
+		public String Source { get; set; }
 
         /// <summary>
         /// Url to full size image 
         /// </summary>
-		public String FullSource;
+		public String FullSource { get; set; }
 
         /// <summary>
         /// Image check sum 
         /// </summary>
-		public String CheckSumValue;
+		public String CheckSumValue { get; set; }
 
-		public Guid pkRowId;
+		public Guid pkRowId { get; set; }
 
-		public Boolean IsMain;
+		public Boolean IsMain { get; set; }
 
-		public Int32 SortOrder;
+		public Int32 SortOrder { get; set; }
 
-		public String ChecksumValue;
+		public String ChecksumValue { get; set; }
 
-		public String RawChecksum;
+		public String RawChecksum { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

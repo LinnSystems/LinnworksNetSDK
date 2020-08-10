@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class ExportGenericFeed
 	{
-		public ExportFeedType FeedType;
+		public ExportFeedType FeedType { get; set; }
 
-		public String FileName;
+		public String FileName { get; set; }
 
-		public String FilePath;
+		public String FilePath { get; set; }
 
-		public FileExistAction? IfFileExist;
+		public FileExistAction? IfFileExist { get; set; }
 	} 
 }

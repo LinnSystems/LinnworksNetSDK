@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetProductIdentifiersByStockItemIdResponse
 	{
-		public IEnumerable<StockItemProductIdentifier> ProductIdentifiers;
+		public IEnumerable<StockItemProductIdentifier> ProductIdentifiers { get; set; }
 	} 
 }

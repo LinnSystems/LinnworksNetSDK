@@ -6,29 +6,29 @@ namespace LinnworksAPI
 { 
     public class ScrapItem
 	{
-		public Guid Id;
+		public Guid Id { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
-		public String ItemTitle;
+		public String ItemTitle { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
-		public String CategoryName;
+		public String CategoryName { get; set; }
 
-		public String ScrapReason;
+		public String ScrapReason { get; set; }
 
-		public Double TotalCost;
+		public Double TotalCost { get; set; }
 
-		public String UserName;
+		public String UserName { get; set; }
 
-		public DateTime CreatedDate;
+		public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Stock location Id, nullable as historically this filed has not been set and therefore some entries in the database may not have location against the scrap item. 
         /// </summary>
-		public Guid? StockLocationId;
+		public Guid? StockLocationId { get; set; }
 	} 
 }

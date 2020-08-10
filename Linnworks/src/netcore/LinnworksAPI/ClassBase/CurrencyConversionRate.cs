@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Currency code (e.g. GBP) 
         /// </summary>
-		public String Currency;
+		public String Currency { get; set; }
 
         /// <summary>
         /// Currency conversion rate to default currency 
         /// </summary>
-		public Double ConversionRate;
+		public Double ConversionRate { get; set; }
 	} 
 }

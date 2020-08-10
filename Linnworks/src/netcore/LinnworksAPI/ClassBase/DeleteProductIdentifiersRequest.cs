@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class DeleteProductIdentifiersRequest
 	{
-		public IEnumerable<Int64> ProductIdentifierIds;
+		public IEnumerable<Int64> ProductIdentifierIds { get; set; }
 	} 
 }

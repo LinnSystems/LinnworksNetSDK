@@ -9,26 +9,26 @@ namespace LinnworksAPI
         /// <summary>
         /// Record row ID (generate random) 
         /// </summary>
-		public Guid pkRowId;
+		public Guid pkRowId { get; set; }
 
         /// <summary>
         /// Stock Item ID 
         /// </summary>
-		public Guid fkStockItemId;
+		public Guid fkStockItemId { get; set; }
 
         /// <summary>
         /// Property name 
         /// </summary>
-		public String ProperyName;
+		public String ProperyName { get; set; }
 
         /// <summary>
         /// Property value 
         /// </summary>
-		public String PropertyValue;
+		public String PropertyValue { get; set; }
 
         /// <summary>
         /// Property type 
         /// </summary>
-		public String PropertyType;
+		public String PropertyType { get; set; }
 	} 
 }

@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class StatusDetails
 	{
-		public StateType State;
+		public StateType State { get; set; }
 
-		public String Reason;
+		public String Reason { get; set; }
 
-		public Dictionary<String,String> Parameters;
+		public Dictionary<String,String> Parameters { get; set; }
 	} 
 }

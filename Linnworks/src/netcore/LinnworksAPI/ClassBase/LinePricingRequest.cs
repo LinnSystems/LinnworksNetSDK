@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Price per unit (default from stock item) 
         /// </summary>
-		public Double PricePerUnit;
+		public Double PricePerUnit { get; set; }
 
         /// <summary>
         /// Discount percentage (default 0) 
         /// </summary>
-		public Double DiscountPercentage;
+		public Double DiscountPercentage { get; set; }
 
         /// <summary>
         /// Tax rate percentage 
         /// </summary>
-		public Double TaxRatePercentage;
+		public Double TaxRatePercentage { get; set; }
 
         /// <summary>
         /// Tax inclusive (default true) 
         /// </summary>
-		public Boolean TaxInclusive;
+		public Boolean TaxInclusive { get; set; }
 	} 
 }

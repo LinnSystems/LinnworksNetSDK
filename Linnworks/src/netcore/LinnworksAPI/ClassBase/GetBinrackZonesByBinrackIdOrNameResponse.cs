@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Warehouse Zones 
         /// </summary>
-		public List<WarehouseZone> Zones;
+		public List<WarehouseZone> Zones { get; set; }
 
         /// <summary>
         /// Warehosue binrack to zones. 
         /// </summary>
-		public List<WarehouseBinrackToZone> BinrackToZones;
+		public List<WarehouseBinrackToZone> BinrackToZones { get; set; }
 	} 
 }

@@ -6,22 +6,22 @@ namespace LinnworksAPI
 { 
     public class ValidatedCancellation
 	{
-		public PostSaleStatusType Status;
+		public PostSaleStatusType Status { get; set; }
 
-		public PostSaleSubStatus SubStatus;
+		public PostSaleSubStatus SubStatus { get; set; }
 
-		public ISet<ChannelExistingCancellation> ChannelExistingCancellations;
+		public ISet<ChannelExistingCancellation> ChannelExistingCancellations { get; set; }
 
-		public Boolean NeedsConfirmation;
+		public Boolean NeedsConfirmation { get; set; }
 
-		public String RefundReference;
+		public String RefundReference { get; set; }
 
-		public List<String> Errors;
+		public List<String> Errors { get; set; }
 
-		public OrderDetails Order;
+		public OrderDetails Order { get; set; }
 
-		public Boolean AllowRefundOnCancel;
+		public Boolean AllowRefundOnCancel { get; set; }
 
-		public Boolean OrderIsLockedOnUnhandledError;
+		public Boolean OrderIsLockedOnUnhandledError { get; set; }
 	} 
 }

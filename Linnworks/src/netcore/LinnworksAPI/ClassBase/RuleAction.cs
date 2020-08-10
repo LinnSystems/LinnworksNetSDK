@@ -6,20 +6,20 @@ namespace LinnworksAPI
 { 
     public class RuleAction
 	{
-		public Int32 pkActionId;
+		public Int32 pkActionId { get; set; }
 
-		public String ActionName;
+		public String ActionName { get; set; }
 
-		public ActionType ActionType;
+		public ActionType ActionType { get; set; }
 
-		public String ActionValue;
+		public String ActionValue { get; set; }
 
-		public Int32 fkConditionId;
+		public Int32 fkConditionId { get; set; }
 
-		public Int32 RuleVersion;
+		public Int32 RuleVersion { get; set; }
 
-		public Int32 fkRuleId;
+		public Int32 fkRuleId { get; set; }
 
-		public List<RuleActionProperty> Properties;
+		public List<RuleActionProperty> Properties { get; set; }
 	} 
 }

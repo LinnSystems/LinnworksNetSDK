@@ -6,18 +6,18 @@ namespace LinnworksAPI
 { 
     public class StockItemProductIdentifier
 	{
-		public Int64 PkId;
+		public Int64 PkId { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public ProductIdentifierType Type;
+		public ProductIdentifierType Type { get; set; }
 
-		public String Site;
+		public String Site { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 
-		public DateTime ModifiedDate;
+		public DateTime ModifiedDate { get; set; }
 
-		public String ModifiedUserName;
+		public String ModifiedUserName { get; set; }
 	} 
 }

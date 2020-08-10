@@ -12,6 +12,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of pickwave items to update 
         /// </summary>
-		public List<PickingWaveItemUpdate> WaveItemUpdates;
+		public List<PickingWaveItemUpdate> WaveItemUpdates { get; set; }
 	} 
 }

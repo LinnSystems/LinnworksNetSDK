@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class AddData
 	{
-		public String Name;
+		public String Name { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

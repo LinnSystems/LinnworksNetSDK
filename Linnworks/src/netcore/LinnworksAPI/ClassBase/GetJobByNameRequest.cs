@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Job name to find 
         /// </summary>
-		public String JobName;
+		public String JobName { get; set; }
 
         /// <summary>
         /// Supply if the job should only exist in a location 
         /// </summary>
-		public Guid? LocationId;
+		public Guid? LocationId { get; set; }
 	} 
 }

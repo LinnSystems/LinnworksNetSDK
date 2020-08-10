@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class AvailableTimeZone
 	{
-		public String Id;
+		public String Id { get; set; }
 
-		public String Name;
+		public String Name { get; set; }
 	} 
 }

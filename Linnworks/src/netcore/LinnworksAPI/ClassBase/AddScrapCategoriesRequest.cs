@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class AddScrapCategoriesRequest
 	{
-		public List<String> CategoryNames;
+		public List<String> CategoryNames { get; set; }
 	} 
 }

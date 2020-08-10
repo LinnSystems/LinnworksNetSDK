@@ -6,24 +6,24 @@ namespace LinnworksAPI
 { 
     public class EbayListingAudit
 	{
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
-		public String ActionType;
+		public String ActionType { get; set; }
 
-		public String ActionText;
+		public String ActionText { get; set; }
 
-		public Guid AffectivefkStockItemId;
+		public Guid AffectivefkStockItemId { get; set; }
 
-		public Guid ListId;
+		public Guid ListId { get; set; }
 
-		public DateTime ActionDateTime;
+		public DateTime ActionDateTime { get; set; }
 
-		public Int32 SetQuantity;
+		public Int32 SetQuantity { get; set; }
 
-		public Double SetPrice;
+		public Double SetPrice { get; set; }
 
-		public Boolean IsError;
+		public Boolean IsError { get; set; }
 
-		public String SKU;
+		public String SKU { get; set; }
 	} 
 }

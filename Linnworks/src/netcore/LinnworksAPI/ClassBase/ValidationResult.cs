@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Validation result 
         /// </summary>
-		public ValidationResultTypes Type;
+		public ValidationResultTypes Type { get; set; }
 
         /// <summary>
         /// List of affected items 
         /// </summary>
-		public List<RefundItem> InvalidItems;
+		public List<RefundItem> InvalidItems { get; set; }
 
         /// <summary>
         /// Additional information 
         /// </summary>
-		public String AdditionalInformation;
+		public String AdditionalInformation { get; set; }
 	} 
 }

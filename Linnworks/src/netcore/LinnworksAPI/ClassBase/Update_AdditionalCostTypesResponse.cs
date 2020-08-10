@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Update additional cost type 
         /// </summary>
-		public PurchaseOrderAdditionalCostType UpdatedAdditionalCostType;
+		public PurchaseOrderAdditionalCostType UpdatedAdditionalCostType { get; set; }
 	} 
 }

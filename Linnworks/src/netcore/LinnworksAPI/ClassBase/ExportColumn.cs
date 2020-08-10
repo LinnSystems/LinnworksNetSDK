@@ -6,25 +6,25 @@ namespace LinnworksAPI
 { 
     public class ExportColumn
 	{
-		public Int32 Order;
+		public Int32 Order { get; set; }
 
-		public Filters Filters;
+		public Filters Filters { get; set; }
 
-		public Boolean ExportToFile;
+		public Boolean ExportToFile { get; set; }
 
         /// <summary>
         /// list of subquery selection fields. Here we specify the predicate for field value for the given row 
         /// </summary>
-		public List<SubQueryOutputMappingSelectionField> SubQuerySelection;
+		public List<SubQueryOutputMappingSelectionField> SubQuerySelection { get; set; }
 
-		public String FileColumn;
+		public String FileColumn { get; set; }
 
-		public String Column;
+		public String Column { get; set; }
 
-		public String Expression;
+		public String Expression { get; set; }
 
-		public String DefaultValue;
+		public String DefaultValue { get; set; }
 
-		public Boolean Visible;
+		public Boolean Visible { get; set; }
 	} 
 }

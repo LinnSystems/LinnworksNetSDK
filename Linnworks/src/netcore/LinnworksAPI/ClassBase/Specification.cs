@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class Specification<ImportGenericFeed,ImportColumn>
 	{
-		public ImportGenericFeed Feed;
+		public ImportGenericFeed Feed { get; set; }
 
-		public List<ImportColumn> ColumnMappings;
+		public List<ImportColumn> ColumnMappings { get; set; }
 
-		public List<ExecutionOption> ExecutionOptions;
+		public List<ExecutionOption> ExecutionOptions { get; set; }
 	} 
 }

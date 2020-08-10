@@ -12,11 +12,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Purchase order uniqueidentifier 
         /// </summary>
-		public Guid pkPurchaseId;
+		public Guid pkPurchaseId { get; set; }
 
         /// <summary>
         /// Change purchase order status to the specified value 
         /// </summary>
-		public PurchaseOrderStatus status;
+		public PurchaseOrderStatus status { get; set; }
 	} 
 }

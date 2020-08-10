@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// If you want to get currencies from orders 
         /// </summary>
-		public Boolean GetCurrenciesFromOrders;
+		public Boolean GetCurrenciesFromOrders { get; set; }
 
         /// <summary>
         /// Currency 
         /// </summary>
-		public String Currency;
+		public String Currency { get; set; }
 	} 
 }

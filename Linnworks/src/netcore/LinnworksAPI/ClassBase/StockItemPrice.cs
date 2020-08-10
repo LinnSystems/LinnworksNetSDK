@@ -9,22 +9,22 @@ namespace LinnworksAPI
         /// <summary>
         /// Pricing rule 
         /// </summary>
-		public List<StockItemPricingRule> Rules;
+		public List<StockItemPricingRule> Rules { get; set; }
 
-		public Guid pkRowId;
+		public Guid pkRowId { get; set; }
 
-		public String Source;
+		public String Source { get; set; }
 
-		public String SubSource;
+		public String SubSource { get; set; }
 
-		public Double Price;
+		public Double Price { get; set; }
 
-		public String Tag;
+		public String Tag { get; set; }
 
-		public UpdateStatusType UpdateStatus;
+		public UpdateStatusType UpdateStatus { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

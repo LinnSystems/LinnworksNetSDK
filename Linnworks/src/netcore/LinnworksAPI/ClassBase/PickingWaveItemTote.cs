@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class PickingWaveItemTote
 	{
-		public Int32 RowId;
+		public Int32 RowId { get; set; }
 
-		public Int32 PickingWaveItemsRowId;
+		public Int32 PickingWaveItemsRowId { get; set; }
 
-		public Int32? ToteId;
+		public Int32? ToteId { get; set; }
 
-		public String TrayTag;
+		public String TrayTag { get; set; }
 
-		public Int32 PickedQuantity;
+		public Int32 PickedQuantity { get; set; }
 	} 
 }

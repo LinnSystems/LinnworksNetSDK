@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetProductIdentifiersByStockItemIdRequest
 	{
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 	} 
 }

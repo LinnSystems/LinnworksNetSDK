@@ -9,36 +9,36 @@ namespace LinnworksAPI
         /// <summary>
         /// Bin ID 
         /// </summary>
-		public Guid pkBinId;
+		public Guid pkBinId { get; set; }
 
         /// <summary>
         /// Postal service ID 
         /// </summary>
-		public Guid pkPostalServiceId;
+		public Guid pkPostalServiceId { get; set; }
 
         /// <summary>
         /// Order packaging weight 
         /// </summary>
-		public Decimal PackagingWeight;
+		public Decimal PackagingWeight { get; set; }
 
         /// <summary>
         /// Order packaging type 
         /// </summary>
-		public Guid fkPackagingTypeId;
+		public Guid fkPackagingTypeId { get; set; }
 
         /// <summary>
         /// List of items 
         /// </summary>
-		public List<OrderPackagingSplitItem> Items;
+		public List<OrderPackagingSplitItem> Items { get; set; }
 
         /// <summary>
         /// Total weight 
         /// </summary>
-		public Decimal TotalWeight;
+		public Decimal TotalWeight { get; set; }
 
         /// <summary>
         /// Tracking number 
         /// </summary>
-		public String TrackingNumbers;
+		public String TrackingNumbers { get; set; }
 	} 
 }

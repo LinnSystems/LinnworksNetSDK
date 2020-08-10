@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class ScrapBatchedItemResponse
 	{
-		public ScrapItem ScrapItem;
+		public ScrapItem ScrapItem { get; set; }
 	} 
 }

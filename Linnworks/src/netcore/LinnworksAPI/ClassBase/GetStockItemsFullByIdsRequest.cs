@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class GetStockItemsFullByIdsRequest
 	{
-		public List<Guid> StockItemIds;
+		public List<Guid> StockItemIds { get; set; }
 
-		public List<StockItemFullExtendedDataRequirement> DataRequirements;
+		public List<StockItemFullExtendedDataRequirement> DataRequirements { get; set; }
 	} 
 }

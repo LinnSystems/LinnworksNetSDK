@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class Schedule
 	{
-		public Int32 Id;
+		public Int32 Id { get; set; }
 
-		public Int32 Order;
+		public Int32 Order { get; set; }
 
-		public String Name;
+		public String Name { get; set; }
 
-		public String ScheduleXML;
+		public String ScheduleXML { get; set; }
 
-		public ScheduleConfiguration Configuration;
+		public ScheduleConfiguration Configuration { get; set; }
 	} 
 }

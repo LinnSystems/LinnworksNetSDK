@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class ChannelReason
 	{
-		public String Tag;
+		public String Tag { get; set; }
 
-		public String DisplayName;
+		public String DisplayName { get; set; }
 
-		public ChannelReasonTypes Types;
+		public ChannelReasonTypes Types { get; set; }
 
-		public List<ChannelSubReason> SubReasons;
+		public List<ChannelSubReason> SubReasons { get; set; }
 	} 
 }

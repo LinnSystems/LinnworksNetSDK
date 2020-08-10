@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// The page number to return for a given set of filters 
         /// </summary>
-		public Int32 Page;
+		public Int32 Page { get; set; }
 
         /// <summary>
         /// A set of filters to restrict the refund headers output by the call 
         /// </summary>
-		public ActionablePostSaleSearchFilters Filters;
+		public ActionablePostSaleSearchFilters Filters { get; set; }
 	} 
 }

@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class OrderItemBatchInfo
 	{
-		public Guid pkOrderId;
+		public Guid pkOrderId { get; set; }
 	} 
 }

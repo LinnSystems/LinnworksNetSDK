@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Purchase order uniqueidentifier 
         /// </summary>
-		public Guid PurchaseId;
+		public Guid PurchaseId { get; set; }
 
         /// <summary>
         /// items to update 
         /// </summary>
-		public List<Update_PurchaseOrderExtendedPropertyItem> ExtendedPropertyItems;
+		public List<Update_PurchaseOrderExtendedPropertyItem> ExtendedPropertyItems { get; set; }
 	} 
 }

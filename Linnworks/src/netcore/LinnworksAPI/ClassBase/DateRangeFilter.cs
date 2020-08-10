@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class DateRangeFilter
 	{
-		public DateTime ValueFrom;
+		public DateTime ValueFrom { get; set; }
 
-		public DateTime ValueTo;
+		public DateTime ValueTo { get; set; }
 
-		public Int32 Days;
+		public Int32 Days { get; set; }
 
-		public Boolean Enabled;
+		public Boolean Enabled { get; set; }
 
-		public String Type;
+		public String Type { get; set; }
 	} 
 }

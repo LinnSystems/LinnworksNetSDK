@@ -4,10 +4,10 @@ namespace LinnworksAPI
 { 
     public class PointF
 	{
-		public Boolean IsEmpty;
+		public Boolean IsEmpty { get; set; }
 
-		public Single X;
+		public Single X { get; set; }
 
-		public Single Y;
+		public Single Y { get; set; }
 	} 
 }

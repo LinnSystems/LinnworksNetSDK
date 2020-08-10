@@ -6,40 +6,40 @@ namespace LinnworksAPI
 { 
     public class ImportRegister
 	{
-		public String LastFileChecksum;
+		public String LastFileChecksum { get; set; }
 
         /// <summary>
         /// Current import status 
         /// </summary>
-		public String ImportStatus;
+		public String ImportStatus { get; set; }
 
         /// <summary>
         /// If import was skipped 
         /// </summary>
-		public Boolean ImportSkipped;
+		public Boolean ImportSkipped { get; set; }
 
-		public Int32 Id;
+		public Int32 Id { get; set; }
 
-		public ImportType Type;
+		public ImportType Type { get; set; }
 
-		public String FriendlyName;
+		public String FriendlyName { get; set; }
 
-		public Boolean Executing;
+		public Boolean Executing { get; set; }
 
-		public Boolean justOnce;
+		public Boolean justOnce { get; set; }
 
-		public DateTime? Started;
+		public DateTime? Started { get; set; }
 
-		public DateTime? Completed;
+		public DateTime? Completed { get; set; }
 
-		public Boolean IsQueued;
+		public Boolean IsQueued { get; set; }
 
-		public Boolean Enabled;
+		public Boolean Enabled { get; set; }
 
-		public Boolean IsNew;
+		public Boolean IsNew { get; set; }
 
-		public Boolean AllSchedulesDisabled;
+		public Boolean AllSchedulesDisabled { get; set; }
 
-		public DateTime? NextSchedule;
+		public DateTime? NextSchedule { get; set; }
 	} 
 }

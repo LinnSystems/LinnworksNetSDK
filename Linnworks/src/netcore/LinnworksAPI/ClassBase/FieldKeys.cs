@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class FieldKeys
 	{
-		public String FieldName;
+		public String FieldName { get; set; }
 
-		public List<String> Keys;
+		public List<String> Keys { get; set; }
 	} 
 }

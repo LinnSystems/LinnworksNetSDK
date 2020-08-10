@@ -6,28 +6,28 @@ namespace LinnworksAPI
 { 
     public class PackedItem
 	{
-		public Guid ID;
+		public Guid ID { get; set; }
 
-		public Guid PkStockItemId;
+		public Guid PkStockItemId { get; set; }
 
-		public String SKU;
+		public String SKU { get; set; }
 
-		public Double Width;
+		public Double Width { get; set; }
 
-		public Double Height;
+		public Double Height { get; set; }
 
-		public Double Depth;
+		public Double Depth { get; set; }
 
-		public Decimal Weight;
+		public Decimal Weight { get; set; }
 
-		public Double X;
+		public Double X { get; set; }
 
-		public Double Y;
+		public Double Y { get; set; }
 
-		public Double Z;
+		public Double Z { get; set; }
 
-		public Int32 Layer;
+		public Int32 Layer { get; set; }
 
-		public IList<Face> Faces;
+		public IList<Face> Faces { get; set; }
 	} 
 }

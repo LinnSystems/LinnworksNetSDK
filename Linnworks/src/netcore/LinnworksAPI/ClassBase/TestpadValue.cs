@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class TestpadValue
 	{
-		public String FieldName;
+		public String FieldName { get; set; }
 
-		public String Key;
+		public String Key { get; set; }
 
-		public List<String> Values;
+		public List<String> Values { get; set; }
 	} 
 }

@@ -6,26 +6,26 @@ namespace LinnworksAPI
 { 
     public class BatchStockLevelDelta
 	{
-		public String SKU;
+		public String SKU { get; set; }
 
-		public String BatchNumber;
+		public String BatchNumber { get; set; }
 
-		public String BinRack;
+		public String BinRack { get; set; }
 
-		public Int32 DeltaQuantity;
+		public Int32 DeltaQuantity { get; set; }
 
-		public String Reason;
+		public String Reason { get; set; }
 
-		public Int32? pkBatchInventoryId;
+		public Int32? pkBatchInventoryId { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
-		public Decimal StockValue;
+		public Decimal StockValue { get; set; }
 
-		public List<String> Errors;
+		public List<String> Errors { get; set; }
 
-		public Int32 NewLevel;
+		public Int32 NewLevel { get; set; }
 
-		public String BatchStatus;
+		public String BatchStatus { get; set; }
 	} 
 }

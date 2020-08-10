@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Linnworks Order Id 
         /// </summary>
-		public Guid OrderId;
+		public Guid OrderId { get; set; }
 
         /// <summary>
         /// The Row Id for the order item 
         /// </summary>
-		public Guid OrderItemRowId;
+		public Guid OrderItemRowId { get; set; }
 
         /// <summary>
         /// A list of additional information to update or delete from the order item 
         /// </summary>
-		public List<OrderItemOptionUpdate> AdditionalInfo;
+		public List<OrderItemOptionUpdate> AdditionalInfo { get; set; }
 	} 
 }

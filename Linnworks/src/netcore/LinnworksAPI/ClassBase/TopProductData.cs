@@ -6,16 +6,16 @@ namespace LinnworksAPI
 { 
     public class TopProductData
 	{
-		public Int32 RowNum;
+		public Int32 RowNum { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
-		public Double Cost;
+		public Double Cost { get; set; }
 
-		public String Title;
+		public String Title { get; set; }
 
-		public String SKU;
+		public String SKU { get; set; }
 
-		public String Currency;
+		public String Currency { get; set; }
 	} 
 }

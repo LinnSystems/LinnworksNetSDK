@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Stock item id 
         /// </summary>
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
         /// <summary>
         /// Composite parent order item row id 
         /// </summary>
-		public Guid OrderItemRowId;
+		public Guid OrderItemRowId { get; set; }
 
         /// <summary>
         /// Quantity of composite. 
         /// </summary>
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
         /// <summary>
         /// Child row relationships to parent 
         /// </summary>
-		public List<PickingWaveItemComposition> Children;
+		public List<PickingWaveItemComposition> Children { get; set; }
 	} 
 }

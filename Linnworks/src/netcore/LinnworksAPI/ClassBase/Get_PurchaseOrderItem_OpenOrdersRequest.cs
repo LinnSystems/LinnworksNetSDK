@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class Get_PurchaseOrderItem_OpenOrdersRequest
 	{
-		public Guid pkPurchaseItemId;
+		public Guid pkPurchaseItemId { get; set; }
 	} 
 }

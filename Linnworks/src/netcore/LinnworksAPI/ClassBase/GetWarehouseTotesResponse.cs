@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetWarehouseTotesResponse
 	{
-		public List<WarehouseTOTE> Totes;
+		public List<WarehouseTOTE> Totes { get; set; }
 	} 
 }

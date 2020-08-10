@@ -12,20 +12,20 @@ namespace LinnworksAPI
         /// <summary>
         /// Each item in the request can have unique Id supplied (uniqueidentifier) this Id will be returned to you in the response so you can match request item with the response 
         /// </summary>
-		public Guid Id;
+		public Guid Id { get; set; }
 
-		public String Reference;
+		public String Reference { get; set; }
 
-		public Decimal ConversionRate;
+		public Decimal ConversionRate { get; set; }
 
-		public String Currency;
+		public String Currency { get; set; }
 
-		public Int32? fkPurchaseAdditionalCostItemId;
+		public Int32? fkPurchaseAdditionalCostItemId { get; set; }
 
-		public Decimal LineCost;
+		public Decimal LineCost { get; set; }
 
-		public DateTime? PaymentDate;
+		public DateTime? PaymentDate { get; set; }
 
-		public DateTime CreationDate;
+		public DateTime CreationDate { get; set; }
 	} 
 }

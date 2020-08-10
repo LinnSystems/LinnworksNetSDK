@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class DownloadOrdersToCSVResponse
 	{
-		public String Url;
+		public String Url { get; set; }
 
-		public Single DownloadProgress;
+		public Single DownloadProgress { get; set; }
 
-		public Single UploadProgress;
+		public Single UploadProgress { get; set; }
 
-		public Guid Id;
+		public Guid Id { get; set; }
 
-		public String CreationDate;
+		public String CreationDate { get; set; }
 	} 
 }

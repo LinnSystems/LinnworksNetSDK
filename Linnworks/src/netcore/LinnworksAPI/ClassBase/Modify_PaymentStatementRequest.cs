@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// list of payment statements to add. Each item has Id which will be returned to you to match the item you are adding to array on your side 
         /// </summary>
-		public List<AddPaymentStatementItem> itemsToAdd;
+		public List<AddPaymentStatementItem> itemsToAdd { get; set; }
 
         /// <summary>
         /// List of payment statements to update. Each line is identified by 
         /// </summary>
-		public List<UpdatePaymentStatementItem> itemsToUpdate;
+		public List<UpdatePaymentStatementItem> itemsToUpdate { get; set; }
 
         /// <summary>
         /// List of payment statements to delete, provide list of PurchasePaymentStatementId's 
         /// </summary>
-		public List<Int32> itemsToDelete;
+		public List<Int32> itemsToDelete { get; set; }
 
         /// <summary>
         /// Purchase order id 
         /// </summary>
-		public Guid PurchaseId;
+		public Guid PurchaseId { get; set; }
 	} 
 }

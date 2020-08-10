@@ -12,28 +12,28 @@ namespace LinnworksAPI
         /// <summary>
         /// Text type field filters 
         /// </summary>
-		public List<TextFieldFilter> TextFields;
+		public List<TextFieldFilter> TextFields { get; set; }
 
         /// <summary>
         /// Boolean type field filters 
         /// </summary>
-		public List<BooleanFieldFilter> BooleanFields;
+		public List<BooleanFieldFilter> BooleanFields { get; set; }
 
         /// <summary>
         /// Numerical type field filters 
         /// </summary>
-		public List<NumericFieldFilter> NumericFields;
+		public List<NumericFieldFilter> NumericFields { get; set; }
 
         /// <summary>
         /// Date type field filters 
         /// </summary>
-		public List<DateFieldFilter> DateFields;
+		public List<DateFieldFilter> DateFields { get; set; }
 
         /// <summary>
         /// List type field filters 
         /// </summary>
-		public List<ListFieldFilter> ListFields;
+		public List<ListFieldFilter> ListFields { get; set; }
 
-		public List<FieldVisibility> FieldVisibility;
+		public List<FieldVisibility> FieldVisibility { get; set; }
 	} 
 }

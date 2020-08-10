@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Refund reason tag 
         /// </summary>
-		public String Tag;
+		public String Tag { get; set; }
 
         /// <summary>
         /// Order item record row ID 
         /// </summary>
-		public String DisplayName;
+		public String DisplayName { get; set; }
 
         /// <summary>
         /// List of refund reasons 
         /// </summary>
-		public List<ChannelRefundSubReason> SubReasons;
+		public List<ChannelRefundSubReason> SubReasons { get; set; }
 	} 
 }

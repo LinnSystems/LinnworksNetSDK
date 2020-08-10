@@ -9,41 +9,41 @@ namespace LinnworksAPI
         /// <summary>
         /// StockItem unique identifier (Optional if SKU is supplied) 
         /// </summary>
-		public Guid? FkStockItemId;
+		public Guid? FkStockItemId { get; set; }
 
         /// <summary>
         /// Compatibility list ID (Optional) 
         /// </summary>
-		public Guid? FkCompatibilityListId;
+		public Guid? FkCompatibilityListId { get; set; }
 
         /// <summary>
         /// Stock item SKU (Will be ignored fkStockItemId is supplied) 
         /// </summary>
-		public String SKU;
+		public String SKU { get; set; }
 
         /// <summary>
         /// Compatibility notes 
         /// </summary>
-		public String CompatibilityNotes;
+		public String CompatibilityNotes { get; set; }
 
         /// <summary>
         /// Value 
         /// </summary>
-		public String Value;
+		public String Value { get; set; }
 
         /// <summary>
         /// Years to include 
         /// </summary>
-		public String IncludeYears;
+		public String IncludeYears { get; set; }
 
         /// <summary>
         /// Years to exclude 
         /// </summary>
-		public String ExcludeYears;
+		public String ExcludeYears { get; set; }
 
         /// <summary>
         /// Compatibility culture, one of US, UK, DE, AU, CA, FR, IT, ES 
         /// </summary>
-		public String Culture;
+		public String Culture { get; set; }
 	} 
 }

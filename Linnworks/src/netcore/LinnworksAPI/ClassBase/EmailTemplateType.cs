@@ -6,28 +6,28 @@ namespace LinnworksAPI
 { 
     public class EmailTemplateType
 	{
-		public String AttachmentHelpText;
+		public String AttachmentHelpText { get; set; }
 
-		public String EmailType_Dispatch;
+		public String EmailType_Dispatch { get; set; }
 
-		public String Type;
+		public String Type { get; set; }
 
-		public String Name;
+		public String Name { get; set; }
 
-		public Boolean IsAdhoc;
+		public Boolean IsAdhoc { get; set; }
 
-		public Boolean IsDesignerVisible;
+		public Boolean IsDesignerVisible { get; set; }
 
-		public EmailParsableCreator ParsableCreator;
+		public EmailParsableCreator ParsableCreator { get; set; }
 
-		public List<TemplateTag> Tags;
+		public List<TemplateTag> Tags { get; set; }
 
-		public Boolean AttachPDFAvailable;
+		public Boolean AttachPDFAvailable { get; set; }
 
-		public String PrintingTemplateType;
+		public String PrintingTemplateType { get; set; }
 
-		public List<EmailTemplateType> EmailTemplateTypes;
+		public List<EmailTemplateType> EmailTemplateTypes { get; set; }
 
-		public String AttachedFileName;
+		public String AttachedFileName { get; set; }
 	} 
 }

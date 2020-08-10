@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class DeleteVariationItemsRequest
 	{
-		public Guid VariationItemId;
+		public Guid VariationItemId { get; set; }
 
-		public List<Guid> StockItemIds;
+		public List<Guid> StockItemIds { get; set; }
 	} 
 }

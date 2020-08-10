@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class CreateCountryRegionsResponse
 	{
-		public List<CountryRegion> regions;
+		public List<CountryRegion> regions { get; set; }
 	} 
 }

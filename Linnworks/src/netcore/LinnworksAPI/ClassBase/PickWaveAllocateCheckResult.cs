@@ -12,21 +12,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Order Id interger 
         /// </summary>
-		public Int32 OrderId;
+		public Int32 OrderId { get; set; }
 
         /// <summary>
         /// Order Id uniqueidentifier 
         /// </summary>
-		public Guid OrderId_Guid;
+		public Guid OrderId_Guid { get; set; }
 
         /// <summary>
         /// Errors 
         /// </summary>
-		public List<PickWaveAllocateCheckResultError> Errors;
+		public List<PickWaveAllocateCheckResultError> Errors { get; set; }
 
         /// <summary>
         /// Has Errors 
         /// </summary>
-		public Boolean HasErrors;
+		public Boolean HasErrors { get; set; }
 	} 
 }

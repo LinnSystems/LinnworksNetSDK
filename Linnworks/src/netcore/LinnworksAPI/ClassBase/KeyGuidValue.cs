@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class KeyGuidValue
 	{
-		public String Key;
+		public String Key { get; set; }
 
-		public Guid Value;
+		public Guid Value { get; set; }
 	} 
 }

@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class OrderNoteType
 	{
-		public Byte NoteTypeId;
+		public Byte NoteTypeId { get; set; }
 
-		public String NoteType;
+		public String NoteType { get; set; }
 	} 
 }

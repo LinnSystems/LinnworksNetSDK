@@ -9,33 +9,33 @@ namespace LinnworksAPI
         /// <summary>
         /// Order note ID 
         /// </summary>
-		public Guid OrderNoteId;
+		public Guid OrderNoteId { get; set; }
 
         /// <summary>
         /// Order Id 
         /// </summary>
-		public Guid OrderId;
+		public Guid OrderId { get; set; }
 
         /// <summary>
         /// Date and time when note was added 
         /// </summary>
-		public DateTime NoteDate;
+		public DateTime NoteDate { get; set; }
 
         /// <summary>
         /// order note type (Internal or External) 
         /// </summary>
-		public Boolean Internal;
+		public Boolean Internal { get; set; }
 
         /// <summary>
         /// Note's text 
         /// </summary>
-		public String Note;
+		public String Note { get; set; }
 
         /// <summary>
         /// User that created note 
         /// </summary>
-		public String CreatedBy;
+		public String CreatedBy { get; set; }
 
-		public Byte? NoteTypeId;
+		public Byte? NoteTypeId { get; set; }
 	} 
 }

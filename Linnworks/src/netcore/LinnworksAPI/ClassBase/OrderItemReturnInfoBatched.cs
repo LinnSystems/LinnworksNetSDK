@@ -6,48 +6,48 @@ namespace LinnworksAPI
 { 
     public class OrderItemReturnInfoBatched
 	{
-		public Int32 OrderItemBatchId;
+		public Int32 OrderItemBatchId { get; set; }
 
-		public Int32 BatchInventoryId;
+		public Int32 BatchInventoryId { get; set; }
 
-		public String BatchNumber;
+		public String BatchNumber { get; set; }
 
-		public Double DespatchUnitValue;
+		public Double DespatchUnitValue { get; set; }
 
-		public Guid OrderId;
+		public Guid OrderId { get; set; }
 
-		public Guid fkOrderItemRowId;
+		public Guid fkOrderItemRowId { get; set; }
 
-		public Guid ParentRowId;
+		public Guid ParentRowId { get; set; }
 
-		public Int32 ReturnableQty;
+		public Int32 ReturnableQty { get; set; }
 
-		public Int32 OrderQty;
+		public Int32 OrderQty { get; set; }
 
-		public Int32 ReturnedQty;
+		public Int32 ReturnedQty { get; set; }
 
-		public String SKU;
+		public String SKU { get; set; }
 
-		public String ItemTitle;
+		public String ItemTitle { get; set; }
 
-		public Double UnitValue;
+		public Double UnitValue { get; set; }
 
-		public Double TaxRate;
+		public Double TaxRate { get; set; }
 
-		public Boolean TaxCostInclusive;
+		public Boolean TaxCostInclusive { get; set; }
 
-		public String Currency;
+		public String Currency { get; set; }
 
-		public Boolean IsCompositeParent;
+		public Boolean IsCompositeParent { get; set; }
 
-		public Boolean IsPartialCompositeReturn;
+		public Boolean IsPartialCompositeReturn { get; set; }
 
-		public Int32 ParentRatio;
+		public Int32 ParentRatio { get; set; }
 
-		public Guid? pkStockItemId;
+		public Guid? pkStockItemId { get; set; }
 
-		public Int32 ResentQty;
+		public Int32 ResentQty { get; set; }
 
-		public Guid fkRefundRowId;
+		public Guid fkRefundRowId { get; set; }
 	} 
 }

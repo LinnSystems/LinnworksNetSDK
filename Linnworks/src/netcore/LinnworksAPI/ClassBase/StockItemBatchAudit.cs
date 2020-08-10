@@ -6,28 +6,28 @@ namespace LinnworksAPI
 { 
     public class StockItemBatchAudit
 	{
-		public Int32 BatchId;
+		public Int32 BatchId { get; set; }
 
-		public Int32 BatchInventoryId;
+		public Int32 BatchInventoryId { get; set; }
 
-		public Int32 QuantityDelta;
+		public Int32 QuantityDelta { get; set; }
 
-		public Decimal StockValueDelta;
+		public Decimal StockValueDelta { get; set; }
 
-		public String ChangeNote;
+		public String ChangeNote { get; set; }
 
-		public String Username;
+		public String Username { get; set; }
 
-		public DateTime ChangeDate;
+		public DateTime ChangeDate { get; set; }
 
-		public String BinRack;
+		public String BinRack { get; set; }
 
-		public String BatchNumber;
+		public String BatchNumber { get; set; }
 
-		public String Location;
+		public String Location { get; set; }
 
-		public Int32? fkJobId;
+		public Int32? fkJobId { get; set; }
 
-		public Int32? OrderId;
+		public Int32? OrderId { get; set; }
 	} 
 }

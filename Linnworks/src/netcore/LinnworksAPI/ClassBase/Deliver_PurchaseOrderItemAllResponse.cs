@@ -12,11 +12,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Delivered items 
         /// </summary>
-		public List<PurchaseOrderItem> PurchaseOrderItems;
+		public List<PurchaseOrderItem> PurchaseOrderItems { get; set; }
 
         /// <summary>
         /// Recalculated purchase order header 
         /// </summary>
-		public PurchaseOrderHeader PurchaseOrderHeader;
+		public PurchaseOrderHeader PurchaseOrderHeader { get; set; }
 	} 
 }

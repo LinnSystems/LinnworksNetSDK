@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Order ID 
         /// </summary>
-		public Guid pkOrderId;
+		public Guid pkOrderId { get; set; }
 	} 
 }

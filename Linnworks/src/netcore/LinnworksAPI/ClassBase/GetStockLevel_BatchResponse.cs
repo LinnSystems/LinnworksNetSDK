@@ -12,11 +12,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Id of the stock item 
         /// </summary>
-		public Guid pkStockItemId;
+		public Guid pkStockItemId { get; set; }
 
         /// <summary>
         /// List of stock level for each location 
         /// </summary>
-		public List<StockItemLevel> StockItemLevels;
+		public List<StockItemLevel> StockItemLevels { get; set; }
 	} 
 }

@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetEbayListingAuditResponse
 	{
-		public List<EbayListingAudit> AuditTrail;
+		public List<EbayListingAudit> AuditTrail { get; set; }
 	} 
 }

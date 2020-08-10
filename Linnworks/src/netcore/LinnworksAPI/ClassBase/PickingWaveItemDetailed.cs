@@ -9,59 +9,59 @@ namespace LinnworksAPI
         /// <summary>
         /// Sort order 
         /// </summary>
-		public Int32 SortOrder;
+		public Int32 SortOrder { get; set; }
 
         /// <summary>
         /// Quantity to pick 
         /// </summary>
-		public Int32 ToPickQuantity;
+		public Int32 ToPickQuantity { get; set; }
 
         /// <summary>
         /// ToT Id 
         /// </summary>
-		public Int32? TOTId;
+		public Int32? TOTId { get; set; }
 
         /// <summary>
         /// Tray tag 
         /// </summary>
-		public String TrayTag;
+		public String TrayTag { get; set; }
 
         /// <summary>
         /// Picking tag 
         /// </summary>
-		public String PickingTag;
+		public String PickingTag { get; set; }
 
         /// <summary>
         /// Pickwave item row id 
         /// </summary>
-		public Int32 PickingWaveItemsRowId;
+		public Int32 PickingWaveItemsRowId { get; set; }
 
         /// <summary>
         /// Pickwave id 
         /// </summary>
-		public Int32 PickingWaveId;
+		public Int32 PickingWaveId { get; set; }
 
         /// <summary>
         /// Quatity picked 
         /// </summary>
-		public Int32 PickedQuantity;
+		public Int32 PickedQuantity { get; set; }
 
         /// <summary>
         /// Pickwave item state 
         /// </summary>
-		public PickingWaveItemState ItemState;
+		public PickingWaveItemState ItemState { get; set; }
 
         /// <summary>
         /// Collection of pickwave item totes. 
         /// </summary>
-		public List<PickingWaveItemTote> Totes;
+		public List<PickingWaveItemTote> Totes { get; set; }
 
-		public Int32? BatchInventoryId;
+		public Int32? BatchInventoryId { get; set; }
 
-		public Int32 OrderId;
+		public Int32 OrderId { get; set; }
 
-		public Guid OrderItemRowId;
+		public Guid OrderItemRowId { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 	} 
 }

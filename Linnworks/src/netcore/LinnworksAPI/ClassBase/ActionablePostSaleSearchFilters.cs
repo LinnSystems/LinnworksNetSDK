@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class ActionablePostSaleSearchFilters
 	{
-		public Boolean Actionable;
+		public Boolean Actionable { get; set; }
 
-		public FilterType Type;
+		public FilterType Type { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

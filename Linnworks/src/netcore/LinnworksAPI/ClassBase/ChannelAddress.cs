@@ -6,32 +6,32 @@ namespace LinnworksAPI
 { 
     public class ChannelAddress
 	{
-		public String MatchCountryCode;
+		public String MatchCountryCode { get; set; }
 
-		public String MatchCountryName;
+		public String MatchCountryName { get; set; }
 
-		public String FullName;
+		public String FullName { get; set; }
 
-		public String Company;
+		public String Company { get; set; }
 
-		public String Address1;
+		public String Address1 { get; set; }
 
-		public String Address2;
+		public String Address2 { get; set; }
 
-		public String Address3;
+		public String Address3 { get; set; }
 
-		public String Town;
+		public String Town { get; set; }
 
-		public String Region;
+		public String Region { get; set; }
 
-		public String PostCode;
+		public String PostCode { get; set; }
 
-		public String Country;
+		public String Country { get; set; }
 
-		public String PhoneNumber;
+		public String PhoneNumber { get; set; }
 
-		public String EmailAddress;
+		public String EmailAddress { get; set; }
 
-		public Boolean isEmpty;
+		public Boolean isEmpty { get; set; }
 	} 
 }

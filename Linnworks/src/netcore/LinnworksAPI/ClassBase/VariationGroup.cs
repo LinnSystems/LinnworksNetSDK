@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Variation parent SKU 
         /// </summary>
-		public String VariationSKU;
+		public String VariationSKU { get; set; }
 
         /// <summary>
         /// Variation parent ID (unique identifier) 
         /// </summary>
-		public Guid pkVariationItemId;
+		public Guid pkVariationItemId { get; set; }
 
         /// <summary>
         /// Variation parent title 
         /// </summary>
-		public String VariationGroupName;
+		public String VariationGroupName { get; set; }
 	} 
 }

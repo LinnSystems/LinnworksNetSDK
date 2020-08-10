@@ -6,28 +6,28 @@ namespace LinnworksAPI
 { 
     public class OrderRMAHeader
 	{
-		public Int32 RMAHeaderId;
+		public Int32 RMAHeaderId { get; set; }
 
-		public Guid OrderId;
+		public Guid OrderId { get; set; }
 
-		public Int32 NumOrderId;
+		public Int32 NumOrderId { get; set; }
 
-		public String OrderSource;
+		public String OrderSource { get; set; }
 
-		public String OrderSubSource;
+		public String OrderSubSource { get; set; }
 
-		public String ExternalReference;
+		public String ExternalReference { get; set; }
 
-		public Boolean ChannelInitiated;
+		public Boolean ChannelInitiated { get; set; }
 
-		public DateTime CreatedDate;
+		public DateTime CreatedDate { get; set; }
 
-		public PostSaleStatus Status;
+		public PostSaleStatus Status { get; set; }
 
-		public Boolean Actioned;
+		public Boolean Actioned { get; set; }
 
-		public DateTime LastActionDate;
+		public DateTime LastActionDate { get; set; }
 
-		public List<VerifiedRMAItem> RMALines;
+		public List<VerifiedRMAItem> RMALines { get; set; }
 	} 
 }

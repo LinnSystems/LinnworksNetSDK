@@ -6,18 +6,18 @@ namespace LinnworksAPI
 { 
     public class ConfigPostalServiceMappingItem
 	{
-		public Int32 fkChannelId;
+		public Int32 fkChannelId { get; set; }
 
-		public Int32 pkRowId;
+		public Int32 pkRowId { get; set; }
 
-		public String Tag;
+		public String Tag { get; set; }
 
-		public Guid fkPostalServiceId;
+		public Guid fkPostalServiceId { get; set; }
 
-		public String PostalServiceName;
+		public String PostalServiceName { get; set; }
 
-		public String Site;
+		public String Site { get; set; }
 
-		public Boolean IsChanged;
+		public Boolean IsChanged { get; set; }
 	} 
 }

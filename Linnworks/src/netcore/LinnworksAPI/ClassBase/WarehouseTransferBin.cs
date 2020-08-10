@@ -9,31 +9,31 @@ namespace LinnworksAPI
         /// <summary>
         /// Bin ID 
         /// </summary>
-		public Guid PkBinId;
+		public Guid PkBinId { get; set; }
 
         /// <summary>
         /// Transfer bin name 
         /// </summary>
-		public String BinName;
+		public String BinName { get; set; }
 
         /// <summary>
         /// Bin reference 
         /// </summary>
-		public String BinReference;
+		public String BinReference { get; set; }
 
         /// <summary>
         /// Bin barcode 
         /// </summary>
-		public String BinBarcode;
+		public String BinBarcode { get; set; }
 
         /// <summary>
         /// List of transfer bin notes 
         /// </summary>
-		public List<WarehouseTransferBinNote> BinNotes;
+		public List<WarehouseTransferBinNote> BinNotes { get; set; }
 
         /// <summary>
         /// List of transfer items 
         /// </summary>
-		public List<WarehouseTransferItem> BinItems;
+		public List<WarehouseTransferItem> BinItems { get; set; }
 	} 
 }

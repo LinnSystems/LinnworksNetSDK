@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class ExecuteCustomScriptQueryRequest
 	{
-		public String Script;
+		public String Script { get; set; }
 
-		public Boolean? UseIsoDate;
+		public Boolean? UseIsoDate { get; set; }
 	} 
 }

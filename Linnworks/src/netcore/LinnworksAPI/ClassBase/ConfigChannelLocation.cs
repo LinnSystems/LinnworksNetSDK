@@ -6,18 +6,18 @@ namespace LinnworksAPI
 { 
     public class ConfigChannelLocation
 	{
-		public Int32 pkChannelLocationId;
+		public Int32 pkChannelLocationId { get; set; }
 
-		public Boolean Deleted;
+		public Boolean Deleted { get; set; }
 
-		public String Identifier;
+		public String Identifier { get; set; }
 
-		public String Name;
+		public String Name { get; set; }
 
-		public Guid OrderDownloadLocation;
+		public Guid OrderDownloadLocation { get; set; }
 
-		public List<Guid> InventorySyncLocations;
+		public List<Guid> InventorySyncLocations { get; set; }
 
-		public Boolean IsFulfilment;
+		public Boolean IsFulfilment { get; set; }
 	} 
 }

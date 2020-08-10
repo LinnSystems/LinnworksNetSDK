@@ -6,18 +6,18 @@ namespace LinnworksAPI
 { 
     public class Filter
 	{
-		public FilterNameType FilterName;
+		public FilterNameType FilterName { get; set; }
 
-		public String DisplayName;
+		public String DisplayName { get; set; }
 
-		public List<String> FilterNameExact;
+		public List<String> FilterNameExact { get; set; }
 
-		public InventoryFieldType Field;
+		public InventoryFieldType Field { get; set; }
 
-		public ConditionType Condition;
+		public ConditionType Condition { get; set; }
 
-		public String ConditionDisplayName;
+		public String ConditionDisplayName { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

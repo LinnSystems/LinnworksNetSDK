@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class BatchStockLevelDeltaResponse
 	{
-		public List<BatchStockLevelDelta> ProcessedDeltas;
+		public List<BatchStockLevelDelta> ProcessedDeltas { get; set; }
 
-		public Boolean ProcessedContainsErrors;
+		public Boolean ProcessedContainsErrors { get; set; }
 	} 
 }

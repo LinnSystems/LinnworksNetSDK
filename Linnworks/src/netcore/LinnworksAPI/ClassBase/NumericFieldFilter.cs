@@ -9,13 +9,13 @@ namespace LinnworksAPI
         /// <summary>
         /// Filter type 
         /// </summary>
-		public NumericFieldFilterType Type;
+		public NumericFieldFilterType Type { get; set; }
 
         /// <summary>
         /// Filtering input 
         /// </summary>
-		public Double Value;
+		public Double Value { get; set; }
 
-		public FieldCode FieldCode;
+		public FieldCode FieldCode { get; set; }
 	} 
 }

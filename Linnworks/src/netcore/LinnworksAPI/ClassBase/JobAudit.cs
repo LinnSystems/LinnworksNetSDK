@@ -6,16 +6,16 @@ namespace LinnworksAPI
 { 
     public class JobAudit
 	{
-		public Int32 JobAuditId;
+		public Int32 JobAuditId { get; set; }
 
-		public Int32 JobId;
+		public Int32 JobId { get; set; }
 
-		public JobAuditType Type;
+		public JobAuditType Type { get; set; }
 
-		public DateTime Date;
+		public DateTime Date { get; set; }
 
-		public String Note;
+		public String Note { get; set; }
 
-		public String User;
+		public String User { get; set; }
 	} 
 }

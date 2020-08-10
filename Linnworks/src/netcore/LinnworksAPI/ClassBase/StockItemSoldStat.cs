@@ -9,35 +9,35 @@ namespace LinnworksAPI
         /// <summary>
         /// ChannelName/Source (e.g. EBAY) 
         /// </summary>
-		public String Source;
+		public String Source { get; set; }
 
         /// <summary>
         /// Sold quantity 
         /// </summary>
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
         /// <summary>
         /// Total price stock was sold for 
         /// </summary>
-		public Double Total;
+		public Double Total { get; set; }
 
         /// <summary>
         /// Total cost of sold stock 
         /// </summary>
-		public Double Cost;
+		public Double Cost { get; set; }
 
         /// <summary>
         /// Profit margin 
         /// </summary>
-		public Double ProfitMargin;
+		public Double ProfitMargin { get; set; }
 
         /// <summary>
         /// Sold stat inforamtion 
         /// </summary>
-		public List<StockItemSoldStatDetail> Detail;
+		public List<StockItemSoldStatDetail> Detail { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

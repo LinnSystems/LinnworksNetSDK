@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of open order iems ids to get info 
         /// </summary>
-		public List<Guid> OpenOrderItems;
+		public List<Guid> OpenOrderItems { get; set; }
 	} 
 }

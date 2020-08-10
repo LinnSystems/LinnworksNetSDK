@@ -6,16 +6,16 @@ namespace LinnworksAPI
 { 
     public class ConditionItemBasic
 	{
-		public Int32 pkConditionItemId;
+		public Int32 pkConditionItemId { get; set; }
 
-		public Int32 fkConditionId;
+		public Int32 fkConditionId { get; set; }
 
-		public String FieldName;
+		public String FieldName { get; set; }
 
-		public EvaluatorType Evaluation;
+		public EvaluatorType Evaluation { get; set; }
 
-		public List<String> Values;
+		public List<String> Values { get; set; }
 
-		public String KeyValue;
+		public String KeyValue { get; set; }
 	} 
 }

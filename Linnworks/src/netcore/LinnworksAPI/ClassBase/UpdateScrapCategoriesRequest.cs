@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class UpdateScrapCategoriesRequest
 	{
-		public List<ScrapCategory> Categories;
+		public List<ScrapCategory> Categories { get; set; }
 	} 
 }

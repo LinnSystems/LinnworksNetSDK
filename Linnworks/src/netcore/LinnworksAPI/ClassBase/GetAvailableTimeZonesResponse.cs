@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetAvailableTimeZonesResponse
 	{
-		public IEnumerable<AvailableTimeZone> TimeZones;
+		public IEnumerable<AvailableTimeZone> TimeZones { get; set; }
 	} 
 }

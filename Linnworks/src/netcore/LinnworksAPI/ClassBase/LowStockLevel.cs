@@ -6,16 +6,16 @@ namespace LinnworksAPI
 { 
     public class LowStockLevel
 	{
-		public String ItemTitle;
+		public String ItemTitle { get; set; }
 
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
-		public Int32 MinimumLevel;
+		public Int32 MinimumLevel { get; set; }
 
-		public Int32 InBooks;
+		public Int32 InBooks { get; set; }
 
-		public String Location;
+		public String Location { get; set; }
 	} 
 }

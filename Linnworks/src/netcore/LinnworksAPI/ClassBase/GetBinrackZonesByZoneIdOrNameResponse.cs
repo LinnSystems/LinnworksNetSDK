@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetBinrackZonesByZoneIdOrNameResponse
 	{
-		public List<WarehouseZone> WarehouseZones;
+		public List<WarehouseZone> WarehouseZones { get; set; }
 	} 
 }

@@ -12,16 +12,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Currency code 
         /// </summary>
-		public String Currency;
+		public String Currency { get; set; }
 
         /// <summary>
         /// Currency rate to Base Currency. CurrencyRate / BaseCurrencyRate = Converted value 
         /// </summary>
-		public Decimal? Rate;
+		public Decimal? Rate { get; set; }
 
         /// <summary>
         /// UTC time when the currency rate was updated 
         /// </summary>
-		public DateTime? AccurateAsOf;
+		public DateTime? AccurateAsOf { get; set; }
 	} 
 }

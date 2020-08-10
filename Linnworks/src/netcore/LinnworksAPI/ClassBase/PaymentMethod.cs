@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Payment method name 
         /// </summary>
-		public String Name;
+		public String Name { get; set; }
 
         /// <summary>
         /// If it can be deleted 
         /// </summary>
-		public Boolean CanDelete;
+		public Boolean CanDelete { get; set; }
 
         /// <summary>
         /// Payment method ID 
         /// </summary>
-		public Guid PaymentMethodId;
+		public Guid PaymentMethodId { get; set; }
 	} 
 }

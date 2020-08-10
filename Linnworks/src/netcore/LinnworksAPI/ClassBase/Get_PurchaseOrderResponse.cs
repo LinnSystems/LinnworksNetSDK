@@ -12,28 +12,28 @@ namespace LinnworksAPI
         /// <summary>
         /// Purchase order header 
         /// </summary>
-		public PurchaseOrderHeader PurchaseOrderHeader;
+		public PurchaseOrderHeader PurchaseOrderHeader { get; set; }
 
         /// <summary>
         /// Purchase order items 
         /// </summary>
-		public List<PurchaseOrderItem> PurchaseOrderItem;
+		public List<PurchaseOrderItem> PurchaseOrderItem { get; set; }
 
         /// <summary>
         /// Count of notes on the purchase order 
         /// </summary>
-		public List<PurchaseOrderAdditionalCost> AdditionalCosts;
+		public List<PurchaseOrderAdditionalCost> AdditionalCosts { get; set; }
 
-		public Int32 NoteCount;
+		public Int32 NoteCount { get; set; }
 
         /// <summary>
         /// Purchase order payment statements 
         /// </summary>
-		public List<PurchaseOrderPaymentStatement> PaymentStatements;
+		public List<PurchaseOrderPaymentStatement> PaymentStatements { get; set; }
 
         /// <summary>
         /// Purchase order delivered records 
         /// </summary>
-		public List<PurchaseOrderDeliveredRecord> DeliveredRecords;
+		public List<PurchaseOrderDeliveredRecord> DeliveredRecords { get; set; }
 	} 
 }

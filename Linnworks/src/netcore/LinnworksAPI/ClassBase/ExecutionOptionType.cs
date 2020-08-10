@@ -12,17 +12,17 @@ namespace LinnworksAPI
         /// <summary>
         /// Data type 
         /// </summary>
-		public String Type;
+		public String Type { get; set; }
 
         /// <summary>
         /// Key to be used in procedures 
         /// </summary>
-		public String Key;
+		public String Key { get; set; }
 
         /// <summary>
         /// Zero stock levels if it a row is not provided 
         /// </summary>
-		public ExecutionOptionType StockLevelBySupplierCode_ZeroWhenNotProvided;
+		public ExecutionOptionType StockLevelBySupplierCode_ZeroWhenNotProvided { get; set; }
 
         /// <summary>
         /// When an item has a fulfilment sku that is different to the stock item number, but both sku's appear within the import,
@@ -30,6 +30,6 @@ namespace LinnworksAPI
         /// If false, match by either fulfilment sku or item number.
         /// If true, match by just fulfilment sku. 
         /// </summary>
-		public ExecutionOptionType FulfilmentCenterInventoryImport_OnlyMatchByFulfilmentSku;
+		public ExecutionOptionType FulfilmentCenterInventoryImport_OnlyMatchByFulfilmentSku { get; set; }
 	} 
 }

@@ -12,31 +12,31 @@ namespace LinnworksAPI
         /// <summary>
         /// Item SKU 
         /// </summary>
-		public String SKU;
+		public String SKU { get; set; }
 
         /// <summary>
         /// Item unique id 
         /// </summary>
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
         /// <summary>
         /// Item Title 
         /// </summary>
-		public String ItemTitle;
+		public String ItemTitle { get; set; }
 
         /// <summary>
         /// Barcode number on the item header 
         /// </summary>
-		public String Barcode;
+		public String Barcode { get; set; }
 
         /// <summary>
         /// Image URL 
         /// </summary>
-		public String PrimaryImageURL;
+		public String PrimaryImageURL { get; set; }
 
         /// <summary>
         /// Product identifiers 
         /// </summary>
-		public List<StockItemIdentifier> Identifiers;
+		public List<StockItemIdentifier> Identifiers { get; set; }
 	} 
 }

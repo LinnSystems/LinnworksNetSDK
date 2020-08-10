@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class WarehouseTransferAudit
 	{
-		public Guid PkTransferAuditId;
+		public Guid PkTransferAuditId { get; set; }
 
-		public AuditType AuditType;
+		public AuditType AuditType { get; set; }
 
-		public Int32 nAuditType;
+		public Int32 nAuditType { get; set; }
 
-		public DateTime AuditDate;
+		public DateTime AuditDate { get; set; }
 
-		public String AuditNote;
+		public String AuditNote { get; set; }
 	} 
 }

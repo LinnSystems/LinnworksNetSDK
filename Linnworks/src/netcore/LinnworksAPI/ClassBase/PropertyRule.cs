@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class PropertyRule
 	{
-		public PropertyRuleType RuleType;
+		public PropertyRuleType RuleType { get; set; }
 
-		public String Options;
+		public String Options { get; set; }
 
-		public String DependantField;
+		public String DependantField { get; set; }
 	} 
 }

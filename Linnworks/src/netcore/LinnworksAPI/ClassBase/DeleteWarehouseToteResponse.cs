@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// deleted list of totes 
         /// </summary>
-		public List<Int32> DeletedToteIds;
+		public List<Int32> DeletedToteIds { get; set; }
 	} 
 }

@@ -12,16 +12,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Stock item id 
         /// </summary>
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
         /// <summary>
         /// Product identifier type 
         /// </summary>
-		public ProductIdentifierType Type;
+		public ProductIdentifierType Type { get; set; }
 
         /// <summary>
         /// Product identifier 
         /// </summary>
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

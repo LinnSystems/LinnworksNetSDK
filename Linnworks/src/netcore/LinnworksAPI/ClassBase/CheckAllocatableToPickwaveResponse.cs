@@ -12,6 +12,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of results 
         /// </summary>
-		public List<PickWaveAllocateCheckResult> Results;
+		public List<PickWaveAllocateCheckResult> Results { get; set; }
 	} 
 }

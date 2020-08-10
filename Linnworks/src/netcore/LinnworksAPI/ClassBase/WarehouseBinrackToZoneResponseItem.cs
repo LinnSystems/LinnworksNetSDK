@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class WarehouseBinrackToZoneResponseItem
 	{
-		public String[] Errors;
+		public String[] Errors { get; set; }
 
-		public Int32 RowIndex;
+		public Int32 RowIndex { get; set; }
 
-		public Int32 ZoneId;
+		public Int32 ZoneId { get; set; }
 
-		public Int32 BinrackId;
+		public Int32 BinrackId { get; set; }
 	} 
 }

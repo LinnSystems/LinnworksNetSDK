@@ -9,25 +9,25 @@ namespace LinnworksAPI
         /// <summary>
         /// Record row id (generate random) 
         /// </summary>
-		public Guid pkRowId;
+		public Guid pkRowId { get; set; }
 
         /// <summary>
         /// ChannelName/Source (e.g. EBAY) 
         /// </summary>
-		public String Source;
+		public String Source { get; set; }
 
         /// <summary>
         /// SubSource (EBAY1) 
         /// </summary>
-		public String SubSource;
+		public String SubSource { get; set; }
 
         /// <summary>
         /// Item title 
         /// </summary>
-		public String Title;
+		public String Title { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

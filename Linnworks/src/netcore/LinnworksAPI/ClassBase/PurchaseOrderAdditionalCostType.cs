@@ -12,31 +12,31 @@ namespace LinnworksAPI
         /// <summary>
         /// Additional Cost type id 
         /// </summary>
-		public Int32 AdditionalCostTypeId;
+		public Int32 AdditionalCostTypeId { get; set; }
 
         /// <summary>
         /// Additional cost name 
         /// </summary>
-		public String TypeName;
+		public String TypeName { get; set; }
 
         /// <summary>
         /// Type of additional cost is shipping cost 
         /// </summary>
-		public Boolean IsShippingType;
+		public Boolean IsShippingType { get; set; }
 
         /// <summary>
         /// Type must be 100% allocated to PO items 
         /// </summary>
-		public Boolean IsPartialAllocation;
+		public Boolean IsPartialAllocation { get; set; }
 
         /// <summary>
         /// Indicate if the additional costs of this type has to be printed 
         /// </summary>
-		public Boolean Print;
+		public Boolean Print { get; set; }
 
         /// <summary>
         /// Indicate the method to calculate the allocation %  for each item 
         /// </summary>
-		public AllocationMethods AllocationMethod;
+		public AllocationMethods AllocationMethod { get; set; }
 	} 
 }

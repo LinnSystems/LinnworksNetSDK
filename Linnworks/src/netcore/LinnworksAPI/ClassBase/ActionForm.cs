@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class ActionForm
 	{
-		public String Caption;
+		public String Caption { get; set; }
 
-		public List<ActionFormControl> Controls;
+		public List<ActionFormControl> Controls { get; set; }
 	} 
 }

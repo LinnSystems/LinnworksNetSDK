@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetRefundHeadersByOrderIdResponse
 	{
-		public List<OrderRefundHeader> RefundHeaders;
+		public List<OrderRefundHeader> RefundHeaders { get; set; }
 	} 
 }

@@ -12,26 +12,26 @@ namespace LinnworksAPI
         /// <summary>
         /// The order id or reference id 
         /// </summary>
-		public String OrderOrReferenceId;
+		public String OrderOrReferenceId { get; set; }
 
         /// <summary>
         /// The location to process the order from 
         /// </summary>
-		public Guid LocationId;
+		public Guid LocationId { get; set; }
 
         /// <summary>
         /// Defines if the batches have been scanned 
         /// </summary>
-		public Boolean ScansPerformed;
+		public Boolean ScansPerformed { get; set; }
 
         /// <summary>
         /// Have the processing notes been acknowledged 
         /// </summary>
-		public Boolean OrderProcessingNotesAcknowledged;
+		public Boolean OrderProcessingNotesAcknowledged { get; set; }
 
         /// <summary>
         /// Workflow job id that the order is supposed to belong to 
         /// </summary>
-		public Int32? WorkflowJobId;
+		public Int32? WorkflowJobId { get; set; }
 	} 
 }

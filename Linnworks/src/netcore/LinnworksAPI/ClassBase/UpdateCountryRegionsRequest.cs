@@ -9,6 +9,6 @@ namespace LinnworksAPI
     /// </summary>
     public class UpdateCountryRegionsRequest
 	{
-		public List<CountryRegion> regions;
+		public List<CountryRegion> regions { get; set; }
 	} 
 }

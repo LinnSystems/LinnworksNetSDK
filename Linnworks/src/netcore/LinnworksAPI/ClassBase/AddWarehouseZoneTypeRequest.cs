@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Warehouse zone type name 
         /// </summary>
-		public String Name;
+		public String Name { get; set; }
 
         /// <summary>
         /// Stock location interger id 
         /// </summary>
-		public Int32 StockLocationIntId;
+		public Int32 StockLocationIntId { get; set; }
 	} 
 }

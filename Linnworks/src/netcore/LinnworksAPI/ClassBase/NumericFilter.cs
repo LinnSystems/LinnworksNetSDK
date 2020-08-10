@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class NumericFilter
 	{
-		public NumericFilterType Type;
+		public NumericFilterType Type { get; set; }
 
-		public Decimal Value;
+		public Decimal Value { get; set; }
 	} 
 }

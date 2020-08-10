@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetScrapHistoryResponse
 	{
-		public GenericPagedResult<ScrapItem> ScrapHistory;
+		public GenericPagedResult<ScrapItem> ScrapHistory { get; set; }
 	} 
 }

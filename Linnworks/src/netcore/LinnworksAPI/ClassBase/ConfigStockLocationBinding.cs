@@ -7,6 +7,6 @@ namespace LinnworksAPI
 { 
     public class ConfigStockLocationBinding
 	{
-		public ReadOnlyCollection<ConfigStockLocation> Locations;
+		public ReadOnlyCollection<ConfigStockLocation> Locations { get; set; }
 	} 
 }

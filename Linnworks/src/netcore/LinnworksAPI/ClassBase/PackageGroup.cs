@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Package category ID 
         /// </summary>
-		public Guid PackageCategoryID;
+		public Guid PackageCategoryID { get; set; }
 
         /// <summary>
         /// Package category name 
         /// </summary>
-		public String PackageCategory;
+		public String PackageCategory { get; set; }
 
         /// <summary>
         /// Record row ID 
         /// </summary>
-		public Guid rowguid;
+		public Guid rowguid { get; set; }
 
         /// <summary>
         /// List of packaging types 
         /// </summary>
-		public List<PackageType> PackageTypes;
+		public List<PackageType> PackageTypes { get; set; }
 	} 
 }

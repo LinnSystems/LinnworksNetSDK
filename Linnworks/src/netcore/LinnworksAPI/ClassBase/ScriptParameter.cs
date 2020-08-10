@@ -6,26 +6,26 @@ namespace LinnworksAPI
 { 
     public class ScriptParameter
 	{
-		public Int32 ParameterId;
+		public Int32 ParameterId { get; set; }
 
-		public String Type;
+		public String Type { get; set; }
 
-		public String Name;
+		public String Name { get; set; }
 
-		public String Description;
+		public String Description { get; set; }
 
-		public String DefaultValue;
+		public String DefaultValue { get; set; }
 
-		public String DropDownQuery;
+		public String DropDownQuery { get; set; }
 
-		public String DatabaseType;
+		public String DatabaseType { get; set; }
 
-		public Int32 DatabaseTypeLength;
+		public Int32 DatabaseTypeLength { get; set; }
 
-		public List<String> AvailableValues;
+		public List<String> AvailableValues { get; set; }
 
-		public Object Value;
+		public Object Value { get; set; }
 
-		public Int32 SortOrder;
+		public Int32 SortOrder { get; set; }
 	} 
 }

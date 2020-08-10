@@ -9,47 +9,47 @@ namespace LinnworksAPI
         /// <summary>
         /// The RMA row identifier for this line 
         /// </summary>
-		public Int32 RMARowId;
+		public Int32 RMARowId { get; set; }
 
         /// <summary>
         /// If set to true, will remove the line from the booking 
         /// </summary>
-		public Boolean RemoveFromBooking;
+		public Boolean RemoveFromBooking { get; set; }
 
-		public Int32 ResendQuantity;
+		public Int32 ResendQuantity { get; set; }
 
-		public Guid DespatchLocationId;
+		public Guid DespatchLocationId { get; set; }
 
-		public Decimal AdditionalCost;
+		public Decimal AdditionalCost { get; set; }
 
-		public Guid OrderItemRowId;
+		public Guid OrderItemRowId { get; set; }
 
-		public String ReturnItemSKU;
+		public String ReturnItemSKU { get; set; }
 
-		public String ReturnItemTitle;
+		public String ReturnItemTitle { get; set; }
 
-		public Int32? BatchInventoryId;
+		public Int32? BatchInventoryId { get; set; }
 
-		public Guid ReturnLocation;
+		public Guid ReturnLocation { get; set; }
 
-		public Int32 ReturnQuantity;
+		public Int32 ReturnQuantity { get; set; }
 
-		public Decimal RefundAmount;
+		public Decimal RefundAmount { get; set; }
 
-		public Guid? RefundRowId;
+		public Guid? RefundRowId { get; set; }
 
-		public Int32 ScrapQuantity;
+		public Int32 ScrapQuantity { get; set; }
 
-		public String ReasonCategory;
+		public String ReasonCategory { get; set; }
 
-		public Boolean IsFreeText;
+		public Boolean IsFreeText { get; set; }
 
-		public String Reason;
+		public String Reason { get; set; }
 
-		public String ReasonTag;
+		public String ReasonTag { get; set; }
 
-		public String SubReasonTag;
+		public String SubReasonTag { get; set; }
 
-		public String BinrackOverride;
+		public String BinrackOverride { get; set; }
 	} 
 }

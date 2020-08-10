@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Collection of Stock item id (uniqueidentifier) 
         /// </summary>
-		public List<Guid> StockItemIds;
+		public List<Guid> StockItemIds { get; set; }
 	} 
 }

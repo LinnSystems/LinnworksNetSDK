@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class WarehouseTransferNote
 	{
-		public Guid PkTransferNoteId;
+		public Guid PkTransferNoteId { get; set; }
 
-		public String NoteUser;
+		public String NoteUser { get; set; }
 
-		public String Note;
+		public String Note { get; set; }
 
-		public DateTime NoteDateTime;
+		public DateTime NoteDateTime { get; set; }
 
-		public Boolean NoteRead;
+		public Boolean NoteRead { get; set; }
 	} 
 }

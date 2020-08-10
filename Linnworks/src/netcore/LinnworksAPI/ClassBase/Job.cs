@@ -6,30 +6,30 @@ namespace LinnworksAPI
 { 
     public class Job
 	{
-		public Int32 JobId;
+		public Int32 JobId { get; set; }
 
-		public Int32 GroupId;
+		public Int32 GroupId { get; set; }
 
-		public String Name;
+		public String Name { get; set; }
 
-		public JobStatus Status;
+		public JobStatus Status { get; set; }
 
-		public Int32 OrderCount;
+		public Int32 OrderCount { get; set; }
 
-		public Int32 AttachmentCount;
+		public Int32 AttachmentCount { get; set; }
 
-		public Boolean IsError;
+		public Boolean IsError { get; set; }
 
-		public Boolean IsAllPrinted;
+		public Boolean IsAllPrinted { get; set; }
 
-		public DateTime CreatedDate;
+		public DateTime CreatedDate { get; set; }
 
-		public String ExecutedByUser;
+		public String ExecutedByUser { get; set; }
 
-		public DateTime ExecutionDate;
+		public DateTime ExecutionDate { get; set; }
 
-		public List<JobAttachment> JobAttachmentList;
+		public List<JobAttachment> JobAttachmentList { get; set; }
 
-		public List<JobOrder> OrderList;
+		public List<JobOrder> OrderList { get; set; }
 	} 
 }

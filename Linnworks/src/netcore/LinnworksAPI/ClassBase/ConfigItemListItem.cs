@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class ConfigItemListItem
 	{
-		public String Display;
+		public String Display { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

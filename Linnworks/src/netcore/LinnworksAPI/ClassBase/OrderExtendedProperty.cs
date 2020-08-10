@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Extended property record row ID 
         /// </summary>
-		public Guid rowid;
+		public Guid rowid { get; set; }
 
         /// <summary>
         /// Property name 
         /// </summary>
-		public String PropertyName;
+		public String PropertyName { get; set; }
 
         /// <summary>
         /// Property value 
         /// </summary>
-		public String PropertyValue;
+		public String PropertyValue { get; set; }
 
         /// <summary>
         /// Property type 
         /// </summary>
-		public String PropertyType;
+		public String PropertyType { get; set; }
 	} 
 }

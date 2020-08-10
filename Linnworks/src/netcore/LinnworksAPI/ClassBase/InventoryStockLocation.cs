@@ -12,36 +12,36 @@ namespace LinnworksAPI
         /// <summary>
         /// Location ID 
         /// </summary>
-		public Guid StockLocationId;
+		public Guid StockLocationId { get; set; }
 
         /// <summary>
         /// Stock location integet id 
         /// </summary>
-		public Int32 StockLocationIntId;
+		public Int32 StockLocationIntId { get; set; }
 
         /// <summary>
         /// Location name 
         /// </summary>
-		public String LocationName;
+		public String LocationName { get; set; }
 
         /// <summary>
         /// If location is a fulfilment center 
         /// </summary>
-		public Boolean IsFulfillmentCenter;
+		public Boolean IsFulfillmentCenter { get; set; }
 
         /// <summary>
         /// Location tag 
         /// </summary>
-		public String LocationTag;
+		public String LocationTag { get; set; }
 
         /// <summary>
         /// Bin rack 
         /// </summary>
-		public String BinRack;
+		public String BinRack { get; set; }
 
         /// <summary>
         /// If the location is warehosue managed. 
         /// </summary>
-		public Boolean? IsWarehouseManaged;
+		public Boolean? IsWarehouseManaged { get; set; }
 	} 
 }

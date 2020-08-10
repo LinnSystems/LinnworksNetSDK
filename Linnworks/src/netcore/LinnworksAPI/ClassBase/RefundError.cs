@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class RefundError
 	{
-		public Guid RefundRowId;
+		public Guid RefundRowId { get; set; }
 
-		public String ErrorMessage;
+		public String ErrorMessage { get; set; }
 
-		public DateTime DateStamp;
+		public DateTime DateStamp { get; set; }
 
-		public Boolean Acknowledged;
+		public Boolean Acknowledged { get; set; }
 	} 
 }

@@ -9,78 +9,78 @@ namespace LinnworksAPI
         /// <summary>
         /// Pickwave id 
         /// </summary>
-		public Int32 PickingWaveId;
+		public Int32 PickingWaveId { get; set; }
 
         /// <summary>
         /// Location Id 
         /// </summary>
-		public Guid LocationId;
+		public Guid LocationId { get; set; }
 
         /// <summary>
         /// Allocated user id 
         /// </summary>
-		public Int32? UserId;
+		public Int32? UserId { get; set; }
 
         /// <summary>
         /// Allocated user EmailAddress 
         /// </summary>
-		public String EmailAddress;
+		public String EmailAddress { get; set; }
 
         /// <summary>
         /// Creation date 
         /// </summary>
-		public DateTime CreatedDate;
+		public DateTime CreatedDate { get; set; }
 
         /// <summary>
         /// Order Count - Number of orders in pickwave. 
         /// </summary>
-		public Int32 OrderCount;
+		public Int32 OrderCount { get; set; }
 
         /// <summary>
         /// Item Count - Number of items in pickwave. 
         /// </summary>
-		public Int32 ItemCount;
+		public Int32 ItemCount { get; set; }
 
         /// <summary>
         /// Items Picked - Number of items picked in pickwave. 
         /// </summary>
-		public Int32 ItemsPicked;
+		public Int32 ItemsPicked { get; set; }
 
         /// <summary>
         /// Orders Picked - Number of orders picked in pickwave. 
         /// </summary>
-		public Int32 OrdersPicked;
+		public Int32 OrdersPicked { get; set; }
 
         /// <summary>
         /// Current state of pickwave 
         /// </summary>
-		public PickingWaveState State;
+		public PickingWaveState State { get; set; }
 
         /// <summary>
         /// Time taken in pickwave 
         /// </summary>
-		public Int32 AccumulatedInProgressSeconds;
+		public Int32 AccumulatedInProgressSeconds { get; set; }
 
         /// <summary>
         /// Start date time of pickwave 
         /// </summary>
-		public DateTime? StartTime;
+		public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// End date time of pickwave 
         /// </summary>
-		public DateTime? EndTime;
+		public DateTime? EndTime { get; set; }
 
         /// <summary>
         /// Pickwave group type 
         /// </summary>
-		public PickingWaveGroupType GroupType;
+		public PickingWaveGroupType GroupType { get; set; }
 
         /// <summary>
         /// Orders in pickwave. 
         /// </summary>
-		public List<PickingWaveOrderDetailed> Orders;
+		public List<PickingWaveOrderDetailed> Orders { get; set; }
 
-		public PickingWaveOptions Options;
+		public PickingWaveOptions Options { get; set; }
 	} 
 }

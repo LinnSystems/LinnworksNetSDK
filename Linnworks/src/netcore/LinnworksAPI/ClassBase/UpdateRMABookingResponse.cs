@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class UpdateRMABookingResponse
 	{
-		public Int32? RMAHeaderId;
+		public Int32? RMAHeaderId { get; set; }
 
-		public List<VerifiedRMAItem> Items;
+		public List<VerifiedRMAItem> Items { get; set; }
 
-		public List<String> Errors;
+		public List<String> Errors { get; set; }
 
-		public List<String> Info;
+		public List<String> Info { get; set; }
 	} 
 }

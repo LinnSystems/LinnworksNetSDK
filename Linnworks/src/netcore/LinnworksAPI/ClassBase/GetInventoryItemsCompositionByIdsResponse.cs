@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetInventoryItemsCompositionByIdsResponse
 	{
-		public Dictionary<Guid,List<StockItemComposition>> InventoryItemsCompositionByIds;
+		public Dictionary<Guid,List<StockItemComposition>> InventoryItemsCompositionByIds { get; set; }
 	} 
 }

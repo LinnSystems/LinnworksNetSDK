@@ -9,36 +9,36 @@ namespace LinnworksAPI
         /// <summary>
         /// Validation note 
         /// </summary>
-		public String ValidationText;
+		public String ValidationText { get; set; }
 
         /// <summary>
         /// If deduction is visible 
         /// </summary>
-		public Boolean DeductVisible;
+		public Boolean DeductVisible { get; set; }
 
         /// <summary>
         /// Deduction note 
         /// </summary>
-		public String DeductText;
+		public String DeductText { get; set; }
 
         /// <summary>
         /// If balance is visible 
         /// </summary>
-		public Boolean BalanceVisible;
+		public Boolean BalanceVisible { get; set; }
 
         /// <summary>
         /// Balance record 
         /// </summary>
-		public String BalanceText;
+		public String BalanceText { get; set; }
 
         /// <summary>
         /// Value 
         /// </summary>
-		public String ValueText;
+		public String ValueText { get; set; }
 
         /// <summary>
         /// Discount type 
         /// </summary>
-		public String DiscountType;
+		public String DiscountType { get; set; }
 	} 
 }

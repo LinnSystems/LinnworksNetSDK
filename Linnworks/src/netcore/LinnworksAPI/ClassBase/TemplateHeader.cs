@@ -6,26 +6,26 @@ namespace LinnworksAPI
 { 
     public class TemplateHeader
 	{
-		public Int32 pkTemplateRowId;
+		public Int32 pkTemplateRowId { get; set; }
 
-		public Guid TemplateId;
+		public Guid TemplateId { get; set; }
 
-		public String TemplateType;
+		public String TemplateType { get; set; }
 
-		public String TemplateName;
+		public String TemplateName { get; set; }
 
-		public Boolean Enabled;
+		public Boolean Enabled { get; set; }
 
-		public Boolean IsDefault;
+		public Boolean IsDefault { get; set; }
 
-		public Boolean IsEmailAttachment;
+		public Boolean IsEmailAttachment { get; set; }
 
-		public String VisibilityCondition;
+		public String VisibilityCondition { get; set; }
 
-		public Boolean bLogicalDelete;
+		public Boolean bLogicalDelete { get; set; }
 
-		public Boolean IsConditional;
+		public Boolean IsConditional { get; set; }
 
-		public Int32 ConditionRating;
+		public Int32 ConditionRating { get; set; }
 	} 
 }

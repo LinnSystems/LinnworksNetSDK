@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetProductIdentifierTypesRequest
 	{
-		public Dictionary<String,String> Types;
+		public Dictionary<String,String> Types { get; set; }
 	} 
 }

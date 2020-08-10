@@ -12,21 +12,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Purchase order id 
         /// </summary>
-		public Guid PurchaseId;
+		public Guid PurchaseId { get; set; }
 
         /// <summary>
         /// New purchase order items to add 
         /// </summary>
-		public List<AddPurchaseOrderItem> ItemsToAdd;
+		public List<AddPurchaseOrderItem> ItemsToAdd { get; set; }
 
         /// <summary>
         /// Purchase order items to update 
         /// </summary>
-		public List<UpdatePurchaseOrderItem> ItemsToUpdate;
+		public List<UpdatePurchaseOrderItem> ItemsToUpdate { get; set; }
 
         /// <summary>
         /// Purchase order items to delete. PurchaseOrderItemId(s) 
         /// </summary>
-		public List<Guid> ItemsToDelete;
+		public List<Guid> ItemsToDelete { get; set; }
 	} 
 }

@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class BatchStockLevelDetaRequest
 	{
-		public List<BatchStockLevelDelta> StockLevelDeltas;
+		public List<BatchStockLevelDelta> StockLevelDeltas { get; set; }
 
-		public Guid StockLocationId;
+		public Guid StockLocationId { get; set; }
 	} 
 }

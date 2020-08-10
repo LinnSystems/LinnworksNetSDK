@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class TempFile
 	{
-		public String Name;
+		public String Name { get; set; }
 
-		public String Path;
+		public String Path { get; set; }
 
-		public String Url;
+		public String Url { get; set; }
 	} 
 }

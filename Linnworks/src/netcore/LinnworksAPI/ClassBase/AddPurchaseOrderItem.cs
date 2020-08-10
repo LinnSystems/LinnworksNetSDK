@@ -12,18 +12,18 @@ namespace LinnworksAPI
         /// <summary>
         /// unique row id, the same id will be returned to you in the response 
         /// </summary>
-		public Guid Id;
+		public Guid Id { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 Qty;
+		public Int32 Qty { get; set; }
 
-		public Int32 PackQuantity;
+		public Int32 PackQuantity { get; set; }
 
-		public Int32 PackSize;
+		public Int32 PackSize { get; set; }
 
-		public Decimal Cost;
+		public Decimal Cost { get; set; }
 
-		public Decimal TaxRate;
+		public Decimal TaxRate { get; set; }
 	} 
 }

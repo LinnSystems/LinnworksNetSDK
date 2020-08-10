@@ -6,30 +6,30 @@ namespace LinnworksAPI
 { 
     public class ConfigItemExternal
 	{
-		public List<ConfigItemListItem> ListValues;
+		public List<ConfigItemListItem> ListValues { get; set; }
 
-		public ConfigValueType ValueType;
+		public ConfigValueType ValueType { get; set; }
 
-		public String ConfigItemId;
+		public String ConfigItemId { get; set; }
 
-		public String Name;
+		public String Name { get; set; }
 
-		public String Description;
+		public String Description { get; set; }
 
-		public String GroupName;
+		public String GroupName { get; set; }
 
-		public Int32 SortOrder;
+		public Int32 SortOrder { get; set; }
 
-		public String SelectedValue;
+		public String SelectedValue { get; set; }
 
-		public String RegExValidation;
+		public String RegExValidation { get; set; }
 
-		public String RegExError;
+		public String RegExError { get; set; }
 
-		public Boolean MustBeSpecified;
+		public Boolean MustBeSpecified { get; set; }
 
-		public Boolean ReadOnly;
+		public Boolean ReadOnly { get; set; }
 
-		public Boolean HidesHeaderAttribute;
+		public Boolean HidesHeaderAttribute { get; set; }
 	} 
 }

@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class OrderItemOptionUpdate
 	{
-		public Boolean DeleteEntry;
+		public Boolean DeleteEntry { get; set; }
 
-		public Guid pkOptionId;
+		public Guid pkOptionId { get; set; }
 
-		public String Property;
+		public String Property { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

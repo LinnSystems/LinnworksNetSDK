@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetScrapCategoriesResponse
 	{
-		public IEnumerable<ScrapCategory> ScrapCategories;
+		public IEnumerable<ScrapCategory> ScrapCategories { get; set; }
 	} 
 }

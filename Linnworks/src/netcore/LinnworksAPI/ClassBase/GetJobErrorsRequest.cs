@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Job id for which you want the get the error list 
         /// </summary>
-		public Int32 JobId;
+		public Int32 JobId { get; set; }
 	} 
 }

@@ -12,11 +12,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Items 
         /// </summary>
-		public List<OrderSplitOutItem> Items;
+		public List<OrderSplitOutItem> Items { get; set; }
 
         /// <summary>
         /// Postal Service 
         /// </summary>
-		public Guid PostalServiceId;
+		public Guid PostalServiceId { get; set; }
 	} 
 }

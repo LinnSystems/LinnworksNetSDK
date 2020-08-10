@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of audit trail rows 
         /// </summary>
-		public List<JobAudit> AuditItems;
+		public List<JobAudit> AuditItems { get; set; }
 	} 
 }

@@ -12,6 +12,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Response items of StockItemId and SKU 
         /// </summary>
-		public List<GetStockItemIdsBySKUItem> Items;
+		public List<GetStockItemIdsBySKUItem> Items { get; set; }
 	} 
 }

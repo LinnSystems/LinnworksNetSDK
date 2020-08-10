@@ -14,41 +14,41 @@ namespace LinnworksAPI
         /// <summary>
         /// If defined, this value will be used to apply the delivery to a batch 
         /// </summary>
-		public String BatchNumber;
+		public String BatchNumber { get; set; }
 
         /// <summary>
         /// If defined, this value will be used to apply the delivery to a batch 
         /// </summary>
-		public String BinRack;
+		public String BinRack { get; set; }
 
         /// <summary>
         /// If defined, this value will be used to apply the delivery to a batch only when the batch in the provided binrack did not exist before. 
         /// </summary>
-		public Int32 PrioritySequence;
+		public Int32 PrioritySequence { get; set; }
 
         /// <summary>
         /// If defined, this value will be used to apply the delivery to a batch 
         /// </summary>
-		public String BatchStatus;
+		public String BatchStatus { get; set; }
 
         /// <summary>
         /// Purchase order unique identifier 
         /// </summary>
-		public Guid pkPurchaseId;
+		public Guid pkPurchaseId { get; set; }
 
         /// <summary>
         /// Purchase order item unique record identifier 
         /// </summary>
-		public Guid pkPurchaseItemId;
+		public Guid pkPurchaseItemId { get; set; }
 
         /// <summary>
         /// Exact quantity of items delivered. If AddToDelivered is specified this value must be null 
         /// </summary>
-		public Int32? Delivered;
+		public Int32? Delivered { get; set; }
 
         /// <summary>
         /// Add quantity to delivered. If Delivered is specified this value must be null 
         /// </summary>
-		public Int32? AddToDelivered;
+		public Int32? AddToDelivered { get; set; }
 	} 
 }

@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Pickwave id 
         /// </summary>
-		public Int32 PickingWaveId;
+		public Int32 PickingWaveId { get; set; }
 
         /// <summary>
         /// List of pickwave item row ids to replace with the new location 
         /// </summary>
-		public List<Int32> PickingWaveItemRowIds;
+		public List<Int32> PickingWaveItemRowIds { get; set; }
 
         /// <summary>
         /// The new batch inventory to pick 
         /// </summary>
-		public Int32 NewBatchInventoryId;
+		public Int32 NewBatchInventoryId { get; set; }
 
         /// <summary>
         /// Dictates how the returned pickwave should be sorted 
         /// </summary>
-		public ItemUpdateSortType SortType;
+		public ItemUpdateSortType SortType { get; set; }
 	} 
 }

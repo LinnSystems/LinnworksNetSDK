@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class RuleActionProperty
 	{
-		public Int32 ActionPropertyId;
+		public Int32 ActionPropertyId { get; set; }
 
-		public Int32 ActionId;
+		public Int32 ActionId { get; set; }
 
-		public String DisplayName;
+		public String DisplayName { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

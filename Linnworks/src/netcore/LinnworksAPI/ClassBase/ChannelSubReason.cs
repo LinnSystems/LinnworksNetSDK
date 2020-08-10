@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class ChannelSubReason
 	{
-		public String Tag;
+		public String Tag { get; set; }
 
-		public String DisplayName;
+		public String DisplayName { get; set; }
 	} 
 }

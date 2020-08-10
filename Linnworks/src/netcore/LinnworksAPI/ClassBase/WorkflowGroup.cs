@@ -12,11 +12,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Group header object. Group condition will be stripped out in this method 
         /// </summary>
-		public Group GroupHeader;
+		public Group GroupHeader { get; set; }
 
         /// <summary>
         /// List of jobs. Order Ids will not be returned in this call 
         /// </summary>
-		public List<Job> Jobs;
+		public List<Job> Jobs { get; set; }
 	} 
 }

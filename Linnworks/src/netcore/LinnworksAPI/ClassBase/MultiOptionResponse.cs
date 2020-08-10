@@ -9,18 +9,18 @@ namespace LinnworksAPI
         /// <summary>
         /// Evaluation field 
         /// </summary>
-		public String Field;
+		public String Field { get; set; }
 
         /// <summary>
         /// Evaluation key 
         /// </summary>
-		public String Key;
+		public String Key { get; set; }
 
         /// <summary>
         /// Evaluation options 
         /// </summary>
-		public List<String> Options;
+		public List<String> Options { get; set; }
 
-		public List<OptionBase> KeyedOptions;
+		public List<OptionBase> KeyedOptions { get; set; }
 	} 
 }

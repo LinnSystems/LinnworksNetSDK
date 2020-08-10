@@ -6,16 +6,16 @@ namespace LinnworksAPI
 { 
     public class Identifier
 	{
-		public Int32 IdentifierId;
+		public Int32 IdentifierId { get; set; }
 
-		public Boolean IsCustom;
+		public Boolean IsCustom { get; set; }
 
-		public Guid ImageId;
+		public Guid ImageId { get; set; }
 
-		public String ImageUrl;
+		public String ImageUrl { get; set; }
 
-		public String Tag;
+		public String Tag { get; set; }
 
-		public String Name;
+		public String Name { get; set; }
 	} 
 }

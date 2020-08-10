@@ -12,6 +12,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of SKU's to search for 
         /// </summary>
-		public List<String> SKUS;
+		public List<String> SKUS { get; set; }
 	} 
 }

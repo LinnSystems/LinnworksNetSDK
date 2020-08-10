@@ -6,154 +6,154 @@ namespace LinnworksAPI
 { 
     public class ReturnsRefundsWeb
 	{
-		public Int32 Row;
+		public Int32 Row { get; set; }
 
-		public Guid pkOrderID;
+		public Guid pkOrderID { get; set; }
 
-		public String cShippingAddress;
+		public String cShippingAddress { get; set; }
 
-		public DateTime dProcessedOn;
+		public DateTime dProcessedOn { get; set; }
 
-		public Double fPostageCost;
+		public Double fPostageCost { get; set; }
 
-		public Double fTotalCharge;
+		public Double fTotalCharge { get; set; }
 
-		public Double PostageCostExTax;
+		public Double PostageCostExTax { get; set; }
 
-		public Double Subtotal;
+		public Double Subtotal { get; set; }
 
-		public Double fTax;
+		public Double fTax { get; set; }
 
-		public Double TotalDiscount;
+		public Double TotalDiscount { get; set; }
 
-		public Double CountryTaxRate;
+		public Double CountryTaxRate { get; set; }
 
-		public Int32 nOrderId;
+		public Int32 nOrderId { get; set; }
 
-		public String cCurrency;
+		public String cCurrency { get; set; }
 
-		public String PostalTrackingNumber;
+		public String PostalTrackingNumber { get; set; }
 
-		public String cCountry;
+		public String cCountry { get; set; }
 
-		public String Source;
+		public String Source { get; set; }
 
-		public String PostalServiceName;
+		public String PostalServiceName { get; set; }
 
-		public String PostalServiceCode;
+		public String PostalServiceCode { get; set; }
 
-		public String Vendor;
+		public String Vendor { get; set; }
 
-		public String ReferenceNum;
+		public String ReferenceNum { get; set; }
 
-		public String SecondaryReference;
+		public String SecondaryReference { get; set; }
 
-		public String ExternalReference;
+		public String ExternalReference { get; set; }
 
-		public String Address1;
+		public String Address1 { get; set; }
 
-		public String Address2;
+		public String Address2 { get; set; }
 
-		public String Address3;
+		public String Address3 { get; set; }
 
-		public String Town;
+		public String Town { get; set; }
 
-		public String Region;
+		public String Region { get; set; }
 
-		public String BuyerPhoneNumber;
+		public String BuyerPhoneNumber { get; set; }
 
-		public String Company;
+		public String Company { get; set; }
 
-		public String SubSource;
+		public String SubSource { get; set; }
 
-		public String ChannelBuyerName;
+		public String ChannelBuyerName { get; set; }
 
-		public String AccountName;
+		public String AccountName { get; set; }
 
-		public String cFullName;
+		public String cFullName { get; set; }
 
-		public String cEmailAddress;
+		public String cEmailAddress { get; set; }
 
-		public String cPostCode;
+		public String cPostCode { get; set; }
 
-		public DateTime dPaidOn;
+		public DateTime dPaidOn { get; set; }
 
-		public String cBillingAddress;
+		public String cBillingAddress { get; set; }
 
-		public String BillingName;
+		public String BillingName { get; set; }
 
-		public String BillingCompany;
+		public String BillingCompany { get; set; }
 
-		public String BillingAddress1;
+		public String BillingAddress1 { get; set; }
 
-		public String BillingAddress2;
+		public String BillingAddress2 { get; set; }
 
-		public String BillingAddress3;
+		public String BillingAddress3 { get; set; }
 
-		public String BillingTown;
+		public String BillingTown { get; set; }
 
-		public String BillingRegion;
+		public String BillingRegion { get; set; }
 
-		public String BillingPostCode;
+		public String BillingPostCode { get; set; }
 
-		public String BillingCountryName;
+		public String BillingCountryName { get; set; }
 
-		public String BillingPhoneNumber;
+		public String BillingPhoneNumber { get; set; }
 
-		public String cItemNumber;
+		public String cItemNumber { get; set; }
 
-		public String cItemName;
+		public String cItemName { get; set; }
 
-		public Int32 pkReturnId;
+		public Int32 pkReturnId { get; set; }
 
-		public String RowType;
+		public String RowType { get; set; }
 
-		public String ReturnReference;
+		public String ReturnReference { get; set; }
 
-		public Double PendingRefundAmount;
+		public Double PendingRefundAmount { get; set; }
 
-		public DateTime LastDate;
+		public DateTime LastDate { get; set; }
 
-		public String Reason;
+		public String Reason { get; set; }
 
-		public String ChannelReason;
+		public String ChannelReason { get; set; }
 
-		public String ChannelReasonSec;
+		public String ChannelReasonSec { get; set; }
 
-		public String Category;
+		public String Category { get; set; }
 
-		public Int32 ReturnQty;
+		public Int32 ReturnQty { get; set; }
 
-		public Guid fkReturnLocationId;
+		public Guid fkReturnLocationId { get; set; }
 
-		public Boolean Scrapped;
+		public Boolean Scrapped { get; set; }
 
-		public Int32? ScrapQty;
+		public Int32? ScrapQty { get; set; }
 
-		public DateTime ReturnDate;
+		public DateTime ReturnDate { get; set; }
 
-		public String Location;
+		public String Location { get; set; }
 
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
-		public String ItemTitle;
+		public String ItemTitle { get; set; }
 
-		public Int32 NewQty;
+		public Int32 NewQty { get; set; }
 
-		public String RefundReference;
+		public String RefundReference { get; set; }
 
-		public Guid pkRefundRowId;
+		public Guid pkRefundRowId { get; set; }
 
-		public Double Amount;
+		public Double Amount { get; set; }
 
-		public DateTime CreateDate;
+		public DateTime CreateDate { get; set; }
 
-		public Int32 CancellationQuantity;
+		public Int32 CancellationQuantity { get; set; }
 
-		public Guid fkOrderItemReturnId;
+		public Guid fkOrderItemReturnId { get; set; }
 
-		public DateTime ActionDate;
+		public DateTime ActionDate { get; set; }
 
-		public PostSaleStatusType RefundStatus;
+		public PostSaleStatusType RefundStatus { get; set; }
 	} 
 }

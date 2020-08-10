@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// SKU number of an item 
         /// </summary>
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
         /// <summary>
         /// pkStockItemId of an item 
         /// </summary>
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
         /// <summary>
         /// Whether you want to set the image as main 
         /// </summary>
-		public Boolean IsMain;
+		public Boolean IsMain { get; set; }
 
         /// <summary>
         /// Image URL 
         /// </summary>
-		public String ImageUrl;
+		public String ImageUrl { get; set; }
 	} 
 }

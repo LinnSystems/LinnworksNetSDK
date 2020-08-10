@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class GetExtendedPropertyFilter
 	{
-		public String PropertyName;
+		public String PropertyName { get; set; }
 
-		public String PropertyType;
+		public String PropertyType { get; set; }
 	} 
 }

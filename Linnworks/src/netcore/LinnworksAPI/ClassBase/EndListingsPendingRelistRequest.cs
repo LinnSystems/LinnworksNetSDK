@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class EndListingsPendingRelistRequest
 	{
-		public List<EbayListingAudit> Listings;
+		public List<EbayListingAudit> Listings { get; set; }
 	} 
 }

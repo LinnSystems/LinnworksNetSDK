@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class DeleteEbayCompatibilityListResponse
 	{
-		public List<StockItemEbayCompatibility> EbayCompatibilityList;
+		public List<StockItemEbayCompatibility> EbayCompatibilityList { get; set; }
 	} 
 }

@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class GetStockItemBatchesByLocationRequest
 	{
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Guid LocationId;
+		public Guid LocationId { get; set; }
 
-		public Boolean OnlyAvailable;
+		public Boolean OnlyAvailable { get; set; }
 	} 
 }

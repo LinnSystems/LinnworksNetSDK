@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Base currency for conversion rates, if null, USD is used 
         /// </summary>
-		public String BaseCurrency;
+		public String BaseCurrency { get; set; }
 	} 
 }

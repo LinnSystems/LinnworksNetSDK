@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class WarehouseZoneGroup
 	{
-		public Int32 ZoneGroupId;
+		public Int32 ZoneGroupId { get; set; }
 
-		public String Name;
+		public String Name { get; set; }
 	} 
 }

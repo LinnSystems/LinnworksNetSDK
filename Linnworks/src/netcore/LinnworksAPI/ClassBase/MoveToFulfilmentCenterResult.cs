@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// List of errors 
         /// </summary>
-		public List<String> Errors;
+		public List<String> Errors { get; set; }
 
         /// <summary>
         /// List of pkOrderIds that were moved 
         /// </summary>
-		public List<Guid> OrdersMoved;
+		public List<Guid> OrdersMoved { get; set; }
 	} 
 }

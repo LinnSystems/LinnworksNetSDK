@@ -9,20 +9,20 @@ namespace LinnworksAPI
         /// <summary>
         /// Stock location ID 
         /// </summary>
-		public Guid StockLocationId;
+		public Guid StockLocationId { get; set; }
 
         /// <summary>
         /// Location name 
         /// </summary>
-		public String LocationName;
+		public String LocationName { get; set; }
 
         /// <summary>
         /// BinRack 
         /// </summary>
-		public String BinRack;
+		public String BinRack { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

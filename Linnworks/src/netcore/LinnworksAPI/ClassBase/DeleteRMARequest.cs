@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Identifies the RMA header to be deleted 
         /// </summary>
-		public Int32 RMAHeaderId;
+		public Int32 RMAHeaderId { get; set; }
 	} 
 }

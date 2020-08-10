@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Order figures 
         /// </summary>
-		public OrderTotalsInfo TotalsInfo;
+		public OrderTotalsInfo TotalsInfo { get; set; }
 
         /// <summary>
         /// Order items information 
         /// </summary>
-		public OrderItem Item;
+		public OrderItem Item { get; set; }
 
         /// <summary>
         /// Order item weight 
         /// </summary>
-		public Double ItemWeight;
+		public Double ItemWeight { get; set; }
 
         /// <summary>
         /// Order total weight 
         /// </summary>
-		public Double TotalWeight;
+		public Double TotalWeight { get; set; }
 	} 
 }

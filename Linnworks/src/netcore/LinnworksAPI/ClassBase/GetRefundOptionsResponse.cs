@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetRefundOptionsResponse
 	{
-		public RefundOptions RefundOptions;
+		public RefundOptions RefundOptions { get; set; }
 	} 
 }

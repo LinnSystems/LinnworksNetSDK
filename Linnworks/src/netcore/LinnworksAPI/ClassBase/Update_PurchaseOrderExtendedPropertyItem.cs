@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class Update_PurchaseOrderExtendedPropertyItem
 	{
-		public Int32 RowId;
+		public Int32 RowId { get; set; }
 
-		public String PropertyName;
+		public String PropertyName { get; set; }
 
-		public String PropertyValue;
+		public String PropertyValue { get; set; }
 	} 
 }

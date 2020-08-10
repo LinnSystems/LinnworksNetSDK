@@ -12,16 +12,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Tote Id 
         /// </summary>
-		public Int32 ToteId;
+		public Int32 ToteId { get; set; }
 
         /// <summary>
         /// TOTE Barcode 
         /// </summary>
-		public String ToteBarcode;
+		public String ToteBarcode { get; set; }
 
         /// <summary>
         /// Location Id of a warehouse to which TOT belongs 
         /// </summary>
-		public Guid LocationId;
+		public Guid LocationId { get; set; }
 	} 
 }

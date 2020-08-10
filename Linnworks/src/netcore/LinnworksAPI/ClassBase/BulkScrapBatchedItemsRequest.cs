@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class BulkScrapBatchedItemsRequest
 	{
-		public Guid LocationId;
+		public Guid LocationId { get; set; }
 
-		public List<ScrapItemExtended> ScrapItems;
+		public List<ScrapItemExtended> ScrapItems { get; set; }
 	} 
 }

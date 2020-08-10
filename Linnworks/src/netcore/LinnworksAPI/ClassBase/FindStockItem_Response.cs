@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class FindStockItem_Response
 	{
-		public List<PurchaseItemFound> Items;
+		public List<PurchaseItemFound> Items { get; set; }
 	} 
 }

@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class PackingResult
 	{
-		public Int32 TotalPackages;
+		public Int32 TotalPackages { get; set; }
 
-		public IList<PackageResult> Packages;
+		public IList<PackageResult> Packages { get; set; }
 
-		public IDictionary<Guid,Int32> UnpackedItems;
+		public IDictionary<Guid,Int32> UnpackedItems { get; set; }
 	} 
 }

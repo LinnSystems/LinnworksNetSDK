@@ -6,78 +6,78 @@ namespace LinnworksAPI
 { 
     public class AnyConfig
 	{
-		public ConfigItem<String> SourceVersion;
+		public ConfigItem<String> SourceVersion { get; set; }
 
-		public ConfigItem<Boolean> Enabled;
+		public ConfigItem<Boolean> Enabled { get; set; }
 
-		public ConfigItem<String> ChannelTag;
+		public ConfigItem<String> ChannelTag { get; set; }
 
-		public ConfigChannelLocationBinding ChannelLocationBinding;
+		public ConfigChannelLocationBinding ChannelLocationBinding { get; set; }
 
-		public ConfigItem<Boolean> IsMultiLocation;
+		public ConfigItem<Boolean> IsMultiLocation { get; set; }
 
-		public ConfigItem<Boolean> AutoPopulatedLocations;
+		public ConfigItem<Boolean> AutoPopulatedLocations { get; set; }
 
-		public ConfigItem<Boolean> DespatchNotes;
+		public ConfigItem<Boolean> DespatchNotes { get; set; }
 
-		public ConfigItem<Boolean> CancellationNotes;
+		public ConfigItem<Boolean> CancellationNotes { get; set; }
 
-		public ConfigItem<Boolean> RefundNotes;
+		public ConfigItem<Boolean> RefundNotes { get; set; }
 
-		public ConfigItem<Boolean> ReturnNotes;
+		public ConfigItem<Boolean> ReturnNotes { get; set; }
 
-		public ConfigItem<DateTime> OrderSyncDate;
+		public ConfigItem<DateTime> OrderSyncDate { get; set; }
 
-		public ConfigPropertySelectionList<SelectStringValueOption,Guid> OrderSaveLocation;
+		public ConfigPropertySelectionList<SelectStringValueOption,Guid> OrderSaveLocation { get; set; }
 
-		public ConfigPropertySelectionList<SelectStringValueOption,String> ConfigDiscount;
+		public ConfigPropertySelectionList<SelectStringValueOption,String> ConfigDiscount { get; set; }
 
-		public ConfigProperty<Boolean> HidesHeaderAttributes;
+		public ConfigProperty<Boolean> HidesHeaderAttributes { get; set; }
 
-		public ConfigItem<Boolean> InventorySync;
+		public ConfigItem<Boolean> InventorySync { get; set; }
 
-		public ConfigStockLocationBinding StockLocationBinding;
+		public ConfigStockLocationBinding StockLocationBinding { get; set; }
 
-		public ConfigItem<Int32> MaxListed;
+		public ConfigItem<Int32> MaxListed { get; set; }
 
-		public ConfigItem<Double> StockPercentage;
+		public ConfigItem<Double> StockPercentage { get; set; }
 
-		public ConfigItem<Int32> EndWhen;
+		public ConfigItem<Int32> EndWhen { get; set; }
 
-		public ConfigItem<Boolean> PriceChange;
+		public ConfigItem<Boolean> PriceChange { get; set; }
 
-		public ConfigItem<Boolean> IsListingScanRunning;
+		public ConfigItem<Boolean> IsListingScanRunning { get; set; }
 
-		public ConfigItem<DateTime> ListingScanStartUpdateDate;
+		public ConfigItem<DateTime> ListingScanStartUpdateDate { get; set; }
 
-		public ConfigItem<DateTime> LastListingUpdateDate;
+		public ConfigItem<DateTime> LastListingUpdateDate { get; set; }
 
-		public ConfigItem<DateTime> EstimatedInventoryScanComplete;
+		public ConfigItem<DateTime> EstimatedInventoryScanComplete { get; set; }
 
-		public Boolean IsHeaderOnly;
+		public Boolean IsHeaderOnly { get; set; }
 
-		public Boolean IsHidden;
+		public Boolean IsHidden { get; set; }
 
-		public ConfigItemExternal[] DynamicProperties;
+		public ConfigItemExternal[] DynamicProperties { get; set; }
 
-		public DiscountType ConfigDiscountTyped;
+		public DiscountType ConfigDiscountTyped { get; set; }
 
-		public ConfigPostalServiceMapping PostalServiceMapping;
+		public ConfigPostalServiceMapping PostalServiceMapping { get; set; }
 
-		public ConfigPaymentMethodMapping PaymentMethodMapping;
+		public ConfigPaymentMethodMapping PaymentMethodMapping { get; set; }
 
-		public Int32 PkChannelId;
+		public Int32 PkChannelId { get; set; }
 
-		public String Source;
+		public String Source { get; set; }
 
-		public String SourceType;
+		public String SourceType { get; set; }
 
-		public ConfigRuleCollection Rules;
+		public ConfigRuleCollection Rules { get; set; }
 
-		public List<ConfigButton> Buttons;
+		public List<ConfigButton> Buttons { get; set; }
 
-		public String SubSource;
+		public String SubSource { get; set; }
 
-		public List<Channel_Setting_Audit> HeaderAuditValues;
+		public List<Channel_Setting_Audit> HeaderAuditValues { get; set; }
 	} 
 }

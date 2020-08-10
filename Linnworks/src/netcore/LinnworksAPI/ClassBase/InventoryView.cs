@@ -9,66 +9,66 @@ namespace LinnworksAPI
         /// <summary>
         /// View ID 
         /// </summary>
-		public Guid Id;
+		public Guid Id { get; set; }
 
         /// <summary>
         /// View name 
         /// </summary>
-		public String Name;
+		public String Name { get; set; }
 
         /// <summary>
         /// Show listed or not listed 
         /// </summary>
-		public ModeType Mode;
+		public ModeType Mode { get; set; }
 
         /// <summary>
         /// ChannelName/Source (e.g. EBAY) 
         /// </summary>
-		public String Source;
+		public String Source { get; set; }
 
         /// <summary>
         /// SubSource (e.g. EBAY1) 
         /// </summary>
-		public String SubSource;
+		public String SubSource { get; set; }
 
         /// <summary>
         /// Country code 
         /// </summary>
-		public String CountryCode;
+		public String CountryCode { get; set; }
 
         /// <summary>
         /// Country code 
         /// </summary>
-		public String CountryName;
+		public String CountryName { get; set; }
 
         /// <summary>
         /// What listing types to show 
         /// </summary>
-		public ListingType Listing;
+		public ListingType Listing { get; set; }
 
         /// <summary>
         /// Show only changed items 
         /// </summary>
-		public Boolean ShowOnlyChanged;
+		public Boolean ShowOnlyChanged { get; set; }
 
         /// <summary>
         /// Include archived products 
         /// </summary>
-		public IncludeArchived IncludeProducts;
+		public IncludeArchived IncludeProducts { get; set; }
 
         /// <summary>
         /// View filters 
         /// </summary>
-		public List<Filter> Filters;
+		public List<Filter> Filters { get; set; }
 
         /// <summary>
         /// View columns 
         /// </summary>
-		public List<Column> Columns;
+		public List<Column> Columns { get; set; }
 
         /// <summary>
         /// View channels 
         /// </summary>
-		public List<InventoryChannel> Channels;
+		public List<InventoryChannel> Channels { get; set; }
 	} 
 }

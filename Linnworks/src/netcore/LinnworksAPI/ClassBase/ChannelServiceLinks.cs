@@ -9,26 +9,26 @@ namespace LinnworksAPI
         /// <summary>
         /// ChannelName/Source (e.g. EBAY) 
         /// </summary>
-		public String Channel;
+		public String Channel { get; set; }
 
         /// <summary>
         /// Subsource (e.g. EBAY1) 
         /// </summary>
-		public String ChannelName;
+		public String ChannelName { get; set; }
 
         /// <summary>
         /// Channel shipping service name 
         /// </summary>
-		public String ChannelService;
+		public String ChannelService { get; set; }
 
         /// <summary>
         /// Channel shpping service tag 
         /// </summary>
-		public String ChannelTag;
+		public String ChannelTag { get; set; }
 
         /// <summary>
         /// Channel site 
         /// </summary>
-		public String Site;
+		public String Site { get; set; }
 	} 
 }

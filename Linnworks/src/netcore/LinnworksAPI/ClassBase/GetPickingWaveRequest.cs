@@ -12,6 +12,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Pickwave id 
         /// </summary>
-		public Int32 PickingWaveId;
+		public Int32 PickingWaveId { get; set; }
 	} 
 }

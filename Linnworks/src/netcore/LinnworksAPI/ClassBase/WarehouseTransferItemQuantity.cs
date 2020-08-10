@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Stock item ID (unique identifier) 
         /// </summary>
-		public Guid fkStockItemId;
+		public Guid fkStockItemId { get; set; }
 
         /// <summary>
         /// Item request quantity 
         /// </summary>
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
         /// <summary>
         /// Transfer item ID (unique identifier) 
         /// </summary>
-		public Guid pkTransferItemId;
+		public Guid pkTransferItemId { get; set; }
 	} 
 }

@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class ConfigProperty<Boolean>
 	{
-		public Boolean Loaded;
+		public Boolean Loaded { get; set; }
 
-		public Int32 pkPropertyId;
+		public Int32 pkPropertyId { get; set; }
 
-		public Boolean IsChanged;
+		public Boolean IsChanged { get; set; }
 
-		public Boolean PropertyValue;
+		public Boolean PropertyValue { get; set; }
 
-		public String PropertyType;
+		public String PropertyType { get; set; }
 	} 
 }

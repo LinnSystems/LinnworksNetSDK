@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class ActionOption
 	{
-		public String Icon;
+		public String Icon { get; set; }
 
-		public String Text;
+		public String Text { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

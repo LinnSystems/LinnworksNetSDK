@@ -9,76 +9,76 @@ namespace LinnworksAPI
         /// <summary>
         /// Supplier Id 
         /// </summary>
-		public Guid pkSupplierID;
+		public Guid pkSupplierID { get; set; }
 
         /// <summary>
         /// Supplier Name 
         /// </summary>
-		public String SupplierName;
+		public String SupplierName { get; set; }
 
         /// <summary>
         /// Name of main contact 
         /// </summary>
-		public String ContactName;
+		public String ContactName { get; set; }
 
         /// <summary>
         /// Supplier's address 
         /// </summary>
-		public String Address;
+		public String Address { get; set; }
 
         /// <summary>
         /// Second line of address 
         /// </summary>
-		public String AlternativeAddress;
+		public String AlternativeAddress { get; set; }
 
         /// <summary>
         /// City 
         /// </summary>
-		public String City;
+		public String City { get; set; }
 
         /// <summary>
         /// Region 
         /// </summary>
-		public String Region;
+		public String Region { get; set; }
 
         /// <summary>
         /// Country 
         /// </summary>
-		public String Country;
+		public String Country { get; set; }
 
         /// <summary>
         /// Postcode 
         /// </summary>
-		public String PostCode;
+		public String PostCode { get; set; }
 
         /// <summary>
         /// Telephone number 
         /// </summary>
-		public String TelephoneNumber;
+		public String TelephoneNumber { get; set; }
 
         /// <summary>
         /// Secondary telephone number 
         /// </summary>
-		public String SecondaryTelNumber;
+		public String SecondaryTelNumber { get; set; }
 
         /// <summary>
         /// Fax number 
         /// </summary>
-		public String FaxNumber;
+		public String FaxNumber { get; set; }
 
         /// <summary>
         /// E-mail 
         /// </summary>
-		public String Email;
+		public String Email { get; set; }
 
         /// <summary>
         /// Web page 
         /// </summary>
-		public String WebPage;
+		public String WebPage { get; set; }
 
         /// <summary>
         /// Currency used 
         /// </summary>
-		public String Currency;
+		public String Currency { get; set; }
 	} 
 }

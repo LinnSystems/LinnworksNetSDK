@@ -9,27 +9,27 @@ namespace LinnworksAPI
         /// <summary>
         /// Identifies the refund line 
         /// </summary>
-		public Guid RefundRowId;
+		public Guid RefundRowId { get; set; }
 
         /// <summary>
         /// Determines whether to remove the line from the refund 
         /// </summary>
-		public Boolean RemoveFromRefund;
+		public Boolean RemoveFromRefund { get; set; }
 
-		public Boolean IsFreeText;
+		public Boolean IsFreeText { get; set; }
 
-		public String FreeTextOrNote;
+		public String FreeTextOrNote { get; set; }
 
-		public Decimal Amount;
+		public Decimal Amount { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
-		public String ReasonTag;
+		public String ReasonTag { get; set; }
 
-		public String SubReasonTag;
+		public String SubReasonTag { get; set; }
 
-		public String InsufficientRefundTag;
+		public String InsufficientRefundTag { get; set; }
 
-		public String InsufficientRefundNote;
+		public String InsufficientRefundNote { get; set; }
 	} 
 }

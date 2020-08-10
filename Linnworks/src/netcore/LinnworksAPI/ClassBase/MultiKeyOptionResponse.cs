@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Option field 
         /// </summary>
-		public String Field;
+		public String Field { get; set; }
 
         /// <summary>
         /// List of options 
         /// </summary>
-		public List<String> Options;
+		public List<String> Options { get; set; }
 	} 
 }

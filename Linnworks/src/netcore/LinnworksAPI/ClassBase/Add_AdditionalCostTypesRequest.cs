@@ -9,23 +9,23 @@ namespace LinnworksAPI
         /// <summary>
         /// Additional cost name 
         /// </summary>
-		public String TypeName;
+		public String TypeName { get; set; }
 
         /// <summary>
         /// Type of additional cost is shipping cost 
         /// </summary>
-		public Boolean IsShippingType;
+		public Boolean IsShippingType { get; set; }
 
         /// <summary>
         /// Type must be 100% allocated to PO items 
         /// </summary>
-		public Boolean IsPartialAllocation;
+		public Boolean IsPartialAllocation { get; set; }
 
         /// <summary>
         /// Type must appear on prints and emails 
         /// </summary>
-		public Boolean Print;
+		public Boolean Print { get; set; }
 
-		public AllocationMethods AllocationMethod;
+		public AllocationMethods AllocationMethod { get; set; }
 	} 
 }

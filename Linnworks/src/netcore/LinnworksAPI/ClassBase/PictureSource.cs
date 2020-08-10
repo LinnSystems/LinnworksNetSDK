@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class PictureSource
 	{
-		public Guid PictureId;
+		public Guid PictureId { get; set; }
 
-		public String Source;
+		public String Source { get; set; }
 
-		public Boolean IsMain;
+		public Boolean IsMain { get; set; }
 
-		public Int32 SortOrder;
+		public Int32 SortOrder { get; set; }
 	} 
 }

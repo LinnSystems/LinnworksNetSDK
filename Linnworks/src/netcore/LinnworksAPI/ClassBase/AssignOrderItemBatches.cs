@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class AssignOrderItemBatches
 	{
-		public List<OrderItemBatch> Batches;
+		public List<OrderItemBatch> Batches { get; set; }
 	} 
 }

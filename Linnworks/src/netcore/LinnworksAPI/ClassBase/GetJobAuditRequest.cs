@@ -12,6 +12,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Job id for which you want to get audit trail 
         /// </summary>
-		public Int32 JobId;
+		public Int32 JobId { get; set; }
 	} 
 }

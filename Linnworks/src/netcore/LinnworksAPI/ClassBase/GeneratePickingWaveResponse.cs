@@ -9,12 +9,12 @@ namespace LinnworksAPI
         /// <summary>
         /// Validation errors if generate fails. 
         /// </summary>
-		public List<PickWaveAllocateCheckResult> ValidationResults;
+		public List<PickWaveAllocateCheckResult> ValidationResults { get; set; }
 
-		public List<PickingWaveDetailed> PickingWaves;
+		public List<PickingWaveDetailed> PickingWaves { get; set; }
 
-		public List<StockItemInfo> Skus;
+		public List<StockItemInfo> Skus { get; set; }
 
-		public List<BinRackStockItem> Bins;
+		public List<BinRackStockItem> Bins { get; set; }
 	} 
 }

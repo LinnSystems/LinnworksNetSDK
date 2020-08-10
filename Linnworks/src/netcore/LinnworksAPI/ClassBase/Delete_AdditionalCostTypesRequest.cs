@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Additional cost type Ids to delete 
         /// </summary>
-		public Int32 AdditionalCostTypeId;
+		public Int32 AdditionalCostTypeId { get; set; }
 	} 
 }

@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class GetLatestCurrencyRateResponse
 	{
-		public String BaseCurrency;
+		public String BaseCurrency { get; set; }
 
-		public List<CurrencyRate> Rates;
+		public List<CurrencyRate> Rates { get; set; }
 	} 
 }

@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class GroupCondition
 	{
-		public String Where;
+		public String Where { get; set; }
 
-		public String Inner;
+		public String Inner { get; set; }
 
-		public String Sort;
+		public String Sort { get; set; }
 	} 
 }

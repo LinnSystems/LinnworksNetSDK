@@ -9,8 +9,8 @@ namespace LinnworksAPI
     /// </summary>
     public class GetStockItemIdsBySKUItem
 	{
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public String SKU;
+		public String SKU { get; set; }
 	} 
 }

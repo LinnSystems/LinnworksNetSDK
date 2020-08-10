@@ -6,18 +6,18 @@ namespace LinnworksAPI
 { 
     public class ImportGenericFeed
 	{
-		public ImportFeedType FeedType;
+		public ImportFeedType FeedType { get; set; }
 
-		public String Encoding;
+		public String Encoding { get; set; }
 
-		public Char Delimiter;
+		public Char Delimiter { get; set; }
 
-		public Char Comment;
+		public Char Comment { get; set; }
 
-		public Boolean HasHeaders;
+		public Boolean HasHeaders { get; set; }
 
-		public Char Escape;
+		public Char Escape { get; set; }
 
-		public Char Quote;
+		public Char Quote { get; set; }
 	} 
 }

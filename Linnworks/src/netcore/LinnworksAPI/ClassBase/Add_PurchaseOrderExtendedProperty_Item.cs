@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class Add_PurchaseOrderExtendedProperty_Item
 	{
-		public String PropertyName;
+		public String PropertyName { get; set; }
 
-		public String PropertyValue;
+		public String PropertyValue { get; set; }
 	} 
 }

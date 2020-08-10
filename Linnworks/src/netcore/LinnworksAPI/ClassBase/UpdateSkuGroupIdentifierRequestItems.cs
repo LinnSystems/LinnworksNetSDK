@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class UpdateSkuGroupIdentifierRequestItems
 	{
-		public Int32 SkuGroupId;
+		public Int32 SkuGroupId { get; set; }
 
-		public SkuGroupIdentifierType SkuGroupIdentifierType;
+		public SkuGroupIdentifierType SkuGroupIdentifierType { get; set; }
 
-		public String Identifier;
+		public String Identifier { get; set; }
 	} 
 }

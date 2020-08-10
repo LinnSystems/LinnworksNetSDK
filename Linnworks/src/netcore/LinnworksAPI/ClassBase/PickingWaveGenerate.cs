@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Location Id 
         /// </summary>
-		public Guid LocationId;
+		public Guid LocationId { get; set; }
 
         /// <summary>
         /// Allocated user id 
         /// </summary>
-		public Int32? UserId;
+		public Int32? UserId { get; set; }
 
         /// <summary>
         /// Pickwave items 
         /// </summary>
-		public List<PickingWaveGenerateOrder> Orders;
+		public List<PickingWaveGenerateOrder> Orders { get; set; }
 
         /// <summary>
         /// Pickwave group type 
         /// </summary>
-		public PickingWaveGroupType GroupType;
+		public PickingWaveGroupType GroupType { get; set; }
 	} 
 }

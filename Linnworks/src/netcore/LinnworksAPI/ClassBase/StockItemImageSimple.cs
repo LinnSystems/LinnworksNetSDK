@@ -12,30 +12,30 @@ namespace LinnworksAPI
         /// <summary>
         /// Unique id of image 
         /// </summary>
-		public Guid pkRowId;
+		public Guid pkRowId { get; set; }
 
         /// <summary>
         /// Is the image the main image 
         /// </summary>
-		public Boolean IsMain;
+		public Boolean IsMain { get; set; }
 
         /// <summary>
         /// Sort order for the image 
         /// </summary>
-		public Int32 SortOrder;
+		public Int32 SortOrder { get; set; }
 
         /// <summary>
         /// Internal checksum value 
         /// </summary>
-		public String ChecksumValue;
+		public String ChecksumValue { get; set; }
 
         /// <summary>
         /// Raw file checksum (Used for UI to determine if the image file is the same before submitting for upload) 
         /// </summary>
-		public String RawChecksum;
+		public String RawChecksum { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

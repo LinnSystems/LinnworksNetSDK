@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Purchase order unique identifier 
         /// </summary>
-		public Guid PurchaseId;
+		public Guid PurchaseId { get; set; }
 
         /// <summary>
         /// List of ids to delete 
         /// </summary>
-		public List<Int32> RowIds;
+		public List<Int32> RowIds { get; set; }
 	} 
 }

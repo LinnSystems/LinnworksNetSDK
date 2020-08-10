@@ -9,10 +9,10 @@ namespace LinnworksAPI
         /// <summary>
         /// Export Base Settings (Delimeters, Columns mapping etc) 
         /// </summary>
-		public ExportSpecification Specification;
+		public ExportSpecification Specification { get; set; }
 
-		public ExportRegister Register;
+		public ExportRegister Register { get; set; }
 
-		public List<Schedule> Schedules;
+		public List<Schedule> Schedules { get; set; }
 	} 
 }

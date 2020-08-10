@@ -9,10 +9,10 @@ namespace LinnworksAPI
     /// </summary>
     public class GenericEnumDescriptor
 	{
-		public String Description;
+		public String Description { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 
-		public Boolean IsDefault;
+		public Boolean IsDefault { get; set; }
 	} 
 }

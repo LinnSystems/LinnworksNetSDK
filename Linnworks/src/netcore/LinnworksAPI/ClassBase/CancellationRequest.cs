@@ -6,26 +6,26 @@ namespace LinnworksAPI
 { 
     public class CancellationRequest
 	{
-		public Boolean IsRetry;
+		public Boolean IsRetry { get; set; }
 
-		public Boolean IsChannelCancellation;
+		public Boolean IsChannelCancellation { get; set; }
 
-		public Boolean IsChannelCancellationConfirmed;
+		public Boolean IsChannelCancellationConfirmed { get; set; }
 
-		public Boolean IsFreeText;
+		public Boolean IsFreeText { get; set; }
 
-		public String FreeTextOrNote;
+		public String FreeTextOrNote { get; set; }
 
-		public String ReasonTag;
+		public String ReasonTag { get; set; }
 
-		public String SubReasonTag;
+		public String SubReasonTag { get; set; }
 
-		public Boolean CreateFullRefund;
+		public Boolean CreateFullRefund { get; set; }
 
-		public Int32 HeaderId;
+		public Int32 HeaderId { get; set; }
 
-		public Guid OrderId;
+		public Guid OrderId { get; set; }
 
-		public ActionForm ActionForm;
+		public ActionForm ActionForm { get; set; }
 	} 
 }

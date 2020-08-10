@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class DeleteWarehouseZoneTypeRequest
 	{
-		public Int32 ZoneTypeId;
+		public Int32 ZoneTypeId { get; set; }
 	} 
 }

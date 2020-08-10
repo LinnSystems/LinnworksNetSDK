@@ -9,75 +9,75 @@ namespace LinnworksAPI
         /// <summary>
         /// If supplier information is default 
         /// </summary>
-		public Boolean IsDefault;
+		public Boolean IsDefault { get; set; }
 
         /// <summary>
         /// Supplier name 
         /// </summary>
-		public String Supplier;
+		public String Supplier { get; set; }
 
         /// <summary>
         /// Supplier ID 
         /// </summary>
-		public Guid SupplierID;
+		public Guid SupplierID { get; set; }
 
         /// <summary>
         /// Supplier code 
         /// </summary>
-		public String Code;
+		public String Code { get; set; }
 
         /// <summary>
         /// Supplier barcode 
         /// </summary>
-		public String SupplierBarcode;
+		public String SupplierBarcode { get; set; }
 
         /// <summary>
         /// Supplier lead time 
         /// </summary>
-		public Int32 LeadTime;
+		public Int32 LeadTime { get; set; }
 
         /// <summary>
         /// Supplier purchase price 
         /// </summary>
-		public Double PurchasePrice;
+		public Double PurchasePrice { get; set; }
 
         /// <summary>
         /// Minimum price 
         /// </summary>
-		public Double MinPrice;
+		public Double MinPrice { get; set; }
 
         /// <summary>
         /// Maximum price 
         /// </summary>
-		public Double MaxPrice;
+		public Double MaxPrice { get; set; }
 
         /// <summary>
         /// Average price 
         /// </summary>
-		public Double AveragePrice;
+		public Double AveragePrice { get; set; }
 
         /// <summary>
         /// Average lead time 
         /// </summary>
-		public Double AverageLeadTime;
+		public Double AverageLeadTime { get; set; }
 
         /// <summary>
         /// Minimum order quantity from this supplier 
         /// </summary>
-		public Int32 SupplierMinOrderQty;
+		public Int32 SupplierMinOrderQty { get; set; }
 
         /// <summary>
         /// Supplier pack size 
         /// </summary>
-		public Int32 SupplierPackSize;
+		public Int32 SupplierPackSize { get; set; }
 
         /// <summary>
         /// Supplier's default currency 
         /// </summary>
-		public String SupplierCurrency;
+		public String SupplierCurrency { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

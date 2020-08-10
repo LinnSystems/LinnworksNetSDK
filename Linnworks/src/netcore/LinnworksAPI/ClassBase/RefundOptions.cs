@@ -6,44 +6,44 @@ namespace LinnworksAPI
 { 
     public class RefundOptions
 	{
-		public Boolean CanRefund;
+		public Boolean CanRefund { get; set; }
 
-		public Boolean CanRefundInternally;
+		public Boolean CanRefundInternally { get; set; }
 
-		public Boolean CanRefundItems;
+		public Boolean CanRefundItems { get; set; }
 
-		public Boolean CanRefundServices;
+		public Boolean CanRefundServices { get; set; }
 
-		public Boolean CanRefundShipping;
+		public Boolean CanRefundShipping { get; set; }
 
-		public Boolean CanRefundShippingIndependently;
+		public Boolean CanRefundShippingIndependently { get; set; }
 
-		public Boolean CanRefundAdditionally;
+		public Boolean CanRefundAdditionally { get; set; }
 
-		public Boolean CanRefundFreeText;
+		public Boolean CanRefundFreeText { get; set; }
 
-		public Boolean CanInsufficientRefundFreeText;
+		public Boolean CanInsufficientRefundFreeText { get; set; }
 
-		public Int32 RefundFreeTextOrNoteMaxLength;
+		public Int32 RefundFreeTextOrNoteMaxLength { get; set; }
 
-		public List<PostSaleSubStatus> SubStatuses;
+		public List<PostSaleSubStatus> SubStatuses { get; set; }
 
-		public ISet<ChannelReason> InsufficientRefundReasons;
+		public ISet<ChannelReason> InsufficientRefundReasons { get; set; }
 
-		public ISet<ChannelReason> ItemRefundReasons;
+		public ISet<ChannelReason> ItemRefundReasons { get; set; }
 
-		public ISet<ChannelReason> ServiceRefundReasons;
+		public ISet<ChannelReason> ServiceRefundReasons { get; set; }
 
-		public ISet<ChannelReason> ShippingRefundReasons;
+		public ISet<ChannelReason> ShippingRefundReasons { get; set; }
 
-		public CannotRefundReasonType CannotRefundReason;
+		public CannotRefundReasonType CannotRefundReason { get; set; }
 
-		public OrderDetails Order;
+		public OrderDetails Order { get; set; }
 
-		public OrderRefundHeader RefundHeader;
+		public OrderRefundHeader RefundHeader { get; set; }
 
-		public ISet<VerifiedRefund> AllExistingRefunds;
+		public ISet<VerifiedRefund> AllExistingRefunds { get; set; }
 
-		public List<String> Errors;
+		public List<String> Errors { get; set; }
 	} 
 }

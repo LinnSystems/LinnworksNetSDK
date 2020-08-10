@@ -12,21 +12,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Tag which is inserted into the template as [{Tag}] 
         /// </summary>
-		public String Tag;
+		public String Tag { get; set; }
 
         /// <summary>
         /// Human readable name of the tag 
         /// </summary>
-		public String Name;
+		public String Name { get; set; }
 
         /// <summary>
         /// Defines how the tag will be rendered in the menu 
         /// </summary>
-		public String SelectionPath;
+		public String SelectionPath { get; set; }
 
         /// <summary>
         /// Identifies whether the item is a list (FOREACH loop) 
         /// </summary>
-		public Boolean IsList;
+		public Boolean IsList { get; set; }
 	} 
 }

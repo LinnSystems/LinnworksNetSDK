@@ -12,11 +12,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Stock item ID 
         /// </summary>
-		public Int32 pkItemId;
+		public Int32 pkItemId { get; set; }
 
         /// <summary>
         /// Category name 
         /// </summary>
-		public String CategoryName;
+		public String CategoryName { get; set; }
 	} 
 }

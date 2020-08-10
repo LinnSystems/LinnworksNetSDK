@@ -6,20 +6,20 @@ namespace LinnworksAPI
 { 
     public class RuleHeaderBasic
 	{
-		public Int32 pkRuleId;
+		public Int32 pkRuleId { get; set; }
 
-		public String RuleName;
+		public String RuleName { get; set; }
 
-		public Boolean Enabled;
+		public Boolean Enabled { get; set; }
 
-		public Int32 RunOrder;
+		public Int32 RunOrder { get; set; }
 
-		public RuleSetType RuleType;
+		public RuleSetType RuleType { get; set; }
 
-		public Int32? pkRuleId_Draft;
+		public Int32? pkRuleId_Draft { get; set; }
 
-		public Boolean Draft;
+		public Boolean Draft { get; set; }
 
-		public String RuleTypeDisplayName;
+		public String RuleTypeDisplayName { get; set; }
 	} 
 }

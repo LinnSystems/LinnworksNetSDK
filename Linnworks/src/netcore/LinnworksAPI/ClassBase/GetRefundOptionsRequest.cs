@@ -9,8 +9,8 @@ namespace LinnworksAPI
         /// <summary>
         /// If included, will return the relevant refund header as part of the RefundOptions object in the response 
         /// </summary>
-		public Int32? RefundHeaderId;
+		public Int32? RefundHeaderId { get; set; }
 
-		public Guid OrderId;
+		public Guid OrderId { get; set; }
 	} 
 }

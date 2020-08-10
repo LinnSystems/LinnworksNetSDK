@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class AuthorizeByApplicationRequest
 	{
-		public Guid ApplicationId;
+		public Guid ApplicationId { get; set; }
 
-		public Guid ApplicationSecret;
+		public Guid ApplicationSecret { get; set; }
 
-		public Guid Token;
+		public Guid Token { get; set; }
 	} 
 }

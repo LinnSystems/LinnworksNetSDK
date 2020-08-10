@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class UpdateWarehouseBinrackBinrackToZoneResponse
 	{
-		public List<WarehouseBinrackToZoneResponseItem> BinrackToZones;
+		public List<WarehouseBinrackToZoneResponseItem> BinrackToZones { get; set; }
 	} 
 }

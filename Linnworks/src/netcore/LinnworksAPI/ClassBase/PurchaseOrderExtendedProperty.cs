@@ -12,31 +12,31 @@ namespace LinnworksAPI
         /// <summary>
         /// Extended Property item id 
         /// </summary>
-		public Int32 RowId;
+		public Int32 RowId { get; set; }
 
         /// <summary>
         /// Purchase order id (unique identifier) 
         /// </summary>
-		public Guid PurchaseID;
+		public Guid PurchaseID { get; set; }
 
         /// <summary>
         /// UTC date when the extended property was added 
         /// </summary>
-		public DateTime AddedDateTime;
+		public DateTime AddedDateTime { get; set; }
 
         /// <summary>
         /// User name which added the extended property, if the property is updated it will not be changed from original 
         /// </summary>
-		public String UserName;
+		public String UserName { get; set; }
 
         /// <summary>
         /// Property name (max 255) 
         /// </summary>
-		public String PropertyName;
+		public String PropertyName { get; set; }
 
         /// <summary>
         /// Property value (max 600) 
         /// </summary>
-		public String PropertyValue;
+		public String PropertyValue { get; set; }
 	} 
 }

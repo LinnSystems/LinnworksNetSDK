@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of stock item ids to get stock level 
         /// </summary>
-		public List<Guid> StockItemIds;
+		public List<Guid> StockItemIds { get; set; }
 	} 
 }

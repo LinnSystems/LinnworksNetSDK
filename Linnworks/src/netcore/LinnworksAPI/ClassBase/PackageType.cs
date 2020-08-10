@@ -6,26 +6,26 @@ namespace LinnworksAPI
 { 
     public class PackageType
 	{
-		public Guid PackageTypeId;
+		public Guid PackageTypeId { get; set; }
 
-		public Guid PackageGroupId;
+		public Guid PackageGroupId { get; set; }
 
-		public String PackageTitle;
+		public String PackageTitle { get; set; }
 
-		public Double FromGramms;
+		public Double FromGramms { get; set; }
 
-		public Double ToGramms;
+		public Double ToGramms { get; set; }
 
-		public Double PackagingWeight;
+		public Double PackagingWeight { get; set; }
 
-		public Double PackagingCapacity;
+		public Double PackagingCapacity { get; set; }
 
-		public Guid Rowguid;
+		public Guid Rowguid { get; set; }
 
-		public Double Width;
+		public Double Width { get; set; }
 
-		public Double Height;
+		public Double Height { get; set; }
 
-		public Double Depth;
+		public Double Depth { get; set; }
 	} 
 }

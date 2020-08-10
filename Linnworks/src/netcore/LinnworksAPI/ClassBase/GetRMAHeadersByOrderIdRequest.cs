@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetRMAHeadersByOrderIdRequest
 	{
-		public Guid OrderId;
+		public Guid OrderId { get; set; }
 	} 
 }

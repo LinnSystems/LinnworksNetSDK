@@ -6,22 +6,22 @@ namespace LinnworksAPI
 { 
     public class ModifiedPaymentStatementItem
 	{
-		public Guid Id;
+		public Guid Id { get; set; }
 
-		public Int32 PurchasePaymentStatementId;
+		public Int32 PurchasePaymentStatementId { get; set; }
 
-		public Decimal LineCost;
+		public Decimal LineCost { get; set; }
 
-		public Decimal ConversionRate;
+		public Decimal ConversionRate { get; set; }
 
-		public String Currency;
+		public String Currency { get; set; }
 
-		public String Reference;
+		public String Reference { get; set; }
 
-		public DateTime CreationDate;
+		public DateTime CreationDate { get; set; }
 
-		public DateTime? PaymentDate;
+		public DateTime? PaymentDate { get; set; }
 
-		public Int32? fkPurchaseAdditionalCostItemId;
+		public Int32? fkPurchaseAdditionalCostItemId { get; set; }
 	} 
 }

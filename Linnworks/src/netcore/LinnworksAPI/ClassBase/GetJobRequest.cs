@@ -12,6 +12,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Job Id to retrive 
         /// </summary>
-		public Int32 JobId;
+		public Int32 JobId { get; set; }
 	} 
 }

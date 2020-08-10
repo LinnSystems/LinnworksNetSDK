@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class Import
 	{
-		public Specification<ImportGenericFeed,ImportColumn> Specification;
+		public Specification<ImportGenericFeed,ImportColumn> Specification { get; set; }
 
-		public ImportRegister Register;
+		public ImportRegister Register { get; set; }
 
-		public List<Schedule> Schedules;
+		public List<Schedule> Schedules { get; set; }
 	} 
 }

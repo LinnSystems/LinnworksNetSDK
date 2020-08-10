@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class GetReturnOptionsRequest
 	{
-		public Guid OrderId;
+		public Guid OrderId { get; set; }
 
-		public Int32? RMAHeaderId;
+		public Int32? RMAHeaderId { get; set; }
 	} 
 }

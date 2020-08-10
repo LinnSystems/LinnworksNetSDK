@@ -12,17 +12,17 @@ namespace LinnworksAPI
         /// <summary>
         /// Newly added purchase order line 
         /// </summary>
-		public PurchaseOrderItem NewPurchaseOrderItem;
+		public PurchaseOrderItem NewPurchaseOrderItem { get; set; }
 
         /// <summary>
         /// Recalculated purchase order header 
         /// </summary>
-		public PurchaseOrderHeader PurchaseOrderHeader;
+		public PurchaseOrderHeader PurchaseOrderHeader { get; set; }
 
         /// <summary>
         /// If the item was batched or booked into a WMS location, this is the batch inventory id for the booked in stock. 
         /// If an item was not delivered or was a non batched item, this will be null. 
         /// </summary>
-		public Int32? BatchInventoryId;
+		public Int32? BatchInventoryId { get; set; }
 	} 
 }

@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Parent order ID 
         /// </summary>
-		public Int32 Parent;
+		public Int32 Parent { get; set; }
 
         /// <summary>
         /// Child order ID 
         /// </summary>
-		public Int32 Child;
+		public Int32 Child { get; set; }
 
         /// <summary>
         /// Relation type 
         /// </summary>
-		public String Type;
+		public String Type { get; set; }
 	} 
 }

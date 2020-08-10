@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Order id 
         /// </summary>
-		public Guid pkOrderId;
+		public Guid pkOrderId { get; set; }
 
         /// <summary>
         /// List of OrderAuditTrail entities 
         /// </summary>
-		public List<OrderAuditTrail> AuditTrail;
+		public List<OrderAuditTrail> AuditTrail { get; set; }
 	} 
 }

@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class HasStockItemStockLevelRequest
 	{
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 	} 
 }

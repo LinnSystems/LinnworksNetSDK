@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class PerfomanceData
 	{
-		public String Name;
+		public String Name { get; set; }
 
-		public Double Price;
+		public Double Price { get; set; }
 
-		public String Currency;
+		public String Currency { get; set; }
 	} 
 }

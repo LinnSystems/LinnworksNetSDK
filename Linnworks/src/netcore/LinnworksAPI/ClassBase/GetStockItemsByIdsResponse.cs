@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of stock item headers. 
         /// </summary>
-		public List<StockItemHeader> Items;
+		public List<StockItemHeader> Items { get; set; }
 	} 
 }

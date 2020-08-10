@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Variation item record ID 
         /// </summary>
-		public Guid pkRowId;
+		public Guid pkRowId { get; set; }
 
         /// <summary>
         /// Stock item ID (unique identifier) 
         /// </summary>
-		public Guid pkStockItemId;
+		public Guid pkStockItemId { get; set; }
 
         /// <summary>
         /// Item SKU 
         /// </summary>
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
         /// <summary>
         /// Item title 
         /// </summary>
-		public String ItemTitle;
+		public String ItemTitle { get; set; }
 	} 
 }

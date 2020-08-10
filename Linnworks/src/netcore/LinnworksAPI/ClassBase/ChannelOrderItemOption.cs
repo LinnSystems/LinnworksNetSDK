@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class ChannelOrderItemOption
 	{
-		public String Property;
+		public String Property { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

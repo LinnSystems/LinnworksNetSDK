@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class WarehouseBinrackToZone
 	{
-		public Int32 ZoneId;
+		public Int32 ZoneId { get; set; }
 
-		public Int32 BinrackId;
+		public Int32 BinrackId { get; set; }
 	} 
 }

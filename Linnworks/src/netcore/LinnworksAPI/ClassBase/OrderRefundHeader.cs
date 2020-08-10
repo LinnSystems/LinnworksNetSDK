@@ -6,34 +6,34 @@ namespace LinnworksAPI
 { 
     public class OrderRefundHeader
 	{
-		public Int32 RefundHeaderId;
+		public Int32 RefundHeaderId { get; set; }
 
-		public Guid OrderId;
+		public Guid OrderId { get; set; }
 
-		public Int32 NumOrderId;
+		public Int32 NumOrderId { get; set; }
 
-		public String ExternalReference;
+		public String ExternalReference { get; set; }
 
-		public DateTime CreatedDate;
+		public DateTime CreatedDate { get; set; }
 
-		public String Currency;
+		public String Currency { get; set; }
 
-		public Decimal Amount;
+		public Decimal Amount { get; set; }
 
-		public PostSaleStatus Status;
+		public PostSaleStatus Status { get; set; }
 
-		public Boolean Actioned;
+		public Boolean Actioned { get; set; }
 
-		public DateTime LastActionDate;
+		public DateTime LastActionDate { get; set; }
 
-		public String OrderSource;
+		public String OrderSource { get; set; }
 
-		public String OrderSubSource;
+		public String OrderSubSource { get; set; }
 
-		public Boolean ChannelInitiated;
+		public Boolean ChannelInitiated { get; set; }
 
-		public ISet<VerifiedRefund> RefundLines;
+		public ISet<VerifiedRefund> RefundLines { get; set; }
 
-		public String RefundLink;
+		public String RefundLink { get; set; }
 	} 
 }

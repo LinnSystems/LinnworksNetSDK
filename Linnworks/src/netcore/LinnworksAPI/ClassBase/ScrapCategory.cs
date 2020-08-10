@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class ScrapCategory
 	{
-		public Int32 CategoryId;
+		public Int32 CategoryId { get; set; }
 
-		public String CategoryName;
+		public String CategoryName { get; set; }
 	} 
 }

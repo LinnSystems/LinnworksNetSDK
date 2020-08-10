@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetInventoryItemsCompositionByIdsRequest
 	{
-		public List<Guid> InventoryItemIds;
+		public List<Guid> InventoryItemIds { get; set; }
 	} 
 }

@@ -12,31 +12,31 @@ namespace LinnworksAPI
         /// <summary>
         /// Unique identifier for the purchase order note. Use this ID in Delete/Modify calls 
         /// </summary>
-		public Guid pkPurchaseOrderNoteId;
+		public Guid pkPurchaseOrderNoteId { get; set; }
 
         /// <summary>
         /// Note text 
         /// </summary>
-		public String Note;
+		public String Note { get; set; }
 
         /// <summary>
         /// Note added datetime UTC 
         /// </summary>
-		public DateTime NoteDateTime;
+		public DateTime NoteDateTime { get; set; }
 
         /// <summary>
         /// Username of Note author 
         /// </summary>
-		public String UserName;
+		public String UserName { get; set; }
 
         /// <summary>
         /// Format the Note Date 
         /// </summary>
-		public String NoteDate;
+		public String NoteDate { get; set; }
 
         /// <summary>
         /// Format the Note Time 
         /// </summary>
-		public String NoteTime;
+		public String NoteTime { get; set; }
 	} 
 }

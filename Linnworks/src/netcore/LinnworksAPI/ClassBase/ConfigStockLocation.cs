@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class ConfigStockLocation
 	{
-		public Guid pkStockLocationId;
+		public Guid pkStockLocationId { get; set; }
 
-		public Boolean Deleted;
+		public Boolean Deleted { get; set; }
 
-		public Int32 fkChannelLocationId;
+		public Int32 fkChannelLocationId { get; set; }
 	} 
 }

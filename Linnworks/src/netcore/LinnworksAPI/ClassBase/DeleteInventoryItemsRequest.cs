@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class DeleteInventoryItemsRequest
 	{
-		public List<Guid> InventoryItemIds;
+		public List<Guid> InventoryItemIds { get; set; }
 
-		public List<Tuple<Int32,Int32>> SelectedRegions;
+		public List<Tuple<Int32,Int32>> SelectedRegions { get; set; }
 
-		public Guid Token;
+		public Guid Token { get; set; }
 	} 
 }

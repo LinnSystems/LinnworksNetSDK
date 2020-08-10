@@ -9,25 +9,25 @@ namespace LinnworksAPI
         /// <summary>
         /// Audit type 
         /// </summary>
-		public String AuditType;
+		public String AuditType { get; set; }
 
         /// <summary>
         /// Record date and time 
         /// </summary>
-		public DateTime AuditTrailDate;
+		public DateTime AuditTrailDate { get; set; }
 
         /// <summary>
         /// Note text 
         /// </summary>
-		public String AuditText;
+		public String AuditText { get; set; }
 
         /// <summary>
         /// Audit trail note author 
         /// </summary>
-		public String UserName;
+		public String UserName { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 	} 
 }

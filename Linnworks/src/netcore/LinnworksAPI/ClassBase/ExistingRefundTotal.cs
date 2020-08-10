@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Amount refunded 
         /// </summary>
-		public Double Amount;
+		public Double Amount { get; set; }
 
         /// <summary>
         /// Total order charge 
         /// </summary>
-		public Double TotalCharge;
+		public Double TotalCharge { get; set; }
 
         /// <summary>
         /// Refundable amount 
         /// </summary>
-		public Double Refundable;
+		public Double Refundable { get; set; }
 	} 
 }

@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class HasStockItemStockLevelResponse
 	{
-		public Boolean HasStockLevel;
+		public Boolean HasStockLevel { get; set; }
 	} 
 }

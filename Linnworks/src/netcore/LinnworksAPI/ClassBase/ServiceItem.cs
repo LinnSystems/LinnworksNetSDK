@@ -9,36 +9,36 @@ namespace LinnworksAPI
         /// <summary>
         /// Order item record row ID 
         /// </summary>
-		public Guid pkOrderItemRowId;
+		public Guid pkOrderItemRowId { get; set; }
 
         /// <summary>
         /// Service name 
         /// </summary>
-		public String ServiceName;
+		public String ServiceName { get; set; }
 
         /// <summary>
         /// Service cost 
         /// </summary>
-		public Double ServiceCost;
+		public Double ServiceCost { get; set; }
 
         /// <summary>
         /// Channel refund reason 
         /// </summary>
-		public ChannelRefundReason DefaultChannelReason;
+		public ChannelRefundReason DefaultChannelReason { get; set; }
 
         /// <summary>
         /// Channel refund subreason 
         /// </summary>
-		public ChannelRefundSubReason DefaultChannelSubReason;
+		public ChannelRefundSubReason DefaultChannelSubReason { get; set; }
 
         /// <summary>
         /// Item number 
         /// </summary>
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
         /// <summary>
         /// If automatic refunds allowed 
         /// </summary>
-		public Boolean AllowsAutomatedRefund;
+		public Boolean AllowsAutomatedRefund { get; set; }
 	} 
 }

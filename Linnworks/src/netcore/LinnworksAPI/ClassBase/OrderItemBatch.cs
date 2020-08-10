@@ -6,18 +6,18 @@ namespace LinnworksAPI
 { 
     public class OrderItemBatch
 	{
-		public Int32 OrderItemBatchId;
+		public Int32 OrderItemBatchId { get; set; }
 
-		public Guid OrderItemRowId;
+		public Guid OrderItemRowId { get; set; }
 
-		public Int32 BatchInventoryId;
+		public Int32 BatchInventoryId { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
-		public StockItemBatch Batch;
+		public StockItemBatch Batch { get; set; }
 
-		public Double DespatchUnitValue;
+		public Double DespatchUnitValue { get; set; }
 
-		public OrderItemBatchAssignmentType AssignmentType;
+		public OrderItemBatchAssignmentType AssignmentType { get; set; }
 	} 
 }

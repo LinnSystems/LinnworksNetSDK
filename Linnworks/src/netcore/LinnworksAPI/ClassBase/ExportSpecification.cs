@@ -12,27 +12,27 @@ namespace LinnworksAPI
         /// <summary>
         /// Export Column Names 
         /// </summary>
-		public Boolean ExportColumnNames;
+		public Boolean ExportColumnNames { get; set; }
 
         /// <summary>
         /// Type of delimeter used 
         /// </summary>
-		public String Delimiter;
+		public String Delimiter { get; set; }
 
         /// <summary>
         /// Escapes used (/ or ") 
         /// </summary>
-		public String Escape;
+		public String Escape { get; set; }
 
         /// <summary>
         /// Any custom SQL scripts used 
         /// </summary>
-		public String CustomScript;
+		public String CustomScript { get; set; }
 
-		public ExportGenericFeed Feed;
+		public ExportGenericFeed Feed { get; set; }
 
-		public List<ExportColumn> ColumnMappings;
+		public List<ExportColumn> ColumnMappings { get; set; }
 
-		public List<ExecutionOption> ExecutionOptions;
+		public List<ExecutionOption> ExecutionOptions { get; set; }
 	} 
 }

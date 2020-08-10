@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class RunJobsRequest
 	{
-		public Int32 JobId;
+		public Int32 JobId { get; set; }
 	} 
 }

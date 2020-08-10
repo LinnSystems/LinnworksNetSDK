@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class WarehouseTransferProperty
 	{
-		public Guid PkTransferPropertyId;
+		public Guid PkTransferPropertyId { get; set; }
 
-		public String TransferPropertyName;
+		public String TransferPropertyName { get; set; }
 
-		public String TransferPropertyValue;
+		public String TransferPropertyValue { get; set; }
 	} 
 }

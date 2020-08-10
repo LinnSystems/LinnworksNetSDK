@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetStockItemsFullByIdsResponse
 	{
-		public List<StockItemFullExtended> StockItemsFullExtended;
+		public List<StockItemFullExtended> StockItemsFullExtended { get; set; }
 	} 
 }

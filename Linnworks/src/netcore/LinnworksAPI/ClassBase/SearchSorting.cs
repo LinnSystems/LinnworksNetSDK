@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class SearchSorting
 	{
-		public String SortField;
+		public String SortField { get; set; }
 
-		public SortDirection SortDirection;
+		public SortDirection SortDirection { get; set; }
 	} 
 }

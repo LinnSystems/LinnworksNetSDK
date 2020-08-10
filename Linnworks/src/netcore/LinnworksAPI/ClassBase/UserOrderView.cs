@@ -6,28 +6,28 @@ namespace LinnworksAPI
 { 
     public class UserOrderView
 	{
-		public DateTime ModifiedDateTime;
+		public DateTime ModifiedDateTime { get; set; }
 
         /// <summary>
         /// View ID 
         /// </summary>
-		public Int32 pkViewId;
+		public Int32 pkViewId { get; set; }
 
         /// <summary>
         /// View name 
         /// </summary>
-		public String ViewName;
+		public String ViewName { get; set; }
 
         /// <summary>
         /// View owner name 
         /// </summary>
-		public String OwnerName;
+		public String OwnerName { get; set; }
 
         /// <summary>
         /// Can be modified 
         /// </summary>
-		public Boolean? AllowModify;
+		public Boolean? AllowModify { get; set; }
 
-		public String JSONDetail;
+		public String JSONDetail { get; set; }
 	} 
 }

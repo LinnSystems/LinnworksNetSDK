@@ -7,6 +7,6 @@ namespace LinnworksAPI
 { 
     public class ConfigChannelLocationBinding
 	{
-		public ReadOnlyCollection<ConfigChannelLocation> Locations;
+		public ReadOnlyCollection<ConfigChannelLocation> Locations { get; set; }
 	} 
 }

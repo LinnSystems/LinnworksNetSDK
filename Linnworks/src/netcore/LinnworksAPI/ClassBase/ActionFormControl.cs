@@ -6,16 +6,16 @@ namespace LinnworksAPI
 { 
     public class ActionFormControl
 	{
-		public String Id;
+		public String Id { get; set; }
 
-		public String Caption;
+		public String Caption { get; set; }
 
-		public String Description;
+		public String Description { get; set; }
 
-		public String Type;
+		public String Type { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 
-		public String Group;
+		public String Group { get; set; }
 	} 
 }

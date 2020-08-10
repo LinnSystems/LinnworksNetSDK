@@ -6,32 +6,32 @@ namespace LinnworksAPI
 { 
     public class ReturnOptions
 	{
-		public Boolean CanReturn;
+		public Boolean CanReturn { get; set; }
 
-		public Boolean CanReturnInternally;
+		public Boolean CanReturnInternally { get; set; }
 
-		public Boolean MustHaveRefund;
+		public Boolean MustHaveRefund { get; set; }
 
-		public Boolean RefundAutoPopulated;
+		public Boolean RefundAutoPopulated { get; set; }
 
-		public Boolean CanHaveRefund;
+		public Boolean CanHaveRefund { get; set; }
 
-		public ISet<ChannelReason> ReturnReasons;
+		public ISet<ChannelReason> ReturnReasons { get; set; }
 
-		public ISet<PostSaleSubStatus> SubStatuses;
+		public ISet<PostSaleSubStatus> SubStatuses { get; set; }
 
-		public RefundOptions RefundOptions;
+		public RefundOptions RefundOptions { get; set; }
 
-		public CannotReturnReasonType CannotReturnReason;
+		public CannotReturnReasonType CannotReturnReason { get; set; }
 
-		public OrderDetails Order;
+		public OrderDetails Order { get; set; }
 
-		public OrderRMAHeader RMAHeader;
+		public OrderRMAHeader RMAHeader { get; set; }
 
-		public ISet<VerifiedRMAItem> AllExistingRMAs;
+		public ISet<VerifiedRMAItem> AllExistingRMAs { get; set; }
 
-		public List<String> Errors;
+		public List<String> Errors { get; set; }
 
-		public List<String> Info;
+		public List<String> Info { get; set; }
 	} 
 }

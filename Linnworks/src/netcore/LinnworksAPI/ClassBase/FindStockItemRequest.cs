@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class FindStockItemRequest
 	{
-		public List<String> Codes;
+		public List<String> Codes { get; set; }
 	} 
 }

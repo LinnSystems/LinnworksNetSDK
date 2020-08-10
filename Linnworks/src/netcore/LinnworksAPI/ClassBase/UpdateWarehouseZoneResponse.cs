@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class UpdateWarehouseZoneResponse
 	{
-		public WarehouseZone Zone;
+		public WarehouseZone Zone { get; set; }
 	} 
 }

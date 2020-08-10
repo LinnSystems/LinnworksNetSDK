@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class PermissionsUser
 	{
-		public Int32 UserId;
+		public Int32 UserId { get; set; }
 
-		public Boolean SuperAdmin;
+		public Boolean SuperAdmin { get; set; }
 
-		public Guid fkUserId;
+		public Guid fkUserId { get; set; }
 
-		public String EmailAddress;
+		public String EmailAddress { get; set; }
 
-		public String UserType;
+		public String UserType { get; set; }
 	} 
 }

@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Dimension measures 
         /// </summary>
-		public String Dimension;
+		public String Dimension { get; set; }
 
         /// <summary>
         /// Weight measures 
         /// </summary>
-		public String Weight;
+		public String Weight { get; set; }
 	} 
 }

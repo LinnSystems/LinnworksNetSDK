@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GroupAction
 	{
-		public List<String> Actions;
+		public List<String> Actions { get; set; }
 	} 
 }

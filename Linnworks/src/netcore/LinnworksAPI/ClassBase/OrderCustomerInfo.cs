@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Username of customer (Comes from channel) 
         /// </summary>
-		public String ChannelBuyerName;
+		public String ChannelBuyerName { get; set; }
 
         /// <summary>
         /// Customer address 
         /// </summary>
-		public CustomerAddress Address;
+		public CustomerAddress Address { get; set; }
 
         /// <summary>
         /// Customer billing address 
         /// </summary>
-		public CustomerAddress BillingAddress;
+		public CustomerAddress BillingAddress { get; set; }
 	} 
 }

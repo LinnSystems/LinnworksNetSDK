@@ -6,18 +6,18 @@ namespace LinnworksAPI
 { 
     public class StockItemTypeInfo
 	{
-		public String SKU;
+		public String SKU { get; set; }
 
-		public Int32 StockItemIntId;
+		public Int32 StockItemIntId { get; set; }
 
-		public Guid StockItemId;
+		public Guid StockItemId { get; set; }
 
-		public Boolean IsVariationGroup;
+		public Boolean IsVariationGroup { get; set; }
 
-		public Boolean IsCompositeParent;
+		public Boolean IsCompositeParent { get; set; }
 
-		public Boolean IsArchived;
+		public Boolean IsArchived { get; set; }
 
-		public Byte InventoryTrackingType;
+		public Byte InventoryTrackingType { get; set; }
 	} 
 }

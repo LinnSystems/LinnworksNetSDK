@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Extended property name 
         /// </summary>
-		public String Name;
+		public String Name { get; set; }
 
         /// <summary>
         /// Extended property value 
         /// </summary>
-		public String Value;
+		public String Value { get; set; }
 
         /// <summary>
         /// Extended property type 
         /// </summary>
-		public String Type;
+		public String Type { get; set; }
 	} 
 }

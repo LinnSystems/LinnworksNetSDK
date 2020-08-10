@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetBatchInventoryByIdResponse
 	{
-		public List<StockItemBatch> Batches;
+		public List<StockItemBatch> Batches { get; set; }
 	} 
 }

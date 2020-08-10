@@ -6,38 +6,38 @@ namespace LinnworksAPI
 { 
     public class ModifiedAdditionalCostItem
 	{
-		public Guid Id;
+		public Guid Id { get; set; }
 
-		public Int32 PurchaseAdditionalCostItemId;
+		public Int32 PurchaseAdditionalCostItemId { get; set; }
 
-		public Int32 AdditionalCostTypeId;
+		public Int32 AdditionalCostTypeId { get; set; }
 
-		public String Reference;
+		public String Reference { get; set; }
 
-		public Decimal SubTotalLineCost;
+		public Decimal SubTotalLineCost { get; set; }
 
-		public Decimal TaxRate;
+		public Decimal TaxRate { get; set; }
 
-		public Decimal Tax;
+		public Decimal Tax { get; set; }
 
-		public String Currency;
+		public String Currency { get; set; }
 
-		public Decimal ConversionRate;
+		public Decimal ConversionRate { get; set; }
 
-		public Decimal TotalLineCost;
+		public Decimal TotalLineCost { get; set; }
 
-		public List<PurchaseOrderAdditionalCostAllocation> CostAllocation;
+		public List<PurchaseOrderAdditionalCostAllocation> CostAllocation { get; set; }
 
-		public Boolean AllocationLocked;
+		public Boolean AllocationLocked { get; set; }
 
-		public String AdditionalCostTypeName;
+		public String AdditionalCostTypeName { get; set; }
 
-		public Boolean AdditionalCostTypeIsShippingType;
+		public Boolean AdditionalCostTypeIsShippingType { get; set; }
 
-		public Boolean AdditionalCostTypeIsPartialAllocation;
+		public Boolean AdditionalCostTypeIsPartialAllocation { get; set; }
 
-		public Boolean Print;
+		public Boolean Print { get; set; }
 
-		public AllocationMethods AllocationMethod;
+		public AllocationMethods AllocationMethod { get; set; }
 	} 
 }

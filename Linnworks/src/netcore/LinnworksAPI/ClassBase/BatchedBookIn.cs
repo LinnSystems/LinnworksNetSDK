@@ -9,48 +9,48 @@ namespace LinnworksAPI
         /// <summary>
         /// Product SKU 
         /// </summary>
-		public String SKU;
+		public String SKU { get; set; }
 
         /// <summary>
         /// Batch number 
         /// </summary>
-		public String BatchNumber;
+		public String BatchNumber { get; set; }
 
         /// <summary>
         /// Location ID 
         /// </summary>
-		public Guid LocationId;
+		public Guid LocationId { get; set; }
 
         /// <summary>
         /// Bin rack 
         /// </summary>
-		public String BinRack;
+		public String BinRack { get; set; }
 
         /// <summary>
         /// Quantity booked in 
         /// </summary>
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 
         /// <summary>
         /// Stock value 
         /// </summary>
-		public Decimal StockValue;
+		public Decimal StockValue { get; set; }
 
         /// <summary>
         /// Batch status 
         /// </summary>
-		public String BatchStatus;
+		public String BatchStatus { get; set; }
 
-		public Int32? PrioritySequence;
+		public Int32? PrioritySequence { get; set; }
 
         /// <summary>
         /// Batch expiry date 
         /// </summary>
-		public DateTime? ExpiresOn;
+		public DateTime? ExpiresOn { get; set; }
 
         /// <summary>
         /// Batch sell by date 
         /// </summary>
-		public DateTime? SellBy;
+		public DateTime? SellBy { get; set; }
 	} 
 }

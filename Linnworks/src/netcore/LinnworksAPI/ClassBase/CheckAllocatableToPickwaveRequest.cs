@@ -12,6 +12,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of integer order ids 
         /// </summary>
-		public List<Int32> OrderIds;
+		public List<Int32> OrderIds { get; set; }
 	} 
 }

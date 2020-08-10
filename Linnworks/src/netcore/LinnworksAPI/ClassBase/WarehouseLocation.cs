@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Location name 
         /// </summary>
-		public String LocationName;
+		public String LocationName { get; set; }
 
         /// <summary>
         /// Stock location ID 
         /// </summary>
-		public Guid pkStockLocationId;
+		public Guid pkStockLocationId { get; set; }
 	} 
 }

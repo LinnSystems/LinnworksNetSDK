@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Customer Tax Number 
         /// </summary>
-		public String TaxNumber;
+		public String TaxNumber { get; set; }
 	} 
 }

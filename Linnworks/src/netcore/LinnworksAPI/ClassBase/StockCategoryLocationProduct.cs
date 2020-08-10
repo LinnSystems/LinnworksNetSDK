@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class StockCategoryLocationProduct
 	{
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
-		public String ItemTitle;
+		public String ItemTitle { get; set; }
 
-		public Int32 StockLevel;
+		public Int32 StockLevel { get; set; }
 
-		public Double StockValue;
+		public Double StockValue { get; set; }
 	} 
 }

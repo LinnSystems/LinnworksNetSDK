@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of order ids 
         /// </summary>
-		public List<Guid> OrderIds;
+		public List<Guid> OrderIds { get; set; }
 	} 
 }

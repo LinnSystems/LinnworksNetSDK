@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class OrderItemShippingBatchWithRow
 	{
-		public Guid OrderItemRowId;
+		public Guid OrderItemRowId { get; set; }
 
-		public String BatchNumber;
+		public String BatchNumber { get; set; }
 
-		public Guid fkBinId;
+		public Guid fkBinId { get; set; }
 
-		public Int32 fkOrderItemBatchId;
+		public Int32 fkOrderItemBatchId { get; set; }
 
-		public Int32 Quantity;
+		public Int32 Quantity { get; set; }
 	} 
 }

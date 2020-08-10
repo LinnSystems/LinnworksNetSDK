@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetStockItemTypeInfoResponse
 	{
-		public List<StockItemTypeInfo> StockItemInfo;
+		public List<StockItemTypeInfo> StockItemInfo { get; set; }
 	} 
 }

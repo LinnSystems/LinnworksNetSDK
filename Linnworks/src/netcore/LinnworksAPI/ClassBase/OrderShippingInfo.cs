@@ -9,66 +9,66 @@ namespace LinnworksAPI
         /// <summary>
         /// Courier name (e.g. Royal Mail) 
         /// </summary>
-		public String Vendor;
+		public String Vendor { get; set; }
 
         /// <summary>
         /// Postal service ID 
         /// </summary>
-		public Guid PostalServiceId;
+		public Guid PostalServiceId { get; set; }
 
         /// <summary>
         /// Postal service name (e.g. Next day delivery) 
         /// </summary>
-		public String PostalServiceName;
+		public String PostalServiceName { get; set; }
 
         /// <summary>
         /// Order total weight 
         /// </summary>
-		public Decimal TotalWeight;
+		public Decimal TotalWeight { get; set; }
 
         /// <summary>
         /// If order is processed 
         /// </summary>
-		public Decimal ItemWeight;
+		public Decimal ItemWeight { get; set; }
 
         /// <summary>
         /// Package category ID 
         /// </summary>
-		public Guid PackageCategoryId;
+		public Guid PackageCategoryId { get; set; }
 
         /// <summary>
         /// Package category name 
         /// </summary>
-		public String PackageCategory;
+		public String PackageCategory { get; set; }
 
         /// <summary>
         /// Package type ID 
         /// </summary>
-		public Guid? PackageTypeId;
+		public Guid? PackageTypeId { get; set; }
 
         /// <summary>
         /// Package type name 
         /// </summary>
-		public String PackageType;
+		public String PackageType { get; set; }
 
         /// <summary>
         /// Order postage cost 
         /// </summary>
-		public Double PostageCost;
+		public Double PostageCost { get; set; }
 
         /// <summary>
         /// Order postage cost excluding tax 
         /// </summary>
-		public Double PostageCostExTax;
+		public Double PostageCostExTax { get; set; }
 
         /// <summary>
         /// Order tracking number provided by courier 
         /// </summary>
-		public String TrackingNumber;
+		public String TrackingNumber { get; set; }
 
         /// <summary>
         /// If there is an adjustment to shipping cost was made 
         /// </summary>
-		public Boolean ManualAdjust;
+		public Boolean ManualAdjust { get; set; }
 	} 
 }

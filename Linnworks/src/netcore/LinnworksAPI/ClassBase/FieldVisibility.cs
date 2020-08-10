@@ -6,27 +6,27 @@ namespace LinnworksAPI
 { 
     public class FieldVisibility
 	{
-		public String Name;
+		public String Name { get; set; }
 
-		public Boolean Visible;
+		public Boolean Visible { get; set; }
 
-		public Boolean CanFilter;
+		public Boolean CanFilter { get; set; }
 
-		public Boolean CanSort;
+		public Boolean CanSort { get; set; }
 
-		public FieldTypes FieldType;
+		public FieldTypes FieldType { get; set; }
 
-		public FieldCode Code;
+		public FieldCode Code { get; set; }
 
-		public List<FieldVisibility> SubFields;
+		public List<FieldVisibility> SubFields { get; set; }
 
         /// <summary>
         /// Defines if the field can only be used as a filter 
         /// </summary>
-		public Boolean IsFilterOnly;
+		public Boolean IsFilterOnly { get; set; }
 
-		public String HotButtonIcon;
+		public String HotButtonIcon { get; set; }
 
-		public String HotButtonKey;
+		public String HotButtonKey { get; set; }
 	} 
 }

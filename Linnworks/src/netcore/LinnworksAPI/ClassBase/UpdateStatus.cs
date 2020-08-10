@@ -6,14 +6,14 @@ namespace LinnworksAPI
 { 
     public class UpdateStatus
 	{
-		public Boolean Notes;
+		public Boolean Notes { get; set; }
 
-		public Boolean Items;
+		public Boolean Items { get; set; }
 
-		public Boolean Properties;
+		public Boolean Properties { get; set; }
 
-		public Boolean Information;
+		public Boolean Information { get; set; }
 
-		public Boolean Status;
+		public Boolean Status { get; set; }
 	} 
 }

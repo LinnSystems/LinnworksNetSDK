@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Country ID 
         /// </summary>
-		public Guid pkStockId;
+		public Guid pkStockId { get; set; }
 
         /// <summary>
         /// Product SKU 
         /// </summary>
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
         /// <summary>
         /// Product title 
         /// </summary>
-		public String ItemName;
+		public String ItemName { get; set; }
 	} 
 }

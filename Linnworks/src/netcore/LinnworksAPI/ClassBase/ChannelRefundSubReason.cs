@@ -9,11 +9,11 @@ namespace LinnworksAPI
         /// <summary>
         /// Tag 
         /// </summary>
-		public String Tag;
+		public String Tag { get; set; }
 
         /// <summary>
         /// Display name 
         /// </summary>
-		public String DisplayName;
+		public String DisplayName { get; set; }
 	} 
 }

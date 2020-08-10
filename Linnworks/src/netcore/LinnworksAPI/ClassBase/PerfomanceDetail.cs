@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class PerfomanceDetail
 	{
-		public DateTime Date;
+		public DateTime Date { get; set; }
 
-		public Double Value;
+		public Double Value { get; set; }
 	} 
 }

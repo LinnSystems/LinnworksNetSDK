@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class batchAssignment
 	{
-		public Guid orderItemRowId;
+		public Guid orderItemRowId { get; set; }
 
-		public Int32 batchInventoryId;
+		public Int32 batchInventoryId { get; set; }
 
-		public Int32 quantity;
+		public Int32 quantity { get; set; }
 	} 
 }

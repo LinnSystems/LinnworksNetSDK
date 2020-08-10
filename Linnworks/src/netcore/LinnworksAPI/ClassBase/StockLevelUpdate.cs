@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class StockLevelUpdate
 	{
-		public String SKU;
+		public String SKU { get; set; }
 
-		public Guid LocationId;
+		public Guid LocationId { get; set; }
 
-		public Int32 Level;
+		public Int32 Level { get; set; }
 	} 
 }

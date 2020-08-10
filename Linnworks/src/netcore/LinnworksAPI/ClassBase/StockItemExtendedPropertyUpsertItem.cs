@@ -12,26 +12,26 @@ namespace LinnworksAPI
         /// <summary>
         /// Stock Item ID, optional if SKU provided 
         /// </summary>
-		public Guid? fkStockItemId;
+		public Guid? fkStockItemId { get; set; }
 
         /// <summary>
         /// Stock Item ID, optional if fkStockItemId provided 
         /// </summary>
-		public String SKU;
+		public String SKU { get; set; }
 
         /// <summary>
         /// Property name 
         /// </summary>
-		public String ProperyName;
+		public String ProperyName { get; set; }
 
         /// <summary>
         /// Property value 
         /// </summary>
-		public String PropertyValue;
+		public String PropertyValue { get; set; }
 
         /// <summary>
         /// Property type 
         /// </summary>
-		public String PropertyType;
+		public String PropertyType { get; set; }
 	} 
 }

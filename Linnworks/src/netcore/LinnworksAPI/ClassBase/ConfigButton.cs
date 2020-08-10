@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class ConfigButton
 	{
-		public String FieldName;
+		public String FieldName { get; set; }
 
-		public String GroupName;
+		public String GroupName { get; set; }
 
-		public String DisplayName;
+		public String DisplayName { get; set; }
 
-		public String FunctionName;
+		public String FunctionName { get; set; }
 	} 
 }

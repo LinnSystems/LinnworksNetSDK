@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetBatchAuditResponse
 	{
-		public List<StockItemBatchAudit> response;
+		public List<StockItemBatchAudit> response { get; set; }
 	} 
 }

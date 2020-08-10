@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class AddItemsToTransferRequest
 	{
-		public Guid TransferId;
+		public Guid TransferId { get; set; }
 
-		public List<WarehouseTransferItemQuantity> TransferItems;
+		public List<WarehouseTransferItemQuantity> TransferItems { get; set; }
 	} 
 }

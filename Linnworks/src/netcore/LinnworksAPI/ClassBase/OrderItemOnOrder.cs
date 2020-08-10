@@ -9,22 +9,22 @@ namespace LinnworksAPI
         /// <summary>
         /// Primary key of the bound 
         /// </summary>
-		public Guid pkPurchaseItemId;
+		public Guid pkPurchaseItemId { get; set; }
 
-		public Guid Rowid;
+		public Guid Rowid { get; set; }
 
-		public Guid pkPurchaseId;
+		public Guid pkPurchaseId { get; set; }
 
-		public String ExternalInvoiceNumber;
+		public String ExternalInvoiceNumber { get; set; }
 
-		public Guid fkSupplierId;
+		public Guid fkSupplierId { get; set; }
 
-		public DateTime DateOfDelivery;
+		public DateTime DateOfDelivery { get; set; }
 
-		public DateTime QuotedDeliveryDate;
+		public DateTime QuotedDeliveryDate { get; set; }
 
-		public String SupplierName;
+		public String SupplierName { get; set; }
 
-		public Guid fkLocationId;
+		public Guid fkLocationId { get; set; }
 	} 
 }

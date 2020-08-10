@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// list of modified items with Ids matched to CostAllocationId 
         /// </summary>
-		public List<ModifiedAdditionalCostAllocationItem> ModifiedItems;
+		public List<ModifiedAdditionalCostAllocationItem> ModifiedItems { get; set; }
 	} 
 }

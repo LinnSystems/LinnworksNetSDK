@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class SelectStringValueOption
 	{
-		public String DisplayValue;
+		public String DisplayValue { get; set; }
 
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

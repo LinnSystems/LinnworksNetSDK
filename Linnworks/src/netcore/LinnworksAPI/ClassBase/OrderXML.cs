@@ -7,12 +7,12 @@ namespace LinnworksAPI
 { 
     public class OrderXML
 	{
-		public String LineTag;
+		public String LineTag { get; set; }
 
-		public String Type;
+		public String Type { get; set; }
 
-		public String XML;
+		public String XML { get; set; }
 
-		public XmlDocument XMLDoc;
+		public XmlDocument XMLDoc { get; set; }
 	} 
 }

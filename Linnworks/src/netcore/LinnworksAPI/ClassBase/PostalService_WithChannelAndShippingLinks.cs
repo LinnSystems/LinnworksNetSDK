@@ -12,47 +12,47 @@ namespace LinnworksAPI
         /// <summary>
         /// Postal service ID 
         /// </summary>
-		public Guid id;
+		public Guid id { get; set; }
 
         /// <summary>
         /// If there is channel linking with shipping service 
         /// </summary>
-		public Boolean hasMappedShippingService;
+		public Boolean hasMappedShippingService { get; set; }
 
         /// <summary>
         /// Channel information 
         /// </summary>
-		public IEnumerable<Channel> Channels;
+		public IEnumerable<Channel> Channels { get; set; }
 
         /// <summary>
         /// Shipping service information 
         /// </summary>
-		public IEnumerable<ShippingService> ShippingServices;
+		public IEnumerable<ShippingService> ShippingServices { get; set; }
 
-		public String PostalServiceName;
+		public String PostalServiceName { get; set; }
 
-		public String PostalServiceTag;
+		public String PostalServiceTag { get; set; }
 
-		public String ServiceCountry;
+		public String ServiceCountry { get; set; }
 
-		public String PostalServiceCode;
+		public String PostalServiceCode { get; set; }
 
-		public String Vendor;
+		public String Vendor { get; set; }
 
-		public String PrintModule;
+		public String PrintModule { get; set; }
 
-		public String PrintModuleTitle;
+		public String PrintModuleTitle { get; set; }
 
-		public Guid pkPostalServiceId;
+		public Guid pkPostalServiceId { get; set; }
 
-		public Boolean TrackingNumberRequired;
+		public Boolean TrackingNumberRequired { get; set; }
 
-		public Boolean WeightRequired;
+		public Boolean WeightRequired { get; set; }
 
-		public Boolean IgnorePackagingGroup;
+		public Boolean IgnorePackagingGroup { get; set; }
 
-		public Int32 fkShippingAPIConfigId;
+		public Int32 fkShippingAPIConfigId { get; set; }
 
-		public Guid? IntegratedServiceId;
+		public Guid? IntegratedServiceId { get; set; }
 	} 
 }

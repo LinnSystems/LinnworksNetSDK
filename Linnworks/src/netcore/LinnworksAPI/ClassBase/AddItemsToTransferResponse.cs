@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class AddItemsToTransferResponse
 	{
-		public List<WarehouseTransferItem> TransferItems;
+		public List<WarehouseTransferItem> TransferItems { get; set; }
 	} 
 }

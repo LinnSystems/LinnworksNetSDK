@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Added purchase order extended properties 
         /// </summary>
-		public List<PurchaseOrderExtendedProperty> Items;
+		public List<PurchaseOrderExtendedProperty> Items { get; set; }
 	} 
 }

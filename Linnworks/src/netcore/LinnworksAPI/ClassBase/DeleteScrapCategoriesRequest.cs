@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class DeleteScrapCategoriesRequest
 	{
-		public IEnumerable<Int32> CategoryIds;
+		public IEnumerable<Int32> CategoryIds { get; set; }
 	} 
 }

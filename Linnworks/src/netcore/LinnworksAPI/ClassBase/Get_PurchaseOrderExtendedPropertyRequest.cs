@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Purchase Order unique identifier 
         /// </summary>
-		public Guid PurchaseId;
+		public Guid PurchaseId { get; set; }
 	} 
 }

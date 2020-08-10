@@ -9,21 +9,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Variation parent title 
         /// </summary>
-		public String VariationGroupName;
+		public String VariationGroupName { get; set; }
 
         /// <summary>
         /// Variation parent SKU 
         /// </summary>
-		public String ParentSKU;
+		public String ParentSKU { get; set; }
 
         /// <summary>
         /// Variation parent stock item id 
         /// </summary>
-		public Guid ParentStockItemId;
+		public Guid ParentStockItemId { get; set; }
 
         /// <summary>
         /// List of variation children 
         /// </summary>
-		public List<Guid> VariationItemIds;
+		public List<Guid> VariationItemIds { get; set; }
 	} 
 }

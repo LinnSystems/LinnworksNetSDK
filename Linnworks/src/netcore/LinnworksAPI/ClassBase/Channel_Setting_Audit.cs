@@ -6,16 +6,16 @@ namespace LinnworksAPI
 { 
     public class Channel_Setting_Audit
 	{
-		public Int32 pkAuditId;
+		public Int32 pkAuditId { get; set; }
 
-		public Int32 fkChannelId;
+		public Int32 fkChannelId { get; set; }
 
-		public String PropertyName;
+		public String PropertyName { get; set; }
 
-		public String PropertyValueIs;
+		public String PropertyValueIs { get; set; }
 
-		public DateTime AuditDateTime;
+		public DateTime AuditDateTime { get; set; }
 
-		public String UserName;
+		public String UserName { get; set; }
 	} 
 }

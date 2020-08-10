@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Warehouse zone types 
         /// </summary>
-		public List<WarehouseZoneType> Types;
+		public List<WarehouseZoneType> Types { get; set; }
 	} 
 }

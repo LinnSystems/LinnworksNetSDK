@@ -9,20 +9,20 @@ namespace LinnworksAPI
         /// <summary>
         /// Postal service ID 
         /// </summary>
-		public Guid pkPostalServiceId;
+		public Guid pkPostalServiceId { get; set; }
 
         /// <summary>
         /// Postal service name 
         /// </summary>
-		public String PostalServiceName;
+		public String PostalServiceName { get; set; }
 
         /// <summary>
         /// If tracking number is required for this service 
         /// </summary>
-		public Boolean TrackingNumberRequired;
+		public Boolean TrackingNumberRequired { get; set; }
 
-		public String Vendor;
+		public String Vendor { get; set; }
 
-		public Guid? IntegratedServiceID;
+		public Guid? IntegratedServiceID { get; set; }
 	} 
 }

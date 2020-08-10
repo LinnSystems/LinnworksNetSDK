@@ -9,26 +9,26 @@ namespace LinnworksAPI
         /// <summary>
         /// Postal service ID 
         /// </summary>
-		public Guid pkPostalServiceId;
+		public Guid pkPostalServiceId { get; set; }
 
         /// <summary>
         /// Postal service name 
         /// </summary>
-		public String PostalServiceName;
+		public String PostalServiceName { get; set; }
 
         /// <summary>
         /// Courier name (e.g. Royal Mail) 
         /// </summary>
-		public String vendor;
+		public String vendor { get; set; }
 
         /// <summary>
         /// Shipping account ID 
         /// </summary>
-		public String accountid;
+		public String accountid { get; set; }
 
         /// <summary>
         /// Courier Friendly Name (e.g. FedEx (US) for ShipEngine) 
         /// </summary>
-		public String vendorFriendlyName;
+		public String vendorFriendlyName { get; set; }
 	} 
 }

@@ -12,26 +12,26 @@ namespace LinnworksAPI
         /// <summary>
         /// List of purchase order headers 
         /// </summary>
-		public List<PurchaseOrderHeader> Result;
+		public List<PurchaseOrderHeader> Result { get; set; }
 
         /// <summary>
         /// Total number of pages 
         /// </summary>
-		public Int32 TotalPages;
+		public Int32 TotalPages { get; set; }
 
         /// <summary>
         /// Currently request page number 
         /// </summary>
-		public Int32 CurrentPageNumber;
+		public Int32 CurrentPageNumber { get; set; }
 
         /// <summary>
         /// Requested entries per page 
         /// </summary>
-		public Int32 EntriesPerPage;
+		public Int32 EntriesPerPage { get; set; }
 
         /// <summary>
         /// Total number of records matching the search request 
         /// </summary>
-		public Int32 TotalNumberOfRecords;
+		public Int32 TotalNumberOfRecords { get; set; }
 	} 
 }

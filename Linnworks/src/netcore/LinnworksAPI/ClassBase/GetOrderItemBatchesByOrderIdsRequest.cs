@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class GetOrderItemBatchesByOrderIdsRequest
 	{
-		public List<Guid> pkOrderIds;
+		public List<Guid> pkOrderIds { get; set; }
 	} 
 }

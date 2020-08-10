@@ -9,36 +9,36 @@ namespace LinnworksAPI
         /// <summary>
         /// Stock item ID (unique identifier) 
         /// </summary>
-		public Guid PkTransferItemNoteId;
+		public Guid PkTransferItemNoteId { get; set; }
 
         /// <summary>
         /// User who added note 
         /// </summary>
-		public String NoteUser;
+		public String NoteUser { get; set; }
 
         /// <summary>
         /// Note text 
         /// </summary>
-		public String Note;
+		public String Note { get; set; }
 
         /// <summary>
         /// When note was added 
         /// </summary>
-		public DateTime NoteDateTime;
+		public DateTime NoteDateTime { get; set; }
 
         /// <summary>
         /// If note is readable 
         /// </summary>
-		public Boolean NoteRead;
+		public Boolean NoteRead { get; set; }
 
         /// <summary>
         /// Bin ID 
         /// </summary>
-		public Guid FkBinId;
+		public Guid FkBinId { get; set; }
 
         /// <summary>
         /// Transfer ID 
         /// </summary>
-		public Guid PkTransferItemId;
+		public Guid PkTransferItemId { get; set; }
 	} 
 }

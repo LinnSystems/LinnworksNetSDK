@@ -6,42 +6,42 @@ namespace LinnworksAPI
 { 
     public class PostalService
 	{
-		public String PostalServiceName;
+		public String PostalServiceName { get; set; }
 
-		public String PostalServiceTag;
+		public String PostalServiceTag { get; set; }
 
-		public String ServiceCountry;
+		public String ServiceCountry { get; set; }
 
-		public String PostalServiceCode;
+		public String PostalServiceCode { get; set; }
 
-		public String Vendor;
+		public String Vendor { get; set; }
 
-		public String PrintModule;
+		public String PrintModule { get; set; }
 
-		public String PrintModuleTitle;
+		public String PrintModuleTitle { get; set; }
 
         /// <summary>
         /// Postal service ID 
         /// </summary>
-		public Guid pkPostalServiceId;
+		public Guid pkPostalServiceId { get; set; }
 
         /// <summary>
         /// If tracking number required for this service 
         /// </summary>
-		public Boolean TrackingNumberRequired;
+		public Boolean TrackingNumberRequired { get; set; }
 
         /// <summary>
         /// If weight required for this service 
         /// </summary>
-		public Boolean WeightRequired;
+		public Boolean WeightRequired { get; set; }
 
         /// <summary>
         /// If packaging group can be ignored 
         /// </summary>
-		public Boolean IgnorePackagingGroup;
+		public Boolean IgnorePackagingGroup { get; set; }
 
-		public Int32 fkShippingAPIConfigId;
+		public Int32 fkShippingAPIConfigId { get; set; }
 
-		public Guid? IntegratedServiceId;
+		public Guid? IntegratedServiceId { get; set; }
 	} 
 }

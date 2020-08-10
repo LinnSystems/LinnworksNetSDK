@@ -9,31 +9,31 @@ namespace LinnworksAPI
         /// <summary>
         /// Transfer bin note ID 
         /// </summary>
-		public Guid PkTransferBinNoteId;
+		public Guid PkTransferBinNoteId { get; set; }
 
         /// <summary>
         /// User who created note 
         /// </summary>
-		public String NoteUser;
+		public String NoteUser { get; set; }
 
         /// <summary>
         /// Note text 
         /// </summary>
-		public String Note;
+		public String Note { get; set; }
 
         /// <summary>
         /// When bin note was added 
         /// </summary>
-		public DateTime NoteDateTime;
+		public DateTime NoteDateTime { get; set; }
 
         /// <summary>
         /// If bin note is readable 
         /// </summary>
-		public Boolean NoteRead;
+		public Boolean NoteRead { get; set; }
 
         /// <summary>
         /// Bin ID 
         /// </summary>
-		public Guid PkBinId;
+		public Guid PkBinId { get; set; }
 	} 
 }

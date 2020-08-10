@@ -9,56 +9,56 @@ namespace LinnworksAPI
         /// <summary>
         /// Order ID 
         /// </summary>
-		public Guid pkOrderId;
+		public Guid pkOrderId { get; set; }
 
         /// <summary>
         /// Linnworks order number 
         /// </summary>
-		public Int32 nOrderId;
+		public Int32 nOrderId { get; set; }
 
         /// <summary>
         /// ChannelName/Source (e.g. EBAY) 
         /// </summary>
-		public String Source;
+		public String Source { get; set; }
 
         /// <summary>
         /// Subsource (e.g. EBAY1) 
         /// </summary>
-		public String SubSource;
+		public String SubSource { get; set; }
 
         /// <summary>
         /// Postal service name (e.g. Next day delivery) 
         /// </summary>
-		public String PostalServiceName;
+		public String PostalServiceName { get; set; }
 
         /// <summary>
         /// Shipping address 
         /// </summary>
-		public String cShippingAddress;
+		public String cShippingAddress { get; set; }
 
         /// <summary>
         /// Currency 
         /// </summary>
-		public String cCurrency;
+		public String cCurrency { get; set; }
 
         /// <summary>
         /// Order received date. When order was downloaded from the channel 
         /// </summary>
-		public DateTime dReceivedDate;
+		public DateTime dReceivedDate { get; set; }
 
         /// <summary>
         /// When order was processed 
         /// </summary>
-		public DateTime dProcessedOn;
+		public DateTime dProcessedOn { get; set; }
 
         /// <summary>
         /// OrdOrder total charge 
         /// </summary>
-		public Double fTotalCharge;
+		public Double fTotalCharge { get; set; }
 
         /// <summary>
         /// Link to order refund 
         /// </summary>
-		public String RefundLink;
+		public String RefundLink { get; set; }
 	} 
 }

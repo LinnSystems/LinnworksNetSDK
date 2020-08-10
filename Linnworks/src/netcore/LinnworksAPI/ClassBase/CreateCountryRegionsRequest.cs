@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of country regions 
         /// </summary>
-		public List<CountryRegion> regions;
+		public List<CountryRegion> regions { get; set; }
 	} 
 }

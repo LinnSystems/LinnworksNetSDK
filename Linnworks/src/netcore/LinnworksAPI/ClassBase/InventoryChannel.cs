@@ -6,16 +6,16 @@ namespace LinnworksAPI
 { 
     public class InventoryChannel
 	{
-		public String Source;
+		public String Source { get; set; }
 
-		public String SubSource;
+		public String SubSource { get; set; }
 
-		public String SourceVersion;
+		public String SourceVersion { get; set; }
 
-		public String SourceType;
+		public String SourceType { get; set; }
 
-		public Double Width;
+		public Double Width { get; set; }
 
-		public Int32 ChannelId;
+		public Int32 ChannelId { get; set; }
 	} 
 }

@@ -9,16 +9,16 @@ namespace LinnworksAPI
         /// <summary>
         /// Option ID 
         /// </summary>
-		public Guid pkOptionId;
+		public Guid pkOptionId { get; set; }
 
         /// <summary>
         /// Option property 
         /// </summary>
-		public String Property;
+		public String Property { get; set; }
 
         /// <summary>
         /// Value of the option 
         /// </summary>
-		public String Value;
+		public String Value { get; set; }
 	} 
 }

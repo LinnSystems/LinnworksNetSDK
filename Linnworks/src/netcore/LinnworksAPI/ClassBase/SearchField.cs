@@ -12,21 +12,21 @@ namespace LinnworksAPI
         /// <summary>
         /// Search field 
         /// </summary>
-		public String Field;
+		public String Field { get; set; }
 
         /// <summary>
         /// Name 
         /// </summary>
-		public String Name;
+		public String Name { get; set; }
 
         /// <summary>
         /// If search for all dates 
         /// </summary>
-		public Boolean AllowForAllDates;
+		public Boolean AllowForAllDates { get; set; }
 
         /// <summary>
         /// If search is exact 
         /// </summary>
-		public Boolean ExactSearchOptional;
+		public Boolean ExactSearchOptional { get; set; }
 	} 
 }

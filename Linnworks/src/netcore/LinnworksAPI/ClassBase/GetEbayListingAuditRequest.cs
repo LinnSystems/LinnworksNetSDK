@@ -6,10 +6,10 @@ namespace LinnworksAPI
 { 
     public class GetEbayListingAuditRequest
 	{
-		public String ItemNumber;
+		public String ItemNumber { get; set; }
 
-		public Int32 PageNumber;
+		public Int32 PageNumber { get; set; }
 
-		public Int32 EntriesPerPage;
+		public Int32 EntriesPerPage { get; set; }
 	} 
 }

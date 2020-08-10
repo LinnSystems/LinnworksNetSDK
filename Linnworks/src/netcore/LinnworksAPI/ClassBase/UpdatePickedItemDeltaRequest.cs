@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class UpdatePickedItemDeltaRequest
 	{
-		public List<UpdatePickedItemDeltaRequestItem> Deltas;
+		public List<UpdatePickedItemDeltaRequestItem> Deltas { get; set; }
 	} 
 }
