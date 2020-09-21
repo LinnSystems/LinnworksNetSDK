@@ -83,7 +83,7 @@ namespace LinnworksMacro
 
         private string GetCustomerEmailAddress(Guid orderId)
         {
-            var query = $"SELECT cEmailAddress [Open_Order] WHERE pkOrderId = '{orderId}'";
+            var query = $"SELECT cEmailAddress FROM [Open_Order] WHERE pkOrderId = '{orderId}';";
 
             try
             {
