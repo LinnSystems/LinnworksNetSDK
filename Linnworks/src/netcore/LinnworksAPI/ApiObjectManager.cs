@@ -1,3 +1,4 @@
+
 namespace LinnworksAPI
 {
     public class ApiObjectManager
@@ -7,7 +8,6 @@ namespace LinnworksAPI
         private CustomerController customer;
         private DashboardsController dashboards;
         private EmailController email;
-        private ExtensionsController extensions;
         private ImportExportController importexport;
         private InventoryController inventory;
         private ListingsController listings;
@@ -62,14 +62,6 @@ namespace LinnworksAPI
             get
             {
                 return email ?? (email = new EmailController(apiContext));
-            }
-        }
-
-        public ExtensionsController Extensions
-        {
-            get
-            {
-                return extensions ?? (extensions = new ExtensionsController(apiContext));
             }
         }
 
