@@ -4,8 +4,8 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ExecuteCustomScriptQueryRequest
+    public class GetSettingKeysResponse
 	{
-		public String Script { get; set; }
+		public List<String> Keys { get; set; }
 	} 
 }

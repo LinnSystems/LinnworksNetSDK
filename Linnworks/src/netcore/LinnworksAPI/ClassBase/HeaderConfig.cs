@@ -46,6 +46,8 @@ namespace LinnworksAPI
 
 		public ConfigItem<Boolean> PriceChange { get; set; }
 
+		public ConfigProperty<Boolean> IsInventorySyncTriggerEnabled { get; set; }
+
 		public ConfigItem<Boolean> IsListingScanRunning { get; set; }
 
 		public ConfigItem<DateTime> ListingScanStartUpdateDate { get; set; }

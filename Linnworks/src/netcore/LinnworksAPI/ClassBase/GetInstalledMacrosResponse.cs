@@ -4,8 +4,8 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ExecuteCustomScriptQueryRequest
+    public class GetInstalledMacrosResponse
 	{
-		public String Script { get; set; }
+		public InstalledMacro[] Macros { get; set; }
 	} 
 }

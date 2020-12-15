@@ -20,5 +20,8 @@ namespace LinnworksAPI
 		UnlinkedItem,
 		AlreadyExistsInWave,
 		OrderDoesntExist,
+		AllCombinationOfItemsDontExist,
+		DuplicateCombinationsOfItemsExist,
+		DifferentLocation,
 	}
 }

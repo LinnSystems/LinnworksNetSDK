@@ -34,6 +34,8 @@ namespace LinnworksAPI
 
 		public Guid Token { get; set; }
 
+		public String AccessToken { get; set; }
+
 		public String GroupName { get; set; }
 
 		public String Device { get; set; }

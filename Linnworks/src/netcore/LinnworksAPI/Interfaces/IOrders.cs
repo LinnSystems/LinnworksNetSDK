@@ -42,7 +42,6 @@ namespace LinnworksAPI
 		List<String> GetExtendedPropertyTypes();
 		List<LinkedItem> GetLinkedItems(Guid itemId);
 		Guid? GetOpenOrderIdByOrderOrReferenceId(String orderOrReferenceId,FieldsFilter filters,Guid? locationId);
-		KeyValuePair<OrderSummary,String> GetOpenOrderIdByOrderOrReferenceIdAndProcess(String orderOrReferenceId,Guid fulfilmentCenter,FieldsFilter filters,Boolean batchScanned = false);
 		List<KeyValuePair<Guid,Guid>> GetOpenOrderItemsSuppliers(Guid orderId);
 		GenericPagedResult<OpenOrder> GetOpenOrders(Int32 entriesPerPage,Int32 pageNumber,FieldsFilter filters,List<FieldSorting> sorting,Guid? fulfilmentCenter,String additionalFilter);
 		KeyValuePair<List<OrderSummary>,String> GetOpenOrdersByItemBarcode(String productBarcode,FieldsFilter filters,Guid? locationId);

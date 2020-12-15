@@ -4,7 +4,10 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveDetailed
+    /// <summary>
+    /// Pickwave 
+    /// </summary>
+    public class PickingWave
 	{
         /// <summary>
         /// Location Id 
@@ -67,9 +70,9 @@ namespace LinnworksAPI
 		public PickingWaveGroupType GroupType { get; set; }
 
         /// <summary>
-        /// Orders in pickwave. 
+        /// Orders in pickwave. This data is not returned if just headers are requested. 
         /// </summary>
-		public List<PickingWaveOrderDetailed> Orders { get; set; }
+		public List<PickingWaveOrder> Orders { get; set; }
 
 		public PickingWaveOptions Options { get; set; }
 

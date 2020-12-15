@@ -409,6 +409,7 @@ namespace LinnworksAPI
         /// Search Processed Orders 
         /// </summary>
         /// <param name="request">Search parameters consisting of keyword, dates, filters and sorting.</param>
+        /// <param name="cancellationToken"></param>
         /// <returns>Paged list of processed orders.</returns>
         public SearchProcessedOrdersResponse SearchProcessedOrders(SearchProcessedOrdersRequest request)
 		{

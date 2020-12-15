@@ -403,20 +403,6 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Get orders by reference number or order numbers and process 
-        /// </summary>
-        /// <param name="orderOrReferenceId">reference number or order number</param>
-        /// <param name="fulfilmentCenter">Current fulfilment center</param>
-        /// <param name="filters">Filters to apply</param>
-        /// <param name="batchScanned">Defines if the batch is scanned. If no, the order will not be processed until</param>
-        /// <returns>A list of order summary and posible errors</returns>
-        public KeyValuePair<OrderSummary,String> GetOpenOrderIdByOrderOrReferenceIdAndProcess(String orderOrReferenceId,Guid fulfilmentCenter,FieldsFilter filters,Boolean batchScanned = false)
-		{
-			var response = GetResponse("Orders/GetOpenOrderIdByOrderOrReferenceIdAndProcess", "orderOrReferenceId=" + System.Net.WebUtility.UrlEncode(orderOrReferenceId) + "&fulfilmentCenter=" + fulfilmentCenter + "&filters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(filters)) + "&batchScanned=" + batchScanned + "");
-            return JsonFormatter.ConvertFromJson<KeyValuePair<OrderSummary,String>>(response);
-		}
-
-		/// <summary>
         /// Get items suppliers list for a specific order 
         /// </summary>
         /// <param name="orderId">Order id</param>

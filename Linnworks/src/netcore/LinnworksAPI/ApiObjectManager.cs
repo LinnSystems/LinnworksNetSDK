@@ -7,10 +7,12 @@ namespace LinnworksAPI
         private CustomerController customer;
         private DashboardsController dashboards;
         private EmailController email;
+        private ExtensionsController extensions;
         private ImportExportController importexport;
         private InventoryController inventory;
         private ListingsController listings;
         private LocationsController locations;
+        private MacroController macro;
         private OrdersController orders;
         private OrderWorkflowController orderworkflow;
         private PickingController picking;
@@ -63,6 +65,14 @@ namespace LinnworksAPI
             }
         }
 
+        public ExtensionsController Extensions
+        {
+            get
+            {
+                return extensions ?? (extensions = new ExtensionsController(apiContext));
+            }
+        }
+
         public ImportExportController ImportExport
         {
             get
@@ -92,6 +102,14 @@ namespace LinnworksAPI
             get
             {
                 return locations ?? (locations = new LocationsController(apiContext));
+            }
+        }
+
+        public MacroController Macro
+        {
+            get
+            {
+                return macro ?? (macro = new MacroController(apiContext));
             }
         }
 

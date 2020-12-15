@@ -4,11 +4,13 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveGenerateOrder
+    public class PickingWaveGenerateOrderMulti
 	{
         /// <summary>
-        /// Order Id (Integer) 
+        /// Items to be added to the pickwave. 
         /// </summary>
+		public List<PickingWaveGenerateItemMulti> Items { get; set; }
+
 		public Int32 OrderId { get; set; }
 	} 
 }

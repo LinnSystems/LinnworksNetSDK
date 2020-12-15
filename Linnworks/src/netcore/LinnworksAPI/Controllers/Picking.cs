@@ -46,6 +46,16 @@ namespace LinnworksAPI
         /// Get a list of all pickwaves 
         /// </summary>
         /// <param name="request"></param>
+        public GetPickingWaveHeadersResponse GetAllPickingWaveHeaders(GetPickingWavesRequest request)
+		{
+			var response = GetResponse("Picking/GetAllPickingWaveHeaders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetPickingWaveHeadersResponse>(response);
+		}
+
+		/// <summary>
+        /// Get a list of all pickwaves 
+        /// </summary>
+        /// <param name="request"></param>
         public GetPickingWavesResponse GetAllPickingWaves(GetPickingWavesRequest request)
 		{
 			var response = GetResponse("Picking/GetAllPickingWaves", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
@@ -66,6 +76,16 @@ namespace LinnworksAPI
         /// Get a list of list of pickwaves for the current user 
         /// </summary>
         /// <param name="request"></param>
+        public GetPickingWaveHeadersResponse GetMyPickingWaveHeaders(GetPickingWavesRequest request)
+		{
+			var response = GetResponse("Picking/GetMyPickingWaveHeaders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetPickingWaveHeadersResponse>(response);
+		}
+
+		/// <summary>
+        /// Get a list of list of pickwaves for the current user 
+        /// </summary>
+        /// <param name="request"></param>
         public GetPickingWavesResponse GetMyPickingWaves(GetPickingWavesRequest request)
 		{
 			var response = GetResponse("Picking/GetMyPickingWaves", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
@@ -80,6 +100,16 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Picking/GetPickingWave", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetPickingWavesResponse>(response);
+		}
+
+		/// <summary>
+        /// Returns a list of pickwaves as well as dummy entries for users who have permissions to complete pickwaves, but don't currently have any assigned. These entries will have a PickwaveId of 0. 
+        /// </summary>
+        /// <param name="request"></param>
+        public GetPickwaveUsersWithSummaryResponse GetPickwaveUsersWithSummary(GetPickingWavesRequest request)
+		{
+			var response = GetResponse("Picking/GetPickwaveUsersWithSummary", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetPickwaveUsersWithSummaryResponse>(response);
 		}
 
 		/// <summary>

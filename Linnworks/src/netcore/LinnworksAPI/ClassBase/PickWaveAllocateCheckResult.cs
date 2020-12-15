@@ -28,5 +28,7 @@ namespace LinnworksAPI
         /// Has Errors 
         /// </summary>
 		public Boolean HasErrors { get; set; }
+
+		public List<PickWaveAllocateCheckResultOrderDetails> OrderDetails { get; set; }
 	} 
 }

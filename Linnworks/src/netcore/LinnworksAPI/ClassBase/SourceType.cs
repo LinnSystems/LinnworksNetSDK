@@ -7,14 +7,9 @@ using Newtonsoft.Json;
 namespace LinnworksAPI
 { 
     [JsonConverter(typeof(StringEnumConverter))]
-	public enum PickingWaveOrderState
+	public enum SourceType
 	{
-		Unpicked,
-		PartialPicked,
-		Picked,
-		Processed,
-		LockedOrParked,
-		Cancelled,
-		Deleted,
+		netcore10,
+		netcore21,
 	}
 }

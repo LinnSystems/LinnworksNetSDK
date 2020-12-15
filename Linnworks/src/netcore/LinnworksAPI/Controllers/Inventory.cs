@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace LinnworksAPI
 {
@@ -1221,9 +1222,10 @@ namespace LinnworksAPI
         /// Use this call to update stock item prices 
         /// </summary>
         /// <param name="inventoryItemPrices">List of stock item prices to update</param>
-        public void UpdateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices)
+        public Task UpdateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices)
 		{
-			GetResponse("Inventory/UpdateInventoryItemPrices", "inventoryItemPrices=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemPrices)) + "");
+			var response = GetResponse("Inventory/UpdateInventoryItemPrices", "inventoryItemPrices=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemPrices)) + "");
+            return JsonFormatter.ConvertFromJson<Task>(response);
 		}
 
 		/// <summary>

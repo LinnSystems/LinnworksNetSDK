@@ -16,6 +16,11 @@ namespace LinnworksAPI
         /// </summary>
 		public PostSaleStatus Status { get; set; }
 
+        /// <summary>
+        /// Determines whether the header was marked as actioned in the database 
+        /// </summary>
+		public Boolean SuccessfullyActioned { get; set; }
+
 		public Int32? RMAHeaderId { get; set; }
 
 		public List<VerifiedRMAItem> Items { get; set; }

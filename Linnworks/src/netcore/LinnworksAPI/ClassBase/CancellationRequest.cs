@@ -6,8 +6,6 @@ namespace LinnworksAPI
 { 
     public class CancellationRequest
 	{
-		public Boolean IsRetry { get; set; }
-
 		public Boolean IsChannelCancellation { get; set; }
 
 		public Boolean IsChannelCancellationConfirmed { get; set; }
@@ -25,6 +23,8 @@ namespace LinnworksAPI
 		public Int32 HeaderId { get; set; }
 
 		public Guid OrderId { get; set; }
+
+		public Boolean IsRetry { get; set; }
 
 		public ActionForm ActionForm { get; set; }
 	} 

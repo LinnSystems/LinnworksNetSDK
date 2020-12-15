@@ -25,6 +25,7 @@ namespace LinnworksAPI
 		ItemNotFoundOnChannel,
 		IncorrectOwnership,
 		InvalidRefundAmount,
+		ChannelAuthenticationIssue,
 		Other,
 	}
 }
