@@ -1,3 +1,4 @@
+using System;
 
 namespace LinnworksAPI
 {
@@ -13,6 +14,7 @@ namespace LinnworksAPI
         private ListingsController listings;
         private LocationsController locations;
         private MacroController macro;
+        private OpenOrdersController openorders;
         private OrdersController orders;
         private OrderWorkflowController orderworkflow;
         private PickingController picking;
@@ -102,6 +104,14 @@ namespace LinnworksAPI
             get
             {
                 return macro ?? (macro = new MacroController(apiContext));
+            }
+        }
+
+        public OpenOrdersController OpenOrders
+        {
+            get
+            {
+                return openorders ?? (openorders = new OpenOrdersController(apiContext));
             }
         }
 
