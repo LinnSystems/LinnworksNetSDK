@@ -42,5 +42,7 @@ namespace TemplateProxyExample.Models.Order
         //Please see the DiscountType enum for an explanation on how to use the DiscountType and Discount fields to apply a top-level discount to orders
         public DiscountType DiscountType { get; set; }
         public double Discount { get; set; }
+        public string MarketplaceTaxId  { get; set; }
+        public string MarketplaceIoss { get; set; }
     }
 }
