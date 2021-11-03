@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using Microsoft.Extensions.Configuration;
 
 namespace TemplateProxyExample.Models.User
 {
     public class UserConfig : BaseRequest
     {
-        public UserConfig()
+        private string userStoreLocation;
+
+        public UserConfig() 
         {
             this.IsOauth = true;
             this.StepName = "AddCredentials";
@@ -27,16 +30,16 @@ namespace TemplateProxyExample.Models.User
         public bool PriceIncTax { get; set; }
         public bool DownloadVirtualItems { get; set; }
 
-        public static UserConfig Load(string authorizationToken)
+        public static UserConfig Load(string userStoreLocation, string authorizationToken)
         {
             if (string.IsNullOrWhiteSpace(authorizationToken))
                 throw new ArgumentNullException("authorizationToken");
 
-            string path = string.Concat(Helpers.ServiceHelper.UserStoreLocation, "\\", authorizationToken, ".json");
+            string path = string.Concat(userStoreLocation, "\\", authorizationToken, ".json");
 
-            if (File.Exists(path))
+            if (System.IO.File.Exists(path))
             {
-                string json = File.ReadAllText(path);
+                string json = System.IO.File.ReadAllText(path);
                 UserConfig output = Newtonsoft.Json.JsonConvert.DeserializeObject<UserConfig>(json);
                 return output;
             }
@@ -47,18 +50,19 @@ namespace TemplateProxyExample.Models.User
 
         }
 
-        public static void Delete(string authorizationToken)
+        public static void Delete(string userStoreLocation, string authorizationToken)
         {
-            string path = string.Concat(Helpers.ServiceHelper.UserStoreLocation, "\\", authorizationToken, ".json");
+            string path = string.Concat(authorizationToken, "\\", authorizationToken, ".json");
             if (File.Exists(path))
             {
                 File.Delete(path);
             }
         }
 
-        public static UserConfig CreateNew(string email, Guid linnworksUniqueIdentifier, string accountName)
+        public static UserConfig CreateNew(string email, Guid linnworksUniqueIdentifier, string accountName, string userStoreLocation)
         {
             UserConfig result = new UserConfig();
+            result.userStoreLocation = userStoreLocation;
             result.AuthorizationToken = Guid.NewGuid().ToString("N");
             result.Email = email;
             result.LinnworksUniqueIdentifier = linnworksUniqueIdentifier;
@@ -69,7 +73,7 @@ namespace TemplateProxyExample.Models.User
 
         public void Save()
         {
-            string path = string.Concat(Helpers.ServiceHelper.UserStoreLocation, "\\", this.AuthorizationToken, ".json");
+            string path = string.Concat(this.userStoreLocation, "\\", this.AuthorizationToken, ".json");
             var output = Newtonsoft.Json.JsonConvert.SerializeObject(this);
 
             File.WriteAllText(path, output);

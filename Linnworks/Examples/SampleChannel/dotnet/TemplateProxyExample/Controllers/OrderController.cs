@@ -3,20 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using TemplateProxyExample.Config;
 
 namespace TemplateProxyExample.Controllers
 {
-    public class OrderController : ApiController
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    public class OrderController : BaseController
     {
-        [HttpPost()]
-        [ActionName("Orders")]
-        public Models.Order.OrdersResponse Orders(Models.Order.OrdersRequest request)
+        public OrderController(IOptions<AppSettings> config) : base(config)
+        {
+        }
+
+        [HttpPost]
+        public Models.Order.OrdersResponse Orders([FromBody] Models.Order.OrdersRequest request)
         {
             if (request.PageNumber <= 0)
                 return new Models.Order.OrdersResponse { Error = "Invalid page number" };
 
-            var user = Models.User.UserConfig.Load(request.AuthorizationToken);
+            var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
             if (user == null)
                 return new Models.Order.OrdersResponse { Error = "User not found" };
@@ -136,14 +143,13 @@ namespace TemplateProxyExample.Controllers
             };
         }
 
-        [HttpPost()]
-        [ActionName("Despatch")]
-        public Models.Order.OrderDespatchResponse Despatch(Models.Order.OrderDespatchRequest request)
+        [HttpPost]
+        public Models.Order.OrderDespatchResponse Despatch([FromBody] Models.Order.OrderDespatchRequest request)
         {
             if (request.Orders == null || request.Orders.Count == 0)
                 return new Models.Order.OrderDespatchResponse { Error = "Invalid page number" };
 
-            var user = Models.User.UserConfig.Load(request.AuthorizationToken);
+            var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
             if (user == null)
                 return new Models.Order.OrderDespatchResponse { Error = "User not found" };

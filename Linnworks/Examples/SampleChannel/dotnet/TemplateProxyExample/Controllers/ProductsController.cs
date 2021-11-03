@@ -3,20 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using TemplateProxyExample.Config;
 
 namespace TemplateProxyExample.Controllers
 {
-    public class ProductsController : ApiController
+    [ApiController]
+    [Route("api/[controller]/[action]")]
+    public class ProductsController : BaseController
     {
-        [HttpPost()]
-        [ActionName("Products")]
-        public Models.Products.ProductsResponse Products(Models.Products.ProductsRequest request)
+        public ProductsController(IOptions<AppSettings> config) : base(config)
+        {
+        }
+
+        [HttpPost]
+        public Models.Products.ProductsResponse Products([FromBody] Models.Products.ProductsRequest request)
         {
             if (request.PageNumber <= 0)
                 return new Models.Products.ProductsResponse { Error = "Invalid page number" };
 
-            var user = Models.User.UserConfig.Load(request.AuthorizationToken);
+            var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
             if (user == null)
                 return new Models.Products.ProductsResponse { Error = "User not found" };
@@ -53,14 +60,13 @@ namespace TemplateProxyExample.Controllers
             };
         }
 
-        [HttpPost()]
-        [ActionName("InventoryUpdate")]
-        public Models.Products.ProductInventoryUpdateResponse InventoryUpdate(Models.Products.ProductInventoryUpdateRequest request)
+        [HttpPost]
+        public Models.Products.ProductInventoryUpdateResponse InventoryUpdate([FromBody] Models.Products.ProductInventoryUpdateRequest request)
         {
             if (request.Products == null || request.Products.Length == 0)
                 return new Models.Products.ProductInventoryUpdateResponse { Error = "Products not supplied" };
 
-            var user = Models.User.UserConfig.Load(request.AuthorizationToken);
+            var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
             if (user == null)
                 return new Models.Products.ProductInventoryUpdateResponse { Error = "User not found" };
@@ -78,14 +84,13 @@ namespace TemplateProxyExample.Controllers
             return response;
         }
 
-        [HttpPost()]
-        [ActionName("PriceUpdate")]
-        public Models.Products.ProductPriceUpdateResponse PriceUpdate(Models.Products.ProductPriceUpdateRequest request)
+        [HttpPost]
+        public Models.Products.ProductPriceUpdateResponse PriceUpdate([FromBody] Models.Products.ProductPriceUpdateRequest request)
         {
             if (request.Products == null || request.Products.Length == 0)
                 return new Models.Products.ProductPriceUpdateResponse { Error = "Products not supplied" };
 
-            var user = Models.User.UserConfig.Load(request.AuthorizationToken);
+            var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
             if (user == null)
                 return new Models.Products.ProductPriceUpdateResponse { Error = "User not found" };

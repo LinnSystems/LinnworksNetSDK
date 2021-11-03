@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using TemplateProxyExample.Config;
 
 namespace TemplateProxyExample.Controllers
 {
-    public class ConfigController : ApiController
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    public class ConfigController : BaseController
     {
-        [HttpPost()]
-        [ActionName("AddNewUser")]
-        public Models.User.AddNewUserResponse AddNewUser(Models.User.AddNewUserRequest request)
+        public ConfigController(IOptions<AppSettings> config) : base(config)
+        {
+        }
+
+        [HttpPost]
+        public Models.User.AddNewUserResponse AddNewUser([FromBody] Models.User.AddNewUserRequest request)
         {
             if (string.IsNullOrWhiteSpace(request.Email))
                 return new Models.User.AddNewUserResponse { Error = "Invalid Email" };
@@ -24,22 +31,21 @@ namespace TemplateProxyExample.Controllers
 
             return new Models.User.AddNewUserResponse
             {
-                AuthorizationToken = Models.User.UserConfig.CreateNew(request.Email, request.LinnworksUniqueIdentifier, request.AccountName).AuthorizationToken
+                AuthorizationToken = Models.User.UserConfig.CreateNew(request.Email, request.LinnworksUniqueIdentifier, request.AccountName, this.UserStoreLocation).AuthorizationToken
             };
         }
 
         [HttpPost]
-        [ActionName("ConfigDeleted")]
-        public Models.BaseResponse ConfigDeleted(Models.BaseRequest request)
+        public Models.BaseResponse ConfigDeleted([FromBody] Models.BaseRequest request)
         {
             try
             {
-                var user = Models.User.UserConfig.Load(request.AuthorizationToken);
+                var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
                 if (user == null)
                     return new Models.BaseResponse { Error = "User not found" };
 
-                Models.User.UserConfig.Delete(request.AuthorizationToken);
+                Models.User.UserConfig.Delete(this.UserStoreLocation, request.AuthorizationToken);
 
                 return new Models.BaseResponse();
             }
@@ -50,12 +56,11 @@ namespace TemplateProxyExample.Controllers
         }
 
         [HttpPost]
-        [ActionName("ConfigTest")]
-        public Models.BaseResponse ConfigTest(Models.BaseRequest request)
+        public Models.BaseResponse ConfigTest([FromBody] Models.BaseRequest request)
         {
             try
             {
-                var user = Models.User.UserConfig.Load(request.AuthorizationToken);
+                var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
                 if (user == null)
                     return new Models.BaseResponse { Error = "User not found" };
@@ -70,11 +75,10 @@ namespace TemplateProxyExample.Controllers
             }
         }
 
-        [HttpPost()]
-        [ActionName("PaymentTags")]
-        public Models.Payment.PaymentTagResponse PaymentTags(Models.BaseRequest request)
+        [HttpPost]
+        public Models.Payment.PaymentTagResponse PaymentTags([FromBody] Models.BaseRequest request)
         {
-            var user = Models.User.UserConfig.Load(request.AuthorizationToken);
+            var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
             if (user == null)
                 return new Models.Payment.PaymentTagResponse { Error = "User not found" };
@@ -92,11 +96,10 @@ namespace TemplateProxyExample.Controllers
             };
         }
 
-        [HttpPost()]
-        [ActionName("ShippingTags")]
-        public Models.Shipping.ShippingTagResponse ShippingTags(Models.BaseRequest request)
+        [HttpPost]
+        public Models.Shipping.ShippingTagResponse ShippingTags([FromBody] Models.BaseRequest request)
         {
-            var user = Models.User.UserConfig.Load(request.AuthorizationToken);
+            var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
             if (user == null)
                 return new Models.Shipping.ShippingTagResponse { Error = "User not found" };
@@ -115,10 +118,9 @@ namespace TemplateProxyExample.Controllers
         }
 
         [HttpPost]
-        [ActionName("UserConfig")]
-        public Models.User.UserConfigResponse UserConfig(Models.BaseRequest request)
+        public Models.User.UserConfigResponse UserConfig([FromBody] Models.BaseRequest request)
         {
-            var userConfig = Models.User.UserConfig.Load(request.AuthorizationToken);
+            var userConfig = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
             if (userConfig == null)
                 return new Models.User.UserConfigResponse { Error = "User not found" };
@@ -139,10 +141,9 @@ namespace TemplateProxyExample.Controllers
         }
 
         [HttpPost]
-        [ActionName("SaveUserConfig")]
-        public Models.User.UserConfigResponse SaveConfigSave(Models.User.SaveUserConfigRequest request)
+        public Models.User.UserConfigResponse SaveConfigSave([FromBody] Models.User.SaveUserConfigRequest request)
         {
-            var userConfig = Models.User.UserConfig.Load(request.AuthorizationToken);
+            var userConfig = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
 
             if (userConfig == null)
                 return new Models.User.UserConfigResponse { Error = "User not found" };
