@@ -12,6 +12,9 @@ namespace TemplateProxyExample.Models.Order
             this.Orders = new List<OrderDespatch>();
         }
 
+        /// <summary>
+        /// List of despatch orders <see cref="OrderDespatch"/>.
+        /// </summary>
         public List<OrderDespatch> Orders { get; set; }
     }
 }

@@ -7,7 +7,14 @@ namespace TemplateProxyExample.Models.Products
 {
     public class ProductsResponse : BaseResponse
     {
+        /// <summary>
+        /// Indicates if more pages are expected.
+        /// </summary>
         public bool HasMorePages { get; set; }
+
+        /// <summary>
+        /// Products <see cref="Product"/>
+        /// </summary>
         public Product[] Products { get; set; }
 
         [Newtonsoft.Json.JsonIgnore]

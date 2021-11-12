@@ -2,9 +2,31 @@
 
 namespace TemplateProxyExample.Models.User
 {
-    internal static class ConfigStages
+    internal class ConfigStages
     {
-        internal static UserConfigResponse GetAPICredentials(UserConfig userConfig)
+        private UserConfig userConfig;
+
+        public ConfigStages(UserConfig userConfig)
+        {
+            this.userConfig = userConfig;
+        }
+
+        public UserConfigResponse StageResponse(string errorMessage = "")
+        {
+            switch (Enum.Parse(typeof(ConfigStagesEnum), this.userConfig.StepName))
+            {
+                case ConfigStagesEnum.AddCredentials:
+                    return this.GetAPICredentials();
+                case ConfigStagesEnum.OrderSetup:
+                    return this.GetOrderStep();
+                case ConfigStagesEnum.UserConfig:
+                    return this.GetConfigStep();
+            }
+
+            return new UserConfigResponse { Error = errorMessage };
+        }
+
+        private UserConfigResponse GetAPICredentials()
         {
             return new UserConfigResponse
             {
@@ -53,7 +75,7 @@ namespace TemplateProxyExample.Models.User
             };
         }
 
-        internal static UserConfigResponse GetOrderStep(UserConfig userConfig)
+        private UserConfigResponse GetOrderStep()
         {
             return new UserConfigResponse
             {
@@ -90,7 +112,7 @@ namespace TemplateProxyExample.Models.User
             };
         }
 
-        internal static UserConfigResponse GetConfigStep(UserConfig userConfig)
+        private UserConfigResponse GetConfigStep()
         {
             // We don't return API Credentials, if they're wrong or invalid we go back to starting stage.
             return new UserConfigResponse

@@ -29,9 +29,13 @@ namespace TemplateProxyExample.Controllers
             if (request.LinnworksUniqueIdentifier == Guid.Empty)
                 return new Models.User.AddNewUserResponse { Error = "Invalid LinnworksUniqueIdentifier" };
 
+            var userConfig = new Models.User.UserConfig(this.UserStoreLocation);
+
+            userConfig.CreateNew(request.Email, request.LinnworksUniqueIdentifier, request.AccountName);
+
             return new Models.User.AddNewUserResponse
             {
-                AuthorizationToken = Models.User.UserConfig.CreateNew(request.Email, request.LinnworksUniqueIdentifier, request.AccountName, this.UserStoreLocation).AuthorizationToken
+                AuthorizationToken = userConfig.AuthorizationToken
             };
         }
 
@@ -40,12 +44,9 @@ namespace TemplateProxyExample.Controllers
         {
             try
             {
-                var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
 
-                if (user == null)
-                    return new Models.BaseResponse { Error = "User not found" };
-
-                Models.User.UserConfig.Delete(this.UserStoreLocation, request.AuthorizationToken);
+                user.Delete();
 
                 return new Models.BaseResponse();
             }
@@ -60,10 +61,7 @@ namespace TemplateProxyExample.Controllers
         {
             try
             {
-                var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
-
-                if (user == null)
-                    return new Models.BaseResponse { Error = "User not found" };
+                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
 
                 //Would normally do something here to test.
 
@@ -78,115 +76,85 @@ namespace TemplateProxyExample.Controllers
         [HttpPost]
         public Models.Payment.PaymentTagResponse PaymentTags([FromBody] Models.BaseRequest request)
         {
-            var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
-
-            if (user == null)
-                return new Models.Payment.PaymentTagResponse { Error = "User not found" };
-
-            return new Models.Payment.PaymentTagResponse
+            try
             {
-                PaymentTags = new[]
+                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+
+                return new Models.Payment.PaymentTagResponse
                 {
+                    PaymentTags = new[]
+                    {
                     new Models.Payment.PaymentTag { FriendlyName = "PayPal",  Site = "", Tag = "paypal_verified" },
                     new Models.Payment.PaymentTag { FriendlyName = "Credit Card - Master Card",  Site = "", Tag = "mastercard" },
                     new Models.Payment.PaymentTag { FriendlyName = "Credit Card - Visa",  Site = "", Tag = "visa_credit" },
                     new Models.Payment.PaymentTag { FriendlyName = "Credit Card - Unknown",  Site = "", Tag = "credit_unknown" },
                     new Models.Payment.PaymentTag { FriendlyName = "Bank payments",  Site = "", Tag = "bank" },
                 }
-            };
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Models.Payment.PaymentTagResponse { Error = ex.Message };
+            }
         }
 
         [HttpPost]
         public Models.Shipping.ShippingTagResponse ShippingTags([FromBody] Models.BaseRequest request)
         {
-            var user = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
-
-            if (user == null)
-                return new Models.Shipping.ShippingTagResponse { Error = "User not found" };
-
-            return new Models.Shipping.ShippingTagResponse
+            try
             {
-                ShippingTags = new[]
+                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+
+                return new Models.Shipping.ShippingTagResponse
                 {
+                    ShippingTags = new[]
+                    {
                     new Models.Shipping.ShippingTag { FriendlyName = "Royal Mail First Class",  Site = "", Tag = "RM CLR01" },
                     new Models.Shipping.ShippingTag { FriendlyName = "Royal Mail Special Delivery",  Site = "", Tag = "RM_SpecialDelivery_9am" },
                     new Models.Shipping.ShippingTag { FriendlyName = "DPD - Next Day",  Site = "", Tag = "dpd" },
                     new Models.Shipping.ShippingTag { FriendlyName = "Fedex - Ground",  Site = "", Tag = "fedex_ground" },
                     new Models.Shipping.ShippingTag { FriendlyName = "Some other service",  Site = "", Tag = "matrix_rate_10221" },
                 }
-            };
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Models.Shipping.ShippingTagResponse { Error = ex.Message };
+            }
         }
 
         [HttpPost]
         public Models.User.UserConfigResponse UserConfig([FromBody] Models.BaseRequest request)
         {
-            var userConfig = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
+            try
+            {
+                var userConfig = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var configSetp = new Models.User.ConfigStages(userConfig);
 
-            if (userConfig == null)
-                return new Models.User.UserConfigResponse { Error = "User not found" };
-
-            if (userConfig.StepName == "AddCredentials")
-            {
-                return Models.User.ConfigStages.GetAPICredentials(userConfig);
+                return configSetp.StageResponse("User config is at invalid stage");
             }
-            else if (userConfig.StepName == "OrderSetup")
+            catch (Exception ex)
             {
-                return Models.User.ConfigStages.GetOrderStep(userConfig);
+                return new Models.User.UserConfigResponse { Error = ex.Message };
             }
-            else if (userConfig.StepName == "UserConfig")
-            {
-                return Models.User.ConfigStages.GetConfigStep(userConfig);
-            }
-            else return new Models.User.UserConfigResponse { Error = "User config is at invalid stage" };
         }
 
         [HttpPost]
         public Models.User.UserConfigResponse SaveConfigSave([FromBody] Models.User.SaveUserConfigRequest request)
         {
-            var userConfig = Models.User.UserConfig.Load(this.UserStoreLocation, request.AuthorizationToken);
-
-            if (userConfig == null)
-                return new Models.User.UserConfigResponse { Error = "User not found" };
-
-            if (request.StepName != userConfig.StepName)
-                return new Models.User.UserConfigResponse { Error = string.Format("Invalid step name expected {0}", userConfig.StepName) };
-
-            if (userConfig.StepName == "AddCredentials")
+            try
             {
-                userConfig.APIKey = request.ConfigItems.FirstOrDefault(s => s.ConfigItemId == "APIKey");
-                userConfig.APISecretKey = request.ConfigItems.FirstOrDefault(s => s.ConfigItemId == "APISecretKey");
-                userConfig.IsOauth = request.ConfigItems.FirstOrDefault(s => s.ConfigItemId == "IsOauth");
-                userConfig.StepName = "OrderSetup";
+                var userConfig = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
 
-            }
-            else if (userConfig.StepName == "OrderSetup")
-            {
-                userConfig.PriceIncTax = request.ConfigItems.FirstOrDefault(s => s.ConfigItemId == "PriceIncTax");
-                userConfig.DownloadVirtualItems = request.ConfigItems.FirstOrDefault(s => s.ConfigItemId == "DownloadVirtualItems");
-                userConfig.StepName = "UserConfig";
-            }
-            else if (userConfig.StepName == "UserConfig")
-            {
-                userConfig.IsOauth = request.ConfigItems.FirstOrDefault(s => s.ConfigItemId == "IsOauth");
-                userConfig.PriceIncTax = request.ConfigItems.FirstOrDefault(s => s.ConfigItemId == "PriceIncTax");
-                userConfig.DownloadVirtualItems = request.ConfigItems.FirstOrDefault(s => s.ConfigItemId == "DownloadVirtualItems");
-            }
+                if (request.StepName != userConfig.StepName)
+                    return new Models.User.UserConfigResponse { Error = string.Format("Invalid step name expected {0}", userConfig.StepName) };
 
-            userConfig.Save();
-
-            if (userConfig.StepName == "AddCredentials")
-            {
-                return Models.User.ConfigStages.GetAPICredentials(userConfig);
+                return userConfig.Save(request.ConfigItems);
             }
-            else if (userConfig.StepName == "OrderSetup")
+            catch (Exception ex)
             {
-                return Models.User.ConfigStages.GetOrderStep(userConfig);
+                return new Models.User.UserConfigResponse { Error = ex.Message };
             }
-            else if (userConfig.StepName == "UserConfig")
-            {
-                return Models.User.ConfigStages.GetConfigStep(userConfig);
-            }
-            else return new Models.User.UserConfigResponse { };
         }
     }
 }
