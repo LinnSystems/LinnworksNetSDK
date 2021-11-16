@@ -126,5 +126,7 @@ namespace TemplateProxyExample.Models.Order
         /// The discount ammount.
         /// </summary>
         public double Discount { get; set; }
+        public string MarketplaceTaxId  { get; set; }
+        public string MarketplaceIoss { get; set; }
     }
 }

@@ -97,6 +97,8 @@ namespace TemplateProxyExample.Controllers
                         Site = string.Empty,
                         Discount = 10,
                         DiscountType = Models.Order.DiscountType.ItemsThenPostage
+                        MarketplaceIoss = "MarketPlaceIOSS",
+                        MarketplaceTaxId = "MarketPlaceTaxID"
                     };
 
                     int randItems = rand.Next(1, 10);

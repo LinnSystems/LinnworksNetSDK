@@ -11,4 +11,4 @@ This is a sample application to be used as a Channel Integration for Linnworks.n
 If you have any issues with this please raise a ticket at http://help.linnworks.com
 
 #Channel Integration Endpoint Guide
-Provides an explanation of each endpoint and return objects expected
+Provides an explanation of each endpoint and return objects expected and can be found here: https://apps.linnworks.net/Resources/Channel
