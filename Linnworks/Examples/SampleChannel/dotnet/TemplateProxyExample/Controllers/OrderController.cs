@@ -96,7 +96,7 @@ namespace TemplateProxyExample.Controllers
                         ReceivedDate = DateTime.UtcNow.AddMinutes(rand.Next(1, 10) * -1),
                         Site = string.Empty,
                         Discount = 10,
-                        DiscountType = Models.Order.DiscountType.ItemsThenPostage
+                        DiscountType = Models.Order.DiscountType.ItemsThenPostage,
                         MarketplaceIoss = "MarketPlaceIOSS",
                         MarketplaceTaxId = "MarketPlaceTaxID"
                     };
