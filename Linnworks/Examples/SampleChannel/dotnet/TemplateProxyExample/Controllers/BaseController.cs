@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using TemplateProxyExample.Config;
+using TemplateProxyExample.Helpers;
 
 namespace TemplateProxyExample.Controllers
 {
@@ -19,16 +15,14 @@ namespace TemplateProxyExample.Controllers
             Config = config;
         }
 
-        protected string UserStoreLocation
+        /// <summary>
+        /// Gets the repository that handles the actual reading and writing to and from the filesystem.
+        /// </summary>
+        protected IRepository FileRepository
         {
             get
             {
-                var path = Config.Value.UserStoreLocation;
-
-                if (Directory.Exists(path))
-                    Directory.CreateDirectory(path);
-
-                return path;
+                return Config.Value.FileRepository;
             }
         }
     }

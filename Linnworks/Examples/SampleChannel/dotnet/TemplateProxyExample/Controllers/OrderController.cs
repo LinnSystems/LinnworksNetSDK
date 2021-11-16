@@ -32,7 +32,7 @@ namespace TemplateProxyExample.Controllers
                 return new Models.Order.OrdersResponse { Error = "Invalid page number" };
             try
             {
-                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 Random rand = new Random(DateTime.UtcNow.Millisecond);
 
@@ -169,7 +169,7 @@ namespace TemplateProxyExample.Controllers
 
             try
             {
-                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 return new Models.Order.OrderDespatchResponse()
                 {

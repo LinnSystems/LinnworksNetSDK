@@ -31,6 +31,7 @@ namespace TemplateProxyExample.Models.User
             return new UserConfigResponse
             {
                 StepName = "AddCredentials",
+                AccountName = "Example account name",
                 WizardStepTitle = "Add Credentials",
                 WizardStepDescription = "This is where you add your website credentials",
                 ConfigItems = new[]
@@ -80,6 +81,7 @@ namespace TemplateProxyExample.Models.User
             return new UserConfigResponse
             {
                 StepName = "OrderSetup",
+                AccountName = "Example account name",
                 WizardStepTitle = "Order Setup",
                 WizardStepDescription = "Definition of tax settings and items to return",
                 ConfigItems = new[]
@@ -118,6 +120,7 @@ namespace TemplateProxyExample.Models.User
             return new UserConfigResponse
             {
                 StepName = "UserConfig",
+                AccountName = "Example account name",
                 WizardStepTitle = "UserConfig",
                 WizardStepDescription = "User Config",
                 ConfigItems = new[]

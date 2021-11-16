@@ -4,23 +4,24 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using Microsoft.Extensions.Configuration;
+using TemplateProxyExample.Helpers;
 
 namespace TemplateProxyExample.Models.User
 {
     public class UserConfig : BaseRequest
     {
-        private string userStoreLocation;
+        private IRepository fileRepository;
 
-        public UserConfig(string userStoreLocation) 
+        public UserConfig(IRepository fileRepository) 
         {
             this.IsOauth = true;
             this.StepName = ConfigStagesEnum.AddCredentials.ToString();
-            this.userStoreLocation = userStoreLocation;
+            this.fileRepository = fileRepository;
         }
 
-        public UserConfig(string userStoreLocation, string authorizationToken)
+        public UserConfig(IRepository fileRepository, string authorizationToken)
         {
-            this.userStoreLocation = userStoreLocation;
+            this.fileRepository = fileRepository;
             this.AuthorizationToken = authorizationToken;
             this.Load();
         }
@@ -44,11 +45,9 @@ namespace TemplateProxyExample.Models.User
             if (string.IsNullOrWhiteSpace(this.AuthorizationToken))
                 throw new ArgumentNullException("authorizationToken");
 
-            string path = string.Concat(this.userStoreLocation, "\\", this.AuthorizationToken, ".json");
-
-            if (System.IO.File.Exists(path))
-            {
-                string json = System.IO.File.ReadAllText(path);
+            if(this.fileRepository.Exists(this.AuthorizationToken))
+            { 
+                string json = this.fileRepository.Load(this.AuthorizationToken);
                 Newtonsoft.Json.JsonConvert.PopulateObject(json, this);
             }
             else
@@ -59,10 +58,9 @@ namespace TemplateProxyExample.Models.User
 
         public void Delete()
         {
-            string path = string.Concat(this.userStoreLocation, "\\", this.AuthorizationToken, ".json");
-            if (File.Exists(path))
+            if (this.fileRepository.Exists(this.AuthorizationToken))
             {
-                File.Delete(path);
+                this.fileRepository.Delete(this.AuthorizationToken);
             }
         }
 
@@ -77,10 +75,9 @@ namespace TemplateProxyExample.Models.User
 
         private void Save()
         {
-            string path = string.Concat(this.userStoreLocation, "\\", this.AuthorizationToken, ".json");
             var output = Newtonsoft.Json.JsonConvert.SerializeObject(this);
 
-            File.WriteAllText(path, output);
+            this.fileRepository.Save(this.AuthorizationToken, output);
         }
 
         public UserConfigResponse Save(ConfigItem[] configItems)

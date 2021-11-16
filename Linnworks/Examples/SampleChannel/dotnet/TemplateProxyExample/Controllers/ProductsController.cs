@@ -30,7 +30,7 @@ namespace TemplateProxyExample.Controllers
 
             try
             {
-                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 Random rand = new Random(DateTime.UtcNow.Millisecond);
 
@@ -82,7 +82,7 @@ namespace TemplateProxyExample.Controllers
 
             try
             {
-                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 var response = new Models.Products.ProductInventoryUpdateResponse();
 
@@ -101,6 +101,11 @@ namespace TemplateProxyExample.Controllers
             }
         }
 
+        /// <summary>
+        /// This call is made when inventory price is updated in linnworks and is required to push to the channel.
+        /// </summary>
+        /// <param name="request"><see cref="Models.Products.ProductPriceUpdateRequest"/></param>
+        /// <returns><see cref="Models.Products.ProductPriceUpdateResponse"/></returns>
         [HttpPost]
         public Models.Products.ProductPriceUpdateResponse PriceUpdate([FromBody] Models.Products.ProductPriceUpdateRequest request)
         {
@@ -109,7 +114,7 @@ namespace TemplateProxyExample.Controllers
 
             try
             {
-                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 var response = new Models.Products.ProductPriceUpdateResponse();
 

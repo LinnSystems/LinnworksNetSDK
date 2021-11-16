@@ -11,6 +11,10 @@ namespace TemplateProxyExample.Models.Products
         {
             this.Products = new List<ProductPriceResponse>();
         }
+
+        /// <summary>
+        /// List of responses <see cref="ProductPriceResponse"/>
+        /// </summary>
         public List<ProductPriceResponse> Products { get; set; }
     }
 }

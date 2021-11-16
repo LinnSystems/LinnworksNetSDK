@@ -17,6 +17,11 @@ namespace TemplateProxyExample.Controllers
         {
         }
 
+        /// <summary>
+        /// Create a new user configuration.
+        /// </summary>
+        /// <param name="request"><see cref="Models.User.AddNewUserRequest"/></param>
+        /// <returns><see cref="Models.User.AddNewUserResponse"/></returns>
         [HttpPost]
         public Models.User.AddNewUserResponse AddNewUser([FromBody] Models.User.AddNewUserRequest request)
         {
@@ -29,7 +34,7 @@ namespace TemplateProxyExample.Controllers
             if (request.LinnworksUniqueIdentifier == Guid.Empty)
                 return new Models.User.AddNewUserResponse { Error = "Invalid LinnworksUniqueIdentifier" };
 
-            var userConfig = new Models.User.UserConfig(this.UserStoreLocation);
+            var userConfig = new Models.User.UserConfig(this.FileRepository);
 
             userConfig.CreateNew(request.Email, request.LinnworksUniqueIdentifier, request.AccountName);
 
@@ -39,12 +44,18 @@ namespace TemplateProxyExample.Controllers
             };
         }
 
+        /// <summary>
+        /// This call is made when the channel config is deleted from Linnworks. Note that this is
+        /// a notification of deletion, if there is an error the config will still be deleted from Linnworks.
+        /// </summary>
+        /// <param name="request"><see cref="Models.BaseRequest"/></param>
+        /// <returns><see cref="Models.BaseResponse"/></returns>
         [HttpPost]
         public Models.BaseResponse ConfigDeleted([FromBody] Models.BaseRequest request)
         {
             try
             {
-                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 user.Delete();
 
@@ -56,12 +67,19 @@ namespace TemplateProxyExample.Controllers
             }
         }
 
+        /// <summary>
+        /// This call is made when the test button is pressed in the user config. It should test the
+        /// customer's integration is valid. It may also be used in automation jobs to check if there
+        /// #is a constant or global error.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public Models.BaseResponse ConfigTest([FromBody] Models.BaseRequest request)
         {
             try
             {
-                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 //Would normally do something here to test.
 
@@ -73,12 +91,18 @@ namespace TemplateProxyExample.Controllers
             }
         }
 
+        /// <summary>
+        /// This call is expected to return an array of shipping methods friendly names and their tags
+        /// to generate a pre-populated list in the config shipping mapping screen.
+        /// </summary>
+        /// <param name="request"><see cref="Models.BaseRequest"/></param>
+        /// <returns><see cref="Models.Payment.PaymentTagResponse"/></returns>
         [HttpPost]
         public Models.Payment.PaymentTagResponse PaymentTags([FromBody] Models.BaseRequest request)
         {
             try
             {
-                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 return new Models.Payment.PaymentTagResponse
                 {
@@ -98,12 +122,18 @@ namespace TemplateProxyExample.Controllers
             }
         }
 
+        /// <summary>
+        /// This call is expected to return an array of shipping methods friendly names and their tags
+        /// to generate a pre-populated list in the config shipping mapping screen.
+        /// </summary>
+        /// <param name="request"><see cref="Models.BaseRequest"/></param>
+        /// <returns><see cref="Models.Shipping.ShippingTagResponse"/></returns>
         [HttpPost]
         public Models.Shipping.ShippingTagResponse ShippingTags([FromBody] Models.BaseRequest request)
         {
             try
             {
-                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 return new Models.Shipping.ShippingTagResponse
                 {
@@ -123,15 +153,32 @@ namespace TemplateProxyExample.Controllers
             }
         }
 
+        /// <summary>
+        /// This request is made in two situations:
+        /// 
+        /// Firstly when a customer is going through the integration wizard to integrate the channel.
+        /// To complete the wizard returns "UserConfig" as the step name and this will indicate the
+        /// wizard is complete.
+        /// 
+        /// The second instance is when the config is loaded the call is made to load any dynamic
+        /// ConfigItems that may be required to show on the Linnworks config UI.SaveConfigEndpoint
+        /// will be called on each wizard step and when the config is saved.
+        /// 
+        /// If the config is loaded and the StepName is not "UserConfig" it will load the config
+        /// wizard and take them through the stages until "UserConfig" is returned.This can be
+        /// especially useful if the user is required to go through additional steps down the line.
+        /// </summary>
+        /// <param name="request"><see cref="Models.BaseRequest"/></param>
+        /// <returns><see cref="Models.User.UserConfigResponse"/></returns>
         [HttpPost]
         public Models.User.UserConfigResponse UserConfig([FromBody] Models.BaseRequest request)
         {
             try
             {
-                var userConfig = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
-                var configSetp = new Models.User.ConfigStages(userConfig);
+                var userConfig = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
+                var configStep = new Models.User.ConfigStages(userConfig);
 
-                return configSetp.StageResponse("User config is at invalid stage");
+                return configStep.StageResponse("User config is at invalid stage");
             }
             catch (Exception ex)
             {
@@ -139,12 +186,24 @@ namespace TemplateProxyExample.Controllers
             }
         }
 
+        /// <summary>
+        /// This request is made in two situations:
+        /// 
+        /// At the end of every config wizard step as a customer enters / edits the fields and on the
+        /// config screen if custom config items are supplied back when the step name is "UserConfig".
+        /// 
+        /// Linnworks will provide the entire object that was provided back with the only field ever
+        /// changing being the SelectedValue.This is passed back cast as string as fields may be of
+        /// many different types.
+        /// </summary>
+        /// <param name="request"><see cref="Models.User.SaveUserConfigRequest"/></param>
+        /// <returns><see cref="Models.User.UserConfigResponse"/></returns>
         [HttpPost]
         public Models.User.UserConfigResponse SaveConfigSave([FromBody] Models.User.SaveUserConfigRequest request)
         {
             try
             {
-                var userConfig = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var userConfig = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 if (request.StepName != userConfig.StepName)
                     return new Models.User.UserConfigResponse { Error = string.Format("Invalid step name expected {0}", userConfig.StepName) };

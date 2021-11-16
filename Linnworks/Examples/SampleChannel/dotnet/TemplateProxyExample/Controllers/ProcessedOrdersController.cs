@@ -26,7 +26,7 @@ namespace TemplateProxyExample.Controllers
         {
             try
             {
-                var user = new Models.User.UserConfig(this.UserStoreLocation, request.AuthorizationToken);
+                var user = new Models.User.UserConfig(this.FileRepository, request.AuthorizationToken);
 
                 var response = new Models.PostSale.PostSaleOptionsResponse();
 
