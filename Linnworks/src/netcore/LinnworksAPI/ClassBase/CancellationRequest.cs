@@ -8,6 +8,8 @@ namespace LinnworksAPI
 	{
 		public Boolean IsChannelCancellation { get; set; }
 
+		public Boolean IsChannelInitiated { get; set; }
+
 		public Boolean IsChannelCancellationConfirmed { get; set; }
 
 		public Boolean IsFreeText { get; set; }
@@ -19,6 +21,12 @@ namespace LinnworksAPI
 		public String SubReasonTag { get; set; }
 
 		public Boolean CreateFullRefund { get; set; }
+
+		public Boolean RefundAlreadyProcessed { get; set; }
+
+		public String RefundStatusTag { get; set; }
+
+		public String RefundReference { get; set; }
 
 		public Int32 HeaderId { get; set; }
 

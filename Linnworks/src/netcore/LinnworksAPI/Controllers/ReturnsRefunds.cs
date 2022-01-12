@@ -86,10 +86,10 @@ namespace LinnworksAPI
         /// <param name="sortDirection">The sort direction (true = ascending, false = descending).</param>
         /// <param name="historyType">Search type. Allow RETURNS or REFUNDS</param>
         /// <returns>Returns the URL of the CSV file</returns>
-        public Task<String> CreateReturnsRefundsCSV(DateTime? from,DateTime? to,ReturnsRefundsSearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection,HistoryType historyType = HistoryType.RETURNS)
+        public String CreateReturnsRefundsCSV(DateTime? from,DateTime? to,ReturnsRefundsSearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection,HistoryType historyType = HistoryType.RETURNS)
 		{
 			var response = GetResponse("ReturnsRefunds/CreateReturnsRefundsCSV", "from=" + System.Net.WebUtility.UrlEncode(from.HasValue ? from.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&to=" + System.Net.WebUtility.UrlEncode(to.HasValue ? to.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&sortColumn=" + System.Net.WebUtility.UrlEncode(sortColumn) + "&sortDirection=" + sortDirection + "&historyType=" + historyType.ToString() + "");
-            return JsonFormatter.ConvertFromJson<Task<String>>(response);
+            return JsonFormatter.ConvertFromJson<String>(response);
 		}
 
 		/// <summary>
@@ -335,7 +335,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Updates an existing refund in the system 
+        /// Updates an existing refund in the system. Requires create and delete permissions 
         /// </summary>
         /// <param name="request">The request class for this call</param>
         public UpdateRefundResponse UpdateRefund(UpdateRefundRequest request)
@@ -345,7 +345,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Updates an RMA booking in the system 
+        /// Updates an RMA booking in the system. Requires create and delete permissions 
         /// </summary>
         /// <param name="request">The request class for this call</param>
         public UpdateRMABookingResponse UpdateRMABooking(UpdateRMABookingRequest request)

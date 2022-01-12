@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace LinnworksAPI
 { 
@@ -15,7 +14,6 @@ namespace LinnworksAPI
 		Boolean CheckOrderFullyReturned(Guid pkOrderId);
 		List<ReturnInfo> CreateExchange(Guid pkOrderId,List<RowQty> exchangeItems,Guid despatchLocation,Guid returnLocation,String channelReason,String channelSubReason,String category,String reason,Boolean isBooking,Boolean ignoredValidation);
 		List<ReturnInfo> CreateFullResend(Guid pkOrderId,Guid despatchLocation,String category,String reason,Double additionalCost);
-		Task<String> CreateProcessedOrdersCSV(DateTime? from,DateTime? to,SearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection);
 		List<ReturnInfo> CreateResend(Guid pkOrderId,List<RowQty> resendItems,Guid despatchLocation,String category,String reason,Double additionalCost);
 		List<ReturnInfo> CreateReturn(Guid pkOrderId,List<RowQty> returnitems,Guid returnLocation,String channelReason,String channelSubReason,String category,String reason,Boolean isReturnBooking,Boolean ignoredValidation);
 		void DeleteOrderNote(Guid pkOrderNoteId);
@@ -23,6 +21,7 @@ namespace LinnworksAPI
 		DownloadOrdersToCSVResponse DownloadOrdersToCSV(DownloadOrdersToCSVRequest request);
 		List<ChannelRefundReason> GetChannelRefundReasons(Guid pkOrderId);
 		ProcessedOrderWeb GetOrderInfo(Guid pkOrderId);
+		GetOrderTrackingURLsResponse GetOrderTrackingURLs(GetOrderTrackingURLsRequest request);
 		List<SplitPackaging> GetPackageSplit(Guid pkOrderId);
 		List<AuditEntry> GetProcessedAuditTrail(Guid pkOrderId);
 		List<OrderExtendedProperty> GetProcessedOrderExtendedProperties(Guid pkOrderId);

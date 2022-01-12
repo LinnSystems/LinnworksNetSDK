@@ -20,12 +20,12 @@ namespace LinnworksAPI
 
 		public Int32 Qty { get; set; }
 
-		public Int32 PackQuantity { get; set; }
-
-		public Int32 PackSize { get; set; }
-
 		public Decimal Cost { get; set; }
 
 		public Decimal TaxRate { get; set; }
+
+		public Int32? PackQuantity { get; set; }
+
+		public Int32? PackSize { get; set; }
 	} 
 }

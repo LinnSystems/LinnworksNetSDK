@@ -1222,10 +1222,9 @@ namespace LinnworksAPI
         /// Use this call to update stock item prices 
         /// </summary>
         /// <param name="inventoryItemPrices">List of stock item prices to update</param>
-        public Task UpdateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices)
+        public void UpdateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices)
 		{
-			var response = GetResponse("Inventory/UpdateInventoryItemPrices", "inventoryItemPrices=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemPrices)) + "");
-            return JsonFormatter.ConvertFromJson<Task>(response);
+			GetResponse("Inventory/UpdateInventoryItemPrices", "inventoryItemPrices=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemPrices)) + "");
 		}
 
 		/// <summary>

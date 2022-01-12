@@ -21,5 +21,6 @@ namespace LinnworksAPI
 		AssignTagToOrder,
 		ExecuteMacro,
 		AssignIdentifierToOrder,
+		BlockOrderFromMerging,
 	}
 }

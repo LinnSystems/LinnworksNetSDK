@@ -31,7 +31,15 @@ namespace LinnworksAPI
         /// </summary>
 		public Boolean IsShippingRefund { get; set; }
 
+        /// <summary>
+        /// Identifies whether the refund is an additional refund 
+        /// </summary>
 		public Boolean IsAdditionalRefund { get; set; }
+
+        /// <summary>
+        /// Identifies whether the refund row is a cancellation 
+        /// </summary>
+		public Boolean IsCancellation { get; set; }
 
         /// <summary>
         /// Used mainly to associate an item with an error, this identifies the order item to which the refund line applies 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace LinnworksAPI
 {
@@ -83,24 +82,6 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Use this call to request the creation of a CSV file containing the query results. 
-        /// </summary>
-        /// <param name="from">The lower end of the date range to search. Can be null if searching for 'all dates'. Maximum range is 3 months.</param>
-        /// <param name="to">The upper end of the date range to search. Can be null if searching for 'all dates'. Maximum range is 3 months.</param>
-        /// <param name="dateType">The search type (e.g. ALLDATES)</param>
-        /// <param name="searchField">The field to search by. Can be found by calling GetSearchTypes.</param>
-        /// <param name="exactMatch">Set to true if an exact match is required for the search data.</param>
-        /// <param name="searchTerm">The term which you are searching for.</param>
-        /// <param name="sortColumn">The column to sort by</param>
-        /// <param name="sortDirection">The sort direction (true = ascending, false = descending).</param>
-        /// <returns>Returns the URL of the CSV file</returns>
-        public Task<String> CreateProcessedOrdersCSV(DateTime? from,DateTime? to,SearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection)
-		{
-			var response = GetResponse("ProcessedOrders/CreateProcessedOrdersCSV", "from=" + System.Net.WebUtility.UrlEncode(from.HasValue ? from.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&to=" + System.Net.WebUtility.UrlEncode(to.HasValue ? to.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "&dateType=" + dateType.ToString() + "&searchField=" + System.Net.WebUtility.UrlEncode(searchField) + "&exactMatch=" + exactMatch + "&searchTerm=" + System.Net.WebUtility.UrlEncode(searchTerm) + "&sortColumn=" + System.Net.WebUtility.UrlEncode(sortColumn) + "&sortDirection=" + sortDirection + "");
-            return JsonFormatter.ConvertFromJson<Task<String>>(response);
-		}
-
-		/// <summary>
         /// Creates a resend 
         /// </summary>
         /// <param name="pkOrderId">Order ID that needs to be resend</param>
@@ -156,6 +137,7 @@ namespace LinnworksAPI
         /// Download Processed Orders to CSV 
         /// </summary>
         /// <param name="request">Request parameter populated with search critera for the file download</param>
+        /// <param name="cancellationToken">Request parameter populated with search critera for the file download</param>
         public DownloadOrdersToCSVResponse DownloadOrdersToCSV(DownloadOrdersToCSVRequest request)
 		{
 			var response = GetResponse("ProcessedOrders/DownloadOrdersToCSV", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
@@ -182,6 +164,17 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("ProcessedOrders/GetOrderInfo", "pkOrderId=" + pkOrderId + "");
             return JsonFormatter.ConvertFromJson<ProcessedOrderWeb>(response);
+		}
+
+		/// <summary>
+        /// Use this call to retrieve detailed TrackingURL for orders Vendor and TrackingNumber. 
+        /// </summary>
+        /// <param name="request">The request for TrackingURL.</param>
+        /// <returns>Tracking information</returns>
+        public GetOrderTrackingURLsResponse GetOrderTrackingURLs(GetOrderTrackingURLsRequest request)
+		{
+			var response = GetResponse("ProcessedOrders/GetOrderTrackingURLs", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetOrderTrackingURLsResponse>(response);
 		}
 
 		/// <summary>

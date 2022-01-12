@@ -10,9 +10,22 @@ namespace LinnworksAPI
         public static string GetResponse(string extension, string body, ApiContext context, string httpMethod, int? timeout)
         {
             string url = context.ApiServer + extension;
+
+            bool isGet = httpMethod == "GET";
+
+            if (!string.IsNullOrWhiteSpace(body) && isGet)
+            {
+                url += "?" + body;
+            }
+
             var req = HttpWebRequest.Create(url);
             req.Method = httpMethod;
-            req.ContentType = "application/x-www-form-urlencoded";
+
+            if (!isGet)
+            {
+                req.ContentType = "application/x-www-form-urlencoded";
+            }
+
             req.Headers.Add("RecursionCount", context.RecursionCount.ToString());
 
             if (timeout.HasValue)
@@ -21,10 +34,10 @@ namespace LinnworksAPI
             if (context.SessionId != Guid.Empty)
                 req.Headers.Add(HttpRequestHeader.Authorization, context.SessionId.ToString());
 
-            if (!string.IsNullOrWhiteSpace(body))
+            if (!string.IsNullOrWhiteSpace(body) && !isGet)
                 req.ContentLength = Encoding.UTF8.GetBytes(body).Length;
 
-            if (!string.IsNullOrWhiteSpace(body))
+            if (!string.IsNullOrWhiteSpace(body) && !isGet)
             {
                 using (Stream post = req.GetRequestStream())
                 {

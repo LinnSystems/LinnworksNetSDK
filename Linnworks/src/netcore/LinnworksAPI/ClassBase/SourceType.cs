@@ -11,5 +11,6 @@ namespace LinnworksAPI
 	{
 		netcore10,
 		netcore21,
+		netcore31,
 	}
 }

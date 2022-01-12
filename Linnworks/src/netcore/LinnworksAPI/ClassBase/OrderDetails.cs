@@ -70,5 +70,15 @@ namespace LinnworksAPI
         /// List of order notes 
         /// </summary>
 		public List<OrderNote> Notes { get; set; }
+
+        /// <summary>
+        /// Date and time when the order was marked as paid 
+        /// </summary>
+		public DateTime? PaidDateTime { get; set; }
+
+        /// <summary>
+        /// Buyer's tax number. 
+        /// </summary>
+		public String TaxId { get; set; }
 	} 
 }

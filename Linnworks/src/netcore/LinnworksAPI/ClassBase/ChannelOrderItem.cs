@@ -60,5 +60,7 @@ namespace LinnworksAPI
         /// Options on the item ordered 
         /// </summary>
 		public List<ChannelOrderItemOption> Options { get; set; }
+
+		public List<ChannelOrderItemTax> Taxes { get; set; }
 	} 
 }

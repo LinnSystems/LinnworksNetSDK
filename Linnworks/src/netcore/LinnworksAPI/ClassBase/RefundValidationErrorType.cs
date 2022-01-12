@@ -30,6 +30,7 @@ namespace LinnworksAPI
 		ItemNotFoundOnChannel,
 		NegativeServiceItem,
 		IncorrectOwnership,
+		UnsupportedPaymentMethod,
 		ChannelAuthenticationIssue,
 		Other,
 	}

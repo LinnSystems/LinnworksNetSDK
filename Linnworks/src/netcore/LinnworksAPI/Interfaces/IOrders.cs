@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace LinnworksAPI
 { 
     public interface IOrdersController
 	{
 		UpdateOrderItemResult AddCoupon(Guid orderId,String barcode,CouponValidationResult couponData,Guid fulfilmentCenter);
+		AddExtendedPropertiesResponse AddExtendedProperties(AddExtendedPropertiesRequest request);
 		UpdateOrderItemResult AddOrderItem(Guid orderId,Guid itemId,String channelSKU,Guid fulfilmentCenter,Int32 quantity,LinePricingRequest linePricing);
 		UpdateOrderItemResult AddOrderService(Guid orderId,String service,Double cost,Double taxRate,Guid fulfilmentCenter);
 		void AssignOrderItemBatches(AssignOrderItemBatches request);
@@ -62,6 +64,8 @@ namespace LinnworksAPI
 		List<OrderRelation> GetOrderRelations(Guid orderId);
 		List<OpenOrder> GetOrders(List<Guid> ordersIds,Guid? fulfilmentLocationId,Boolean loadItems,Boolean loadAdditionalInfo);
 		List<OrderDetails> GetOrdersById(List<Guid> pkOrderIds);
+		Dictionary<Guid,List<OrderNote>> GetOrdersNotes(List<Guid> orderIds);
+		Dictionary<Guid,List<OrderRelation>> GetOrdersRelations(List<Guid> orderIds);
 		UserOrderView GetOrderView(Int32 pkViewId,Boolean markAsLatestViewed);
 		List<UserOrderView> GetOrderViews();
 		List<OrderXML> GetOrderXml(Guid orderId);
@@ -75,10 +79,10 @@ namespace LinnworksAPI
 		MoveToFulfilmentCenterResult MoveToFulfilmentCenter(List<Guid> orderIds,Guid fulfilmentCenterId);
 		MoveToLocationResult MoveToLocation(List<Guid> orderIds,Guid pkStockLocationId);
 		ProcessOrderResult ProcessFulfilmentCentreOrder(Guid orderId);
-		ProcessOrderResult ProcessOrder(Guid orderId,Boolean scanPerformed,Guid? locationId);
+		ProcessOrderResult ProcessOrder(Guid orderId,Boolean scanPerformed,Guid? locationId,ClientContext context = null);
 		void ProcessOrder_RequiredBatchScans(BatchAssignmentForOrderItems BatchAssignment);
 		ProcessOrderByOrderIdOrReferenceResponse ProcessOrderByOrderOrReferenceId(ProcessOrderByOrderIdOrReferenceRequest request);
-		List<ProcessOrderResult> ProcessOrdersInBatch(List<Guid> ordersIds,Guid? locationId);
+		List<ProcessOrderResult> ProcessOrdersInBatch(List<Guid> ordersIds,Guid? locationId,ClientContext context = null);
 		CalcOrderHeader RecalculateSingleOrderPackaging(CalcOrderHeader request);
 		UpdateOrderItemResult RemoveOrderItem(Guid orderId,Guid rowid,Guid fulfilmentCenter);
 		List<Guid> RunRulesEngine(Guid[] orderIds,Int32? ruleId = null);
@@ -99,7 +103,7 @@ namespace LinnworksAPI
 		void SetOrderTotalsInfo(Guid orderId,OrderTotalsInfo info);
 		List<PaymentMethod> SetPaymentMethods(PaymentMethod[] paymentMethods);
 		void SetPickListPrinted(SetPickListPrintedRequest Request);
-		List<OpenOrder> SplitOrder(Guid orderId,OrderSplit[] newOrders,String type,Guid fulfilmentLocationId);
+		List<OpenOrder> SplitOrder(Guid orderId,OrderSplit[] newOrders,String type,Guid fulfilmentLocationId,Boolean recalcPackaging = false);
 		List<Guid> UnassignToFolder(List<Guid> orderIds,String folder);
 		void UpdateAdditionalInfo(UpdateAdditionalInfoRequest request);
 		void UpdateBillingAddress(Guid orderId,CustomerAddress billingAddress);

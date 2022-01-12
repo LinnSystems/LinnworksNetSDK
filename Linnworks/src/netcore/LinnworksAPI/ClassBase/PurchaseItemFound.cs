@@ -22,6 +22,8 @@ namespace LinnworksAPI
 
 		public String SupplierCode { get; set; }
 
+		public String SupplierBarcode { get; set; }
+
 		public Guid? fkSupplierId { get; set; }
 
 		public Int32? SupplierMinOrderQty { get; set; }

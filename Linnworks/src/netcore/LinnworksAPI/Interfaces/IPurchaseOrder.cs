@@ -28,7 +28,7 @@ namespace LinnworksAPI
 		Get_Additional_CostResponse Get_Additional_Cost(Get_Additional_CostRequest request);
 		Get_AdditionalCostTypesResponse Get_AdditionalCostTypes();
 		Get_DeliveredRecords_Response Get_DeliveredRecords(Guid pkPurchaseId);
-		Task<Get_EmailCSVFileResponse> Get_EmailCSVFile(Get_EmailCSVFileRequest request);
+		Get_EmailCSVFileResponse Get_EmailCSVFile(Get_EmailCSVFileRequest request);
 		Get_EmailsSentResponse Get_EmailsSent(Get_EmailsSentRequest request);
 		Get_PaymentStatementResponse Get_Payment_Statement(Get_PaymentStatementRequest request);
 		Get_PurchaseOrderResponse Get_PurchaseOrder(Guid pkPurchaseId);
@@ -43,6 +43,7 @@ namespace LinnworksAPI
 		Modify_PaymentStatementResponse Modify_PaymentStatement(Modify_PaymentStatementRequest request);
 		Modify_PurchaseOrderItems_BulkResponse Modify_PurchaseOrderItems_Bulk(Modify_PurchaseOrderItems_BulkRequest request);
 		Search_PurchaseOrdersResult Search_PurchaseOrders(Search_PurchaseOrderParameter searchParameter);
+		Search_PurchaseOrdersResult Search_PurchaseOrders2(Search_PurchaseOrder2Request request);
 		Update_AdditionalCostTypesResponse Update_AdditionalCostTypes(Update_AdditionalCostTypesRequest request);
 		void Update_PurchaseOrderExtendedProperty(Update_PurchaseOrderExtendedPropertyRequest request);
 		PurchaseOrderHeader Update_PurchaseOrderHeader(Update_PurchaseOrderHeaderParameter updateParameter);

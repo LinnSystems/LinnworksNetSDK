@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace LinnworksAPI
 {
@@ -24,6 +25,17 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Orders/AddCoupon", "orderId=" + orderId + "&barcode=" + System.Net.WebUtility.UrlEncode(barcode) + "&couponData=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(couponData)) + "&fulfilmentCenter=" + fulfilmentCenter + "");
             return JsonFormatter.ConvertFromJson<UpdateOrderItemResult>(response);
+		}
+
+		/// <summary>
+        /// Adds extended properties to a Linnworks orders.
+        /// This will NOT update properties that match on property name / value 
+        /// </summary>
+        /// <param name="request">Request with OrderId and BasicExtendedProperties as fields</param>
+        public AddExtendedPropertiesResponse AddExtendedProperties(AddExtendedPropertiesRequest request)
+		{
+			var response = GetResponse("Orders/AddExtendedProperties", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<AddExtendedPropertiesResponse>(response);
 		}
 
 		/// <summary>
@@ -571,7 +583,7 @@ namespace LinnworksAPI
 
 		public List<OrderNoteType> GetOrderNoteTypes()
 		{
-			var response = GetResponse("Orders/GetOrderNoteTypes", "");
+			var response = GetResponse("Orders/GetOrderNoteTypes", "", "GET");
             return JsonFormatter.ConvertFromJson<List<OrderNoteType>>(response);
 		}
 
@@ -632,6 +644,23 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Orders/GetOrdersById", "pkOrderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(pkOrderIds)) + "");
             return JsonFormatter.ConvertFromJson<List<OrderDetails>>(response);
+		}
+
+		public Dictionary<Guid,List<OrderNote>> GetOrdersNotes(List<Guid> orderIds)
+		{
+			var response = GetResponse("Orders/GetOrdersNotes", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "");
+            return JsonFormatter.ConvertFromJson<Dictionary<Guid,List<OrderNote>>>(response);
+		}
+
+		/// <summary>
+        /// Get order relations for a list of orders. 
+        /// </summary>
+        /// <param name="orderIds">List of order Ids</param>
+        /// <returns>Dictionary: OrderId / List of relations</returns>
+        public Dictionary<Guid,List<OrderRelation>> GetOrdersRelations(List<Guid> orderIds)
+		{
+			var response = GetResponse("Orders/GetOrdersRelations", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "");
+            return JsonFormatter.ConvertFromJson<Dictionary<Guid,List<OrderRelation>>>(response);
 		}
 
 		/// <summary>
@@ -781,10 +810,11 @@ namespace LinnworksAPI
         /// <param name="orderId">Order id</param>
         /// <param name="scanPerformed">Indicate if the scan has been performed</param>
         /// <param name="locationId">User location</param>
+        /// <param name="context">Information about where the call came from</param>
         /// <returns>Return a boolean meaning if has been processed, and a possible error</returns>
-        public ProcessOrderResult ProcessOrder(Guid orderId,Boolean scanPerformed,Guid? locationId)
+        public ProcessOrderResult ProcessOrder(Guid orderId,Boolean scanPerformed,Guid? locationId,ClientContext context = null)
 		{
-			var response = GetResponse("Orders/ProcessOrder", "orderId=" + orderId + "&scanPerformed=" + scanPerformed + "&locationId=" + locationId + "");
+			var response = GetResponse("Orders/ProcessOrder", "orderId=" + orderId + "&scanPerformed=" + scanPerformed + "&locationId=" + locationId + "&context=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(context)) + "");
             return JsonFormatter.ConvertFromJson<ProcessOrderResult>(response);
 		}
 
@@ -810,10 +840,11 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="ordersIds">List of orders ids</param>
         /// <param name="locationId">User location</param>
+        /// <param name="context">Information about where the call came from</param>
         /// <returns>Return a list of possible errors</returns>
-        public List<ProcessOrderResult> ProcessOrdersInBatch(List<Guid> ordersIds,Guid? locationId)
+        public List<ProcessOrderResult> ProcessOrdersInBatch(List<Guid> ordersIds,Guid? locationId,ClientContext context = null)
 		{
-			var response = GetResponse("Orders/ProcessOrdersInBatch", "ordersIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ordersIds)) + "&locationId=" + locationId + "");
+			var response = GetResponse("Orders/ProcessOrdersInBatch", "ordersIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ordersIds)) + "&locationId=" + locationId + "&context=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(context)) + "");
             return JsonFormatter.ConvertFromJson<List<ProcessOrderResult>>(response);
 		}
 
@@ -821,6 +852,7 @@ namespace LinnworksAPI
         /// Designed to recalculate order packaging totals based on the object provided 
         /// </summary>
         /// <param name="request">Request object with data needed</param>
+        /// <param name="cancellationToken"></param>
         public CalcOrderHeader RecalculateSingleOrderPackaging(CalcOrderHeader request)
 		{
 			var response = GetResponse("Orders/RecalculateSingleOrderPackaging", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
@@ -1042,9 +1074,9 @@ namespace LinnworksAPI
         /// <param name="type">Split type</param>
         /// <param name="fulfilmentLocationId">Current fulfilment center</param>
         /// <returns>List of orders created</returns>
-        public List<OpenOrder> SplitOrder(Guid orderId,OrderSplit[] newOrders,String type,Guid fulfilmentLocationId)
+        public List<OpenOrder> SplitOrder(Guid orderId,OrderSplit[] newOrders,String type,Guid fulfilmentLocationId,Boolean recalcPackaging = false)
 		{
-			var response = GetResponse("Orders/SplitOrder", "orderId=" + orderId + "&newOrders=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(newOrders)) + "&type=" + System.Net.WebUtility.UrlEncode(type) + "&fulfilmentLocationId=" + fulfilmentLocationId + "");
+			var response = GetResponse("Orders/SplitOrder", "orderId=" + orderId + "&newOrders=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(newOrders)) + "&type=" + System.Net.WebUtility.UrlEncode(type) + "&fulfilmentLocationId=" + fulfilmentLocationId + "&recalcPackaging=" + recalcPackaging + "");
             return JsonFormatter.ConvertFromJson<List<OpenOrder>>(response);
 		}
 

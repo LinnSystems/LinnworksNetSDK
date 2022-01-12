@@ -46,5 +46,7 @@ namespace LinnworksAPI
 		ReorderPointGeneralParams,
 		ReorderPointWeeklyParams,
 		eBayCompatibilityKtypesCulture,
+		eBayCompatibilityePIDCulture,
+		MultipleListingTitlesAndPrices,
 	}
 }

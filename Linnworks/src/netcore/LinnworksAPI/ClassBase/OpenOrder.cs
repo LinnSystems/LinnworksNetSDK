@@ -47,7 +47,7 @@ namespace LinnworksAPI
 
 		public Boolean CanFulfil { get; set; }
 
-		public StockAllocationType StockAllocationType { get; set; }
+		public OrderFulfillmentState Fulfillment { get; set; }
 
 		public List<OrderItem> Items { get; set; }
 

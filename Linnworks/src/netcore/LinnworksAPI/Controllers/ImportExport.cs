@@ -37,7 +37,7 @@ namespace LinnworksAPI
         /// <param name="fileId">Id of the file to get</param>
         public HttpResponseMessage DownloadImportedFile(Guid fileId)
 		{
-			var response = GetResponse("ImportExport/DownloadImportedFile", "fileId=" + fileId + "");
+			var response = GetResponse("ImportExport/DownloadImportedFile", "fileId=" + fileId + "", "GET");
             return JsonFormatter.ConvertFromJson<HttpResponseMessage>(response);
 		}
 

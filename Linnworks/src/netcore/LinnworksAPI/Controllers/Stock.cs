@@ -94,6 +94,17 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Create a new warehouse move in state of In Transit or Open. 
+        /// To create a new move you need the exact batch inventory id and bin rack id of the destination. However it is possible to create a move without knowing where it is going specifically, 
+        /// in which case don't supply BinrackIdDestination (or send null) 
+        /// </summary>
+        public GetWarehouseMoveResponse CreateWarehouseMove(CreateWarehouseMoveRequest request)
+		{
+			var response = GetResponse("Stock/CreateWarehouseMove", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetWarehouseMoveResponse>(response);
+		}
+
+		/// <summary>
         /// Use this call to delete variation group by id 
         /// </summary>
         public void DeleteVariationGroup(Guid pkVariationGroupId)
@@ -130,6 +141,15 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Returns the list of BinRacks by BinRack Ids for WMS locations. 
+        /// </summary>
+        public BinracksResponse GetBinRacksById(GetBinrackByIdRequest request)
+		{
+			var response = GetResponse("Stock/GetBinRacksById", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<BinracksResponse>(response);
+		}
+
+		/// <summary>
         /// Use this call to retrieve report about "stock changes of an item" 
         /// </summary>
         /// <param name="stockItemId">Used to specify report stock item id</param>
@@ -149,10 +169,10 @@ namespace LinnworksAPI
         /// <param name="stockItemId">Used to specify stock item id</param>
         /// <param name="locationId">Used to specify location id. If null then combined</param>
         /// <returns>TempFile</returns>
-        public Task<TempFile> GetItemChangesHistoryCSV(Guid stockItemId,Guid locationId)
+        public TempFile GetItemChangesHistoryCSV(Guid stockItemId,Guid locationId)
 		{
 			var response = GetResponse("Stock/GetItemChangesHistoryCSV", "stockItemId=" + stockItemId + "&locationId=" + locationId + "");
-            return JsonFormatter.ConvertFromJson<Task<TempFile>>(response);
+            return JsonFormatter.ConvertFromJson<TempFile>(response);
 		}
 
 		/// <summary>
@@ -329,7 +349,6 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// F
         /// Use this call to search for a variation group by the parent SKU's stock item id 
         /// </summary>
         /// <param name="pkStockItemId">The stock item id to search by</param>

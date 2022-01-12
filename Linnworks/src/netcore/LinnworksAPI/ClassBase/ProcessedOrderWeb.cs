@@ -304,6 +304,11 @@ namespace LinnworksAPI
 		public Boolean IsExchange { get; set; }
 
         /// <summary>
+        /// Order tax id 
+        /// </summary>
+		public String TaxId { get; set; }
+
+        /// <summary>
         /// Order fulfilment location 
         /// </summary>
 		public String FulfilmentLocationName { get; set; }

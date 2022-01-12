@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace LinnworksAPI
 {
@@ -22,9 +23,9 @@ namespace LinnworksAPI
         /// <param name="printerName">printer name of the ivrtual printer to use. If null then the sepecified in the template</param>
         /// <param name="printZoneCode">Print zone code, if present, will override the printer used if the template has a set printer for that zone</param>
         /// <param name="pageStartNumber">First page number. Used for splitting prints into multiple requests.</param>
-        public CreatePDFResult CreatePDFfromJobForceTemplate(String templateType,List<Guid> IDs,Int32? templateID,List<KeyValuePair<String,String>> parameters,String printerName,String printZoneCode = "",Int32 pageStartNumber = 0,Guid? operationId = null)
+        public CreatePDFResult CreatePDFfromJobForceTemplate(String templateType,List<Guid> IDs,Int32? templateID,List<KeyValuePair<String,String>> parameters,String printerName,String printZoneCode = "",Int32 pageStartNumber = 0,Guid? operationId = null,ClientContext context = null)
 		{
-			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplate", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&IDs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(IDs)) + "&templateID=" + templateID + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "&printZoneCode=" + System.Net.WebUtility.UrlEncode(printZoneCode) + "&pageStartNumber=" + pageStartNumber + "&operationId=" + operationId + "");
+			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplate", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&IDs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(IDs)) + "&templateID=" + templateID + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "&printZoneCode=" + System.Net.WebUtility.UrlEncode(printZoneCode) + "&pageStartNumber=" + pageStartNumber + "&operationId=" + operationId + "&context=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(context)) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
 		}
 
@@ -37,9 +38,9 @@ namespace LinnworksAPI
         /// <param name="parameters"></param>
         /// <param name="printerName">printer name of the ivrtual printer to use. If null then the sepecified in the template</param>
         /// <param name="printZoneCode">Print zone code, if present, will override the printer used if the template has a set printer for that zone</param>
-        public CreatePDFResult CreatePDFfromJobForceTemplateStockIn(String templateType,List<PrintingKey> PrintingKeys,Int32? templateID,List<KeyValuePair<String,String>> parameters,String printerName,String printZoneCode = "",Int32 pageStartNumber = 0,Guid? operationId = null)
+        public CreatePDFResult CreatePDFfromJobForceTemplateStockIn(String templateType,List<PrintingKey> PrintingKeys,Int32? templateID,List<KeyValuePair<String,String>> parameters,String printerName,String printZoneCode = "",Int32 pageStartNumber = 0,Guid? operationId = null,ClientContext context = null)
 		{
-			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplateStockIn", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&PrintingKeys=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(PrintingKeys)) + "&templateID=" + templateID + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "&printZoneCode=" + System.Net.WebUtility.UrlEncode(printZoneCode) + "&pageStartNumber=" + pageStartNumber + "&operationId=" + operationId + "");
+			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplateStockIn", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&PrintingKeys=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(PrintingKeys)) + "&templateID=" + templateID + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "&printZoneCode=" + System.Net.WebUtility.UrlEncode(printZoneCode) + "&pageStartNumber=" + pageStartNumber + "&operationId=" + operationId + "&context=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(context)) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
 		}
 

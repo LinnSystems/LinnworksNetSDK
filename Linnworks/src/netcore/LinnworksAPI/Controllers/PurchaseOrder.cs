@@ -211,10 +211,10 @@ namespace LinnworksAPI
         /// Get the URL of the CSV file for the specific purchase order 
         /// </summary>
         /// <param name="request"></param>
-        public Task<Get_EmailCSVFileResponse> Get_EmailCSVFile(Get_EmailCSVFileRequest request)
+        public Get_EmailCSVFileResponse Get_EmailCSVFile(Get_EmailCSVFileRequest request)
 		{
 			var response = GetResponse("PurchaseOrder/Get_EmailCSVFile", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
-            return JsonFormatter.ConvertFromJson<Task<Get_EmailCSVFileResponse>>(response);
+            return JsonFormatter.ConvertFromJson<Get_EmailCSVFileResponse>(response);
 		}
 
 		/// <summary>
@@ -361,6 +361,18 @@ namespace LinnworksAPI
         public Search_PurchaseOrdersResult Search_PurchaseOrders(Search_PurchaseOrderParameter searchParameter)
 		{
 			var response = GetResponse("PurchaseOrder/Search_PurchaseOrders", "searchParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(searchParameter)) + "");
+            return JsonFormatter.ConvertFromJson<Search_PurchaseOrdersResult>(response);
+		}
+
+		/// <summary>
+        /// Searches purchase order by a number of parameters, such as Date of Purchase, status, reference number.
+        /// Returns paged result of purchase order header. 
+        /// </summary>
+        /// <param name="request">Search Parameters</param>
+        /// <returns>Response class which contains Result - the list of purchase order headers and paging information</returns>
+        public Search_PurchaseOrdersResult Search_PurchaseOrders2(Search_PurchaseOrder2Request request)
+		{
+			var response = GetResponse("PurchaseOrder/Search_PurchaseOrders2", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<Search_PurchaseOrdersResult>(response);
 		}
 

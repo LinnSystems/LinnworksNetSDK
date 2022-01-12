@@ -131,7 +131,7 @@ namespace LinnworksAPI
 		Dictionary<String,Object> UpdateInventoryItemField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue);
 		Dictionary<Guid,Dictionary<String,Object>> UpdateInventoryItemLevels(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,Guid locationId,String changeSource = null);
 		Dictionary<String,Object> UpdateInventoryItemLocationField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,Guid locationId,String changeSource = null);
-		Task UpdateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices);
+		void UpdateInventoryItemPrices(List<StockItemPrice> inventoryItemPrices);
 		void UpdateInventoryItemPricingRules(List<StockItemPricingRule> rules);
 		Dictionary<String,Object> UpdateInventoryItemStockField(Guid inventoryItemId,ColumnNameType fieldName,String fieldValue,Guid locationId,String changeSource = null);
 		void UpdateInventoryItemTitles(List<StockItemTitle> inventoryItemTitles);

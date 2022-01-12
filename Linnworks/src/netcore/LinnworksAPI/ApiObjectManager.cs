@@ -15,6 +15,7 @@ namespace LinnworksAPI
         private LocationsController locations;
         private MacroController macro;
         private OpenOrdersController openorders;
+        private OrderPrintStatusController orderprintstatus;
         private OrdersController orders;
         private OrderWorkflowController orderworkflow;
         private PickingController picking;
@@ -26,6 +27,8 @@ namespace LinnworksAPI
         private ReturnsRefundsController returnsrefunds;
         private RulesEngineController rulesengine;
         private SettingsController settings;
+        private ShippingServiceController shippingservice;
+        private ShipStationController shipstation;
         private StockController stock;
         private WarehouseTransferController warehousetransfer;
         private WmsController wms;
@@ -34,6 +37,11 @@ namespace LinnworksAPI
         public ApiObjectManager(ApiContext apiContext)
         {                       
             this.apiContext = apiContext;
+        }
+        
+        public Guid GetSessionId()
+        {
+            return apiContext.SessionId;
         }
         public AuthController Auth
         {
@@ -112,6 +120,14 @@ namespace LinnworksAPI
             get
             {
                 return openorders ?? (openorders = new OpenOrdersController(apiContext));
+            }
+        }
+
+        public OrderPrintStatusController OrderPrintStatus
+        {
+            get
+            {
+                return orderprintstatus ?? (orderprintstatus = new OrderPrintStatusController(apiContext));
             }
         }
 
@@ -200,6 +216,22 @@ namespace LinnworksAPI
             get
             {
                 return settings ?? (settings = new SettingsController(apiContext));
+            }
+        }
+
+        public ShippingServiceController ShippingService
+        {
+            get
+            {
+                return shippingservice ?? (shippingservice = new ShippingServiceController(apiContext));
+            }
+        }
+
+        public ShipStationController ShipStation
+        {
+            get
+            {
+                return shipstation ?? (shipstation = new ShipStationController(apiContext));
             }
         }
 

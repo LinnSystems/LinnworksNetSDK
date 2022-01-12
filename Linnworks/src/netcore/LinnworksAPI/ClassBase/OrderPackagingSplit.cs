@@ -37,6 +37,21 @@ namespace LinnworksAPI
 		public Decimal TotalWeight { get; set; }
 
         /// <summary>
+        /// Width 
+        /// </summary>
+		public Decimal Width { get; set; }
+
+        /// <summary>
+        /// Height 
+        /// </summary>
+		public Decimal Height { get; set; }
+
+        /// <summary>
+        /// Depth 
+        /// </summary>
+		public Decimal Depth { get; set; }
+
+        /// <summary>
         /// Tracking number 
         /// </summary>
 		public String TrackingNumbers { get; set; }

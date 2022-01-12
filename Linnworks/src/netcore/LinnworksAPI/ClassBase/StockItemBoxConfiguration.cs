@@ -55,5 +55,10 @@ namespace LinnworksAPI
         /// Packaging type id 
         /// </summary>
 		public Guid PackagingTypeId { get; set; }
+
+        /// <summary>
+        /// IsDeleted flag. 
+        /// </summary>
+		public Boolean LogicalDelete { get; set; }
 	} 
 }

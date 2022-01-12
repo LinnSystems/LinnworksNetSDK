@@ -17,6 +17,11 @@ namespace LinnworksAPI
 		public Double PostageCost { get; set; }
 
         /// <summary>
+        /// Order postage cost ex. tax 
+        /// </summary>
+		public Double PostageCostExTax { get; set; }
+
+        /// <summary>
         /// Tax 
         /// </summary>
 		public Double Tax { get; set; }

@@ -42,6 +42,10 @@ namespace LinnworksAPI
 
 		public Double DimDepth { get; set; }
 
+		public Double Weight { get; set; }
+
+		public Guid PackageGroupId { get; set; }
+
 		public Guid StockItemId { get; set; }
 
 		public Int32 StockItemIntId { get; set; }

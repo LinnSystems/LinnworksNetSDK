@@ -20,6 +20,8 @@ namespace LinnworksAPI
 
 		public String DatabasePassword { get; set; }
 
+		public String AppName { get; set; }
+
 		public Guid sid_registration { get; set; }
 
 		public String UserName { get; set; }

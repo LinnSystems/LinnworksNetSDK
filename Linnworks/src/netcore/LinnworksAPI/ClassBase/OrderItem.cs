@@ -243,10 +243,6 @@ namespace LinnworksAPI
 
 		public Boolean IsWarehouseManaged { get; set; }
 
-		public Boolean HasPurchaseOrders { get; set; }
-
-		public Boolean CanPurchaseOrderFulfil { get; set; }
-
 		public Boolean IsUnlinked { get; set; }
 
 		public Int32 StockItemIntId { get; set; }

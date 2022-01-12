@@ -17,12 +17,14 @@ namespace LinnworksAPI
 		VariationParentStatus CheckVariationParentSKUExists(String parentSKU);
 		List<StockItemBatch> CreateStockBatches(List<StockItemBatch> batches);
 		VariationGroup CreateVariationGroup(VariationGroupTemplate template);
+		GetWarehouseMoveResponse CreateWarehouseMove(CreateWarehouseMoveRequest request);
 		void DeleteVariationGroup(Guid pkVariationGroupId);
 		void DeleteVariationGroups(DeleteVariationGroupsRequest request);
 		void DeleteVariationItem(Guid pkVariationItemId,Guid pkStockItemId);
 		void DeleteVariationItems(DeleteVariationItemsRequest request);
+		BinracksResponse GetBinRacksById(GetBinrackByIdRequest request);
 		GenericPagedResult<StockItemChangeHistory> GetItemChangesHistory(Guid stockItemId,Guid locationId,Int32 entriesPerPage,Int32 pageNumber);
-		Task<TempFile> GetItemChangesHistoryCSV(Guid stockItemId,Guid locationId);
+		TempFile GetItemChangesHistoryCSV(Guid stockItemId,Guid locationId);
 		List<StockItemSoldStat> GetSoldStat(Guid stockItemId);
 		List<StockConsumption> GetStockConsumption(Guid stockItemId,Guid? locationId,DateTime startDate,DateTime endDate);
 		List<StockItemDuePO> GetStockDuePO(Guid stockItemId);

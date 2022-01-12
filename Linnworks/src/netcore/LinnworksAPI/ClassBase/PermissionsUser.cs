@@ -15,5 +15,7 @@ namespace LinnworksAPI
 		public String EmailAddress { get; set; }
 
 		public String UserType { get; set; }
+
+		public Boolean TotpAuthenticationEnabled { get; set; }
 	} 
 }

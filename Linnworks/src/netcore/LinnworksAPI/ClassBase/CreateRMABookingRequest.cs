@@ -30,5 +30,10 @@ namespace LinnworksAPI
         /// A collection of items to be resent as part of this booking 
         /// </summary>
 		public List<ResendItem> ResendItems { get; set; }
+
+        /// <summary>
+        /// (Optional) If provided, sets the External Reference of the RMA header to the provided value. Otherwise, this value is automatically generated 
+        /// </summary>
+		public String Reference { get; set; }
 	} 
 }

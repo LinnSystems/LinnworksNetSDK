@@ -15,7 +15,7 @@ namespace LinnworksAPI
 		ActionRefundResponse ActionRefund(ActionRefundRequest request);
 		ActionRMABookingResponse ActionRMABooking(ActionRMABookingRequest request);
 		CreateRefundResponse CreateRefund(CreateRefundRequest request);
-		Task<String> CreateReturnsRefundsCSV(DateTime? from,DateTime? to,ReturnsRefundsSearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection,HistoryType historyType = HistoryType.RETURNS);
+		String CreateReturnsRefundsCSV(DateTime? from,DateTime? to,ReturnsRefundsSearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,String sortColumn,Boolean sortDirection,HistoryType historyType = HistoryType.RETURNS);
 		CreateRMABookingResponse CreateRMABooking(CreateRMABookingRequest request);
 		void DeleteBookedItem(Guid pkOrderId,Int32 pkReturnId);
 		void DeleteBookedOrder(Guid pkOrderId);
