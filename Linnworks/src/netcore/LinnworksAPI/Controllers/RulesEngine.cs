@@ -307,6 +307,18 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<TestpadValue>>(response);
 		}
 
+        /// <summary>
+        /// Use this call to get test values from an existing object based on the fields used by a given rule. 
+        /// </summary>
+        /// <param name="pkRuleId">The rule id</param>
+        /// <param name="ids">Array of ids (rule-type specific, for orders it is the Linnworks Order Id).</param>
+        /// <returns>A dictionary list, with the key of existing object id and value list of test values based on the object id.</returns>
+        public Dictionary<Object,List<TestpadValue>> GetValuesFromExistingBatch(Int32 pkRuleId,Object[] ids)
+		{
+			var response = GetResponse("RulesEngine/GetValuesFromExistingBatch", "pkRuleId=" + pkRuleId + "&ids=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(ids)) + "");
+            return JsonFormatter.ConvertFromJson<Dictionary<Object,List<TestpadValue>>>(response);
+		}
+
 		/// <summary>
         /// Use this call to update a conditon and its condition items. 
         /// </summary>

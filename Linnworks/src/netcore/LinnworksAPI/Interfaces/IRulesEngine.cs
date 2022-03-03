@@ -34,6 +34,7 @@ namespace LinnworksAPI
 		List<RuleHeaderBasic> GetRules();
 		List<RuleHeaderBasic> GetRulesByType(RuleSetType type);
 		List<TestpadValue> GetValuesFromExisting(Int32 pkRuleId,Object id);
+		Dictionary<Object,List<TestpadValue>> GetValuesFromExistingBatch(Int32 pkRuleId,Object[] ids);
 		void SaveConditionChanges(ConditionHeaderBasic conditionHeader);
 		void SetConditionEnabled(Int32 pkConditionId,Boolean enabled);
 		Int32? SetDraftLive(Int32 pkRuleId);
