@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleChannel", "SampleChannel\SampleChannel.csproj", "{C9B72B9A-E6A5-4058-8D67-043EC5543C6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleChannelTests", "SampleChannelTests\SampleChannelTests.csproj", "{6669D830-542E-4A35-A4D0-66D129784B0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9B72B9A-E6A5-4058-8D67-043EC5543C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B72B9A-E6A5-4058-8D67-043EC5543C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B72B9A-E6A5-4058-8D67-043EC5543C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B72B9A-E6A5-4058-8D67-043EC5543C6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6669D830-542E-4A35-A4D0-66D129784B0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6669D830-542E-4A35-A4D0-66D129784B0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6669D830-542E-4A35-A4D0-66D129784B0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6669D830-542E-4A35-A4D0-66D129784B0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5A75F83-068F-41BB-83A5-5336156D1DD1}
+	EndGlobalSection
+EndGlobal
