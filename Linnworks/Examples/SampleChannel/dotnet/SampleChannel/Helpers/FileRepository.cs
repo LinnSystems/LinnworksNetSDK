@@ -8,11 +8,11 @@ namespace SampleChannel.Helpers
 {
     public class FileRepository : IRepository
     {
-        private string userStoreLocation;
+        private string _userStoreLocation;
 
         public FileRepository(string userStoreLocation)
         {
-            this.userStoreLocation = userStoreLocation;
+            this._userStoreLocation = userStoreLocation;
         }
 
         public void Delete(string authorizationToken)
@@ -37,7 +37,7 @@ namespace SampleChannel.Helpers
 
         private string Path(string authorizationToken)
         {
-            return string.Concat(this.userStoreLocation, "//", authorizationToken, ".json");
+            return string.Concat(this._userStoreLocation, "//", authorizationToken, ".json");
         }
     }
 }
