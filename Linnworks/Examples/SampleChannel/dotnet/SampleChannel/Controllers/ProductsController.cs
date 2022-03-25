@@ -9,7 +9,7 @@ namespace SampleChannel.Controllers
     [Route("api/[controller]/[action]")]
     public class ProductsController : ControllerBase
     {
-        private IUserConfigAdapter _userConfigAdapter;
+        private readonly IUserConfigAdapter _userConfigAdapter;
 
         public ProductsController(IUserConfigAdapter userConfigAdapter)
         {
@@ -31,7 +31,7 @@ namespace SampleChannel.Controllers
             {
                 var user = this._userConfigAdapter.Load(request.AuthorizationToken);
 
-                Random rand = new Random(DateTime.UtcNow.Millisecond);
+                Random rand = new(DateTime.UtcNow.Millisecond);
 
                 var products = new List<Models.Products.Product>();
 

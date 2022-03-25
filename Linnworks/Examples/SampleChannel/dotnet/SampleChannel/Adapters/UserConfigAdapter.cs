@@ -9,8 +9,8 @@ namespace SampleChannel.Adapters
 {
     public class UserConfigAdapter : IUserConfigAdapter
     {
-        private IRepository _fileRepository;
-        private IConfigStages _configStages;
+        private readonly IRepository _fileRepository;
+        private readonly IConfigStages _configStages;
 
         public UserConfigAdapter(IOptions<AppSettings> config, IConfigStages configStages)
         {
@@ -52,11 +52,13 @@ namespace SampleChannel.Adapters
         /// <inheritdoc />
         public UserConfig CreateNew(string email, Guid linnworksUniqueIdentifier, string accountName)
         {
-            var userConfig = new UserConfig();
-            userConfig.AuthorizationToken = Guid.NewGuid().ToString("N");
-            userConfig.Email = email;
-            userConfig.LinnworksUniqueIdentifier = linnworksUniqueIdentifier;
-            userConfig.AccountName = accountName;
+            var userConfig = new UserConfig
+            {
+                AuthorizationToken = Guid.NewGuid().ToString("N"),
+                Email = email,
+                LinnworksUniqueIdentifier = linnworksUniqueIdentifier,
+                AccountName = accountName
+            };
             this.Save(userConfig);
             return userConfig;
         }

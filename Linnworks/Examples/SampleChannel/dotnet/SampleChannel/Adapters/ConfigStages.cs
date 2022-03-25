@@ -10,17 +10,17 @@ namespace SampleChannel.Adapters
             switch (Enum.Parse(typeof(ConfigStagesEnum), userConfig.StepName))
             {
                 case ConfigStagesEnum.AddCredentials:
-                    return this.GetAPICredentials(userConfig);
+                    return GetAPICredentials(userConfig);
                 case ConfigStagesEnum.OrderSetup:
-                    return this.GetOrderStep(userConfig);
+                    return GetOrderStep(userConfig);
                 case ConfigStagesEnum.UserConfig:
-                    return this.GetConfigStep(userConfig);
+                    return GetConfigStep(userConfig);
             }
 
             return new UserConfigResponse { Error = errorMessage };
         }
 
-        private UserConfigResponse GetAPICredentials(UserConfig userConfig)
+        private static UserConfigResponse GetAPICredentials(UserConfig userConfig)
         {
             return new UserConfigResponse
             {
@@ -70,7 +70,7 @@ namespace SampleChannel.Adapters
             };
         }
 
-        private UserConfigResponse GetOrderStep(UserConfig userConfig)
+        private static UserConfigResponse GetOrderStep(UserConfig userConfig)
         {
             return new UserConfigResponse
             {
@@ -108,7 +108,7 @@ namespace SampleChannel.Adapters
             };
         }
 
-        private UserConfigResponse GetConfigStep(UserConfig userConfig)
+        private static UserConfigResponse GetConfigStep(UserConfig userConfig)
         {
             // We don't return API Credentials, if they're wrong or invalid we go back to starting stage.
             return new UserConfigResponse

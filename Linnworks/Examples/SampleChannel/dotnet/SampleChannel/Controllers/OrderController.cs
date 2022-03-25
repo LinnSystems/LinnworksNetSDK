@@ -10,7 +10,7 @@ namespace SampleChannel.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        private IUserConfigAdapter _userConfigAdapter;
+        private readonly IUserConfigAdapter _userConfigAdapter;
 
         public OrderController(IUserConfigAdapter userConfigAdapter)
         {
@@ -34,7 +34,7 @@ namespace SampleChannel.Controllers
             {
                 var user = this._userConfigAdapter.Load(request.AuthorizationToken);
 
-                Random rand = new Random(DateTime.UtcNow.Millisecond);
+                Random rand = new(DateTime.UtcNow.Millisecond);
 
                 var orders = new List<Models.Order.Order>();
 

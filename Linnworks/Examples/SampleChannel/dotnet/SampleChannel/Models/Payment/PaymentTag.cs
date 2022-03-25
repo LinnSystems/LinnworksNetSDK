@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace SampleChannel.Models.Payment
+﻿namespace SampleChannel.Models.Payment
 {
     public class PaymentTag
     {

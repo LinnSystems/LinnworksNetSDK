@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace SampleChannel.Helpers
 {
     public class FileRepository : IRepository
     {
-        private string _userStoreLocation;
+        private readonly string _userStoreLocation;
 
         public FileRepository(string userStoreLocation)
         {

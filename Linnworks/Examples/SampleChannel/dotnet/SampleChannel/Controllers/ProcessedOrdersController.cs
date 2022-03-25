@@ -6,7 +6,7 @@ namespace SampleChannel.Controllers
 {
     public class ProcessedOrdersController : ControllerBase
     {
-        private IUserConfigAdapter _userConfigAdapter;
+        private readonly IUserConfigAdapter _userConfigAdapter;
 
         public ProcessedOrdersController(IUserConfigAdapter userConfigAdapter)
         {

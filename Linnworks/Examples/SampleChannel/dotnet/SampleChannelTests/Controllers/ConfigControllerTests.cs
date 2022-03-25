@@ -1,15 +1,15 @@
 ﻿using Microsoft.Extensions.Options;
 using Moq;
-using System;
-using System.Linq;
+using SampleChannel.Adapters;
 using SampleChannel.Config;
 using SampleChannel.Controllers;
 using SampleChannel.Helpers;
 using SampleChannel.Models;
 using SampleChannel.Models.User;
 using SampleChannelTests.Common;
+using System;
+using System.Linq;
 using Xunit;
-using SampleChannel.Adapters;
 
 namespace SampleChannelTests.Controllers
 {
@@ -336,11 +336,11 @@ namespace SampleChannelTests.Controllers
             Assert.Null(response.Error);
             Assert.Equal("OrderSetup", response.StepName);
             Assert.Equal("Example account name", response.AccountName);
-            Assert.Equal(2, response.ConfigItems.Count());
+            Assert.Equal(2, response.ConfigItems.Length);
         }
 
 
-        private ConfigController GetConfigControllerInstance()
+        private static ConfigController GetConfigControllerInstance()
         {
             var repository = new Mock<IRepository>();
             repository.Setup(x => x.Exists(CommonTestData.ValidAuthorizationToken)).Returns(true);

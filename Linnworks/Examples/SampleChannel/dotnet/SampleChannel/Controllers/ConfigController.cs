@@ -8,8 +8,8 @@ namespace SampleChannel.Controllers
     [ApiController]
     public class ConfigController : ControllerBase
     {
-        private IUserConfigAdapter _userConfigAdapter;
-        private IConfigStages _configStages;
+        private readonly IUserConfigAdapter _userConfigAdapter;
+        private readonly IConfigStages _configStages;
 
         public ConfigController(IUserConfigAdapter userConfigAdapter, IConfigStages configStages)
         {

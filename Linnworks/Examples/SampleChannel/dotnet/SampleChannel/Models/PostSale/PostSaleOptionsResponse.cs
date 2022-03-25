@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SampleChannel.Models.PostSale
+﻿namespace SampleChannel.Models.PostSale
 {
     public class PostSaleOptionsResponse : BaseResponse
     {
@@ -21,7 +16,7 @@ namespace SampleChannel.Models.PostSale
         /// Determines whether the channel allows cancelling only part of an order
         /// line (not the full quantity)
         /// </summary>
-        public bool CanCancelOrderLinesPartialy { get; set; }
+        public bool CanCancelOrderLinesPartially { get; set; }
 
         /// <summary>
         /// Determines whether the channel will automatically refund an order when

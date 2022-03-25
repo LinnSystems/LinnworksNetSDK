@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace SampleChannel.Models.User
+﻿namespace SampleChannel.Models.User
 {
     public class UserConfigResponse : BaseResponse
     {

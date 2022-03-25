@@ -1,16 +1,16 @@
-﻿using Moq;
-using System;
+﻿using Microsoft.Extensions.Options;
+using Moq;
+using SampleChannel.Adapters;
+using SampleChannel.Config;
 using SampleChannel.Helpers;
 using SampleChannel.Models.User;
 using SampleChannelTests.Common;
+using System;
 using Xunit;
-using SampleChannel.Adapters;
-using Microsoft.Extensions.Options;
-using SampleChannel.Config;
 
-namespace SampleChannelTests.Models
+namespace SampleChannelTests.Adapters
 {
-    public class UserConfigTests
+    public class UserConfigAdapterTests
     {
         [Fact]
         public void LoadNoAuthTokenTest()

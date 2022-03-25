@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
 
 namespace SampleChannel.Models.User
 {
@@ -84,22 +80,19 @@ namespace SampleChannel.Models.User
 
         public static implicit operator double(ConfigItem item)
         {
-            double value = 0;
-            double.TryParse(item.SelectedValue, out value);
+            _ = double.TryParse(item.SelectedValue, out double value);
             return value;
         }
 
         public static implicit operator int(ConfigItem item)
         {
-            int value = 0;
-            int.TryParse(item.SelectedValue, out value);
+            _ = int.TryParse(item.SelectedValue, out int value);
             return value;
         }
 
         public static implicit operator bool(ConfigItem item)
         {
-            bool value = false;
-            bool.TryParse(item.SelectedValue, out value);
+            _ = bool.TryParse(item.SelectedValue, out bool value);
             return value;
         }
 
