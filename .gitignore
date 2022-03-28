@@ -55,3 +55,9 @@ obj/
 # Nuget packages
 **/packages/*
 *.pdb
+
+# Rider
+.idea/
+
+# User-specific files
+*.user
