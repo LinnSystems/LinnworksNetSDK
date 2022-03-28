@@ -8,12 +8,12 @@
         public string SKU { get; set; }
 
         /// <summary>
-        /// Product Reference, e.g. Internal product id.
+        /// New available quantity.
         /// </summary>
         public int Quantity { get; set; }
 
         /// <summary>
-        /// New available quantity.
+        /// Product Reference, e.g. Internal product id.
         /// </summary>
         public string Reference { get; set; }
     }

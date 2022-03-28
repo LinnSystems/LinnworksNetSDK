@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "TemplateProxyExample2": {
+    "SampleChannel": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

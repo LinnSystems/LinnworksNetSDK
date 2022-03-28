@@ -7,7 +7,7 @@ using Microsoft.OpenApi.Models;
 using SampleChannel.Adapters;
 using SampleChannel.Config;
 
-namespace TemplateProxyExample2
+namespace SampleChannel
 {
     public class Startup
     {
@@ -25,7 +25,7 @@ namespace TemplateProxyExample2
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TemplateProxyExample2", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SampleChannel", Version = "v1" });
             });
 
             services.AddSingleton<IConfigStages, ConfigStages>();
@@ -39,7 +39,7 @@ namespace TemplateProxyExample2
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TemplateProxyExample2 v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SampleChannel v1"));
             }
 
             app.UseHttpsRedirection();

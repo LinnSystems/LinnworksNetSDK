@@ -20,7 +20,7 @@ namespace SampleChannel.Models.Order
         public string NoteUserName { get; set; }
 
         /// <summary>
-        /// User who entered the note, if left blank "Channel" will be entered.
+        /// Indicates whether the note is internal. Internal notes do not appear on invoices
         /// </summary>
         public bool IsInternal { get; set; }
     }
