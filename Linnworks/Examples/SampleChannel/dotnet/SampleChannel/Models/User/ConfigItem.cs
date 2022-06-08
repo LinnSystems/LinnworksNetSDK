@@ -126,11 +126,19 @@ namespace SampleChannel.Models.User
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ConfigValueType
     {
-        STRING,
-        INT,
-        DOUBLE,
-        BOOLEAN,
-        PASSWORD,
-        LIST
+        STRING = 0,
+        INT = 1,
+        DOUBLE = 2,
+        BOOLEAN = 3,
+        PASSWORD = 4,
+        LIST = 5,
+        /// <summary>
+        /// Adds a clickable hyperlink that will open in a new tab. The "Name" field should be populated with the URL, and the description should contain the link text
+        /// </summary>
+        URL = 6,
+        /// <summary>
+        /// Adds a clickable button that will send a POST request to the specified URL (defined in the SelectedValue property)
+        /// </summary>
+        BUTTON = 7
     }
 }
