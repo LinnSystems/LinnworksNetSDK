@@ -64,6 +64,38 @@
 				 {
 					"name" :"PriceUpdateEndpoint",
 					"value" :"http://www.mychannelapi.com/api/Product/PriceUpdate"
+				 },         
+         {
+					"name" :"GetConfiguratorSettingsEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Listing/GetConfiguratorSettings"
+				 },
+         {
+					"name" :"GetCategoriesEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Listing/GetCategories"
+				 },
+         {
+					"name" :"GetAttributesByCategoryEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Listing/GetAttributesByCategory"
+				 },
+         {
+					"name" :"GetVariationsByCategoryEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Listing/GetVariationsByCategory"
+				 },
+         {
+					"name" :"ListingUpdateEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Listing/ListingUpdate"
+				 },
+         {
+					"name" :"ListingDeleteEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Listing/ListingDelete"
+				 },  
+         {
+					"name" :"CheckFeedEndpoint",
+					"value" :"http://www.mychannelapi.com/api/Listing/CheckFeed"
+				 },
+         {
+					"name" :"IsListingSupported",
+					"value" :"False"
 				 },
 				 {
 					"name" :"InventoryUpdateBatchSize",
@@ -76,6 +108,22 @@
 				 {
 					"name": "PriceUpdateBatchSize",
 					"value": "1000"
+				 },
+				 {
+					"name": "ListingUpdateBatchSize",
+					"value": "50"
+				 },
+				 {
+					"name": "AllowRefundOnCancel",
+					"value": "True"
+				 },
+				 {
+					"name": "OAuthAuthorizationEndpoint",
+					"value": "http://www.mychannelapi.com/api/oauth/authorize"
+				 },
+				 {
+					"name": "OAuthScopesRequested",
+					"value": "read write"
 				 }
 			]
 		}
