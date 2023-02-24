@@ -1,4 +1,6 @@
-﻿namespace SampleChannel.Models.PostSale
+﻿using System.Collections.Generic;
+
+namespace SampleChannel.Models.PostSale
 {
     public class PostSaleOptionsResponse : BaseResponse
     {
@@ -56,5 +58,11 @@
         /// Determines whether the channel allows creating returns
         /// </summary>
         public bool CanReturn { get; set; }
+
+        /// <summary>
+        /// Provides a list of reasons for post sale actions
+        /// </summary>
+        public List<PostSaleReasons> PostSaleReasons { get; set; }
+
     }
 }
