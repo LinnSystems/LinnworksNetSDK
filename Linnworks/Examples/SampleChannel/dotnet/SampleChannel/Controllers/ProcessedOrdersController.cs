@@ -38,9 +38,7 @@ namespace SampleChannel.Controllers
                     CanAttachRefundToItem = true,
                     PostSaleReasons = new System.Collections.Generic.List<PostSaleReasons>()
                     { { new PostSaleReasons(){ DisplayName = "Unknown Reason", Types = new System.Collections.Generic.List<ChannelReasonType>()
-                    { ChannelReasonType.ItemRefund, ChannelReasonType.ServiceRefund, ChannelReasonType.Cancellation, ChannelReasonType.ItemReturn, ChannelReasonType.ShippingRefund } , Tag = "UnknownReason" } },
-                    { new PostSaleReasons(){ DisplayName = "Item Return Reason", Types = new System.Collections.Generic.List<ChannelReasonType>()
-                    {  ChannelReasonType.ItemReturn } , Tag = "ItemReturnReason" } },
+                    { ChannelReasonType.ItemRefund, ChannelReasonType.ServiceRefund, ChannelReasonType.Cancellation, ChannelReasonType.ShippingRefund }, Tag = "UnknownReason" } },
                     { new PostSaleReasons(){ DisplayName = "Incorrect shipping", Types = new System.Collections.Generic.List<ChannelReasonType>()
                     { ChannelReasonType.ShippingRefund }, Tag = "IncorrectShipping" } }},
                     CanCancel = true,
