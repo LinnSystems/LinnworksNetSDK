@@ -52,7 +52,6 @@ namespace SampleChannel.Models.PostSale
         ItemRefund,
         ShippingRefund,
         ServiceRefund,
-        ItemReturn,
         AdditionalRefund
     }
 }
