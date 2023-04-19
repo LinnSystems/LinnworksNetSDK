@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ConfigPostalServiceMappingItem
+    public class ConfigPostalServiceMappingItem : LinnObject
 	{
 		public Int32 fkChannelId { get; set; }
 

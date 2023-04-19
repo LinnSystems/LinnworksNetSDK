@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddScrapCategoriesRequest
+    public class AddScrapCategoriesRequest : LinnObject
 	{
 		public List<String> CategoryNames { get; set; }
 	} 

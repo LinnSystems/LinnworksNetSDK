@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PurchaseOrderItemOpenOrder
+    public class PurchaseOrderItemOpenOrder : LinnObject
 	{
         /// <summary>
         /// Bound id 

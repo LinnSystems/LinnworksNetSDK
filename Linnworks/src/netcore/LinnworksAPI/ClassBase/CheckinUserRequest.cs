@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CheckinUserRequest
+    public class CheckinUserRequest : LinnObject
 	{
 	} 
 }

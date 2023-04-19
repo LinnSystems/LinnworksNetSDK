@@ -36,6 +36,7 @@ namespace LinnworksAPI
 		DeleteVariationItems,
 		DeleteItemMapping,
 		DeleteComposition,
+		DeleteSuppliersFromItems,
 		StockLevelBatch,
 		ebayListingStrikeOff,
 		ebayListingRelistPendingDelete,
@@ -48,5 +49,6 @@ namespace LinnworksAPI
 		eBayCompatibilityKtypesCulture,
 		eBayCompatibilityePIDCulture,
 		MultipleListingTitlesAndPrices,
+		StockSupplierDetail,
 	}
 }

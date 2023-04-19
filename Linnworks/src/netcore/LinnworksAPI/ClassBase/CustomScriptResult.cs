@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CustomScriptResult
+    public class CustomScriptResult : LinnObject
 	{
 		public Boolean IsError { get; set; }
 

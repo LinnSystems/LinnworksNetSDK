@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Represents Warehouse TOT 
     /// </summary>
-    public class WarehouseTOTE
+    public class WarehouseTOTE : LinnObject
 	{
         /// <summary>
         /// Tote Id 

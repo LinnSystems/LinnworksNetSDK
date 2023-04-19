@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request class for SetOrderPackaging method in Orders controller 
     /// </summary>
-    public class SetOrderPackagingRequest
+    public class SetOrderPackagingRequest : LinnObject
 	{
         /// <summary>
         /// Packaging group Id 

@@ -4,8 +4,10 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AssignOrderItemBatches
+    public class AssignOrderItemBatches : LinnObject
 	{
 		public List<OrderItemBatch> Batches { get; set; }
+
+		public Guid OrderId { get; set; }
 	} 
 }

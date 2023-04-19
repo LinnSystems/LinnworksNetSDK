@@ -2,7 +2,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PointF
+    public class PointF : LinnObject
 	{
 		public Boolean IsEmpty { get; set; }
 

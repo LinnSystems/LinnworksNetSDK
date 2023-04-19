@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemReturn
+    public class StockItemReturn : LinnObject
 	{
         /// <summary>
         /// What year it was returned 

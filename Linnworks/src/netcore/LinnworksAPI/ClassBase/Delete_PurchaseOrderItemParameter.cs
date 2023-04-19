@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Delete purchase order item parameter. Purchase order items can only be deleted from PENDING Purchase Orders. Once PO is open, no modifications can be done 
     /// </summary>
-    public class Delete_PurchaseOrderItemParameter
+    public class Delete_PurchaseOrderItemParameter : LinnObject
 	{
         /// <summary>
         /// Purchase order item unique row identifier 

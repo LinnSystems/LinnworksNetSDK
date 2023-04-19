@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Update purchase order item parameter 
     /// </summary>
-    public class Update_PurchaseOrderItemParameter
+    public class Update_PurchaseOrderItemParameter : LinnObject
 	{
         /// <summary>
         /// Purchase order item unique row identifier 

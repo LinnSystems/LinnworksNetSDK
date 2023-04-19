@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request class for UpdateGroup 
     /// </summary>
-    public class UpdateGroupRequest
+    public class UpdateGroupRequest : LinnObject
 	{
         /// <summary>
         /// Group id to update 

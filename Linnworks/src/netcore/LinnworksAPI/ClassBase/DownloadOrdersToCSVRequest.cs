@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DownloadOrdersToCSVRequest
+    public class DownloadOrdersToCSVRequest : LinnObject
 	{
         /// <summary>
         /// Search Term 

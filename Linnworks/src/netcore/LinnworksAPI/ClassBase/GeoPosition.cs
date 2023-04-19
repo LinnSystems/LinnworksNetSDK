@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Describes GeoPosition 
     /// </summary>
-    public class GeoPosition
+    public class GeoPosition : LinnObject
 	{
         /// <summary>
         /// X position 

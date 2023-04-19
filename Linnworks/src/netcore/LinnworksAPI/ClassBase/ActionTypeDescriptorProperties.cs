@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionTypeDescriptorProperties
+    public class ActionTypeDescriptorProperties : LinnObject
 	{
 		public String DisplayName { get; set; }
 

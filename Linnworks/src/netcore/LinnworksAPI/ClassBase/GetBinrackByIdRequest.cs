@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetBinrackByIdRequest
+    public class GetBinrackByIdRequest : LinnObject
 	{
 		public IEnumerable<Int32> BinrackIds { get; set; }
 	} 

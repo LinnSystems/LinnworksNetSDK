@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ConfigItem<String>
+    public class ConfigItem<String> : LinnObject
 	{
 		public Boolean Loaded { get; set; }
 

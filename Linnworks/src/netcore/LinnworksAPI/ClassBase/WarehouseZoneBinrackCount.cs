@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class WarehouseZoneBinrackCount
+    public class WarehouseZoneBinrackCount : LinnObject
 	{
 		public Int32 ZoneId { get; set; }
 

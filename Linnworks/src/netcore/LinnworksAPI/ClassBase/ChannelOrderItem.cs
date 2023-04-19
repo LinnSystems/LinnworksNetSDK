@@ -7,19 +7,24 @@ namespace LinnworksAPI
     /// <summary>
     /// Channel order item 
     /// </summary>
-    public class ChannelOrderItem
+    public class ChannelOrderItem : LinnObject
 	{
 		public Boolean TaxCostInclusive { get; set; }
 
         /// <summary>
-        /// Validate if the tax should be overwritten on the orderitem. 
+        /// Validate if the tax should be overwritten on the order item. 
         /// </summary>
 		public Boolean UseChannelTax { get; set; }
 
         /// <summary>
-        /// Indivdual price of the item 
+        /// Individual price of the item 
         /// </summary>
 		public Double PricePerUnit { get; set; }
+
+        /// <summary>
+        /// Postal service cost after discount 
+        /// </summary>
+		public Double PostalServiceCost { get; set; }
 
         /// <summary>
         /// Quantity customer ordered 
@@ -35,6 +40,26 @@ namespace LinnworksAPI
         /// Discount percentage on the line as a whole number eg. 10 
         /// </summary>
 		public Double LineDiscount { get; set; }
+
+        /// <summary>
+        /// The refund amount applied on the line, excluding shipping charges 
+        /// </summary>
+		public Decimal LineRefund { get; set; }
+
+        /// <summary>
+        /// The quantity of items refunded (can be decimalised) 
+        /// </summary>
+		public Decimal RefundQuantity { get; set; }
+
+        /// <summary>
+        /// The shipping refund for this line (if known) 
+        /// </summary>
+		public Decimal ShippingRefund { get; set; }
+
+        /// <summary>
+        /// The total refund amount applied on the line-level, including any shipping charges 
+        /// </summary>
+		public Decimal TotalRefund { get; set; }
 
         /// <summary>
         /// Unique line number 

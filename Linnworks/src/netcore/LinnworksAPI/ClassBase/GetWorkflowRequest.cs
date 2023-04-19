@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request object for GetWorkflow method 
     /// </summary>
-    public class GetWorkflowRequest
+    public class GetWorkflowRequest : LinnObject
 	{
         /// <summary>
         /// Location id for which the workflow will be retrieved 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class WarehouseLocation
+    public class WarehouseLocation : LinnObject
 	{
         /// <summary>
         /// Location name 

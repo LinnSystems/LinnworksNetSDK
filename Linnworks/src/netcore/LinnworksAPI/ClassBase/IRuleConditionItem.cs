@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class IRuleConditionItem
+    public class IRuleConditionItem : LinnObject
 	{
 	} 
 }

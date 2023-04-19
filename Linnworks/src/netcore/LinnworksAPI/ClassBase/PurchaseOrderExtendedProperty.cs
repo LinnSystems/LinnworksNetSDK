@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Purchase Order extended property item 
     /// </summary>
-    public class PurchaseOrderExtendedProperty
+    public class PurchaseOrderExtendedProperty : LinnObject
 	{
         /// <summary>
         /// Extended Property item id 

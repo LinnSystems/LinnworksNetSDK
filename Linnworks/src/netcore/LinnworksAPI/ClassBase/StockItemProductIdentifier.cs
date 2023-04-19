@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemProductIdentifier
+    public class StockItemProductIdentifier : LinnObject
 	{
 		public Int64 PkId { get; set; }
 

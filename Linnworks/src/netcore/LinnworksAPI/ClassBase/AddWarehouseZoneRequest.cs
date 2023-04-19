@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddWarehouseZoneRequest
+    public class AddWarehouseZoneRequest : LinnObject
 	{
         /// <summary>
         /// Zone type Id 

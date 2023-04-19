@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateSkuGroupIdentifierResponse
+    public class UpdateSkuGroupIdentifierResponse : LinnObject
 	{
 	} 
 }

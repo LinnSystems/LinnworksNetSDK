@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class FileUploadItem
+    public class FileUploadItem : LinnObject
 	{
 		public String EncodedFile { get; set; }
 

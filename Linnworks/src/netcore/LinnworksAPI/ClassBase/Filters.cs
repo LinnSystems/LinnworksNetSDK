@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Filters
+    public class Filters : LinnObject
 	{
 		public List<NumericFilter> NumericFilters { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderIdentifier
+    public class OrderIdentifier : LinnObject
 	{
 		public SqlMetaData[] Metadata { get; set; }
 

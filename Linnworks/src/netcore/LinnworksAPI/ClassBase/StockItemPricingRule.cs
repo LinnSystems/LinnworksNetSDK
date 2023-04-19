@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemPricingRule
+    public class StockItemPricingRule : LinnObject
 	{
         /// <summary>
         /// Record row ID (optional) 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CurrencyConversionRate
+    public class CurrencyConversionRate : LinnObject
 	{
         /// <summary>
         /// Currency code (e.g. GBP) 

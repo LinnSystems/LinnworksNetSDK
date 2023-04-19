@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RefundOptions
+    public class RefundOptions : LinnObject
 	{
 		public Boolean CanRefund { get; set; }
 

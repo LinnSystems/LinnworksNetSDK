@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class TempFile
+    public class TempFile : LinnObject
 	{
 		public String Name { get; set; }
 

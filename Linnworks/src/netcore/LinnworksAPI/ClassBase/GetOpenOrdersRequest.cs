@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetOpenOrdersRequest
+    public class GetOpenOrdersRequest : LinnObject
 	{
 		public Int32 ViewId { get; set; }
 

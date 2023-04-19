@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RuleAction
+    public class RuleAction : LinnObject
 	{
 		public Int32 pkActionId { get; set; }
 

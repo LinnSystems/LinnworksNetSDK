@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class WarehouseTransferAudit
+    public class WarehouseTransferAudit : LinnObject
 	{
 		public Guid PkTransferAuditId { get; set; }
 

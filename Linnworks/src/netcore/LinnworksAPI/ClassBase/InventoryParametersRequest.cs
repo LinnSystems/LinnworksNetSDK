@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class InventoryParametersRequest
+    public class InventoryParametersRequest : LinnObject
 	{
         /// <summary>
         /// List of stock item ids 

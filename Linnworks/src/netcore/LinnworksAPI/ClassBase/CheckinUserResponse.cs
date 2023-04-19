@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CheckinUserResponse
+    public class CheckinUserResponse : LinnObject
 	{
 		public DateTime? LastRun { get; set; }
 

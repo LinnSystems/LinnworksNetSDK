@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddExtendedPropertiesResponse
+    public class AddExtendedPropertiesResponse : LinnObject
 	{
         /// <summary>
         /// The number of extended properties that were added 

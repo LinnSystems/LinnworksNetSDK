@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ImportGenericFeed
+    public class ImportGenericFeed : LinnObject
 	{
 		public ImportFeedType FeedType { get; set; }
 

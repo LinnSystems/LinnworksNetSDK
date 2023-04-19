@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetScrapHistoryRequest
+    public class GetScrapHistoryRequest : LinnObject
 	{
 		public Int32 PageNumber { get; set; }
 

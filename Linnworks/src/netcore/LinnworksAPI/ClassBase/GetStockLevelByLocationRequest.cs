@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetStockLevelByLocationRequest
+    public class GetStockLevelByLocationRequest : LinnObject
 	{
 		public Guid StockItemId { get; set; }
 

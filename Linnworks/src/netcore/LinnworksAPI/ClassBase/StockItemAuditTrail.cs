@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemAuditTrail
+    public class StockItemAuditTrail : LinnObject
 	{
         /// <summary>
         /// Audit type 

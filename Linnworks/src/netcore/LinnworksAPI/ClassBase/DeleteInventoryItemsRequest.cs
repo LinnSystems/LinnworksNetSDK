@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteInventoryItemsRequest
+    public class DeleteInventoryItemsRequest : LinnObject
 	{
 		public List<Guid> InventoryItemIds { get; set; }
 

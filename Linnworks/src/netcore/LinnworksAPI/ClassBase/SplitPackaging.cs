@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class SplitPackaging
+    public class SplitPackaging : LinnObject
 	{
         /// <summary>
         /// Bin split index 

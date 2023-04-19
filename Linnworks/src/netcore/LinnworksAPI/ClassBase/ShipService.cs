@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Shipping service mapping between ShipStation and linnworks 
     /// </summary>
-    public class ShipService
+    public class ShipService : LinnObject
 	{
         /// <summary>
         /// The unique identifier for the ShipStation service 

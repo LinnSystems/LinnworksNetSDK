@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Purchase order additional cost type. 
     /// </summary>
-    public class PurchaseOrderAdditionalCostType
+    public class PurchaseOrderAdditionalCostType : LinnObject
 	{
         /// <summary>
         /// Additional Cost type id 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class MacroRegister
+    public class MacroRegister : LinnObject
 	{
 		public Int32 MacroId { get; set; }
 
@@ -28,6 +28,17 @@ namespace LinnworksAPI
 
 		public List<NamedScheduleConfiguration> Specification { get; set; }
 
+		public Double TimeZoneOffset { get; set; }
+
 		public String MacroType { get; set; }
+
+        /// <summary>
+        /// DST migration flag.
+        /// 
+        ///  0 - not migrated;
+        ///  1 - migrated;
+        ///  2 - migration failed; 
+        /// </summary>
+		public Byte Migrated { get; set; }
 	} 
 }

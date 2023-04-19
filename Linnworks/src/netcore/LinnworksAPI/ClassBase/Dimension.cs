@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Dimension 
     /// </summary>
-    public class Dimension
+    public class Dimension : LinnObject
 	{
         /// <summary>
         /// Width 

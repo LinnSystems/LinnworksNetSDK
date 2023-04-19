@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CreateCountryRegionsResponse
+    public class CreateCountryRegionsResponse : LinnObject
 	{
 		public List<CountryRegion> regions { get; set; }
 	} 

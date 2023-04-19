@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemPrice
+    public class StockItemPrice : LinnObject
 	{
         /// <summary>
         /// Pricing rule 

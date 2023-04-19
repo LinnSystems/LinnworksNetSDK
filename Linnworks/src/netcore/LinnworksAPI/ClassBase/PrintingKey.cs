@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PrintingKey
+    public class PrintingKey : LinnObject
 	{
 		public Guid Key { get; set; }
 

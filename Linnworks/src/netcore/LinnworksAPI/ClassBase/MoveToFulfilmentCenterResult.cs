@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class MoveToFulfilmentCenterResult
+    public class MoveToFulfilmentCenterResult : LinnObject
 	{
         /// <summary>
         /// List of errors 

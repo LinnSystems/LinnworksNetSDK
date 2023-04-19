@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class VariationItem
+    public class VariationItem : LinnObject
 	{
         /// <summary>
         /// Variation item record ID 

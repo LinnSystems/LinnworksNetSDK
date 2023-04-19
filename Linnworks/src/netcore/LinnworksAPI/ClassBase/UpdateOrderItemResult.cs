@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateOrderItemResult
+    public class UpdateOrderItemResult : LinnObject
 	{
         /// <summary>
         /// Order figures 

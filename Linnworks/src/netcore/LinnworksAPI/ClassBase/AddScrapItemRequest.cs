@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddScrapItemRequest
+    public class AddScrapItemRequest : LinnObject
 	{
 		public ScrapItem ScrapItem { get; set; }
 

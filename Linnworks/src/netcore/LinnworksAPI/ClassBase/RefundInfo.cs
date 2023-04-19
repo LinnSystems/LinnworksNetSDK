@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RefundInfo
+    public class RefundInfo : LinnObject
 	{
         /// <summary>
         /// Refund record ID 

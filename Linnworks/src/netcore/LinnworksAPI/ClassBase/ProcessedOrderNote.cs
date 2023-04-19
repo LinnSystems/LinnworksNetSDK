@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ProcessedOrderNote
+    public class ProcessedOrderNote : LinnObject
 	{
 		public Guid pkOrderNoteId { get; set; }
 

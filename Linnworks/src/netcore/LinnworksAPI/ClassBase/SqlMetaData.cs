@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace LinnworksAPI
 { 
-    public class SqlMetaData
+    public class SqlMetaData : LinnObject
 	{
 		public SqlCompareOptions CompareOptions { get; set; }
 

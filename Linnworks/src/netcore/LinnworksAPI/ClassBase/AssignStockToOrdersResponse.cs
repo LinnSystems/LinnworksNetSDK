@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AssignStockToOrdersResponse<OrderItemBatchExtended,Guid>
+    public class AssignStockToOrdersResponse<OrderItemBatchExtended,Guid> : LinnObject
 	{
 		public BatchActionResult<OrderItemBatchExtended,Guid> BatchActionResult { get; set; }
 	} 

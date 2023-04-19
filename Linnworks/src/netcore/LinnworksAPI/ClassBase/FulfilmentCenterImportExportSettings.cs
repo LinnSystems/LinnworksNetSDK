@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Fulfilment Center Import and Export Settings 
     /// </summary>
-    public class FulfilmentCenterImportExportSettings
+    public class FulfilmentCenterImportExportSettings : LinnObject
 	{
         /// <summary>
         /// Stock location ID. 

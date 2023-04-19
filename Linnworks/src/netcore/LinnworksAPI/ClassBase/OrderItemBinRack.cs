@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// OrderItem BinRack 
     /// </summary>
-    public class OrderItemBinRack
+    public class OrderItemBinRack : LinnObject
 	{
         /// <summary>
         /// Quantity for BinRack per Location 

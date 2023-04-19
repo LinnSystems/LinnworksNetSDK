@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request class for GetJob 
     /// </summary>
-    public class GetJobRequest
+    public class GetJobRequest : LinnObject
 	{
         /// <summary>
         /// Job Id to retrive 

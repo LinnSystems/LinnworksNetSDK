@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ChannelAddress
+    public class ChannelAddress : LinnObject
 	{
 		public String MatchCountryCode { get; set; }
 

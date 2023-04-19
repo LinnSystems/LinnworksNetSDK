@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ReturnItem
+    public class ReturnItem : LinnObject
 	{
 		public Guid OrderItemRowId { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Face
+    public class Face : LinnObject
 	{
 		public PointF TopLeft { get; set; }
 

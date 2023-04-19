@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PostalService
+    public class PostalService : LinnObject
 	{
 		public String PostalServiceName { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PODeliveredItems
+    public class PODeliveredItems : LinnObject
 	{
 		public Guid pkPurchaseItemId { get; set; }
 

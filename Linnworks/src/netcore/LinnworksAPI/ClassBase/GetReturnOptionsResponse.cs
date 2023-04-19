@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetReturnOptionsResponse
+    public class GetReturnOptionsResponse : LinnObject
 	{
 		public ReturnOptions ReturnOptions { get; set; }
 	} 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetAvailableTimeZonesResponse
+    public class GetAvailableTimeZonesResponse : LinnObject
 	{
 		public IEnumerable<AvailableTimeZone> TimeZones { get; set; }
 	} 

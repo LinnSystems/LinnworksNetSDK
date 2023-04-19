@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class EmailSent
+    public class EmailSent : LinnObject
 	{
 		public String AttachmentUrl { get; set; }
 

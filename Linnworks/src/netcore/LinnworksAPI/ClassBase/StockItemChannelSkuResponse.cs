@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemChannelSkuResponse
+    public class StockItemChannelSkuResponse : LinnObject
 	{
 		public Guid StockItemId { get; set; }
 

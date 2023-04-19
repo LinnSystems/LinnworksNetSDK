@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddItemsToTransferResponse
+    public class AddItemsToTransferResponse : LinnObject
 	{
 		public List<WarehouseTransferItem> TransferItems { get; set; }
 	} 

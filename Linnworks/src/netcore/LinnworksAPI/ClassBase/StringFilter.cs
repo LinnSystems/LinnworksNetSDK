@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StringFilter
+    public class StringFilter : LinnObject
 	{
 		public StringFilterType Type { get; set; }
 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// A response class used when processing an order by order id or reference 
     /// </summary>
-    public class ProcessOrderByOrderIdOrReferenceResponse
+    public class ProcessOrderByOrderIdOrReferenceResponse : LinnObject
 	{
         /// <summary>
         /// The processed state 

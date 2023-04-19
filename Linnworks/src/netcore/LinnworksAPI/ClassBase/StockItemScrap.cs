@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemScrap
+    public class StockItemScrap : LinnObject
 	{
         /// <summary>
         /// Year item was scraped 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetBinrackZonesByBinrackIdOrNameRequest
+    public class GetBinrackZonesByBinrackIdOrNameRequest : LinnObject
 	{
         /// <summary>
         /// Binrack Ids, StockLocationIntId optional, if different to supplied binrack ids, zones will still be returned. 

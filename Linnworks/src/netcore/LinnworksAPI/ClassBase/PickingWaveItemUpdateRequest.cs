@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Pickwave item update request. 
     /// </summary>
-    public class PickingWaveItemUpdateRequest
+    public class PickingWaveItemUpdateRequest : LinnObject
 	{
         /// <summary>
         /// List of pickwave items to update 

@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 
 namespace LinnworksAPI
 { 
-    public class OrderItemIndicator
+    public class OrderItemIndicator : LinnObject
 	{
 		public ReadOnlyDictionary<SByte,PurchaseOrderState?> POStateMapping { get; set; }
 

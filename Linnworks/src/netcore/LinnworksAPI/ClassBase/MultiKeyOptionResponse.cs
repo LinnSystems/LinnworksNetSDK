@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class MultiKeyOptionResponse
+    public class MultiKeyOptionResponse : LinnObject
 	{
         /// <summary>
         /// Option field 

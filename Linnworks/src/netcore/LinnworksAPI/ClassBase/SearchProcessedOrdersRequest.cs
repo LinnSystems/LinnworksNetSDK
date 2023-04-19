@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class SearchProcessedOrdersRequest
+    public class SearchProcessedOrdersRequest : LinnObject
 	{
         /// <summary>
         /// Search Term 

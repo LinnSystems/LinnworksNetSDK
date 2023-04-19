@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Check allocatable to pickwave response. 
     /// </summary>
-    public class CheckAllocatableToPickwaveResponse
+    public class CheckAllocatableToPickwaveResponse : LinnObject
 	{
         /// <summary>
         /// List of results 

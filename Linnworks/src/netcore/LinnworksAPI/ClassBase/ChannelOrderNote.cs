@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ChannelOrderNote
+    public class ChannelOrderNote : LinnObject
 	{
         /// <summary>
         /// Order Note 

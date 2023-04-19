@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetProductIdentifierTypesRequest
+    public class GetProductIdentifierTypesRequest : LinnObject
 	{
 		public Dictionary<String,String> Types { get; set; }
 	} 

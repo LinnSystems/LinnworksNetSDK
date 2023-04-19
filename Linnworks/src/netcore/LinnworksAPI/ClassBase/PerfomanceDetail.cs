@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PerfomanceDetail
+    public class PerfomanceDetail : LinnObject
 	{
 		public DateTime Date { get; set; }
 

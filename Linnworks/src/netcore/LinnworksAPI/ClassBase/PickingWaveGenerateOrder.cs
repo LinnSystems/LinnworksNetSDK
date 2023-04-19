@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveGenerateOrder
+    public class PickingWaveGenerateOrder : LinnObject
 	{
         /// <summary>
         /// Order Id (Integer) 

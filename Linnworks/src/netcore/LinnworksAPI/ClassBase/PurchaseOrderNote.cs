@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Purchase order note class 
     /// </summary>
-    public class PurchaseOrderNote
+    public class PurchaseOrderNote : LinnObject
 	{
         /// <summary>
         /// Unique identifier for the purchase order note. Use this ID in Delete/Modify calls 

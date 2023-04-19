@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class VirtualPrinter
+    public class VirtualPrinter : LinnObject
 	{
         /// <summary>
         /// Name used to identify the printer in linnworks 

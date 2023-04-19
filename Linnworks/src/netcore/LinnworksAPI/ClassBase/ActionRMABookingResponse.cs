@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionRMABookingResponse
+    public class ActionRMABookingResponse : LinnObject
 	{
         /// <summary>
         /// If a refund was created as part of accepting the return/exchange booking, this identifies the created header 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class InventoryChannel
+    public class InventoryChannel : LinnObject
 	{
 		public String Source { get; set; }
 

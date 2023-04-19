@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateSkuGroupIdentifierRequestItems
+    public class UpdateSkuGroupIdentifierRequestItems : LinnObject
 	{
 		public Int32 SkuGroupId { get; set; }
 

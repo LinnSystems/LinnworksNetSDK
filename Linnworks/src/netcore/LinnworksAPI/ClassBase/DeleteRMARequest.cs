@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteRMARequest
+    public class DeleteRMARequest : LinnObject
 	{
         /// <summary>
         /// Identifies the RMA header to be deleted 

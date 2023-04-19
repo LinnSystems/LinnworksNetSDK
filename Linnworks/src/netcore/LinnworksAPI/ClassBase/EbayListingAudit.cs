@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class EbayListingAudit
+    public class EbayListingAudit : LinnObject
 	{
 		public String ItemNumber { get; set; }
 

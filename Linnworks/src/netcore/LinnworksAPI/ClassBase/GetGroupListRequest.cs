@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetGroupListRequest
+    public class GetGroupListRequest : LinnObject
 	{
 	} 
 }

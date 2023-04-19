@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Add payment statement item Id 
     /// </summary>
-    public class AddPaymentStatementItem
+    public class AddPaymentStatementItem : LinnObject
 	{
         /// <summary>
         /// Each item in the request can have unique Id supplied (uniqueidentifier) this Id will be returned to you in the response so you can match request item with the response 

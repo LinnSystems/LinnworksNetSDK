@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PackingResult
+    public class PackingResult : LinnObject
 	{
 		public Int32 TotalPackages { get; set; }
 

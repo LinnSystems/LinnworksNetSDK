@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveOrderDetailed
+    public class PickingWaveOrderDetailed : LinnObject
 	{
         /// <summary>
         /// Pickwave order id 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AcknowledgeRefundErrorsRequest
+    public class AcknowledgeRefundErrorsRequest : LinnObject
 	{
         /// <summary>
         /// The unique identifier for the refund header whose errors will be acknowledged 

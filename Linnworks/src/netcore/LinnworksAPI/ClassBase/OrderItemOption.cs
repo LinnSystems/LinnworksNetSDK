@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderItemOption
+    public class OrderItemOption : LinnObject
 	{
         /// <summary>
         /// Option ID 

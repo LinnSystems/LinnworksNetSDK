@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GeneratePickingWaveResponse
+    public class GeneratePickingWaveResponse : LinnObject
 	{
         /// <summary>
         /// Validation errors if generate fails. 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BatchInformation
+    public class BatchInformation : LinnObject
 	{
         /// <summary>
         /// Stock item id 

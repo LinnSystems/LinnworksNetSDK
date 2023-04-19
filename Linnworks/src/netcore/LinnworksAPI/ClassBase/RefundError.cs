@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RefundError
+    public class RefundError : LinnObject
 	{
 		public Guid RefundRowId { get; set; }
 

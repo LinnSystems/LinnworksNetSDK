@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionRefundResponse
+    public class ActionRefundResponse : LinnObject
 	{
         /// <summary>
         /// Determines whether the header was marked as actioned in the database 

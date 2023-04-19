@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Get_PaymentStatementResponse
+    public class Get_PaymentStatementResponse : LinnObject
 	{
         /// <summary>
         /// List of payment statements 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemInv
+    public class StockItemInv : LinnObject
 	{
         /// <summary>
         /// Variation parent group name 
@@ -25,6 +25,8 @@ namespace LinnworksAPI
 
 		public Boolean? IsCompositeParent { get; set; }
 
+		public Boolean ShippedSeparately { get; set; }
+
 		public String ItemNumber { get; set; }
 
 		public String ItemTitle { get; set; }
@@ -32,6 +34,8 @@ namespace LinnworksAPI
 		public String BarcodeNumber { get; set; }
 
 		public String MetaData { get; set; }
+
+		public Boolean IsVariationParent { get; set; }
 
 		public Boolean isBatchedStockType { get; set; }
 

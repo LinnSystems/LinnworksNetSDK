@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ReturnsRefundsWeb
+    public class ReturnsRefundsWeb : LinnObject
 	{
 		public Int32 Row { get; set; }
 

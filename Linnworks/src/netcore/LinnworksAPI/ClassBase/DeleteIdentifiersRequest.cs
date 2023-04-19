@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteIdentifiersRequest
+    public class DeleteIdentifiersRequest : LinnObject
 	{
         /// <summary>
         /// Tag of the order identifier to delete. E.g. CUSTOM_PRINT. It is not possible to delete a system tag such as AMAZON_PRIME 

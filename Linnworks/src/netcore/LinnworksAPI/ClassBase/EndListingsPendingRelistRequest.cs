@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class EndListingsPendingRelistRequest
+    public class EndListingsPendingRelistRequest : LinnObject
 	{
 		public List<EbayListingAudit> Listings { get; set; }
 	} 

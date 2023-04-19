@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class represents purchase order header. 
     /// </summary>
-    public class PurchaseOrderHeader
+    public class PurchaseOrderHeader : LinnObject
 	{
         /// <summary>
         /// Unique identifier for the purchase order. You have to use this ID for all updates to the PO 

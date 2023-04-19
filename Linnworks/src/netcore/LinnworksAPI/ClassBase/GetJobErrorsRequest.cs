@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetJobErrorsRequest
+    public class GetJobErrorsRequest : LinnObject
 	{
         /// <summary>
         /// Job id for which you want the get the error list 

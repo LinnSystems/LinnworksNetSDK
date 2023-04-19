@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateAdditionalCostAllocationItem
+    public class UpdateAdditionalCostAllocationItem : LinnObject
 	{
         /// <summary>
         /// Allocation row id that will be updated with the new AllocationPercentage 

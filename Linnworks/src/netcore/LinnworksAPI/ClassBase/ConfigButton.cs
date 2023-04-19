@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ConfigButton
+    public class ConfigButton : LinnObject
 	{
 		public String FieldName { get; set; }
 

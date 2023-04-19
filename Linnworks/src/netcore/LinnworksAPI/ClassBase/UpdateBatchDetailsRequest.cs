@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateBatchDetailsRequest
+    public class UpdateBatchDetailsRequest : LinnObject
 	{
 		public Guid StockItemId { get; set; }
 

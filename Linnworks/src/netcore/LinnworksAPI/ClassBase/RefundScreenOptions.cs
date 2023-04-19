@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RefundScreenOptions
+    public class RefundScreenOptions : LinnObject
 	{
         /// <summary>
         /// Information about channel refund functionality 

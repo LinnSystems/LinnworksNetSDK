@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class eBayItem
+    public class eBayItem : LinnObject
 	{
 		public String SKU { get; set; }
 

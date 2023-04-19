@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateOrderShippingInfoRequest
+    public class UpdateOrderShippingInfoRequest : LinnObject
 	{
         /// <summary>
         /// Postal service ID 

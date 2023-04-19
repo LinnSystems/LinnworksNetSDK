@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Response item of StockItemId and SKU 
     /// </summary>
-    public class GetStockItemIdsBySKUItem
+    public class GetStockItemIdsBySKUItem : LinnObject
 	{
 		public Guid StockItemId { get; set; }
 

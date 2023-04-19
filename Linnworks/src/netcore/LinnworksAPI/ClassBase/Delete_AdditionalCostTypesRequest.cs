@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Delete_AdditionalCostTypesRequest
+    public class Delete_AdditionalCostTypesRequest : LinnObject
 	{
         /// <summary>
         /// Additional cost type Ids to delete 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request class for GetOrderPackagingCalculationRequest method in Orders controller 
     /// </summary>
-    public class GetOrderPackagingCalculationRequest
+    public class GetOrderPackagingCalculationRequest : LinnObject
 	{
         /// <summary>
         /// List of order ids for which the packaging information should be returned, recalculated, saved 

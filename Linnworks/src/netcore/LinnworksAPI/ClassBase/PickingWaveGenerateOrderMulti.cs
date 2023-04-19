@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveGenerateOrderMulti
+    public class PickingWaveGenerateOrderMulti : LinnObject
 	{
         /// <summary>
         /// Items to be added to the pickwave. 

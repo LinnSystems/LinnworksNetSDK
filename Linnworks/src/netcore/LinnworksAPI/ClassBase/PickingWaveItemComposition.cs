@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveItemComposition
+    public class PickingWaveItemComposition : LinnObject
 	{
         /// <summary>
         /// Stock item id 

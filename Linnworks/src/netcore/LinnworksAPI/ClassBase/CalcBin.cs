@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class represents split packaging bin 
     /// </summary>
-    public class CalcBin
+    public class CalcBin : LinnObject
 	{
         /// <summary>
         /// Bin Id 

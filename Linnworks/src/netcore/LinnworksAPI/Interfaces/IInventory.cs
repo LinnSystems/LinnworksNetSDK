@@ -11,6 +11,7 @@ namespace LinnworksAPI
 	{
 		AddImageToInventoryItemResponse AddImageToInventoryItem(AddImageToInventoryItemRequest request);
 		void AddInventoryItem(StockItem inventoryItem);
+		BatchedAPIResponse<Guid> AddInventoryItemBulk(AddInventoryItemRequest request);
 		void AddItemLocations(List<StockItemLocation> itemLocations);
 		void AddProductIdentifiers(AddProductIdentifiersRequest request);
 		AddScrapCategoriesResponse AddScrapCategories(AddScrapCategoriesRequest request);
@@ -23,7 +24,7 @@ namespace LinnworksAPI
 		IEnumerable<StockItemChannelSkuResponse> BatchGetInventoryItemChannelSKUs(List<Guid> inventoryItemIds);
 		void BulkScrapBatchedItems(BulkScrapBatchedItemsRequest request);
 		void CreateBatches(IEnumerable<StockItemBatch> batches);
-		Category CreateCategory(String categoryName);
+		LinnworksCategory CreateCategory(String categoryName);
 		void CreateCountries(IEnumerable<Country> countries);
 		CreateCountryRegionsResponse CreateCountryRegions(CreateCountryRegionsRequest request);
 		void CreateInventoryItemChannelSKUs(List<StockItemChannelSKU> inventoryItemChannelSKUs);
@@ -60,7 +61,7 @@ namespace LinnworksAPI
 		GetBatchAuditResponse GetBatchAudit(GetBatchAuditRequest request);
 		List<StockItemBatch> GetBatchesByStockItemId(Guid stockItemId,Boolean onlyAvailable,Guid? stockLocationId = null);
 		GetBatchInventoryByIdResponse GetBatchInventoryById(GetBatchInventoryByIdRequest request);
-		List<Category> GetCategories();
+		List<LinnworksCategory> GetCategories();
 		List<AnyConfig> GetChannels();
 		List<HeaderConfig> GetChannelsBySource(String source);
 		IEnumerable<Country> GetCountries();
@@ -71,6 +72,7 @@ namespace LinnworksAPI
 		GetImagesInBulkResponse GetImagesInBulk(GetImagesInBulkRequest request);
 		Dictionary<String,Byte> GetInventoryBatchTypes();
 		List<StockItemAuditTrail> GetInventoryItemAuditTrail(Guid inventoryItemId);
+		PagedResult<StockItemAuditTrail> GetInventoryItemAuditTrailPaged(GetInventoryItemAuditTrailPagedRequest request);
 		List<StockItemBatch> GetInventoryItemBatchInformation(GetInventoryItemBatchInformationRequest Request);
 		GetInventoryItemBatchInformationByIdsResponse GetInventoryItemBatchInformationByIds(GetInventoryItemBatchInformationByIdsRequest request);
 		StockItemInv GetInventoryItemById(Guid id);
@@ -117,7 +119,7 @@ namespace LinnworksAPI
 		void UnlinkChannelListing(String channelRefId,String source,String subSource);
 		void UpdateBatchDetails(UpdateBatchDetailsRequest request);
 		void UpdateBatchesWithInventory(IEnumerable<StockItemBatch> batches);
-		void UpdateCategory(Category category);
+		void UpdateCategory(LinnworksCategory category);
 		Int32 UpdateCompositeParentStockLevel(Guid stockItemId,Guid locationId,Int32 fieldValue);
 		void UpdateCountries(IEnumerable<Country> countries);
 		void UpdateCountryRegions(UpdateCountryRegionsRequest request);

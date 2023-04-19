@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ChannelOrder
+    public class ChannelOrder : LinnObject
 	{
         /// <summary>
         /// Validate if the tax should be overwritten on the order. 
@@ -20,6 +20,16 @@ namespace LinnworksAPI
         /// When the order is saved it will try and link by SKU after trying by channel sku mapping. 
         /// </summary>
 		public Boolean AutomaticallyLinkBySKU { get; set; }
+
+        /// <summary>
+        /// When the order is saved it will try and link by Barcode after trying by channel sku mapping. 
+        /// </summary>
+		public Boolean AutomaticallyLinkByBarcode { get; set; }
+
+        /// <summary>
+        /// When the order is saved it will try and link by ASIN after trying by channel sku mapping. 
+        /// </summary>
+		public Boolean AutomaticallyLinkByASIN { get; set; }
 
         /// <summary>
         /// Used to determine the site of the order. 
@@ -57,14 +67,24 @@ namespace LinnworksAPI
 		public Boolean SavePaymentMethodIfNotExist { get; set; }
 
         /// <summary>
-        /// Overrides the mapping source for the channel for example if the Source is 'AMAZON FBA' MappingSource can be used to overried to 'AMAZON' 
+        /// Overrides the mapping source for the channel for example if the Source is 'AMAZON FBA' MappingSource can be used to override to 'AMAZON' 
         /// </summary>
 		public String MappingSource { get; set; }
 
         /// <summary>
-        /// State the order should be saved eg hold, parked, none 
+        /// State the order should be saved e.g. hold, parked, none 
         /// </summary>
 		public OrderState OrderState { get; set; }
+
+        /// <summary>
+        /// The status of the order on the channel 
+        /// </summary>
+		public OrderStatus OrderStatusType { get; set; }
+
+        /// <summary>
+        /// The raw status text of the order on the channel 
+        /// </summary>
+		public String OrderStatus { get; set; }
 
         /// <summary>
         /// Payment status of the order, eg Paid
@@ -128,7 +148,7 @@ namespace LinnworksAPI
 		public Double ConversionRate { get; set; }
 
         /// <summary>
-        /// UTC recieved date/time of the order 
+        /// UTC received date/time of the order 
         /// </summary>
 		public DateTime ReceivedDate { get; set; }
 
@@ -161,6 +181,31 @@ namespace LinnworksAPI
         /// This represents the final discount applied to the order, as a value (not a percentage), after all item-level discounts are applied. It will be split evenly across all order items 
         /// </summary>
 		public Double Discount { get; set; }
+
+        /// <summary>
+        /// The refund amount applied across all items 
+        /// </summary>
+		public Decimal ItemsRefund { get; set; }
+
+        /// <summary>
+        /// The amount refunded for shipping (if known) 
+        /// </summary>
+		public Decimal ShippingRefund { get; set; }
+
+        /// <summary>
+        /// The total refund amount applied to the order across all items, services and order-level refunds 
+        /// </summary>
+		public Decimal TotalRefund { get; set; }
+
+        /// <summary>
+        /// The known refund allocation for the order lines 
+        /// </summary>
+		public RefundAllocation LineRefundAllocation { get; set; }
+
+        /// <summary>
+        /// The known refund allocation for the order shipping 
+        /// </summary>
+		public RefundAllocation ShippingRefundAllocation { get; set; }
 
         /// <summary>
         /// The tax number of the buyer 

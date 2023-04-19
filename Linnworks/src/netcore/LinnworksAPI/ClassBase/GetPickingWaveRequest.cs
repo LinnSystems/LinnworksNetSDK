@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Get pickwave request 
     /// </summary>
-    public class GetPickingWaveRequest
+    public class GetPickingWaveRequest : LinnObject
 	{
         /// <summary>
         /// Pickwave id 

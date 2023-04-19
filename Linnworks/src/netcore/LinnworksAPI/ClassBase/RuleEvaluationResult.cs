@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RuleEvaluationResult
+    public class RuleEvaluationResult : LinnObject
 	{
 		public Int32 LastConditionId { get; set; }
 

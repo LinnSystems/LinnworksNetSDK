@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetRMAHeadersByOrderIdRequest
+    public class GetRMAHeadersByOrderIdRequest : LinnObject
 	{
 		public Guid OrderId { get; set; }
 	} 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CreateRMABookingRequest
+    public class CreateRMABookingRequest : LinnObject
 	{
         /// <summary>
         /// Determines whether the RMA request was initiated on the channel, or within Linnworks 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Response of a UpdateGroup method 
     /// </summary>
-    public class UpdateGroupResponse
+    public class UpdateGroupResponse : LinnObject
 	{
         /// <summary>
         /// Updated group details 

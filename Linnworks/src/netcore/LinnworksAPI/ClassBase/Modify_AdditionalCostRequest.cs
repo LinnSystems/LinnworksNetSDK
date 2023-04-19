@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Modify_AdditionalCostRequest
+    public class Modify_AdditionalCostRequest : LinnObject
 	{
         /// <summary>
         /// list of additional cost items to add. Each item has Id which will be returned to you to match the item you are adding to array on your side 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderPackagingSplit
+    public class OrderPackagingSplit : LinnObject
 	{
         /// <summary>
         /// Bin ID 

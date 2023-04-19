@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Update_PurchaseOrderExtendedPropertyRequest
+    public class Update_PurchaseOrderExtendedPropertyRequest : LinnObject
 	{
         /// <summary>
         /// Purchase order uniqueidentifier 

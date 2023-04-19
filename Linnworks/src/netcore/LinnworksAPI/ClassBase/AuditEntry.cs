@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AuditEntry
+    public class AuditEntry : LinnObject
 	{
         /// <summary>
         /// Audit record ID 

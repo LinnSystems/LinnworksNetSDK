@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BatchStockLevelDelta
+    public class BatchStockLevelDelta : LinnObject
 	{
 		public String SKU { get; set; }
 

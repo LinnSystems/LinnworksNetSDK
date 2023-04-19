@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetInventoryItemsCompositionByIdsRequest
+    public class GetInventoryItemsCompositionByIdsRequest : LinnObject
 	{
 		public List<Guid> InventoryItemIds { get; set; }
 	} 

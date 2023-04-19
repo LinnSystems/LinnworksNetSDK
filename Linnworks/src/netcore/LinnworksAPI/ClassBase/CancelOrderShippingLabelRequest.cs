@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class used for reqeust parameters for CancelOrderShippingLabel 
     /// </summary>
-    public class CancelOrderShippingLabelRequest
+    public class CancelOrderShippingLabelRequest : LinnObject
 	{
         /// <summary>
         /// Unique Order id 

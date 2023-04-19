@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ListFieldFilter
+    public class ListFieldFilter : LinnObject
 	{
         /// <summary>
         /// Filtering input 

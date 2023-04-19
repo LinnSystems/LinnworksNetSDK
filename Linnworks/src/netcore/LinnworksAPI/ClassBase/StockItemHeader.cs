@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Stock Item header information 
     /// </summary>
-    public class StockItemHeader
+    public class StockItemHeader : LinnObject
 	{
         /// <summary>
         /// SKU 
@@ -28,6 +28,11 @@ namespace LinnworksAPI
         /// Item description 
         /// </summary>
 		public String MetaData { get; set; }
+
+        /// <summary>
+        /// Is Variation Parent 
+        /// </summary>
+		public Boolean IsVariationParent { get; set; }
 
         /// <summary>
         /// Returns true is the stock item is tracked by batch 

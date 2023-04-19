@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Get_Additional_CostResponse
+    public class Get_Additional_CostResponse : LinnObject
 	{
         /// <summary>
         /// List of additional cost items 

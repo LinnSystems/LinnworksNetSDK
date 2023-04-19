@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DateFieldFilter
+    public class DateFieldFilter : LinnObject
 	{
         /// <summary>
         /// Date from 

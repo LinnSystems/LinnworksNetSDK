@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ImportRegisterPublicSchedules
+    public class ImportRegisterPublicSchedules : LinnObject
 	{
 		public List<Schedule> Schedules { get; set; }
 
@@ -35,6 +35,8 @@ namespace LinnworksAPI
 		public Boolean IsNew { get; set; }
 
 		public Boolean AllSchedulesDisabled { get; set; }
+
+		public Double TimeZoneOffset { get; set; }
 
 		public DateTime? NextSchedule { get; set; }
 	} 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemLabel
+    public class StockItemLabel : LinnObject
 	{
         /// <summary>
         /// Product SKU 

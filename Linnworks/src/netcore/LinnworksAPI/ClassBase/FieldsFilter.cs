@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Fields filter 
     /// </summary>
-    public class FieldsFilter
+    public class FieldsFilter : LinnObject
 	{
         /// <summary>
         /// Text type field filters 

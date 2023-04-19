@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ChannelExistingCancellation
+    public class ChannelExistingCancellation : LinnObject
 	{
 		public String Sku { get; set; }
 

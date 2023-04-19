@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdatePickedItemDeltaRequest
+    public class UpdatePickedItemDeltaRequest : LinnObject
 	{
 		public List<UpdatePickedItemDeltaRequestItem> Deltas { get; set; }
 	} 

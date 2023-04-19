@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetGroupRequest
+    public class GetGroupRequest : LinnObject
 	{
         /// <summary>
         /// Specific group id you want to retrive information for 

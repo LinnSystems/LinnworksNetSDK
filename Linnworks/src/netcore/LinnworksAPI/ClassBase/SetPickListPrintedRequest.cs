@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class SetPickListPrintedRequest
+    public class SetPickListPrintedRequest : LinnObject
 	{
         /// <summary>
         /// A list of orders that should be assigned the IsPrinted value 

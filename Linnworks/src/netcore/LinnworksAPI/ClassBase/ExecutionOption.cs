@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ExecutionOption
+    public class ExecutionOption : LinnObject
 	{
 		public ExecutionOptionType OptionDetails { get; set; }
 

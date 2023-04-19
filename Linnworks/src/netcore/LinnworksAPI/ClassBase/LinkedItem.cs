@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class LinkedItem
+    public class LinkedItem : LinnObject
 	{
         /// <summary>
         /// Country ID 

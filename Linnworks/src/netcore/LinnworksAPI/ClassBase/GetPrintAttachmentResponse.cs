@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Response class for GetPrintAttachment 
     /// </summary>
-    public class GetPrintAttachmentResponse
+    public class GetPrintAttachmentResponse : LinnObject
 	{
         /// <summary>
         /// If the print is pdf attachment this field will be True. If print went to virtual printer the field is false and PDFURL is null 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddScrapCategoriesResponse
+    public class AddScrapCategoriesResponse : LinnObject
 	{
 		public IEnumerable<ScrapCategory> ScrapCategories { get; set; }
 	} 

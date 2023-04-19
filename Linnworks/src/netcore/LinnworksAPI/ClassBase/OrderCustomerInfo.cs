@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderCustomerInfo
+    public class OrderCustomerInfo : LinnObject
 	{
         /// <summary>
         /// Username of customer (Comes from channel) 

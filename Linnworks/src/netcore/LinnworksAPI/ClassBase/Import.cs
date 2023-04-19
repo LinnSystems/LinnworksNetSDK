@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Import
+    public class Import : LinnObject
 	{
 		public Specification<ImportGenericFeed,ImportColumn> Specification { get; set; }
 

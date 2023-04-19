@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemLevel
+    public class StockItemLevel : LinnObject
 	{
         /// <summary>
         /// Location ID 

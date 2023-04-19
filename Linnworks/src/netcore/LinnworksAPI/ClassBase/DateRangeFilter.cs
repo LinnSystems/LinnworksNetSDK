@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DateRangeFilter
+    public class DateRangeFilter : LinnObject
 	{
 		public DateTime ValueFrom { get; set; }
 

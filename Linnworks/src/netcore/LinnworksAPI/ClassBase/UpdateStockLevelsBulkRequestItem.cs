@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateStockLevelsBulkRequestItem
+    public class UpdateStockLevelsBulkRequestItem : LinnObject
 	{
         /// <summary>
         /// SKU - Optional if stock item id is provided 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ScheduleConfiguration
+    public class ScheduleConfiguration : LinnObject
 	{
         /// <summary>
         /// Just one time or recurrent 

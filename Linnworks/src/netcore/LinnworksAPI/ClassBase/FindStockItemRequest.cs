@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class FindStockItemRequest
+    public class FindStockItemRequest : LinnObject
 	{
 		public List<String> Codes { get; set; }
 	} 

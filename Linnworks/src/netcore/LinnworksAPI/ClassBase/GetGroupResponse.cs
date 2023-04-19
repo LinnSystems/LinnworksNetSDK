@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetGroupResponse
+    public class GetGroupResponse : LinnObject
 	{
         /// <summary>
         /// Full group object with conditions, list of actions and count of all orders and jobs To Do 

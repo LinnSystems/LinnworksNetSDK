@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionRefundRequest
+    public class ActionRefundRequest : LinnObject
 	{
         /// <summary>
         /// The unique identifier for the refund header to action 

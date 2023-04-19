@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetStockItemsFullByIdsResponse
+    public class GetStockItemsFullByIdsResponse : LinnObject
 	{
 		public List<StockItemFullExtended> StockItemsFullExtended { get; set; }
 	} 

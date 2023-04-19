@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request that contains lists to delete, add and update purchase order items 
     /// </summary>
-    public class Modify_PurchaseOrderItems_BulkRequest
+    public class Modify_PurchaseOrderItems_BulkRequest : LinnObject
 	{
         /// <summary>
         /// Purchase order id 

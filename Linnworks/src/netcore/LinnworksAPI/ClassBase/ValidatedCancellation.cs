@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ValidatedCancellation
+    public class ValidatedCancellation : LinnObject
 	{
 		public PostSaleStatusType Status { get; set; }
 

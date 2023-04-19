@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderRefundHeader
+    public class OrderRefundHeader : LinnObject
 	{
 		public Int32 RefundHeaderId { get; set; }
 

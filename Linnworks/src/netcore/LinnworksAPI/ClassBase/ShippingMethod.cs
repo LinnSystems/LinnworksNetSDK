@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ShippingMethod
+    public class ShippingMethod : LinnObject
 	{
         /// <summary>
         /// Courier name 

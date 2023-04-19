@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ConfigItemListItem
+    public class ConfigItemListItem : LinnObject
 	{
 		public String Display { get; set; }
 

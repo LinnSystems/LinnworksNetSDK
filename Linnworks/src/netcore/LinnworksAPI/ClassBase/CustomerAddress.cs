@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CustomerAddress
+    public class CustomerAddress : LinnObject
 	{
         /// <summary>
         /// Customer's email address. 

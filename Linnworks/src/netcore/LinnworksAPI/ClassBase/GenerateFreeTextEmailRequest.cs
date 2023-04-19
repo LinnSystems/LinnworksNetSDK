@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GenerateFreeTextEmailRequest
+    public class GenerateFreeTextEmailRequest : LinnObject
 	{
         /// <summary>
         /// List of ids to send template for 

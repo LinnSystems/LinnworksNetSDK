@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Modified purchase order item 
     /// </summary>
-    public class ModifiedPurchaseOrderItem
+    public class ModifiedPurchaseOrderItem : LinnObject
 	{
         /// <summary>
         /// unique row id which was supplied in the ModifyPurchaseOrderItem, you can match this id to the request item. The same Id is returned to back from the request parameter 

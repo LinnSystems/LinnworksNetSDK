@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CountryRegion
+    public class CountryRegion : LinnObject
 	{
         /// <summary>
         /// Region row ID 

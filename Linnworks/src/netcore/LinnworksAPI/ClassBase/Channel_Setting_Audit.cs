@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Channel_Setting_Audit
+    public class Channel_Setting_Audit : LinnObject
 	{
 		public Int32 pkAuditId { get; set; }
 

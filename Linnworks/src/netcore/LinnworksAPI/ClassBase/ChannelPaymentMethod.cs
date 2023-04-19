@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ChannelPaymentMethod
+    public class ChannelPaymentMethod : LinnObject
 	{
 		public Int32 fkChannelId { get; set; }
 

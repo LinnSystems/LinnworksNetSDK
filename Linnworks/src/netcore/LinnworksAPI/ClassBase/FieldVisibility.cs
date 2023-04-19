@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class FieldVisibility
+    public class FieldVisibility : LinnObject
 	{
 		public String Name { get; set; }
 

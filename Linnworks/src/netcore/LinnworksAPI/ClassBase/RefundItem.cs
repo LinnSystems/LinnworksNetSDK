@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RefundItem
+    public class RefundItem : LinnObject
 	{
         /// <summary>
         /// For updating refund amounts 

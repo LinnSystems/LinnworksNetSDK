@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Purchase order item to add 
     /// </summary>
-    public class AddPurchaseOrderItem
+    public class AddPurchaseOrderItem : LinnObject
 	{
         /// <summary>
         /// unique row id, the same id will be returned to you in the response 

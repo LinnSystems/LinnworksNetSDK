@@ -22,5 +22,6 @@ namespace LinnworksAPI
 		ExecuteMacro,
 		AssignIdentifierToOrder,
 		BlockOrderFromMerging,
+		SendToFulfillmentNetwork,
 	}
 }

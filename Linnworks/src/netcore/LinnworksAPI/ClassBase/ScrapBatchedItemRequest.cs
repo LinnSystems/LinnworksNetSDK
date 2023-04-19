@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ScrapBatchedItemRequest
+    public class ScrapBatchedItemRequest : LinnObject
 	{
 		public ScrapItem ScrapItem { get; set; }
 

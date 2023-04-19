@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RowQty
+    public class RowQty : LinnObject
 	{
         /// <summary>
         /// Order item record row ID 

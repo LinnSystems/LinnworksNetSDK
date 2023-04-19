@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ModifiedAdditionalCostAllocationItem
+    public class ModifiedAdditionalCostAllocationItem : LinnObject
 	{
         /// <summary>
         /// Relation to the initial request. This Id will match to what was specified in the request so that the client side can be updated with new CostAllocationIds 

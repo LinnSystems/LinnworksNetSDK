@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request for allocatioable orders to pickwave. 
     /// </summary>
-    public class CheckAllocatableToPickwaveRequest
+    public class CheckAllocatableToPickwaveRequest : LinnObject
 	{
         /// <summary>
         /// List of integer order ids 

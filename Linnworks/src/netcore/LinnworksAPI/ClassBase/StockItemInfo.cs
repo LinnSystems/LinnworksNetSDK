@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Basic stock item information 
     /// </summary>
-    public class StockItemInfo
+    public class StockItemInfo : LinnObject
 	{
         /// <summary>
         /// Item SKU 

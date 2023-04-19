@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemSupplierStat
+    public class StockItemSupplierStat : LinnObject
 	{
         /// <summary>
         /// If supplier information is default 

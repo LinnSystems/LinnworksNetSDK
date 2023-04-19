@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemSoldStat
+    public class StockItemSoldStat : LinnObject
 	{
         /// <summary>
         /// ChannelName/Source (e.g. EBAY) 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteWarehouseToteRequest
+    public class DeleteWarehouseToteRequest : LinnObject
 	{
         /// <summary>
         /// List of warehouse tote ids to delete 

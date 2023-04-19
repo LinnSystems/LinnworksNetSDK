@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PrintErrorTags
+    public class PrintErrorTags : LinnObject
 	{
 		public String Tag { get; set; }
 

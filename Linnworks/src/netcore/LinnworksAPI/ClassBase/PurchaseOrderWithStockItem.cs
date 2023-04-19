@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// List of Purchase Order Ids return using the Stock Item and Location Id parameters 
     /// </summary>
-    public class PurchaseOrderWithStockItem
+    public class PurchaseOrderWithStockItem : LinnObject
 	{
         /// <summary>
         /// The Id of the Stock Item 

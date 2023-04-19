@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class TopProductData
+    public class TopProductData : LinnObject
 	{
 		public Int32 RowNum { get; set; }
 

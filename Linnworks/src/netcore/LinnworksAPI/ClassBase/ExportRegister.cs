@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ExportRegister
+    public class ExportRegister : LinnObject
 	{
         /// <summary>
         /// The time of which the export query was ran - safer than when the export finished 
@@ -34,6 +34,8 @@ namespace LinnworksAPI
 		public Boolean IsNew { get; set; }
 
 		public Boolean AllSchedulesDisabled { get; set; }
+
+		public Double TimeZoneOffset { get; set; }
 
 		public DateTime? NextSchedule { get; set; }
 	} 

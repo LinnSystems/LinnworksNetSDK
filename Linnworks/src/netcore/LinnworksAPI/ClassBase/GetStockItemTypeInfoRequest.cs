@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetStockItemTypeInfoRequest
+    public class GetStockItemTypeInfoRequest : LinnObject
 	{
 		public List<String> SKUS { get; set; }
 

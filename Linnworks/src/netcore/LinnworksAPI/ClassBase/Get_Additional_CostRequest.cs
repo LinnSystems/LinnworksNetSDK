@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request class for getting purchase order additional costs 
     /// </summary>
-    public class Get_Additional_CostRequest
+    public class Get_Additional_CostRequest : LinnObject
 	{
         /// <summary>
         /// Purchase order unique identifier of a PO 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Custom email generation request body 
     /// </summary>
-    public class GenerateAdhocEmailRequest
+    public class GenerateAdhocEmailRequest : LinnObject
 	{
         /// <summary>
         /// List of ids to send template for 

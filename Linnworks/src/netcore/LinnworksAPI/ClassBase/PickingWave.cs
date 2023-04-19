@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Pickwave 
     /// </summary>
-    public class PickingWave
+    public class PickingWave : LinnObject
 	{
         /// <summary>
         /// Location Id 

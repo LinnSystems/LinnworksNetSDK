@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AdjustmentOptions
+    public class AdjustmentOptions : LinnObject
 	{
         /// <summary>
         /// Product title 

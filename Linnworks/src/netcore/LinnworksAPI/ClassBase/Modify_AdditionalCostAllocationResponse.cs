@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Modify_AdditionalCostAllocationResponse
+    public class Modify_AdditionalCostAllocationResponse : LinnObject
 	{
         /// <summary>
         /// list of modified items with Ids matched to CostAllocationId 

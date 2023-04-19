@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetPickingWavesResponse
+    public class GetPickingWavesResponse : LinnObject
 	{
         /// <summary>
         /// Pickwaves 

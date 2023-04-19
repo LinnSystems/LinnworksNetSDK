@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Simplified StockLocation information for use in settings screen 
     /// </summary>
-    public class InventoryStockLocation
+    public class InventoryStockLocation : LinnObject
 	{
         /// <summary>
         /// Location ID 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Get stock itemids by sku request 
     /// </summary>
-    public class GetStockItemIdsBySKURequest
+    public class GetStockItemIdsBySKURequest : LinnObject
 	{
         /// <summary>
         /// List of SKU's to search for 

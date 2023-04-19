@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PartialUpdateParameter
+    public class PartialUpdateParameter : LinnObject
 	{
 		public Guid pkId { get; set; }
 

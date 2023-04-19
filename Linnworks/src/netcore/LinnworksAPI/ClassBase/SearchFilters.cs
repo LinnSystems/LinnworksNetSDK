@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class SearchFilters
+    public class SearchFilters : LinnObject
 	{
 		public SearchFieldTypes? SearchField { get; set; }
 

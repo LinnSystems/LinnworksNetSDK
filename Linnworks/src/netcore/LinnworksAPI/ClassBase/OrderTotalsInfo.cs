@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderTotalsInfo
+    public class OrderTotalsInfo : LinnObject
 	{
         /// <summary>
         /// Order subtotal 

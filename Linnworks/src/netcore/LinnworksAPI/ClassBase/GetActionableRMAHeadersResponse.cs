@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetActionableRMAHeadersResponse
+    public class GetActionableRMAHeadersResponse : LinnObject
 	{
         /// <summary>
         /// The page number returned 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class SetListingStrikeOffStateRequest
+    public class SetListingStrikeOffStateRequest : LinnObject
 	{
         /// <summary>
         /// Listing audit details 
@@ -29,6 +29,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Status of listings search 
         /// </summary>
-		public ListingStatus ListingsStatus { get; set; }
+		public EbayMappedListingStatus ListingsStatus { get; set; }
 	} 
 }

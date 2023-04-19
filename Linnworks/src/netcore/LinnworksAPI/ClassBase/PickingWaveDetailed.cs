@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveDetailed
+    public class PickingWaveDetailed : LinnObject
 	{
         /// <summary>
         /// Location Id 

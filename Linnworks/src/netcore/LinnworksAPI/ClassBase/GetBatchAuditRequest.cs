@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetBatchAuditRequest
+    public class GetBatchAuditRequest : LinnObject
 	{
 		public Guid ItemId { get; set; }
 	} 

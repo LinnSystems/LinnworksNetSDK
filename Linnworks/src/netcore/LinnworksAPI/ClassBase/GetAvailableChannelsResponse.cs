@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetAvailableChannelsResponse
+    public class GetAvailableChannelsResponse : LinnObject
 	{
 		public List<ServiceInformation> Channels { get; set; }
 	} 

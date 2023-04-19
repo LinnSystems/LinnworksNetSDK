@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class SelectStringValueOption
+    public class SelectStringValueOption : LinnObject
 	{
 		public String DisplayValue { get; set; }
 

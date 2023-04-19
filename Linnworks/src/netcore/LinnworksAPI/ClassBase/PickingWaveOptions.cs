@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveOptions
+    public class PickingWaveOptions : LinnObject
 	{
         /// <summary>
         /// Item scan type, dictates if the user must scan all items or can provide aggregate count 

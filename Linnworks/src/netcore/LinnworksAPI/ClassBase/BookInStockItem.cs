@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Book in parameters used to update stock items 
     /// </summary>
-    public class BookInStockItem
+    public class BookInStockItem : LinnObject
 	{
         /// <summary>
         /// Id of the stock item 

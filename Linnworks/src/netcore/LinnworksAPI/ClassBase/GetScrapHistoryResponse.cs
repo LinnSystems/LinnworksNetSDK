@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetScrapHistoryResponse
+    public class GetScrapHistoryResponse : LinnObject
 	{
 		public GenericPagedResult<ScrapItem> ScrapHistory { get; set; }
 	} 

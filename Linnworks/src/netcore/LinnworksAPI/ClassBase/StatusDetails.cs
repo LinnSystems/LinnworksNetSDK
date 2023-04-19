@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StatusDetails
+    public class StatusDetails : LinnObject
 	{
 		public StateType State { get; set; }
 

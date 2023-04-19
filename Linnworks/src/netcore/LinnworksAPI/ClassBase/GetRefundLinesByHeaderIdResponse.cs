@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetRefundLinesByHeaderIdResponse
+    public class GetRefundLinesByHeaderIdResponse : LinnObject
 	{
         /// <summary>
         /// The unique identifier for the loaded refund 

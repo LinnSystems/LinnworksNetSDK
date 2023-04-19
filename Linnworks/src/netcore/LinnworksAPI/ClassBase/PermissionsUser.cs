@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PermissionsUser
+    public class PermissionsUser : LinnObject
 	{
 		public Int32 UserId { get; set; }
 

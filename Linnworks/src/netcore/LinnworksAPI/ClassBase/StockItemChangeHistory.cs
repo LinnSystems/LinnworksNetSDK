@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemChangeHistory
+    public class StockItemChangeHistory : LinnObject
 	{
         /// <summary>
         /// When changes were made 

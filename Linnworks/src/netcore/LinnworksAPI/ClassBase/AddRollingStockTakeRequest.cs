@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddRollingStockTakeRequest
+    public class AddRollingStockTakeRequest : LinnObject
 	{
         /// <summary>
         /// Location Id 

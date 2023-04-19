@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GenerateFreeTextEmailResponse
+    public class GenerateFreeTextEmailResponse : LinnObject
 	{
         /// <summary>
         /// Send custom emails completed 

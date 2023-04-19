@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Column
+    public class Column : LinnObject
 	{
 		public ColumnNameType ColumnName { get; set; }
 

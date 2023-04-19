@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Split Order 
     /// </summary>
-    public class OrderSplit
+    public class OrderSplit : LinnObject
 	{
         /// <summary>
         /// Items 

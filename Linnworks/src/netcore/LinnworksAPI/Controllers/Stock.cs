@@ -287,6 +287,16 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<GetStockItemsFullByIdsResponse>(response);
 		}
 
+		/// <summary>
+        /// Get the location (including binrack) of a given list of stockItemIds and stockLocationIds 
+        /// </summary>
+        /// <param name="request"></param>
+        public GetStockItemsLocationResponse GetStockItemsLocation(GetStockItemsLocationRequest request)
+		{
+			var response = GetResponse("Stock/GetStockItemsLocation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetStockItemsLocationResponse>(response);
+		}
+
 		public GetStockItemTypeInfoResponse GetStockItemTypeInfo(GetStockItemTypeInfoRequest request)
 		{
 			var response = GetResponse("Stock/GetStockItemTypeInfo", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ChannelServiceLinks
+    public class ChannelServiceLinks : LinnObject
 	{
         /// <summary>
         /// ChannelName/Source (e.g. EBAY) 

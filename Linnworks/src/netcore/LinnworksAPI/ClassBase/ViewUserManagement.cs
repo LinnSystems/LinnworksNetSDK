@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ViewUserManagement
+    public class ViewUserManagement : LinnObject
 	{
 		public Int32 ViewId { get; set; }
 

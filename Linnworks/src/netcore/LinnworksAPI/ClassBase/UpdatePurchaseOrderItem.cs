@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Purchase order item to update 
     /// </summary>
-    public class UpdatePurchaseOrderItem
+    public class UpdatePurchaseOrderItem : LinnObject
 	{
         /// <summary>
         /// unique row id, to uniquely identify submitted item. This Id will be returned in the response so you can match request to response items 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CreatePDFResult
+    public class CreatePDFResult : LinnObject
 	{
 		public List<PrintError> KeyedError { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderRelation
+    public class OrderRelation : LinnObject
 	{
         /// <summary>
         /// Parent order GUID 

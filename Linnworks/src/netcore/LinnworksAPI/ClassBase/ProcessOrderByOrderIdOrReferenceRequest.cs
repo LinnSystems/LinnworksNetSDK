@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// A request used to process an order by id or reference 
     /// </summary>
-    public class ProcessOrderByOrderIdOrReferenceRequest
+    public class ProcessOrderByOrderIdOrReferenceRequest : LinnObject
 	{
         /// <summary>
         /// The order id or reference id 

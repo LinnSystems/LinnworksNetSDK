@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class HasStockItemStockLevelResponse
+    public class HasStockItemStockLevelResponse : LinnObject
 	{
 		public Boolean HasStockLevel { get; set; }
 	} 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Response from delivering all items in an open/partial PO 
     /// </summary>
-    public class Deliver_PurchaseOrderItemAllResponse
+    public class Deliver_PurchaseOrderItemAllResponse : LinnObject
 	{
         /// <summary>
         /// Delivered items 

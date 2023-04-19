@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class represents purchase order item. 
     /// </summary>
-    public class PurchaseOrderItem
+    public class PurchaseOrderItem : LinnObject
 	{
         /// <summary>
         /// Unique record identifier. Use this id to update quantity, cost, deliver item etc 

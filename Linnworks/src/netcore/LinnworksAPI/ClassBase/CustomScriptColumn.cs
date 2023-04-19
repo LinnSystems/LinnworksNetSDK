@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CustomScriptColumn
+    public class CustomScriptColumn : LinnObject
 	{
 		public Int32 Index { get; set; }
 

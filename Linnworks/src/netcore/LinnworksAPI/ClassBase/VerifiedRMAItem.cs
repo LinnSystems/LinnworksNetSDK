@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class VerifiedRMAItem
+    public class VerifiedRMAItem : LinnObject
 	{
 		public ReturnValidationErrorType ReturnValidationError { get; set; }
 

@@ -75,6 +75,12 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<GenericPagedResult<Guid>>(response);
 		}
 
+		public PostFilterPagedResponse<OpenOrder> GetOpenOrders(GetOpenOrdersRequest request)
+		{
+			var response = GetResponse("OpenOrders/GetOpenOrders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<PostFilterPagedResponse<OpenOrder>>(response);
+		}
+
 		/// <summary>
         /// Open order details by order ids. Not limited by the number of orders you can retrieve. This call is designed to return ONLY open orders, 
         /// it is much faster than GetOrderDetail call 
@@ -89,6 +95,15 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("OpenOrders/GetOrderItemIndicators", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetOrderItemIndicatorResponse>(response);
+		}
+
+		/// <summary>
+        /// Returns low fidelity view of open orders. The data is generally useful for very basic view or counters of what is in the open orders. Useful for finding orders quickly as it returns all scannable fields of the order and order items such as order ids, skus, barcodes etc. 
+        /// </summary>
+        public GetOrdersLowFidelityResponse GetOrdersLowFidelity(GetOrdersLowFidelityRequest request)
+		{
+			var response = GetResponse("OpenOrders/GetOrdersLowFidelity", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetOrdersLowFidelityResponse>(response);
 		}
 
 		public List<OrderViewStats> GetViewStats(GetViewStatsRequest request)

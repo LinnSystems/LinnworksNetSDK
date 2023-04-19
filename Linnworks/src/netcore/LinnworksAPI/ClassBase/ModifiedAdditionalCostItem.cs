@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ModifiedAdditionalCostItem
+    public class ModifiedAdditionalCostItem : LinnObject
 	{
 		public Guid Id { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionOption
+    public class ActionOption : LinnObject
 	{
 		public String Icon { get; set; }
 

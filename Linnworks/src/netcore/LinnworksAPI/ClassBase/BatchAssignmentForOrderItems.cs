@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BatchAssignmentForOrderItems
+    public class BatchAssignmentForOrderItems : LinnObject
 	{
         /// <summary>
         /// Identifies the order to be updated 

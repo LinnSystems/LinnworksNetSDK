@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// comment class 
     /// </summary>
-    public class OpenOrder
+    public class OpenOrder : LinnObject
 	{
 		public String ORDER_NOT_FOUND_ERROR { get; set; }
 

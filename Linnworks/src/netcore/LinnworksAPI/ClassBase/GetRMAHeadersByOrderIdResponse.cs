@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetRMAHeadersByOrderIdResponse
+    public class GetRMAHeadersByOrderIdResponse : LinnObject
 	{
 		public List<OrderRMAHeader> RMAHeaders { get; set; }
 	} 

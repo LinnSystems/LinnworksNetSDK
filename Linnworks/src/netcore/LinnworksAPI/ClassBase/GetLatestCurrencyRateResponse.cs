@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetLatestCurrencyRateResponse
+    public class GetLatestCurrencyRateResponse : LinnObject
 	{
 		public String BaseCurrency { get; set; }
 

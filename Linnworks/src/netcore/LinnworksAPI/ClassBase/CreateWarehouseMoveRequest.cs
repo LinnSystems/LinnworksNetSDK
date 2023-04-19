@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CreateWarehouseMoveRequest
+    public class CreateWarehouseMoveRequest : LinnObject
 	{
         /// <summary>
         /// Batch Inventory Id of the stock item you are moving 

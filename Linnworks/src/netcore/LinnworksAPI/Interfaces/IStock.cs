@@ -35,6 +35,7 @@ namespace LinnworksAPI
 		List<StockItemScrap> GetStockItemScrapStat(Guid stockItemId);
 		List<StockItemFull> GetStockItemsFull(String keyword,Boolean loadCompositeParents,Boolean loadVariationParents,Int32 entriesPerPage,Int32 pageNumber,List<StockInformationDataRequirement> dataRequirements,List<StockInformationSearchType> searchTypes);
 		GetStockItemsFullByIdsResponse GetStockItemsFullByIds(GetStockItemsFullByIdsRequest request);
+		GetStockItemsLocationResponse GetStockItemsLocation(GetStockItemsLocationRequest request);
 		GetStockItemTypeInfoResponse GetStockItemTypeInfo(GetStockItemTypeInfoRequest request);
 		List<StockItemLevel> GetStockLevel(Guid stockItemId);
 		List<GetStockLevel_BatchResponse> GetStockLevel_Batch(GetStockLevel_BatchRequest request);

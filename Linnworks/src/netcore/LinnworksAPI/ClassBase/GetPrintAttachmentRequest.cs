@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request class for print attachmment 
     /// </summary>
-    public class GetPrintAttachmentRequest
+    public class GetPrintAttachmentRequest : LinnObject
 	{
         /// <summary>
         /// Job id for which you would like to get print the attachment 

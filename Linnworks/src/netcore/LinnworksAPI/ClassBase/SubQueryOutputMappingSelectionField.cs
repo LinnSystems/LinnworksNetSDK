@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Stores user specified values for the selection field 
     /// </summary>
-    public class SubQueryOutputMappingSelectionField
+    public class SubQueryOutputMappingSelectionField : LinnObject
 	{
 		public String SelectionFieldName { get; set; }
 

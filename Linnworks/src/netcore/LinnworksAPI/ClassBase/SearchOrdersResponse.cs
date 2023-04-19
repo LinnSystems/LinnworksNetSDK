@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class SearchOrdersResponse
+    public class SearchOrdersResponse : LinnObject
 	{
 		public OrderViewIds[] OpenOrders { get; set; }
 

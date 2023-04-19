@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateStockLevelsBulkRequest
+    public class UpdateStockLevelsBulkRequest : LinnObject
 	{
 		public List<UpdateStockLevelsBulkRequestItem> Items { get; set; }
 	} 

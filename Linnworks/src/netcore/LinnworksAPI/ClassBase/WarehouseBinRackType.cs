@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Bin Rack Type 
     /// </summary>
-    public class WarehouseBinRackType
+    public class WarehouseBinRackType : LinnObject
 	{
         /// <summary>
         /// Binrack type id - unique record identifier 
@@ -42,5 +42,10 @@ namespace LinnworksAPI
         /// Is type restricted to volumetric measurements only 
         /// </summary>
 		public Boolean IsVolumetric { get; set; }
+
+        /// <summary>
+        /// Sets the default status for batches in this binrack type 
+        /// </summary>
+		public DefaultBatchStatus DefaultBatchStatus { get; set; }
 	} 
 }

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class that represents entry parameters for creating new PENDING purchase order 
     /// </summary>
-    public class Create_PurchaseOrder_InitialParameter
+    public class Create_PurchaseOrder_InitialParameter : LinnObject
 	{
         /// <summary>
         /// Supplier unique identifier. Use Inventory/GetSupplierList to get the supplier ids 

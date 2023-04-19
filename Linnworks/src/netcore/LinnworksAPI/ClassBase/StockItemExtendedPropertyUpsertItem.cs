@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Stock item extended property 
     /// </summary>
-    public class StockItemExtendedPropertyUpsertItem
+    public class StockItemExtendedPropertyUpsertItem : LinnObject
 	{
         /// <summary>
         /// Stock Item ID, optional if SKU provided 

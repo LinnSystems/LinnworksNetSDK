@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetRefundOptionsRequest
+    public class GetRefundOptionsRequest : LinnObject
 	{
         /// <summary>
         /// If included, will return the relevant refund header as part of the RefundOptions object in the response 

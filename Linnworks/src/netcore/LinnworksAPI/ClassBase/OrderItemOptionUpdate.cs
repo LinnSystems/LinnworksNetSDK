@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderItemOptionUpdate
+    public class OrderItemOptionUpdate : LinnObject
 	{
 		public Boolean DeleteEntry { get; set; }
 

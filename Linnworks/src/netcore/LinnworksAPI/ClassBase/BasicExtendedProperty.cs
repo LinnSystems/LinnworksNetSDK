@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BasicExtendedProperty
+    public class BasicExtendedProperty : LinnObject
 	{
         /// <summary>
         /// Extended property name 

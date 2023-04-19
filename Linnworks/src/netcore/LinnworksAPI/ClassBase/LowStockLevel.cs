@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class LowStockLevel
+    public class LowStockLevel : LinnObject
 	{
 		public String ItemTitle { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ConfigRuleCollection
+    public class ConfigRuleCollection : LinnObject
 	{
 		public ConfigRule Item { get; set; }
 

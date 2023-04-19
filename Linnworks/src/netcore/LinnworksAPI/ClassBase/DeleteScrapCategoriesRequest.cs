@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteScrapCategoriesRequest
+    public class DeleteScrapCategoriesRequest : LinnObject
 	{
 		public IEnumerable<Int32> CategoryIds { get; set; }
 	} 

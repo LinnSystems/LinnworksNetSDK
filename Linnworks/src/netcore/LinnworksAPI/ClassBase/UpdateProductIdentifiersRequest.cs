@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateProductIdentifiersRequest
+    public class UpdateProductIdentifiersRequest : LinnObject
 	{
 		public IEnumerable<StockItemProductIdentifier> ProductIdentifiers { get; set; }
 	} 

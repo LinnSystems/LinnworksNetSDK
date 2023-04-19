@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Add additional cost item Id 
     /// </summary>
-    public class AddAdditionalCostItem
+    public class AddAdditionalCostItem : LinnObject
 	{
         /// <summary>
         /// Each item in the request can have unique Id supplied (uniqueidentifier) this Id will be returned to you in the response so you can match request item with the response 

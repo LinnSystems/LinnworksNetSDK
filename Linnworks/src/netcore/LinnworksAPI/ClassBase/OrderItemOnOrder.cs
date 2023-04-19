@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderItemOnOrder
+    public class OrderItemOnOrder : LinnObject
 	{
         /// <summary>
         /// Primary key of the bound 

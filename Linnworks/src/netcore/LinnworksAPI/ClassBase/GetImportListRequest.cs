@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetImportListRequest
+    public class GetImportListRequest : LinnObject
 	{
 	} 
 }

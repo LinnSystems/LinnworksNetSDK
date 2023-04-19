@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteEbayCompatibilityListRequest
+    public class DeleteEbayCompatibilityListRequest : LinnObject
 	{
 		public List<StockItemEbayCompatibility> EbayCompatibilityList { get; set; }
 	} 

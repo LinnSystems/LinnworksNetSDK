@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Stock item with full level and supplier information 
     /// </summary>
-    public class StockItemFull
+    public class StockItemFull : LinnObject
 	{
         /// <summary>
         /// Suppliers 
@@ -51,6 +51,8 @@ namespace LinnworksAPI
 		public String BarcodeNumber { get; set; }
 
 		public String MetaData { get; set; }
+
+		public Boolean IsVariationParent { get; set; }
 
 		public Boolean isBatchedStockType { get; set; }
 

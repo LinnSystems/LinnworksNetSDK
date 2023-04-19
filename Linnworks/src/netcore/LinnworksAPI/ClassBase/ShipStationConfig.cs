@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ShipStationConfig
+    public class ShipStationConfig : LinnObject
 	{
         /// <summary>
         /// Config version (for legacy purposes) 

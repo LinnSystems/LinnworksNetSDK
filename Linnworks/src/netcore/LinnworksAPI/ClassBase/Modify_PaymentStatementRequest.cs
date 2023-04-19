@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Modify_PaymentStatementRequest
+    public class Modify_PaymentStatementRequest : LinnObject
 	{
         /// <summary>
         /// list of payment statements to add. Each item has Id which will be returned to you to match the item you are adding to array on your side 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Export base settings 
     /// </summary>
-    public class ExportSpecification
+    public class ExportSpecification : LinnObject
 	{
         /// <summary>
         /// Export Column Names 
@@ -28,6 +28,11 @@ namespace LinnworksAPI
         /// Any custom SQL scripts used 
         /// </summary>
 		public String CustomScript { get; set; }
+
+        /// <summary>
+        /// Export time zone. 
+        /// </summary>
+		public String ExportTimeZone { get; set; }
 
 		public ExportGenericFeed Feed { get; set; }
 

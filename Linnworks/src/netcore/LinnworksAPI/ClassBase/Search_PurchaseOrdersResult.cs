@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Search_PurchaseOrders result class. Contains the Result - the list of returned purchase order headers, and current paging information 
     /// </summary>
-    public class Search_PurchaseOrdersResult
+    public class Search_PurchaseOrdersResult : LinnObject
 	{
         /// <summary>
         /// List of purchase order headers 

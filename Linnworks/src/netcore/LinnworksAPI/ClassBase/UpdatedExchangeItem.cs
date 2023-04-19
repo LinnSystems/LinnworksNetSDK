@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdatedExchangeItem
+    public class UpdatedExchangeItem : LinnObject
 	{
         /// <summary>
         /// The RMA row identifier for this line 

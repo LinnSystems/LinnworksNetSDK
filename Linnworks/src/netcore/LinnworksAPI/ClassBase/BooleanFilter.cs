@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BooleanFilter
+    public class BooleanFilter : LinnObject
 	{
 		public Boolean? Value { get; set; }
 	} 

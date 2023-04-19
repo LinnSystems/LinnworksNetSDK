@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetActionableRMAHeadersRequest
+    public class GetActionableRMAHeadersRequest : LinnObject
 	{
         /// <summary>
         /// The page number to return for a given set of filters 

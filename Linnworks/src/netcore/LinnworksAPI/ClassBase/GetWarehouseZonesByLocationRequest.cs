@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetWarehouseZonesByLocationRequest
+    public class GetWarehouseZonesByLocationRequest : LinnObject
 	{
 		public Int32 StockLocationIntId { get; set; }
 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Purchase order additional cost item 
     /// </summary>
-    public class PurchaseOrderAdditionalCost
+    public class PurchaseOrderAdditionalCost : LinnObject
 	{
         /// <summary>
         /// Unique record id 

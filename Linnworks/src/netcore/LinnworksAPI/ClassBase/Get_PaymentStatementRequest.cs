@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request class for getting purchase order payment statements 
     /// </summary>
-    public class Get_PaymentStatementRequest
+    public class Get_PaymentStatementRequest : LinnObject
 	{
         /// <summary>
         /// Purchase order unique identifier of a PO 

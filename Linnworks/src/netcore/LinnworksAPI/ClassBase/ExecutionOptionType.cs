@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Import execution options 
     /// </summary>
-    public class ExecutionOptionType
+    public class ExecutionOptionType : LinnObject
 	{
         /// <summary>
         /// Data type 
