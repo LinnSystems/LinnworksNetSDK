@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ServiceItem
+    public class ServiceItem : LinnObject
 	{
         /// <summary>
         /// Order item record row ID 

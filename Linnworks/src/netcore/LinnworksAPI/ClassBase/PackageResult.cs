@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PackageResult
+    public class PackageResult : LinnObject
 	{
 		public Guid PackagingId { get; set; }
 

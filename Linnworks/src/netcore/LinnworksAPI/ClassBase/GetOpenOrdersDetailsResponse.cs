@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetOpenOrdersDetailsResponse
+    public class GetOpenOrdersDetailsResponse : LinnObject
 	{
         /// <summary>
         /// List of orders 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteVariationGroupsRequest
+    public class DeleteVariationGroupsRequest : LinnObject
 	{
         /// <summary>
         /// /// A list of VariationsGroups Guids 

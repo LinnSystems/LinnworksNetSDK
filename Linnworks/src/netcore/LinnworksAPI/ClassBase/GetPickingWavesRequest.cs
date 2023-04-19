@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request for getting all pickwaves irrespective of user. 
     /// </summary>
-    public class GetPickingWavesRequest
+    public class GetPickingWavesRequest : LinnObject
 	{
         /// <summary>
         /// Pickwave state (optional), if not supplied then all states. 

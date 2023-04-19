@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemSoldStatDetail
+    public class StockItemSoldStatDetail : LinnObject
 	{
         /// <summary>
         /// Subsource (e.g EBAY1) 

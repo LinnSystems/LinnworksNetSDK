@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderFolder
+    public class OrderFolder : LinnObject
 	{
         /// <summary>
         /// Folder ID 

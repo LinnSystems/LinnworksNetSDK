@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Identifier
+    public class Identifier : LinnObject
 	{
         /// <summary>
         /// Internal identifier id. Use to update image and name. 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Search_Stock_ByKey
+    public class Search_Stock_ByKey : LinnObject
 	{
         /// <summary>
         /// Item ID 

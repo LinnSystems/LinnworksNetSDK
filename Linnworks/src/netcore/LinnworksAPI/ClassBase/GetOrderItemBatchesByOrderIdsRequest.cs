@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetOrderItemBatchesByOrderIdsRequest
+    public class GetOrderItemBatchesByOrderIdsRequest : LinnObject
 	{
 		public List<Guid> pkOrderIds { get; set; }
 	} 

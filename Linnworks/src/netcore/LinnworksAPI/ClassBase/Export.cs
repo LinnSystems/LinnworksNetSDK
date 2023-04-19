@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Export
+    public class Export : LinnObject
 	{
         /// <summary>
         /// Export Base Settings (Delimeters, Columns mapping etc) 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemEbayCompatibility
+    public class StockItemEbayCompatibility : LinnObject
 	{
         /// <summary>
         /// StockItem unique identifier (Optional if SKU is supplied) 

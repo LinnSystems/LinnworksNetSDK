@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderSplitOutItem
+    public class OrderSplitOutItem : LinnObject
 	{
 		public Guid RowId { get; set; }
 

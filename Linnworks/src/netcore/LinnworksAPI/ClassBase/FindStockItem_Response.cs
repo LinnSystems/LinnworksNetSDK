@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class FindStockItem_Response
+    public class FindStockItem_Response : LinnObject
 	{
 		public List<PurchaseItemFound> Items { get; set; }
 	} 

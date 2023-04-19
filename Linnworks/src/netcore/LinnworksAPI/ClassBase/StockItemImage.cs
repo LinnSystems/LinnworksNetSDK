@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Full stock item image record 
     /// </summary>
-    public class StockItemImage
+    public class StockItemImage : LinnObject
 	{
         /// <summary>
         /// URL to thumnail image 

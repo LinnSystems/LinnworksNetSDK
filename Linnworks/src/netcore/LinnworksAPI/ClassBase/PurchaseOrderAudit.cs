@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PurchaseOrderAudit
+    public class PurchaseOrderAudit : LinnObject
 	{
         /// <summary>
         /// Purchase audit trail ID 

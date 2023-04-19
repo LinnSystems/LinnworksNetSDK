@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class that represents parameters when searching the Audit Log 
     /// </summary>
-    public class Search_PurchaseOrder_AuditLog
+    public class Search_PurchaseOrder_AuditLog : LinnObject
 	{
         /// <summary>
         /// Purchase Order Unique Identifier 

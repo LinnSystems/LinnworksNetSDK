@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemChannelSKUWithLocation
+    public class StockItemChannelSKUWithLocation : LinnObject
 	{
         /// <summary>
         /// Record row ID 

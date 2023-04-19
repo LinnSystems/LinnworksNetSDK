@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetJobByNameRequest
+    public class GetJobByNameRequest : LinnObject
 	{
         /// <summary>
         /// Job name to find 

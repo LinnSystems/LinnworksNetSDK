@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetWarehouseMoveResponse
+    public class GetWarehouseMoveResponse : LinnObject
 	{
         /// <summary>
         /// Move details 

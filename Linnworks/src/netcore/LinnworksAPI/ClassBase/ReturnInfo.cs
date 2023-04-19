@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ReturnInfo
+    public class ReturnInfo : LinnObject
 	{
         /// <summary>
         /// Return ID 

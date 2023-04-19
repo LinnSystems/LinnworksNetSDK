@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetExportListResponse
+    public class GetExportListResponse : LinnObject
 	{
 		public List<ExportRegisterPublicSchedules> register { get; set; }
 	} 

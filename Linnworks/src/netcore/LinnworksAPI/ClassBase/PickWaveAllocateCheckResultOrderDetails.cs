@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Order details return, flat data for order lines that can be used to create pickwaves 
     /// </summary>
-    public class PickWaveAllocateCheckResultOrderDetails
+    public class PickWaveAllocateCheckResultOrderDetails : LinnObject
 	{
         /// <summary>
         /// Location the order resides in 

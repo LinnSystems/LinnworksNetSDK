@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class VariationGroup
+    public class VariationGroup : LinnObject
 	{
         /// <summary>
         /// Variation parent SKU 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class represents order item in the bin 
     /// </summary>
-    public class CalcBinItem
+    public class CalcBinItem : LinnObject
 	{
         /// <summary>
         /// Bin Item Id 

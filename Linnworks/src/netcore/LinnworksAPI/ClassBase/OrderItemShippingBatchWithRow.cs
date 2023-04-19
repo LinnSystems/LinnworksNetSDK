@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderItemShippingBatchWithRow
+    public class OrderItemShippingBatchWithRow : LinnObject
 	{
 		public Guid OrderItemRowId { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class EvaluatorDescriptor
+    public class EvaluatorDescriptor : LinnObject
 	{
 		public EvaluatorType EvaluatorType { get; set; }
 

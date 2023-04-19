@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PaymentMethod
+    public class PaymentMethod : LinnObject
 	{
         /// <summary>
         /// Payment method name 

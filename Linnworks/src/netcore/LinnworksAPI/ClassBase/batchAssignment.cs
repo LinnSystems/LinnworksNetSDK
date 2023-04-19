@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class batchAssignment
+    public class batchAssignment : LinnObject
 	{
 		public Guid orderItemRowId { get; set; }
 

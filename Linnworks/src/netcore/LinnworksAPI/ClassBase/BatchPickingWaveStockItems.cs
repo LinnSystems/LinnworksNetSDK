@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BatchPickingWaveStockItems
+    public class BatchPickingWaveStockItems : LinnObject
 	{
         /// <summary>
         /// Pickwave Row Id 

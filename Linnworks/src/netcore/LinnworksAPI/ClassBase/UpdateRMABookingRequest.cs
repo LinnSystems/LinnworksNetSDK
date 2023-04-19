@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateRMABookingRequest
+    public class UpdateRMABookingRequest : LinnObject
 	{
         /// <summary>
         /// The unique identifier for the order the return lines pertain to 

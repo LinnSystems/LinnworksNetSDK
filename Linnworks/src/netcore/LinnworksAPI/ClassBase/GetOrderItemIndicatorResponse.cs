@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetOrderItemIndicatorResponse
+    public class GetOrderItemIndicatorResponse : LinnObject
 	{
 		public OrderItemIndicator[] Items { get; set; }
 	} 

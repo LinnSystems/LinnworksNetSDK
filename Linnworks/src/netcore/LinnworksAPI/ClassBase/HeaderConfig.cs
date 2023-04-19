@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class HeaderConfig
+    public class HeaderConfig : LinnObject
 	{
 		public ConfigItem<String> SourceVersion { get; set; }
 
@@ -17,6 +17,10 @@ namespace LinnworksAPI
 		public ConfigItem<Boolean> IsMultiLocation { get; set; }
 
 		public ConfigItem<Boolean> AutoPopulatedLocations { get; set; }
+
+		public ConfigItem<Boolean> CanModifyLocationsOnChannel { get; set; }
+
+		public ConfigItem<Boolean> BopisSupported { get; set; }
 
 		public ConfigItem<Boolean> DespatchNotes { get; set; }
 

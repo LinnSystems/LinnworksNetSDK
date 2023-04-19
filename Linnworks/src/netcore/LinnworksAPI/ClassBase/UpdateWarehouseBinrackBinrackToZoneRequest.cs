@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateWarehouseBinrackBinrackToZoneRequest
+    public class UpdateWarehouseBinrackBinrackToZoneRequest : LinnObject
 	{
         /// <summary>
         /// Binrack to zones collection, a BinRackId of zero will assume the Binrack should be removed from the zone. 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetLatestCurrencyRateRequest
+    public class GetLatestCurrencyRateRequest : LinnObject
 	{
         /// <summary>
         /// Base currency for conversion rates, if null, USD is used 

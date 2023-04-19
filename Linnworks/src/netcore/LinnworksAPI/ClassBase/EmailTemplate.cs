@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class EmailTemplate
+    public class EmailTemplate : LinnObject
 	{
         /// <summary>
         /// Row id 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveItemDetailed
+    public class PickingWaveItemDetailed : LinnObject
 	{
         /// <summary>
         /// Sort order 

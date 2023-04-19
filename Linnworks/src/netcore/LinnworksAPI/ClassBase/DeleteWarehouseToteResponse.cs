@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteWarehouseToteResponse
+    public class DeleteWarehouseToteResponse : LinnObject
 	{
         /// <summary>
         /// deleted list of totes 

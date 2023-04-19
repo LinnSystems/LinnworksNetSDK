@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetProcessedOrAckedErrorRMAHeadersResponse
+    public class GetProcessedOrAckedErrorRMAHeadersResponse : LinnObject
 	{
         /// <summary>
         /// The page number returned 

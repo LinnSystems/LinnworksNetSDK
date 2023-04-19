@@ -33,6 +33,16 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to add up to 200 stock items. 
+        /// </summary>
+        /// <param name="request">Request containing the list of items to be added.</param>
+        public BatchedAPIResponse<Guid> AddInventoryItemBulk(AddInventoryItemRequest request)
+		{
+			var response = GetResponse("Inventory/AddInventoryItemBulk", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<BatchedAPIResponse<Guid>>(response);
+		}
+
+		/// <summary>
         /// Use this call to add stock item locations bin/rack 
         /// </summary>
         /// <param name="itemLocations">List of stock item locations</param>
@@ -158,10 +168,10 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="categoryName">Category name</param>
         /// <returns>New category</returns>
-        public Category CreateCategory(String categoryName)
+        public LinnworksCategory CreateCategory(String categoryName)
 		{
 			var response = GetResponse("Inventory/CreateCategory", "categoryName=" + System.Net.WebUtility.UrlEncode(categoryName) + "");
-            return JsonFormatter.ConvertFromJson<Category>(response);
+            return JsonFormatter.ConvertFromJson<LinnworksCategory>(response);
 		}
 
 		/// <summary>
@@ -507,10 +517,10 @@ namespace LinnworksAPI
         /// Use this call to get categories 
         /// </summary>
         /// <returns>List of categories</returns>
-        public List<Category> GetCategories()
+        public List<LinnworksCategory> GetCategories()
 		{
 			var response = GetResponse("Inventory/GetCategories", "");
-            return JsonFormatter.ConvertFromJson<List<Category>>(response);
+            return JsonFormatter.ConvertFromJson<List<LinnworksCategory>>(response);
 		}
 
 		/// <summary>
@@ -612,6 +622,17 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Inventory/GetInventoryItemAuditTrail", "inventoryItemId=" + inventoryItemId + "");
             return JsonFormatter.ConvertFromJson<List<StockItemAuditTrail>>(response);
+		}
+
+		/// <summary>
+        /// Use this call to retrieve StockItem AuditTrail list by filters 
+        /// </summary>
+        /// <param name="request">Set of filter options</param>
+        /// <returns>Paged list of StockItem AuditTrail</returns>
+        public PagedResult<StockItemAuditTrail> GetInventoryItemAuditTrailPaged(GetInventoryItemAuditTrailPagedRequest request)
+		{
+			var response = GetResponse("Inventory/GetInventoryItemAuditTrailPaged", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<PagedResult<StockItemAuditTrail>>(response);
 		}
 
 		/// <summary>
@@ -1085,7 +1106,7 @@ namespace LinnworksAPI
         /// Use this call to update category name 
         /// </summary>
         /// <param name="category">category to update</param>
-        public void UpdateCategory(Category category)
+        public void UpdateCategory(LinnworksCategory category)
 		{
 			GetResponse("Inventory/UpdateCategory", "category=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(category)) + "");
 		}

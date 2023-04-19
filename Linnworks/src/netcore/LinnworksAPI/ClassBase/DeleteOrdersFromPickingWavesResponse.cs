@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteOrdersFromPickingWavesResponse
+    public class DeleteOrdersFromPickingWavesResponse : LinnObject
 	{
         /// <summary>
         /// Order Ids that had pickwaves deleted from them 

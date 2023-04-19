@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ReturnOrderHeader
+    public class ReturnOrderHeader : LinnObject
 	{
         /// <summary>
         /// Order ID 

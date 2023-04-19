@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class represents currency conversion rate to base currency 
     /// </summary>
-    public class CurrencyRate
+    public class CurrencyRate : LinnObject
 	{
         /// <summary>
         /// Currency code 

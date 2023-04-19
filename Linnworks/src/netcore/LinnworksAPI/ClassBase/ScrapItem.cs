@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ScrapItem
+    public class ScrapItem : LinnObject
 	{
 		public Guid Id { get; set; }
 

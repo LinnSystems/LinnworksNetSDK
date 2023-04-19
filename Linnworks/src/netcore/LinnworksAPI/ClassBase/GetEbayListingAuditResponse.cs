@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetEbayListingAuditResponse
+    public class GetEbayListingAuditResponse : LinnObject
 	{
 		public List<EbayListingAudit> AuditTrail { get; set; }
 	} 

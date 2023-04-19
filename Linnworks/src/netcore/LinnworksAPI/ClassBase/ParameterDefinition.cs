@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ParameterDefinition
+    public class ParameterDefinition : LinnObject
 	{
 		public String Type { get; set; }
 
@@ -27,6 +27,8 @@ namespace LinnworksAPI
 		public Boolean isHidden { get; set; }
 
 		public Boolean isReadOnly { get; set; }
+
+		public Boolean IsSecure { get; set; }
 
 		public String GroupName { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class VerifiedRefund
+    public class VerifiedRefund : LinnObject
 	{
         /// <summary>
         /// A unique identifier for the refund line 

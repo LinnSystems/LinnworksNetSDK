@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BatchStockLevelDeltaResponse
+    public class BatchStockLevelDeltaResponse : LinnObject
 	{
 		public List<BatchStockLevelDelta> ProcessedDeltas { get; set; }
 

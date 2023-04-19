@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PackageGroup
+    public class PackageGroup : LinnObject
 	{
         /// <summary>
         /// Package category ID 

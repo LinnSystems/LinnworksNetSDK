@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemDescription
+    public class StockItemDescription : LinnObject
 	{
         /// <summary>
         /// Record row ID (generate random GUID) 

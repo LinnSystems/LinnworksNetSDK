@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class HasStockItemStockLevelRequest
+    public class HasStockItemStockLevelRequest : LinnObject
 	{
 		public Guid StockItemId { get; set; }
 	} 

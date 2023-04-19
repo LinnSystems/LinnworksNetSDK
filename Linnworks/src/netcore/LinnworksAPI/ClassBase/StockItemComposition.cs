@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemComposition
+    public class StockItemComposition : LinnObject
 	{
         /// <summary>
         /// Stock item ID of linked product 
@@ -45,6 +45,8 @@ namespace LinnworksAPI
 		public Double Weight { get; set; }
 
 		public Guid PackageGroupId { get; set; }
+
+		public Double TaxRate { get; set; }
 
 		public Guid StockItemId { get; set; }
 

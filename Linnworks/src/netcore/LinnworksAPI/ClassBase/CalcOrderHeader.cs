@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class represents a single instance of an order and its header packaging information. Note that if the order contains split packaging fkPackagingTypeId will be Empty Guid 
     /// </summary>
-    public class CalcOrderHeader
+    public class CalcOrderHeader : LinnObject
 	{
         /// <summary>
         /// Order id 

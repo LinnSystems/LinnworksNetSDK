@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Add_PurchaseOrderExtendedPropertyResponse
+    public class Add_PurchaseOrderExtendedPropertyResponse : LinnObject
 	{
         /// <summary>
         /// Added purchase order extended properties 

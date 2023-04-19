@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderShippingInfo
+    public class OrderShippingInfo : LinnObject
 	{
         /// <summary>
         /// Courier name (e.g. Royal Mail) 

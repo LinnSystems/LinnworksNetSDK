@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Modify_AdditionalCostResponse
+    public class Modify_AdditionalCostResponse : LinnObject
 	{
         /// <summary>
         /// List of modified items, added or updated. Each item has Id which was provided in the request 

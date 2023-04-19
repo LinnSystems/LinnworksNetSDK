@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateWarehouseBinrackBinrackToZoneResponse
+    public class UpdateWarehouseBinrackBinrackToZoneResponse : LinnObject
 	{
 		public List<WarehouseBinrackToZoneResponseItem> BinrackToZones { get; set; }
 	} 

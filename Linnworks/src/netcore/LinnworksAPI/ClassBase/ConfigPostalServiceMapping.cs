@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 
 namespace LinnworksAPI
 { 
-    public class ConfigPostalServiceMapping
+    public class ConfigPostalServiceMapping : LinnObject
 	{
         /// <summary>
         /// Readonly collection of Mapping as mapping should only be modified through the add and remove methods 

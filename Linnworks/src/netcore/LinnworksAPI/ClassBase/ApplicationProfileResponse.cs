@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Represents Linnworks.net application subscription profile 
     /// </summary>
-    public class ApplicationProfileResponse
+    public class ApplicationProfileResponse : LinnObject
 	{
         /// <summary>
         /// Plan Tag as defined in your Application Configuration 

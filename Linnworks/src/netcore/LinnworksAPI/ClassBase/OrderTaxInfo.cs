@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderTaxInfo
+    public class OrderTaxInfo : LinnObject
 	{
         /// <summary>
         /// Customer Tax Number 

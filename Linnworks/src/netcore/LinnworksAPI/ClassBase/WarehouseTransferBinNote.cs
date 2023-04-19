@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class WarehouseTransferBinNote
+    public class WarehouseTransferBinNote : LinnObject
 	{
         /// <summary>
         /// Transfer bin note ID 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetBatchInventoryByIdResponse
+    public class GetBatchInventoryByIdResponse : LinnObject
 	{
 		public List<StockItemBatch> Batches { get; set; }
 	} 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Represent a simple version of EmailTemplate, with genering information 
     /// </summary>
-    public class EmailTemplateHeader
+    public class EmailTemplateHeader : LinnObject
 	{
         /// <summary>
         /// Row Id 

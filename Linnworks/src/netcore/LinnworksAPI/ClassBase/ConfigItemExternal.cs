@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ConfigItemExternal
+    public class ConfigItemExternal : LinnObject
 	{
 		public List<ConfigItemListItem> ListValues { get; set; }
 

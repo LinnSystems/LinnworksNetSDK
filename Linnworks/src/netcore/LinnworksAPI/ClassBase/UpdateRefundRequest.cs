@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateRefundRequest
+    public class UpdateRefundRequest : LinnObject
 	{
         /// <summary>
         /// The identifier for the refund header to update 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Single purchase order class. 
     /// </summary>
-    public class Get_PurchaseOrderResponse
+    public class Get_PurchaseOrderResponse : LinnObject
 	{
         /// <summary>
         /// Purchase order header 

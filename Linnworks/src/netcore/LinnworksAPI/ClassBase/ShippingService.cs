@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ShippingService
+    public class ShippingService : LinnObject
 	{
         /// <summary>
         /// Postal service ID 

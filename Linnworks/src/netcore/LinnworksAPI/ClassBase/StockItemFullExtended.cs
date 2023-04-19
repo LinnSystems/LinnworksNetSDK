@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Stock item with full extended details. 
     /// </summary>
-    public class StockItemFullExtended
+    public class StockItemFullExtended : LinnObject
 	{
         /// <summary>
         /// List of item descriptions 

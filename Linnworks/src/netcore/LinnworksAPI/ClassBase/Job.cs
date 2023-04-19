@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Job
+    public class Job : LinnObject
 	{
 		public Int32 JobId { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderAuditTrail
+    public class OrderAuditTrail : LinnObject
 	{
         /// <summary>
         /// Date and time when audit record was added 

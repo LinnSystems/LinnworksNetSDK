@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class SearchProcessedOrdersResponse
+    public class SearchProcessedOrdersResponse : LinnObject
 	{
 		public GenericPagedResult<ProcessedOrderWeb> ProcessedOrders { get; set; }
 	} 

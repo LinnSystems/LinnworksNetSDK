@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Pickwave order item 
     /// </summary>
-    public class PickingWaveItem
+    public class PickingWaveItem : LinnObject
 	{
         /// <summary>
         /// Pickwave item row id 

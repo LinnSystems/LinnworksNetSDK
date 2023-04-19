@@ -17,8 +17,10 @@ namespace LinnworksAPI
 		List<Identifier> GetIdentifiers();
 		List<OrderIdentifier> GetIdentifiersByOrderIds(GetOrderIdentifierRequest request);
 		GenericPagedResult<Guid> GetOpenOrderIds(GetOpenOrdersRequest request);
+		PostFilterPagedResponse<OpenOrder> GetOpenOrders(GetOpenOrdersRequest request);
 		GetOpenOrdersDetailsResponse GetOpenOrdersDetails(GetOpenOrdersDetailsRequest request);
 		GetOrderItemIndicatorResponse GetOrderItemIndicators(GetOrderItemIndicatorRequest request);
+		GetOrdersLowFidelityResponse GetOrdersLowFidelity(GetOrdersLowFidelityRequest request);
 		List<OrderViewStats> GetViewStats(GetViewStatsRequest request);
 		Identifier SaveIdentifier(SaveIdentifiersRequest request);
 		SearchOrdersResponse SearchOrders(SearchOrdersRequest request);

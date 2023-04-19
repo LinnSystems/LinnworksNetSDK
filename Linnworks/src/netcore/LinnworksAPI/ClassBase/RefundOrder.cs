@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RefundOrder
+    public class RefundOrder : LinnObject
 	{
         /// <summary>
         /// Order ID (unique order identifier) 

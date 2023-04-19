@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AvailableOrderItemBatchsInfo
+    public class AvailableOrderItemBatchsInfo : LinnObject
 	{
         /// <summary>
         /// Order ID 

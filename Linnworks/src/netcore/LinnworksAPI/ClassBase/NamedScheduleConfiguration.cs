@@ -9,7 +9,7 @@ namespace LinnworksAPI
         /// Within imports there is a Schedule class which contains a Name property but it is an import specfic class and reuse would require changes to the underlying macro data structure
         /// Hence NamedScheduleConfiguration - written for use by Macros but hopefully we'll be able to move all scheduling into the namespace eventually 
     /// </summary>
-    public class NamedScheduleConfiguration
+    public class NamedScheduleConfiguration : LinnObject
 	{
         /// <summary>
         /// User visible name for a schedule configuration 

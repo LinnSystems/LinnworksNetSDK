@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ViewGroup
+    public class ViewGroup : LinnObject
 	{
 		public Int32 GroupId { get; set; }
 

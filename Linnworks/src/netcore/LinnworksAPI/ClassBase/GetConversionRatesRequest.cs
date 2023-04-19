@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetConversionRatesRequest
+    public class GetConversionRatesRequest : LinnObject
 	{
         /// <summary>
         /// If you want to get currencies from orders 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BaseSession
+    public class BaseSession : LinnObject
 	{
 		public Guid Id { get; set; }
 

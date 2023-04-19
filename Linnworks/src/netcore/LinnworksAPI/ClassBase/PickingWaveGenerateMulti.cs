@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveGenerateMulti
+    public class PickingWaveGenerateMulti : LinnObject
 	{
         /// <summary>
         /// Orders 

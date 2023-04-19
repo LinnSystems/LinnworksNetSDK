@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ClearStockAssignmentRequest
+    public class ClearStockAssignmentRequest : LinnObject
 	{
 		public Int32[] OrderIds { get; set; }
 	} 

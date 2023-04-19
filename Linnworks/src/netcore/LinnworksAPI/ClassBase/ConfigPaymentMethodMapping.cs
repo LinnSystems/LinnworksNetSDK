@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ConfigPaymentMethodMapping
+    public class ConfigPaymentMethodMapping : LinnObject
 	{
         /// <summary>
         /// Readonly collection of Mapping as mapping should only be modified through the add and remove methods 

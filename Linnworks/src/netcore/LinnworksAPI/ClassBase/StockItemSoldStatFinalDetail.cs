@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemSoldStatFinalDetail
+    public class StockItemSoldStatFinalDetail : LinnObject
 	{
         /// <summary>
         /// When stock was sold 

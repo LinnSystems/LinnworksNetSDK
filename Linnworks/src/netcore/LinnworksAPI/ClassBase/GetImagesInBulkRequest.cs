@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetImagesInBulkRequest
+    public class GetImagesInBulkRequest : LinnObject
 	{
 		public List<Guid> StockItemIds { get; set; }
 

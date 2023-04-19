@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BatchStockLevelDetaRequest
+    public class BatchStockLevelDetaRequest : LinnObject
 	{
 		public List<BatchStockLevelDelta> StockLevelDeltas { get; set; }
 

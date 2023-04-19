@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetItemBinracksResponse
+    public class GetItemBinracksResponse : LinnObject
 	{
         /// <summary>
         /// A list of other batches that are available in the given linnworks stock location 

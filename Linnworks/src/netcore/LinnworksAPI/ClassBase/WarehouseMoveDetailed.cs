@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class WarehouseMoveDetailed
+    public class WarehouseMoveDetailed : LinnObject
 	{
         /// <summary>
         /// Moving from bin rack 
@@ -27,7 +27,7 @@ namespace LinnworksAPI
 
 		public Int32 Quantity { get; set; }
 
-		public Guid UserId { get; set; }
+		public Guid? UserId { get; set; }
 
 		public String UserName { get; set; }
 

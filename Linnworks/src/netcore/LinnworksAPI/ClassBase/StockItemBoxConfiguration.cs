@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Stock item box configuration, dimennsions 
     /// </summary>
-    public class StockItemBoxConfiguration
+    public class StockItemBoxConfiguration : LinnObject
 	{
         /// <summary>
         /// Unique box id. 

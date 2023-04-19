@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Get_EmailCSVFileResponse
+    public class Get_EmailCSVFileResponse : LinnObject
 	{
 		public String Url { get; set; }
 	} 

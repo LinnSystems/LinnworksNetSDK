@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ConfigPropertySelectionList<SelectStringValueOption,Guid>
+    public class ConfigPropertySelectionList<SelectStringValueOption,Guid> : LinnObject
 	{
 		public Boolean Loaded { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Get_OpenOrderBasicInfoFromItemsRequest
+    public class Get_OpenOrderBasicInfoFromItemsRequest : LinnObject
 	{
         /// <summary>
         /// List of open order iems ids to get info 

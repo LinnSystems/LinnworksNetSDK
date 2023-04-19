@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PictureSource
+    public class PictureSource : LinnObject
 	{
 		public Guid PictureId { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ExportColumn
+    public class ExportColumn : LinnObject
 	{
 		public Int32 Order { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class SqlDataRecord
+    public class SqlDataRecord : LinnObject
 	{
 		public Int32 FieldCount { get; set; }
 

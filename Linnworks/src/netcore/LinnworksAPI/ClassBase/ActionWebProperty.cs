@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionWebProperty
+    public class ActionWebProperty : LinnObject
 	{
 		public Int32 ActionPropertyId { get; set; }
 

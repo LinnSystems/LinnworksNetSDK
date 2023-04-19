@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ResendItem
+    public class ResendItem : LinnObject
 	{
         /// <summary>
         /// The quantity of the selected item to resend 

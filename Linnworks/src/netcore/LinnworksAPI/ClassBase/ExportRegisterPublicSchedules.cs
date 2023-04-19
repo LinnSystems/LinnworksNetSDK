@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ExportRegisterPublicSchedules
+    public class ExportRegisterPublicSchedules : LinnObject
 	{
 		public DateTime? LastQueryExecuted { get; set; }
 
@@ -33,6 +33,8 @@ namespace LinnworksAPI
 		public Boolean IsNew { get; set; }
 
 		public Boolean AllSchedulesDisabled { get; set; }
+
+		public Double TimeZoneOffset { get; set; }
 
 		public DateTime? NextSchedule { get; set; }
 	} 

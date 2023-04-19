@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickWaveAllocateCheckResultError
+    public class PickWaveAllocateCheckResultError : LinnObject
 	{
         /// <summary>
         /// Error message 

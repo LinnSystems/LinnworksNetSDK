@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace LinnworksAPI
 { 
-    public class OrderXML
+    public class OrderXML : LinnObject
 	{
 		public String LineTag { get; set; }
 

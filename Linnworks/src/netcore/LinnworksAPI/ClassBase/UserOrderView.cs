@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UserOrderView
+    public class UserOrderView : LinnObject
 	{
 		public DateTime ModifiedDateTime { get; set; }
 

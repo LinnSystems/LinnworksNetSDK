@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdatedRefundLine
+    public class UpdatedRefundLine : LinnObject
 	{
         /// <summary>
         /// Identifies the refund line 

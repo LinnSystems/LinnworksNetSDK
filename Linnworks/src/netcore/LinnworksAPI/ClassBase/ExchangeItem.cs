@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ExchangeItem
+    public class ExchangeItem : LinnObject
 	{
         /// <summary>
         /// The stock item ID for the item that will replace the returned item 

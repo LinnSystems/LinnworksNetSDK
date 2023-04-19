@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetWarehouseTotesRequest
+    public class GetWarehouseTotesRequest : LinnObject
 	{
         /// <summary>
         /// Location Id of the TOTs 

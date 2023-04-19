@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ConditionHeaderBasic
+    public class ConditionHeaderBasic : LinnObject
 	{
 		public Int32 pkConditionId { get; set; }
 

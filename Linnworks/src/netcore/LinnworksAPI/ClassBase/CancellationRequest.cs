@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CancellationRequest
+    public class CancellationRequest : LinnObject
 	{
 		public Boolean IsChannelCancellation { get; set; }
 
@@ -31,6 +31,8 @@ namespace LinnworksAPI
 		public Int32 HeaderId { get; set; }
 
 		public Guid OrderId { get; set; }
+
+		public Boolean InternalOnly { get; set; }
 
 		public Boolean IsRetry { get; set; }
 

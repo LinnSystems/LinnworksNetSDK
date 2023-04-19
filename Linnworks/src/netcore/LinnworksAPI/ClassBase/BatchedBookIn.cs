@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BatchedBookIn
+    public class BatchedBookIn : LinnObject
 	{
         /// <summary>
         /// Product SKU 

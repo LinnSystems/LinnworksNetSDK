@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetBinrackZonesByBinrackIdOrNameResponse
+    public class GetBinrackZonesByBinrackIdOrNameResponse : LinnObject
 	{
         /// <summary>
         /// Warehouse Zones 

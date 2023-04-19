@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetExtendedPropertyFilter
+    public class GetExtendedPropertyFilter : LinnObject
 	{
 		public String PropertyName { get; set; }
 

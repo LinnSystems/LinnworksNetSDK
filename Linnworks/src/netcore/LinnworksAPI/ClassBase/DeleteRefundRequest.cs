@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteRefundRequest
+    public class DeleteRefundRequest : LinnObject
 	{
         /// <summary>
         /// Identifies the refund header to be deleted 

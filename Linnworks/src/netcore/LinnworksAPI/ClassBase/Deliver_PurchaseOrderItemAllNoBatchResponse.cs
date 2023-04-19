@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Response from delivering all items in an open/partial PO except Batch itesm 
     /// </summary>
-    public class Deliver_PurchaseOrderItemAllNoBatchResponse
+    public class Deliver_PurchaseOrderItemAllNoBatchResponse : LinnObject
 	{
         /// <summary>
         /// Delivered items and Recalculated purchase order header 

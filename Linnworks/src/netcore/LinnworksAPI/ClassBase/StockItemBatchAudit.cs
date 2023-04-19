@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemBatchAudit
+    public class StockItemBatchAudit : LinnObject
 	{
 		public Int32 BatchId { get; set; }
 

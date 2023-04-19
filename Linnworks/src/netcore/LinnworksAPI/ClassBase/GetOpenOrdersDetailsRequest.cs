@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetOpenOrdersDetailsRequest
+    public class GetOpenOrdersDetailsRequest : LinnObject
 	{
         /// <summary>
         /// List of order ids as unique identifiers 

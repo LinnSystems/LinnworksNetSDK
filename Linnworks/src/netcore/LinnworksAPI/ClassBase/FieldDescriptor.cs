@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class FieldDescriptor
+    public class FieldDescriptor : LinnObject
 	{
 		public String Name { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class InventoryView
+    public class InventoryView : LinnObject
 	{
         /// <summary>
         /// View ID 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderNoteType
+    public class OrderNoteType : LinnObject
 	{
 		public Byte NoteTypeId { get; set; }
 

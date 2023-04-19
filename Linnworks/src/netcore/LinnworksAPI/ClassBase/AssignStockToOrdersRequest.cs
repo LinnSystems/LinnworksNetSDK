@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AssignStockToOrdersRequest
+    public class AssignStockToOrdersRequest : LinnObject
 	{
 		public List<Guid> OrderIds { get; set; }
 

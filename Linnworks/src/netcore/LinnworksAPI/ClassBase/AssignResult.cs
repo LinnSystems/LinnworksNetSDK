@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AssignResult
+    public class AssignResult : LinnObject
 	{
 		public Guid[] Changed { get; set; }
 

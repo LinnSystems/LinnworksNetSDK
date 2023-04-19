@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class WarehouseBinrackToZoneRequestItem
+    public class WarehouseBinrackToZoneRequestItem : LinnObject
 	{
 		public Int32 RowIndex { get; set; }
 

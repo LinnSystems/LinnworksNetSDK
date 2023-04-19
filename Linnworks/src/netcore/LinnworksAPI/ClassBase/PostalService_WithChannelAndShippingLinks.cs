@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class which exposes only those elements required by linnworks.net front end 
     /// </summary>
-    public class PostalService_WithChannelAndShippingLinks
+    public class PostalService_WithChannelAndShippingLinks : LinnObject
 	{
         /// <summary>
         /// Postal service ID 

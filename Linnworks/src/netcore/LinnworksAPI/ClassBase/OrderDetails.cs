@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderDetails
+    public class OrderDetails : LinnObject
 	{
         /// <summary>
         /// Order ID (pkOrderId) 

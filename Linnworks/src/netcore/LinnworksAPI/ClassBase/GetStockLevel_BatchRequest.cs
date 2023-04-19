@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetStockLevel_BatchRequest
+    public class GetStockLevel_BatchRequest : LinnObject
 	{
         /// <summary>
         /// List of stock item ids to get stock level 

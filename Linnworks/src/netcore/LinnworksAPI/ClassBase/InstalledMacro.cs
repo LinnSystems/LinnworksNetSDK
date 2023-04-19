@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class InstalledMacro
+    public class InstalledMacro : LinnObject
 	{
 		public String ApplicationName { get; set; }
 

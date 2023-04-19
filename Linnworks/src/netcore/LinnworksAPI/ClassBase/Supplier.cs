@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Supplier
+    public class Supplier : LinnObject
 	{
         /// <summary>
         /// Supplier Id 

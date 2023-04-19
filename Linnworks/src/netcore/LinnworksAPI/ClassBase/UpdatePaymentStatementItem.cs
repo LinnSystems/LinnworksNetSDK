@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdatePaymentStatementItem
+    public class UpdatePaymentStatementItem : LinnObject
 	{
         /// <summary>
         /// Payment Statement line row id, uniquely identifying each cost line 

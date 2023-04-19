@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Order General Info class 
     /// </summary>
-    public class OrderGeneralInfo
+    public class OrderGeneralInfo : LinnObject
 	{
         /// <summary>
         /// Order Status (0 = UNPAID, 1 = PAID,2 = RETURN,3 = PENDING,4 = RESEND) 

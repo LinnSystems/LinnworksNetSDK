@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace LinnworksAPI
 { 
-    public class FieldSorting
+    public class FieldSorting : LinnObject
 	{
         /// <summary>
         /// Field code to sort by 

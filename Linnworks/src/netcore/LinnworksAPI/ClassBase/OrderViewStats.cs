@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderViewStats
+    public class OrderViewStats : LinnObject
 	{
 		public Int32 ViewId { get; set; }
 

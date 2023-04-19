@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddAdditionalCostAllocationItem
+    public class AddAdditionalCostAllocationItem : LinnObject
 	{
         /// <summary>
         /// Specific purchase order line id the cost is attributed to 

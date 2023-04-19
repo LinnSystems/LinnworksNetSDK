@@ -9,5 +9,6 @@ namespace LinnworksAPI
     public interface IPostSaleController
 	{
 		ValidatedCancellation CreateCancellation(CancellationRequest request);
+		CancellationOptions GetCancellationOptions(Guid orderId);
 	} 
 }

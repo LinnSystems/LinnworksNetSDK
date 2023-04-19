@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetInstalledMacroRequest
+    public class GetInstalledMacroRequest : LinnObject
 	{
 	} 
 }

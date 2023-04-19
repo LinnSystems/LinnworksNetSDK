@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Get_EmailsSentResponse
+    public class Get_EmailsSentResponse : LinnObject
 	{
 		public List<EmailSent> Items { get; set; }
 	} 

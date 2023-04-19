@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemDuePO
+    public class StockItemDuePO : LinnObject
 	{
         /// <summary>
         /// Supplier name 

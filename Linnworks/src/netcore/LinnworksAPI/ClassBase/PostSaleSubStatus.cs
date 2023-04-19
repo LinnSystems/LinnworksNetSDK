@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PostSaleSubStatus
+    public class PostSaleSubStatus : LinnObject
 	{
         /// <summary>
         /// For an individual refund line, this identifies the line's state on the channel. For the header, if all its lines have the same StatusTag, it will also have the same StatusTag. If not,

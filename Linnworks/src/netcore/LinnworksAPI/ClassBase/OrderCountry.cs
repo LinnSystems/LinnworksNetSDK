@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderCountry
+    public class OrderCountry : LinnObject
 	{
         /// <summary>
         /// Country ID 

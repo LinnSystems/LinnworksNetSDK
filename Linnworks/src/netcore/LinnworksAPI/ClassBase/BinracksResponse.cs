@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BinracksResponse
+    public class BinracksResponse : LinnObject
 	{
         /// <summary>
         /// List of binracks available for the given item in the order applicability. 

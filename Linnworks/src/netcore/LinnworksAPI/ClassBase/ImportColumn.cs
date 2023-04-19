@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ImportColumn
+    public class ImportColumn : LinnObject
 	{
 		public List<AddData> AdditionalData { get; set; }
 

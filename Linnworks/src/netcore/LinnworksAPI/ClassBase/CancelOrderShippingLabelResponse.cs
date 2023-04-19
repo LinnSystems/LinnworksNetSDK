@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class used for getting shipping label cancelation parameter 
     /// </summary>
-    public class CancelOrderShippingLabelResponse
+    public class CancelOrderShippingLabelResponse : LinnObject
 	{
         /// <summary>
         /// Identifies that the label is canceled successfully in the courier system 

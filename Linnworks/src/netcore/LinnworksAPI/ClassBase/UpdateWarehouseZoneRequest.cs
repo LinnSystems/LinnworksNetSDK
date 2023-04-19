@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateWarehouseZoneRequest
+    public class UpdateWarehouseZoneRequest : LinnObject
 	{
 		public WarehouseZone Zone { get; set; }
 	} 

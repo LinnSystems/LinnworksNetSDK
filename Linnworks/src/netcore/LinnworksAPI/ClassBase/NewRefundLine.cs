@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class NewRefundLine
+    public class NewRefundLine : LinnObject
 	{
         /// <summary>
         /// If the refund line pertains to an existing order return, this field should be populated with the unique identifier for the relevant return line 

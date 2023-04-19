@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetViewStatsRequest
+    public class GetViewStatsRequest : LinnObject
 	{
 		public Guid LocationId { get; set; }
 

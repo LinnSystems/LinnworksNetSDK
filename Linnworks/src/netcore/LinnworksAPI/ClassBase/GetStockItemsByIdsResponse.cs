@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetStockItemsByIdsResponse
+    public class GetStockItemsByIdsResponse : LinnObject
 	{
         /// <summary>
         /// List of stock item headers. 

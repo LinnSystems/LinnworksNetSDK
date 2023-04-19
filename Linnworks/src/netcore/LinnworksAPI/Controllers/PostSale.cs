@@ -21,6 +21,16 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("PostSale/CreateCancellation", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<ValidatedCancellation>(response);
+		}
+
+		/// <summary>
+        /// This method is used to validate whether a channel cancellation can be submitted for a given order 
+        /// </summary>
+        /// <param name="orderId">The relevant order ID</param>
+        public CancellationOptions GetCancellationOptions(Guid orderId)
+		{
+			var response = GetResponse("PostSale/GetCancellationOptions", "orderId=" + orderId + "", "GET");
+            return JsonFormatter.ConvertFromJson<CancellationOptions>(response);
 		} 
     }
 }

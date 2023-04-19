@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Update_AdditionalCostTypesResponse
+    public class Update_AdditionalCostTypesResponse : LinnObject
 	{
         /// <summary>
         /// Update additional cost type 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Bin Rack 
     /// </summary>
-    public class BinRackStockItem
+    public class BinRackStockItem : LinnObject
 	{
         /// <summary>
         /// Unique id for the binrack 

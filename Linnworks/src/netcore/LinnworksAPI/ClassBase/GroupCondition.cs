@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GroupCondition
+    public class GroupCondition : LinnObject
 	{
 		public String Where { get; set; }
 

@@ -26,6 +26,9 @@ namespace LinnworksAPI
 		IncorrectOwnership,
 		InvalidRefundAmount,
 		UnsupportedPaymentMethod,
+		PartialRefundsNotAllowed,
+		OrderOrItemIsUnpaid,
+		UnknownStatus,
 		ChannelAuthenticationIssue,
 		Other,
 	}

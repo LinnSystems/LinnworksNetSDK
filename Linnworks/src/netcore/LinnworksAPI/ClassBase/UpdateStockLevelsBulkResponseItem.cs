@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateStockLevelsBulkResponseItem
+    public class UpdateStockLevelsBulkResponseItem : LinnObject
 	{
         /// <summary>
         /// Errors assocaited with request item. 

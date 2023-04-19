@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateTotalsResult
+    public class UpdateTotalsResult : LinnObject
 	{
 		public OrderTotalsInfo TotalsInfo { get; set; }
 

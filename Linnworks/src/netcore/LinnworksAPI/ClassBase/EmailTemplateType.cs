@@ -4,11 +4,11 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class EmailTemplateType
+    public class EmailTemplateType : LinnObject
 	{
-		public String AttachmentHelpText { get; set; }
+		public String AttachedFileName { get; set; }
 
-		public String EmailType_Dispatch { get; set; }
+		public String AttachmentHelpText { get; set; }
 
 		public String Type { get; set; }
 
@@ -27,7 +27,5 @@ namespace LinnworksAPI
 		public String PrintingTemplateType { get; set; }
 
 		public List<EmailTemplateType> EmailTemplateTypes { get; set; }
-
-		public String AttachedFileName { get; set; }
 	} 
 }

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Purchase order delivery record 
     /// </summary>
-    public class PurchaseOrderDeliveredRecord
+    public class PurchaseOrderDeliveredRecord : LinnObject
 	{
         /// <summary>
         /// Delivery record Id 

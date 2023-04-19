@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ConfigRule
+    public class ConfigRule : LinnObject
 	{
 		public String FieldName { get; set; }
 

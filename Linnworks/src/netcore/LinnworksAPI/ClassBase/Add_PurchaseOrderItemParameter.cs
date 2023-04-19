@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class represents parameter for adding line to the purchase order. 
     /// </summary>
-    public class Add_PurchaseOrderItemParameter
+    public class Add_PurchaseOrderItemParameter : LinnObject
 	{
         /// <summary>
         /// Purchase order id. You can only add items to pending purchase orders 

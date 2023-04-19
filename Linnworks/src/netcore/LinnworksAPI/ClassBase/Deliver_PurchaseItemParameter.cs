@@ -9,7 +9,7 @@ namespace LinnworksAPI
         /// You can use Delivered parameter to specify exact quantity of items delivered or 
         /// AddToDelivered to add quantity to delivered 
     /// </summary>
-    public class Deliver_PurchaseItemParameter
+    public class Deliver_PurchaseItemParameter : LinnObject
 	{
         /// <summary>
         /// If defined, this value will be used to apply the delivery to a batch 

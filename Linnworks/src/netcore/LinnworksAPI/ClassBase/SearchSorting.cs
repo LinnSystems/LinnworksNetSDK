@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class SearchSorting
+    public class SearchSorting : LinnObject
 	{
 		public String SortField { get; set; }
 

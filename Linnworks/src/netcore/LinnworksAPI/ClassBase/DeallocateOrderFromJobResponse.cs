@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Response - contains details of a the job 
     /// </summary>
-    public class DeallocateOrderFromJobResponse
+    public class DeallocateOrderFromJobResponse : LinnObject
 	{
         /// <summary>
         /// Updated job details 

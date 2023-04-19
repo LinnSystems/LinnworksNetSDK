@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PrintJobProcessedDto
+    public class PrintJobProcessedDto : LinnObject
 	{
         /// <summary>
         /// List of order ids that have been processed 

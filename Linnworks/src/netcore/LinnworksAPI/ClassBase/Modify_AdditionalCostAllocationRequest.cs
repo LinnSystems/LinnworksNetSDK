@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request contains items for modifyin, deleting and adding additional cost allocation items 
     /// </summary>
-    public class Modify_AdditionalCostAllocationRequest
+    public class Modify_AdditionalCostAllocationRequest : LinnObject
 	{
         /// <summary>
         /// Purchase order id 

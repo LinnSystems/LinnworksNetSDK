@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RMAError
+    public class RMAError : LinnObject
 	{
 		public Int32 RMARowId { get; set; }
 

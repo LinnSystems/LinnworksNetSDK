@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ValidationResult
+    public class ValidationResult : LinnObject
 	{
         /// <summary>
         /// Validation result 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetStockItemsByIdsRequest
+    public class GetStockItemsByIdsRequest : LinnObject
 	{
         /// <summary>
         /// Collection of Stock item id (uniqueidentifier) 

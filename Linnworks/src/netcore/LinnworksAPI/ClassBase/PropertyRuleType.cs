@@ -26,5 +26,6 @@ namespace LinnworksAPI
 		ListAtLeastOneSelected,
 		ListAtLeastOneOf,
 		Hidden,
+		Shown,
 	}
 }

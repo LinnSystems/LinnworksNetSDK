@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddExtendedPropertiesRequest
+    public class AddExtendedPropertiesRequest : LinnObject
 	{
         /// <summary>
         /// Order id of the order to append extended properties to 

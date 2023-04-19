@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ClientContext
+    public class ClientContext : LinnObject
 	{
 		public String Module { get; set; }
 	} 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class IndicatorRequest
+    public class IndicatorRequest : LinnObject
 	{
 		public Guid OrderItemId { get; set; }
 

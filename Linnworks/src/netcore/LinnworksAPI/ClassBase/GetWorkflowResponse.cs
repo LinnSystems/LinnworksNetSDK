@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Response of GetWorkflow 
     /// </summary>
-    public class GetWorkflowResponse
+    public class GetWorkflowResponse : LinnObject
 	{
         /// <summary>
         /// List of workflow groups with up to 50 jobs arranged in To Do, and then decending datetime stamp 

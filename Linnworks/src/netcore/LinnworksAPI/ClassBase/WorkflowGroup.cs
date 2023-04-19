@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Workflow group item 
     /// </summary>
-    public class WorkflowGroup
+    public class WorkflowGroup : LinnObject
 	{
         /// <summary>
         /// Group header object. Group condition will be stripped out in this method 

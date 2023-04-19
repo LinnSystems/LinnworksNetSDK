@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class WarehouseBinRackItemsInfo
+    public class WarehouseBinRackItemsInfo : LinnObject
 	{
 		public Int32 BinRackId { get; set; }
 

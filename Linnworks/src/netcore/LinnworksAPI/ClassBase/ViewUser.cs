@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ViewUser
+    public class ViewUser : LinnObject
 	{
 		public String Name { get; set; }
 

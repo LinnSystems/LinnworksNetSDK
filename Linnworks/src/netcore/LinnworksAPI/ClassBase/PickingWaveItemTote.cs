@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveItemTote
+    public class PickingWaveItemTote : LinnObject
 	{
 		public Int32 RowId { get; set; }
 

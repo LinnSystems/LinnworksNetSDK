@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Used to get inventory item batch information 
     /// </summary>
-    public class GetInventoryItemBatchInformationRequest
+    public class GetInventoryItemBatchInformationRequest : LinnObject
 	{
         /// <summary>
         /// The item id 

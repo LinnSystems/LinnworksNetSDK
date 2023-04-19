@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class TrackingURLRequestItem
+    public class TrackingURLRequestItem : LinnObject
 	{
 		public Int32 OrderId { get; set; }
 

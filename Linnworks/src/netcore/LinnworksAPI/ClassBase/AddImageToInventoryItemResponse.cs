@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddImageToInventoryItemResponse
+    public class AddImageToInventoryItemResponse : LinnObject
 	{
         /// <summary>
         /// pkStockItemId of an item 

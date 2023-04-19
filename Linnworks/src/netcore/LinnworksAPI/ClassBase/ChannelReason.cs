@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ChannelReason
+    public class ChannelReason : LinnObject
 	{
 		public String Tag { get; set; }
 

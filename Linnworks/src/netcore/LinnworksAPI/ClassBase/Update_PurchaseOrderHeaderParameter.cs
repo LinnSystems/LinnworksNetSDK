@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Change purchase order status. You can change from PENDING to OPEN, from OPEN to DELIVERED, from PARTIAL to DELIVERED 
     /// </summary>
-    public class Update_PurchaseOrderHeaderParameter
+    public class Update_PurchaseOrderHeaderParameter : LinnObject
 	{
         /// <summary>
         /// Unique identifier for the purchase order. You have to use this ID for all updates to the PO 

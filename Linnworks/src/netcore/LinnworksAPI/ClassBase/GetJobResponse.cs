@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetJobResponse
+    public class GetJobResponse : LinnObject
 	{
         /// <summary>
         /// Single instance of a job returned with list of orders, status and available attachments 

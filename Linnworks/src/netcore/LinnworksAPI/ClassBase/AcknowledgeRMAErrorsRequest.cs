@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AcknowledgeRMAErrorsRequest
+    public class AcknowledgeRMAErrorsRequest : LinnObject
 	{
         /// <summary>
         /// The unique identifier for the RMA header whose errors will be acknowledged 

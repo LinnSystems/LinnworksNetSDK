@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Response class with info about stock level in each location for a list of stock items 
     /// </summary>
-    public class GetStockLevel_BatchResponse
+    public class GetStockLevel_BatchResponse : LinnObject
 	{
         /// <summary>
         /// Id of the stock item 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class FieldKeys
+    public class FieldKeys : LinnObject
 	{
 		public String FieldName { get; set; }
 

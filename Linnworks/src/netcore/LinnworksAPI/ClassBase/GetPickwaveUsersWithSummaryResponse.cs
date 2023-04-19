@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetPickwaveUsersWithSummaryResponse
+    public class GetPickwaveUsersWithSummaryResponse : LinnObject
 	{
 		public List<PickingWave> PickingWaves { get; set; }
 	} 

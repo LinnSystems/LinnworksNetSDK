@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Response class for Modify_PurchaseOrderItems_Bulk 
     /// </summary>
-    public class Modify_PurchaseOrderItems_BulkResponse
+    public class Modify_PurchaseOrderItems_BulkResponse : LinnObject
 	{
         /// <summary>
         /// Modified purchase order items. Newly added items, updated items. Deleted items not returned back to the client. 

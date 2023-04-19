@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockAvailability
+    public class StockAvailability : LinnObject
 	{
 		public Guid PkId { get; set; }
 

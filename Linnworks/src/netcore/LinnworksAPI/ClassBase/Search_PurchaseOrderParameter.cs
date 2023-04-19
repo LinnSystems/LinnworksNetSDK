@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Search Purchase order class 
     /// </summary>
-    public class Search_PurchaseOrderParameter
+    public class Search_PurchaseOrderParameter : LinnObject
 	{
         /// <summary>
         /// Purchase order date range from (optional) 

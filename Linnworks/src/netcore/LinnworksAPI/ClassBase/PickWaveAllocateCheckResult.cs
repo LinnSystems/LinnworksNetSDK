@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Pickwave allocated check result. 
     /// </summary>
-    public class PickWaveAllocateCheckResult
+    public class PickWaveAllocateCheckResult : LinnObject
 	{
         /// <summary>
         /// Order Id interger 

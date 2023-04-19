@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Add_PurchaseOrderExtendedProperty_Item
+    public class Add_PurchaseOrderExtendedProperty_Item : LinnObject
 	{
 		public String PropertyName { get; set; }
 

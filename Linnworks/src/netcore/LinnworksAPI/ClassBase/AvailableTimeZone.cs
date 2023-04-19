@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AvailableTimeZone
+    public class AvailableTimeZone : LinnObject
 	{
 		public String Id { get; set; }
 

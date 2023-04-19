@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class VerifiedRefundItem
+    public class VerifiedRefundItem : LinnObject
 	{
         /// <summary>
         /// The unique order item identifier 

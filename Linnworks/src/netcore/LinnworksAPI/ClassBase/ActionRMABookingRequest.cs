@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionRMABookingRequest
+    public class ActionRMABookingRequest : LinnObject
 	{
         /// <summary>
         /// The unique identifier for the RMA header to action 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Get_DeliveredRecords_Response
+    public class Get_DeliveredRecords_Response : LinnObject
 	{
 		public List<PurchaseOrderDeliveredRecord> Items { get; set; }
 	} 

@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Objects that define an entity field or property mapping 
     /// </summary>
-    public class TemplateTag
+    public class TemplateTag : LinnObject
 	{
         /// <summary>
         /// Tag which is inserted into the template as [{Tag}] 

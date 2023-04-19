@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DownloadOrdersToCSVResponse
+    public class DownloadOrdersToCSVResponse : LinnObject
 	{
 		public String Url { get; set; }
 

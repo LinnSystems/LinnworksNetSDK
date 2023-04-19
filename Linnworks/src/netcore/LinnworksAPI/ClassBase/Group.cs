@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Group
+    public class Group : LinnObject
 	{
 		public Int32 GroupId { get; set; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ProcessedOrderRelation
+    public class ProcessedOrderRelation : LinnObject
 	{
         /// <summary>
         /// Child order number 

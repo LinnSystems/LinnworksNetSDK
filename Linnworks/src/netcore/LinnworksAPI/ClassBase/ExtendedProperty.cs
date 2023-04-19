@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ExtendedProperty
+    public class ExtendedProperty : LinnObject
 	{
         /// <summary>
         /// Record row ID 

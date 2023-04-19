@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OpenOrderBasicInfo
+    public class OpenOrderBasicInfo : LinnObject
 	{
 		public Guid rowid { get; set; }
 

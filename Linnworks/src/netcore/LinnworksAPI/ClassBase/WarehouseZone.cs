@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class WarehouseZone
+    public class WarehouseZone : LinnObject
 	{
         /// <summary>
         /// Unique zone id 

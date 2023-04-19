@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class LinePricingRequest
+    public class LinePricingRequest : LinnObject
 	{
         /// <summary>
         /// Price per unit (default from stock item) 

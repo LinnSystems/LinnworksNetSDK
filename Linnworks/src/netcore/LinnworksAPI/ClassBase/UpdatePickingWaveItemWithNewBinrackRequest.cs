@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdatePickingWaveItemWithNewBinrackRequest
+    public class UpdatePickingWaveItemWithNewBinrackRequest : LinnObject
 	{
         /// <summary>
         /// Pickwave id 

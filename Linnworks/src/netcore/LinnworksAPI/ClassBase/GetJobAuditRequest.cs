@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request class for GetJobAudit method 
     /// </summary>
-    public class GetJobAuditRequest
+    public class GetJobAuditRequest : LinnObject
 	{
         /// <summary>
         /// Job id for which you want to get audit trail 

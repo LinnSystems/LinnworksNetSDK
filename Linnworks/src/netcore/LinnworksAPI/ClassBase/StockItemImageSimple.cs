@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Simple stock item image record 
     /// </summary>
-    public class StockItemImageSimple
+    public class StockItemImageSimple : LinnObject
 	{
         /// <summary>
         /// Unique id of image 

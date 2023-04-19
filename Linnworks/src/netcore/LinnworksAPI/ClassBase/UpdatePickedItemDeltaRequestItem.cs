@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdatePickedItemDeltaRequestItem
+    public class UpdatePickedItemDeltaRequestItem : LinnObject
 	{
         /// <summary>
         /// Picking wave row id 

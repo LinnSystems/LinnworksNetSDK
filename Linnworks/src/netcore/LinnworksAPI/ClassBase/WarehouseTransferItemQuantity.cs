@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class WarehouseTransferItemQuantity
+    public class WarehouseTransferItemQuantity : LinnObject
 	{
         /// <summary>
         /// Stock item ID (unique identifier) 

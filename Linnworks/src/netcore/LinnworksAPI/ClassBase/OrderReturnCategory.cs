@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Return category object 
     /// </summary>
-    public class OrderReturnCategory
+    public class OrderReturnCategory : LinnObject
 	{
         /// <summary>
         /// Stock item ID 

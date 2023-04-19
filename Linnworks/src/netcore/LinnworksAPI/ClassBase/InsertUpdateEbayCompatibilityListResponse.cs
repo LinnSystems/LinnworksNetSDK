@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class InsertUpdateEbayCompatibilityListResponse
+    public class InsertUpdateEbayCompatibilityListResponse : LinnObject
 	{
 		public List<StockItemEbayCompatibility> EbayCompatibilityList { get; set; }
 	} 

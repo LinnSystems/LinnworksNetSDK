@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionablePostSaleSearchFilters
+    public class ActionablePostSaleSearchFilters : LinnObject
 	{
 		public Boolean Actionable { get; set; }
 

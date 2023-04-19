@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ActionForm
+    public class ActionForm : LinnObject
 	{
 		public String Caption { get; set; }
 

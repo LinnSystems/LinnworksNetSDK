@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddImageToInventoryItemRequest
+    public class AddImageToInventoryItemRequest : LinnObject
 	{
         /// <summary>
         /// SKU number of an item 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class KeyGuidValue
+    public class KeyGuidValue : LinnObject
 	{
 		public String Key { get; set; }
 

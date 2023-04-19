@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CreateRefundRequest
+    public class CreateRefundRequest : LinnObject
 	{
         /// <summary>
         /// Determines whether the refund was initiated on the channel, or within Linnworks 

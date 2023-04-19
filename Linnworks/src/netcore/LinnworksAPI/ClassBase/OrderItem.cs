@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Order item object 
     /// </summary>
-    public class OrderItem
+    public class OrderItem : LinnObject
 	{
         /// <summary>
         /// Stock Item ID 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockTakeItemWithError
+    public class StockTakeItemWithError : LinnObject
 	{
 		public String BinRack { get; set; }
 

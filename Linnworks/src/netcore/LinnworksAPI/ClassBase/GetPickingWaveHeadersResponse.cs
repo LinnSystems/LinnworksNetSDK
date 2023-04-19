@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetPickingWaveHeadersResponse
+    public class GetPickingWaveHeadersResponse : LinnObject
 	{
         /// <summary>
         /// List of pickingwave headers without order details 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PickingWaveGenerateItemMulti
+    public class PickingWaveGenerateItemMulti : LinnObject
 	{
         /// <summary>
         /// Order item row id 

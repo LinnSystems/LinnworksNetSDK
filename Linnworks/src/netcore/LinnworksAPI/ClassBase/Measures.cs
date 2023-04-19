@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Measures
+    public class Measures : LinnObject
 	{
         /// <summary>
         /// Dimension measures 

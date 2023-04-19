@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class RulesFields
+    public class RulesFields : LinnObject
 	{
 		public List<String> FieldNames { get; set; }
 

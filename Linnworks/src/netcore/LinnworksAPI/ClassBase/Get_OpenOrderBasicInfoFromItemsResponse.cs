@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Get_OpenOrderBasicInfoFromItemsResponse
+    public class Get_OpenOrderBasicInfoFromItemsResponse : LinnObject
 	{
 		public List<OpenOrderBasicInfo> OpenOrders { get; set; }
 	} 

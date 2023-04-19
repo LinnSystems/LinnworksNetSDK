@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ChannelRefundSubReason
+    public class ChannelRefundSubReason : LinnObject
 	{
         /// <summary>
         /// Tag 

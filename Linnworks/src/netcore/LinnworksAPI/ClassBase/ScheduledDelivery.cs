@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ScheduledDelivery
+    public class ScheduledDelivery : LinnObject
 	{
 		public DateTime From { get; set; }
 

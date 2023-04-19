@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class CouponValidationResult
+    public class CouponValidationResult : LinnObject
 	{
         /// <summary>
         /// Validation note 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetInventoryItemBatchInformationByIdsRequest
+    public class GetInventoryItemBatchInformationByIdsRequest : LinnObject
 	{
         /// <summary>
         /// A list of stock item ids 

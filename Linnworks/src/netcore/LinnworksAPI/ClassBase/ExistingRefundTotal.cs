@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ExistingRefundTotal
+    public class ExistingRefundTotal : LinnObject
 	{
         /// <summary>
         /// Amount refunded 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PostSaleStatus
+    public class PostSaleStatus : LinnObject
 	{
         /// <summary>
         /// Identifies whether the refund is open, processed, or in an erroneous state 

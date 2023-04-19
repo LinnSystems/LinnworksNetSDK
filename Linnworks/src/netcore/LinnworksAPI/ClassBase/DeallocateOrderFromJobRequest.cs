@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Request class for DeallocateOrderFromJob method 
     /// </summary>
-    public class DeallocateOrderFromJobRequest
+    public class DeallocateOrderFromJobRequest : LinnObject
 	{
         /// <summary>
         /// Job id from which the order will be removed 

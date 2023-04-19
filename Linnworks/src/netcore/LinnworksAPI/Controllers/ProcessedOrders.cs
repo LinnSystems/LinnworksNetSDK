@@ -136,8 +136,8 @@ namespace LinnworksAPI
 		/// <summary>
         /// Download Processed Orders to CSV 
         /// </summary>
-        /// <param name="request">Request parameter populated with search critera for the file download</param>
-        /// <param name="cancellationToken">Request parameter populated with search critera for the file download</param>
+        /// <param name="request">Request parameter populated with search criteria for the file download</param>
+        /// <param name="cancellationToken">Request parameter populated with search criteria for the file download</param>
         public DownloadOrdersToCSVResponse DownloadOrdersToCSV(DownloadOrdersToCSVRequest request)
 		{
 			var response = GetResponse("ProcessedOrders/DownloadOrdersToCSV", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");

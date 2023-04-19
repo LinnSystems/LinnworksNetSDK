@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetOrderAuditTrailsByIdsResponse
+    public class GetOrderAuditTrailsByIdsResponse : LinnObject
 	{
 		public List<OrderAuditTrailExtended> AuditTrails { get; set; }
 	} 

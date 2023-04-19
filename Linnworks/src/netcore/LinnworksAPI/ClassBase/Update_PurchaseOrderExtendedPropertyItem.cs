@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Update_PurchaseOrderExtendedPropertyItem
+    public class Update_PurchaseOrderExtendedPropertyItem : LinnObject
 	{
 		public Int32 RowId { get; set; }
 

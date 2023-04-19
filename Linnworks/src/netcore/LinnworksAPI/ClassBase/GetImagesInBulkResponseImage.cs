@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Image response item. 
     /// </summary>
-    public class GetImagesInBulkResponseImage
+    public class GetImagesInBulkResponseImage : LinnObject
 	{
         /// <summary>
         /// SKU 

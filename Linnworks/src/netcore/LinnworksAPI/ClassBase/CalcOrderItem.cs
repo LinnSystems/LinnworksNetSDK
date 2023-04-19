@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class represents order item for package calculation purposes only 
     /// </summary>
-    public class CalcOrderItem
+    public class CalcOrderItem : LinnObject
 	{
         /// <summary>
         /// Unique stock item identifier 

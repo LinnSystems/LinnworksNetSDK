@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AuthorizeByApplicationRequest
+    public class AuthorizeByApplicationRequest : LinnObject
 	{
 		public Guid ApplicationId { get; set; }
 

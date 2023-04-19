@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StatsStockItemLocation
+    public class StatsStockItemLocation : LinnObject
 	{
 		public Guid StockLocationId { get; set; }
 

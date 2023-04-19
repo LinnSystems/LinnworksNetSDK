@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetProcessedOrAckedErrorRefundHeadersRequest
+    public class GetProcessedOrAckedErrorRefundHeadersRequest : LinnObject
 	{
         /// <summary>
         /// The page number to return for a given set of filters 

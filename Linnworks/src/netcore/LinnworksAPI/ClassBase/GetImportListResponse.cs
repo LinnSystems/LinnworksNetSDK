@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetImportListResponse
+    public class GetImportListResponse : LinnObject
 	{
 		public List<ImportRegisterPublicSchedules> register { get; set; }
 	} 

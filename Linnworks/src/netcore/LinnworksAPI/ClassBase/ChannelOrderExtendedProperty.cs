@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ChannelOrderExtendedProperty
+    public class ChannelOrderExtendedProperty : LinnObject
 	{
         /// <summary>
         /// Extended property name 

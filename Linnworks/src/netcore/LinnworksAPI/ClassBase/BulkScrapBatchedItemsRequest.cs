@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BulkScrapBatchedItemsRequest
+    public class BulkScrapBatchedItemsRequest : LinnObject
 	{
 		public Guid LocationId { get; set; }
 

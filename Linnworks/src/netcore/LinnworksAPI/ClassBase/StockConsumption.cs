@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockConsumption
+    public class StockConsumption : LinnObject
 	{
         /// <summary>
         /// When stock was sold 

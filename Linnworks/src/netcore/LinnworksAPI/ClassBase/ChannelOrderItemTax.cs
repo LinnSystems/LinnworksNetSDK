@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ChannelOrderItemTax
+    public class ChannelOrderItemTax : LinnObject
 	{
 		public String TaxType { get; set; }
 

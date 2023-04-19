@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetStockLevelByLocationResponse
+    public class GetStockLevelByLocationResponse : LinnObject
 	{
 		public StockItemLevel StockLevel { get; set; }
 	} 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class DeleteWarehouseZoneRequest
+    public class DeleteWarehouseZoneRequest : LinnObject
 	{
         /// <summary>
         /// Zone id to delete. 

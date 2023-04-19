@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class StockItemExtendedProperty
+    public class StockItemExtendedProperty : LinnObject
 	{
         /// <summary>
         /// Record row ID (generate random) 

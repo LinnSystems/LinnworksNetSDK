@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class Channel
+    public class Channel : LinnObject
 	{
         /// <summary>
         /// Postal service ID 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetActionableRefundHeadersResponse
+    public class GetActionableRefundHeadersResponse : LinnObject
 	{
         /// <summary>
         /// The page number returned 

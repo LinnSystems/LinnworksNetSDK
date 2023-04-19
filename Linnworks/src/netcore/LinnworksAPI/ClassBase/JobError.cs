@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Job error item 
     /// </summary>
-    public class JobError
+    public class JobError : LinnObject
 	{
         /// <summary>
         /// Unique job error id 

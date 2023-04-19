@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Purchase order payment statement 
     /// </summary>
-    public class PurchaseOrderPaymentStatement
+    public class PurchaseOrderPaymentStatement : LinnObject
 	{
         /// <summary>
         /// Unique record id 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class BookedReturnsExchangeItem
+    public class BookedReturnsExchangeItem : LinnObject
 	{
         /// <summary>
         /// Order item record row ID 

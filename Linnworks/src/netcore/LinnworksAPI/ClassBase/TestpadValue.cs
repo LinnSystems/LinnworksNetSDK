@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class TestpadValue
+    public class TestpadValue : LinnObject
 	{
 		public String FieldName { get; set; }
 

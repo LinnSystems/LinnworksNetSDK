@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ScrapItemExtended
+    public class ScrapItemExtended : LinnObject
 	{
         /// <summary>
         /// Nullable 

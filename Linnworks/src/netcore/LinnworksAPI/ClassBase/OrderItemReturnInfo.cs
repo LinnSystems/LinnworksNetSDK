@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class OrderItemReturnInfo
+    public class OrderItemReturnInfo : LinnObject
 	{
         /// <summary>
         /// List of child items (populated if the return is a composite item) 

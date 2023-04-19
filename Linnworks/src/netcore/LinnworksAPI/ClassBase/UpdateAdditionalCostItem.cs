@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateAdditionalCostItem
+    public class UpdateAdditionalCostItem : LinnObject
 	{
         /// <summary>
         /// Additional cost line row id, uniquely identifying each cost line 

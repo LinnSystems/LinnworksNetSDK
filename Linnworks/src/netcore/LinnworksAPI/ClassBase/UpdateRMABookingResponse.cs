@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class UpdateRMABookingResponse
+    public class UpdateRMABookingResponse : LinnObject
 	{
 		public Int32? RMAHeaderId { get; set; }
 

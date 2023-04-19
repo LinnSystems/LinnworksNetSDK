@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetGroupListResponse
+    public class GetGroupListResponse : LinnObject
 	{
         /// <summary>
         /// List of groups. Does not return condition and actions objects 

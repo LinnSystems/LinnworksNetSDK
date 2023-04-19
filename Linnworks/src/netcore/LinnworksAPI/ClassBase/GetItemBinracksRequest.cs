@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetItemBinracksRequest
+    public class GetItemBinracksRequest : LinnObject
 	{
         /// <summary>
         /// Stock item Id 

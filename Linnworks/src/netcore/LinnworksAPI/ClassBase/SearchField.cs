@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Class represents the list of fields to be included it the where clause for searching 
     /// </summary>
-    public class SearchField
+    public class SearchField : LinnObject
 	{
         /// <summary>
         /// Search field 

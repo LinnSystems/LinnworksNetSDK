@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GroupAction
+    public class GroupAction : LinnObject
 	{
 		public List<String> Actions { get; set; }
 	} 

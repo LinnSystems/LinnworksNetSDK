@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class ServiceInformation
+    public class ServiceInformation : LinnObject
 	{
 		public String Name { get; set; }
 

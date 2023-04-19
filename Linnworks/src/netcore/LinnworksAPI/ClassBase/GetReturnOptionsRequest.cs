@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GetReturnOptionsRequest
+    public class GetReturnOptionsRequest : LinnObject
 	{
 		public Guid OrderId { get; set; }
 

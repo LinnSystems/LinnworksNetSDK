@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class MultiOptionResponse
+    public class MultiOptionResponse : LinnObject
 	{
         /// <summary>
         /// Evaluation field 

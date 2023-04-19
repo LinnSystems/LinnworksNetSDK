@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PagedStockCategoryLocationProductResult
+    public class PagedStockCategoryLocationProductResult : LinnObject
 	{
 		public Int64 TotalResults { get; set; }
 

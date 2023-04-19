@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class AddItemsToTransferRequest
+    public class AddItemsToTransferRequest : LinnObject
 	{
 		public Guid TransferId { get; set; }
 

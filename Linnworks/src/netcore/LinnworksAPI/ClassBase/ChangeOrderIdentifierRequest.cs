@@ -7,7 +7,7 @@ namespace LinnworksAPI
     /// <summary>
     /// Add/remove from all orders in the request body to the provided tag 
     /// </summary>
-    public class ChangeOrderIdentifierRequest
+    public class ChangeOrderIdentifierRequest : LinnObject
 	{
         /// <summary>
         /// Primary key of the orders to assign/unassign the identifier to. 

@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class PrintError
+    public class PrintError : LinnObject
 	{
 		public String TemplateType { get; set; }
 
