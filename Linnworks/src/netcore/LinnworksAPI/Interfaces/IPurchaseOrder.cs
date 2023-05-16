@@ -15,6 +15,7 @@ namespace LinnworksAPI
 		PurchaseOrderNote Add_PurchaseOrderNote(Guid pkPurchaseId,String Note);
 		PurchaseOrderHeader Change_PurchaseOrderStatus(Change_PurchaseOrderStatusParameter changeStatusParameter);
 		Guid Create_PurchaseOrder_Initial(Create_PurchaseOrder_InitialParameter createParameters);
+		CreatePOsFromInventoryResponse CreatePOsFromInventory(CreatePOsFromInventoryRequest request);
 		void Delete_AdditionalCostTypes(Delete_AdditionalCostTypesRequest request);
 		void Delete_PurchaseOrder(Guid pkPurchaseId);
 		void Delete_PurchaseOrderExtendedProperty(Delete_PurchaseOrderExtendedPropertyRequest request);
@@ -24,6 +25,7 @@ namespace LinnworksAPI
 		Deliver_PurchaseOrderItemAllResponse Deliver_PurchaseItemAll(Guid purchaseId);
 		Deliver_PurchaseOrderItemAllNoBatchResponse Deliver_PurchaseItemAll_ExceptBatchItems(Guid purchaseId);
 		void Deliver_PurchaseItems_WithQuantity(Deliver_PurchaseItems_WithQuantityRequest request);
+		DownloadResponse ExportPurchaseOrder(ExportPurchaseOrderSettingModel request);
 		FindStockItem_Response FindStockItem(FindStockItemRequest request);
 		Get_Additional_CostResponse Get_Additional_Cost(Get_Additional_CostRequest request);
 		Get_AdditionalCostTypesResponse Get_AdditionalCostTypes();

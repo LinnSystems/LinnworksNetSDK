@@ -284,7 +284,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Gets the refundable amunt of an order 
+        /// Gets the refundable amount of an order 
         /// </summary>
         /// <param name="fkOrderId">unique order ID of the order</param>
         /// <returns>Refundable amount</returns>

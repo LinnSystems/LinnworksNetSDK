@@ -13,7 +13,7 @@ namespace LinnworksAPI
 		PagedResult<AmazonListing> CreateAmazonTemplates(ProcessTemplatesParameters parameters);
 		void CreateBigcommerceConfigurators(List<BigCommerceConfigurator> configs);
 		PagedResult<BigCommerceListing> CreateBigcommerceTemplates(ProcessTemplatesParameters parameters);
-		void CreateeBayConfigurators(List<LinnLiveEbayConfig> configs);
+		void CreateeBayConfigurators(List<EbayConfig> configs);
 		PagedResult<LinnLiveEbayListing> CreateEbayTemplates(ProcessTemplatesParameters parameters);
 		void CreateMagentoConfigurators(List<MagentoConfig> configs);
 		PagedResult<MagentoListing> CreateMagentoTemplates(ProcessTemplatesParameters parameters);
@@ -32,7 +32,7 @@ namespace LinnworksAPI
 		PagedResult<BigCommerceListing> GetBigCommerceTemplates(GetTemplatesParameters parameters);
 		IEnumerable<EbayConfig> GeteBayConfigurators();
 		GetEbayListingAuditResponse GetEbayListingAudit(GetEbayListingAuditRequest request);
-		PagedResult<LinnLiveEbayListing> GeteBayTemplates(GetTemplatesParameters parameters);
+		PagedResult<EbayListing> GeteBayTemplates(GetTemplatesParameters parameters);
 		IEnumerable<MagentoConfig> GetMagentoConfigurators();
 		PagedResult<MagentoListing> GetMagentoTemplates(GetTemplatesParameters parameters);
 		void ProcessAmazonListings(List<AmazonListing> items);
@@ -42,7 +42,7 @@ namespace LinnworksAPI
 		void SetListingStrikeOffState(SetListingStrikeOffStateRequest request);
 		void UpdateAmazonConfigurators(List<AmazonConfig> configs);
 		void UpdateBigcommerceConfigurators(List<BigCommerceConfigurator> configs);
-		void UpdateeBayConfigurators(List<LinnLiveEbayConfig> configs);
+		void UpdateeBayConfigurators(List<EbayConfig> configs);
 		void UpdateMagentoConfigurators(List<MagentoConfig> configs);
 	} 
 }

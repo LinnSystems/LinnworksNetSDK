@@ -63,7 +63,7 @@ namespace LinnworksAPI
         /// A configurator hosts common details for listings such as listing type, return policy, payment methods, shipping info, attributes, listing categories, etc. Configurators offer an efficient way of creating listings in bulk that follow a common theme.The same configurator can be used to list multiple items that share common details.To find out more about configurators you can visit our [url=https://docs.linnworks.com/articles/#!documentation/configurators]documentation[/url] 
         /// </summary>
         /// <param name="configs">Configs to create</param>
-        public void CreateeBayConfigurators(List<LinnLiveEbayConfig> configs)
+        public void CreateeBayConfigurators(List<EbayConfig> configs)
 		{
 			GetResponse("Listings/CreateeBayConfigurators", "configs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(configs)) + "");
 		}
@@ -261,10 +261,10 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="parameters">Object of TemplatesParameters</param>
         /// <returns>List of eBay Listings</returns>
-        public PagedResult<LinnLiveEbayListing> GeteBayTemplates(GetTemplatesParameters parameters)
+        public PagedResult<EbayListing> GeteBayTemplates(GetTemplatesParameters parameters)
 		{
 			var response = GetResponse("Listings/GeteBayTemplates", "parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "");
-            return JsonFormatter.ConvertFromJson<PagedResult<LinnLiveEbayListing>>(response);
+            return JsonFormatter.ConvertFromJson<PagedResult<EbayListing>>(response);
 		}
 
 		/// <summary>
@@ -377,7 +377,7 @@ namespace LinnworksAPI
         /// A configurator hosts common details for listings such as listing type, return policy, payment methods, shipping info, attributes, listing categories, etc. Configurators offer an efficient way of creating listings in bulk that follow a common theme. The same configurator can be used to list multiple items that share common details. To find out more about configurators you can visit our [url=https://docs.linnworks.com/articles/#!documentation/configurators]documentation[/url] 
         /// </summary>
         /// <param name="configs">Configs to update</param>
-        public void UpdateeBayConfigurators(List<LinnLiveEbayConfig> configs)
+        public void UpdateeBayConfigurators(List<EbayConfig> configs)
 		{
 			GetResponse("Listings/UpdateeBayConfigurators", "configs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(configs)) + "");
 		}

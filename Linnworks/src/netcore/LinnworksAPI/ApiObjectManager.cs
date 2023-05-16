@@ -9,13 +9,13 @@ namespace LinnworksAPI
         private CustomerController customer;
         private DashboardsController dashboards;
         private EmailController email;
+        private GenericListingsController genericlistings;
         private ImportExportController importexport;
         private InventoryController inventory;
         private ListingsController listings;
         private LocationsController locations;
         private MacroController macro;
         private OpenOrdersController openorders;
-        private OrderPrintStatusController orderprintstatus;
         private OrdersController orders;
         private OrderWorkflowController orderworkflow;
         private PickingController picking;
@@ -75,6 +75,14 @@ namespace LinnworksAPI
             }
         }
 
+        public GenericListingsController GenericListings
+        {
+            get
+            {
+                return genericlistings ?? (genericlistings = new GenericListingsController(apiContext));
+            }
+        }
+
         public ImportExportController ImportExport
         {
             get
@@ -120,14 +128,6 @@ namespace LinnworksAPI
             get
             {
                 return openorders ?? (openorders = new OpenOrdersController(apiContext));
-            }
-        }
-
-        public OrderPrintStatusController OrderPrintStatus
-        {
-            get
-            {
-                return orderprintstatus ?? (orderprintstatus = new OrderPrintStatusController(apiContext));
             }
         }
 

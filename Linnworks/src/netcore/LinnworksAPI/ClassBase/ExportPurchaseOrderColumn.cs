@@ -7,9 +7,18 @@ using Newtonsoft.Json;
 namespace LinnworksAPI
 { 
     [JsonConverter(typeof(StringEnumConverter))]
-	public enum LinnLiveEbayPhotoDisplayCodeTypes
+	public enum ExportPurchaseOrderColumn
 	{
-		None,
-		SuperSize,
+		Sku,
+		SupplierCode,
+		SupplierBarcode,
+		Title,
+		PackSize,
+		PackQuantity,
+		Quantity,
+		UnitCost,
+		TaxRate,
+		Tax,
+		LineTotal,
 	}
 }

@@ -80,6 +80,12 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<Guid>(response);
 		}
 
+		public CreatePOsFromInventoryResponse CreatePOsFromInventory(CreatePOsFromInventoryRequest request)
+		{
+			var response = GetResponse("PurchaseOrder/CreatePOsFromInventory", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<CreatePOsFromInventoryResponse>(response);
+		}
+
 		/// <summary>
         /// Delete additional cost type 
         /// </summary>
@@ -166,6 +172,12 @@ namespace LinnworksAPI
 		public void Deliver_PurchaseItems_WithQuantity(Deliver_PurchaseItems_WithQuantityRequest request)
 		{
 			GetResponse("PurchaseOrder/Deliver_PurchaseItems_WithQuantity", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+		}
+
+		public DownloadResponse ExportPurchaseOrder(ExportPurchaseOrderSettingModel request)
+		{
+			var response = GetResponse("PurchaseOrder/ExportPurchaseOrder", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<DownloadResponse>(response);
 		}
 
 		/// <summary>

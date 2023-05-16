@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// (Optional) Fulfilment location id. Defaults to Default location 
         /// </summary>
-		public Guid LocationId { get; set; }
+		public Guid? LocationId { get; set; }
 	} 
 }

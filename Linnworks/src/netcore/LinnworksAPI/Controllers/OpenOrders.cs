@@ -108,7 +108,7 @@ namespace LinnworksAPI
 
 		public List<OrderViewStats> GetViewStats(GetViewStatsRequest request)
 		{
-			var response = GetResponse("OpenOrders/GetViewStats", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "GET");
+			var response = GetResponse("OpenOrders/GetViewStats", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<List<OrderViewStats>>(response);
 		}
 
@@ -124,7 +124,7 @@ namespace LinnworksAPI
 
 		public SearchOrdersResponse SearchOrders(SearchOrdersRequest request)
 		{
-			var response = GetResponse("OpenOrders/SearchOrders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "GET");
+			var response = GetResponse("OpenOrders/SearchOrders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<SearchOrdersResponse>(response);
 		}
 
