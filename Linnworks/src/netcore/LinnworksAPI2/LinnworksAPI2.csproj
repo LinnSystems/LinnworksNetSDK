@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>10</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <OpenApiReference Include="OpenAPIs\warehousetransferV1.json" CodeGenerator="NSwagCSharp" Namespace="LinnworksAPI2.WarehouseTransferV1" Options="/AdditionalNamespaceUsages:LinnworksAPI2.Exceptions /GenerateExceptionClasses:false" ClassName="WarehouseTransferV1">
+	    <SourceUri>https://eu-ms-warehousetransfer.linnworks.net/swagger/v1-public/swagger.json</SourceUri>
+	  </OpenApiReference>
+	  <OpenApiReference Include="OpenAPIs\warehousetransferv2.json" CodeGenerator="NSwagCSharp" Namespace="LinnworksAPI2.WarehouseTransferV2" Options="/AdditionalNamespaceUsages:LinnworksAPI2.Exceptions /GenerateExceptionClasses:false" ClassName="WarehouseTransferV2">
+	    <SourceUri>https://eu-ms-warehousetransfer.linnworks.net/swagger/v2-public/swagger.json</SourceUri>
+	  </OpenApiReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="JsonSubTypes" Version="1.2.0" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="Microsoft.Extensions.ApiDescription.Client" Version="3.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="NSwag.ApiDescription.Client" Version="13.0.5">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="RestSharp" Version="106.15.0" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+	</ItemGroup>
+</Project>

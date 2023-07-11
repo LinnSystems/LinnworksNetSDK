@@ -1,0 +1,237 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Warehouse Transfer",
+    "description": "Warehouse Transfer v2",
+    "version": "v2-public"
+  },
+  "servers": [
+    {
+      "url": "https://apim-eu.linnworks.net/gateway/warehousetransfer",
+      "description": "Production EU Server"
+    },
+    {
+      "url": "https://apim-us.linnworks.net/gateway/warehousetransfer",
+      "description": "Production US Server"
+    },
+    {
+      "url": "https://apim-as.linnworks.net/gateway/warehousetransfer",
+      "description": "Production AS Server"
+    }
+  ],
+  "paths": {
+    "/api/2.0/transfers/{id}": {
+      "get": {
+        "tags": [
+          "Transfers"
+        ],
+        "summary": "GetTransferById",
+        "description": "Retrieves a specific transfer by unique id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Transfer unique id",
+            "required": true,
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal server error"
+          },
+          "404": {
+            "description": "Transfer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseNotFoundModel"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Transfer retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WarehouseTransferModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2"
+            ],
+            "Linnworks": [ ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BaseNotFoundModel": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Message",
+            "nullable": true
+          },
+          "link": {
+            "type": "string",
+            "nullable": true
+          },
+          "linkText": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Not found model"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "TransferStatus": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "type": "integer",
+        "description": "Transfer current status",
+        "format": "int32"
+      },
+      "TransferType": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "description": "Type of transfer",
+        "format": "int32"
+      },
+      "WarehouseTransferModel": {
+        "type": "object",
+        "properties": {
+          "createDate": {
+            "type": "string",
+            "description": "The date that transfer is created",
+            "format": "date-time"
+          },
+          "fromLocationId": {
+            "type": "string",
+            "description": "The location id that transfer is from",
+            "format": "uuid"
+          },
+          "referenceNumber": {
+            "type": "string",
+            "description": "Transfer unique reference number",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/TransferStatus"
+          },
+          "toLocationId": {
+            "type": "string",
+            "description": "The location id that transfer is to",
+            "format": "uuid"
+          },
+          "transferId": {
+            "type": "integer",
+            "description": "Transfer unique id",
+            "format": "int32",
+            "example": 1
+          },
+          "transferType": {
+            "$ref": "#/components/schemas/TransferType"
+          },
+          "updateDate": {
+            "type": "string",
+            "description": "The date that transfer is last updated",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Transfer model"
+      }
+    },
+    "securitySchemes": {
+      "Linnworks": {
+        "type": "apiKey",
+        "description": "Please enter into field the token",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}
