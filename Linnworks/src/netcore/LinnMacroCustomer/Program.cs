@@ -44,11 +44,13 @@ namespace LinnMacroCustomer
 
             var context = new LinnworksAPI.ApiContext(auth.Token, auth.Server);
 
+            var url = new Api2Helper().GetUrl(context.ApiServer);
+
             var macro = new LinnworksMacro.LinnworksMacro()
             {
                 Api = new LinnworksAPI.ApiObjectManager(context),
+                Api2 = new LinnworksAPI2.LinnworksApi2(auth.Token, url),
                 Logger = new LoggerProxy(),
-
             };
 
             return macro;

@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LinnworksAPI2\LinnworksAPI2.csproj" />
     <ProjectReference Include="..\LinnworksAPI\LinnworksAPI.csproj" />
   </ItemGroup>
 
