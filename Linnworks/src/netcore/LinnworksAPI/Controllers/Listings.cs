@@ -73,10 +73,10 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="parameters">Object of TemplatesParameters</param>
         /// <returns>List of eBay Listings</returns>
-        public PagedResult<LinnLiveEbayListing> CreateEbayTemplates(ProcessTemplatesParameters parameters)
+        public PagedResult<EbayListing> CreateEbayTemplates(ProcessTemplatesParameters parameters)
 		{
 			var response = GetResponse("Listings/CreateEbayTemplates", "parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "");
-            return JsonFormatter.ConvertFromJson<PagedResult<LinnLiveEbayListing>>(response);
+            return JsonFormatter.ConvertFromJson<PagedResult<EbayListing>>(response);
 		}
 
 		/// <summary>

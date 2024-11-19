@@ -6,6 +6,8 @@ namespace LinnworksAPI
 { 
     public class ReturnOptions : LinnObject
 	{
+		public Boolean CanSendRejectionIfDeleted { get; set; }
+
 		public Boolean CanReturn { get; set; }
 
 		public Boolean CanReturnInternally { get; set; }
@@ -17,6 +19,8 @@ namespace LinnworksAPI
 		public Boolean CanHaveRefund { get; set; }
 
 		public ISet<ChannelReason> ReturnReasons { get; set; }
+
+		public ISet<ChannelReason> RejectionReasons { get; set; }
 
 		public ISet<PostSaleSubStatus> SubStatuses { get; set; }
 

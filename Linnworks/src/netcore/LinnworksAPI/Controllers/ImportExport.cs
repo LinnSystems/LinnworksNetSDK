@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
-using System.Net.Http;
 
 namespace LinnworksAPI
 {
@@ -29,16 +28,6 @@ namespace LinnworksAPI
         public void DeleteImport(Int32 id)
 		{
 			GetResponse("ImportExport/DeleteImport", "id=" + id + "");
-		}
-
-		/// <summary>
-        /// Download an already imported file 
-        /// </summary>
-        /// <param name="fileId">Id of the file to get</param>
-        public HttpResponseMessage DownloadImportedFile(Guid fileId)
-		{
-			var response = GetResponse("ImportExport/DownloadImportedFile", "fileId=" + fileId + "", "GET");
-            return JsonFormatter.ConvertFromJson<HttpResponseMessage>(response);
 		}
 
 		/// <summary>
@@ -87,9 +76,9 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// gets fulfillment center settings 
+        /// Gets fulfillment center settings 
         /// </summary>
-        /// <param name="fkStockLocationId">stock location id</param>
+        /// <param name="fkStockLocationId">Stock location id</param>
         /// <returns>settings</returns>
         public FulfilmentCenterImportExportSettings GetFullfilmentCenterSettings(Guid fkStockLocationId)
 		{

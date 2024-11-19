@@ -29,7 +29,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Sort order 
         /// </summary>
-		public Int32 SortOrder { get; set; }
+		public Int32? SortOrder { get; set; }
 
         /// <summary>
         /// Items count 

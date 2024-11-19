@@ -50,5 +50,6 @@ namespace LinnworksAPI
 		eBayCompatibilityePIDCulture,
 		MultipleListingTitlesAndPrices,
 		StockSupplierDetail,
+		StockLevelBatchBySupplierCode,
 	}
 }

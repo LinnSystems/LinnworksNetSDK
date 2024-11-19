@@ -24,7 +24,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Use this call to add stock item. 
+        /// Use this call to add stock item. Use null for MinimumLevel to use Default Minimum Level from Settings 
         /// </summary>
         /// <param name="inventoryItem">New StockItem</param>
         public void AddInventoryItem(StockItem inventoryItem)
@@ -90,30 +90,6 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Use this call to create LMS Update for dispatch time only (Mr Auto) 
-        /// </summary>
-        /// <param name="inventoryItemIds">Inventory item ids</param>
-        /// <param name="subSource">Channel Name</param>
-        /// <param name="siteId">Ebay Site to adjust N.B this is not currently used</param>
-        /// <param name="adjustmentOptions">Fields which should be adjusted</param>
-        public void AdjustEbayTemplatesDispatchLMS(IEnumerable<Guid> inventoryItemIds,String subSource,String siteId,AdjustmentOptions adjustmentOptions)
-		{
-			GetResponse("Inventory/AdjustEbayTemplatesDispatchLMS", "inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&siteId=" + System.Net.WebUtility.UrlEncode(siteId) + "&adjustmentOptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(adjustmentOptions)) + "");
-		}
-
-		/// <summary>
-        /// Use this call to create LMS Update (Only works for fixed price templates) 
-        /// </summary>
-        /// <param name="inventoryItemIds">Inventory item ids</param>
-        /// <param name="subSource">Channel Name</param>
-        /// <param name="siteId">Ebay Site to adjust N.B this is not currently used</param>
-        /// <param name="adjustmentOptions">Fields which should be adjusted</param>
-        public void AdjustEbayTemplatesInstantLMS(IEnumerable<Guid> inventoryItemIds,String subSource,String siteId,AdjustmentOptions adjustmentOptions)
-		{
-			GetResponse("Inventory/AdjustEbayTemplatesInstantLMS", "inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "&siteId=" + System.Net.WebUtility.UrlEncode(siteId) + "&adjustmentOptions=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(adjustmentOptions)) + "");
-		}
-
-		/// <summary>
         /// Use this call to adjust templates 
         /// </summary>
         /// <param name="inventoryItemIds">Inventory item ids</param>
@@ -167,10 +143,11 @@ namespace LinnworksAPI
         /// Use this call to create new category 
         /// </summary>
         /// <param name="categoryName">Category name</param>
+        /// <param name="categoryId">Category id (optional)</param>
         /// <returns>New category</returns>
-        public LinnworksCategory CreateCategory(String categoryName)
+        public LinnworksCategory CreateCategory(String categoryName,Guid? categoryId = null)
 		{
-			var response = GetResponse("Inventory/CreateCategory", "categoryName=" + System.Net.WebUtility.UrlEncode(categoryName) + "");
+			var response = GetResponse("Inventory/CreateCategory", "categoryName=" + System.Net.WebUtility.UrlEncode(categoryName) + "&categoryId=" + categoryId + "");
             return JsonFormatter.ConvertFromJson<LinnworksCategory>(response);
 		}
 
@@ -330,6 +307,17 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to delete inventory items.
+        /// All associated information will be unlinked/removed from this stock item. 
+        /// </summary>
+        /// <param name="request"></param>
+        public BatchedAPIResponse<DeleteInventoryItemBulkResponse> DeleteInventoryItemBulk(DeleteInventoryItemBulkRequest request)
+		{
+			var response = GetResponse("Inventory/DeleteInventoryItemBulk", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<BatchedAPIResponse<DeleteInventoryItemBulkResponse>>(response);
+		}
+
+		/// <summary>
         /// Use this call to delete stockitem channel skus 
         /// </summary>
         /// <param name="inventoryItemChannelSKUIds">stockitem channel sku ids</param>
@@ -362,9 +350,20 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="inventoryItemId">Id of StockItem</param>
         /// <param name="inventoryItemExtendedPropertyIds">list of stockitem Extended Properties</param>
-        public void DeleteInventoryItemExtendedProperties(Guid inventoryItemId,List<Guid> inventoryItemExtendedPropertyIds)
+        /// <param name="itemNumber">The stock item SKU, only used if inventoryItemId is not supplied</param>
+        public void DeleteInventoryItemExtendedProperties(Guid? inventoryItemId,List<Guid> inventoryItemExtendedPropertyIds,String itemNumber = "")
 		{
-			GetResponse("Inventory/DeleteInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&inventoryItemExtendedPropertyIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemExtendedPropertyIds)) + "");
+			GetResponse("Inventory/DeleteInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&inventoryItemExtendedPropertyIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemExtendedPropertyIds)) + "&itemNumber=" + System.Net.WebUtility.UrlEncode(itemNumber) + "");
+		}
+
+		/// <summary>
+        /// Use this call to delete images from inventory items 
+        /// </summary>
+        /// <param name="request"></param>
+        public BatchedAPIResponse<DeleteInventoryItemImagesResponse> DeleteInventoryItemImageBulk(List<DeleteInventoryItemImagesRequest> request)
+		{
+			var response = GetResponse("Inventory/DeleteInventoryItemImageBulk", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<BatchedAPIResponse<DeleteInventoryItemImagesResponse>>(response);
 		}
 
 		/// <summary>
@@ -710,21 +709,22 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="inventoryItemId">stockitem id</param>
         /// <param name="propertyParams">Optional parameters to look for specific PropertyName and PropertyType</param>
+        /// <param name="itemNumber">This can be used as an alternative to stockitemid</param>
         /// <returns>list of stockitem Extended Properties</returns>
-        public List<StockItemExtendedProperty> GetInventoryItemExtendedProperties(Guid inventoryItemId,GetExtendedPropertyFilter propertyParams)
+        public List<StockItemExtendedProperty> GetInventoryItemExtendedProperties(Guid? inventoryItemId,GetExtendedPropertyFilter propertyParams,String itemNumber = "")
 		{
-			var response = GetResponse("Inventory/GetInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&propertyParams=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(propertyParams)) + "");
+			var response = GetResponse("Inventory/GetInventoryItemExtendedProperties", "inventoryItemId=" + inventoryItemId + "&propertyParams=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(propertyParams)) + "&itemNumber=" + System.Net.WebUtility.UrlEncode(itemNumber) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemExtendedProperty>>(response);
 		}
 
 		/// <summary>
-        /// Use this call to Get inventory item images 
+        /// Use this call to get inventory item images 
         /// </summary>
-        /// <param name="inventoryItemId">Id of StockItem</param>
+        /// <param name="request"></param>
         /// <returns>list of inventory item images</returns>
-        public List<StockItemImage> GetInventoryItemImages(Guid inventoryItemId)
+        public List<StockItemImage> GetInventoryItemImages(GetInventoryItemImagesRequest request)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemImages", "inventoryItemId=" + inventoryItemId + "");
+			var response = GetResponse("Inventory/GetInventoryItemImages", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemImage>>(response);
 		}
 
@@ -861,6 +861,16 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to get available Product Identifier types with extended information, eg related sources, scanned at dispatch 
+        /// </summary>
+        /// <returns>Object with  Dictionary of Product Identifier with extended information</returns>
+        public GetProductIdentifierExtendedResponse GetProductIdentifierExtendedTypes()
+		{
+			var response = GetResponse("Inventory/GetProductIdentifierExtendedTypes", "");
+            return JsonFormatter.ConvertFromJson<GetProductIdentifierExtendedResponse>(response);
+		}
+
+		/// <summary>
         /// Used to get product identifiers for multiple stock items 
         /// </summary>
         /// <param name="request">Object containing a list of stock item ids</param>
@@ -888,6 +898,16 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Inventory/GetProductIdentifierTypes", "");
             return JsonFormatter.ConvertFromJson<GetProductIdentifierTypesRequest>(response);
+		}
+
+		/// <summary>
+        /// Use this call to get available Product Identifier types with extended information, eg related sources, scanned at dispatch 
+        /// </summary>
+        /// <returns>Object with Dictionary of orderId as key, dictionary of (stockItemId as key, scannable product identifers as value) as value</returns>
+        public GetScannableProductIdentifiersByOrderIdsResponse GetScannableProductIdentifiersByOrderIds(GetScannableProductIdentifiersByOrderIdsRequest request)
+		{
+			var response = GetResponse("Inventory/GetScannableProductIdentifiersByOrderIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetScannableProductIdentifiersByOrderIdsResponse>(response);
 		}
 
 		/// <summary>
@@ -945,10 +965,10 @@ namespace LinnworksAPI
         /// Use this call to get all stock locations 
         /// </summary>
         /// <returns>List of all stock locations</returns>
-        public List<InventoryStockLocation> GetStockLocations()
+        public List<StockLocation> GetStockLocations()
 		{
 			var response = GetResponse("Inventory/GetStockLocations", "");
-            return JsonFormatter.ConvertFromJson<List<InventoryStockLocation>>(response);
+            return JsonFormatter.ConvertFromJson<List<StockLocation>>(response);
 		}
 
 		/// <summary>
@@ -959,6 +979,17 @@ namespace LinnworksAPI
         public List<StockItemSupplierStat> GetStockSupplierStat(Guid inventoryItemId)
 		{
 			var response = GetResponse("Inventory/GetStockSupplierStat", "inventoryItemId=" + inventoryItemId + "");
+            return JsonFormatter.ConvertFromJson<List<StockItemSupplierStat>>(response);
+		}
+
+		/// <summary>
+        /// Use this call to retrieve report about "item supplier stat" 
+        /// </summary>
+        /// <param name="inventoryItemIds">Used to specify report stock item ids</param>
+        /// <returns>List of StockItemSupplierStat</returns>
+        public List<StockItemSupplierStat> GetStockSupplierStatsBulk(List<Guid> inventoryItemIds)
+		{
+			var response = GetResponse("Inventory/GetStockSupplierStatsBulk", "inventoryItemIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemIds)) + "");
             return JsonFormatter.ConvertFromJson<List<StockItemSupplierStat>>(response);
 		}
 
@@ -1084,6 +1115,12 @@ namespace LinnworksAPI
 			GetResponse("Inventory/UnlinkChannelListing", "channelRefId=" + System.Net.WebUtility.UrlEncode(channelRefId) + "&source=" + System.Net.WebUtility.UrlEncode(source) + "&subSource=" + System.Net.WebUtility.UrlEncode(subSource) + "");
 		}
 
+		public UpdateBatchDatesResponse UpdateBatchDates(UpdateBatchDatesRequest request)
+		{
+			var response = GetResponse("Inventory/UpdateBatchDates", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<UpdateBatchDatesResponse>(response);
+		}
+
 		/// <summary>
         /// Used to update batch details for stock item 
         /// </summary>
@@ -1152,10 +1189,11 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Use this call to update stock item with images 
+        /// Use this call to update stock items. This acts as a set endpoint, all data for the stock item will be replaced, even if not provided in the request.
+        /// The only exception is StockItemId. If left empty, the item to update will be identified by ItemNumber. 
         /// </summary>
         /// <param name="inventoryItem">Inventory item object</param>
-        public void UpdateInventoryItem(StockItemInv inventoryItem)
+        public void UpdateInventoryItem(UpdateInventoryItemRequest inventoryItem)
 		{
 			GetResponse("Inventory/UpdateInventoryItem", "inventoryItem=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItem)) + "");
 		}
@@ -1200,7 +1238,7 @@ namespace LinnworksAPI
         /// Use this call to update stockitem Extended Properties 
         /// </summary>
         /// <param name="inventoryItemExtendedProperties">list of stockitem Extended Properties</param>
-        public void UpdateInventoryItemExtendedProperties(List<StockItemExtendedProperty> inventoryItemExtendedProperties)
+        public void UpdateInventoryItemExtendedProperties(List<StockItemExtendedPropertyWithSku> inventoryItemExtendedProperties)
 		{
 			GetResponse("Inventory/UpdateInventoryItemExtendedProperties", "inventoryItemExtendedProperties=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemExtendedProperties)) + "");
 		}

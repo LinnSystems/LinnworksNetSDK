@@ -17,5 +17,7 @@ namespace LinnworksAPI
 		public String UserType { get; set; }
 
 		public Boolean TotpAuthenticationEnabled { get; set; }
+
+		public Byte PasswordProblems { get; set; }
 	} 
 }

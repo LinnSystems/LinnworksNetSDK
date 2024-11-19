@@ -10,5 +10,7 @@ namespace LinnworksAPI
         /// Order Id (Integer) 
         /// </summary>
 		public Int32 OrderId { get; set; }
+
+		public Int32 SortOrder { get; set; }
 	} 
 }

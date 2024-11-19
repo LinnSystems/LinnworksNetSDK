@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
-using System.Net.Http;
 
 namespace LinnworksAPI
 { 
@@ -11,7 +10,6 @@ namespace LinnworksAPI
 	{
 		void DeleteExport(Int32 id);
 		void DeleteImport(Int32 id);
-		HttpResponseMessage DownloadImportedFile(Guid fileId);
 		ExportRegister EnableExport(Int32 exportId,Boolean enable);
 		ImportRegister EnableImport(Int32 importId,Boolean enable);
 		Export GetExport(Int32 id);

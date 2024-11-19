@@ -6,6 +6,6 @@ namespace LinnworksAPI
 { 
     public class Get_DeliveredRecords_Response : LinnObject
 	{
-		public List<PurchaseOrderDeliveredRecord> Items { get; set; }
+		public List<CommonPurchaseOrderDeliveredRecord> Items { get; set; }
 	} 
 }

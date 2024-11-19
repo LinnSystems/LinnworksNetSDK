@@ -58,15 +58,15 @@ namespace LinnworksAPI
 		/// <summary>
         /// Change purchase order status. Can change from:
         /// PENDING to OPEN, which will populate Due (OnOrder) values in stock levels,
-        /// OPEN to DELIVERED, which will consolidate Due values in stock levels 
+        /// OPEN to DELIVERED, which will consolidate Due values in stock levels
         /// PARTIAL to DELIVERED, which will consolidate Due values in stock levels 
         /// </summary>
         /// <param name="changeStatusParameter">Class that represents the parameters for Changing the Purchase Order Status</param>
         /// <returns>Returns the Purchase Order Header for the Purchase Order</returns>
-        public PurchaseOrderHeader Change_PurchaseOrderStatus(Change_PurchaseOrderStatusParameter changeStatusParameter)
+        public CommonPurchaseOrderHeader Change_PurchaseOrderStatus(Change_PurchaseOrderStatusParameter changeStatusParameter)
 		{
 			var response = GetResponse("PurchaseOrder/Change_PurchaseOrderStatus", "changeStatusParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(changeStatusParameter)) + "");
-            return JsonFormatter.ConvertFromJson<PurchaseOrderHeader>(response);
+            return JsonFormatter.ConvertFromJson<CommonPurchaseOrderHeader>(response);
 		}
 
 		/// <summary>
@@ -117,10 +117,10 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="deleteItemParameter">Delete purchase order item parameter</param>
         /// <returns>Returns recalculated/modified purchase order header</returns>
-        public PurchaseOrderHeader Delete_PurchaseOrderItem(Delete_PurchaseOrderItemParameter deleteItemParameter)
+        public CommonPurchaseOrderHeader Delete_PurchaseOrderItem(Delete_PurchaseOrderItemParameter deleteItemParameter)
 		{
 			var response = GetResponse("PurchaseOrder/Delete_PurchaseOrderItem", "deleteItemParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(deleteItemParameter)) + "");
-            return JsonFormatter.ConvertFromJson<PurchaseOrderHeader>(response);
+            return JsonFormatter.ConvertFromJson<CommonPurchaseOrderHeader>(response);
 		}
 
 		/// <summary>
@@ -136,15 +136,15 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Deliver purchase order item. This will affect current stock level according to the delivered quantity. 
+        /// Deliver purchase order item. This will affect current stock level according to the delivered quantity.
         /// You can specify the total number of delivered items. If all items are delivered, the purchase order status will be changed to delivered 
         /// </summary>
         /// <param name="deliverItemParameter">Class that represents parameters for Deliver Purchase Item</param>
         /// <returns>Purchase order header and affected purchase order item records</returns>
-        public Update_PurchaseOrderItemResponse Deliver_PurchaseItem(Deliver_PurchaseItemParameter deliverItemParameter)
+        public DeliverPurchaseOrderItemResponse Deliver_PurchaseItem(DeliverPurchaseOrderItemRequest deliverItemParameter)
 		{
 			var response = GetResponse("PurchaseOrder/Deliver_PurchaseItem", "deliverItemParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(deliverItemParameter)) + "");
-            return JsonFormatter.ConvertFromJson<Update_PurchaseOrderItemResponse>(response);
+            return JsonFormatter.ConvertFromJson<DeliverPurchaseOrderItemResponse>(response);
 		}
 
 		/// <summary>
@@ -169,7 +169,7 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<Deliver_PurchaseOrderItemAllNoBatchResponse>(response);
 		}
 
-		public void Deliver_PurchaseItems_WithQuantity(Deliver_PurchaseItems_WithQuantityRequest request)
+		public void Deliver_PurchaseItems_WithQuantity(DeliverAllPurchaseOrderItemsRequest request)
 		{
 			GetResponse("PurchaseOrder/Deliver_PurchaseItems_WithQuantity", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
@@ -254,10 +254,10 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="pkPurchaseId">Purchase Order unique identifier</param>
         /// <returns>Returns class containing purchase order header and items</returns>
-        public Get_PurchaseOrderResponse Get_PurchaseOrder(Guid pkPurchaseId)
+        public PurchaseOrderResponse Get_PurchaseOrder(Guid pkPurchaseId)
 		{
 			var response = GetResponse("PurchaseOrder/Get_PurchaseOrder", "pkPurchaseId=" + pkPurchaseId + "");
-            return JsonFormatter.ConvertFromJson<Get_PurchaseOrderResponse>(response);
+            return JsonFormatter.ConvertFromJson<PurchaseOrderResponse>(response);
 		}
 
 		/// <summary>
@@ -324,14 +324,14 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Modify purchase order additional costs. You can add new lines, update and delete existing. The method will return modified list back to you with each record identified by unique identifier. 
+        /// Modify purchase order additional costs. You can add new lines, update and delete existing. The method will return modified list back to you with each record identified by unique identifier.
         /// Purchase Order header will also be returned with new total recalculated 
         /// </summary>
         /// <param name="request"></param>
-        public Modify_AdditionalCostResponse Modify_AdditionalCost(Modify_AdditionalCostRequest request)
+        public PurchaseOrderModify_AdditionalCostResponse Modify_AdditionalCost(Modify_AdditionalCostRequest request)
 		{
 			var response = GetResponse("PurchaseOrder/Modify_AdditionalCost", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
-            return JsonFormatter.ConvertFromJson<Modify_AdditionalCostResponse>(response);
+            return JsonFormatter.ConvertFromJson<PurchaseOrderModify_AdditionalCostResponse>(response);
 		}
 
 		/// <summary>
@@ -348,10 +348,10 @@ namespace LinnworksAPI
         /// Modify purchase order payment statements. You can add new lines, update and delete existing. The method will return modified list back to you with each record identified by unique identifier. 
         /// </summary>
         /// <param name="request"></param>
-        public Modify_PaymentStatementResponse Modify_PaymentStatement(Modify_PaymentStatementRequest request)
+        public PurchaseOrderModify_PaymentStatementResponse Modify_PaymentStatement(Modify_PaymentStatementRequest request)
 		{
 			var response = GetResponse("PurchaseOrder/Modify_PaymentStatement", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
-            return JsonFormatter.ConvertFromJson<Modify_PaymentStatementResponse>(response);
+            return JsonFormatter.ConvertFromJson<PurchaseOrderModify_PaymentStatementResponse>(response);
 		}
 
 		/// <summary>
@@ -412,10 +412,10 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="updateParameter">Update purchase order header class</param>
         /// <returns>Returns modified/recalculated purchase order header</returns>
-        public PurchaseOrderHeader Update_PurchaseOrderHeader(Update_PurchaseOrderHeaderParameter updateParameter)
+        public CommonPurchaseOrderHeader Update_PurchaseOrderHeader(Update_PurchaseOrderHeaderParameter updateParameter)
 		{
 			var response = GetResponse("PurchaseOrder/Update_PurchaseOrderHeader", "updateParameter=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(updateParameter)) + "");
-            return JsonFormatter.ConvertFromJson<PurchaseOrderHeader>(response);
+            return JsonFormatter.ConvertFromJson<CommonPurchaseOrderHeader>(response);
 		}
 
 		/// <summary>

@@ -21,5 +21,7 @@ namespace LinnworksAPI
         /// The default is true. 
         /// </summary>
 		public Boolean RebuildCacheIfRequired { get; set; }
+
+		public Boolean RecalculateViewIfRequired { get; set; }
 	} 
 }

@@ -32,7 +32,7 @@ namespace LinnworksAPI
 
 		public List<MagentoConfigAttributes> Attributes { get; set; }
 
-		public List<MagentoConfigAttributes> VarAttributes { get; set; }
+		public List<MagentoVariationsAttributes> VarAttributes { get; set; }
 
 		public Boolean IsChildrenImages { get; set; }
 

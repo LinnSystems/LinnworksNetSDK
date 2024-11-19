@@ -77,6 +77,8 @@ namespace LinnworksAPI
         /// </summary>
 		public Boolean ChannelInitiated { get; set; }
 
+        public Boolean? Internal { get; set; }
+
         /// <summary>
         /// Identifies whether the line has been removed from the refund, and is pending an update to the database to reflect this 
         /// </summary>
@@ -97,5 +99,7 @@ namespace LinnworksAPI
 		public String InsufficientRefundTag { get; set; }
 
 		public String InsufficientRefundNote { get; set; }
+
+		public String ReasonCategory { get; set; }
 	} 
 }

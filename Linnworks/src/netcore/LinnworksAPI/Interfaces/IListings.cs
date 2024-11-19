@@ -14,7 +14,7 @@ namespace LinnworksAPI
 		void CreateBigcommerceConfigurators(List<BigCommerceConfigurator> configs);
 		PagedResult<BigCommerceListing> CreateBigcommerceTemplates(ProcessTemplatesParameters parameters);
 		void CreateeBayConfigurators(List<EbayConfig> configs);
-		PagedResult<LinnLiveEbayListing> CreateEbayTemplates(ProcessTemplatesParameters parameters);
+		PagedResult<EbayListing> CreateEbayTemplates(ProcessTemplatesParameters parameters);
 		void CreateMagentoConfigurators(List<MagentoConfig> configs);
 		PagedResult<MagentoListing> CreateMagentoTemplates(ProcessTemplatesParameters parameters);
 		void DeleteAmazonConfigurators(List<Guid> configs);

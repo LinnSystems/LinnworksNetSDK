@@ -112,6 +112,12 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<OrderViewStats>>(response);
 		}
 
+		public GenericOrderOperationResult MarkReadyForCollection(MarkReadyForCollectionRequest request)
+		{
+			var response = GetResponse("OpenOrders/MarkReadyForCollection", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GenericOrderOperationResult>(response);
+		}
+
 		/// <summary>
         /// Create or update an order identifier 
         /// </summary>

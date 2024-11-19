@@ -66,14 +66,13 @@ namespace LinnworksAPI
         /// </summary>
 		public String ItemNumber { get; set; }
 
+		public String ChannelReferenceId { get; set; }
+
         /// <summary>
         /// SKU of the item ordered on the channel 
         /// </summary>
 		public String ChannelSKU { get; set; }
 
-        /// <summary>
-        /// Indicates the item is a service and not a physical item 
-        /// </summary>
 		public Boolean IsService { get; set; }
 
         /// <summary>

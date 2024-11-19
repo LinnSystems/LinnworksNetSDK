@@ -24,6 +24,8 @@ namespace LinnworksAPI
 
 		public OrderDetails Order { get; set; }
 
+		public OrderRefundHeader CancellationHeader { get; set; }
+
 		public Boolean AllowRefundOnCancel { get; set; }
 
 		public List<String> Errors { get; set; }

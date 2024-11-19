@@ -62,15 +62,10 @@ namespace LinnworksAPI
 		/// <summary>
         /// Add a service to an order 
         /// </summary>
-        /// <param name="orderId">Order id</param>
-        /// <param name="service">Service</param>
-        /// <param name="cost">Cost</param>
-        /// <param name="taxRate">Tax rate</param>
-        /// <param name="fulfilmentCenter">Current fulfilment center</param>
         /// <returns>The service item added</returns>
-        public UpdateOrderItemResult AddOrderService(Guid orderId,String service,Double cost,Double taxRate,Guid fulfilmentCenter)
+        public UpdateOrderItemResult AddOrderService(Orders_AddOrderServiceRequest request)
 		{
-			var response = GetResponse("Orders/AddOrderService", "orderId=" + orderId + "&service=" + System.Net.WebUtility.UrlEncode(service) + "&cost=" + cost + "&taxRate=" + taxRate + "&fulfilmentCenter=" + fulfilmentCenter + "");
+			var response = GetResponse("Orders/AddOrderService", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<UpdateOrderItemResult>(response);
 		}
 
@@ -86,7 +81,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Assign a list of orders to a specific folder 
+        /// Assign a list of orders to a specific folder. This operation can not be executed on locked or parked orders 
         /// </summary>
         /// <param name="orderIds">list of order ids to be assigned</param>
         /// <param name="folder">folder to be assigned</param>
@@ -149,7 +144,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Clear invoice printed flag for a list of orders 
+        /// Clear invoice printed flag for a list of orders. This operation can not be executed on locked or parked orders 
         /// </summary>
         /// <param name="orderIds">List of orders</param>
         public List<Guid> ClearInvoicePrinted(List<Guid> orderIds)
@@ -159,7 +154,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Clear invoice printed flag for a list of orders 
+        /// Clear invoice printed flag for a list of orders. This operation can not be executed on locked or parked orders 
         /// </summary>
         /// <param name="orderIds">List of orders</param>
         public List<Guid> ClearPickListPrinted(List<Guid> orderIds)
@@ -229,6 +224,16 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Orders/CreateOrders", "orders=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orders)) + "&location=" + System.Net.WebUtility.UrlEncode(location) + "");
             return JsonFormatter.ConvertFromJson<List<Guid>>(response);
+		}
+
+		/// <summary>
+        /// Create serial data for the given orderItemRowIds 
+        /// </summary>
+        /// <param name="request">Request with list of OrderItemSerialModel as property. Each entry represents an OrderItemRowId and a list of collections of serial data. Seperated by correlation (quantity for this row) 
+        /// Note there can be one collection of serial data for each physical item being shipped - e.g. an order item with quantity of 2 can have 2 collections of serial data</param>
+        public void CreateSerialisedValuesForOrderItems(CreateSerialisedValuesForOrderItemsRequest request)
+		{
+			GetResponse("Orders/CreateSerialisedValuesForOrderItems", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -559,6 +564,17 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Get order item row serial information by requested order ids. Maximum requested orderIds is 25. 
+        /// </summary>
+        /// <param name="request">Request with collection of order ids as properties</param>
+        /// <returns>Response object with OrderItemRowSerialValuesByOrderIds as a dictionary where orderIds are keys</returns>
+        public GetSerialisedValuesForOrdersResponse GetOrderItemRowSerialValuesByOrderIds(GetOrderItemRowSerialValuesByOrderIdsRequest request)
+		{
+			var response = GetResponse("Orders/GetOrderItemRowSerialValuesByOrderIds", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetSerialisedValuesForOrdersResponse>(response);
+		}
+
+		/// <summary>
         /// Get order items 
         /// </summary>
         /// <param name="orderId">Order id</param>
@@ -787,10 +803,11 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="orderIds">Orders to be moved</param>
         /// <param name="pkStockLocationId">Location where to move orders</param>
+        /// <param name="fulfillmentStatusToApply">Optional fulfilment status to be applied to successfully moved orders</param>
         /// <returns>MoveToLocationResult with list of order ids moved and errors if they exist.</returns>
-        public MoveToLocationResult MoveToLocation(List<Guid> orderIds,Guid pkStockLocationId)
+        public MoveToLocationResult MoveToLocation(List<Guid> orderIds,Guid pkStockLocationId,FulfillmentStatus? fulfillmentStatusToApply = null)
 		{
-			var response = GetResponse("Orders/MoveToLocation", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&pkStockLocationId=" + pkStockLocationId + "");
+			var response = GetResponse("Orders/MoveToLocation", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&pkStockLocationId=" + pkStockLocationId + "&fulfillmentStatusToApply=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fulfillmentStatusToApply)) + "");
             return JsonFormatter.ConvertFromJson<MoveToLocationResult>(response);
 		}
 
@@ -937,7 +954,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Mark a list of orders as invoice printed 
+        /// Mark a list of orders as invoice printed. This operation can not be executed on locked or parked orders 
         /// </summary>
         /// <param name="orderIds">List of orders to mark as label printed</param>
         /// <returns>Returns the list of orders that have changed invoice printed status</returns>
@@ -1058,7 +1075,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Sets the print flag for the given orders 
+        /// Sets the print flag for the given orders. This operation can not be executed on locked or parked orders 
         /// </summary>
         /// <param name="Request"></param>
         public void SetPickListPrinted(SetPickListPrintedRequest Request)
@@ -1073,15 +1090,17 @@ namespace LinnworksAPI
         /// <param name="newOrders">New orders</param>
         /// <param name="type">Split type</param>
         /// <param name="fulfilmentLocationId">Current fulfilment center</param>
+        /// <param name="recalcPackaging">Whether or not to recalculate the order packaging</param>
+        /// <param name="fulfillmentStatus">Optional, if provided the fulfillment status for the newly created orders will be set to this</param>
         /// <returns>List of orders created</returns>
-        public List<OpenOrder> SplitOrder(Guid orderId,OrderSplit[] newOrders,String type,Guid fulfilmentLocationId,Boolean recalcPackaging = false)
+        public List<OpenOrder> SplitOrder(Guid orderId,OrderSplit[] newOrders,String type,Guid fulfilmentLocationId,Boolean recalcPackaging = false,FulfillmentStatus? fulfillmentStatus = null)
 		{
-			var response = GetResponse("Orders/SplitOrder", "orderId=" + orderId + "&newOrders=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(newOrders)) + "&type=" + System.Net.WebUtility.UrlEncode(type) + "&fulfilmentLocationId=" + fulfilmentLocationId + "&recalcPackaging=" + recalcPackaging + "");
+			var response = GetResponse("Orders/SplitOrder", "orderId=" + orderId + "&newOrders=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(newOrders)) + "&type=" + System.Net.WebUtility.UrlEncode(type) + "&fulfilmentLocationId=" + fulfilmentLocationId + "&recalcPackaging=" + recalcPackaging + "&fulfillmentStatus=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fulfillmentStatus)) + "");
             return JsonFormatter.ConvertFromJson<List<OpenOrder>>(response);
 		}
 
 		/// <summary>
-        /// Unassign a list of orders to a specific folder 
+        /// Unassign a list of orders to a specific folder. This operation can not be executed on locked or parked orders 
         /// </summary>
         /// <param name="orderIds">list of order ids to be assigned</param>
         /// <param name="folder">folder to be unassigned</param>

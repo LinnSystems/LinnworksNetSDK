@@ -12,7 +12,7 @@ namespace LinnworksAPI
         /// <summary>
         /// List of purchase order headers 
         /// </summary>
-		public List<PurchaseOrderHeader> Result { get; set; }
+		public List<CommonPurchaseOrderHeader> Result { get; set; }
 
         /// <summary>
         /// Total number of pages 

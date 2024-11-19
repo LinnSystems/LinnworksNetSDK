@@ -6,8 +6,8 @@ namespace LinnworksAPI
 { 
     public class ScheduledDelivery : LinnObject
 	{
-		public DateTime From { get; set; }
+		public DateTime? From { get; set; }
 
-		public DateTime To { get; set; }
+		public DateTime? To { get; set; }
 	} 
 }

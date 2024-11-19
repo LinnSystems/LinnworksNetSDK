@@ -26,6 +26,8 @@ namespace LinnworksAPI
         /// </summary>
 		public Int32? CancelledQuantity { get; set; }
 
+		public String ExternalReference { get; set; }
+
 		public Boolean IsFreeText { get; set; }
 
 		public String FreeTextOrNote { get; set; }
@@ -41,5 +43,7 @@ namespace LinnworksAPI
 		public String InsufficientRefundTag { get; set; }
 
 		public String InsufficientRefundNote { get; set; }
+
+		public String ReasonCategory { get; set; }
 	} 
 }

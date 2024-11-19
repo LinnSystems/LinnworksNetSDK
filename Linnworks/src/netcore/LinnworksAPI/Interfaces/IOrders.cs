@@ -12,7 +12,7 @@ namespace LinnworksAPI
 		UpdateOrderItemResult AddCoupon(Guid orderId,String barcode,CouponValidationResult couponData,Guid fulfilmentCenter);
 		AddExtendedPropertiesResponse AddExtendedProperties(AddExtendedPropertiesRequest request);
 		UpdateOrderItemResult AddOrderItem(Guid orderId,Guid itemId,String channelSKU,Guid fulfilmentCenter,Int32 quantity,LinePricingRequest linePricing);
-		UpdateOrderItemResult AddOrderService(Guid orderId,String service,Double cost,Double taxRate,Guid fulfilmentCenter);
+		UpdateOrderItemResult AddOrderService(Orders_AddOrderServiceRequest request);
 		void AssignOrderItemBatches(AssignOrderItemBatches request);
 		List<OrderItemBatch> AssignStockToOrder(AssignStockToOrderRequest request);
 		List<Guid> AssignToFolder(List<Guid> orderIds,String folder);
@@ -27,6 +27,7 @@ namespace LinnworksAPI
 		Guid? CreateNewItemAndLink(Guid pkStockItemId,String itemTitle,String source,String subSource,String channelSKU,Guid? locationId,Int32? initialQuantity);
 		OpenOrder CreateNewOrder(Guid fulfilmentCenter,Boolean createAsDraft = true);
 		List<Guid> CreateOrders(List<ChannelOrder> orders,String location);
+		void CreateSerialisedValuesForOrderItems(CreateSerialisedValuesForOrderItemsRequest request);
 		List<CustomerAddress> CustomerLookUp(String field,String txt);
 		void DeleteOrder(Guid orderId);
 		Get_OpenOrderBasicInfoFromItemsResponse Get_OpenOrderBasicInfoFromItems(Get_OpenOrderBasicInfoFromItemsRequest request);
@@ -56,6 +57,7 @@ namespace LinnworksAPI
 		GetOrderItemBatchesByOrderIdsResponse GetOrderItemBatchesByOrderIds(GetOrderItemBatchesByOrderIdsRequest request);
 		List<OrderItemBatch> GetOrderItemBatchsByOrderId(OrderItemBatchInfo parameters);
 		OrderItem GetOrderItemComposition(Guid orderId,Guid stockItemId,Guid fulfilmentCenter);
+		GetSerialisedValuesForOrdersResponse GetOrderItemRowSerialValuesByOrderIds(GetOrderItemRowSerialValuesByOrderIdsRequest request);
 		List<OrderItem> GetOrderItems(Guid orderId,Guid fulfilmentCenter);
 		List<OrderNote> GetOrderNotes(Guid orderId);
 		List<OrderNoteType> GetOrderNoteTypes();
@@ -77,7 +79,7 @@ namespace LinnworksAPI
 		void LockOrder(List<Guid> orderIds,Boolean lockOrder);
 		OpenOrder MergeOrders(List<Guid> ordersToMerge,Guid fulfilmentCenter,Guid pkPostalServiceId);
 		MoveToFulfilmentCenterResult MoveToFulfilmentCenter(List<Guid> orderIds,Guid fulfilmentCenterId);
-		MoveToLocationResult MoveToLocation(List<Guid> orderIds,Guid pkStockLocationId);
+		MoveToLocationResult MoveToLocation(List<Guid> orderIds,Guid pkStockLocationId,FulfillmentStatus? fulfillmentStatusToApply = null);
 		ProcessOrderResult ProcessFulfilmentCentreOrder(Guid orderId);
 		ProcessOrderResult ProcessOrder(Guid orderId,Boolean scanPerformed,Guid? locationId,ClientContext context = null);
 		void ProcessOrder_RequiredBatchScans(BatchAssignmentForOrderItems BatchAssignment);
@@ -103,7 +105,7 @@ namespace LinnworksAPI
 		void SetOrderTotalsInfo(Guid orderId,OrderTotalsInfo info);
 		List<PaymentMethod> SetPaymentMethods(PaymentMethod[] paymentMethods);
 		void SetPickListPrinted(SetPickListPrintedRequest Request);
-		List<OpenOrder> SplitOrder(Guid orderId,OrderSplit[] newOrders,String type,Guid fulfilmentLocationId,Boolean recalcPackaging = false);
+		List<OpenOrder> SplitOrder(Guid orderId,OrderSplit[] newOrders,String type,Guid fulfilmentLocationId,Boolean recalcPackaging = false,FulfillmentStatus? fulfillmentStatus = null);
 		List<Guid> UnassignToFolder(List<Guid> orderIds,String folder);
 		void UpdateAdditionalInfo(UpdateAdditionalInfoRequest request);
 		void UpdateBillingAddress(Guid orderId,CustomerAddress billingAddress);

@@ -76,6 +76,8 @@ namespace LinnworksAPI
         /// </summary>
 		public OrderState OrderState { get; set; }
 
+		public OrderFulfilmentType OrderFulfilmentType { get; set; }
+
         /// <summary>
         /// The status of the order on the channel 
         /// </summary>
@@ -96,6 +98,8 @@ namespace LinnworksAPI
         /// List of order items 
         /// </summary>
 		public List<ChannelOrderItem> OrderItems { get; set; }
+
+		public List<ChannelOrderLocation> Locations { get; set; }
 
         /// <summary>
         /// List of extended properties for the order 
@@ -151,6 +155,8 @@ namespace LinnworksAPI
         /// UTC received date/time of the order 
         /// </summary>
 		public DateTime ReceivedDate { get; set; }
+
+        public DateTime UpdatedDate { get; set; }
 
         /// <summary>
         /// UTC date/time the order should be despatched by 

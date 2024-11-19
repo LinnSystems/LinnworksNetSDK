@@ -29,10 +29,14 @@ namespace LinnworksAPI
         /// </summary>
 		public Boolean InvoicePrinted { get; set; }
 
+		public String InvoicePrintError { get; set; }
+
         /// <summary>
         /// Is pick list printed 
         /// </summary>
-		public Boolean PickListPrinted { get; set; }
+        public Boolean PickListPrinted { get; set; }
+
+		public String PickListPrintError { get; set; }
 
         /// <summary>
         /// If rules engine rule ran on an order 

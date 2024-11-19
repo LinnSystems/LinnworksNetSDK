@@ -9,6 +9,8 @@ namespace LinnworksAPI
     /// </summary>
     public class PickWaveAllocateCheckResult : LinnObject
 	{
+        public Int32 SortOrder { get; set; }
+
         /// <summary>
         /// Order Id interger 
         /// </summary>

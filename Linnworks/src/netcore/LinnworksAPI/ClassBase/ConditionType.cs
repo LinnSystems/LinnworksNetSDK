@@ -28,5 +28,8 @@ namespace LinnworksAPI
 		Is,
 		InTheFeed,
 		NotInTheFeed,
+		Creating,
+		Updating,
+		Deleting,
 	}
 }

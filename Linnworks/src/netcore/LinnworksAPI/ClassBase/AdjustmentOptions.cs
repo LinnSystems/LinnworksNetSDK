@@ -45,5 +45,10 @@ namespace LinnworksAPI
         /// Reload all images for the template 
         /// </summary>
 		public Boolean ReloadAllImages { get; set; }
+
+        /// <summary>
+        /// Removes old attributes 
+        /// </summary>
+		public Boolean RemoveOldAttributes { get; set; }
 	} 
 }

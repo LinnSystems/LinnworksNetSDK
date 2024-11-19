@@ -22,19 +22,47 @@ namespace LinnworksAPI
 
 		public ConfigItem<Boolean> BopisSupported { get; set; }
 
+		public ConfigProperty<Boolean> ProcessPosOrders { get; set; }
+
 		public ConfigItem<Boolean> DespatchNotes { get; set; }
 
 		public ConfigItem<Boolean> CancellationNotes { get; set; }
 
+		public ConfigItem<Boolean> AutoRespondCancellationRequests { get; set; }
+
+		public ConfigPropertySelectionList<SelectStringValueOption,String> CancellationResponseType { get; set; }
+
 		public ConfigItem<Boolean> RefundNotes { get; set; }
+
+		public ConfigItem<Boolean> DownloadRefunds { get; set; }
 
 		public ConfigItem<Boolean> ReturnNotes { get; set; }
 
-		public ConfigItem<DateTime> OrderSyncDate { get; set; }
+		public ConfigItem<Boolean> DownloadReturns { get; set; }
 
 		public ConfigPropertySelectionList<SelectStringValueOption,Guid> OrderSaveLocation { get; set; }
 
+		public ConfigItem<DateTime> OrderSyncDate { get; set; }
+
+		public ConfigItem<DateTime> OrderCancellationCheckDate { get; set; }
+
 		public ConfigPropertySelectionList<SelectStringValueOption,String> ConfigDiscount { get; set; }
+
+		public ConfigItem<Int32> OrderDownloadErrorCount { get; set; }
+
+		public ConfigItem<Int32> OrderDownloadGlobalErrorCount { get; set; }
+
+		public ConfigItem<Int32> OrderDespatchErrorCount { get; set; }
+
+		public ConfigItem<Int32> OrderDespatchGlobalErrorCount { get; set; }
+
+		public ConfigItem<Int32> OrderCancellationCheckErrorCount { get; set; }
+
+		public ConfigItem<Int32> OrderCancellationCheckGlobalErrorCount { get; set; }
+
+		public ConfigItem<Int32> RmaDownloadErrorCount { get; set; }
+
+		public ConfigItem<Int32> RmaDownloadGlobalErrorCount { get; set; }
 
 		public ConfigProperty<Boolean> HidesHeaderAttributes { get; set; }
 
@@ -48,7 +76,15 @@ namespace LinnworksAPI
 
 		public ConfigItem<Int32> EndWhen { get; set; }
 
+		public ConfigItem<Int32> InvSyncErrorCount { get; set; }
+
+		public ConfigProperty<Boolean> ExtractInventory { get; set; }
+
+		public ConfigProperty<String> ExtractInventoryVariationMappingPropertyName { get; set; }
+
 		public ConfigItem<Boolean> PriceChange { get; set; }
+
+		public ConfigItem<Int32> PriceChangeErrorCount { get; set; }
 
 		public ConfigProperty<Boolean> IsInventorySyncTriggerEnabled { get; set; }
 
@@ -62,11 +98,9 @@ namespace LinnworksAPI
 
 		public Boolean IsHeaderOnly { get; set; }
 
-        /// <summary>
-        /// Controls whether a channel's configs are displayed in the UI
-        /// Set to true in the derived class if we want to hide it (See PlaytradeConfig.cs) 
-        /// </summary>
 		public Boolean IsHidden { get; set; }
+
+		public String DisplayName { get; set; }
 
 		public ConfigItemExternal[] DynamicProperties { get; set; }
 
@@ -76,14 +110,17 @@ namespace LinnworksAPI
 
 		public ConfigPaymentMethodMapping PaymentMethodMapping { get; set; }
 
-        /// <summary>
-        /// Channel ID 
-        /// </summary>
 		public Int32 PkChannelId { get; set; }
 
 		public String Source { get; set; }
 
 		public String SourceType { get; set; }
+
+		public Boolean FulfillmentServiceEnabled { get; set; }
+
+		public Guid FulfillmentLocation { get; set; }
+
+		public String ConcurrencyKey { get; set; }
 
 		public ConfigRuleCollection Rules { get; set; }
 

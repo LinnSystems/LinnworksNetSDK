@@ -32,7 +32,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Minimum level of stock item. -1 is not tracked 
         /// </summary>
-		public Int32 MinimumLevel { get; set; }
+		public Int32? MinimumLevel { get; set; }
 
         /// <summary>
         /// Available level. Quantity - InOrder 
@@ -76,11 +76,11 @@ namespace LinnworksAPI
 
 		public String PackageGroupName { get; set; }
 
-		public Double Height { get; set; }
+		public Double? Height { get; set; }
 
-		public Double Width { get; set; }
+		public Double? Width { get; set; }
 
-		public Double Depth { get; set; }
+		public Double? Depth { get; set; }
 
 		public Double Weight { get; set; }
 

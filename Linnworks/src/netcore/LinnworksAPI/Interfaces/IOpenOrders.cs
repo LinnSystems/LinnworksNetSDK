@@ -22,6 +22,7 @@ namespace LinnworksAPI
 		GetOrderItemIndicatorResponse GetOrderItemIndicators(GetOrderItemIndicatorRequest request);
 		GetOrdersLowFidelityResponse GetOrdersLowFidelity(GetOrdersLowFidelityRequest request);
 		List<OrderViewStats> GetViewStats(GetViewStatsRequest request);
+		GenericOrderOperationResult MarkReadyForCollection(MarkReadyForCollectionRequest request);
 		Identifier SaveIdentifier(SaveIdentifiersRequest request);
 		SearchOrdersResponse SearchOrders(SearchOrdersRequest request);
 		AssignResult UnassignOrderIdentifier(ChangeOrderIdentifierRequest request);

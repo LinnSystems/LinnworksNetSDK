@@ -194,6 +194,8 @@ namespace LinnworksAPI
 
 		public EbaySellerProfile ShippingProfile { get; set; }
 
+		public List<PickupLocationTime> PickupLocationTimes { get; set; }
+
 		public Boolean IsConfiguratorEdited { get; set; }
 
 		public Boolean IsMappingConfigurator { get; set; }
@@ -204,7 +206,7 @@ namespace LinnworksAPI
 
 		public Boolean UseNewApi { get; set; }
 
-		public String ChannelLocationName { get; set; }
+		public String ChannelLocationIdentifier { get; set; }
 
 		public String DimensionMeasure { get; set; }
 	} 

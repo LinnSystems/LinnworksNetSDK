@@ -10,7 +10,7 @@ namespace LinnworksAPI
 
 		public List<MagentoImageData> Images { get; set; }
 
-		public List<MagentoConfigAttributes> VarAttributes { get; set; }
+		public List<MagentoVariationsAttributes> VarAttributes { get; set; }
 
 		public String AttributesSetId { get; set; }
 

@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of payment statements 
         /// </summary>
-		public List<PurchaseOrderPaymentStatement> items { get; set; }
+		public List<CommonPurchaseOrderPaymentStatement> items { get; set; }
 	} 
 }

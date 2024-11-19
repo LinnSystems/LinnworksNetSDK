@@ -16,6 +16,8 @@ namespace LinnworksAPI
         /// </summary>
 		public Int32? UserId { get; set; }
 
+		public PickwaveItemsSortingType SortingType { get; set; }
+
         /// <summary>
         /// Pickwave items 
         /// </summary>

@@ -90,7 +90,7 @@ namespace LinnworksAPI
 
 		public Boolean NoMatches { get; set; }
 
-		public Byte Adjustments { get; set; }
+		public Int16 Adjustments { get; set; }
 
 		public Boolean IsReFeeded { get; set; }
 	} 

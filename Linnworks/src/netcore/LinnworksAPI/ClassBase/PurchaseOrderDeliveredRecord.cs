@@ -9,6 +9,8 @@ namespace LinnworksAPI
     /// </summary>
     public class PurchaseOrderDeliveredRecord : LinnObject
 	{
+		public Int32? fkDeliveryId { get; set; }
+
         /// <summary>
         /// Delivery record Id 
         /// </summary>

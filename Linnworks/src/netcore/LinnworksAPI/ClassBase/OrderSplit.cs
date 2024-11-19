@@ -18,5 +18,7 @@ namespace LinnworksAPI
         /// Postal Service 
         /// </summary>
 		public Guid PostalServiceId { get; set; }
+
+		public Boolean ParkOrder { get; set; }
 	} 
 }

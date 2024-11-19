@@ -6,8 +6,6 @@ namespace LinnworksAPI
 { 
     public class eBayItem : LinnObject
 	{
-		public String SKU { get; set; }
-
 		public String ItemNumber { get; set; }
 
 		public String MappedBy { get; set; }
@@ -52,6 +50,8 @@ namespace LinnworksAPI
 
 		public Boolean IgnoreSync { get; set; }
 
+		public String SKU { get; set; }
+
 		public String Title { get; set; }
 
 		public String LinkedItemSku { get; set; }
@@ -60,7 +60,7 @@ namespace LinnworksAPI
 
 		public Int32 MaxListedQuantity { get; set; }
 
-		public Int32 EndWhenStock { get; set; }
+		public Int32? EndWhenStock { get; set; }
 
 		public Double StockPercentage { get; set; }
 

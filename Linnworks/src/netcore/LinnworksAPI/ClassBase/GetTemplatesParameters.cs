@@ -28,6 +28,8 @@ namespace LinnworksAPI
 
 		public Int32 EntriesPerPage { get; set; }
 
+		public Boolean? IsMigrated { get; set; }
+
 		public SiteFilter SiteFilter { get; set; }
 	} 
 }

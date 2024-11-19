@@ -20,5 +20,8 @@ namespace LinnworksAPI
 		PZN,
 		GCID,
 		ePID,
+		AMZNTRANS,
+		SERIAL,
+		IMEI,
 	}
 }

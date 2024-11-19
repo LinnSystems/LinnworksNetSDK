@@ -17,6 +17,6 @@ namespace LinnworksAPI
         /// <summary>
         /// Recalculated purchase order header 
         /// </summary>
-		public PurchaseOrderHeader PurchaseOrderHeader { get; set; }
+		public CommonPurchaseOrderHeader PurchaseOrderHeader { get; set; }
 	} 
 }

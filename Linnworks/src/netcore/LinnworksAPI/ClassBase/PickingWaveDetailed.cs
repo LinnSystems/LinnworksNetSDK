@@ -66,6 +66,8 @@ namespace LinnworksAPI
         /// </summary>
 		public PickingWaveGroupType GroupType { get; set; }
 
+		public PickwaveItemsSortingType SortingType { get; set; }
+
         /// <summary>
         /// Orders in pickwave. 
         /// </summary>

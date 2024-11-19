@@ -12,5 +12,7 @@ namespace LinnworksAPI
 		public List<PickingWaveGenerateItemMulti> Items { get; set; }
 
 		public Int32 OrderId { get; set; }
+
+		public Int32 SortOrder { get; set; }
 	} 
 }

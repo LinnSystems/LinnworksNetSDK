@@ -48,5 +48,7 @@ namespace LinnworksAPI
 		public Guid OrderItemRowId { get; set; }
 
 		public Guid StockItemId { get; set; }
+
+		public Int32 OrderSortOrder { get; set; }
 	} 
 }

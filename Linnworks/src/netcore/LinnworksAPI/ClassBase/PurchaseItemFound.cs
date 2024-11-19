@@ -33,5 +33,7 @@ namespace LinnworksAPI
 		public Boolean ContainsComposites { get; set; }
 
 		public Int32 StockItemIntId { get; set; }
+
+		public Guid? fkStockLocationId { get; set; }
 	} 
 }

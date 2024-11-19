@@ -72,6 +72,11 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<VariationParentStatus>(response);
 		}
 
+		public void CompleteWarehouseMove(WarehouseMoveCompleteRequest request)
+		{
+			GetResponse("Stock/CompleteWarehouseMove", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+		}
+
 		/// <summary>
         /// Creates stock item batches 
         /// </summary>
@@ -102,6 +107,15 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Stock/CreateWarehouseMove", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<GetWarehouseMoveResponse>(response);
+		}
+
+		/// <summary>
+        /// Use this call to delete a stock move 
+        /// </summary>
+        /// <param name="request"></param>
+        public void DeleteMove(DeleteMoveRequest request)
+		{
+			GetResponse("Stock/DeleteMove", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
 		/// <summary>
@@ -147,6 +161,12 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Stock/GetBinRacksById", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<BinracksResponse>(response);
+		}
+
+		public BinrackSkuResponse GetBinrackSkus(GetBinRackSkusRequest request)
+		{
+			var response = GetResponse("Stock/GetBinrackSkus", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<BinrackSkuResponse>(response);
 		}
 
 		/// <summary>
@@ -391,6 +411,26 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to get details for a stock move. 
+        /// </summary>
+        /// <param name="request"></param>
+        public GetWarehouseMoveResponse GetWarehouseMove(GetWarehouseMoveRequest request)
+		{
+			var response = GetResponse("Stock/GetWarehouseMove", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetWarehouseMoveResponse>(response);
+		}
+
+		/// <summary>
+        /// Use this call to get details for stock moves within a specific binrack. Returns both incoming and outgoing stock. 
+        /// </summary>
+        /// <param name="request"></param>
+        public GetWarehouseMovesByBinrackResponse GetWarehouseMovesByBinrack(GetWarehouseMovesByBinrackRequest request)
+		{
+			var response = GetResponse("Stock/GetWarehouseMovesByBinrack", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetWarehouseMovesByBinrackResponse>(response);
+		}
+
+		/// <summary>
         /// Use this call to rename a variation group 
         /// </summary>
         /// <param name="pkVariationItemId">The id of the group to rename</param>
@@ -398,6 +438,18 @@ namespace LinnworksAPI
         public void RenameVariationGroup(Guid pkVariationItemId,String variationName)
 		{
 			GetResponse("Stock/RenameVariationGroup", "pkVariationItemId=" + pkVariationItemId + "&variationName=" + System.Net.WebUtility.UrlEncode(variationName) + "");
+		}
+
+		/// <summary>
+        /// Finds all binracks where an item can be placed. Filters out the result by group and binrack restrictions for a particular stock item.
+        /// List of BinRack Type Ids which should be searched can be supplied for a particular location, if null all binracktypes will be considered. You can get the list from Get Stock/GetBinrackTypes
+        /// The response will be ordered by where the system thinks the item should be moved. The logic is determined by one of the default behaviours of the system or by custom configuration of the warehouse stock flow		 
+        /// </summary>
+        /// <param name="request"></param>
+        public BinracksResponse SearchBinracks(SearchBinracksRequest request)
+		{
+			var response = GetResponse("Stock/SearchBinracks", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<BinracksResponse>(response);
 		}
 
 		/// <summary>
@@ -484,6 +536,16 @@ namespace LinnworksAPI
         public void UpdateStockMinimumLevel(Guid stockItemId,Guid locationId,Int32 minimumLevel)
 		{
 			GetResponse("Stock/UpdateStockMinimumLevel", "stockItemId=" + stockItemId + "&locationId=" + locationId + "&minimumLevel=" + minimumLevel + "");
+		}
+
+		/// <summary>
+        /// Use this call to update a stock move 
+        /// </summary>
+        /// <param name="request"></param>
+        public GetWarehouseMoveResponse UpdateWarehouseMove(UpdateWarehouseMoveRequest request)
+		{
+			var response = GetResponse("Stock/UpdateWarehouseMove", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetWarehouseMoveResponse>(response);
 		} 
     }
 }

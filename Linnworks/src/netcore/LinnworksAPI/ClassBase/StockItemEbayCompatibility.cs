@@ -45,5 +45,7 @@ namespace LinnworksAPI
         /// Compatibility culture, one of US, UK, DE, AU, CA, FR, IT, ES 
         /// </summary>
 		public String Culture { get; set; }
+
+		public EbayCompitibilityType EbayCompitibilityType { get; set; }
 	} 
 }

@@ -19,7 +19,7 @@ namespace LinnworksAPI
 
 		public Int32 Due { get; set; }
 
-		public Int32 MinimumLevel { get; set; }
+		public Int32? MinimumLevel { get; set; }
 
 		public Int32 Available { get; set; }
 
@@ -57,11 +57,11 @@ namespace LinnworksAPI
 
 		public String PackageGroupName { get; set; }
 
-		public Double Height { get; set; }
+		public Double? Height { get; set; }
 
-		public Double Width { get; set; }
+		public Double? Width { get; set; }
 
-		public Double Depth { get; set; }
+		public Double? Depth { get; set; }
 
 		public Double Weight { get; set; }
 

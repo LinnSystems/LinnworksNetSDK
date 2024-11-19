@@ -34,6 +34,7 @@ namespace LinnworksAPI
 		PartialRefundsNotAllowed,
 		OrderOrItemIsUnpaid,
 		UnknownStatus,
+		ItemSourceIsInvalid,
 		ChannelAuthenticationIssue,
 		Other,
 	}

@@ -16,8 +16,7 @@ namespace LinnworksAPI
         private LocationsController locations;
         private MacroController macro;
         private OpenOrdersController openorders;
-        private OrdersController orders;
-        private OrderWorkflowController orderworkflow;
+        private OrdersController orders;        
         private PickingController picking;
         private PostalServicesController postalservices;
         private PostSaleController postsale;
@@ -138,15 +137,7 @@ namespace LinnworksAPI
                 return orders ?? (orders = new OrdersController(apiContext));
             }
         }
-
-        public OrderWorkflowController OrderWorkflow
-        {
-            get
-            {
-                return orderworkflow ?? (orderworkflow = new OrderWorkflowController(apiContext));
-            }
-        }
-
+                
         public PickingController Picking
         {
             get

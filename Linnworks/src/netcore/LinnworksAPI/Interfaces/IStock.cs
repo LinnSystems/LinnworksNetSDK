@@ -15,14 +15,17 @@ namespace LinnworksAPI
 		StockItemBatch BookInStockBatch(BatchedBookIn stockItem);
 		void BookInStockItem(BookInStockItem stockItem);
 		VariationParentStatus CheckVariationParentSKUExists(String parentSKU);
+		void CompleteWarehouseMove(WarehouseMoveCompleteRequest request);
 		List<StockItemBatch> CreateStockBatches(List<StockItemBatch> batches);
 		VariationGroup CreateVariationGroup(VariationGroupTemplate template);
 		GetWarehouseMoveResponse CreateWarehouseMove(CreateWarehouseMoveRequest request);
+		void DeleteMove(DeleteMoveRequest request);
 		void DeleteVariationGroup(Guid pkVariationGroupId);
 		void DeleteVariationGroups(DeleteVariationGroupsRequest request);
 		void DeleteVariationItem(Guid pkVariationItemId,Guid pkStockItemId);
 		void DeleteVariationItems(DeleteVariationItemsRequest request);
 		BinracksResponse GetBinRacksById(GetBinrackByIdRequest request);
+		BinrackSkuResponse GetBinrackSkus(GetBinRackSkusRequest request);
 		GenericPagedResult<StockItemChangeHistory> GetItemChangesHistory(Guid stockItemId,Guid locationId,Int32 entriesPerPage,Int32 pageNumber);
 		TempFile GetItemChangesHistoryCSV(Guid stockItemId,Guid locationId);
 		List<StockItemSoldStat> GetSoldStat(Guid stockItemId);
@@ -45,7 +48,10 @@ namespace LinnworksAPI
 		VariationGroup GetVariationGroupByParentId(Guid pkStockItemId);
 		List<GenericEnumDescriptor> GetVariationGroupSearchTypes();
 		List<VariationItem> GetVariationItems(Guid pkVariationItemId);
+		GetWarehouseMoveResponse GetWarehouseMove(GetWarehouseMoveRequest request);
+		GetWarehouseMovesByBinrackResponse GetWarehouseMovesByBinrack(GetWarehouseMovesByBinrackRequest request);
 		void RenameVariationGroup(Guid pkVariationItemId,String variationName);
+		BinracksResponse SearchBinracks(SearchBinracksRequest request);
 		GenericPagedResult<VariationGroup> SearchVariationGroups(VariationSearchType searchType,String searchText,Int32 pageNumber,Int32 entriesPerPage);
 		List<StockItemLevel> SetStockLevel(List<StockLevelUpdate> stockLevels,String changeSource = null);
 		Boolean SKUExists(String SKU);
@@ -54,5 +60,6 @@ namespace LinnworksAPI
 		UpdateStockLevelsBulkResponse UpdateStockLevelsBulk(UpdateStockLevelsBulkRequest request);
 		List<StockItemLevel> UpdateStockLevelsBySKU(List<StockLevelUpdate> stockLevels,String changeSource = null);
 		void UpdateStockMinimumLevel(Guid stockItemId,Guid locationId,Int32 minimumLevel);
+		GetWarehouseMoveResponse UpdateWarehouseMove(UpdateWarehouseMoveRequest request);
 	} 
 }

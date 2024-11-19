@@ -14,5 +14,6 @@ namespace LinnworksAPI
 		Magento,
 		External,
 		Walmart,
+		TikTok,
 	}
 }

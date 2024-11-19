@@ -49,6 +49,8 @@ namespace LinnworksAPI
 
 		public String SubReasonTag { get; set; }
 
+		public PostSaleStatus Status { get; set; }
+
 		public String BinrackOverride { get; set; }
 	} 
 }

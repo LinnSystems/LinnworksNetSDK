@@ -6,6 +6,8 @@ namespace LinnworksAPI
 { 
     public class RefundOptions : LinnObject
 	{
+		public Boolean CanSendRejectionIfDeleted { get; set; }
+
 		public Boolean CanRefund { get; set; }
 
 		public Boolean CanRefundInternally { get; set; }
@@ -35,6 +37,10 @@ namespace LinnworksAPI
 		public ISet<ChannelReason> ServiceRefundReasons { get; set; }
 
 		public ISet<ChannelReason> ShippingRefundReasons { get; set; }
+
+		public List<ItemizedRefundReason> ItemizedRefundReasons { get; set; }
+
+		public ISet<ChannelReason> RejectionReasons { get; set; }
 
 		public CannotRefundReasonType CannotRefundReason { get; set; }
 

@@ -9,6 +9,6 @@ namespace LinnworksAPI
         /// <summary>
         /// List of additional cost items 
         /// </summary>
-		public List<PurchaseOrderAdditionalCost> items { get; set; }
+		public List<CommonPurchaseOrderAdditionalCost> items { get; set; }
 	} 
 }

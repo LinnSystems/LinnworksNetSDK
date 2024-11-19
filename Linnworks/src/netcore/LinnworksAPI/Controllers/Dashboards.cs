@@ -48,7 +48,7 @@ namespace LinnworksAPI
         /// Use this call to retrieve a custom report from Query Data.
         ///  Apps using this call will not be allowed to Application Store. 
         /// </summary>
-        /// <param name="script">Custom SQL script query text</param>
+        /// <param name="request">Custom SQL script query text</param>
         /// <param name="cancellationToken">Terminates execution if task was cancelled on client</param>
         /// <returns>Custom script execution result (CustomScriptResult)</returns>
         public CustomScriptResult ExecuteCustomScriptQuery(ExecuteCustomScriptQueryRequest request)

@@ -4,10 +4,10 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class KeyValueGeneric<Guid,Double> : LinnObject
+    public class KeyValueGeneric<KeyType,ValueType> : LinnObject
 	{
-		public Guid Key { get; set; }
+		public KeyType Key { get; set; }
 
-		public Double Value { get; set; }
+		public ValueType Value { get; set; }
 	} 
 }

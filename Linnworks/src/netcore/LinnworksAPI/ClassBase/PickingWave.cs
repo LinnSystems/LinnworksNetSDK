@@ -69,6 +69,8 @@ namespace LinnworksAPI
         /// </summary>
 		public PickingWaveGroupType GroupType { get; set; }
 
+		public PickwaveItemsSortingType SortType { get; set; }
+
         /// <summary>
         /// Orders in pickwave. This data is not returned if just headers are requested. 
         /// </summary>

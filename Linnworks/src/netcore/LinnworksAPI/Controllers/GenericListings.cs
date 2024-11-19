@@ -15,7 +15,7 @@ namespace LinnworksAPI
         /// <summary>
         /// Use this call to create a configurator. The configurator setup will be dependant on the channel that you want to create it for.
         /// 
-        /// More information on configurators can be found in the [url=https://docs.linnworks.com/articles/#!documentation/configurators]Linnworks general documentation[/url] 
+        /// More information on configurators can be found in the [Linnworks general documentation](https://docs.linnworks.com/articles/#!documentation/configurators) 
         /// </summary>
         /// <param name="request"></param>
         public CreateConfiguratorResponse CreateConfigurator(CreateConfiguratorRequest request)
@@ -37,7 +37,7 @@ namespace LinnworksAPI
 		/// <summary>
         /// Use this call to delete a configurator.
         /// 
-        /// More information on configurators can be found in the [url=https://docs.linnworks.com/articles/#!documentation/configurators]Linnworks general documentation[/url] 
+        /// More information on configurators can be found in the [Linnworks general documentation](https://docs.linnworks.com/articles/#!documentation/configurators) 
         /// </summary>
         /// <param name="request"></param>
         public DeleteConfiguratorsResponse DeleteConfigurators(DeleteConfiguratorsRequest request)
@@ -49,7 +49,7 @@ namespace LinnworksAPI
 		/// <summary>
         /// Use this call to get the existing Generic Listing Tool configurators data.
         /// 
-        /// More information on configurators can be found in the [url=https://docs.linnworks.com/articles/#!documentation/configurators]Linnworks general documentation[/url] 
+        /// More information on configurators can be found in the [Linnworks general documentation](https://docs.linnworks.com/articles/#!documentation/configurators) 
         /// </summary>
         /// <param name="request"></param>
         public GetConfiguratorDataResponse GetConfiguratorData(GetConfiguratorDataRequest request)
@@ -61,7 +61,7 @@ namespace LinnworksAPI
 		/// <summary>
         /// Use this call to get the existing Generic Listing Tool configurators description.
         /// 
-        /// More information on configurators can be found in the [url=https://docs.linnworks.com/articles/#!documentation/configurators]Linnworks general documentation[/url] 
+        /// More information on configurators can be found in the [Linnworks general documentation](https://docs.linnworks.com/articles/#!documentation/configurators) 
         /// </summary>
         /// <param name="request"></param>
         public GetConfiguratorDescriptionResponse GetConfiguratorDescription(GetConfiguratorDataRequest request)
@@ -73,7 +73,7 @@ namespace LinnworksAPI
 		/// <summary>
         /// Use this call to get the existing Generic Listing Tool configurators.
         /// 
-        /// More information on configurators can be found in the [url=https://docs.linnworks.com/articles/#!documentation/configurators]Linnworks general documentation[/url] 
+        /// More information on configurators can be found in the [Linnworks general documentation](https://docs.linnworks.com/articles/#!documentation/configurators) 
         /// </summary>
         /// <param name="request"></param>
         public GetConfiguratorsInfoResponse GetConfiguratorsInfoPaged(GetConfiguratorsInfoPagedRequest request)
@@ -105,7 +105,7 @@ namespace LinnworksAPI
 		/// <summary>
         /// Use this call to update a configurators data (attributes of the configurator).
         /// 
-        /// More information on configurators can be found in the [url=https://docs.linnworks.com/articles/#!documentation/configurators]Linnworks general documentation[/url] 
+        /// More information on configurators can be found in the [Linnworks general documentation](https://docs.linnworks.com/articles/#!documentation/configurators) 
         /// </summary>
         /// <param name="request"></param>
         public SaveConfiguratorDataResponse SaveConfiguratorData(SaveConfiguratorDataRequest request)
@@ -117,7 +117,7 @@ namespace LinnworksAPI
 		/// <summary>
         /// Use this call to update a configurators description.
         /// 
-        /// More information on configurators can be found in the [url=https://docs.linnworks.com/articles/#!documentation/configurators]Linnworks general documentation[/url] 
+        /// More information on configurators can be found in the [Linnworks general documentation](https://docs.linnworks.com/articles/#!documentation/configurators) 
         /// </summary>
         /// <param name="request"></param>
         public SaveConfiguratorDescriptionResponse SaveConfiguratorDescription(SaveConfiguratorDescriptionRequest request)
@@ -129,7 +129,7 @@ namespace LinnworksAPI
 		/// <summary>
         /// Use this call to update a configurators fields.
         /// 
-        /// More information on configurators can be found in the [url=https://docs.linnworks.com/articles/#!documentation/configurators]Linnworks general documentation[/url] 
+        /// More information on configurators can be found in the [Linnworks general documentation](https://docs.linnworks.com/articles/#!documentation/configurators) 
         /// </summary>
         /// <param name="request"></param>
         public SaveConfiguratorFieldsResponse SaveConfiguratorFields(SaveConfiguratorFieldsRequest request)

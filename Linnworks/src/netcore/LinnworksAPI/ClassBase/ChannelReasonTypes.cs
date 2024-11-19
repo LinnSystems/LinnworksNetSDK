@@ -17,5 +17,7 @@ namespace LinnworksAPI
 		ItemReturn,
 		InsufficientRefund,
 		AdditionalRefund,
+		RejectReturn,
+		RejectRefund,
 	}
 }

@@ -6,12 +6,12 @@ namespace LinnworksAPI
 { 
     public class PrintingKey : LinnObject
 	{
-		public Guid Key { get; set; }
-
-		public Int32? Quantity { get; set; }
-
 		public Int32? BatchInventoryId { get; set; }
 
+		public Guid Key { get; set; }
+
 		public Guid? LocationId { get; set; }
+
+		public Int32? Quantity { get; set; }
 	} 
 }
