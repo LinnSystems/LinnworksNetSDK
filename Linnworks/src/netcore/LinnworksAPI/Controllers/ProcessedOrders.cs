@@ -45,7 +45,7 @@ namespace LinnworksAPI
         /// <param name="noteTypeId">Set the type of note</param>
         public void ChangeOrderNote(Guid pkOrderNoteId,String noteText,Boolean isInternal,Byte? noteTypeId = null)
 		{
-			GetResponse("ProcessedOrders/ChangeOrderNote", "pkOrderNoteId=" + pkOrderNoteId + "&noteText=" + System.Net.WebUtility.UrlEncode(noteText) + "&isInternal=" + isInternal + "&noteTypeId=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(noteTypeId)) + "");
+			GetResponse("ProcessedOrders/ChangeOrderNote", "pkOrderNoteId=" + pkOrderNoteId + "&noteText=" + System.Net.WebUtility.UrlEncode(noteText) + "&isInternal=" + isInternal + "&noteTypeId=" + System.Net.WebUtility.UrlEncode(noteTypeId.HasValue ? JsonFormatter.ConvertToJson(noteTypeId) :  "null") + "");
 		}
 
 		/// <summary>
@@ -317,7 +317,7 @@ namespace LinnworksAPI
         /// <returns>Returns the total refund amount as retrieved based on the parameters.</returns>
         public ExistingRefundTotal GetTotalRefunds(Guid pkOrderId,Boolean? includeBookings = null)
 		{
-			var response = GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(includeBookings)) + "");
+			var response = GetResponse("ProcessedOrders/GetTotalRefunds", "pkOrderId=" + pkOrderId + "&includeBookings=" + System.Net.WebUtility.UrlEncode(includeBookings.HasValue ? JsonFormatter.ConvertToJson(includeBookings) :  "null") + "");
             return JsonFormatter.ConvertFromJson<ExistingRefundTotal>(response);
 		}
 

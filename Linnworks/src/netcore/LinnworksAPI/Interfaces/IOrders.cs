@@ -11,7 +11,7 @@ namespace LinnworksAPI
 	{
 		UpdateOrderItemResult AddCoupon(Guid orderId,String barcode,CouponValidationResult couponData,Guid fulfilmentCenter);
 		AddExtendedPropertiesResponse AddExtendedProperties(AddExtendedPropertiesRequest request);
-		UpdateOrderItemResult AddOrderItem(Guid orderId,Guid itemId,String channelSKU,Guid fulfilmentCenter,Int32 quantity,LinePricingRequest linePricing);
+		UpdateOrderItemResult AddOrderItem(Guid orderId,Guid itemId,String channelSKU,Guid fulfilmentCenter,Int32 quantity,LinePricingRequest linePricing,DateTime? createdDate = null);
 		UpdateOrderItemResult AddOrderService(Orders_AddOrderServiceRequest request);
 		void AssignOrderItemBatches(AssignOrderItemBatches request);
 		List<OrderItemBatch> AssignStockToOrder(AssignStockToOrderRequest request);

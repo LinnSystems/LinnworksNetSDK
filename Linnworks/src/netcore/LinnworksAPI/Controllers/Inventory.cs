@@ -55,9 +55,10 @@ namespace LinnworksAPI
         /// Used to add product identifiers 
         /// </summary>
         /// <param name="request">Object with collection of product identifiers</param>
-        public void AddProductIdentifiers(AddProductIdentifiersRequest request)
+        public BatchedAPIResponse<StockItemProductIdentifier> AddProductIdentifiers(AddProductIdentifiersRequest request)
 		{
-			GetResponse("Inventory/AddProductIdentifiers", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+			var response = GetResponse("Inventory/AddProductIdentifiers", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<BatchedAPIResponse<StockItemProductIdentifier>>(response);
 		}
 
 		/// <summary>
@@ -808,7 +809,7 @@ namespace LinnworksAPI
         /// <param name="includeArchived">Include archived items</param>
         public Int32 GetInventoryItemsCount(Boolean? includeDeleted,Boolean? includeArchived)
 		{
-			var response = GetResponse("Inventory/GetInventoryItemsCount", "includeDeleted=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(includeDeleted)) + "&includeArchived=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(includeArchived)) + "");
+			var response = GetResponse("Inventory/GetInventoryItemsCount", "includeDeleted=" + System.Net.WebUtility.UrlEncode(includeDeleted.HasValue ? JsonFormatter.ConvertToJson(includeDeleted) :  "null") + "&includeArchived=" + System.Net.WebUtility.UrlEncode(includeArchived.HasValue ? JsonFormatter.ConvertToJson(includeArchived) :  "null") + "");
             return JsonFormatter.ConvertFromJson<Int32>(response);
 		}
 
