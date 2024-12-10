@@ -52,10 +52,11 @@ namespace LinnworksAPI
         /// <param name="fulfilmentCenter">Current fulfilment center</param>
         /// <param name="quantity">Item quantity</param>
         /// <param name="linePricing">Item pricing data</param>
+        /// <param name="createdDate">The datetime that the item was added to the order</param>
         /// <returns>The item added</returns>
-        public UpdateOrderItemResult AddOrderItem(Guid orderId,Guid itemId,String channelSKU,Guid fulfilmentCenter,Int32 quantity,LinePricingRequest linePricing)
+        public UpdateOrderItemResult AddOrderItem(Guid orderId,Guid itemId,String channelSKU,Guid fulfilmentCenter,Int32 quantity,LinePricingRequest linePricing,DateTime? createdDate = null)
 		{
-			var response = GetResponse("Orders/AddOrderItem", "orderId=" + orderId + "&itemId=" + itemId + "&channelSKU=" + System.Net.WebUtility.UrlEncode(channelSKU) + "&fulfilmentCenter=" + fulfilmentCenter + "&quantity=" + quantity + "&linePricing=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(linePricing)) + "");
+			var response = GetResponse("Orders/AddOrderItem", "orderId=" + orderId + "&itemId=" + itemId + "&channelSKU=" + System.Net.WebUtility.UrlEncode(channelSKU) + "&fulfilmentCenter=" + fulfilmentCenter + "&quantity=" + quantity + "&linePricing=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(linePricing)) + "&createdDate=" + System.Net.WebUtility.UrlEncode(createdDate.HasValue ? createdDate.Value.ToString("yyyy-MM-dd HH:mm:ss") : "null") + "");
             return JsonFormatter.ConvertFromJson<UpdateOrderItemResult>(response);
 		}
 
@@ -807,7 +808,7 @@ namespace LinnworksAPI
         /// <returns>MoveToLocationResult with list of order ids moved and errors if they exist.</returns>
         public MoveToLocationResult MoveToLocation(List<Guid> orderIds,Guid pkStockLocationId,FulfillmentStatus? fulfillmentStatusToApply = null)
 		{
-			var response = GetResponse("Orders/MoveToLocation", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&pkStockLocationId=" + pkStockLocationId + "&fulfillmentStatusToApply=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fulfillmentStatusToApply)) + "");
+			var response = GetResponse("Orders/MoveToLocation", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&pkStockLocationId=" + pkStockLocationId + "" + (fulfillmentStatusToApply.HasValue ? ("&fulfillmentStatusToApply=" + ((int)fulfillmentStatusToApply).ToString()) : String.Empty) + "");
             return JsonFormatter.ConvertFromJson<MoveToLocationResult>(response);
 		}
 
@@ -984,7 +985,7 @@ namespace LinnworksAPI
         /// <returns>OrderTotalsInfo object with totals updated. If the country has changed, tax rate could have changed as well.</returns>
         public OrderTotalsInfo SetOrderCustomerInfo(Guid orderId,OrderCustomerInfo info,Boolean? saveToCrm)
 		{
-			var response = GetResponse("Orders/SetOrderCustomerInfo", "orderId=" + orderId + "&info=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(info)) + "&saveToCrm=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(saveToCrm)) + "");
+			var response = GetResponse("Orders/SetOrderCustomerInfo", "orderId=" + orderId + "&info=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(info)) + "&saveToCrm=" + System.Net.WebUtility.UrlEncode(saveToCrm.HasValue ? JsonFormatter.ConvertToJson(saveToCrm) :  "null") + "");
             return JsonFormatter.ConvertFromJson<OrderTotalsInfo>(response);
 		}
 
@@ -1095,7 +1096,7 @@ namespace LinnworksAPI
         /// <returns>List of orders created</returns>
         public List<OpenOrder> SplitOrder(Guid orderId,OrderSplit[] newOrders,String type,Guid fulfilmentLocationId,Boolean recalcPackaging = false,FulfillmentStatus? fulfillmentStatus = null)
 		{
-			var response = GetResponse("Orders/SplitOrder", "orderId=" + orderId + "&newOrders=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(newOrders)) + "&type=" + System.Net.WebUtility.UrlEncode(type) + "&fulfilmentLocationId=" + fulfilmentLocationId + "&recalcPackaging=" + recalcPackaging + "&fulfillmentStatus=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(fulfillmentStatus)) + "");
+			var response = GetResponse("Orders/SplitOrder", "orderId=" + orderId + "&newOrders=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(newOrders)) + "&type=" + System.Net.WebUtility.UrlEncode(type) + "&fulfilmentLocationId=" + fulfilmentLocationId + "&recalcPackaging=" + recalcPackaging + "" + (fulfillmentStatus.HasValue ? ("&fulfillmentStatus=" + ((int)fulfillmentStatus).ToString()) : String.Empty) + "");
             return JsonFormatter.ConvertFromJson<List<OpenOrder>>(response);
 		}
 

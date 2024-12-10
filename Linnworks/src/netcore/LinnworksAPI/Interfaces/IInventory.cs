@@ -13,7 +13,7 @@ namespace LinnworksAPI
 		void AddInventoryItem(StockItem inventoryItem);
 		BatchedAPIResponse<Guid> AddInventoryItemBulk(AddInventoryItemRequest request);
 		void AddItemLocations(List<StockItemLocation> itemLocations);
-		void AddProductIdentifiers(AddProductIdentifiersRequest request);
+		BatchedAPIResponse<StockItemProductIdentifier> AddProductIdentifiers(AddProductIdentifiersRequest request);
 		AddScrapCategoriesResponse AddScrapCategories(AddScrapCategoriesRequest request);
 		AddScrapItemResponse AddScrapItem(AddScrapItemRequest request);
 		Supplier AddSupplier(Supplier supplier);
