@@ -14,7 +14,7 @@ namespace SampleChannel.Controllers
 
         public OrderController(IUserConfigAdapter userConfigAdapter)
         {
-            this._userConfigAdapter = userConfigAdapter;
+            _userConfigAdapter = userConfigAdapter;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace SampleChannel.Controllers
                 return new Models.Order.OrdersResponse { Error = "Invalid page number" };
             try
             {
-                var user = this._userConfigAdapter.Load(request.AuthorizationToken);
+                var user = _userConfigAdapter.Load(request.AuthorizationToken);
 
                 Random rand = new(DateTime.UtcNow.Millisecond);
 
@@ -50,7 +50,7 @@ namespace SampleChannel.Controllers
 
                 for (int i = 1; i <= orderCount; i++)
                 {
-                    var order = new Models.Order.Order
+                    Models.Order.Order order = new()
                     {
                         DeliveryAddress = new Models.Order.Address
                         {
@@ -85,8 +85,8 @@ namespace SampleChannel.Controllers
                         ChannelBuyerName = "A Channel Buyer Name",
                         Currency = "GBP",
                         DispatchBy = DateTime.UtcNow.AddDays(10),
-                        ExternalReference = string.Concat("MyExternalReference-", (i * request.PageNumber)),
-                        ReferenceNumber = string.Concat("MyReference-", ((i * request.PageNumber) * 2)),
+                        ExternalReference = string.Concat("MyExternalReference-", i * request.PageNumber),
+                        ReferenceNumber = string.Concat("MyReference-", i * request.PageNumber * 2),
                         MatchPaymentMethodTag = "PayPal",
                         MatchPostalServiceTag = "Royal Mail First Class",
                         PaidOn = DateTime.UtcNow.AddMinutes(rand.Next(1, 10) * -1),
@@ -146,7 +146,7 @@ namespace SampleChannel.Controllers
 
                 return new Models.Order.OrdersResponse
                 {
-                    Orders = orders.ToArray(),
+                    Orders = [.. orders],
                     HasMorePages = request.PageNumber < 11
                 };
             }
@@ -171,18 +171,18 @@ namespace SampleChannel.Controllers
 
             try
             {
-                var user = this._userConfigAdapter.Load(request.AuthorizationToken);
+                var user = _userConfigAdapter.Load(request.AuthorizationToken);
 
                 return new Models.Order.OrderDespatchResponse()
                 {
-                    Orders = new List<Models.Order.OrderDespatchError>()
-                {
-                    new Models.Order.OrderDespatchError
-                    {
-                        ReferenceNumber = request.Orders.First().ReferenceNumber,
-                        Error = "Despatch failed for some reason"
-                    }
-                }
+                    Orders =
+                    [
+                        new Models.Order.OrderDespatchError
+                        {
+                            ReferenceNumber = request.Orders.First().ReferenceNumber,
+                            Error = "Despatch failed for some reason"
+                        }
+                    ]
                 };
             }
             catch (Exception ex)

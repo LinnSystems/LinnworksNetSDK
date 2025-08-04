@@ -34,7 +34,7 @@ namespace SampleChannel.Controllers
             if (request.LinnworksUniqueIdentifier == Guid.Empty)
                 return new Models.User.AddNewUserResponse { Error = "Invalid LinnworksUniqueIdentifier" };
 
-            var userConfig = this._userConfigAdapter.CreateNew(request.Email, request.LinnworksUniqueIdentifier, request.AccountName);
+            var userConfig = _userConfigAdapter.CreateNew(request.Email, request.LinnworksUniqueIdentifier, request.AccountName);
 
             return new Models.User.AddNewUserResponse
             {
@@ -53,7 +53,7 @@ namespace SampleChannel.Controllers
         {
             try
             {
-                this._userConfigAdapter.Delete(request.AuthorizationToken);
+                _userConfigAdapter.Delete(request.AuthorizationToken);
 
                 return new Models.BaseResponse();
             }
@@ -75,7 +75,7 @@ namespace SampleChannel.Controllers
         {
             try
             {
-                var user = this._userConfigAdapter.Load(request.AuthorizationToken);
+                var user = _userConfigAdapter.Load(request.AuthorizationToken);
 
                 //Would normally do something here to test.
 
@@ -98,7 +98,7 @@ namespace SampleChannel.Controllers
         {
             try
             {
-                var user = this._userConfigAdapter.Load(request.AuthorizationToken);
+                var user = _userConfigAdapter.Load(request.AuthorizationToken);
 
                 return new Models.Payment.PaymentTagResponse
                 {
@@ -129,7 +129,7 @@ namespace SampleChannel.Controllers
         {
             try
             {
-                var user = this._userConfigAdapter.Load(request.AuthorizationToken);
+                var user = _userConfigAdapter.Load(request.AuthorizationToken);
 
                 return new Models.Shipping.ShippingTagResponse
                 {
@@ -171,7 +171,7 @@ namespace SampleChannel.Controllers
         {
             try
             {
-                var userConfig = this._userConfigAdapter.Load(request.AuthorizationToken);
+                var userConfig = _userConfigAdapter.Load(request.AuthorizationToken);
 
                 return _configStages.StageResponse(userConfig, "User config is at invalid stage");
             }
@@ -194,16 +194,16 @@ namespace SampleChannel.Controllers
         /// <param name="request"><see cref="Models.User.SaveUserConfigRequest"/></param>
         /// <returns><see cref="Models.User.UserConfigResponse"/></returns>
         [HttpPost]
-        public Models.User.UserConfigResponse SaveConfigSave([FromBody] Models.User.SaveUserConfigRequest request)
+        public Models.User.UserConfigResponse SaveUserConfig([FromBody] Models.User.SaveUserConfigRequest request)
         {
             try
             {
-                var userConfig = this._userConfigAdapter.Load(request.AuthorizationToken);
+                var userConfig = _userConfigAdapter.Load(request.AuthorizationToken);
 
                 if (request.StepName != userConfig.StepName)
                     return new Models.User.UserConfigResponse { Error = string.Format("Invalid step name expected {0}", userConfig.StepName) };
 
-                return this._userConfigAdapter.Save(userConfig, request.ConfigItems);
+                return _userConfigAdapter.Save(userConfig, request.ConfigItems);
             }
             catch (Exception ex)
             {

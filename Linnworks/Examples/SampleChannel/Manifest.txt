@@ -1,9 +1,21 @@
 {
-	"modules" :
+	"LinnworksPermissions": [],
+	"Modules" :
 	[
+		"RequiredPermissionId": null,
+		"moduleName": null,
+		"formattedName": null,
+		"icon": null,
+		"path": "",
+		"type": "ChannelIntegration",
+		"isHidden": false,
+		"isBeta": false,
+		"isAngularComponent": false,
+		"maxOpened": 0,
+		"group": [],
 		{
 			"type" : "ChannelIntegration",
-			"parameters" : 
+			"parameters" :
 			[
 				 {
 					"name" :"ChannelName",
@@ -64,36 +76,36 @@
 				 {
 					"name" :"PriceUpdateEndpoint",
 					"value" :"http://www.mychannelapi.com/api/Product/PriceUpdate"
-				 },         
-         {
+				 },
+			{
 					"name" :"GetConfiguratorSettingsEndpoint",
 					"value" :"http://www.mychannelapi.com/api/Listing/GetConfiguratorSettings"
 				 },
-         {
+			{
 					"name" :"GetCategoriesEndpoint",
 					"value" :"http://www.mychannelapi.com/api/Listing/GetCategories"
 				 },
-         {
+			{
 					"name" :"GetAttributesByCategoryEndpoint",
 					"value" :"http://www.mychannelapi.com/api/Listing/GetAttributesByCategory"
 				 },
-         {
+			{
 					"name" :"GetVariationsByCategoryEndpoint",
 					"value" :"http://www.mychannelapi.com/api/Listing/GetVariationsByCategory"
 				 },
-         {
+			{
 					"name" :"ListingUpdateEndpoint",
 					"value" :"http://www.mychannelapi.com/api/Listing/ListingUpdate"
 				 },
-         {
+			{
 					"name" :"ListingDeleteEndpoint",
 					"value" :"http://www.mychannelapi.com/api/Listing/ListingDelete"
-				 },  
-         {
+				 },
+			{
 					"name" :"CheckFeedEndpoint",
 					"value" :"http://www.mychannelapi.com/api/Listing/CheckFeed"
 				 },
-         {
+			{
 					"name" :"IsListingSupported",
 					"value" :"False"
 				 },
@@ -119,11 +131,11 @@
 				 },
 				 {
 					"name": "OAuthAuthorizationEndpoint",
-					"value": "http://www.mychannelapi.com/api/oauth/authorize"
+					"value": ""
 				 },
 				 {
 					"name": "OAuthScopesRequested",
-					"value": "read write"
+					"value": ""
 				 }
 			]
 		}
