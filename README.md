@@ -8,3 +8,5 @@ Linnworks.net SDK is lightweight reflection of the Linnworks.net API project.
 
 Available in the following languages in full:
 - .NET 6.0
+
+**We are not accepting commits on this project at this time.**
