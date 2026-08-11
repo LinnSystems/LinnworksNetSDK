@@ -6,7 +6,7 @@ namespace LinnworksAPI
 { 
     public class CancellationRequest : LinnObject
 	{
-		public Boolean IsChannelCancellation { get; set; }
+		public Boolean? IsChannelCancellation { get; set; }
 
 		public Boolean IsChannelInitiated { get; set; }
 

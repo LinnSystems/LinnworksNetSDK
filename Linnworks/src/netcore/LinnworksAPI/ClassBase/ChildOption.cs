@@ -13,5 +13,7 @@ namespace LinnworksAPI
 		public String Name { get; set; }
 
 		public String Label { get; set; }
+
+		public Int32 SortOrder { get; set; }
 	} 
 }

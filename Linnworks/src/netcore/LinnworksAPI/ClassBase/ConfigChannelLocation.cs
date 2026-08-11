@@ -14,7 +14,7 @@ namespace LinnworksAPI
 
 		public String ExternalReference { get; set; }
 
-		public Guid OrderDownloadLocation { get; set; }
+		public Guid? OrderDownloadLocation { get; set; }
 
 		public List<Guid> InventorySyncLocations { get; set; }
 
@@ -25,5 +25,7 @@ namespace LinnworksAPI
 		public Boolean IsFulfilment { get; set; }
 
 		public Dictionary<String,Object> AdditionalFields { get; set; }
+
+		public Boolean? UsesOrderDownloadLocation { get; set; }
 	} 
 }

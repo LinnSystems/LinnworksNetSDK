@@ -13,6 +13,7 @@ namespace LinnworksAPI
 		AssignStockToOrdersResponse<OrderItemBatchExtended,Guid> AssignStockToOrders(AssignStockToOrdersRequest request);
 		AssignStockToOrdersResponse<Int32,Int32> DeleteAssignedStock(ClearStockAssignmentRequest request);
 		void DeleteIdentifier(DeleteIdentifiersRequest request);
+		FilterNotProcessedOpenOrdersResponse FilterNotProcessedOpenOrders(FilterNotProcessedOpenOrdersRequest request);
 		GetAvailableChannelsResponse GetAvailableChannels();
 		List<Identifier> GetIdentifiers();
 		List<OrderIdentifier> GetIdentifiersByOrderIds(GetOrderIdentifierRequest request);

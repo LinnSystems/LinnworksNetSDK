@@ -23,9 +23,9 @@ namespace LinnworksAPI
 		void BulkScrapBatchedItems(BulkScrapBatchedItemsRequest request);
 		void CreateBatches(IEnumerable<StockItemBatch> batches);
 		LinnworksCategory CreateCategory(String categoryName,Guid? categoryId = null);
+		BatchedAPIResponse<ChannelMappingCreateInfo> CreateChannelMapping(CreateChannelMappingRequest request);
 		void CreateCountries(IEnumerable<Country> countries);
 		CreateCountryRegionsResponse CreateCountryRegions(CreateCountryRegionsRequest request);
-		void CreateInventoryItemChannelSKUs(List<StockItemChannelSKU> inventoryItemChannelSKUs);
 		void CreateInventoryItemCompositions(List<StockItemComposition> inventoryItemCompositions);
 		void CreateInventoryItemDescriptions(List<StockItemDescription> inventoryItemDescriptions);
 		void CreateInventoryItemExtendedProperties(List<StockItemExtendedPropertyUpsertItem> inventoryItemExtendedProperties);
@@ -71,6 +71,7 @@ namespace LinnworksAPI
 		List<String> GetExtendedPropertyTypes();
 		GetImagesInBulkResponse GetImagesInBulk(GetImagesInBulkRequest request);
 		Dictionary<String,Byte> GetInventoryBatchTypes();
+		StockItemInv GetInventoryItem(GetInventoryItemRequest request);
 		List<StockItemAuditTrail> GetInventoryItemAuditTrail(Guid inventoryItemId);
 		PagedResult<StockItemAuditTrail> GetInventoryItemAuditTrailPaged(GetInventoryItemAuditTrailPagedRequest request);
 		List<StockItemBatch> GetInventoryItemBatchInformation(GetInventoryItemBatchInformationRequest Request);
@@ -116,6 +117,7 @@ namespace LinnworksAPI
 		InsertUpdateEbayCompatibilityListResponse InsertUpdateEbayCompatibilityList(InsertUpdateEbayCompatibilityListRequest request);
 		Boolean IsInventoryItemChannelSKULinked(String channelSKU,String source,String subSource);
 		Boolean IsOwnedStockLocation(Guid locationId);
+		ItemsHaveScannableIdentifiersResponse ItemsHaveScannableIdentifiers(ItemsHaveScannableIdentifiersRequest request);
 		ScrapBatchedItemResponse ScrapBatchedItem(ScrapBatchedItemRequest request);
 		void SetInventoryItemImageAsMain(Guid inventoryItemId,Guid mainImageId);
 		void UnarchiveInventoryItems(InventoryParametersRequest parameters);
@@ -124,6 +126,7 @@ namespace LinnworksAPI
 		void UpdateBatchDetails(UpdateBatchDetailsRequest request);
 		void UpdateBatchesWithInventory(IEnumerable<StockItemBatch> batches);
 		void UpdateCategory(LinnworksCategory category);
+		BatchedAPIResponse<ChannelMappingUpdateInfo> UpdateChannelMapping(UpdateChannelMappingRequest request);
 		Int32 UpdateCompositeParentStockLevel(Guid stockItemId,Guid locationId,Int32 fieldValue);
 		void UpdateCountries(IEnumerable<Country> countries);
 		void UpdateCountryRegions(UpdateCountryRegionsRequest request);

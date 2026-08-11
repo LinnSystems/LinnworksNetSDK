@@ -50,5 +50,10 @@ namespace LinnworksAPI
         /// Removes old attributes 
         /// </summary>
 		public Boolean RemoveOldAttributes { get; set; }
+
+        /// <summary>
+        /// Adjusts multi-warehouse settings for the template. 
+        /// </summary>
+		public Boolean AdjustMultiWarehouseSettings { get; set; }
 	} 
 }

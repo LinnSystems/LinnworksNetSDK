@@ -45,6 +45,12 @@ namespace LinnworksAPI
 			GetResponse("OpenOrders/DeleteIdentifier", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
 		}
 
+		public FilterNotProcessedOpenOrdersResponse FilterNotProcessedOpenOrders(FilterNotProcessedOpenOrdersRequest request)
+		{
+			var response = GetResponse("OpenOrders/FilterNotProcessedOpenOrders", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "", "GET");
+            return JsonFormatter.ConvertFromJson<FilterNotProcessedOpenOrdersResponse>(response);
+		}
+
 		public GetAvailableChannelsResponse GetAvailableChannels()
 		{
 			var response = GetResponse("OpenOrders/GetAvailableChannels", "", "GET");

@@ -13,5 +13,9 @@ namespace LinnworksAPI
 		public String Type { get; set; }
 
 		public String TypeLabel { get; set; }
+
+		public Int32 OptionSortOrder { get; set; }
+
+		public String ValueSortOrderExtendedProperty { get; set; }
 	} 
 }

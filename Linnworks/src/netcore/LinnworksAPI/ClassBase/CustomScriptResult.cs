@@ -10,10 +10,10 @@ namespace LinnworksAPI
 
 		public String ErrorMessage { get; set; }
 
-		public Int64 TotalResults { get; set; }
-
 		public List<CustomScriptColumn> Columns { get; set; }
 
 		public List<Dictionary<String,Object>> Results { get; set; }
+
+		public Int64 TotalResults { get; set; }
 	} 
 }

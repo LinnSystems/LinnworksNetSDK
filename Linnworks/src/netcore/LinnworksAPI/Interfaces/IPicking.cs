@@ -17,6 +17,7 @@ namespace LinnworksAPI
 		GetPickingWaveHeadersResponse GetMyPickingWaveHeaders(GetPickingWavesRequest request);
 		GetPickingWavesResponse GetMyPickingWaves(GetPickingWavesRequest request);
 		GetPickingWavesResponse GetPickingWave(GetPickingWaveRequest request);
+		List<PickingWaveDespatchData> GetPickingwaveDespatchDataByLocation(Guid? locationId);
 		GetPickwaveUsersWithSummaryResponse GetPickwaveUsersWithSummary(GetPickingWavesRequest request);
 		GetPickingWavesResponse UpdatePickedItemDelta(UpdatePickedItemDeltaRequest request);
 		GetPickingWavesResponse UpdatePickingWaveHeader(PickingWaveUpdateRequest request);

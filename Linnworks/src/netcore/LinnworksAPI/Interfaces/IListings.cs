@@ -9,40 +9,25 @@ namespace LinnworksAPI
 { 
     public interface IListingsController
 	{
-		void CreateAmazonConfigurators(List<AmazonConfig> configs);
-		PagedResult<AmazonListing> CreateAmazonTemplates(ProcessTemplatesParameters parameters);
 		void CreateBigcommerceConfigurators(List<BigCommerceConfigurator> configs);
 		PagedResult<BigCommerceListing> CreateBigcommerceTemplates(ProcessTemplatesParameters parameters);
 		void CreateeBayConfigurators(List<EbayConfig> configs);
 		PagedResult<EbayListing> CreateEbayTemplates(ProcessTemplatesParameters parameters);
-		void CreateMagentoConfigurators(List<MagentoConfig> configs);
-		PagedResult<MagentoListing> CreateMagentoTemplates(ProcessTemplatesParameters parameters);
-		void DeleteAmazonConfigurators(List<Guid> configs);
-		void DeleteAmazonTemplates(IEnumerable<Guid> templateIds);
 		void DeleteBigcommerceConfigurators(List<Guid> configs);
 		void DeleteBigcommerceTemplates(IEnumerable<Guid> templateIds);
 		void DeleteeBayConfigurators(List<Guid> configs);
 		void DeleteEbayTemplates(IEnumerable<Guid> templateIds);
-		void DeleteMagentoConfigurators(List<Guid> configs);
-		void DeleteMagentoTemplates(List<Guid> templateIds);
 		void EndListingsPendingRelist(EndListingsPendingRelistRequest request);
-		IEnumerable<AmazonConfig> GetAmazonConfigurators();
-		PagedResult<AmazonListing> GetAmazonTemplates(GetTemplatesParameters parameters);
+		GetEbayConfiguratorsResponse GetAllEbayConfigurators();
 		IEnumerable<BigCommerceConfigurator> GetBigcommerceConfigurators();
 		PagedResult<BigCommerceListing> GetBigCommerceTemplates(GetTemplatesParameters parameters);
 		IEnumerable<EbayConfig> GeteBayConfigurators();
 		GetEbayListingAuditResponse GetEbayListingAudit(GetEbayListingAuditRequest request);
 		PagedResult<EbayListing> GeteBayTemplates(GetTemplatesParameters parameters);
-		IEnumerable<MagentoConfig> GetMagentoConfigurators();
-		PagedResult<MagentoListing> GetMagentoTemplates(GetTemplatesParameters parameters);
-		void ProcessAmazonListings(List<AmazonListing> items);
 		void ProcessBigcommerceListings(List<BigCommerceListing> items,Boolean force);
-		void ProcesseBayListings(List<EbayListing> items,Boolean force);
-		void ProcessMagentoListings(List<MagentoListing> items,Boolean force);
+		void ProcesseBayListings(List<EbayListing> items,Boolean force,String action = "");
 		void SetListingStrikeOffState(SetListingStrikeOffStateRequest request);
-		void UpdateAmazonConfigurators(List<AmazonConfig> configs);
 		void UpdateBigcommerceConfigurators(List<BigCommerceConfigurator> configs);
 		void UpdateeBayConfigurators(List<EbayConfig> configs);
-		void UpdateMagentoConfigurators(List<MagentoConfig> configs);
 	} 
 }

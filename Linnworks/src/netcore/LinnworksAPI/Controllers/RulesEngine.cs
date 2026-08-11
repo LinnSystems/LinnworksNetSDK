@@ -18,10 +18,10 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="action">An object describing the action to add.</param>
         /// <returns>The action object, complete with action id.</returns>
-        public ActionWeb AddAction(ActionWeb action)
+        public RuleActionResponse AddAction(CreateActionRequest action)
 		{
 			var response = GetResponse("RulesEngine/AddAction", "action=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(action)) + "");
-            return JsonFormatter.ConvertFromJson<ActionWeb>(response);
+            return JsonFormatter.ConvertFromJson<RuleActionResponse>(response);
 		}
 
 		/// <summary>
@@ -41,14 +41,13 @@ namespace LinnworksAPI
 		/// <summary>
         /// Use this call to copy an action from one condition to another condition. Actions may not be attached to the rule header or condition nodes with subconditions. 
         /// </summary>
-        /// <param name="pkRuleId">The rule which the action belongs to.</param>
         /// <param name="targetParentConditionId">The condition to add the action to.</param>
         /// <param name="pkActionId">The id of the action to copy.</param>
         /// <returns>The new action.</returns>
-        public RuleAction CopyAction(Int32 pkRuleId,Int32 targetParentConditionId,Int32 pkActionId)
+        public RuleActionResponse CopyAction(Int32 targetParentConditionId,Int32 pkActionId)
 		{
-			var response = GetResponse("RulesEngine/CopyAction", "pkRuleId=" + pkRuleId + "&targetParentConditionId=" + targetParentConditionId + "&pkActionId=" + pkActionId + "");
-            return JsonFormatter.ConvertFromJson<RuleAction>(response);
+			var response = GetResponse("RulesEngine/CopyAction", "targetParentConditionId=" + targetParentConditionId + "&pkActionId=" + pkActionId + "");
+            return JsonFormatter.ConvertFromJson<RuleActionResponse>(response);
 		}
 
 		/// <summary>
@@ -115,10 +114,10 @@ namespace LinnworksAPI
 		/// <summary>
         /// Use this call to delete an action from a rule. 
         /// </summary>
-        /// <param name="pkActionId">The id of the action to delete</param>
-        public void DeleteAction(Int32 pkActionId)
+        /// <param name="action">The object holding id of the action to delete</param>
+        public void DeleteAction(DeleteActionRequest action)
 		{
-			GetResponse("RulesEngine/DeleteAction", "pkActionId=" + pkActionId + "");
+			GetResponse("RulesEngine/DeleteAction", "action=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(action)) + "");
 		}
 
 		/// <summary>
@@ -140,6 +139,17 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to return details of an action 
+        /// </summary>
+        /// <param name="action">An object describing the action to get details for</param>
+        /// <returns>Details of the requested action</returns>
+        public RuleActionResponse GetAction(GetActionRequest action)
+		{
+			var response = GetResponse("RulesEngine/GetAction", "action=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(action)) + "");
+            return JsonFormatter.ConvertFromJson<RuleActionResponse>(response);
+		}
+
+		/// <summary>
         /// Use this call to get a list of valid options for a given action 
         /// </summary>
         /// <param name="type">The action type</param>
@@ -151,14 +161,14 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Use this call to retrieve a list of valid action types for the rule type 
+        /// Use this call to retrieve a list of valid action types for rules engine 
         /// </summary>
-        /// <param name="type">The rule type.</param>
-        /// <returns>Valid action types</returns>
-        public List<ActionTypeDescriptor> GetActionTypes(RuleSetType type)
+        /// <param name="type">The rule type. Optional, defaults to orders as this is the only supported type.</param>
+        /// <returns>The information each action needs in order for it to be used</returns>
+        public List<RuleActionInformation> GetActionTypes(RuleSetType type = RuleSetType.Orders)
 		{
 			var response = GetResponse("RulesEngine/GetActionTypes", "type=" + type.ToString() + "");
-            return JsonFormatter.ConvertFromJson<List<ActionTypeDescriptor>>(response);
+            return JsonFormatter.ConvertFromJson<List<RuleActionInformation>>(response);
 		}
 
 		/// <summary>
@@ -406,7 +416,7 @@ namespace LinnworksAPI
         /// Use this call to update an action 
         /// </summary>
         /// <param name="action">The details of the updated action. pkActionId and fkConditionId must be unchanged original.</param>
-        public void UpdateAction(ActionWeb action)
+        public void UpdateAction(UpdateActionRequest action)
 		{
 			GetResponse("RulesEngine/UpdateAction", "action=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(action)) + "");
 		} 

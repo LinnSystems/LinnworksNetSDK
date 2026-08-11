@@ -24,6 +24,8 @@ namespace LinnworksAPI
 
 		public ConfigProperty<Boolean> ProcessPosOrders { get; set; }
 
+		public ConfigProperty<Boolean> DeductPosOrdersStock { get; set; }
+
 		public ConfigItem<Boolean> DespatchNotes { get; set; }
 
 		public ConfigItem<Boolean> CancellationNotes { get; set; }
@@ -41,6 +43,8 @@ namespace LinnworksAPI
 		public ConfigItem<Boolean> DownloadReturns { get; set; }
 
 		public ConfigPropertySelectionList<SelectStringValueOption,Guid> OrderSaveLocation { get; set; }
+
+		public ConfigItem<Boolean> IsOrdersSiteSpecific { get; set; }
 
 		public ConfigItem<DateTime> OrderSyncDate { get; set; }
 
@@ -78,6 +82,8 @@ namespace LinnworksAPI
 
 		public ConfigItem<Int32> InvSyncErrorCount { get; set; }
 
+		public ConfigItem<Boolean> AddInOrderBookStock { get; set; }
+
 		public ConfigProperty<Boolean> ExtractInventory { get; set; }
 
 		public ConfigProperty<String> ExtractInventoryVariationMappingPropertyName { get; set; }
@@ -87,6 +93,8 @@ namespace LinnworksAPI
 		public ConfigItem<Int32> PriceChangeErrorCount { get; set; }
 
 		public ConfigProperty<Boolean> IsInventorySyncTriggerEnabled { get; set; }
+
+		public ConfigItem<Boolean> AutoLinkBySku { get; set; }
 
 		public ConfigItem<Boolean> IsListingScanRunning { get; set; }
 

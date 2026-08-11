@@ -7,14 +7,8 @@ namespace LinnworksAPI
 { 
     public class ConfigPostalServiceMapping : LinnObject
 	{
-        /// <summary>
-        /// Readonly collection of Mapping as mapping should only be modified through the add and remove methods 
-        /// </summary>
 		public ReadOnlyCollection<ConfigPostalServiceMappingItem> Mapping { get; set; }
 
-        /// <summary>
-        /// Readonly collection of ChannelServices as mapping should only be modified through the add and remove methods 
-        /// </summary>
 		public ReadOnlyCollection<ChannelPostalService> ChannelServices { get; set; }
 
 		public Boolean IsChanged { get; set; }

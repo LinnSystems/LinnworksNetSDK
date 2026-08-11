@@ -12,5 +12,6 @@ namespace LinnworksAPI
 		Unspecified,
 		Delivery,
 		Collection,
+		SmartConnect,
 	}
 }

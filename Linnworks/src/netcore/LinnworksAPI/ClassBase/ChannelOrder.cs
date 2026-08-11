@@ -72,10 +72,18 @@ namespace LinnworksAPI
 		public String MappingSource { get; set; }
 
         /// <summary>
+        /// Overrides the mapping source for the channel in the instance that the order may have originally been downloaded with an alternative source value. 
+        /// </summary>
+		public String SourceOverride { get; set; }
+
+        /// <summary>
         /// State the order should be saved e.g. hold, parked, none 
         /// </summary>
 		public OrderState OrderState { get; set; }
 
+        /// <summary>
+        /// Defines type of fulfilment required for order 
+        /// </summary>
 		public OrderFulfilmentType OrderFulfilmentType { get; set; }
 
         /// <summary>
@@ -99,7 +107,15 @@ namespace LinnworksAPI
         /// </summary>
 		public List<ChannelOrderItem> OrderItems { get; set; }
 
+        /// <summary>
+        /// The order location(s) on the channel 
+        /// </summary>
 		public List<ChannelOrderLocation> Locations { get; set; }
+
+        /// <summary>
+        /// Other orders that are related to this order. This iwll display a link in the order relations screen, allowing the user to identiy related orders. 
+        /// </summary>
+		public List<ChannelOrderId> Relations { get; set; }
 
         /// <summary>
         /// List of extended properties for the order 
@@ -156,7 +172,10 @@ namespace LinnworksAPI
         /// </summary>
 		public DateTime ReceivedDate { get; set; }
 
-        public DateTime UpdatedDate { get; set; }
+        /// <summary>
+        /// UTC date/time the order was last updated at 
+        /// </summary>
+		public DateTime UpdatedDate { get; set; }
 
         /// <summary>
         /// UTC date/time the order should be despatched by 
@@ -257,5 +276,10 @@ namespace LinnworksAPI
         /// Bool to re-save order 
         /// </summary>
 		public Boolean ForceReSaveFulfilledOrder { get; set; }
+
+        /// <summary>
+        /// Days after order is processed when PII data will get redacted - NULL/Not Supplied will never redact 
+        /// </summary>
+		public Int16? PIIRedactionDays { get; set; }
 	} 
 }

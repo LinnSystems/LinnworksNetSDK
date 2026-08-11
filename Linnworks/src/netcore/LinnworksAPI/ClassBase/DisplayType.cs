@@ -9,9 +9,16 @@ namespace LinnworksAPI
     [JsonConverter(typeof(StringEnumConverter))]
 	public enum DisplayType
 	{
+		None,
 		FreeText,
 		AutoComplete,
 		Dropdown,
-		None,
+		Time,
+		NumberOfDays,
+		Timezone,
+		Currency,
+		Percentage,
+		Toggle,
+		Paragraph,
 	}
 }

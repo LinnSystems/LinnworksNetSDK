@@ -13,5 +13,7 @@ namespace LinnworksAPI
 		public String Path { get; set; }
 
 		public Boolean Default { get; set; }
+
+		public Int32? TreeId { get; set; }
 	} 
 }

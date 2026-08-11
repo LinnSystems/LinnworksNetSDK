@@ -31,5 +31,7 @@ namespace LinnworksAPI
 		public ViewUser Owner { get; set; }
 
 		public Boolean IsCacheable { get; set; }
+
+		public Boolean IsCalculated { get; set; }
 	} 
 }

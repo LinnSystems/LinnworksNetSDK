@@ -10,6 +10,6 @@ namespace LinnworksAPI
 
 		public Boolean IsVisible { get; set; }
 
-		public Byte Sequence { get; set; }
+		public Int32 Sequence { get; set; }
 	} 
 }

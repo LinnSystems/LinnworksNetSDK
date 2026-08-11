@@ -13,12 +13,13 @@ namespace LinnworksAPI
 		AddExtendedPropertiesResponse AddExtendedProperties(AddExtendedPropertiesRequest request);
 		UpdateOrderItemResult AddOrderItem(Guid orderId,Guid itemId,String channelSKU,Guid fulfilmentCenter,Int32 quantity,LinePricingRequest linePricing,DateTime? createdDate = null);
 		UpdateOrderItemResult AddOrderService(Orders_AddOrderServiceRequest request);
+		AddOrdersNoteResponse AddOrdersNote(AddOrdersNoteRequest request);
 		void AssignOrderItemBatches(AssignOrderItemBatches request);
 		List<OrderItemBatch> AssignStockToOrder(AssignStockToOrderRequest request);
 		List<Guid> AssignToFolder(List<Guid> orderIds,String folder);
 		String CancelOrder(Guid orderId,Guid fulfilmentCenter,Double refund,String note);
 		List<Guid> ChangeOrderTag(List<Guid> orderIds,Int32? tag);
-		List<Guid> ChangeShippingMethod(List<Guid> orderIds,String shippingMethod);
+		IReadOnlyList<Guid> ChangeShippingMethod(List<Guid> orderIds,String shippingMethod);
 		List<Guid> ChangeStatus(List<Guid> orderIds,Int32 status);
 		List<Guid> ClearInvoicePrinted(List<Guid> orderIds);
 		List<Guid> ClearPickListPrinted(List<Guid> orderIds);
@@ -80,6 +81,7 @@ namespace LinnworksAPI
 		OpenOrder MergeOrders(List<Guid> ordersToMerge,Guid fulfilmentCenter,Guid pkPostalServiceId);
 		MoveToFulfilmentCenterResult MoveToFulfilmentCenter(List<Guid> orderIds,Guid fulfilmentCenterId);
 		MoveToLocationResult MoveToLocation(List<Guid> orderIds,Guid pkStockLocationId,FulfillmentStatus? fulfillmentStatusToApply = null);
+		List<Guid> OrderExists(List<Guid> pkOrderIds);
 		ProcessOrderResult ProcessFulfilmentCentreOrder(Guid orderId);
 		ProcessOrderResult ProcessOrder(Guid orderId,Boolean scanPerformed,Guid? locationId,ClientContext context = null);
 		void ProcessOrder_RequiredBatchScans(BatchAssignmentForOrderItems BatchAssignment);

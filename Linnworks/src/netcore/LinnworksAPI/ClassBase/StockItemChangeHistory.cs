@@ -6,6 +6,8 @@ namespace LinnworksAPI
 { 
     public class StockItemChangeHistory : LinnObject
 	{
+		public Guid StockItemId { get; set; }
+
         /// <summary>
         /// When changes were made 
         /// </summary>
@@ -35,9 +37,5 @@ namespace LinnworksAPI
         /// Changed value 
         /// </summary>
 		public Double ChangeValue { get; set; }
-
-		public Guid StockItemId { get; set; }
-
-		public Int32 StockItemIntId { get; set; }
 	} 
 }

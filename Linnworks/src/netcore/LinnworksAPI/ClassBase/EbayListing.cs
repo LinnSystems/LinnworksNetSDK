@@ -72,7 +72,7 @@ namespace LinnworksAPI
 
 		public String ErrorMessage { get; set; }
 
-		public Byte Adjustments { get; set; }
+		public Int16 Adjustments { get; set; }
 
 		public String TitleSource { get; set; }
 
@@ -98,6 +98,12 @@ namespace LinnworksAPI
 
 		public String RecommendationMessage { get; set; }
 
-		public Boolean UseNewApi { get; set; }
+		public Boolean IsMigrated { get; set; }
+
+		public String[] MultiWarehouseLocations { get; set; }
+
+		public String MultiWarehouseLocation_ExtendedProperty { get; set; }
+
+		public Dictionary<String,List<String>> ErrorsByCategory { get; set; }
 	} 
 }

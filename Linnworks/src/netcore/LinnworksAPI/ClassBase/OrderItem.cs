@@ -249,6 +249,8 @@ namespace LinnworksAPI
 
 		public StockItemBoxConfiguration[] Boxes { get; set; }
 
+		public DateTime AddedDate { get; set; }
+
 		public Guid RowId { get; set; }
 
 		public Guid OrderId { get; set; }

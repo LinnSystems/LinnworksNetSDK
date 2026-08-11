@@ -23,6 +23,10 @@ namespace LinnworksAPI
 
 		public UpdateStatusType UpdateStatus { get; set; }
 
+		public DateTime? StartDate { get; set; }
+
+		public DateTime? EndDate { get; set; }
+
 		public Guid StockItemId { get; set; }
 
 		public Int32 StockItemIntId { get; set; }

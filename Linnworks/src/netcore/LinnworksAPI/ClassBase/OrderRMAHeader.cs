@@ -8,9 +8,13 @@ namespace LinnworksAPI
 	{
 		public Int32 RMAHeaderId { get; set; }
 
+		public List<VerifiedRMAItem> RMALines { get; set; }
+
 		public Guid OrderId { get; set; }
 
 		public Int32 NumOrderId { get; set; }
+
+		public PostSaleStatus Status { get; set; }
 
 		public String OrderSource { get; set; }
 
@@ -22,12 +26,8 @@ namespace LinnworksAPI
 
 		public DateTime CreatedDate { get; set; }
 
-		public PostSaleStatus Status { get; set; }
-
 		public Boolean Actioned { get; set; }
 
 		public DateTime LastActionDate { get; set; }
-
-		public List<VerifiedRMAItem> RMALines { get; set; }
 	} 
 }
