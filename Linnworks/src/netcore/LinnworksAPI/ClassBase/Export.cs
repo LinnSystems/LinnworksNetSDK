@@ -6,9 +6,6 @@ namespace LinnworksAPI
 { 
     public class Export : LinnObject
 	{
-        /// <summary>
-        /// Export Base Settings (Delimeters, Columns mapping etc) 
-        /// </summary>
 		public ExportSpecification Specification { get; set; }
 
 		public ExportRegister Register { get; set; }

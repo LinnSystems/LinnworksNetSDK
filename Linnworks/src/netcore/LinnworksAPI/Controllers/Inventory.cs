@@ -153,6 +153,15 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to create mappings between Linnworks items and channel items 
+        /// </summary>
+        public BatchedAPIResponse<ChannelMappingCreateInfo> CreateChannelMapping(CreateChannelMappingRequest request)
+		{
+			var response = GetResponse("Inventory/CreateChannelMapping", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<BatchedAPIResponse<ChannelMappingCreateInfo>>(response);
+		}
+
+		/// <summary>
         /// Use this call to create new countries 
         /// </summary>
         /// <param name="countries">Countries to create</param>
@@ -169,15 +178,6 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Inventory/CreateCountryRegions", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
             return JsonFormatter.ConvertFromJson<CreateCountryRegionsResponse>(response);
-		}
-
-		/// <summary>
-        /// Use this call to create stockitem channel skus 
-        /// </summary>
-        /// <param name="inventoryItemChannelSKUs">stockitem channel skus</param>
-        public void CreateInventoryItemChannelSKUs(List<StockItemChannelSKU> inventoryItemChannelSKUs)
-		{
-			GetResponse("Inventory/CreateInventoryItemChannelSKUs", "inventoryItemChannelSKUs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(inventoryItemChannelSKUs)) + "");
 		}
 
 		/// <summary>
@@ -611,6 +611,19 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Inventory/GetInventoryBatchTypes", "");
             return JsonFormatter.ConvertFromJson<Dictionary<String,Byte>>(response);
+		}
+
+		/// <summary>
+        /// Gets stock item details by either the SKU or StockItemId
+        /// The stock item id is supplied, it is used as the primary identifier
+        /// If both stock item id and SKU are supplied,
+        /// an exception will be thrown if they dont relate to the same Linnworks item 
+        /// </summary>
+        /// <returns>Linnworks stock item</returns>
+        public StockItemInv GetInventoryItem(GetInventoryItemRequest request)
+		{
+			var response = GetResponse("Inventory/GetInventoryItem", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<StockItemInv>(response);
 		}
 
 		/// <summary>
@@ -1077,6 +1090,12 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<Boolean>(response);
 		}
 
+		public ItemsHaveScannableIdentifiersResponse ItemsHaveScannableIdentifiers(ItemsHaveScannableIdentifiersRequest request)
+		{
+			var response = GetResponse("Inventory/ItemsHaveScannableIdentifiers", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<ItemsHaveScannableIdentifiersResponse>(response);
+		}
+
 		/// <summary>
         /// Used to scrap batched item 
         /// </summary>
@@ -1150,6 +1169,15 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
+        /// Use this call to update mappings between Linnworks items and channel items, such as Max Listed Quantity 
+        /// </summary>
+        public BatchedAPIResponse<ChannelMappingUpdateInfo> UpdateChannelMapping(UpdateChannelMappingRequest request)
+		{
+			var response = GetResponse("Inventory/UpdateChannelMapping", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<BatchedAPIResponse<ChannelMappingUpdateInfo>>(response);
+		}
+
+		/// <summary>
         /// Updates the stock level of the composite parent item 
         /// </summary>
         /// <param name="stockItemId">Stock item id</param>
@@ -1200,7 +1228,7 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Update inventory Channel SKU's properties, such as Max Listed Quantity 
+        /// This endpoint is obsolete, please use UpdateChannelMapping. 
         /// </summary>
         /// <param name="inventoryItemChannelSKUs">stockitem channel skus</param>
         public void UpdateInventoryItemChannelSKUs(List<StockItemChannelSKU> inventoryItemChannelSKUs)

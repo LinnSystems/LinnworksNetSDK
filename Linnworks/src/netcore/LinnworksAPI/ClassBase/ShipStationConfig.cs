@@ -42,6 +42,11 @@ namespace LinnworksAPI
 		public DateTime LastSync { get; set; }
 
         /// <summary>
+        /// The search token for the previous page of results 
+        /// </summary>
+		public Guid? SearchToken { get; set; }
+
+        /// <summary>
         /// The location to process orders from 
         /// </summary>
 		public Guid AutoProcessOrdersLocation { get; set; }
@@ -50,6 +55,11 @@ namespace LinnworksAPI
         /// Toggles whether or not to export child items 
         /// </summary>
 		public Boolean ExportChildItems { get; set; }
+
+        /// <summary>
+        /// Toggles whether or not to export service items 
+        /// </summary>
+		public Boolean ExportServiceItems { get; set; }
 
         /// <summary>
         /// The order tag to assign ShipStation imported orders 

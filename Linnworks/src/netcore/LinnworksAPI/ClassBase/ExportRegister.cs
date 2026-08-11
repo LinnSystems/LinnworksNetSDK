@@ -6,9 +6,6 @@ namespace LinnworksAPI
 { 
     public class ExportRegister : LinnObject
 	{
-        /// <summary>
-        /// The time of which the export query was ran - safer than when the export finished 
-        /// </summary>
 		public DateTime? LastQueryExecuted { get; set; }
 
 		public Boolean LastExportStatus { get; set; }

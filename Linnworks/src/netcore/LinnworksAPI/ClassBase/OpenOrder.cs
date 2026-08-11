@@ -9,8 +9,6 @@ namespace LinnworksAPI
     /// </summary>
     public class OpenOrder : LinnObject
 	{
-		public String ORDER_NOT_FOUND_ERROR { get; set; }
-
         /// <summary>
         /// Linnworks order number 
         /// </summary>

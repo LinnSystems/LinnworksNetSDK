@@ -63,6 +63,17 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<List<System_ShippingAPI_Config>>(response);
 		}
 
+		/// <summary>
+        /// Get shipping quote for a single order. The request specifies the order id and list of integrated services for which the shipping quote should be run. You can get the list of all integrated services in ShippingService/GetIntegrations 
+        /// Once a list of services obtained you can use ShippingService/SetShippingMethodFromQuote call to set the selected shipping service for an order 
+        /// </summary>
+        /// <param name="request"></param>
+        public GetShippingQuoteResponse GetShippingQuote(GetShippingQuoteRequest request)
+		{
+			var response = GetResponse("ShippingService/GetShippingQuote", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<GetShippingQuoteResponse>(response);
+		}
+
 		public void PostShipmentUpload(PostShipmentUploadRequest request)
 		{
 			GetResponse("ShippingService/PostShipmentUpload", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");

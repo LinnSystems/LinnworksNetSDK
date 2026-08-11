@@ -7,7 +7,7 @@ namespace LinnworksAPI
     public class GetConversionRatesRequest : LinnObject
 	{
         /// <summary>
-        /// If you want to get currencies from orders 
+        /// If you want to get currencies from orders -- 
         /// </summary>
 		public Boolean GetCurrenciesFromOrders { get; set; }
 

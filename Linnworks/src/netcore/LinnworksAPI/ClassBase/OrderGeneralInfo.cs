@@ -29,13 +29,19 @@ namespace LinnworksAPI
         /// </summary>
 		public Boolean InvoicePrinted { get; set; }
 
+        /// <summary>
+        /// Is there invoice print error 
+        /// </summary>
 		public String InvoicePrintError { get; set; }
 
         /// <summary>
         /// Is pick list printed 
         /// </summary>
-        public Boolean PickListPrinted { get; set; }
+		public Boolean PickListPrinted { get; set; }
 
+        /// <summary>
+        /// Is there pick list print error 
+        /// </summary>
 		public String PickListPrintError { get; set; }
 
         /// <summary>
@@ -134,6 +140,11 @@ namespace LinnworksAPI
         /// All related Pickwave Ids 
         /// </summary>
 		public List<Int32> PickwaveIds { get; set; }
+
+        /// <summary>
+        /// Number of days after which an order is processed its pii will be redacted/obfuscate 
+        /// </summary>
+		public Int16? PIIRedactionDays { get; set; }
 
 		public StockAllocationType? StockAllocationType { get; set; }
 	} 

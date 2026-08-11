@@ -23,8 +23,8 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Returns current application subscription profile information for a given application for a specific user. 
-        /// You can use this method to get the current application subscription after AuthorizedByApplication returned a session. 
+        /// Returns current application subscription profile information for a given application for a specific user.
+        /// You can use this method to get the current application subscription after AuthorizedByApplication returned a session.
         /// The session will contain Id, this is the UserId you need to supply in the call.
         /// If there are no current subscriptions for the application for the user. The method will return null (nothing) 
         /// </summary>

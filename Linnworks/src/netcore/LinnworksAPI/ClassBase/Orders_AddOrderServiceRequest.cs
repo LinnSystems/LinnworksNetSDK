@@ -40,5 +40,10 @@ namespace LinnworksAPI
         /// Discount percentage applied to the service item. Optional, defaults to 0. 
         /// </summary>
 		public Double DiscountPercentage { get; set; }
+
+        /// <summary>
+        /// Holds the datetime that the service was added to the order 
+        /// </summary>
+		public DateTime AddedDate { get; set; }
 	} 
 }

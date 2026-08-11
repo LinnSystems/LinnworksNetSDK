@@ -14,14 +14,7 @@ namespace LinnworksAPI
 
 		public Int32 OwnerId { get; set; }
 
-        /// <summary>
-        /// DST migration flag.
-        /// 
-        ///  0 - not migrated;
-        ///  1 - migrated;
-        ///  2 - migration failed; 
-        /// </summary>
-        public Byte Migrated { get; set; }
+		public Byte Migrated { get; set; }
 
 		public String ScheduleXML { get; set; }
 

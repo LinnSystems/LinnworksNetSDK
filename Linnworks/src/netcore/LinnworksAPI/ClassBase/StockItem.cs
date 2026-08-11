@@ -30,7 +30,7 @@ namespace LinnworksAPI
 		public Int32 Due { get; set; }
 
         /// <summary>
-        /// Minimum level of stock item. -1 is not tracked 
+        /// Minimum level of stock item. -1 is not tracked. Null value when adding will use user default minimum level 
         /// </summary>
 		public Int32? MinimumLevel { get; set; }
 

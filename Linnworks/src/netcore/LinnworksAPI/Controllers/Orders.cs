@@ -70,6 +70,17 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<UpdateOrderItemResult>(response);
 		}
 
+		/// <summary>
+        /// Use this call to add a new note to orders 
+        /// </summary>
+        /// <param name="request">request with a list of order ids as property</param>
+        /// <returns>List of order notes</returns>
+        public AddOrdersNoteResponse AddOrdersNote(AddOrdersNoteRequest request)
+		{
+			var response = GetResponse("Orders/AddOrdersNote", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
+            return JsonFormatter.ConvertFromJson<AddOrdersNoteResponse>(response);
+		}
+
 		public void AssignOrderItemBatches(AssignOrderItemBatches request)
 		{
 			GetResponse("Orders/AssignOrderItemBatches", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
@@ -111,6 +122,7 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="orderIds">Orders to change the tag</param>
         /// <param name="tag">new tag. null to remove the tag</param>
+        /// <param name="ctx">Terminates execution if task was cancelled on client</param>
         public List<Guid> ChangeOrderTag(List<Guid> orderIds,Int32? tag)
 		{
 			var response = GetResponse("Orders/ChangeOrderTag", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&tag=" + tag + "");
@@ -118,14 +130,14 @@ namespace LinnworksAPI
 		}
 
 		/// <summary>
-        /// Change the shipping method to a list of orders 
+        /// Change the shipping service (provided by a shipping courier) to a list of orders 
         /// </summary>
-        /// <param name="orderIds">Order id's</param>
-        /// <param name="shippingMethod">New shipping method</param>
-        public List<Guid> ChangeShippingMethod(List<Guid> orderIds,String shippingMethod)
+        /// <param name="orderIds">Order ids</param>
+        /// <param name="shippingMethod">New shipping service name</param>
+        public IReadOnlyList<Guid> ChangeShippingMethod(List<Guid> orderIds,String shippingMethod)
 		{
 			var response = GetResponse("Orders/ChangeShippingMethod", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&shippingMethod=" + System.Net.WebUtility.UrlEncode(shippingMethod) + "");
-            return JsonFormatter.ConvertFromJson<List<Guid>>(response);
+            return JsonFormatter.ConvertFromJson<IReadOnlyList<Guid>>(response);
 		}
 
 		/// <summary>
@@ -138,6 +150,7 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="orderIds">Order id's</param>
         /// <param name="status">New status</param>
+        /// <param name="ctx">Terminates execution if task was cancelled on client</param>
         public List<Guid> ChangeStatus(List<Guid> orderIds,Int32 status)
 		{
 			var response = GetResponse("Orders/ChangeStatus", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&status=" + status + "");
@@ -231,7 +244,8 @@ namespace LinnworksAPI
         /// Create serial data for the given orderItemRowIds 
         /// </summary>
         /// <param name="request">Request with list of OrderItemSerialModel as property. Each entry represents an OrderItemRowId and a list of collections of serial data. Seperated by correlation (quantity for this row) 
-        /// Note there can be one collection of serial data for each physical item being shipped - e.g. an order item with quantity of 2 can have 2 collections of serial data</param>
+        /// Note there can be one collection of serial data for each physical item being shipped - e.g. an order item with quantity of 2 can have 2 collections of serial data.
+        /// Note that values assigned to each OrderItemRowId will overwrite any existing data.</param>
         public void CreateSerialisedValuesForOrderItems(CreateSerialisedValuesForOrderItemsRequest request)
 		{
 			GetResponse("Orders/CreateSerialisedValuesForOrderItems", "request=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(request)) + "");
@@ -769,6 +783,7 @@ namespace LinnworksAPI
         /// </summary>
         /// <param name="orderIds">Order id's</param>
         /// <param name="lockOrder">Lock or unlock the orders</param>
+        /// <param name="ctx">Terminates execution if task was cancelled on client</param>
         public void LockOrder(List<Guid> orderIds,Boolean lockOrder)
 		{
 			GetResponse("Orders/LockOrder", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&lockOrder=" + lockOrder + "");
@@ -810,6 +825,12 @@ namespace LinnworksAPI
 		{
 			var response = GetResponse("Orders/MoveToLocation", "orderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderIds)) + "&pkStockLocationId=" + pkStockLocationId + "" + (fulfillmentStatusToApply.HasValue ? ("&fulfillmentStatusToApply=" + ((int)fulfillmentStatusToApply).ToString()) : String.Empty) + "");
             return JsonFormatter.ConvertFromJson<MoveToLocationResult>(response);
+		}
+
+		public List<Guid> OrderExists(List<Guid> pkOrderIds)
+		{
+			var response = GetResponse("Orders/OrderExists", "pkOrderIds=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(pkOrderIds)) + "");
+            return JsonFormatter.ConvertFromJson<List<Guid>>(response);
 		}
 
 		/// <summary>

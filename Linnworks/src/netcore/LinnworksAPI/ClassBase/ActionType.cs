@@ -23,5 +23,9 @@ namespace LinnworksAPI
 		AssignIdentifierToOrder,
 		BlockOrderFromMerging,
 		SendToFulfillmentNetwork,
+		SetDispatchDate,
+		AddItemToOrder,
+		AddServiceToOrder,
+		AddNoteToOrder,
 	}
 }

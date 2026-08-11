@@ -11,5 +11,7 @@ namespace LinnworksAPI
 		public String ChannelName { get; set; }
 
 		public List<TemplateToProcess> TemplateRequests { get; set; }
+
+		public ListingsClientContext ClientContext { get; set; }
 	} 
 }

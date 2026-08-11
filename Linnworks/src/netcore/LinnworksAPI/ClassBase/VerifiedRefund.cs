@@ -58,11 +58,6 @@ namespace LinnworksAPI
 		public List<RefundError> Errors { get; set; }
 
         /// <summary>
-        /// The channel reference number for this refund 
-        /// </summary>
-		public String ExternalReference { get; set; }
-
-        /// <summary>
         /// Line-level indicator of whether the refund has been actioned 
         /// </summary>
 		public Boolean Actioned { get; set; }
@@ -77,12 +72,17 @@ namespace LinnworksAPI
         /// </summary>
 		public Boolean ChannelInitiated { get; set; }
 
-        public Boolean? Internal { get; set; }
+        /// <summary>
+        /// Identifies whether the line is processed only internally or also on a third-party channel 
+        /// </summary>
+		public Boolean? Internal { get; set; }
 
         /// <summary>
         /// Identifies whether the line has been removed from the refund, and is pending an update to the database to reflect this 
         /// </summary>
 		public Boolean Deleted { get; set; }
+
+		public String ExternalReference { get; set; }
 
 		public Boolean IsFreeText { get; set; }
 

@@ -9,19 +9,20 @@ namespace LinnworksAPI
 { 
     public interface IRulesEngineController
 	{
-		ActionWeb AddAction(ActionWeb action);
+		RuleActionResponse AddAction(CreateActionRequest action);
 		Boolean CheckConditionNameExists(Int32 fkRuleId,Int32? fkConditionId,Int32? excludeConditionId,String conditionName);
-		RuleAction CopyAction(Int32 pkRuleId,Int32 targetParentConditionId,Int32 pkActionId);
+		RuleActionResponse CopyAction(Int32 targetParentConditionId,Int32 pkActionId);
 		RuleConditionHeader CopyCondition(Int32 pkRuleId,Int32? targetParentConditionId,Int32 pkConditionId,Boolean includeChildren,Boolean includeActions);
 		Int32 CreateDraftFromExisting(Int32 pkRuleId);
 		RuleConditionHeader CreateNewCondition(ConditionHeaderBasic header);
 		RuleHeaderBasic CreateNewDraft(String ruleName,RuleSetType type);
 		RuleHeaderBasic CreateNewDraftFromExisting(Int32 pkRuleId,String ruleName);
-		void DeleteAction(Int32 pkActionId);
+		void DeleteAction(DeleteActionRequest action);
 		void DeleteCondition(Int32 pkConditionId);
 		void DeleteRuleById(Int32 pkRuleId);
+		RuleActionResponse GetAction(GetActionRequest action);
 		Dictionary<String,List<ActionOption>> GetActionOptions(ActionType type);
-		List<ActionTypeDescriptor> GetActionTypes(RuleSetType type);
+		List<RuleActionInformation> GetActionTypes(RuleSetType type = RuleSetType.Orders);
 		ConditionHeaderBasic GetConditionWeb(Int32 pkConditionId);
 		List<FieldDescriptor> GetEvaluationFields(RuleSetType type);
 		List<EvaluatorDescriptor> GetEvaluatorTypes();
@@ -44,6 +45,6 @@ namespace LinnworksAPI
 		void SwapConditions(Int32 pkConditionId1,Int32 pkConditionId2);
 		void SwapRules(Int32 pkRuleId1,Int32 pkRuleId2);
 		RuleEvaluationResult TestEvaluateRule(List<TestpadValue> testValues,Int32 pkRuleId);
-		void UpdateAction(ActionWeb action);
+		void UpdateAction(UpdateActionRequest action);
 	} 
 }

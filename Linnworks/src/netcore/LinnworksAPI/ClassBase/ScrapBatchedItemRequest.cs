@@ -8,6 +8,9 @@ namespace LinnworksAPI
 	{
 		public ScrapItem ScrapItem { get; set; }
 
+        /// <summary>
+        /// Deprecated: no longer used by ScrapBatchedItem. Location is derived from the batch record identified by BatchInventoryId. 
+        /// </summary>
 		public Guid LocationId { get; set; }
 
 		public Int32 BatchInventoryId { get; set; }

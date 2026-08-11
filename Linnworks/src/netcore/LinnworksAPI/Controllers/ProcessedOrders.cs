@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace LinnworksAPI
 {
@@ -421,6 +422,7 @@ namespace LinnworksAPI
         /// <param name="searchTerm">The term which you are searching for.</param>
         /// <param name="pageNum">The page number of the request.</param>
         /// <param name="numEntriesPerPage">The number of entries required on a page. Maximum 200.</param>
+        /// <param name="cancellationToken">Terminates execution if task was cancelled on client</param>
         /// <returns>Returns the requested list of processed orders. The columns returned can be changed through the SetColumns method.</returns>
         public GenericPagedResult<ProcessedOrderWeb> SearchProcessedOrdersPaged(DateTime? from,DateTime? to,SearchDateType dateType,String searchField,Boolean exactMatch,String searchTerm,Int32 pageNum,Int32 numEntriesPerPage)
 		{

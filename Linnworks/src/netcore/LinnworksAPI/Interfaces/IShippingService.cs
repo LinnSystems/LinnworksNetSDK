@@ -12,6 +12,7 @@ namespace LinnworksAPI
 		GenericPagedResult<Consignment> GetConsignmentsByManifest(String vendor,String accountId,Int32 pkManifestId,Guid? externalManifestId,DateTime? manifestDate);
 		GenericPagedResult<FiledManifest> GetFiledManifestsByVendor(String vendor,String vendorFriendlyName,DateTime from,DateTime to,Int32 pageNumber,Int32 entriesPerPage);
 		List<System_ShippingAPI_Config> GetIntegrations();
+		GetShippingQuoteResponse GetShippingQuote(GetShippingQuoteRequest request);
 		void PostShipmentUpload(PostShipmentUploadRequest request);
 	} 
 }

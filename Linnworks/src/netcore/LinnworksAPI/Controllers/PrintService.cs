@@ -21,11 +21,12 @@ namespace LinnworksAPI
         /// <param name="templateID">The ID of the template to use</param>
         /// <param name="parameters"></param>
         /// <param name="printerName">printer name of the ivrtual printer to use. If null then the sepecified in the template</param>
+        /// <param name="cancellationToken">Not part of API request, used to observe request cancellation</param>
         /// <param name="printZoneCode">Print zone code, if present, will override the printer used if the template has a set printer for that zone</param>
         /// <param name="pageStartNumber">First page number. Used for splitting prints into multiple requests (optional, default to 0)</param>
         /// <param name="operationId">The ID of the current operation, used in logging for tracing (optional, default to null)</param>
-        /// <param name="context">Optional information about where the call came from</param>
-        public CreatePDFResult CreatePDFfromJobForceTemplate(String templateType,List<Guid> IDs,Int32? templateID,List<KeyValueRequest<String,String>> parameters,String printerName,String printZoneCode = "",Int32 pageStartNumber = 0,Guid? operationId = null,ClientContext context = null)
+        /// <param name="context">Information about where the call came from</param>
+        public CreatePDFResult CreatePDFfromJobForceTemplate(String templateType,List<Guid> IDs,Int32? templateID,List<KeyValueRequest> parameters,String printerName,String printZoneCode = "",Int32 pageStartNumber = 0,Guid? operationId = null,ClientContext context = null)
 		{
 			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplate", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&IDs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(IDs)) + "&templateID=" + templateID + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "&printZoneCode=" + System.Net.WebUtility.UrlEncode(printZoneCode) + "&pageStartNumber=" + pageStartNumber + "&operationId=" + operationId + "&context=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(context)) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
@@ -39,11 +40,12 @@ namespace LinnworksAPI
         /// <param name="templateID">The ID of the template to use</param>
         /// <param name="parameters"></param>
         /// <param name="printerName">printer name of the virtual printer to use. If null then the sepecified in the template</param>
+        /// <param name="cancellationToken">Not part of API request, used to observe request cancellation</param>
         /// <param name="printZoneCode">Print zone code, if present, will override the printer used if the template has a set printer for that zone</param>
         /// <param name="pageStartNumber">The starting page of the document to generate from (optional, default to 0)</param>
         /// <param name="operationId">The ID of the current operation, used in logging for tracing (optional, default to null)</param>
-        /// <param name="context">Optional Information about where the call came from</param>
-        public CreatePDFResult CreatePDFfromJobForceTemplateStockIn(String templateType,List<PrintingKey> PrintingKeys,Int32? templateID,List<KeyValueRequest<String,String>> parameters,String printerName,String printZoneCode = "",Int32 pageStartNumber = 0,Guid? operationId = null,ClientContext context = null)
+        /// <param name="context">Information about where the call came from</param>
+        public CreatePDFResult CreatePDFfromJobForceTemplateStockIn(String templateType,List<PrintingKey> PrintingKeys,Int32? templateID,List<KeyValueRequest> parameters,String printerName,String printZoneCode = "",Int32 pageStartNumber = 0,Guid? operationId = null,ClientContext context = null)
 		{
 			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplateStockIn", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&PrintingKeys=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(PrintingKeys)) + "&templateID=" + templateID + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "&printZoneCode=" + System.Net.WebUtility.UrlEncode(printZoneCode) + "&pageStartNumber=" + pageStartNumber + "&operationId=" + operationId + "&context=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(context)) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
@@ -57,8 +59,9 @@ namespace LinnworksAPI
         /// <param name="templateID">The ID of the template to use</param>
         /// <param name="parameters"></param>
         /// <param name="printerName">Printer name of the virtual printer to use. If null then the sepecified in the template</param>
+        /// <param name="cancellationToken">Not part of API request, used to observe request cancellation</param>
         /// <param name="printZoneCode">Print zone code, if present, will override the printer used if the template has a set printer for that zone</param>
-        public CreatePDFResult CreatePDFfromJobForceTemplateWithQuantities(String templateType,List<KeyValueRequest<Guid,Int32>> IDsAndQuantities,Int32? templateID,List<KeyValueRequest<String,String>> parameters,String printerName,String printZoneCode = "")
+        public CreatePDFResult CreatePDFfromJobForceTemplateWithQuantities(String templateType,List<KeyValueRequest> IDsAndQuantities,Int32? templateID,List<KeyValueRequest> parameters,String printerName,String printZoneCode = "")
 		{
 			var response = GetResponse("PrintService/CreatePDFfromJobForceTemplateWithQuantities", "templateType=" + System.Net.WebUtility.UrlEncode(templateType) + "&IDsAndQuantities=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(IDsAndQuantities)) + "&templateID=" + templateID + "&parameters=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(parameters)) + "&printerName=" + System.Net.WebUtility.UrlEncode(printerName) + "&printZoneCode=" + System.Net.WebUtility.UrlEncode(printZoneCode) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
@@ -70,7 +73,7 @@ namespace LinnworksAPI
         /// <param name="IDs">A list containing the (single) pkOrderId of the order to print return labels for</param>
         /// <param name="orderItemIdsAndQuantities">A list of the order item IDs and quantities to include. If empty then same as the outbound shipment</param>
         /// <param name="returnPostalServiceName">Name of the postal service to use. If null then specified in settings or same as the outbound shipment</param>
-        public CreatePDFResult CreateReturnShippingLabelsPDF(List<Guid> IDs,List<KeyValueRequest<Guid,Int32>> orderItemIdsAndQuantities,String returnPostalServiceName)
+        public CreatePDFResult CreateReturnShippingLabelsPDF(List<Guid> IDs,List<KeyValueRequest> orderItemIdsAndQuantities,String returnPostalServiceName)
 		{
 			var response = GetResponse("PrintService/CreateReturnShippingLabelsPDF", "IDs=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(IDs)) + "&orderItemIdsAndQuantities=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(orderItemIdsAndQuantities)) + "&returnPostalServiceName=" + System.Net.WebUtility.UrlEncode(returnPostalServiceName) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
@@ -82,7 +85,8 @@ namespace LinnworksAPI
         /// <param name="referenceNum">Reference number of the order to print return labels for</param>
         /// <param name="SKUsAndQuantities">A list of the SKUs and quantities to include. If empty then same as the outbound shipment</param>
         /// <param name="returnPostalServiceName">Name of the postal service to use. If null then specified in settings or same as the outbound shipment</param>
-        public CreatePDFResult CreateReturnShippingLabelsPDFWithSKUs(String referenceNum,List<KeyValueRequest<String,Int32>> SKUsAndQuantities,String returnPostalServiceName)
+        /// <param name="cancellationToken">Terminates execution if task was cancelled on client</param>
+        public CreatePDFResult CreateReturnShippingLabelsPDFWithSKUs(String referenceNum,List<KeyValueRequest> SKUsAndQuantities,String returnPostalServiceName)
 		{
 			var response = GetResponse("PrintService/CreateReturnShippingLabelsPDFWithSKUs", "referenceNum=" + System.Net.WebUtility.UrlEncode(referenceNum) + "&SKUsAndQuantities=" + System.Net.WebUtility.UrlEncode(JsonFormatter.ConvertToJson(SKUsAndQuantities)) + "&returnPostalServiceName=" + System.Net.WebUtility.UrlEncode(returnPostalServiceName) + "");
             return JsonFormatter.ConvertFromJson<CreatePDFResult>(response);
@@ -112,6 +116,7 @@ namespace LinnworksAPI
         /// Generate a PDF preview of a specific template 
         /// </summary>
         /// <param name="templateId">Template id</param>
+        /// <param name="cancellationToken">used to observe cancellation of the request, not part of API request</param>
         /// <returns>Object with the PDF url</returns>
         public CreatePDFResult PrintTemplatePreview(Int32 templateId)
 		{

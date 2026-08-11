@@ -84,10 +84,19 @@ namespace LinnworksAPI
         /// </summary>
 		public String PackageGroupName { get; set; }
 
+        /// <summary>
+        /// Item height 
+        /// </summary>
 		public Double? Height { get; set; }
 
+        /// <summary>
+        /// Item width 
+        /// </summary>
 		public Double? Width { get; set; }
 
+        /// <summary>
+        /// Item depth 
+        /// </summary>
 		public Double? Depth { get; set; }
 
         /// <summary>

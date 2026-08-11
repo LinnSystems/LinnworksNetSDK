@@ -29,6 +29,9 @@ namespace LinnworksAPI
         /// </summary>
 		public PickingWaveOrderState PickState { get; set; }
 
+        /// <summary>
+        /// Sort order 
+        /// </summary>
 		public Int32? SortOrder { get; set; }
 
         /// <summary>

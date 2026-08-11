@@ -4,7 +4,7 @@ using System;
 
 namespace LinnworksAPI
 { 
-    public class GenericPagedResult<T> : LinnObject
+    public class GenericPagedResult<ScrapItem> : LinnObject
 	{
 		public Int32 PageNumber { get; set; }
 
@@ -14,6 +14,6 @@ namespace LinnworksAPI
 
 		public Int32 TotalPages { get; set; }
 
-		public List<T> Data { get; set; }
+		public List<ScrapItem> Data { get; set; }
 	} 
 }

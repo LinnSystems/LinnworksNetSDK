@@ -208,6 +208,14 @@ namespace LinnworksAPI
 
 		public String ChannelLocationIdentifier { get; set; }
 
+		public String[] MultiWarehouseLocations { get; set; }
+
+		public String MultiWarehouseLocation_ExtendedProperty { get; set; }
+
+		public List<ShippingCostOverride> ShippingCostOverrides { get; set; }
+
 		public String DimensionMeasure { get; set; }
+
+		public String PreviousChannelLocationIdentifier { get; set; }
 	} 
 }

@@ -51,5 +51,6 @@ namespace LinnworksAPI
 		MultipleListingTitlesAndPrices,
 		StockSupplierDetail,
 		StockLevelBatchBySupplierCode,
+		WeightAndDimensions,
 	}
 }

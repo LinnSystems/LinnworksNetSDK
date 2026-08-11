@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace LinnworksAPI
 {
@@ -510,6 +511,7 @@ namespace LinnworksAPI
         /// Creates a PDF for this transfer and returns the URL 
         /// </summary>
         /// <param name="pkTransferId">The transfer ID</param>
+        /// <param name="cancellationToken">Not part of API request, used to observe cancellation</param>
         /// <returns>URL of PDF with auto-print flag</returns>
         public String PrintTransfer(Guid pkTransferId)
 		{

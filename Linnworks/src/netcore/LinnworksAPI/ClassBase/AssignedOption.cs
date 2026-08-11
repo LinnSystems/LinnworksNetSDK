@@ -21,5 +21,7 @@ namespace LinnworksAPI
 		public List<OptionValue> Values { get; set; }
 
 		public String Type { get; set; }
+
+		public Int32 SortOrder { get; set; }
 	} 
 }

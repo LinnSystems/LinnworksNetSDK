@@ -12,9 +12,6 @@ namespace LinnworksAPI
 
 		public Boolean ExportToFile { get; set; }
 
-        /// <summary>
-        /// list of subquery selection fields. Here we specify the predicate for field value for the given row 
-        /// </summary>
 		public List<SubQueryOutputMappingSelectionField> SubQuerySelection { get; set; }
 
 		public String FileColumn { get; set; }

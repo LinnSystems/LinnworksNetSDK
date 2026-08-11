@@ -7,7 +7,8 @@ namespace LinnworksAPI
     public class StockItemLevel : LinnObject
 	{
         /// <summary>
-        /// Location ID 
+        /// Location details
+        /// Be careful! Not always all the fields are populated! 
         /// </summary>
 		public InventoryStockLocation Location { get; set; }
 

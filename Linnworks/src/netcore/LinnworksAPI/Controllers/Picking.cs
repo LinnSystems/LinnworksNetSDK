@@ -102,6 +102,12 @@ namespace LinnworksAPI
             return JsonFormatter.ConvertFromJson<GetPickingWavesResponse>(response);
 		}
 
+		public List<PickingWaveDespatchData> GetPickingwaveDespatchDataByLocation(Guid? locationId)
+		{
+			var response = GetResponse("Picking/GetPickingwaveDespatchDataByLocation", "locationId=" + locationId + "", "GET");
+            return JsonFormatter.ConvertFromJson<List<PickingWaveDespatchData>>(response);
+		}
+
 		/// <summary>
         /// Returns a list of pickwaves as well as dummy entries for users who have permissions to complete pickwaves, but don't currently have any assigned. These entries will have a PickwaveId of 0. 
         /// </summary>

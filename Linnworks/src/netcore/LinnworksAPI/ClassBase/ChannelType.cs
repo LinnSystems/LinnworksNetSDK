@@ -9,11 +9,12 @@ namespace LinnworksAPI
     [JsonConverter(typeof(StringEnumConverter))]
 	public enum ChannelType
 	{
-		CDiscount,
+		CDiscount_OBSOLETE,
 		Shopify,
 		Magento,
 		External,
 		Walmart,
 		TikTok,
+		Amazon,
 	}
 }
